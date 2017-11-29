@@ -86,7 +86,7 @@ var ac_main =
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "462c0113bf7bf806e4af"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "cee7a16cf474bf0d1e54"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -1014,7 +1014,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_merge___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_observable_merge__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_share__ = __webpack_require__(203);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_share___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_operator_share__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Subject__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Subject__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_Subject__);
 
 /**
@@ -16836,7 +16836,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_BehaviorSubject__ = __webpack_require__(216);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_BehaviorSubject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_BehaviorSubject__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Subject__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Subject__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_Subject__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_observable_from__ = __webpack_require__(217);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_observable_from___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_observable_from__);
@@ -44258,13 +44258,90 @@ return jQuery;
 
 
 /***/ }),
-/* 25 */,
+/* 25 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__serviceUrl__ = __webpack_require__(23);
+
+
+
+
+
+var UserService = (function () {
+    function UserService(http) {
+        this.http = http;
+        this.serviceUrl = new __WEBPACK_IMPORTED_MODULE_4__serviceUrl__["a" /* ServiceUrl */]();
+    }
+    UserService.prototype.loginUser = function (email, password, userType) {
+        var data;
+        data = { UserName: email, Password: password, userType: userType };
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["Headers"]();
+        headers.append('Content-Type', 'application/json; charset=UTF-8');
+        return this.http.post(this.serviceUrl.baseUrl + "User/login", data, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    UserService.prototype.signUp = function (userObject) {
+        var data;
+        data = { Email: userObject.email, UserName: userObject.username, Password: userObject.password, UserType: userObject.UserType };
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["Headers"]();
+        headers.append('Content-Type', 'application/json; charset=UTF-8');
+        return this.http.post(this.serviceUrl.baseUrl + "User/addUser", data, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    UserService.prototype.updateUser = function (userObject) {
+        var data;
+        data = { Name: userObject.FullName, UserId: userObject.Id };
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["Headers"]();
+        headers.append('Content-Type', 'application/json; charset=UTF-8');
+        return this.http.post(this.serviceUrl.baseUrl + "User/UpdateUserProfile", data, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    UserService.prototype.updatePassword = function (userobject, newPass) {
+        var data;
+        data = { OldPassword: userobject.Password, NewPassword: newPass, UserId: userobject.Id };
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["Headers"]();
+        headers.append('Content-Type', 'application/json; charset=UTF-8');
+        return this.http.post(this.serviceUrl.baseUrl + "User/ChangePassword", data, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    UserService.prototype.addUserAddress = function (EnteredAddress) {
+        var data;
+        data = { City: EnteredAddress.City, Area: EnteredAddress.Area, UserId: EnteredAddress.UserId, AddressDetail: EnteredAddress.AddressDetail, DeliveryInstructions: EnteredAddress.DeliveryInstructions };
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["Headers"]();
+        headers.append('Content-Type', 'application/json; charset=UTF-8');
+        return this.http.post(this.serviceUrl.baseUrl + "User/addAddress", data, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    UserService.prototype.getAddresses = function (userId) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["Headers"]();
+        headers.append('Content-Type', 'application/json; charset=UTF-8');
+        return this.http.get(this.serviceUrl.baseUrl + "User/getAllAddressByUserId?userId=" + userId, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    return UserService;
+}());
+UserService = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
+    __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__angular_http__["Http"]])
+], UserService);
+
+
+
+/***/ }),
 /* 26 */,
 /* 27 */,
 /* 28 */,
 /* 29 */,
 /* 30 */,
-/* 31 */
+/* 31 */,
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44438,7 +44515,7 @@ exports.AnonymousSubject = AnonymousSubject;
 //# sourceMappingURL=Subject.js.map
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -44448,69 +44525,6 @@ var UsersModel = (function () {
     }
     return UsersModel;
 }());
-
-
-
-/***/ }),
-/* 33 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__serviceUrl__ = __webpack_require__(23);
-
-
-
-
-
-var UserService = (function () {
-    function UserService(http) {
-        this.http = http;
-        this.serviceUrl = new __WEBPACK_IMPORTED_MODULE_4__serviceUrl__["a" /* ServiceUrl */]();
-    }
-    UserService.prototype.loginUser = function (email, password, userType) {
-        var data;
-        data = { UserName: email, Password: password, userType: userType };
-        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["Headers"]();
-        headers.append('Content-Type', 'application/json; charset=UTF-8');
-        return this.http.post(this.serviceUrl.baseUrl + "User/login", data, { headers: headers })
-            .map(function (res) { return res.json(); });
-    };
-    UserService.prototype.signUp = function (userObject) {
-        var data;
-        data = { Email: userObject.email, UserName: userObject.username, Password: userObject.password, UserType: userObject.UserType };
-        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["Headers"]();
-        headers.append('Content-Type', 'application/json; charset=UTF-8');
-        return this.http.post(this.serviceUrl.baseUrl + "User/addUser", data, { headers: headers })
-            .map(function (res) { return res.json(); });
-    };
-    UserService.prototype.updateUser = function (userObject) {
-        var data;
-        data = { Name: userObject.FullName, UserId: userObject.Id };
-        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["Headers"]();
-        headers.append('Content-Type', 'application/json; charset=UTF-8');
-        return this.http.post(this.serviceUrl.baseUrl + "User/UpdateUserProfile", data, { headers: headers })
-            .map(function (res) { return res.json(); });
-    };
-    UserService.prototype.updatePassword = function (userobject, newPass) {
-        var data;
-        data = { OldPassword: userobject.Password, NewPassword: newPass, UserId: userobject.Id };
-        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["Headers"]();
-        headers.append('Content-Type', 'application/json; charset=UTF-8');
-        return this.http.post(this.serviceUrl.baseUrl + "User/ChangePassword", data, { headers: headers })
-            .map(function (res) { return res.json(); });
-    };
-    return UserService;
-}());
-UserService = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
-    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
-    __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__angular_http__["Http"]])
-], UserService);
 
 
 
@@ -44913,7 +44927,7 @@ SharedService = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 /* unused harmony reexport FBVideoComponent */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__providers_facebook__ = __webpack_require__(122);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_11__providers_facebook__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__facebook_module__ = __webpack_require__(264);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__facebook_module__ = __webpack_require__(265);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_12__facebook_module__["a"]; });
 // components
 
@@ -53954,7 +53968,7 @@ var ɵPRE_STYLE = '!';
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__about_component__ = __webpack_require__(262);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__about_component__ = __webpack_require__(263);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__about_component__["a"]; });
 
 
@@ -53964,7 +53978,7 @@ var ɵPRE_STYLE = '!';
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__no_content_component__ = __webpack_require__(263);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__no_content_component__ = __webpack_require__(264);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__no_content_component__["a"]; });
 
 
@@ -53977,12 +53991,12 @@ var ɵPRE_STYLE = '!';
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_usersModel__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_userService__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_usersModel__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_userService__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_chemistService__ = __webpack_require__(73);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ngx_facebook__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__models_locationModel__ = __webpack_require__(265);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__models_locationModel__ = __webpack_require__(266);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_sharedService__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_mapService__ = __webpack_require__(123);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__models_geoModel__ = __webpack_require__(72);
@@ -54163,7 +54177,7 @@ __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 LoginComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
         selector: 'app-login',
-        template: __webpack_require__(266),
+        template: __webpack_require__(267),
         styles: [__webpack_require__(124)],
         encapsulation: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewEncapsulation"].None,
         providers: [__WEBPACK_IMPORTED_MODULE_9__services_mapService__["a" /* MapService */], __WEBPACK_IMPORTED_MODULE_3__services_userService__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_5__services_chemistService__["a" /* ChemistService */]]
@@ -55621,7 +55635,7 @@ MapService = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 /***/ (function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__(267);
+        var result = __webpack_require__(268);
 
         if (typeof result === "string") {
             module.exports = result;
@@ -55638,8 +55652,8 @@ MapService = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SignupComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_usersModel__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_userService__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_usersModel__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_userService__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ngx_facebook__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_jquery__ = __webpack_require__(24);
@@ -55818,8 +55832,8 @@ __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 SignupComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
         selector: 'app-signup',
-        template: __webpack_require__(268),
-        styles: [__webpack_require__(269)],
+        template: __webpack_require__(269),
+        styles: [__webpack_require__(270)],
         providers: [__WEBPACK_IMPORTED_MODULE_3__services_userService__["a" /* UserService */]],
         encapsulation: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewEncapsulation"].None
     }),
@@ -55957,8 +55971,8 @@ var ChemistComponent = (function () {
 ChemistComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
         selector: 'app-chemist',
-        template: __webpack_require__(271),
-        styles: [__webpack_require__(272)],
+        template: __webpack_require__(272),
+        styles: [__webpack_require__(273)],
         encapsulation: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewEncapsulation"].None,
         providers: [__WEBPACK_IMPORTED_MODULE_6__services_mapService__["a" /* MapService */], __WEBPACK_IMPORTED_MODULE_3__services_chemistService__["a" /* ChemistService */], __WEBPACK_IMPORTED_MODULE_4__angular_common__["Location"], { provide: __WEBPACK_IMPORTED_MODULE_4__angular_common__["LocationStrategy"], useClass: __WEBPACK_IMPORTED_MODULE_4__angular_common__["PathLocationStrategy"] }]
     }),
@@ -55975,8 +55989,8 @@ ChemistComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OrdersComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_usersModel__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_userService__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_usersModel__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_userService__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(10);
 
 
@@ -56004,8 +56018,8 @@ var OrdersComponent = (function () {
 OrdersComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
         selector: 'app-orders',
-        template: __webpack_require__(274),
-        styles: [__webpack_require__(275)],
+        template: __webpack_require__(275),
+        styles: [__webpack_require__(276)],
         providers: [__WEBPACK_IMPORTED_MODULE_3__services_userService__["a" /* UserService */]],
         encapsulation: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewEncapsulation"].None
     }),
@@ -56022,8 +56036,8 @@ OrdersComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfileComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_usersModel__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_userService__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_usersModel__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_userService__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_jquery__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_jquery__);
@@ -56108,8 +56122,8 @@ var ProfileComponent = (function () {
 ProfileComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
         selector: 'app-profile',
-        template: __webpack_require__(277),
-        styles: [__webpack_require__(278)],
+        template: __webpack_require__(278),
+        styles: [__webpack_require__(279)],
         providers: [__WEBPACK_IMPORTED_MODULE_3__services_userService__["a" /* UserService */]],
         encapsulation: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewEncapsulation"].None
     }),
@@ -56443,7 +56457,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(301);
+var	fixUrls = __webpack_require__(302);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -86771,7 +86785,7 @@ exports.share = share;
 
 var multicast_1 = __webpack_require__(205);
 var refCount_1 = __webpack_require__(99);
-var Subject_1 = __webpack_require__(31);
+var Subject_1 = __webpack_require__(32);
 function shareSubjectFactory() {
     return new Subject_1.Subject();
 }
@@ -86870,7 +86884,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var Subject_1 = __webpack_require__(31);
+var Subject_1 = __webpack_require__(32);
 var Observable_1 = __webpack_require__(3);
 var Subscriber_1 = __webpack_require__(6);
 var Subscription_1 = __webpack_require__(40);
@@ -87423,33 +87437,33 @@ exports.hmrModule = hmrModule;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_platform_browser_animations__ = __webpack_require__(245);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__environment__ = __webpack_require__(101);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_routes__ = __webpack_require__(247);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_component__ = __webpack_require__(280);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__app_resolver__ = __webpack_require__(286);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_component__ = __webpack_require__(281);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__app_resolver__ = __webpack_require__(287);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__app_service__ = __webpack_require__(71);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_ng2_modal__ = __webpack_require__(288);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_ng2_modal__ = __webpack_require__(289);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_ng2_modal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_ng2_modal__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__home__ = __webpack_require__(107);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__about__ = __webpack_require__(108);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__no_content__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__home_x_large__ = __webpack_require__(289);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__header_header_component__ = __webpack_require__(291);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__home_x_large__ = __webpack_require__(290);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__header_header_component__ = __webpack_require__(292);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__login_login_component__ = __webpack_require__(110);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__signup_signup_component__ = __webpack_require__(125);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__footer_footer_component__ = __webpack_require__(295);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__footer_footer_component__ = __webpack_require__(296);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__chemist_chemist_component__ = __webpack_require__(126);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_ngx_facebook__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_angular_star_rating__ = __webpack_require__(299);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__styles_styles_scss__ = __webpack_require__(300);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_angular_star_rating__ = __webpack_require__(300);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__styles_styles_scss__ = __webpack_require__(301);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__styles_styles_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_25__styles_styles_scss__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__styles_headings_css__ = __webpack_require__(302);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__styles_headings_css__ = __webpack_require__(303);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__styles_headings_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_26__styles_headings_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__services_sharedService__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28_ng2_google_place_autocomplete__ = __webpack_require__(303);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28_ng2_google_place_autocomplete__ = __webpack_require__(304);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__orders_orders_component__ = __webpack_require__(127);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__profile_profile_component__ = __webpack_require__(128);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__ngui_tab__ = __webpack_require__(307);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__ngui_tab__ = __webpack_require__(308);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__ngui_tab___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_31__ngui_tab__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32_angular2_image_upload__ = __webpack_require__(309);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32_angular2_image_upload__ = __webpack_require__(310);
 
 
 
@@ -87925,7 +87939,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var Subject_1 = __webpack_require__(31);
+var Subject_1 = __webpack_require__(32);
 var ObjectUnsubscribedError_1 = __webpack_require__(98);
 /**
  * @class BehaviorSubject<T>
@@ -96062,8 +96076,8 @@ var ROUTES = [
     { path: 'orders', component: __WEBPACK_IMPORTED_MODULE_6__orders_orders_component__["a" /* OrdersComponent */] },
     { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_7__profile_profile_component__["a" /* ProfileComponent */] },
     { path: 'about', component: __WEBPACK_IMPORTED_MODULE_1__about__["a" /* AboutComponent */] },
-    { path: 'detail', loadChildren: function() { return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 313))  .then( function(module) { return module['DetailModule']; } ); } },
-    { path: 'barrel', loadChildren: function() { return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 314))  .then( function(module) { return module['BarrelModule']; } ); } },
+    { path: 'detail', loadChildren: function() { return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 314))  .then( function(module) { return module['DetailModule']; } ); } },
+    { path: 'barrel', loadChildren: function() { return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 315))  .then( function(module) { return module['BarrelModule']; } ); } },
     { path: '**', component: __WEBPACK_IMPORTED_MODULE_2__no_content__["a" /* NoContentComponent */] },
 ];
 
@@ -96086,6 +96100,10 @@ var ROUTES = [
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_jquery__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_jquery__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_addtocartService__ = __webpack_require__(254);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_userService__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__models_AddressModel__ = __webpack_require__(255);
+
+
 
 
 
@@ -96098,13 +96116,14 @@ var ROUTES = [
 
 
 var HomeComponent = (function () {
-    function HomeComponent(appState, _addtocart, renderer, title, router, _productService, SharedService) {
+    function HomeComponent(appState, _addtocart, renderer, title, router, userService, _productService, SharedService) {
         var _this = this;
         this.appState = appState;
         this._addtocart = _addtocart;
         this.renderer = renderer;
         this.title = title;
         this.router = router;
+        this.userService = userService;
         this._productService = _productService;
         this.SharedService = SharedService;
         this.localState = { value: '' };
@@ -96117,14 +96136,18 @@ var HomeComponent = (function () {
         this.SubTotal = 0;
         this.FinalTotal = 0;
         this.newAddressEnabled = false;
+        this.oldAddressEnabled = false;
+        this.OrderPlacemenAppId = 100;
         this.dosageValue = [];
         this.measurementValue = [];
         this.cart = [];
         this.cartHasItems = false;
         this.chemistId = localStorage.getItem("chemistId");
+        this.EnteredAddress = new __WEBPACK_IMPORTED_MODULE_12__models_AddressModel__["a" /* AddressModel */]();
         this.ChemistViewing = JSON.parse(localStorage.getItem('chemistDetails'));
         this.ThisUser = JSON.parse(localStorage.getItem('UserObject'));
         console.log(this.ThisUser);
+        this.EnteredAddress.UserId = this.ThisUser.Id;
         this.estimatedDeliveryTime = Math.round(this.ChemistViewing.DistanceFromUs * 6);
         /*     this._productService.getProductsByChemistId(this.chemistId).subscribe(a => {
               this.allMedicines = a.data;
@@ -96138,9 +96161,21 @@ var HomeComponent = (function () {
     }
     HomeComponent.prototype.createNewAddress = function () {
         this.newAddressEnabled = true;
+        this.oldAddressEnabled = false;
+    };
+    HomeComponent.prototype.selectThisAddress = function (event, Id) {
+        this.AddressId = Id;
+        __WEBPACK_IMPORTED_MODULE_9_jquery__(".listed-addresses").removeClass("activeAddress");
+        this.renderer.setElementClass(event.target, "activeAddress", true);
+        console.log(this.AddressId);
     };
     HomeComponent.prototype.oldAddress = function () {
+        var _this = this;
         this.newAddressEnabled = false;
+        this.userService.getAddresses(this.ThisUser.Id).subscribe(function (a) {
+            _this.EnteredAddress = a.data;
+            _this.oldAddressEnabled = true;
+        });
     };
     HomeComponent.prototype.logOut = function () {
         localStorage.setItem("UserId", "");
@@ -96154,6 +96189,13 @@ var HomeComponent = (function () {
         this._addtocart.getTimeSlots().subscribe(function (a) {
             _this.timeSlots = a.data;
         });
+        this.laterOrSoon = 200;
+    };
+    HomeComponent.prototype.placeOrder = function () {
+        console.log(this.ThisUser.Id, this.AddressId, this.laterOrSoon, this.OrderPlacemenAppId);
+        this._addtocart.placeOrder(this.ThisUser.Id, this.AddressId, this.laterOrSoon, this.OrderPlacemenAppId).subscribe(function (a) {
+            console.log(a);
+        });
     };
     HomeComponent.prototype.searchThisMedicine = function (e) {
         this.SearchedMedicines = [];
@@ -96166,6 +96208,7 @@ var HomeComponent = (function () {
     HomeComponent.prototype.AsSoonAsPossibleSelected = function () {
         this.selectedTimeSlotId = undefined;
         __WEBPACK_IMPORTED_MODULE_9_jquery__(".time-slots").slideUp();
+        this.laterOrSoon = 100;
     };
     HomeComponent.prototype.selectThisSlot = function (event, timeSlotId) {
         __WEBPACK_IMPORTED_MODULE_9_jquery__(".time-slot").removeClass("selected");
@@ -96179,6 +96222,41 @@ var HomeComponent = (function () {
     HomeComponent.prototype.showTextArea = function () {
         __WEBPACK_IMPORTED_MODULE_9_jquery__('.thisone').toggleClass("fa-chevron-up fa-chevron-down");
         __WEBPACK_IMPORTED_MODULE_9_jquery__(".textarea-div").toggleClass("slideInDown");
+    };
+    HomeComponent.prototype.saveThisAddress = function () {
+        var _this = this;
+        this.EnteredAddress.City = __WEBPACK_IMPORTED_MODULE_9_jquery__["trim"](this.EnteredAddress.City);
+        this.EnteredAddress.Area = __WEBPACK_IMPORTED_MODULE_9_jquery__["trim"](this.EnteredAddress.Area);
+        this.EnteredAddress.AddressDetail = __WEBPACK_IMPORTED_MODULE_9_jquery__["trim"](this.EnteredAddress.AddressDetail);
+        var error = false;
+        __WEBPACK_IMPORTED_MODULE_9_jquery__(".address-field").removeClass("errors");
+        if (this.EnteredAddress.City == undefined || this.EnteredAddress.City.length == 0) {
+            error = true;
+            __WEBPACK_IMPORTED_MODULE_9_jquery__("#EnteredAddressCity").addClass("errors");
+        }
+        if (this.EnteredAddress.Area == undefined || this.EnteredAddress.Area.length == 0) {
+            error = true;
+            __WEBPACK_IMPORTED_MODULE_9_jquery__("#EnteredAddressArea").addClass("errors");
+        }
+        if (this.EnteredAddress.AddressDetail == undefined || this.EnteredAddress.AddressDetail.length == 0) {
+            error = true;
+            __WEBPACK_IMPORTED_MODULE_9_jquery__("#EnteredAddressDetail").addClass("errors");
+        }
+        if (error) {
+        }
+        else {
+            this.userService.addUserAddress(this.EnteredAddress).subscribe(function (a) {
+                console.log(a);
+                if (a.code == 200) {
+                    __WEBPACK_IMPORTED_MODULE_9_jquery__("#snackbar").html(a.message);
+                    _this.AddressId = a.data.Id;
+                    _this.EnteredAddress = new __WEBPACK_IMPORTED_MODULE_12__models_AddressModel__["a" /* AddressModel */]();
+                }
+                else {
+                    __WEBPACK_IMPORTED_MODULE_9_jquery__("#snackbar").html("Errors");
+                }
+            });
+        }
     };
     HomeComponent.prototype.showMessageArea = function () {
         __WEBPACK_IMPORTED_MODULE_9_jquery__(".textarea-div2").toggleClass("slideInDown");
@@ -96548,19 +96626,21 @@ HomeComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
             __WEBPACK_IMPORTED_MODULE_4__title__["a" /* Title */],
             __WEBPACK_IMPORTED_MODULE_8__services_sharedService__["a" /* SharedService */],
             __WEBPACK_IMPORTED_MODULE_5__services_productsService__["a" /* ProductsService */],
-            __WEBPACK_IMPORTED_MODULE_10__services_addtocartService__["a" /* AddtocartService */]
+            __WEBPACK_IMPORTED_MODULE_10__services_addtocartService__["a" /* AddtocartService */],
+            __WEBPACK_IMPORTED_MODULE_11__services_userService__["a" /* UserService */]
         ],
-        styles: [__webpack_require__(255), __webpack_require__(257), __webpack_require__(259)],
+        styles: [__webpack_require__(256), __webpack_require__(258), __webpack_require__(260)],
         /**
          * Every Angular template is first compiled by the browser before Angular runs it's compiler.
          */
-        template: __webpack_require__(261)
+        template: __webpack_require__(262)
     }),
     __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__app_service__["a" /* AppState */],
         __WEBPACK_IMPORTED_MODULE_10__services_addtocartService__["a" /* AddtocartService */],
         __WEBPACK_IMPORTED_MODULE_1__angular_core__["Renderer"],
         __WEBPACK_IMPORTED_MODULE_4__title__["a" /* Title */],
         __WEBPACK_IMPORTED_MODULE_2__angular_router__["Router"],
+        __WEBPACK_IMPORTED_MODULE_11__services_userService__["a" /* UserService */],
         __WEBPACK_IMPORTED_MODULE_5__services_productsService__["a" /* ProductsService */],
         __WEBPACK_IMPORTED_MODULE_8__services_sharedService__["a" /* SharedService */]])
 ], HomeComponent);
@@ -96726,6 +96806,14 @@ var AddtocartService = (function () {
         return this.http.post(this.serviceUrl.baseUrl + "User/addToBasket", data, { headers: headers })
             .map(function (res) { return res.json(); });
     };
+    AddtocartService.prototype.placeOrder = function (userId, AddressId, OrderType, OrderPlacemenAppId) {
+        var data;
+        data = { UserId: userId, AddressId: AddressId, OrderType: OrderType, OrderPlacemenAppId: OrderPlacemenAppId };
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["Headers"]();
+        headers.append('Content-Type', 'application/json; charset=UTF-8');
+        return this.http.post(this.serviceUrl.baseUrl + "User/placeOrder", data, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
     return AddtocartService;
 }());
 AddtocartService = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
@@ -96737,10 +96825,24 @@ AddtocartService = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 /***/ }),
 /* 255 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddressModel; });
+var AddressModel = (function () {
+    function AddressModel() {
+    }
+    return AddressModel;
+}());
+
+
+
+/***/ }),
+/* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__(256);
+        var result = __webpack_require__(257);
 
         if (typeof result === "string") {
             module.exports = result;
@@ -96750,7 +96852,7 @@ AddtocartService = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
     
 
 /***/ }),
-/* 256 */
+/* 257 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)(undefined);
@@ -96758,17 +96860,17 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, "body {\r\n    margin-top:40px;\r\n\r\n}\r\np{\r\n    margin-bottom:0;\r\n}\r\n\r\n\r\n.modal-content{\r\n    border-radius:0 !important;\r\n}\r\n\r\n.stepwizard-step p {\r\n    margin-top: 10px;\r\n    color:#b9b9b8;\r\n}\r\n.stepwizard-row {\r\n    display: table-row;\r\n}\r\n.stepwizard {\r\n    display: table;\r\n    width: 30%;\r\n    margin: 30px auto;\r\n    position: relative;\r\n}\r\n.stepwizard-step button[disabled] {\r\n    opacity: 1 !important;\r\n    filter: alpha(opacity=100) !important;\r\n}\r\n.stepwizard-row:before {\r\n    top: 14px;\r\n    bottom: 0;\r\n    left: 77px;\r\n    position: absolute;\r\n    content: \" \";\r\n    width: 54%;\r\n    height: 1px;\r\n    background-color: #ccc;\r\n    z-order: 0;\r\n\r\n}\r\n.stepwizard-step {\r\n    display: table-cell;\r\n    text-align: center;\r\n    position: relative;\r\n}\r\n.btn-circle {\r\n    width: 28px;\r\n    height: 28px;\r\n    text-align: center;\r\n    padding: 2px 0;\r\n    font-size: 16px;\r\n    line-height: 1.428571429;\r\n    border-radius: 15px;\r\n    opacity: 1;\r\n}\r\n\r\n.btn-primary{\r\n    background: #1ec26b;\r\n    border:none;\r\n}\r\n\r\n.col-left{\r\n    position: relative;\r\n    float:left;\r\n    width:58%;\r\n    box-shadow: 0px 3px 10px 0px #ecebe7;\r\n    background: #fdfcfa;\r\n}\r\n\r\n.col-left .row,.col-right .row{\r\n    margin-left:0;\r\n    margin-right:0;\r\n}\r\n.col-right{\r\n    position: relative;\r\n    float:left;\r\n    box-shadow: 0px 3px 10px 0px #ecebe7;\r\n    background: #fdfcfa;\r\n    width:38%;\r\n    margin-left:2%;\r\n}\r\n\r\n.holder-box{\r\n    padding:16px;\r\n}\r\n\r\n.left-image-side{\r\n    width:90px;\r\n    position: relative;\r\n    float:left;\r\n    margin-top: 5px;\r\n}\r\n\r\n.right-name{\r\n    position: relative;\r\n    float:left;\r\n}\r\n\r\n.opening-hours{\r\n    color:#656565;\r\n    font-weight:400;\r\n    font-size:14px;\r\n}\r\n.chemist-name{\r\n    color:#656565;\r\n    font-weight:500;\r\n    font-size:20px;\r\n}\r\n\r\n.rating > span:hover:before {\r\n    content: \"\\2605\";\r\n    position: absolute;\r\n    font-size: 16px;\r\n }\r\n\r\n .rating {\r\n    unicode-bidi: bidi-override;\r\n  }\r\n  .rating > span:hover:before,\r\n  .rating > span:hover ~ span:before {\r\n     content: \"\\2605\";\r\n     position: absolute;\r\n  }\r\n  .rating > span {\r\n    display: inline-block;\r\n    position: relative;\r\n    width: 1.1em;\r\n    font-size: 16px;\r\n  }\r\n  .rating > span:hover:before,\r\n  .rating > span:hover ~ span:before {\r\n     content: \"\\2605\";\r\n     position: absolute;\r\n     font-size: 16px;\r\n  }\r\n\r\n  .chemist-ratings{\r\n      margin-top:10px;\r\n  } \r\n\r\n  .saperator{\r\n      margin-top:20px;\r\n      margin-bottom:10px;\r\n      border-bottom: 1px solid #aeaeae;\r\n  }\r\n\r\n  .one-row .name span{\r\n      color:#b4b4b4;\r\n      font-size:13px;\r\n      font-weight: 500;\r\n  }\r\n\r\n  .one-row .name .med-name{\r\n    font-weight: 500;\r\n    font-size:15px;\r\n    color:#656565;\r\n\r\n  }\r\n\r\n  .one-row .del{\r\n\r\n    position: relative;\r\n    float:left;\r\n    cursor: pointer;\r\n    width: 25px;\r\n    padding-top: 15px;\r\n  }\r\n  .one-row .name{\r\n    position: relative;\r\n    float:left;\r\n    padding-top: 0.5px;\r\n    width:40%;\r\n    padding-top: 15px;\r\n  }\r\n  .one-row .quantity{\r\n    position: relative;\r\n    float:left;\r\n\r\n  }\r\n\r\n  .one-row .subtotal{\r\n    position: relative;\r\n    float: left;\r\n    width: 41%;\r\n    text-align: right;\r\n    padding-top: 15px;\r\n  }\r\n  .one-row .subtotal p{\r\n      font-size:14px;\r\n      color:#656565;\r\n  }\r\n\r\n  .quantity input {\r\n      width: 80px;\r\n      height: 45px;\r\n      line-height: 1.65;\r\n      float: left;\r\n      display: block;\r\n      padding: 0;\r\n      margin: 0;\r\n      padding-left: 20px;\r\n      border: 1px solid #9b9b9b;\r\n      font-size: 16px;\r\n      font-weight: 400;\r\n      border-radius: 5px;   \r\n      margin-bottom: 4px; \r\n      background: none;\r\n      color:#656565;\r\n  }\r\n  \r\n  .quantity input:focus {\r\n      outline: 0;\r\n  }\r\n  \r\n  .quantity-nav {\r\n      float: left;\r\n      position: relative;\r\n      height: 44px;\r\n  }\r\n  \r\n  .quantity-button {\r\n      position: relative;\r\n      cursor: pointer;\r\n      border: 1px solid #9b9b9b !important;\r\n      width: 20px;\r\n      text-align: center;\r\n      color: #9b9b9b;\r\n      font-size: 13px;\r\n      font-family: \"Trebuchet MS\", Helvetica, sans-serif !important;\r\n      line-height: 1.7;\r\n      -webkit-transform: translateX(-100%);\r\n      transform: translateX(-100%);\r\n      -webkit-user-select: none;\r\n      -moz-user-select: none;\r\n      -ms-user-select: none;\r\n      -o-user-select: none;\r\n      user-select: none;\r\n      background: #edebe7;\r\n      width: 30px;\r\n      border: 0;\r\n      color: #fff;\r\n      font-size: 23px;\r\n      line-height: 23px;\r\n      border-radius:0 5px 0 0\r\n  \r\n  }\r\n  \r\n  .quantity-button.quantity-up {\r\n      position: absolute;\r\n      height: 52%;\r\n      top: 0;\r\n  }\r\n  \r\n  .quantity-button.quantity-down {\r\n      position: absolute;\r\n      bottom: -1px;\r\n      height: 50%;\r\n       border-radius:0 0 5px 0;\r\n  }\r\n  .footer-row p{\r\n      color:#656565;\r\n      font-size: 14px;\r\n  }\r\n  .footer-row{\r\n    padding:10px;\r\n    margin-top:20px;\r\n  }\r\n  .no-margin-top{\r\n      margin-top:0;\r\n  }\r\n\r\n  .subtotal-row{\r\n       background: #ededed;\r\n       padding:10px;\r\n       border-radius: 6px;\r\n       margin-top:20px;\r\n  }\r\n  .subtotal-heading{\r\n      width:56%;\r\n      position: relative;\r\n      float:left;\r\n      text-align: right;\r\n  }\r\n  .time-slots{\r\n      padding-left:0;\r\n      margin:0;\r\n      margin-top: 15px;\r\n  }\r\n\r\n  .time-slot{\r\n    background: transparent;\r\n    border: 1px solid #aeaeae;\r\n    padding: 5px;\r\n    width: 150px;\r\n\r\n  }\r\n  .selected{\r\n    background:#1ec26b;\r\n    color:white;\r\n    font-size:14px;\r\n  }\r\n  .time-slots li{\r\n    width: 50%;\r\n    display: inline-block;\r\n    list-style-type: none;\r\n    text-align: center;\r\n    margin: 0;\r\n    margin-bottom: 15px;\r\n  }\r\n  .subtotal-value{\r\n    width:44%;\r\n    position: relative;\r\n    float:left;\r\n    text-align: right;\r\n    font-size:15px;\r\n}\r\n\r\n.voucher-row h3{\r\n    color:#656565;\r\n    font-size:20px;\r\n    font-weight: 500;\r\n    margin-bottom:20px;\r\n}\r\n.voucher-form{\r\n    position: relative;\r\n    width: 70%;\r\n    height: 34px;\r\n}\r\n.inputBtn{\r\n    width:30%;\r\n    position: absolute;\r\n    left:65%;\r\n    top:0;\r\n    height: 34px;\r\n\r\n}\r\n.inputBtn button{\r\n    border-top-right-radius: 50px;\r\n    border-bottom-right-radius: 50px;\r\n    height: 34px;\r\n    width: 100%;\r\n    border: 1px solid #9b9b9b;\r\n    color:#3ad72a;\r\n    background: #ededed;\r\n    outline: none;\r\n    font-weight: bold;\r\n}\r\n.inputField input{\r\n    width:100%;\r\n    border-radius: 50px;\r\n    outline:none;\r\n    border:1px solid #9b9b9b;\r\n    height: 34px;\r\n}\r\n.inputField{\r\n    width:70%;\r\n    position: relative;\r\n    float:left;\r\n    left:0;\r\n    border-top-right-radius: 50%;\r\n    border-bottom-right-radius: 50%;\r\n    height: 34px;\r\n}\r\n\r\n.font20{\r\n    font-size:20px;\r\n}\r\n\r\n.delivery-text{\r\n    font-size:14px; \r\n    color:#656565;\r\n    display: block;\r\n    padding-left: 28px;\r\n    color:#656565;\r\n}\r\n\r\n.col-right h3{\r\n    font-size:22px;\r\n    margin-top: 10px;\r\n    margin-bottom: 25px;\r\n\r\n\r\n}\r\n.italic-text{\r\n    font-style: italic;\r\n    font-size:12px;\r\n    word-spacing: 1px;\r\n    color:#656565;\r\n}\r\n.message-text img{\r\n    width:16px;\r\n}\r\n.message-text p{\r\n    font-size:14px;\r\n    word-spacing: 2px;\r\n    color:#1ec26b;\r\n    text-decoration: underline;\r\n    font-weight: 600;\r\n\r\n}\r\n\r\n.alignCenter{\r\n    text-align: center;\r\n}\r\n.checkout-btn{\r\n    background: #00b276;\r\n    color: white;\r\n    border-radius: 57px;\r\n    width: 100%;\r\n    border: none;\r\n    font-weight: 700;\r\n    height: 45px;\r\n    margin-top: 20px;\r\n    font-size:16px;\r\n    width:100%;\r\n}\r\n\r\n.inner-wrapper{\r\n    box-shadow: 0px 3px 10px 0px #ecebe7;\r\n    background: #fdfcfa;\r\n}\r\n.left-pane{\r\n    position: relative;\r\n    float: left;\r\n    width: 69%;\r\n    margin-right: 1.6%;\r\n    \r\n}\r\n\r\n.right-pane{\r\n    position: relative;\r\n    float:left;\r\n    margin-top: 20px;\r\n    width: 28%;\r\n    \r\n}\r\n\r\n.right-pane .one-row{\r\n    padding-left:20px;\r\n    padding-right:20px;\r\n}\r\n.right-pane .time-pane,.right-pane .cart{\r\n    box-shadow: 0px 3px 10px 0px #ecebe7;\r\n    background: #fdfcfa;\r\n}\r\n\r\n.left-pane h3,.right-pane h3{\r\n    font-size:20px;\r\n    color:#656565;\r\n    padding-top:22px;\r\n    margin-bottom:22px;\r\n    padding-left:20px;\r\n    \r\n}\r\n\r\n.lefty-side,.righty-side{\r\n    position: relative;\r\n    float:left;\r\n}\r\n.left-pane .body{\r\n    padding: 30px 20px;\r\n}\r\n.righty-side{\r\n    width:60%;\r\n}\r\n.lefty-side{\r\n    width: 140px;\r\n}\r\n.rightyVal{\r\n    margin-bottom:15px;\r\n    margin-top:0;\r\n    font-weight: 300;\r\n    font-size:15px;\r\n    color:#656565;\r\n}\r\n\r\n.green{\r\n    color:#1ec26b;\r\n    text-decoration: underline;\r\n}\r\n\r\n.leftyVa{\r\n    margin-bottom:15px;\r\n    margin-top:0;\r\n    font-weight: 700;\r\n    font-size:15px;\r\n    color:#656565;\r\n}\r\n\r\n.left-pane .header,.right-pane .header{\r\n    border-bottom:1px solid #aeaeae;\r\n\r\n}\r\n\r\n.left-pane .panel{\r\n    background:#fefefd;\r\n    border:1px solid #d5d5d4;\r\n}\r\n.oldAddress{\r\n    padding: 10px 15px;\r\n    border-bottom: 1px solid transparent;\r\n    background:#fefefd;\r\n    border-radius: 4px;\r\n    border:1px solid #d5d5d4;\r\n    margin-bottom:15px;\r\n}\r\n\r\n.pay-now-details{\r\n    background:#f9f9f8;\r\n    padding:30px 0 30px 30px;\r\n}\r\n\r\n.pay-now-details .form-group .form-control{\r\n    height:32px;\r\n    width:50%;\r\n    outline:none;\r\n    padding-left:10px;\r\n    display: inline-block;\r\n    border-radius: 0 !important;\r\n    margin-right: 15px;\r\n    border:1px solid #aeaeae;\r\n}\r\n.required{\r\n    font-size:14px;\r\n    font-weight: 300;\r\n    font-style:italic;\r\n}\r\n\r\n.requiredRed{\r\n    margin-right:6px;\r\n    color:#ff3b3b;\r\n}\r\n.normalText{\r\n    font-size:17px;\r\n    margin-top:20px;\r\n    font-weight: 700;\r\n}\r\n\r\n.address-field{\r\n    height:32px;\r\n    border:1px solid #aeaeae;\r\n    background:#ffffff;\r\n    width: 50%;\r\n    margin-right:25px;\r\n    margin-top:10px;\r\n    padding-left:15px;\r\n}\r\n.location-box{\r\n    margin-top:25px;\r\n}\r\n.location-text{\r\n     font-size: 14px;\r\n     font-weight: 300;\r\n    margin-top:10px;\r\n    margin-bottom:30px;\r\n}\r\n\r\n#accordion2 .panel-body{\r\n    padding:30px;\r\n}\r\n\r\n.optional{\r\n    font-size:14px;\r\n    font-weight: 500;\r\n    color:#656565;\r\n}\r\n#accordion2 .message-text img{\r\n    margin-right: 5px;\r\n   \r\n}\r\n#accordion2 .message-text{\r\n    padding-left: 15px;\r\n    margin-bottom:25px;\r\n}\r\n.inner-wrapper .message-text p{\r\n    display: inline-block;\r\n}\r\n\r\n.pay-now-details h3{\r\n    font-size:25px;\r\n    font-weight: bold;\r\n    color:#656565;\r\n    margin-top:25px;\r\n    margin-bottom:25px;\r\n}\r\n\r\n.custom-dropdown:checked + label:before,\r\n.custom-dropdown:not(:checked) + label:before {\r\n    content: '';\r\n    position: absolute;\r\n    display:none;\r\n    left: 0;\r\n    top: 0;\r\n    width: 20px;\r\n    height: 20px;\r\n    border: 1px solid #b6b6b6;\r\n    border-radius: 100%;\r\n    background: #fff;\r\n    color:#aeaeae;\r\n}\r\n\r\n.custom-dropdown:checked + label:after,\r\n.custom-dropdown:not(:checked) + label:after {\r\n    display: none;\r\n    content: '';\r\n    width: 12px;\r\n    height: 12px;\r\n    background: #1ec26b;\r\n    position: absolute;\r\n    top: 4px;\r\n    left: 4px;\r\n    border-radius: 100%;\r\n    -webkit-transition: all 0.2s ease;\r\n    transition: all 0.2s ease;\r\n    color:#676767;\r\n}\r\n\r\n.bottom-text{\r\n    margin-top:75px;\r\n}\r\n\r\n.bottom-text1{\r\n    font-size:14px;\r\n    font-weight: 300;\r\n    color:#656565;\r\n    \r\n}\r\n\r\n.bottom-text2{\r\n    font-size:14px;\r\n    font-weight: 300;\r\n    color:#656565;\r\n    margin-top:40px;\r\n}\r\n\r\n.left-equal{\r\n    position: relative;\r\n    float:left;\r\n    width:50%;\r\n    text-align:left;\r\n    font-size:20px;\r\n    font-weight: 700;\r\n    margin-bottom:40px;\r\n}\r\n\r\n.right-equal{\r\n    position: relative;\r\n    float:left;\r\n    width:50%;\r\n    text-align:right;\r\n    font-size:20px;\r\n    font-weight: 700;\r\n    margin-bottom:40px;\r\n}\r\n\r\n.special{\r\n    min-height: 250px;\r\n    margin-top: 15px;\r\n    padding-top:35px;\r\n}\r\n.place-now{\r\n    width:100%;\r\n    border:none;\r\n    height:58px;\r\n    line-height: 58px;\r\n    border-radius: 4px;\r\n    background: #1ec26b;\r\n    color:white;\r\n    font-size:22px;\r\n    font-weight: 700;\r\n    margin-top:10px;\r\n\r\n}\r\n\r\n.right-estimate{\r\n    font-size:12px;\r\n    font-weight: 700;\r\n    color:#656565;\r\n    padding: 30px 10px;\r\n}\r\n.big{\r\n    font-size:38px;\r\n    font-weight: 500;\r\n    color:#656565;\r\n    padding: 2px 10px;\r\n    height: 42px;\r\n}\r\n.small{\r\n    font-size:12px;\r\n    font-weight: 500;\r\n}\r\n.time{\r\n    width: 65px;\r\n    text-align: center;\r\n    float: right;\r\n    margin-top: 15px;\r\n}\r\n\r\n.item{\r\n    position: relative;\r\n    float:left;\r\n    width:70%;\r\n}\r\n\r\n.price{\r\n    position: relative;\r\n    float:left;\r\n    width:30%;\r\n}\r\n\r\n.item-detail{\r\n    display: inline-block;\r\n    padding-right: 4px;\r\n\r\n}\r\n.one-row{\r\n    margin-top:10px;\r\n    margin-bottom:10px;\r\n}\r\n\r\n.price{\r\n    text-align: right;\r\n}\r\n\r\n.item .optional{\r\n    color:#aeaeae;\r\n    font-size:12px;\r\n}\r\n.footer .one-row{\r\n    margin-bottom:15px;\r\n}\r\n\r\n.footer .one-row .item{\r\n    width:50%;\r\n    position: relative;\r\n    float:left;\r\n    text-align: left;\r\n}\r\n.footer .one-row .price{\r\n    width:50%;\r\n    position: relative;\r\n    float:left;\r\n    text-align: right;\r\n}\r\n.more-margin{\r\n    margin-top:20px;\r\n}\r\n.cart .body{\r\n /*    border-top:1px solid #cecdcc;\r\n    border-bottom:1px solid #cecdcc; */\r\n}\r\n\r\n.bigText{\r\n    font-size:28px;\r\n    font-weight: 300;\r\n}\r\n\r\n.opening-hours{\r\n    color:#50cb84;\r\n    font-weight:500;\r\n    font-size:12px;\r\n    margin-top: -4px;\r\n    \r\n}\r\n\r\n.headging-with-rating{\r\n    display:inline-block;\r\n    text-transform: capitalize;\r\n    font-size:23px;\r\n    color:#656565;\r\n    font-weight: 500;\r\n    word-wrap: break-word;\r\n    width: 100px;\r\n}\r\n#step-1 .chemist-ratings{\r\n    display:inline-block;\r\n    margin-left: 10px;\r\n}\r\n\r\n#step-1 .star{\r\n    height: 18px;\r\n}\r\n\r\n#step-1 .inner-wrapper{\r\n    padding: 30px 20px;\r\n}\r\n.right-search .voucher-form{\r\n    position: relative;\r\n    width: 100%;\r\n    height: 42px;\r\n    margin: 5px auto;\r\n}\r\n.right-search .inputBtn{\r\n    width:30%;\r\n    position: absolute;\r\n    left:70%;\r\n    top:0;\r\n    height: 42px;\r\n\r\n}\r\n.right-search .inputBtn button{\r\n    border-top-right-radius: 50px;\r\n    border-bottom-right-radius: 50px;\r\n    height: 42px;\r\n    width: 85%;\r\n    border: 1px solid #1ec26b;\r\n    color:#fff;\r\n    background: #1ec26b;\r\n    outline: none;\r\n    font-weight: 500;\r\n    font-size:18px;\r\n}\r\n.right-search .inputField input{\r\n    width:100%;\r\n    border-radius: 50px;\r\n    outline:none;\r\n    border:1px solid #1ec26b;\r\n    height: 42px;\r\n    padding-left: 40px;\r\n    color:#aeaeae;\r\n    font-size:18px;\r\n}\r\n.right-search .inputField{\r\n    width:80%;\r\n    position: relative;\r\n    float:left;\r\n    left:0;\r\n    border-top-right-radius: 50%;\r\n    border-bottom-right-radius: 50%;\r\n    height: 42px;\r\n}\r\n\r\n.left-chemist,.right-search{\r\n    position: relative;\r\n    float: left;\r\n    \r\n}\r\n\r\n.left-chemist{\r\n    width:45%;\r\n}\r\n\r\n.right-search{\r\n    width:55%;\r\n}\r\n\r\n.tabs{\r\n    padding: 8px !important;\r\n    padding-bottom: 0px !important;\r\n}\r\n.tabs div{\r\n    border:none;\r\n    border-radius:0;\r\n    padding-bottom:0;\r\n}\r\n.tabs .selected p{\r\n    font-weight: 700;\r\n    font-size:18px;\r\n    color:#656565;\r\n    padding-bottom:10px;\r\n    border-bottom:2px solid #1ec26b;\r\n}\r\n\r\n#step-1 .right-pane{\r\n    margin-top:0 !important;\r\n}\r\n.tabs div p{\r\n    font-weight: 300;\r\n    font-size:18px;\r\n    color:#656565;\r\n    padding-bottom:10px;\r\n}\r\n.tabs .selected{\r\n   \r\n    background:transparent;\r\n}\r\n.tab-contents{\r\n    border:none;\r\n}\r\n.product-image{\r\n    height: 216px;\r\n    border-bottom: 1px solid #bababa;\r\n}\r\n.product-image img{\r\n    max-width: 100%;\r\n    height: auto;\r\n    \r\n}\r\n.products-list{\r\n    padding-left:0;\r\n}\r\n\r\n.products-list li{\r\n    display: inline-block;\r\n    width: 29%;\r\n    margin-right: 30px;\r\n    margin-top:30px;\r\n    box-shadow: 0px 3px 10px 0px #c7c6c3;\r\n    transition: box-shadow 0.3s ease-in-out;\r\n    position: relative;\r\n}\r\n.products-list li:hover{\r\n    box-shadow: none;\r\n}\r\n.plus-sign{\r\n    cursor:pointer;\r\n    position: absolute;\r\n    bottom: -12px;\r\n    right: -12px;\r\n    text-align:center;\r\n    width:60px;\r\n    height:60px;\r\n    border-radius: 60px;\r\n    background:#1ec26b;\r\n    display:none;\r\n    box-shadow: 0px 3px 10px 0px #d9cdc8;\r\n}\r\n.plus-sign img{\r\n    padding-top: 13px;\r\n}\r\n.product-wrapper{\r\n    background:white;\r\n    border-radius:0;\r\n    padding:10px;\r\n    cursor:pointer;\r\n}\r\n\r\n.product-detail{\r\n    margin-top:10px;\r\n}\r\n.product-detail h2{\r\n    font-size:15px;\r\n    font-weight: 500;\r\n    color:#000000;\r\n    margin:0;\r\n    margin-bottom:15px;\r\n}\r\n.product-detail p{\r\n    font-size:14px;\r\n    font-weight: 300;\r\n    color:#000000;\r\n    margin:0;\r\n\r\n}\r\n\r\n/deep/ .detailModalClass .modal-content{\r\n    border-radius: 0 !important;\r\n}\r\n\r\n/deep/ .detailModalClass button.close{\r\n    position: absolute;\r\n    width: 38px;\r\n    height: 38px;\r\n    background: #1ec26b;\r\n    color: white;\r\n    border-radius: 38px;\r\n    opacity: 1;\r\n    z-index: 2;\r\n    right: 23px;\r\n    top: -21px;\r\n    box-shadow:0px 3px 10px 0px #d0d0d0;\r\n}\r\n/deep/ .detailModalClass .modal-footer{\r\n    display:none;\r\n}\r\n/deep/ .detailModalClass .modal-header{\r\n    padding:0;\r\n}\r\n/deep/ .detailModalClass .modal-body{\r\n    padding:40px;\r\n}\r\n\r\n.cart-button{\r\n    margin-top: 32px;\r\n    color: white;\r\n    background: #1ec26b;\r\n    width: 300px;\r\n    border-radius: 6px;\r\n    height: 58px;\r\n    font-size: 22px;\r\n    font-weight: 500;\r\n    margin: 20px auto;\r\n    border: none;\r\n    margin-bottom: 0;\r\n}\r\n .modal-name,.modal-quantity{\r\n\r\n    position: relative;\r\n    float:left;\r\n    width:50%;\r\n}\r\n\r\n.modal-quantity{\r\n    text-align: right;\r\n}\r\n\r\n.modal-name p{\r\n    font-size:20px;\r\n    font-weight: 500;\r\n    color:black;\r\n\r\n}\r\n\r\n.modal-quantity i{\r\n    color:#1ec26b;\r\n    font-size: 18px;\r\n    margin-left:10px;\r\n}\r\n\r\n.center-align{\r\n    text-align: center;\r\n}\r\n\r\n.textarea-div,.textarea-div2{\r\n    display:none;\r\n}\r\n.textarea-div textarea,.textarea-div2 textarea{\r\n    background: #eeeeee;\r\n    border-radius: 0;\r\n    border:1px solid #9b9b9b;\r\n    margin-top:20px;\r\n    width:100%;\r\n    height:100px;\r\n    padding-left:15px;\r\n}\r\n.slideInDown{\r\n    display:block !important;\r\n}\r\n\r\n/* quantity */\r\n\r\n\r\n.modal-quantity #prod-quantity-cart{\r\n    position: relative;\r\n    height: 66px;\r\n    text-align: right;\r\n    width: 234px;\r\n    margin-left: 0;\r\n    float: right;\r\n}\r\n\r\n#prod-quantity-cart .qtyplus{\r\n  \r\n    text-align: left;\r\n    color:#1ec26b;\r\n    font-weight: bold;\r\n    font-size: 24px;\r\n    width: 35px;\r\n    position: absolute;\r\n    left: 212px;\r\n    cursor: pointer;\r\n    border:none;\r\n    background:transparent;\r\n    width: 35px;\r\n    outline:none;\r\n}\r\n\r\n#prod-quantity-cart #num_val{\r\n    width: 110px;\r\n    position: absolute;\r\n    left:100px;\r\n    text-align: center;\r\n    font-size:25px;\r\n    font-weight: 500;\r\n    color:#656565;\r\n    border:none;\r\n}\r\n\r\n#prod-quantity-cart .qtyminus{\r\n    position: absolute;\r\n    left:62px;\r\n    width: 35px;\r\n    border:none;\r\n    background:transparent;\r\n    cursor:pointer;\r\n    text-align: right;\r\n    color:#1ec26b;\r\n    font-weight: bold;\r\n    font-size: 24px;\r\n    outline:none;\r\n}\r\n\r\n.dosage{\r\n    width:130px;\r\n    padding: 10px;\r\n}\r\n.clear{\r\n    clear:both;\r\n    float:none;\r\n}\r\n/* qunatity */\r\n\r\n/* Tabs */\r\n\r\n/***\r\nBootstrap Line Tabs by @keenthemes\r\nA component of Metronic Theme - #1 Selling Bootstrap 3 Admin Theme in Themeforest: http://j.mp/metronictheme\r\nLicensed under MIT\r\n***/\r\n\r\n/* Tabs panel */\r\n.tabbable-panel {\r\n    border:none;\r\n  }\r\n\r\n  .nav-tabs{\r\n      background:#fdfcfa;\r\n      height: 56px;\r\n      border-top:1px solid #a0a0a0 !important;\r\n  }\r\n  \r\n  /* Default mode */\r\n  .tabbable-line > .nav-tabs {\r\n    border: none;\r\n    margin: 0px;\r\n  }\r\n\r\n  .tabbable-line > .nav-tabs > li:after{\r\n    display:block;\r\n    content: '';\r\n    padding-bottom: 15px;\r\n    border-bottom: solid 2px #1ec26b;  \r\n    transform: scaleX(0);  \r\n    transition: transform 250ms ease-in-out;\r\n  }\r\n  \r\n  .tabbable-line > .nav-tabs > li:hover:after { transform: scaleX(1); }\r\n\r\n  .tabbable-line > .nav-tabs > li {\r\n    margin-right: 2px;\r\n    margin:0;\r\n    padding: 15px 0px;\r\n    margin: 0px 15px;\r\n  }\r\n  .tabbable-line > .nav-tabs > li > a {\r\n    border: 0;\r\n    margin-right: 0;\r\n    color: #737373;\r\n    text-transform: capitalize;\r\n  }\r\n  .tabbable-line > .nav-tabs > li > a > i {\r\n    color: #a6a6a6;\r\n  }\r\n/*   .tabbable-line > .nav-tabs > li.open, .tabbable-line > .nav-tabs > li:hover {\r\n    border-bottom: 2px solid #1ec26b;\r\n  } */\r\n  .tabbable-line > .nav-tabs > li.open > a, .tabbable-line > .nav-tabs > li:hover > a {\r\n    border: 0;\r\n    background: none !important;\r\n    color: #333333;\r\n  }\r\n  .tabbable-line > .nav-tabs > li.open > a > i, .tabbable-line > .nav-tabs > li:hover > a > i {\r\n    color: #a6a6a6;\r\n  }\r\n  .tabbable-line > .nav-tabs > li.open .dropdown-menu, .tabbable-line > .nav-tabs > li:hover .dropdown-menu {\r\n    margin-top: 0px;\r\n  }\r\n  .tabbable-line > .nav-tabs > li.active {\r\n    border-bottom: 2px solid #1ec26b;\r\n    position: relative;\r\n    padding-bottom: 0;\r\n  }\r\n  .tabbable-line > .nav-tabs > li.active > a {\r\n    border: 0;\r\n    background: transparent;\r\n    color: #333333;\r\n  }\r\n  .tabbable-line > .nav-tabs > li.active > a > i {\r\n    color: #404040;\r\n  }\r\n  .tabbable-line > .tab-content {\r\n    margin-top: -3px;\r\n    background-color: #faf9f5;\r\n    border: 0;\r\n    padding: 5px 0;\r\n  }\r\n  .nav>li>a {\r\n    position: relative;\r\n    display: block;\r\n    padding: 0 !important;\r\n}\r\n\r\n  .tab-content>.active{\r\n    background-color: #faf9f5;\r\n  }\r\n  .portlet .tabbable-line > .tab-content {\r\n    padding-bottom: 0;\r\n  }\r\n  \r\n  /* Below tabs mode */\r\n  \r\n  .tabbable-line.tabs-below > .nav-tabs > li {\r\n    border-top: 4px solid transparent;\r\n  }\r\n  .tabbable-line.tabs-below > .nav-tabs > li > a {\r\n    margin-top: 0;\r\n  }\r\n  .tabbable-line.tabs-below > .nav-tabs > li:hover {\r\n    border-bottom: 0;\r\n    border-top: 2px solid #1ec26b;\r\n  }\r\n  .tabbable-line.tabs-below > .nav-tabs > li.active {\r\n    margin-bottom: -2px;\r\n    border-bottom: 0;\r\n    border-top: 2px solid #1ec26b;\r\n  }\r\n  .tabbable-line.tabs-below > .tab-content {\r\n    margin-top: -10px;\r\n    border-top: 0;\r\n    border-bottom: 1px solid #eee;\r\n    padding-bottom: 15px;\r\n  }\r\n  .nav-tabs>li>a{\r\n      border-radius: 0 !important;\r\n  }\r\n\r\n  .addressesPane{\r\n    padding: 20px;\r\n    margin-bottom: 15px;\r\n    background: white;\r\n    border-radius: 4px;\r\n    border: 1px solid #ccc;\r\n  }\r\n  .addressesPane .row{\r\n      margin:0 !important;\r\n  }\r\n/* Tabs */\r\n@media only screen and (max-width: 1200px) and (min-width: 992px){\r\n    .products-list li{\r\n        width: 32%;\r\n        margin-right:7px;\r\n    }\r\n    .one-row .subtotal{\r\n        width:29%;\r\n    }\r\n}\r\n\r\n@media only screen and (max-width: 992px) and (min-width: 768px){\r\n    .stepwizard-row:before{\r\n        left: 50px;\r\n    }\r\n    .left-chemist{\r\n        width:35%\r\n    }\r\n    .right-search{\r\n        width:65%;\r\n    }\r\n\r\n    #step-1 .chemist-ratings{\r\n        margin-left: -4px;\r\n        margin-bottom: 15px;\r\n    }\r\n\r\n    .products-list   li{\r\n        width:43%;\r\n    }\r\n    .one-row .subtotal{\r\n        width:29%;\r\n    }\r\n}\r\n\r\n@media only screen and (max-width: 768px) and (min-width:460px) {\r\n    .left-pane,.right-pane{\r\n        width:100%;\r\n    }\r\n    .products-list   li{\r\n        width:28%;\r\n    }\r\n    .product-image{\r\n        height:155px;\r\n    }\r\n}\r\n@media only screen and (max-width: 768px) {\r\n    .col-left,.col-right{\r\n        width:100%;\r\n    }\r\n    .one-row .subtotal{\r\n        width:40%;\r\n    }\r\n\r\n    .stepwizard-row:before{\r\n        left: 72px;\r\n        width:70%;\r\n    }\r\n\r\n    .stepwizard{\r\n        width:100%;\r\n    }\r\n\r\n\r\n    .col-right{\r\n        margin-left:0;\r\n        margin-top:20px;\r\n    }\r\n    \r\n    \r\n}\r\n\r\n@media only screen and (max-width: 640px){\r\n    .left-pane,.right-pane{\r\n        width:100%;\r\n        margin-left:0;\r\n        margin-top:15px;\r\n    }\r\n\r\n    .voucher-form{\r\n        width:100%;\r\n    }\r\n    .left-chemist{\r\n        width: 100%;\r\n        text-align: center;\r\n        margin-bottom: 15px;\r\n    }\r\n    .right-search {\r\n        width: 100%;\r\n    }\r\n\r\n    .products-list li{\r\n        width: 100%;\r\n        margin-right: 0;\r\n    }\r\n\r\n    .product-image{\r\n        height:270px;\r\n    }\r\n    .product-detail h2{\r\n        text-align:center;\r\n    }\r\n\r\n    .modal-name,.modal-quantity{\r\n        width: 100%;\r\n        margin-bottom:15px;\r\n    }\r\n    .cart-button{\r\n        width:100%;\r\n    }\r\n\r\n    /deep/ .detailModalClass .modal-body{\r\n        padding:15px;\r\n    }\r\n    .right-name{\r\n        width:65%;\r\n    }\r\n    .stepwizard-row:before{\r\n        left:50px;\r\n    }\r\n    .lefty-side {\r\n        width: 70px;\r\n    }\r\n    .address-field{\r\n        width:100%;\r\n    }\r\n    .dosage{\r\n        margin-bottom:6px;\r\n    }\r\n}", ""]);
+exports.push([module.i, "body {\r\n    margin-top:40px;\r\n\r\n}\r\np{\r\n    margin-bottom:0;\r\n}\r\n\r\n\r\n.modal-content{\r\n    border-radius:0 !important;\r\n}\r\n\r\n.stepwizard-step p {\r\n    margin-top: 10px;\r\n    color:#b9b9b8;\r\n}\r\n.stepwizard-row {\r\n    display: table-row;\r\n}\r\n.stepwizard {\r\n    display: table;\r\n    width: 30%;\r\n    margin: 30px auto;\r\n    position: relative;\r\n}\r\n.stepwizard-step button[disabled] {\r\n    opacity: 1 !important;\r\n    filter: alpha(opacity=100) !important;\r\n}\r\n.stepwizard-row:before {\r\n    top: 14px;\r\n    bottom: 0;\r\n    left: 77px;\r\n    position: absolute;\r\n    content: \" \";\r\n    width: 54%;\r\n    height: 1px;\r\n    background-color: #ccc;\r\n    z-order: 0;\r\n\r\n}\r\n.stepwizard-step {\r\n    display: table-cell;\r\n    text-align: center;\r\n    position: relative;\r\n}\r\n.btn-circle {\r\n    width: 28px;\r\n    height: 28px;\r\n    text-align: center;\r\n    padding: 2px 0;\r\n    font-size: 16px;\r\n    line-height: 1.428571429;\r\n    border-radius: 15px;\r\n    opacity: 1;\r\n}\r\n\r\n.btn-primary{\r\n    background: #1ec26b;\r\n    border:none;\r\n}\r\n\r\n.col-left{\r\n    position: relative;\r\n    float:left;\r\n    width:58%;\r\n    box-shadow: 0px 3px 10px 0px #ecebe7;\r\n    background: #fdfcfa;\r\n}\r\n\r\n.col-left .row,.col-right .row{\r\n    margin-left:0;\r\n    margin-right:0;\r\n}\r\n.col-right{\r\n    position: relative;\r\n    float:left;\r\n    box-shadow: 0px 3px 10px 0px #ecebe7;\r\n    background: #fdfcfa;\r\n    width:38%;\r\n    margin-left:2%;\r\n}\r\n\r\n.holder-box{\r\n    padding:16px;\r\n}\r\n\r\n.left-image-side{\r\n    width:90px;\r\n    position: relative;\r\n    float:left;\r\n    margin-top: 5px;\r\n}\r\n\r\n.right-name{\r\n    position: relative;\r\n    float:left;\r\n}\r\n\r\n.opening-hours{\r\n    color:#656565;\r\n    font-weight:400;\r\n    font-size:14px;\r\n}\r\n.chemist-name{\r\n    color:#656565;\r\n    font-weight:500;\r\n    font-size:20px;\r\n}\r\n\r\n.rating > span:hover:before {\r\n    content: \"\\2605\";\r\n    position: absolute;\r\n    font-size: 16px;\r\n }\r\n\r\n .rating {\r\n    unicode-bidi: bidi-override;\r\n  }\r\n  .rating > span:hover:before,\r\n  .rating > span:hover ~ span:before {\r\n     content: \"\\2605\";\r\n     position: absolute;\r\n  }\r\n  .rating > span {\r\n    display: inline-block;\r\n    position: relative;\r\n    width: 1.1em;\r\n    font-size: 16px;\r\n  }\r\n  .rating > span:hover:before,\r\n  .rating > span:hover ~ span:before {\r\n     content: \"\\2605\";\r\n     position: absolute;\r\n     font-size: 16px;\r\n  }\r\n\r\n  .chemist-ratings{\r\n      margin-top:10px;\r\n  } \r\n\r\n  .saperator{\r\n      margin-top:20px;\r\n      margin-bottom:10px;\r\n      border-bottom: 1px solid #aeaeae;\r\n  }\r\n\r\n  .one-row .name span{\r\n      color:#b4b4b4;\r\n      font-size:13px;\r\n      font-weight: 500;\r\n  }\r\n\r\n  .one-row .name .med-name{\r\n    font-weight: 500;\r\n    font-size:15px;\r\n    color:#656565;\r\n\r\n  }\r\n\r\n  .one-row .del{\r\n\r\n    position: relative;\r\n    float:left;\r\n    cursor: pointer;\r\n    width: 25px;\r\n    padding-top: 15px;\r\n  }\r\n  .one-row .name{\r\n    position: relative;\r\n    float:left;\r\n    padding-top: 0.5px;\r\n    width:40%;\r\n    padding-top: 15px;\r\n  }\r\n  .one-row .quantity{\r\n    position: relative;\r\n    float:left;\r\n\r\n  }\r\n\r\n  .one-row .subtotal{\r\n    position: relative;\r\n    float: left;\r\n    width: 41%;\r\n    text-align: right;\r\n    padding-top: 15px;\r\n  }\r\n  .one-row .subtotal p{\r\n      font-size:14px;\r\n      color:#656565;\r\n  }\r\n\r\n  .quantity input {\r\n      width: 80px;\r\n      height: 45px;\r\n      line-height: 1.65;\r\n      float: left;\r\n      display: block;\r\n      padding: 0;\r\n      margin: 0;\r\n      padding-left: 20px;\r\n      border: 1px solid #9b9b9b;\r\n      font-size: 16px;\r\n      font-weight: 400;\r\n      border-radius: 5px;   \r\n      margin-bottom: 4px; \r\n      background: none;\r\n      color:#656565;\r\n  }\r\n  \r\n  .quantity input:focus {\r\n      outline: 0;\r\n  }\r\n  \r\n  .quantity-nav {\r\n      float: left;\r\n      position: relative;\r\n      height: 44px;\r\n  }\r\n  \r\n  .quantity-button {\r\n      position: relative;\r\n      cursor: pointer;\r\n      border: 1px solid #9b9b9b !important;\r\n      width: 20px;\r\n      text-align: center;\r\n      color: #9b9b9b;\r\n      font-size: 13px;\r\n      font-family: \"Trebuchet MS\", Helvetica, sans-serif !important;\r\n      line-height: 1.7;\r\n      -webkit-transform: translateX(-100%);\r\n      transform: translateX(-100%);\r\n      -webkit-user-select: none;\r\n      -moz-user-select: none;\r\n      -ms-user-select: none;\r\n      -o-user-select: none;\r\n      user-select: none;\r\n      background: #edebe7;\r\n      width: 30px;\r\n      border: 0;\r\n      color: #fff;\r\n      font-size: 23px;\r\n      line-height: 23px;\r\n      border-radius:0 5px 0 0\r\n  \r\n  }\r\n  \r\n  .quantity-button.quantity-up {\r\n      position: absolute;\r\n      height: 52%;\r\n      top: 0;\r\n  }\r\n  \r\n  .quantity-button.quantity-down {\r\n      position: absolute;\r\n      bottom: -1px;\r\n      height: 50%;\r\n       border-radius:0 0 5px 0;\r\n  }\r\n  .footer-row p{\r\n      color:#656565;\r\n      font-size: 14px;\r\n  }\r\n  .footer-row{\r\n    padding:10px;\r\n    margin-top:20px;\r\n  }\r\n  .no-margin-top{\r\n      margin-top:0;\r\n  }\r\n\r\n  .subtotal-row{\r\n       background: #ededed;\r\n       padding:10px;\r\n       border-radius: 6px;\r\n       margin-top:20px;\r\n  }\r\n  .subtotal-heading{\r\n      width:56%;\r\n      position: relative;\r\n      float:left;\r\n      text-align: right;\r\n  }\r\n  .time-slots{\r\n      padding-left:0;\r\n      margin:0;\r\n      margin-top: 15px;\r\n  }\r\n\r\n  .time-slot{\r\n    background: transparent;\r\n    border: 1px solid #aeaeae;\r\n    padding: 5px;\r\n    width: 150px;\r\n\r\n  }\r\n  .selected{\r\n    background:#1ec26b;\r\n    color:white;\r\n    font-size:14px;\r\n  }\r\n  .time-slots li{\r\n    width: 50%;\r\n    display: inline-block;\r\n    list-style-type: none;\r\n    text-align: center;\r\n    margin: 0;\r\n    margin-bottom: 15px;\r\n  }\r\n  .subtotal-value{\r\n    width:44%;\r\n    position: relative;\r\n    float:left;\r\n    text-align: right;\r\n    font-size:15px;\r\n}\r\n\r\n.voucher-row h3{\r\n    color:#656565;\r\n    font-size:20px;\r\n    font-weight: 500;\r\n    margin-bottom:20px;\r\n}\r\n.voucher-form{\r\n    position: relative;\r\n    width: 70%;\r\n    height: 34px;\r\n}\r\n.inputBtn{\r\n    width:30%;\r\n    position: absolute;\r\n    left:65%;\r\n    top:0;\r\n    height: 34px;\r\n\r\n}\r\n.inputBtn button{\r\n    border-top-right-radius: 50px;\r\n    border-bottom-right-radius: 50px;\r\n    height: 34px;\r\n    width: 100%;\r\n    border: 1px solid #9b9b9b;\r\n    color:#3ad72a;\r\n    background: #ededed;\r\n    outline: none;\r\n    font-weight: bold;\r\n}\r\n.errors{\r\n    border:1px solid red;\r\n}\r\n.save-address{\r\n    font-size:16px;\r\n    font-weight: 500;\r\n    color:white;\r\n    background: #1ec26b;\r\n    text-transform: uppercase;\r\n    border-radius: 4px;\r\n    height: 40px;\r\n    width: 150px;\r\n    border:none;\r\n    margin-top: 5px;\r\n}\r\n.EnteredAddress li{\r\n   list-style-type:none;    margin: 15px 0;\r\n}\r\n.EnteredAddress li button{\r\n    background: none;\r\n    border: 1px solid #ddd;\r\n    padding: 5px;\r\n}\r\n\r\n.activeAddress{\r\n    background:#1ec26b !important;\r\n    color:white;\r\n    font-size:14px;\r\n}\r\n.inputField input{\r\n    width:100%;\r\n    border-radius: 50px;\r\n    outline:none;\r\n    border:1px solid #9b9b9b;\r\n    height: 34px;\r\n}\r\n.inputField{\r\n    width:70%;\r\n    position: relative;\r\n    float:left;\r\n    left:0;\r\n    border-top-right-radius: 50%;\r\n    border-bottom-right-radius: 50%;\r\n    height: 34px;\r\n}\r\n\r\n.font20{\r\n    font-size:20px;\r\n}\r\n\r\n.delivery-text{\r\n    font-size:14px; \r\n    color:#656565;\r\n    display: block;\r\n    padding-left: 28px;\r\n    color:#656565;\r\n}\r\n\r\n.col-right h3{\r\n    font-size:22px;\r\n    margin-top: 10px;\r\n    margin-bottom: 25px;\r\n\r\n\r\n}\r\n.italic-text{\r\n    font-style: italic;\r\n    font-size:12px;\r\n    word-spacing: 1px;\r\n    color:#656565;\r\n}\r\n.message-text img{\r\n    width:16px;\r\n}\r\n.message-text p{\r\n    font-size:14px;\r\n    word-spacing: 2px;\r\n    color:#1ec26b;\r\n    text-decoration: underline;\r\n    font-weight: 600;\r\n\r\n}\r\n\r\n.alignCenter{\r\n    text-align: center;\r\n}\r\n.checkout-btn{\r\n    background: #00b276;\r\n    color: white;\r\n    border-radius: 57px;\r\n    width: 100%;\r\n    border: none;\r\n    font-weight: 700;\r\n    height: 45px;\r\n    margin-top: 20px;\r\n    font-size:16px;\r\n    width:100%;\r\n}\r\n\r\n.inner-wrapper{\r\n    box-shadow: 0px 3px 10px 0px #ecebe7;\r\n    background: #fdfcfa;\r\n}\r\n.left-pane{\r\n    position: relative;\r\n    float: left;\r\n    width: 69%;\r\n    margin-right: 1.6%;\r\n    \r\n}\r\n\r\n.right-pane{\r\n    position: relative;\r\n    float:left;\r\n    margin-top: 20px;\r\n    width: 28%;\r\n    \r\n}\r\n\r\n.right-pane .one-row{\r\n    padding-left:20px;\r\n    padding-right:20px;\r\n}\r\n.right-pane .time-pane,.right-pane .cart{\r\n    box-shadow: 0px 3px 10px 0px #ecebe7;\r\n    background: #fdfcfa;\r\n}\r\n\r\n.left-pane h3,.right-pane h3{\r\n    font-size:20px;\r\n    color:#656565;\r\n    padding-top:22px;\r\n    margin-bottom:22px;\r\n    padding-left:20px;\r\n    \r\n}\r\n\r\n.lefty-side,.righty-side{\r\n    position: relative;\r\n    float:left;\r\n}\r\n.left-pane .body{\r\n    padding: 30px 20px;\r\n}\r\n.righty-side{\r\n    width:60%;\r\n}\r\n.lefty-side{\r\n    width: 140px;\r\n}\r\n.rightyVal{\r\n    margin-bottom:15px;\r\n    margin-top:0;\r\n    font-weight: 300;\r\n    font-size:15px;\r\n    color:#656565;\r\n}\r\n\r\n.green{\r\n    color:#1ec26b;\r\n    text-decoration: underline;\r\n}\r\n\r\n.leftyVa{\r\n    margin-bottom:15px;\r\n    margin-top:0;\r\n    font-weight: 700;\r\n    font-size:15px;\r\n    color:#656565;\r\n}\r\n\r\n.left-pane .header,.right-pane .header{\r\n    border-bottom:1px solid #aeaeae;\r\n\r\n}\r\n\r\n.left-pane .panel{\r\n    background:#fefefd;\r\n    border:1px solid #d5d5d4;\r\n}\r\n.oldAddress{\r\n    padding: 10px 15px;\r\n    border-bottom: 1px solid transparent;\r\n    background:#fefefd;\r\n    border-radius: 4px;\r\n    border:1px solid #d5d5d4;\r\n    margin-bottom:15px;\r\n}\r\n\r\n.pay-now-details{\r\n    background:#f9f9f8;\r\n    padding:30px 0 30px 30px;\r\n}\r\n\r\n.pay-now-details .form-group .form-control{\r\n    height:32px;\r\n    width:50%;\r\n    outline:none;\r\n    padding-left:10px;\r\n    display: inline-block;\r\n    border-radius: 0 !important;\r\n    margin-right: 15px;\r\n    border:1px solid #aeaeae;\r\n}\r\n.required{\r\n    font-size:14px;\r\n    font-weight: 300;\r\n    font-style:italic;\r\n}\r\n\r\n.requiredRed{\r\n    margin-right:6px;\r\n    color:#ff3b3b;\r\n}\r\n.normalText{\r\n    font-size:17px;\r\n    margin-top:20px;\r\n    font-weight: 700;\r\n}\r\n\r\n.address-field{\r\n    height:32px;\r\n    border:1px solid #aeaeae;\r\n    background:#ffffff;\r\n    width: 50%;\r\n    margin-right:25px;\r\n    margin-top:10px;\r\n    padding-left:15px;\r\n}\r\n.location-box{\r\n    margin-top:25px;\r\n}\r\n.location-text{\r\n     font-size: 14px;\r\n     font-weight: 300;\r\n    margin-top:10px;\r\n    margin-bottom:30px;\r\n}\r\n\r\n#accordion2 .panel-body{\r\n    padding:30px;\r\n}\r\n\r\n.optional{\r\n    font-size:14px;\r\n    font-weight: 500;\r\n    color:#656565;\r\n}\r\n#accordion2 .message-text img{\r\n    margin-right: 5px;\r\n   \r\n}\r\n#accordion2 .message-text{\r\n    padding-left: 15px;\r\n    margin-bottom:25px;\r\n}\r\n.inner-wrapper .message-text p{\r\n    display: inline-block;\r\n}\r\n\r\n.pay-now-details h3{\r\n    font-size:25px;\r\n    font-weight: bold;\r\n    color:#656565;\r\n    margin-top:25px;\r\n    margin-bottom:25px;\r\n}\r\n\r\n.custom-dropdown:checked + label:before,\r\n.custom-dropdown:not(:checked) + label:before {\r\n    content: '';\r\n    position: absolute;\r\n    display:none;\r\n    left: 0;\r\n    top: 0;\r\n    width: 20px;\r\n    height: 20px;\r\n    border: 1px solid #b6b6b6;\r\n    border-radius: 100%;\r\n    background: #fff;\r\n    color:#aeaeae;\r\n}\r\n\r\n.custom-dropdown:checked + label:after,\r\n.custom-dropdown:not(:checked) + label:after {\r\n    display: none;\r\n    content: '';\r\n    width: 12px;\r\n    height: 12px;\r\n    background: #1ec26b;\r\n    position: absolute;\r\n    top: 4px;\r\n    left: 4px;\r\n    border-radius: 100%;\r\n    -webkit-transition: all 0.2s ease;\r\n    transition: all 0.2s ease;\r\n    color:#676767;\r\n}\r\n\r\n.bottom-text{\r\n    margin-top:75px;\r\n}\r\n\r\n.bottom-text1{\r\n    font-size:14px;\r\n    font-weight: 300;\r\n    color:#656565;\r\n    \r\n}\r\n\r\n.bottom-text2{\r\n    font-size:14px;\r\n    font-weight: 300;\r\n    color:#656565;\r\n    margin-top:40px;\r\n}\r\n\r\n.left-equal{\r\n    position: relative;\r\n    float:left;\r\n    width:50%;\r\n    text-align:left;\r\n    font-size:20px;\r\n    font-weight: 700;\r\n    margin-bottom:40px;\r\n}\r\n\r\n.right-equal{\r\n    position: relative;\r\n    float:left;\r\n    width:50%;\r\n    text-align:right;\r\n    font-size:20px;\r\n    font-weight: 700;\r\n    margin-bottom:40px;\r\n}\r\n\r\n.special{\r\n    min-height: 250px;\r\n    margin-top: 15px;\r\n    padding-top:35px;\r\n}\r\n.place-now{\r\n    width:100%;\r\n    border:none;\r\n    height:58px;\r\n    line-height: 58px;\r\n    border-radius: 4px;\r\n    background: #1ec26b;\r\n    color:white;\r\n    font-size:22px;\r\n    font-weight: 700;\r\n    margin-top:10px;\r\n\r\n}\r\n\r\n.right-estimate{\r\n    font-size:12px;\r\n    font-weight: 700;\r\n    color:#656565;\r\n    padding: 30px 10px;\r\n}\r\n.big{\r\n    font-size:38px;\r\n    font-weight: 500;\r\n    color:#656565;\r\n    padding: 2px 10px;\r\n    height: 42px;\r\n}\r\n.small{\r\n    font-size:12px;\r\n    font-weight: 500;\r\n}\r\n.time{\r\n    width: 65px;\r\n    text-align: center;\r\n    float: right;\r\n    margin-top: 15px;\r\n}\r\n\r\n.item{\r\n    position: relative;\r\n    float:left;\r\n    width:70%;\r\n}\r\n\r\n.price{\r\n    position: relative;\r\n    float:left;\r\n    width:30%;\r\n}\r\n\r\n.item-detail{\r\n    display: inline-block;\r\n    padding-right: 4px;\r\n\r\n}\r\n.one-row{\r\n    margin-top:10px;\r\n    margin-bottom:10px;\r\n}\r\n\r\n.price{\r\n    text-align: right;\r\n}\r\n\r\n.item .optional{\r\n    color:#aeaeae;\r\n    font-size:12px;\r\n}\r\n.footer .one-row{\r\n    margin-bottom:15px;\r\n}\r\n\r\n.footer .one-row .item{\r\n    width:50%;\r\n    position: relative;\r\n    float:left;\r\n    text-align: left;\r\n}\r\n.footer .one-row .price{\r\n    width:50%;\r\n    position: relative;\r\n    float:left;\r\n    text-align: right;\r\n}\r\n.more-margin{\r\n    margin-top:20px;\r\n}\r\n.cart .body{\r\n /*    border-top:1px solid #cecdcc;\r\n    border-bottom:1px solid #cecdcc; */\r\n}\r\n\r\n.bigText{\r\n    font-size:28px;\r\n    font-weight: 300;\r\n}\r\n\r\n.opening-hours{\r\n    color:#50cb84;\r\n    font-weight:500;\r\n    font-size:12px;\r\n    margin-top: -4px;\r\n    \r\n}\r\n\r\n.headging-with-rating{\r\n    display:inline-block;\r\n    text-transform: capitalize;\r\n    font-size:23px;\r\n    color:#656565;\r\n    font-weight: 500;\r\n    word-wrap: break-word;\r\n    width: 100px;\r\n}\r\n#step-1 .chemist-ratings{\r\n    display:inline-block;\r\n    margin-left: 10px;\r\n}\r\n\r\n#step-1 .star{\r\n    height: 18px;\r\n}\r\n\r\n#step-1 .inner-wrapper{\r\n    padding: 30px 20px;\r\n}\r\n.right-search .voucher-form{\r\n    position: relative;\r\n    width: 100%;\r\n    height: 42px;\r\n    margin: 5px auto;\r\n}\r\n.right-search .inputBtn{\r\n    width:30%;\r\n    position: absolute;\r\n    left:70%;\r\n    top:0;\r\n    height: 42px;\r\n\r\n}\r\n.right-search .inputBtn button{\r\n    border-top-right-radius: 50px;\r\n    border-bottom-right-radius: 50px;\r\n    height: 42px;\r\n    width: 85%;\r\n    border: 1px solid #1ec26b;\r\n    color:#fff;\r\n    background: #1ec26b;\r\n    outline: none;\r\n    font-weight: 500;\r\n    font-size:18px;\r\n}\r\n.right-search .inputField input{\r\n    width:100%;\r\n    border-radius: 50px;\r\n    outline:none;\r\n    border:1px solid #1ec26b;\r\n    height: 42px;\r\n    padding-left: 40px;\r\n    color:#aeaeae;\r\n    font-size:18px;\r\n}\r\n.right-search .inputField{\r\n    width:80%;\r\n    position: relative;\r\n    float:left;\r\n    left:0;\r\n    border-top-right-radius: 50%;\r\n    border-bottom-right-radius: 50%;\r\n    height: 42px;\r\n}\r\n\r\n.left-chemist,.right-search{\r\n    position: relative;\r\n    float: left;\r\n    \r\n}\r\n\r\n.left-chemist{\r\n    width:45%;\r\n}\r\n\r\n.right-search{\r\n    width:55%;\r\n}\r\n\r\n.tabs{\r\n    padding: 8px !important;\r\n    padding-bottom: 0px !important;\r\n}\r\n.tabs div{\r\n    border:none;\r\n    border-radius:0;\r\n    padding-bottom:0;\r\n}\r\n.tabs .selected p{\r\n    font-weight: 700;\r\n    font-size:18px;\r\n    color:#656565;\r\n    padding-bottom:10px;\r\n    border-bottom:2px solid #1ec26b;\r\n}\r\n\r\n#step-1 .right-pane{\r\n    margin-top:0 !important;\r\n}\r\n.tabs div p{\r\n    font-weight: 300;\r\n    font-size:18px;\r\n    color:#656565;\r\n    padding-bottom:10px;\r\n}\r\n.tabs .selected{\r\n   \r\n    background:transparent;\r\n}\r\n.tab-contents{\r\n    border:none;\r\n}\r\n.product-image{\r\n    height: 216px;\r\n    border-bottom: 1px solid #bababa;\r\n}\r\n.product-image img{\r\n    max-width: 100%;\r\n    height: auto;\r\n    \r\n}\r\n.products-list{\r\n    padding-left:0;\r\n}\r\n\r\n.products-list li{\r\n    display: inline-block;\r\n    width: 29%;\r\n    margin-right: 30px;\r\n    margin-top:30px;\r\n    box-shadow: 0px 3px 10px 0px #c7c6c3;\r\n    transition: box-shadow 0.3s ease-in-out;\r\n    position: relative;\r\n}\r\n.products-list li:hover{\r\n    box-shadow: none;\r\n}\r\n.plus-sign{\r\n    cursor:pointer;\r\n    position: absolute;\r\n    bottom: -12px;\r\n    right: -12px;\r\n    text-align:center;\r\n    width:60px;\r\n    height:60px;\r\n    border-radius: 60px;\r\n    background:#1ec26b;\r\n    display:none;\r\n    box-shadow: 0px 3px 10px 0px #d9cdc8;\r\n}\r\n.plus-sign img{\r\n    padding-top: 13px;\r\n}\r\n.product-wrapper{\r\n    background:white;\r\n    border-radius:0;\r\n    padding:10px;\r\n    cursor:pointer;\r\n}\r\n\r\n.product-detail{\r\n    margin-top:10px;\r\n}\r\n.product-detail h2{\r\n    font-size:15px;\r\n    font-weight: 500;\r\n    color:#000000;\r\n    margin:0;\r\n    margin-bottom:15px;\r\n}\r\n.product-detail p{\r\n    font-size:14px;\r\n    font-weight: 300;\r\n    color:#000000;\r\n    margin:0;\r\n\r\n}\r\n\r\n/deep/ .detailModalClass .modal-content{\r\n    border-radius: 0 !important;\r\n}\r\n\r\n/deep/ .detailModalClass button.close{\r\n    position: absolute;\r\n    width: 38px;\r\n    height: 38px;\r\n    background: #1ec26b;\r\n    color: white;\r\n    border-radius: 38px;\r\n    opacity: 1;\r\n    z-index: 2;\r\n    right: 23px;\r\n    top: -21px;\r\n    box-shadow:0px 3px 10px 0px #d0d0d0;\r\n}\r\n/deep/ .detailModalClass .modal-footer{\r\n    display:none;\r\n}\r\n/deep/ .detailModalClass .modal-header{\r\n    padding:0;\r\n}\r\n/deep/ .detailModalClass .modal-body{\r\n    padding:40px;\r\n}\r\n\r\n.cart-button{\r\n    margin-top: 32px;\r\n    color: white;\r\n    background: #1ec26b;\r\n    width: 300px;\r\n    border-radius: 6px;\r\n    height: 58px;\r\n    font-size: 22px;\r\n    font-weight: 500;\r\n    margin: 20px auto;\r\n    border: none;\r\n    margin-bottom: 0;\r\n}\r\n .modal-name,.modal-quantity{\r\n\r\n    position: relative;\r\n    float:left;\r\n    width:50%;\r\n}\r\n\r\n.modal-quantity{\r\n    text-align: right;\r\n}\r\n\r\n.modal-name p{\r\n    font-size:20px;\r\n    font-weight: 500;\r\n    color:black;\r\n\r\n}\r\n\r\n.modal-quantity i{\r\n    color:#1ec26b;\r\n    font-size: 18px;\r\n    margin-left:10px;\r\n}\r\n\r\n.center-align{\r\n    text-align: center;\r\n}\r\n\r\n.textarea-div,.textarea-div2{\r\n    display:none;\r\n}\r\n.textarea-div textarea,.textarea-div2 textarea{\r\n    background: #eeeeee;\r\n    border-radius: 0;\r\n    border:1px solid #9b9b9b;\r\n    margin-top:20px;\r\n    width:100%;\r\n    height:100px;\r\n    padding-left:15px;\r\n}\r\n.slideInDown{\r\n    display:block !important;\r\n}\r\n\r\n/* quantity */\r\n\r\n\r\n.modal-quantity #prod-quantity-cart{\r\n    position: relative;\r\n    height: 66px;\r\n    text-align: right;\r\n    width: 234px;\r\n    margin-left: 0;\r\n    float: right;\r\n}\r\n\r\n#prod-quantity-cart .qtyplus{\r\n  \r\n    text-align: left;\r\n    color:#1ec26b;\r\n    font-weight: bold;\r\n    font-size: 24px;\r\n    width: 35px;\r\n    position: absolute;\r\n    left: 212px;\r\n    cursor: pointer;\r\n    border:none;\r\n    background:transparent;\r\n    width: 35px;\r\n    outline:none;\r\n}\r\n\r\n#prod-quantity-cart #num_val{\r\n    width: 110px;\r\n    position: absolute;\r\n    left:100px;\r\n    text-align: center;\r\n    font-size:25px;\r\n    font-weight: 500;\r\n    color:#656565;\r\n    border:none;\r\n}\r\n\r\n#prod-quantity-cart .qtyminus{\r\n    position: absolute;\r\n    left:62px;\r\n    width: 35px;\r\n    border:none;\r\n    background:transparent;\r\n    cursor:pointer;\r\n    text-align: right;\r\n    color:#1ec26b;\r\n    font-weight: bold;\r\n    font-size: 24px;\r\n    outline:none;\r\n}\r\n\r\n.dosage{\r\n    width:130px;\r\n    padding: 10px;\r\n}\r\n.clear{\r\n    clear:both;\r\n    float:none;\r\n}\r\n/* qunatity */\r\n\r\n/* Tabs */\r\n\r\n/***\r\nBootstrap Line Tabs by @keenthemes\r\nA component of Metronic Theme - #1 Selling Bootstrap 3 Admin Theme in Themeforest: http://j.mp/metronictheme\r\nLicensed under MIT\r\n***/\r\n\r\n/* Tabs panel */\r\n.tabbable-panel {\r\n    border:none;\r\n  }\r\n\r\n  .nav-tabs{\r\n      background:#fdfcfa;\r\n      height: 56px;\r\n      border-top:1px solid #a0a0a0 !important;\r\n  }\r\n  \r\n  /* Default mode */\r\n  .tabbable-line > .nav-tabs {\r\n    border: none;\r\n    margin: 0px;\r\n  }\r\n\r\n  .tabbable-line > .nav-tabs > li:after{\r\n    display:block;\r\n    content: '';\r\n    padding-bottom: 15px;\r\n    border-bottom: solid 2px #1ec26b;  \r\n    transform: scaleX(0);  \r\n    transition: transform 250ms ease-in-out;\r\n  }\r\n  \r\n  .tabbable-line > .nav-tabs > li:hover:after { transform: scaleX(1); }\r\n\r\n  .tabbable-line > .nav-tabs > li {\r\n    margin-right: 2px;\r\n    margin:0;\r\n    padding: 15px 0px;\r\n    margin: 0px 15px;\r\n  }\r\n  .tabbable-line > .nav-tabs > li > a {\r\n    border: 0;\r\n    margin-right: 0;\r\n    color: #737373;\r\n    text-transform: capitalize;\r\n  }\r\n  .tabbable-line > .nav-tabs > li > a > i {\r\n    color: #a6a6a6;\r\n  }\r\n/*   .tabbable-line > .nav-tabs > li.open, .tabbable-line > .nav-tabs > li:hover {\r\n    border-bottom: 2px solid #1ec26b;\r\n  } */\r\n  .tabbable-line > .nav-tabs > li.open > a, .tabbable-line > .nav-tabs > li:hover > a {\r\n    border: 0;\r\n    background: none !important;\r\n    color: #333333;\r\n  }\r\n  .tabbable-line > .nav-tabs > li.open > a > i, .tabbable-line > .nav-tabs > li:hover > a > i {\r\n    color: #a6a6a6;\r\n  }\r\n  .tabbable-line > .nav-tabs > li.open .dropdown-menu, .tabbable-line > .nav-tabs > li:hover .dropdown-menu {\r\n    margin-top: 0px;\r\n  }\r\n  .tabbable-line > .nav-tabs > li.active {\r\n    border-bottom: 2px solid #1ec26b;\r\n    position: relative;\r\n    padding-bottom: 0;\r\n  }\r\n  .tabbable-line > .nav-tabs > li.active > a {\r\n    border: 0;\r\n    background: transparent;\r\n    color: #333333;\r\n  }\r\n  .tabbable-line > .nav-tabs > li.active > a > i {\r\n    color: #404040;\r\n  }\r\n  .tabbable-line > .tab-content {\r\n    margin-top: -3px;\r\n    background-color: #faf9f5;\r\n    border: 0;\r\n    padding: 5px 0;\r\n  }\r\n  .nav>li>a {\r\n    position: relative;\r\n    display: block;\r\n    padding: 0 !important;\r\n}\r\n\r\n  .tab-content>.active{\r\n    background-color: #faf9f5;\r\n  }\r\n  .portlet .tabbable-line > .tab-content {\r\n    padding-bottom: 0;\r\n  }\r\n  \r\n  /* Below tabs mode */\r\n  \r\n  .tabbable-line.tabs-below > .nav-tabs > li {\r\n    border-top: 4px solid transparent;\r\n  }\r\n  .tabbable-line.tabs-below > .nav-tabs > li > a {\r\n    margin-top: 0;\r\n  }\r\n  .tabbable-line.tabs-below > .nav-tabs > li:hover {\r\n    border-bottom: 0;\r\n    border-top: 2px solid #1ec26b;\r\n  }\r\n  .tabbable-line.tabs-below > .nav-tabs > li.active {\r\n    margin-bottom: -2px;\r\n    border-bottom: 0;\r\n    border-top: 2px solid #1ec26b;\r\n  }\r\n  .tabbable-line.tabs-below > .tab-content {\r\n    margin-top: -10px;\r\n    border-top: 0;\r\n    border-bottom: 1px solid #eee;\r\n    padding-bottom: 15px;\r\n  }\r\n  .nav-tabs>li>a{\r\n      border-radius: 0 !important;\r\n  }\r\n\r\n  .addressesPane{\r\n    padding: 20px;\r\n    margin-bottom: 15px;\r\n    background: white;\r\n    border-radius: 4px;\r\n    border: 1px solid #ccc;\r\n  }\r\n  .addressesPane .row{\r\n      margin:0 !important;\r\n  }\r\n/* Tabs */\r\n@media only screen and (max-width: 1200px) and (min-width: 992px){\r\n    .products-list li{\r\n        width: 32%;\r\n        margin-right:7px;\r\n    }\r\n    .one-row .subtotal{\r\n        width:29%;\r\n    }\r\n}\r\n\r\n@media only screen and (max-width: 992px) and (min-width: 768px){\r\n    .stepwizard-row:before{\r\n        left: 50px;\r\n    }\r\n    .left-chemist{\r\n        width:35%\r\n    }\r\n    .right-search{\r\n        width:65%;\r\n    }\r\n\r\n    #step-1 .chemist-ratings{\r\n        margin-left: -4px;\r\n        margin-bottom: 15px;\r\n    }\r\n\r\n    .products-list   li{\r\n        width:43%;\r\n    }\r\n    .one-row .subtotal{\r\n        width:29%;\r\n    }\r\n}\r\n\r\n@media only screen and (max-width: 768px) and (min-width:460px) {\r\n    .left-pane,.right-pane{\r\n        width:100%;\r\n    }\r\n    .products-list   li{\r\n        width:28%;\r\n    }\r\n    .product-image{\r\n        height:155px;\r\n    }\r\n}\r\n@media only screen and (max-width: 768px) {\r\n    .col-left,.col-right{\r\n        width:100%;\r\n    }\r\n    .one-row .subtotal{\r\n        width:40%;\r\n    }\r\n\r\n    .stepwizard-row:before{\r\n        left: 72px;\r\n        width:70%;\r\n    }\r\n\r\n    .stepwizard{\r\n        width:100%;\r\n    }\r\n\r\n\r\n    .col-right{\r\n        margin-left:0;\r\n        margin-top:20px;\r\n    }\r\n    \r\n    \r\n}\r\n\r\n@media only screen and (max-width: 640px){\r\n    .left-pane,.right-pane{\r\n        width:100%;\r\n        margin-left:0;\r\n        margin-top:15px;\r\n    }\r\n\r\n    .voucher-form{\r\n        width:100%;\r\n    }\r\n    .left-chemist{\r\n        width: 100%;\r\n        text-align: center;\r\n        margin-bottom: 15px;\r\n    }\r\n    .right-search {\r\n        width: 100%;\r\n    }\r\n\r\n    .products-list li{\r\n        width: 100%;\r\n        margin-right: 0;\r\n    }\r\n\r\n    .product-image{\r\n        height:270px;\r\n    }\r\n    .product-detail h2{\r\n        text-align:center;\r\n    }\r\n\r\n    .modal-name,.modal-quantity{\r\n        width: 100%;\r\n        margin-bottom:15px;\r\n    }\r\n    .cart-button{\r\n        width:100%;\r\n    }\r\n\r\n    /deep/ .detailModalClass .modal-body{\r\n        padding:15px;\r\n    }\r\n    .right-name{\r\n        width:65%;\r\n    }\r\n    .stepwizard-row:before{\r\n        left:50px;\r\n    }\r\n    .lefty-side {\r\n        width: 70px;\r\n    }\r\n    .address-field{\r\n        width:100%;\r\n    }\r\n    .dosage{\r\n        margin-bottom:6px;\r\n    }\r\n}", ""]);
 
 // exports
 
 
 /***/ }),
-/* 257 */
+/* 258 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__(258);
+        var result = __webpack_require__(259);
 
         if (typeof result === "string") {
             module.exports = result;
@@ -96778,7 +96880,7 @@ exports.push([module.i, "body {\r\n    margin-top:40px;\r\n\r\n}\r\np{\r\n    ma
     
 
 /***/ }),
-/* 258 */
+/* 259 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)(undefined);
@@ -96792,11 +96894,11 @@ exports.push([module.i, "\n\n.dropdown-el {\n  min-width: 110px;\n  position: re
 
 
 /***/ }),
-/* 259 */
+/* 260 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__(260);
+        var result = __webpack_require__(261);
 
         if (typeof result === "string") {
             module.exports = result;
@@ -96806,7 +96908,7 @@ exports.push([module.i, "\n\n.dropdown-el {\n  min-width: 110px;\n  position: re
     
 
 /***/ }),
-/* 260 */
+/* 261 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)(undefined);
@@ -96820,13 +96922,13 @@ exports.push([module.i, ".styled-checkbox {\n  position: absolute;\n  opacity: 0
 
 
 /***/ }),
-/* 261 */
+/* 262 */
 /***/ (function(module, exports) {
 
-module.exports = "<modal #detailModal [closeOnEscape]=\"false\" [closeOnOutsideClick]=\"false\" modalClass=\"modal-lg modal-md detailModalClass\"\r\n    (onSubmit)=\"actionOnSubmit()\" (onClose)=\"actionOnClose()\">\r\n\r\n    <modal-content *ngIf=\"ifDataPopulated\">\r\n\r\n        <div class=\"full-row clearfix\">\r\n\r\n\r\n            <div class=\"modal-name\">\r\n\r\n                <p>{{singleMedicine.Name}}</p>\r\n                <p style=\"    margin-bottom: 20px;\">Rs. {{singleMedicine.TotalPrice}}</p>\r\n                <span>Reckitt Beckiser Ltd.</span>\r\n\r\n            </div>\r\n\r\n            <div class=\"modal-quantity\">\r\n\r\n\r\n                <div class=\"\" id=\"prod-quantity-cart\">\r\n\r\n                    <button class=\"qtyminus\" field='quantity' (click)=\"Downing()\">-</button>\r\n\r\n                    <input type=\"number\" id=\"num_val\" min=\"1\" max=\"100\" class='qty' step=\"1\" value=\"1\" readonly>\r\n\r\n                    <button class=\"qtyplus \" field='quantity' (click)=\"Upping()\">+</button>\r\n\r\n                </div>\r\n\r\n                <div class='clear'></div>\r\n                <div class=\"selects\">\r\n                    <select class=\"dosage\" id=\"dosageName\" (change)=\"getDosageName($event.target.value)\">\r\n                        <option selected disabled>Select Dosage</option>\r\n                        <option *ngFor=\"let dosageArray of singleMedicine.WebDosageAndValuesDTOList\" value=\"{{dosageArray.DosageName}}\">{{dosageArray.DosageName}}</option>\r\n                    </select>\r\n\r\n                    <select class=\"dosage\" id=\"dosageValue\" (change)=\"getDosageValue($event.target.value)\">\r\n                        <option selected disabled>Select Value</option>\r\n                        <option *ngFor=\"let dosageArray of dosageValue\" value=\"{{dosageArray}}\">{{dosageArray}}</option>\r\n                    </select>\r\n\r\n                    <select class=\"dosage\" id=\"Measurements\" (change)=\"getMeasurement($event.target.value)\">\r\n                        <option selected disabled>Select Measurement</option>\r\n                        <option *ngFor=\"let measurement of measurementValue\" value=\"{{measurement}}\">{{measurement}}</option>\r\n                    </select>\r\n                </div>\r\n\r\n            </div>\r\n\r\n        </div>\r\n\r\n        <hr class=\"saperator\">\r\n\r\n\r\n        <div class=\"full-row clearfix\" (click)=\"showTextArea()\">\r\n\r\n\r\n            <div class=\"modal-name\">\r\n\r\n                <p>SPECIAL INSTRUCTIONS</p>\r\n\r\n            </div>\r\n\r\n            <div class=\"modal-quantity\">\r\n\r\n\r\n                <span class=\"optional\">(Optional)</span>\r\n                <i class=\"thisone fa fa-chevron-up\"></i>\r\n\r\n            </div>\r\n\r\n        </div>\r\n\r\n\r\n\r\n        <div class=\"textarea-div animated\">\r\n            <textarea placeholder=\"Write any instructions here ...\"></textarea>\r\n        </div>\r\n\r\n\r\n        <div class=\"full-row clearfix center-align\">\r\n            <button class=\"cart-button\" (click)=\"addToCart()\">Add to Cart</button>\r\n        </div>\r\n\r\n    </modal-content>\r\n\r\n</modal>\r\n\r\n<div class=\"container\" style=\"margin-top:20px;margin-bottom:20px;\">\r\n\r\n    <div class=\"stepwizard\">\r\n        <div class=\"stepwizard-row setup-panel\">\r\n            <div class=\"stepwizard-step\">\r\n                <a href=\"#step-1\" type=\"button\" id=\"step1\" class=\"btn btn-primary btn-circle\">1</a>\r\n                <p>Your Details</p>\r\n            </div>\r\n            <div class=\"stepwizard-step\">\r\n                <a href=\"#step-2\" type=\"button\" id=\"step2\" class=\"btn btn-default btn-circle\" disabled=\"disabled\">2</a>\r\n                <p>Review Order</p>\r\n            </div>\r\n            <div class=\"stepwizard-step\">\r\n                <a href=\"#step-3\" type=\"button\" id=\"step3\" class=\"btn btn-default btn-circle\" disabled=\"disabled\">3</a>\r\n                <p>Place Order</p>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n\r\n    <div class=\"row setup-content\" id=\"step-1\">\r\n\r\n        <div class=\"col-md-12\">\r\n\r\n\r\n            <div class=\"left-pane\">\r\n\r\n                <div class=\"inner-wrapper clearfix\">\r\n\r\n\r\n                    <div class=\"upper-holder clearfix\">\r\n                        <!-- Upper Holder -->\r\n\r\n                        <div class=\"left-chemist clearfix\">\r\n                            <p class=\"headging-with-rating\">{{ChemistViewing.UserName}}</p>\r\n                            <div class=\"chemist-ratings\">\r\n                                <star-rating-comp [starType]=\"'icon'\" [disabled]=\"true\" [rating]=\"ChemistViewing.Chemist.ChemistRating\"></star-rating-comp>\r\n\r\n                            </div>\r\n                            <p class=\"opening-hours\">{{ChemistViewing.DistanceFromUs}} KM</p>\r\n                        </div>\r\n                        <div class=\"right-search clearfix\">\r\n\r\n\r\n                            <div class='voucher-form clearfix'>\r\n                                <img src=\"/assets/img/search.png\" class=\"search-icon\">\r\n                                <div class=\"inputField\">\r\n                                    <input type=\"text\" (keyup)=\"searchThisMedicine(e)\" name=\"searchMedicineQuery\" [(ngModel)]=\"searchMedicineQuery\" placeholder=\"Search Medicines\"\r\n                                        name=\"searchChemistQuery\" (keyup)=\"searchThisMedicine(this)\" [(ngModel)]=\"searchChemistQuery\">\r\n                                </div>\r\n                                <div class=\"inputBtn\">\r\n                                    <button>Search</button>\r\n                                </div>\r\n\r\n                            </div>\r\n                        </div>\r\n\r\n                    </div>\r\n                    <!-- Upper Holder -->\r\n                </div>\r\n\r\n\r\n                <div class=\"tabbable-panel\">\r\n                    <div class=\"tabbable-line\">\r\n                        <ul class=\"nav nav-tabs\">\r\n                            <li *ngFor=\"let categories of ChemistCategories;let i=index\" [ngClass]=\"{'active': i==0}\">\r\n                                <a (click)=\"showProductsForThisCateogry(categories.Id)\" href=\"#tab_1\" data-toggle=\"tab\">\r\n                                    {{categories.CategoryName}} </a>\r\n                            </li>\r\n                        </ul>\r\n                        <div class=\"tab-content\">\r\n                            <div class=\"tab-pane animated active\" id=\"tab_1\">\r\n\r\n\r\n                                <ul class=\"products-list\">\r\n\r\n                                    <li (mouseenter)=\"showPlus($event)\" (click)=\"getDetailsOfProduct(medicine)\" id=\"medicine{{medicine.Id}}\" (mouseleave)=\"hidePlus($event)\"\r\n                                        *ngFor=\"let medicine of SearchedMedicines;let i=index\" class=\"single-product animated zoomIn\">\r\n\r\n                                        <div class=\"product-wrapper\">\r\n\r\n                                            <div class=\"product-image\">\r\n                                                <img src=\"{{medicine.PictureURL}}\">\r\n                                            </div>\r\n\r\n                                            <div class=\"product-detail\">\r\n                                                <h2>{{medicine.Name}}</h2>\r\n                                            </div>\r\n\r\n\r\n                                        </div>\r\n\r\n                                        <div class=\"plus-sign animated\">\r\n                                            <img src=\"/assets/img/add.png\">\r\n                                        </div>\r\n\r\n                                    </li>\r\n\r\n                                </ul>\r\n\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n            </div>\r\n\r\n\r\n            <div class=\"right-pane\">\r\n\r\n\r\n                <div class=\"time-pane\">\r\n\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6 col-sm-6 col-xs-6\" style=\"text-align:left\">\r\n                            <p class='right-estimate'>Estimated Delivery Time</p>\r\n                        </div>\r\n                        <div class=\"col-md-6 col-sm-6 col-xs-6\" style=\"text-align: right\">\r\n                            <div class=\"time\">\r\n                                <p class=\"big\">{{estimatedDeliveryTime}}</p>\r\n                                <p class=\"small\">mins</p>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n\r\n\r\n                </div>\r\n\r\n\r\n\r\n\r\n                <div class=\"cart animated\">\r\n\r\n                    <div class=\"header\">\r\n                        <h3>Your Order</h3>\r\n                    </div>\r\n                    <div class=\"body clearfix\">\r\n\r\n\r\n                        <div class=\"one-row clearfix\" *ngFor=\"let onerow of cart\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\">{{onerow?.Quantity}}x\r\n                                    <span style=\"color:#1ec26b;font-weight:bold;font-size:16px\">{{onerow?.Name}}</span>\r\n                                </P>\r\n                                <span class=\"optional\">{{onerow?.ChemistCategoryName}}</span>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail\">Rs. {{onerow?.TotalPrice}}</P>\r\n                            </div>\r\n                        </div>\r\n\r\n                    </div>\r\n                    <div class='footer clearfix'>\r\n\r\n                        <div class=\"one-row clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\">Subtotal</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail\">Rs. {{SubTotal}}</P>\r\n                            </div>\r\n                        </div>\r\n\r\n                        <div class=\"one-row clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\">Delivery Fee</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail\">Rs. 0</P>\r\n                            </div>\r\n                        </div>\r\n\r\n\r\n                        <div class=\"one-row more-margin clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\" style=\"padding-top:10px;\">Total</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail bigText\">Rs. {{FinalTotal}}</P>\r\n                            </div>\r\n                        </div>\r\n\r\n                        <div class=\"alignCenter row\" style=\"width: 80%;margin: 15px auto;\">\r\n\r\n                                <ng-container *ngIf=\"cartHasItems\">\r\n                                        <button (click)=\"takeMeToReviewPage()\" id=\"proceedToReview\" class=\"checkout-btn nextBtn\">Proceed</button>\r\n                                    </ng-container>\r\n                            \r\n                        </div>\r\n\r\n                    </div>\r\n                </div>\r\n\r\n            </div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n        </div>\r\n\r\n    </div>\r\n    <div class=\"row setup-content\" id=\"step-2\">\r\n        <div class=\"col-md-12 cleafix\">\r\n\r\n            <div class=\"col-left clearfix\">\r\n\r\n                <div class=\"holder-box clearfix\">\r\n                    <!-- wrapper -->\r\n\r\n                    <div class='header clearfix'>\r\n                        <div class=\"left-image-side clearfix\">\r\n                            <img src=\"assets/img/dw.png\" width=\"75px\">\r\n                        </div>\r\n                        <div class='right-name clearfix'>\r\n                            <p class=\"chemist-name\">{{ChemistViewing.UserName}}</p>\r\n                            <p class=\"opening-hours\">{{ChemistViewing.DistanceFromUs}} KM</p>\r\n\r\n                            <div class=\"chemist-ratings\">\r\n\r\n                                <star-rating-comp [starType]=\"'icon'\" [disabled]=\"true\" [rating]=\"ChemistViewing.Chemist.ChemistRating\"></star-rating-comp>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n\r\n                    <hr class=\"saperator\">\r\n\r\n\r\n                    <div class=\"table-details\">\r\n\r\n                        <div class=\"one-row clearfix\" *ngFor=\"let onerow of cart\">\r\n                            <div class=\"del\" (click)=\"deletethisRow(onerow)\">\r\n                                <img src=\"assets/img/del.png\">\r\n                            </div>\r\n                            <div class=\"name\">\r\n                                <span class=\"med-name\">{{onerow.Name}}</span>\r\n                                <span>({{onerow.ChemistCategoryName}}) {{onerow.DosageValue}}{{onerow.DosageName}} {{onerow.MeausurementName}}</span>\r\n                            </div>\r\n                            <div class=\"quantity\">\r\n                                <div class=\"quantity\" id=\"prod-quantity\">\r\n                                    <input type=\"number\" id=\"num_val\" min=\"1\" max=\"10\" class='qty' step=\"1\" value=\"{{onerow.Quantity}}\" readonly>\r\n                                    <div class=\"quantity-nav\">\r\n                                        <div class=\"quantity-button quantity-up qtyplus \" field='quantity' (click)=\"UppingReview(onerow)\">+</div>\r\n                                        <div class=\"quantity-button quantity-down qtyminus\" field='quantity' (click)=\"DowningReview(onerow)\">-</div>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"subtotal\">\r\n                                <p>Rs. {{onerow.TotalPrice}}</p>\r\n                            </div>\r\n\r\n                        </div>\r\n\r\n                        <div class=\"row  subtotal-row clearfix\">\r\n                            <div class=\"subtotal-heading\">\r\n                                <p>Subtotal</p>\r\n                            </div>\r\n                            <div class=\"subtotal-value\">\r\n                                Rs. {{SubTotal}}\r\n                            </div>\r\n\r\n                        </div>\r\n\r\n\r\n                        <div class=\"row voucher-row clearfix\">\r\n                            <h3>Enter your voucher code here</h3>\r\n\r\n                            <div class='voucher-form clearfix'>\r\n                                <div class=\"inputField\">\r\n                                    <input type=\"text\">\r\n                                </div>\r\n                                <div class=\"inputBtn\">\r\n                                    <button>Submit</button>\r\n                                </div>\r\n                            </div>\r\n\r\n                        </div>\r\n\r\n                        <hr class=\"saperator\">\r\n\r\n\r\n                        <div class=\"row footer-row clearfix\">\r\n                            <div class=\"subtotal-heading\">\r\n                                <p>Delivery Fee</p>\r\n                            </div>\r\n                            <div class=\"subtotal-value\">\r\n                                0\r\n                            </div>\r\n\r\n                        </div>\r\n\r\n                        <div class=\"row  footer-row no-margin-top clearfix\">\r\n                            <div class=\"subtotal-heading\">\r\n                                <p>Total</p>\r\n                            </div>\r\n                            <div class=\"subtotal-value font20\">\r\n                                Rs. {{FinalTotal}}\r\n                            </div>\r\n\r\n                        </div>\r\n\r\n\r\n\r\n                    </div>\r\n\r\n                </div>\r\n                <!-- wrapper -->\r\n\r\n            </div>\r\n\r\n            <div class=\"col-right clearfix\">\r\n\r\n                <div class=\"holder-box clearfix\">\r\n\r\n                    <h3>Order Information</h3>\r\n\r\n\r\n\r\n                    <div class=\"check1\">\r\n                        <p>\r\n                            <input type=\"radio\" id=\"test2\" (change)=\"AsSoonAsPossibleSelected()\" name=\"radio-group\" checked>\r\n                            <label for=\"test2\" class='delivery-text'>As soon as possible</label>\r\n                            <span class='delivery-text'>Estimated Delivery Time : {{estimatedDeliveryTime}} min</span>\r\n                        </p>\r\n\r\n                        <p>\r\n                            <input type=\"radio\" id=\"test3\" (change)=\"showTimeSlots()\" name=\"radio-group\">\r\n                            <label for=\"test3\" class='delivery-text'>Later</label>\r\n                        </p>\r\n\r\n                        <ng-container>\r\n\r\n                            <ul class=\"time-slots\">\r\n                                <li *ngFor=\"let timeSlot of timeSlots\" class=\"\">\r\n                                    <button class=\"time-slot\" (click)=\"selectThisSlot($event,timeSlot.Id)\">{{timeSlot.StartingTime}} - {{timeSlot.EndingTime}}</button>\r\n                                </li>\r\n                            </ul>\r\n\r\n                        </ng-container>\r\n\r\n                    </div>\r\n\r\n                    <hr class=\"saperator\">\r\n\r\n                    <div class='italic-text row'>\r\n                        <p>(if you want to add any comment e.g. about delivery instructions, this is the right place)</p>\r\n                    </div>\r\n\r\n\r\n                    <div class='message-text row'>\r\n                        <p style=\"cursor:pointer;\" (click)=\"showMessageArea()\">\r\n                            <img src=\"assets/img/play-arrow.png\"> Add a message to your order\r\n\r\n                        </p>\r\n\r\n\r\n\r\n                        <div class=\"textarea-div2 animated\">\r\n                            <textarea placeholder=\"Write any instructions here ...\"></textarea>\r\n                        </div>\r\n\r\n\r\n\r\n                    </div>\r\n\r\n                    <div class=\"alignCenter row\">\r\n                        <ng-container *ngIf=\"cartHasItems\">\r\n                            <button class=\"checkout-btn nextBtn\">Checkout</button>\r\n                        </ng-container>\r\n                    </div>\r\n\r\n                </div>\r\n\r\n\r\n            </div>\r\n\r\n\r\n        </div>\r\n    </div>\r\n    <div class=\"row setup-content\" id=\"step-3\">\r\n\r\n        <div class=\"col-md-12\">\r\n\r\n\r\n            <div class=\"left-pane\">\r\n                <div class=\"inner-wrapper\">\r\n                    <div class=\"header\">\r\n                        <h3>My Contact Details</h3>\r\n                    </div>\r\n                    <div class=\"body clearfix\">\r\n                        <div class=\"lefty-side clearfix\">\r\n                            <p class=\"leftyVa\">Full Name</p>\r\n                            <p class=\"leftyVa\">Email</p>\r\n                            <p class=\"leftyVa\">Mobile</p>\r\n                        </div>\r\n                        <div class=\"righty-side col-md-6 clearfix\">\r\n                            <p class=\"rightyVal\">{{ThisUser.UserName}}</p>\r\n                            <p class=\"rightyVal\">{{ThisUser.Email}}</p>\r\n                            <p class=\"rightyVal\"></p>\r\n                            <a class=\"rightyVal green\" (click)=\"logOut()\">Not {{ThisUser.UserName}}? Logout </a>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class=\"inner-wrapper\">\r\n                    <div class=\"header\">\r\n                        <h3>Your delivery address</h3>\r\n                    </div>\r\n                    <div class=\"body clearfix\">\r\n                        \r\n\r\n                        <p class=\"oldAddress\">\r\n                                \r\n                                <input type=\"radio\" id=\"newDeliveryCheck\" (change)=\"createNewAddress()\" name=\"radio-group\" value=\"NewAddress\" checked>\r\n                                <label for=\"newDeliveryCheck\" class='delivery-text'>Create new delivery address</label>\r\n                                \r\n                                \r\n                        </p>\r\n                        <ng-container *ngIf=\"newAddressEnabled\">\r\n                            <div class=\"addressesPane\">\r\n                                <span class=\"requiredRed\">*</span>\r\n                                <span class=\"required\">Required Fields</span>\r\n\r\n                                <p>\r\n                                    <span class=\"requiredRed\">*</span>\r\n                                    <span class=\"normalText\">Address</span>\r\n                                </p>\r\n\r\n                                <input type=\"text\" class=\"address-field\">\r\n                                <span class=\"required\">Enter your complete delivery address</span>\r\n\r\n                                <div class=\"location-box\">\r\n                                    <p>\r\n                                        <span class=\"normalText\">Your Location</span>\r\n                                    </p>\r\n                                    <p class=\"location-text\">Karachi</p>\r\n                                </div>\r\n\r\n                                <div class='message-text row'>\r\n                                    <p>\r\n                                        <img src=\"assets/img/play-arrow.png\"> Delivery Instructions</p>\r\n                                    <span class=\"optional\">(Optional)</span>\r\n                                </div>\r\n\r\n                                <div class='message-text row'>\r\n                                    <p>\r\n                                        <img src=\"assets/img/play-arrow.png\"> Additional Information</p>\r\n                                    <span class=\"optional\">(Optional)</span>\r\n                                </div>\r\n                            </div>\r\n                        </ng-container>\r\n                        <p class=\"oldAddress\">\r\n\r\n                            <input type=\"radio\" id=\"oldDeliveryCheck\" (change)=\"oldAddress()\" name=\"radio-group\" value=\"oldAddress\" checked>\r\n                            <label for=\"oldDeliveryCheck\" class='delivery-text'>Use saved delivery address</label>\r\n\r\n\r\n                        </p>\r\n\r\n                    </div>\r\n                </div>\r\n\r\n\r\n\r\n\r\n                <div class=\"inner-wrapper\">\r\n                    <div class=\"header\">\r\n                        <h3>Choose how to pay</h3>\r\n                    </div>\r\n                    <div class=\"body clearfix\">\r\n\r\n\r\n                        <div class=\"panel-group\" id=\"accordion3\" role=\"tablist\" aria-multiselectable=\"true\">\r\n\r\n                            <div class=\"panel panel-custom animated slideInDown\">\r\n                                <div class=\"panel-heading\" role=\"tab\" id=\"headingOne\">\r\n                                    <h4 class=\"panel-title\">\r\n                                        <a class=\"panel-head\" (click)=\"showPayingNowForm()\" data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapsePayNow\"\r\n                                            aria-expanded=\"true\" aria-controls=\"collapsePayNow\">\r\n\r\n                                            <input type=\"radio\" id=\"payingNow\" name=\"radio-group\" value=\"payingNow\">\r\n                                            <label for=\"payingNow\" class='delivery-text'>Pay Now</label>\r\n\r\n\r\n                                        </a>\r\n                                    </h4>\r\n                                </div>\r\n                                <div id=\"collapsePayNow\" class=\"panel-collapse collapse\" role=\"tabpanel\" aria-labelledby=\"headingOne\">\r\n                                    <div class=\"panel-body animated zoomIn\">\r\n\r\n                                        <div class=\"pay-now-details\">\r\n\r\n                                            <h3>Please provide your credit card details</h3>\r\n\r\n                                            <div class=\"form-group\">\r\n\r\n                                                <label for=\"cardName\">\r\n                                                    <span class=\"requiredRed\">*</span> Name on card</label>\r\n                                                <br/>\r\n                                                <input type=\"text\" class=\"form-control\" id=\"cardName\">\r\n                                                <span class=\"required\">As it appears on your credit card</span>\r\n\r\n                                            </div>\r\n\r\n                                            <div class=\"form-group\">\r\n\r\n                                                <label for=\"cardNumber\">\r\n                                                    <span class=\"requiredRed\">*</span> Card Number</label>\r\n                                                <br/>\r\n                                                <input type=\"text\" class=\"form-control\" id=\"cardNumber\">\r\n                                                <span class=\"required\">16 digits in front of your credit card. No spaces</span>\r\n\r\n                                            </div>\r\n\r\n\r\n                                            <div class=\"form-group\">\r\n                                                <label for=\"cardNumber\">\r\n                                                    <span class=\"requiredRed\">*</span> Expiration Date</label>\r\n                                                <br/>\r\n                                                <div class=\"col-md-6 col-sm-6\">\r\n                                                    <span class=\"dropdown-el\">\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"January\" checked=\"checked\" id=\"sort-relevance\">\r\n                                                        <label for=\"sort-relevance\">January</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"February\" id=\"sort-best\">\r\n                                                        <label for=\"sort-best\">February</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"March\" id=\"sort-low\">\r\n                                                        <label for=\"sort-low\">March</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"April\" id=\"sort-high\">\r\n                                                        <label for=\"sort-high\">April</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"May\" id=\"sort-brand\">\r\n                                                        <label for=\"sort-brand\">May</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"June\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">June</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"July\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">July</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"August\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">August</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"September\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">September</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"October\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">October</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"November\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">November</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"December\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">December</label>\r\n                                                    </span>\r\n                                                </div>\r\n\r\n                                                <div class=\"col-md-6 col-sm-6\">\r\n                                                    <span class=\"dropdown-el\">\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2016\" checked=\"checked\" id=\"sort-relevance\">\r\n                                                        <label for=\"sort-relevance\">2016</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2017\" id=\"sort-best\">\r\n                                                        <label for=\"sort-best\">2017</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2018\" id=\"sort-low\">\r\n                                                        <label for=\"sort-low\">2018</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2019\" id=\"sort-high\">\r\n                                                        <label for=\"sort-high\">2019</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2020\" id=\"sort-brand\">\r\n                                                        <label for=\"sort-brand\">2020</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2021\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">2021</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2022\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">2022</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2023\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">2023</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2024\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">2024</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2025\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">2025</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2026\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">2026</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2027\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">2027</label>\r\n                                                    </span>\r\n                                                </div>\r\n\r\n                                            </div>\r\n\r\n\r\n                                            <div class=\"form-group\" style=\"    margin-top: 47px;\">\r\n\r\n                                                <label for=\"cardNumber\">\r\n                                                    <span class=\"requiredRed\">*</span> Security Code</label>\r\n                                                <br/>\r\n                                                <input type=\"text\" class=\"form-control\" id=\"cardNumber\">\r\n                                                <span class=\"required\">CVV or CVV2. 3 Digits on the back. Amex 4, on the front</span>\r\n\r\n                                            </div>\r\n\r\n                                            <p>\r\n                                                <input class=\"styled-checkbox\" id=\"styled-checkbox-1\" type=\"checkbox\" value=\"value1\">\r\n                                                <label for=\"styled-checkbox-1\">Save my credit card details for future orders on the secure payment provider\r\n                                                    site.\r\n                                                </label>\r\n                                            </p>\r\n\r\n\r\n                                            <div class='bottom-text'>\r\n                                                <p class='bottom-text1'>After proceeding, you might be redirected to you card issuer page to verify\r\n                                                    this transaction</p>\r\n                                                <p class='bottom-text2'>Pay with master card or visa. You will be redirected to the second page of\r\n                                                    ouy patment partner. Transaction would be proceeded abroad.</p>\r\n                                            </div>\r\n\r\n                                        </div>\r\n\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n\r\n\r\n                            <div class=\"panel panel-custom\">\r\n                                <div class=\"panel-heading\" role=\"tab\" id=\"headingOne\">\r\n                                    <h4 class=\"panel-title\">\r\n                                        <a class=\"panel-head\" (click)=\"showOnDeliveryForm()\" data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapseCashonDelivery\"\r\n                                            aria-expanded=\"true\" aria-controls=\"collapseCashonDelivery\">\r\n\r\n                                            <input type=\"radio\" id=\"cashOnDelivery\" name=\"radio-group\" value=\"cashOnDelivery\">\r\n                                            <label for=\"cashOnDelivery\" class='delivery-text'>Cash on Delivery</label>\r\n\r\n\r\n                                        </a>\r\n                                    </h4>\r\n                                </div>\r\n\r\n                                <div id=\"collapseCashonDelivery\" class=\"panel-collapse collapse\" role=\"tabpanel\" aria-labelledby=\"headingTwo\">\r\n                                    <div class=\"panel-body animated zoomIn\">\r\n                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,\r\n                                        non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.\r\n                                        Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee\r\n                                        nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes\r\n                                        anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.\r\n                                        Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you\r\n                                        probably haven't heard of them accusamus labore sustainable VHS.\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n\r\n\r\n                        </div>\r\n\r\n\r\n\r\n                    </div>\r\n                </div>\r\n\r\n\r\n                <div class=\"inner-wrapper cleafix special\">\r\n\r\n                    <div class=\"col-md-6 cleafix\">\r\n\r\n                    </div>\r\n\r\n                    <div class=\"col-md-6 cleafix\">\r\n\r\n                        <div class=\"left-equal cleafix\">\r\n                            Total\r\n                        </div>\r\n                        <div class=\"right-equal cleafix\">\r\n                            Rs. 690\r\n                        </div>\r\n\r\n\r\n                        <p>By clicking this button, you agree with our\r\n                            <a>terms and conditions</a>\r\n                        </p>\r\n\r\n                        <button class=\"place-now\">Place order now</button>\r\n                    </div>\r\n\r\n                </div>\r\n\r\n\r\n\r\n\r\n            </div>\r\n\r\n\r\n            <div class=\"right-pane\">\r\n\r\n\r\n                <div class=\"time-pane\">\r\n\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6 col-sm-6 col-xs-6\" style=\"text-align:left\">\r\n                            <p class='right-estimate'>Estimated Delivery Time</p>\r\n                        </div>\r\n                        <div class=\"col-md-6 col-sm-6 col-xs-6\" style=\"text-align: right\">\r\n                            <div class=\"time\">\r\n                                <p class=\"big\">{{estimatedDeliveryTime}}</p>\r\n                                <p class=\"small\">mins</p>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n\r\n\r\n                </div>\r\n\r\n\r\n\r\n\r\n                <div class=\"cart\">\r\n\r\n                    <div class=\"header\">\r\n                        <h3>Your Order</h3>\r\n                    </div>\r\n                    <div class=\"body clearfix\">\r\n\r\n                            <div class=\"one-row clearfix\" *ngFor=\"let onerow of cart\">\r\n                                    <div class=\"item\">\r\n                                        <P class=\"item-detail\">{{onerow?.Quantity}}x\r\n                                            <span style=\"color:#1ec26b;font-weight:bold;font-size:16px\">{{onerow?.Name}}</span>\r\n                                        </P>\r\n                                        <span class=\"optional\">{{onerow?.ChemistCategoryName}}</span>\r\n                                    </div>\r\n                                    <div class=\"price\">\r\n                                        <P class=\"item-detail\">Rs. {{onerow?.TotalPrice}}</P>\r\n                                    </div>\r\n                                </div>\r\n\r\n                    </div>\r\n                    <div class='footer clearfix'>\r\n\r\n                        <div class=\"one-row clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\">Subtotal</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail\">Rs. {{SubTotal}}</P>\r\n                            </div>\r\n                        </div>\r\n\r\n                        <div class=\"one-row clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\">Delivery Fee</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail\">Rs. 0</P>\r\n                            </div>\r\n                        </div>\r\n\r\n\r\n                        <div class=\"one-row more-margin clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\" style=\"padding-top:10px;\">Total</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail bigText\">Rs. {{FinalTotal}}</P>\r\n                            </div>\r\n                        </div>\r\n\r\n                    </div>\r\n                </div>\r\n\r\n            </div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n        </div>\r\n\r\n    </div>\r\n\r\n\r\n</div>"
+module.exports = "<div id=\"snackbar\"></div>\r\n<modal #detailModal [closeOnEscape]=\"false\" [closeOnOutsideClick]=\"false\" modalClass=\"modal-lg modal-md detailModalClass\"\r\n    (onSubmit)=\"actionOnSubmit()\" (onClose)=\"actionOnClose()\">\r\n\r\n    <modal-content *ngIf=\"ifDataPopulated\">\r\n\r\n        <div class=\"full-row clearfix\">\r\n\r\n\r\n            <div class=\"modal-name\">\r\n\r\n                <p>{{singleMedicine.Name}}</p>\r\n                <p style=\"    margin-bottom: 20px;\">Rs. {{singleMedicine.TotalPrice}}</p>\r\n                <span>Reckitt Beckiser Ltd.</span>\r\n\r\n            </div>\r\n\r\n            <div class=\"modal-quantity\">\r\n\r\n\r\n                <div class=\"\" id=\"prod-quantity-cart\">\r\n\r\n                    <button class=\"qtyminus\" field='quantity' (click)=\"Downing()\">-</button>\r\n\r\n                    <input type=\"number\" id=\"num_val\" min=\"1\" max=\"100\" class='qty' step=\"1\" value=\"1\" readonly>\r\n\r\n                    <button class=\"qtyplus \" field='quantity' (click)=\"Upping()\">+</button>\r\n\r\n                </div>\r\n\r\n                <div class='clear'></div>\r\n                <div class=\"selects\">\r\n                    <select class=\"dosage\" id=\"dosageName\" (change)=\"getDosageName($event.target.value)\">\r\n                        <option selected disabled>Select Dosage</option>\r\n                        <option *ngFor=\"let dosageArray of singleMedicine.WebDosageAndValuesDTOList\" value=\"{{dosageArray.DosageName}}\">{{dosageArray.DosageName}}</option>\r\n                    </select>\r\n\r\n                    <select class=\"dosage\" id=\"dosageValue\" (change)=\"getDosageValue($event.target.value)\">\r\n                        <option selected disabled>Select Value</option>\r\n                        <option *ngFor=\"let dosageArray of dosageValue\" value=\"{{dosageArray}}\">{{dosageArray}}</option>\r\n                    </select>\r\n\r\n                    <select class=\"dosage\" id=\"Measurements\" (change)=\"getMeasurement($event.target.value)\">\r\n                        <option selected disabled>Select Measurement</option>\r\n                        <option *ngFor=\"let measurement of measurementValue\" value=\"{{measurement}}\">{{measurement}}</option>\r\n                    </select>\r\n                </div>\r\n\r\n            </div>\r\n\r\n        </div>\r\n\r\n        <hr class=\"saperator\">\r\n\r\n\r\n        <div class=\"full-row clearfix\" (click)=\"showTextArea()\">\r\n\r\n\r\n            <div class=\"modal-name\">\r\n\r\n                <p>SPECIAL INSTRUCTIONS</p>\r\n\r\n            </div>\r\n\r\n            <div class=\"modal-quantity\">\r\n\r\n\r\n                <span class=\"optional\">(Optional)</span>\r\n                <i class=\"thisone fa fa-chevron-up\"></i>\r\n\r\n            </div>\r\n\r\n        </div>\r\n\r\n\r\n\r\n        <div class=\"textarea-div animated\">\r\n            <textarea placeholder=\"Write any instructions here ...\"></textarea>\r\n        </div>\r\n\r\n\r\n        <div class=\"full-row clearfix center-align\">\r\n            <button class=\"cart-button\" (click)=\"addToCart()\">Add to Cart</button>\r\n        </div>\r\n\r\n    </modal-content>\r\n\r\n</modal>\r\n\r\n<div class=\"container\" style=\"margin-top:20px;margin-bottom:20px;\">\r\n\r\n    <div class=\"stepwizard\">\r\n        <div class=\"stepwizard-row setup-panel\">\r\n            <div class=\"stepwizard-step\">\r\n                <a href=\"#step-1\" type=\"button\" id=\"step1\" class=\"btn btn-primary btn-circle\">1</a>\r\n                <p>Your Details</p>\r\n            </div>\r\n            <div class=\"stepwizard-step\">\r\n                <a href=\"#step-2\" type=\"button\" id=\"step2\" class=\"btn btn-default btn-circle\" disabled=\"disabled\">2</a>\r\n                <p>Review Order</p>\r\n            </div>\r\n            <div class=\"stepwizard-step\">\r\n                <a href=\"#step-3\" type=\"button\" id=\"step3\" class=\"btn btn-default btn-circle\" disabled=\"disabled\">3</a>\r\n                <p>Place Order</p>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n\r\n    <div class=\"row setup-content\" id=\"step-1\">\r\n\r\n        <div class=\"col-md-12\">\r\n\r\n\r\n            <div class=\"left-pane\">\r\n\r\n                <div class=\"inner-wrapper clearfix\">\r\n\r\n\r\n                    <div class=\"upper-holder clearfix\">\r\n                        <!-- Upper Holder -->\r\n\r\n                        <div class=\"left-chemist clearfix\">\r\n                            <p class=\"headging-with-rating\">{{ChemistViewing.UserName}}</p>\r\n                            <div class=\"chemist-ratings\">\r\n                                <star-rating-comp [starType]=\"'icon'\" [disabled]=\"true\" [rating]=\"ChemistViewing.Chemist.ChemistRating\"></star-rating-comp>\r\n\r\n                            </div>\r\n                            <p class=\"opening-hours\">{{ChemistViewing.DistanceFromUs}} KM</p>\r\n                        </div>\r\n                        <div class=\"right-search clearfix\">\r\n\r\n\r\n                            <div class='voucher-form clearfix'>\r\n                                <img src=\"/assets/img/search.png\" class=\"search-icon\">\r\n                                <div class=\"inputField\">\r\n                                    <input type=\"text\" (keyup)=\"searchThisMedicine(e)\" name=\"searchMedicineQuery\" [(ngModel)]=\"searchMedicineQuery\" placeholder=\"Search Medicines\"\r\n                                        name=\"searchChemistQuery\" (keyup)=\"searchThisMedicine(this)\" [(ngModel)]=\"searchChemistQuery\">\r\n                                </div>\r\n                                <div class=\"inputBtn\">\r\n                                    <button>Search</button>\r\n                                </div>\r\n\r\n                            </div>\r\n                        </div>\r\n\r\n                    </div>\r\n                    <!-- Upper Holder -->\r\n                </div>\r\n\r\n\r\n                <div class=\"tabbable-panel\">\r\n                    <div class=\"tabbable-line\">\r\n                        <ul class=\"nav nav-tabs\">\r\n                            <li *ngFor=\"let categories of ChemistCategories;let i=index\" [ngClass]=\"{'active': i==0}\">\r\n                                <a (click)=\"showProductsForThisCateogry(categories.Id)\" href=\"#tab_1\" data-toggle=\"tab\">\r\n                                    {{categories.CategoryName}} </a>\r\n                            </li>\r\n                        </ul>\r\n                        <div class=\"tab-content\">\r\n                            <div class=\"tab-pane animated active\" id=\"tab_1\">\r\n\r\n\r\n                                <ul class=\"products-list\">\r\n\r\n                                    <li (mouseenter)=\"showPlus($event)\" (click)=\"getDetailsOfProduct(medicine)\" id=\"medicine{{medicine.Id}}\" (mouseleave)=\"hidePlus($event)\"\r\n                                        *ngFor=\"let medicine of SearchedMedicines;let i=index\" class=\"single-product animated zoomIn\">\r\n\r\n                                        <div class=\"product-wrapper\">\r\n\r\n                                            <div class=\"product-image\">\r\n                                                <img src=\"{{medicine.PictureURL}}\">\r\n                                            </div>\r\n\r\n                                            <div class=\"product-detail\">\r\n                                                <h2>{{medicine.Name}}</h2>\r\n                                            </div>\r\n\r\n\r\n                                        </div>\r\n\r\n                                        <div class=\"plus-sign animated\">\r\n                                            <img src=\"/assets/img/add.png\">\r\n                                        </div>\r\n\r\n                                    </li>\r\n\r\n                                </ul>\r\n\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n            </div>\r\n\r\n\r\n            <div class=\"right-pane\">\r\n\r\n\r\n                <div class=\"time-pane\">\r\n\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6 col-sm-6 col-xs-6\" style=\"text-align:left\">\r\n                            <p class='right-estimate'>Estimated Delivery Time</p>\r\n                        </div>\r\n                        <div class=\"col-md-6 col-sm-6 col-xs-6\" style=\"text-align: right\">\r\n                            <div class=\"time\">\r\n                                <p class=\"big\">{{estimatedDeliveryTime}}</p>\r\n                                <p class=\"small\">mins</p>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n\r\n\r\n                </div>\r\n\r\n\r\n\r\n\r\n                <div class=\"cart animated\">\r\n\r\n                    <div class=\"header\">\r\n                        <h3>Your Order</h3>\r\n                    </div>\r\n                    <div class=\"body clearfix\">\r\n\r\n\r\n                        <div class=\"one-row clearfix\" *ngFor=\"let onerow of cart\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\">{{onerow?.Quantity}}x\r\n                                    <span style=\"color:#1ec26b;font-weight:bold;font-size:16px\">{{onerow?.Name}}</span>\r\n                                </P>\r\n                                <span class=\"optional\">{{onerow?.ChemistCategoryName}}</span>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail\">Rs. {{onerow?.TotalPrice}}</P>\r\n                            </div>\r\n                        </div>\r\n\r\n                    </div>\r\n                    <div class='footer clearfix'>\r\n\r\n                        <div class=\"one-row clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\">Subtotal</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail\">Rs. {{SubTotal}}</P>\r\n                            </div>\r\n                        </div>\r\n\r\n                        <div class=\"one-row clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\">Delivery Fee</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail\">Rs. 0</P>\r\n                            </div>\r\n                        </div>\r\n\r\n\r\n                        <div class=\"one-row more-margin clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\" style=\"padding-top:10px;\">Total</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail bigText\">Rs. {{FinalTotal}}</P>\r\n                            </div>\r\n                        </div>\r\n\r\n                        <div class=\"alignCenter row\" style=\"width: 80%;margin: 15px auto;\">\r\n\r\n                                <ng-container *ngIf=\"cartHasItems\">\r\n                                        <button (click)=\"takeMeToReviewPage()\" id=\"proceedToReview\" class=\"checkout-btn nextBtn\">Proceed</button>\r\n                                    </ng-container>\r\n                            \r\n                        </div>\r\n\r\n                    </div>\r\n                </div>\r\n\r\n            </div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n        </div>\r\n\r\n    </div>\r\n    <div class=\"row setup-content\" id=\"step-2\">\r\n        <div class=\"col-md-12 cleafix\">\r\n\r\n            <div class=\"col-left clearfix\">\r\n\r\n                <div class=\"holder-box clearfix\">\r\n                    <!-- wrapper -->\r\n\r\n                    <div class='header clearfix'>\r\n                        <div class=\"left-image-side clearfix\">\r\n                            <img src=\"assets/img/dw.png\" width=\"75px\">\r\n                        </div>\r\n                        <div class='right-name clearfix'>\r\n                            <p class=\"chemist-name\">{{ChemistViewing.UserName}}</p>\r\n                            <p class=\"opening-hours\">{{ChemistViewing.DistanceFromUs}} KM</p>\r\n\r\n                            <div class=\"chemist-ratings\">\r\n\r\n                                <star-rating-comp [starType]=\"'icon'\" [disabled]=\"true\" [rating]=\"ChemistViewing.Chemist.ChemistRating\"></star-rating-comp>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n\r\n                    <hr class=\"saperator\">\r\n\r\n\r\n                    <div class=\"table-details\">\r\n\r\n                        <div class=\"one-row clearfix\" *ngFor=\"let onerow of cart\">\r\n                            <div class=\"del\" (click)=\"deletethisRow(onerow)\">\r\n                                <img src=\"assets/img/del.png\">\r\n                            </div>\r\n                            <div class=\"name\">\r\n                                <span class=\"med-name\">{{onerow.Name}}</span>\r\n                                <span>({{onerow.ChemistCategoryName}}) {{onerow.DosageValue}}{{onerow.DosageName}} {{onerow.MeausurementName}}</span>\r\n                            </div>\r\n                            <div class=\"quantity\">\r\n                                <div class=\"quantity\" id=\"prod-quantity\">\r\n                                    <input type=\"number\" id=\"num_val\" min=\"1\" max=\"10\" class='qty' step=\"1\" value=\"{{onerow.Quantity}}\" readonly>\r\n                                    <div class=\"quantity-nav\">\r\n                                        <div class=\"quantity-button quantity-up qtyplus \" field='quantity' (click)=\"UppingReview(onerow)\">+</div>\r\n                                        <div class=\"quantity-button quantity-down qtyminus\" field='quantity' (click)=\"DowningReview(onerow)\">-</div>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"subtotal\">\r\n                                <p>Rs. {{onerow.TotalPrice}}</p>\r\n                            </div>\r\n\r\n                        </div>\r\n\r\n                        <div class=\"row  subtotal-row clearfix\">\r\n                            <div class=\"subtotal-heading\">\r\n                                <p>Subtotal</p>\r\n                            </div>\r\n                            <div class=\"subtotal-value\">\r\n                                Rs. {{SubTotal}}\r\n                            </div>\r\n\r\n                        </div>\r\n\r\n\r\n                        <div class=\"row voucher-row clearfix\">\r\n                            <h3>Enter your voucher code here</h3>\r\n\r\n                            <div class='voucher-form clearfix'>\r\n                                <div class=\"inputField\">\r\n                                    <input type=\"text\">\r\n                                </div>\r\n                                <div class=\"inputBtn\">\r\n                                    <button>Submit</button>\r\n                                </div>\r\n                            </div>\r\n\r\n                        </div>\r\n\r\n                        <hr class=\"saperator\">\r\n\r\n\r\n                        <div class=\"row footer-row clearfix\">\r\n                            <div class=\"subtotal-heading\">\r\n                                <p>Delivery Fee</p>\r\n                            </div>\r\n                            <div class=\"subtotal-value\">\r\n                                0\r\n                            </div>\r\n\r\n                        </div>\r\n\r\n                        <div class=\"row  footer-row no-margin-top clearfix\">\r\n                            <div class=\"subtotal-heading\">\r\n                                <p>Total</p>\r\n                            </div>\r\n                            <div class=\"subtotal-value font20\">\r\n                                Rs. {{FinalTotal}}\r\n                            </div>\r\n\r\n                        </div>\r\n\r\n\r\n\r\n                    </div>\r\n\r\n                </div>\r\n                <!-- wrapper -->\r\n\r\n            </div>\r\n\r\n            <div class=\"col-right clearfix\">\r\n\r\n                <div class=\"holder-box clearfix\">\r\n\r\n                    <h3>Order Information</h3>\r\n\r\n\r\n\r\n                    <div class=\"check1\">\r\n                        <p>\r\n                            <input type=\"radio\" id=\"test2\" (change)=\"AsSoonAsPossibleSelected()\" name=\"radio-group\" checked>\r\n                            <label for=\"test2\" class='delivery-text'>As soon as possible</label>\r\n                            <span class='delivery-text'>Estimated Delivery Time : {{estimatedDeliveryTime}} min</span>\r\n                        </p>\r\n\r\n                        <p>\r\n                            <input type=\"radio\" id=\"test3\" (change)=\"showTimeSlots()\" name=\"radio-group\">\r\n                            <label for=\"test3\" class='delivery-text'>Later</label>\r\n                        </p>\r\n\r\n                        <ng-container>\r\n\r\n                            <ul class=\"time-slots\">\r\n                                <li *ngFor=\"let timeSlot of timeSlots\" class=\"\">\r\n                                    <button class=\"time-slot\" (click)=\"selectThisSlot($event,timeSlot.Id)\">{{timeSlot.StartingTime}} - {{timeSlot.EndingTime}}</button>\r\n                                </li>\r\n                            </ul>\r\n\r\n                        </ng-container>\r\n\r\n                    </div>\r\n\r\n                    <hr class=\"saperator\">\r\n\r\n                    <div class='italic-text row'>\r\n                        <p>(if you want to add any comment e.g. about delivery instructions, this is the right place)</p>\r\n                    </div>\r\n\r\n\r\n                    <div class='message-text row'>\r\n                        <p style=\"cursor:pointer;\" (click)=\"showMessageArea()\">\r\n                            <img src=\"assets/img/play-arrow.png\"> Add a message to your order\r\n\r\n                        </p>\r\n\r\n\r\n\r\n                        <div class=\"textarea-div2 animated\">\r\n                            <textarea placeholder=\"Write any instructions here ...\"></textarea>\r\n                        </div>\r\n\r\n\r\n\r\n                    </div>\r\n\r\n                    <div class=\"alignCenter row\">\r\n                        <ng-container *ngIf=\"cartHasItems\">\r\n                            <button class=\"checkout-btn nextBtn\">Checkout</button>\r\n                        </ng-container>\r\n                    </div>\r\n\r\n                </div>\r\n\r\n\r\n            </div>\r\n\r\n\r\n        </div>\r\n    </div>\r\n    <div class=\"row setup-content\" id=\"step-3\">\r\n\r\n        <div class=\"col-md-12\">\r\n\r\n\r\n            <div class=\"left-pane\">\r\n                <div class=\"inner-wrapper\">\r\n                    <div class=\"header\">\r\n                        <h3>My Contact Details</h3>\r\n                    </div>\r\n                    <div class=\"body clearfix\">\r\n                        <div class=\"lefty-side clearfix\">\r\n                            <p class=\"leftyVa\">Full Name</p>\r\n                            <p class=\"leftyVa\">Email</p>\r\n                            <p class=\"leftyVa\">Mobile</p>\r\n                        </div>\r\n                        <div class=\"righty-side col-md-6 clearfix\">\r\n                            <p class=\"rightyVal\">{{ThisUser.UserName}}</p>\r\n                            <p class=\"rightyVal\">{{ThisUser.Email}}</p>\r\n                            <p class=\"rightyVal\"></p>\r\n                            <a class=\"rightyVal green\" (click)=\"logOut()\">Not {{ThisUser.UserName}}? Logout </a>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class=\"inner-wrapper\">\r\n                    <div class=\"header\">\r\n                        <h3>Your delivery address</h3>\r\n                    </div>\r\n                    <div class=\"body clearfix\">\r\n                        \r\n\r\n                        <p class=\"oldAddress\">\r\n                                \r\n                                <input type=\"radio\" id=\"newDeliveryCheck\" (change)=\"createNewAddress()\" name=\"radio-group\" value=\"NewAddress\">\r\n                                <label for=\"newDeliveryCheck\" class='delivery-text'>Create new delivery address</label>\r\n                                \r\n                                \r\n                        </p>\r\n                        <ng-container *ngIf=\"newAddressEnabled\">\r\n                            <div class=\"addressesPane\">\r\n                                <span class=\"requiredRed\">*</span>\r\n                                <span class=\"required\">Required Fields</span>\r\n\r\n                                <p>\r\n                                    <span class=\"requiredRed\">*</span>\r\n                                    <span class=\"normalText\">Address</span>\r\n                                </p>\r\n                                \r\n                                <div class=\"form-group\">\r\n                                    \r\n                                    <input type=\"text\" class=\"address-field\" id=\"EnteredAddressCity\" name=\"EnteredAddress.City\" [(ngModel)]=\"EnteredAddress.City\">\r\n                                    <span class=\"required\">Enter your city for delivery address</span>\r\n                                </div>\r\n                                \r\n                                <div class=\"form-group\">\r\n                              \r\n                                    <input type=\"text\" class=\"address-field\" id=\"EnteredAddressArea\" name=\"EnteredAddress.Area\" [(ngModel)]=\"EnteredAddress.Area\">\r\n                                    <span class=\"required\">Enter your area delivery address</span>\r\n                                </div>\r\n                                \r\n                                \r\n                                <div class=\"form-group\">\r\n                                    \r\n                                    <input type=\"text\" class=\"address-field\" id=\"EnteredAddressDetail\" name=\"EnteredAddress.AddressDetail\" [(ngModel)]=\"EnteredAddress.AddressDetail\">\r\n                                    <span class=\"required\">Enter your address delivery address</span>\r\n                                </div>\r\n                                \r\n                                <div class=\"form-group\">\r\n                                    <button class=\"save-address\" (click)=\"saveThisAddress()\">Save Address</button>\r\n                                </div>\r\n\r\n                                <div class=\"location-box\">\r\n                                    <p>\r\n                                        <span class=\"normalText\">Your Location</span>\r\n                                    </p>\r\n                                    <p class=\"location-text\">Karachi</p>\r\n                                </div>\r\n\r\n                                <div class='message-text row'>\r\n                                    <p>\r\n                                        <img src=\"assets/img/play-arrow.png\"> Delivery Instructions</p>\r\n                                    <span class=\"optional\">(Optional)</span>\r\n                                </div>\r\n\r\n                                <div class='message-text row'>\r\n                                    <p>\r\n                                        <img src=\"assets/img/play-arrow.png\"> Additional Information</p>\r\n                                    <span class=\"optional\">(Optional)</span>\r\n                                </div>\r\n                            </div>\r\n                        </ng-container>\r\n                        <p class=\"oldAddress\">\r\n\r\n                            <input type=\"radio\" id=\"oldDeliveryCheck\" (change)=\"oldAddress()\" name=\"radio-group\" value=\"oldAddress\">\r\n                            <label for=\"oldDeliveryCheck\" class='delivery-text'>Use saved delivery address</label>\r\n\r\n                        </p>\r\n\r\n                        <ng-container *ngIf=\"oldAddressEnabled\">\r\n                                <ul class=\"EnteredAddress\">\r\n                                    <li class=\"listed-addresses\" *ngFor=\"let EnteredAddress of EnteredAddress\"><button class=\"\" (click)=\"selectThisAddress($event,EnteredAddress.Id)\">{{EnteredAddress.City}},{{EnteredAddress.Area}},{{EnteredAddress.AddressDetail}}</button></li>\r\n                                </ul>\r\n                        </ng-container>\r\n\r\n                    </div>\r\n                </div>\r\n\r\n\r\n\r\n\r\n                <div class=\"inner-wrapper\">\r\n                    <div class=\"header\">\r\n                        <h3>Choose how to pay</h3>\r\n                    </div>\r\n                    <div class=\"body clearfix\">\r\n\r\n\r\n                        <div class=\"panel-group\" id=\"accordion3\" role=\"tablist\" aria-multiselectable=\"true\">\r\n\r\n                            <div class=\"panel panel-custom\">\r\n                                <div class=\"panel-heading\" role=\"tab\" id=\"headingOne\">\r\n                                    <h4 class=\"panel-title\">\r\n                                        <a class=\"panel-head\" (click)=\"showPayingNowForm()\" data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapsePayNow\"\r\n                                            aria-expanded=\"true\" aria-controls=\"collapsePayNow\">\r\n\r\n                                            <input type=\"radio\" id=\"payingNow\" name=\"radio-group\" value=\"payingNow\">\r\n                                            <label for=\"payingNow\" class='delivery-text'>Pay Now</label>\r\n\r\n\r\n                                        </a>\r\n                                    </h4>\r\n                                </div>\r\n                                <div id=\"collapsePayNow\" class=\"panel-collapse collapse\" role=\"tabpanel\" aria-labelledby=\"headingOne\">\r\n                                    <div class=\"panel-body animated zoomIn\">\r\n\r\n                                        <div class=\"pay-now-details\">\r\n\r\n                                            <h3>Please provide your credit card details</h3>\r\n\r\n                                            <div class=\"form-group\">\r\n\r\n                                                <label for=\"cardName\">\r\n                                                    <span class=\"requiredRed\">*</span> Name on card</label>\r\n                                                <br/>\r\n                                                <input type=\"text\" class=\"form-control\" id=\"cardName\">\r\n                                                <span class=\"required\">As it appears on your credit card</span>\r\n\r\n                                            </div>\r\n\r\n                                            <div class=\"form-group\">\r\n\r\n                                                <label for=\"cardNumber\">\r\n                                                    <span class=\"requiredRed\">*</span> Card Number</label>\r\n                                                <br/>\r\n                                                <input type=\"text\" class=\"form-control\" id=\"cardNumber\">\r\n                                                <span class=\"required\">16 digits in front of your credit card. No spaces</span>\r\n\r\n                                            </div>\r\n\r\n\r\n                                            <div class=\"form-group\">\r\n                                                <label for=\"cardNumber\">\r\n                                                    <span class=\"requiredRed\">*</span> Expiration Date</label>\r\n                                                <br/>\r\n                                                <div class=\"col-md-6 col-sm-6\">\r\n                                                    <span class=\"dropdown-el\">\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"January\" checked=\"checked\" id=\"sort-relevance\">\r\n                                                        <label for=\"sort-relevance\">January</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"February\" id=\"sort-best\">\r\n                                                        <label for=\"sort-best\">February</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"March\" id=\"sort-low\">\r\n                                                        <label for=\"sort-low\">March</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"April\" id=\"sort-high\">\r\n                                                        <label for=\"sort-high\">April</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"May\" id=\"sort-brand\">\r\n                                                        <label for=\"sort-brand\">May</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"June\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">June</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"July\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">July</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"August\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">August</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"September\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">September</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"October\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">October</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"November\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">November</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"December\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">December</label>\r\n                                                    </span>\r\n                                                </div>\r\n\r\n                                                <div class=\"col-md-6 col-sm-6\">\r\n                                                    <span class=\"dropdown-el\">\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2016\" checked=\"checked\" id=\"sort-relevance\">\r\n                                                        <label for=\"sort-relevance\">2016</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2017\" id=\"sort-best\">\r\n                                                        <label for=\"sort-best\">2017</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2018\" id=\"sort-low\">\r\n                                                        <label for=\"sort-low\">2018</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2019\" id=\"sort-high\">\r\n                                                        <label for=\"sort-high\">2019</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2020\" id=\"sort-brand\">\r\n                                                        <label for=\"sort-brand\">2020</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2021\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">2021</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2022\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">2022</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2023\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">2023</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2024\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">2024</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2025\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">2025</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2026\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">2026</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2027\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">2027</label>\r\n                                                    </span>\r\n                                                </div>\r\n\r\n                                            </div>\r\n\r\n\r\n                                            <div class=\"form-group\" style=\"    margin-top: 47px;\">\r\n\r\n                                                <label for=\"cardNumber\">\r\n                                                    <span class=\"requiredRed\">*</span> Security Code</label>\r\n                                                <br/>\r\n                                                <input type=\"text\" class=\"form-control\" id=\"cardNumber\">\r\n                                                <span class=\"required\">CVV or CVV2. 3 Digits on the back. Amex 4, on the front</span>\r\n\r\n                                            </div>\r\n\r\n                                            <p>\r\n                                                <input class=\"styled-checkbox\" id=\"styled-checkbox-1\" type=\"checkbox\" value=\"value1\">\r\n                                                <label for=\"styled-checkbox-1\">Save my credit card details for future orders on the secure payment provider\r\n                                                    site.\r\n                                                </label>\r\n                                            </p>\r\n\r\n\r\n                                            <div class='bottom-text'>\r\n                                                <p class='bottom-text1'>After proceeding, you might be redirected to you card issuer page to verify\r\n                                                    this transaction</p>\r\n                                                <p class='bottom-text2'>Pay with master card or visa. You will be redirected to the second page of\r\n                                                    ouy patment partner. Transaction would be proceeded abroad.</p>\r\n                                            </div>\r\n\r\n                                        </div>\r\n\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n\r\n\r\n                            <div class=\"panel panel-custom\">\r\n                                <div class=\"panel-heading\" role=\"tab\" id=\"headingOne\">\r\n                                    <h4 class=\"panel-title\">\r\n                                        <a class=\"panel-head\" (click)=\"showOnDeliveryForm()\" data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapseCashonDelivery\"\r\n                                            aria-expanded=\"true\" aria-controls=\"collapseCashonDelivery\">\r\n\r\n                                            <input type=\"radio\" id=\"cashOnDelivery\" name=\"radio-group\" value=\"cashOnDelivery\">\r\n                                            <label for=\"cashOnDelivery\" class='delivery-text'>Cash on Delivery</label>\r\n\r\n\r\n                                        </a>\r\n                                    </h4>\r\n                                </div>\r\n\r\n                                <div id=\"collapseCashonDelivery\" class=\"panel-collapse collapse\" role=\"tabpanel\" aria-labelledby=\"headingTwo\">\r\n                                    <div class=\"panel-body animated zoomIn\">\r\n                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,\r\n                                        non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.\r\n                                        Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee\r\n                                        nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes\r\n                                        anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.\r\n                                        Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you\r\n                                        probably haven't heard of them accusamus labore sustainable VHS.\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n\r\n\r\n                        </div>\r\n\r\n\r\n\r\n                    </div>\r\n                </div>\r\n\r\n\r\n                <div class=\"inner-wrapper cleafix special\">\r\n\r\n                    <div class=\"col-md-6 cleafix\">\r\n\r\n                    </div>\r\n\r\n                    <div class=\"col-md-6 cleafix\">\r\n\r\n                        <div class=\"left-equal cleafix\">\r\n                            Total\r\n                        </div>\r\n                        <div class=\"right-equal cleafix\">\r\n                            Rs. 690\r\n                        </div>\r\n\r\n\r\n                        <p>By clicking this button, you agree with our\r\n                            <a>terms and conditions</a>\r\n                        </p>\r\n\r\n                        <button class=\"place-now\" (click)=\"placeOrder()\">Place order now</button>\r\n                    </div>\r\n\r\n                </div>\r\n\r\n\r\n\r\n\r\n            </div>\r\n\r\n\r\n            <div class=\"right-pane\">\r\n\r\n\r\n                <div class=\"time-pane\">\r\n\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6 col-sm-6 col-xs-6\" style=\"text-align:left\">\r\n                            <p class='right-estimate'>Estimated Delivery Time</p>\r\n                        </div>\r\n                        <div class=\"col-md-6 col-sm-6 col-xs-6\" style=\"text-align: right\">\r\n                            <div class=\"time\">\r\n                                <p class=\"big\">{{estimatedDeliveryTime}}</p>\r\n                                <p class=\"small\">mins</p>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n\r\n\r\n                </div>\r\n\r\n\r\n\r\n\r\n                <div class=\"cart\">\r\n\r\n                    <div class=\"header\">\r\n                        <h3>Your Order</h3>\r\n                    </div>\r\n                    <div class=\"body clearfix\">\r\n\r\n                            <div class=\"one-row clearfix\" *ngFor=\"let onerow of cart\">\r\n                                    <div class=\"item\">\r\n                                        <P class=\"item-detail\">{{onerow?.Quantity}}x\r\n                                            <span style=\"color:#1ec26b;font-weight:bold;font-size:16px\">{{onerow?.Name}}</span>\r\n                                        </P>\r\n                                        <span class=\"optional\">{{onerow?.ChemistCategoryName}}</span>\r\n                                    </div>\r\n                                    <div class=\"price\">\r\n                                        <P class=\"item-detail\">Rs. {{onerow?.TotalPrice}}</P>\r\n                                    </div>\r\n                                </div>\r\n\r\n                    </div>\r\n                    <div class='footer clearfix'>\r\n\r\n                        <div class=\"one-row clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\">Subtotal</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail\">Rs. {{SubTotal}}</P>\r\n                            </div>\r\n                        </div>\r\n\r\n                        <div class=\"one-row clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\">Delivery Fee</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail\">Rs. 0</P>\r\n                            </div>\r\n                        </div>\r\n\r\n\r\n                        <div class=\"one-row more-margin clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\" style=\"padding-top:10px;\">Total</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail bigText\">Rs. {{FinalTotal}}</P>\r\n                            </div>\r\n                        </div>\r\n\r\n                    </div>\r\n                </div>\r\n\r\n            </div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n        </div>\r\n\r\n    </div>\r\n\r\n\r\n</div>"
 
 /***/ }),
-/* 262 */
+/* 263 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -96868,7 +96970,7 @@ var AboutComponent = (function () {
          * remember that 'es6-promise-loader' is a promise
          */
         setTimeout(function () {
-            __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 312))
+            __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 313))
                 .then(function (json) {
                 console.log('async mockData', json);
                 _this.localState = json;
@@ -96889,7 +96991,7 @@ AboutComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 
 /***/ }),
-/* 263 */
+/* 264 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -96913,7 +97015,7 @@ NoContentComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 
 /***/ }),
-/* 264 */
+/* 265 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -97008,7 +97110,7 @@ FacebookModule.ctorParameters = function () { return []; };
 //# sourceMappingURL=facebook.module.js.map
 
 /***/ }),
-/* 265 */
+/* 266 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -97022,13 +97124,13 @@ var LocationModel = (function () {
 
 
 /***/ }),
-/* 266 */
+/* 267 */
 /***/ (function(module, exports) {
 
 module.exports = "<div id=\"snackbar\"></div>\n\n<modal #loginModal [closeOnEscape]=\"false\" [closeOnOutsideClick]=\"false\" modalClass=\"modal-lg modal-md  signUpModal\" (onSubmit)=\"actionOnSubmit()\">\n  <modal-content>\n\n    <div class=\"signButton\">\n      <button class='SignUpLogin' (click)=\"routeToSignUp()\">Sign Up</button>\n    </div>\n\n    <div class=\"closeButton\">\n      <img src=\"/assets/img/cancel.png\" width=\"15px\">\n    </div>\n\n    <div class='login-container'>\n\n      <div class='login clearfix'>\n\n        <div class='left-side'>\n\n          <div class=\"centered\">\n            <h2 class='logIN white'>Log In</h2>\n            <p class=\"white small-text\">Login to Continue</p>\n          </div>\n          <div class=\"image-logo\">\n            <div class=\"left-image\">\n              <img src=\"assets/img/1.gif\">\n            </div>\n            <div class=\"right-text\">\n              <p>Pharma Aid</p>\n            </div>\n\n          </div>\n\n        </div>\n\n        <div class='right-side'>\n          <div class=\"myForms\">\n            <div class=\"form-group\">\n              <label for=\"email\">Email</label>\n              <input type=\"text\" class=\"form-control\" [ngClass]=\"{'errors': EmailError}\" name=\"user.username\" [(ngModel)]=\"user.username\">\n            </div>\n\n            <div class=\"form-group\">\n              <label for=\"email\">password</label>\n              <input type=\"password\" class=\"form-control\" [ngClass]=\"{'errors': PasswordError}\" name=\"user.password\" [(ngModel)]=\"user.password\">\n            </div>\n          </div>\n\n          <div class=\"loader\">\n            <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->\n            <svg width=\"50\" height=\"30\" viewBox=\"0 0 120 30\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"#1ec26b\">\n              <circle cx=\"15\" cy=\"15\" r=\"15\">\n                <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n              <circle cx=\"60\" cy=\"15\" r=\"9\" fill-opacity=\"0.3\">\n                <animate attributeName=\"r\" from=\"9\" to=\"9\" begin=\"0s\" dur=\"0.8s\" values=\"9;15;9\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"0.5\" to=\"0.5\" begin=\"0s\" dur=\"0.8s\" values=\".5;1;.5\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n              <circle cx=\"105\" cy=\"15\" r=\"15\">\n                <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n            </svg>\n\n          </div>\n\n          <div class=\"form-group\" style=\"text-align:center;margin-top:60px;\">\n            <button class=\"submit-custom\" (click)=\"login()\">Login</button>\n          </div>\n\n\n          <div class=\"row clearfix\">\n            <div class='col-md-4 col-sm-4  no-left'>\n              <hr>\n            </div>\n            <div class='col-md-4 col-sm-4 no-padding text-centered'>\n              <p class=\"loginWith\">Login With</p>\n            </div>\n            <div class='col-md-4 col-sm-4 no-right'>\n              <hr>\n            </div>\n          </div>\n\n\n          <div class=\"row clearfix facebook-gmail\">\n\n            <div class=\"half-left\">\n              <a class=\"pointers\" (click)=\"loginWithFacebook()\">\n                <div class='holder'>\n                  <i class='fa fa-facebook'></i>\n                </div>\n              </a>\n            </div>\n            <div class=\"half-right\">\n              <button id=\"googleSignInBtn\" (click)=\"googleInit()\">\n                <div class='holder'>\n                  <img src=\"assets/img/plus.png\" style=\"width:23px;padding-left:2px\">\n                </div>\n              </button>\n            </div>\n\n          </div>\n\n\n        </div>\n\n      </div>\n\n    </div>\n  </modal-content>\n\n</modal>\n\n<div class=\"header-top\">\n\n  <h1>Get Medicine Supplies from your Home!</h1>\n  <div class=\"search-box clearfix\">\n    <div class=\"left-city\">\n      <label class=\"wrap\">\n        <select class=\"dropdown\" (change)=\"getCityId($event.target.value)\">\n          <option disabled selected value> City </option>\n          <option *ngFor=\"let cities of allCitites\" value=\"{{cities.Id}}\">{{cities.Name}}</option>\n        </select>\n      </label>\n    </div>\n    <div class=\"middle-area\">\n      <input class=\"area-input\" type=\"text\" [(ngModel)]=\"address\" placeholder=\"Enter an area\" [options]='options' (setAddress)=\"getAddress($event)\"\n        (street_number)='street_number=$event' (street)='street=$event' (city)='city=$event' (state)='state=$event' (district)='district=$event'\n        (country)='Pakistan' (postal_code)='postal_code=$event' (lat)='lat=$event' (lng)='lng=$event' (adr_address)='adr_address=$event'\n        (name)='name=$event' (place_id)='place_id=$event' (types)='types=$event' (url)='url=$event' (utc_offset)='utc_offset=$event'\n        (vicinity)='vicinity=$event' (photos)='photos=$event' (airport)='airport=$event' (CountryCodes)='CountryCodes=$event'\n        id=\"autocomplete\" ng2-google-place-autocomplete/>\n      <!--    <input type=\"text\"   name=\"myLocation.AreaName\" [(ngModel)]=\"myLocation.AreaName\"> -->\n    </div>\n    <div class=\"right-btn\">\n      <button class=\"header-btn\" (click)=\"showChemistPage()\">Let's Start</button>\n    </div>\n  </div>\n\n</div>\n\n\n<div class=\"container container-login\">\n\n\n  <div class=\"on-go\">\n    <h1>Order Medicine on the go</h1>\n  </div>\n\n\n</div>\n\n<div class=\"app-banner\">\n  <div class='container'>\n    <h3>Download the App</h3>\n    <p style=\"width:40%\">Get the app right in your pocket and order the medicine on the go from anywhere you want</p>\n\n\n    <div class=\"app-banner-inner\" data-aos=\"fade-right\">\n\n      <div class=\"app-buttons clearfix\">\n\n        <div class=\"apps clearfix\">\n          <div class=\"left-png clearfix\">\n            <img src=\"assets/img/apple.png\">\n          </div>\n          <div class=\"right-texty clearfix\">\n            <p class='small'>Download on the</p>\n            <p class='large'>App Store</p>\n          </div>\n        </div>\n\n\n        <div class=\"apps clearfix\" style=\"margin-left: 18px;\">\n          <div class=\"left-png clearfix\">\n            <img src=\"assets/img/appstore.png\">\n          </div>\n          <div class=\"right-texty clearfix\">\n            <p class='small'>Download on the</p>\n            <p class='large'>App Store</p>\n          </div>\n        </div>\n\n      </div>\n\n      <div class=\"mockup\" data-aos=\"fade-left\">\n        <img src=\"assets/img/mockup.png\">\n      </div>\n\n    </div>\n\n  </div>\n</div>\n\n\n<div class=\"container contact-form-row\">\n\n  <div class=\"contact-form\">\n    <h1>Get in Touch</h1>\n  </div>\n\n\n  <div class=\"actual-form clearfix\">\n    <div class=\"left-fields\" data-aos=\"zoom-in\">\n      <textarea placeholder=\"Your message ... \"></textarea>\n    </div>\n    <div class=\"right-fields\" data-aos=\"zoom-in-up\">\n      <div class=\"form-group\">\n        <input type=\"text\" placeholder=\"Enter name\">\n      </div>\n      <div class=\"form-group\">\n        <input type=\"text\" placeholder=\"Enter email\">\n      </div>\n      <div class=\"form-group\">\n        <button class=\"sendBtn\">Send</button>\n      </div>\n    </div>\n  </div>\n\n\n</div>"
 
 /***/ }),
-/* 267 */
+/* 268 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)(undefined);
@@ -97042,17 +97144,17 @@ exports.push([module.i, "\r\n@font-face {\r\n    font-family: 'Museo300';\r\n   
 
 
 /***/ }),
-/* 268 */
+/* 269 */
 /***/ (function(module, exports) {
 
 module.exports = "<div id=\"snackbar\"></div>\n\n<modal #signUpModal\n[closeOnEscape]=\"false\"\n[closeOnOutsideClick]=\"false\"\nmodalClass=\"modal-lg modal-md  signUpModal\"\n(onSubmit)=\"actionOnSubmit()\">\n<modal-content>\n\n  <div class=\"signButton\">\n    <button class='SignUpLogin' (click)=\"routeToLogin()\">Login</button>\n  </div>\n\n  <div class=\"closeButton\">\n    <img src=\"/assets/img/cancel.png\" width=\"15px\">\n  </div>\n\n<div class='login-container'>\n  \n     <div class='login clearfix'>\n  \n        <div class='left-side'>\n            \n            <div class=\"centered\">\n            <h2 class='logIN white'>Sign Up</h2>\n            <p class=\"white small-text\">Sign up now to enjoy faster and better experience</p>\n           </div>\n            <div class=\"image-logo\">\n             <div class=\"left-image\">\n              <img src=\"assets/img/1.gif\">\n             </div>\n             <div class=\"right-text\">\n              <p>Pharma Aid</p>\n            </div>\n   \n           </div>\n   \n         </div>\n  \n      <div class='right-side'>\n          <div class=\"myForms\">\n\n              <div class=\"form-group\">\n                  <label for=\"email\">username</label>\n                  <input type=\"text\" class=\"form-control\" [ngClass]=\"{'errors': UsernameError}\" name=\"user.username\" [(ngModel)]=\"user.username\">\n                </div>\n\n            <div class=\"form-group\">\n              <label for=\"email\">Email</label>\n              <input type=\"text\" class=\"form-control\" [ngClass]=\"{'errors': EmailError}\" name=\"user.email\" [(ngModel)]=\"user.email\">\n            </div>\n\n            <div class=\"form-group\">\n                <label for=\"email\">mobile number</label>\n                <input type=\"number\" class=\"form-control\" [ngClass]=\"{'errors': MobileError}\" name=\"user.mobileNumber\" [(ngModel)]=\"user.mobileNumber\">\n              </div>\n\n            <div class=\"form-group\">\n              <label for=\"email\">password</label>\n              <input type=\"password\" class=\"form-control\"  [ngClass]=\"{'errors': PasswordError}\" name=\"user.password\" [(ngModel)]=\"user.password\">\n            </div>\n\n            <div class=\"form-group\">\n                <label for=\"email\">confirm password</label>\n                <input type=\"password\" class=\"form-control\"  [ngClass]=\"{'errors': PasswordError}\" name=\"confrimPass\" [(ngModel)]=\"confrimPass\">\n              </div>\n          </div>\n\n          <div class=\"form-group\" style=\"text-align:center;margin-top:60px;\">\n            <button class=\"submit-custom\" (click)=\"signUp()\">Sign Up</button>\n          </div>\n\n\n          <div class=\"row clearfix\">\n            <div class='col-md-4 col-sm-4  no-left'>\n              <hr>\n            </div>\n            <div class='col-md-4 col-sm-4 no-padding text-centered'>\n              <p class=\"loginWith\">Sign up With</p>\n            </div>\n            <div class='col-md-4 col-sm-4 no-right'>\n              <hr>\n            </div>\n          </div>\n\n\n          <div class=\"row clearfix facebook-gmail\">\n\n              <div class=\"half-left\">\n                  <a (click)=\"signUpWithFacebook()\"><div class='holder'><i class='fa fa-facebook'></i></div></a>\n              </div>\n              <div class=\"half-right\">\n                  <button id=\"googleSignInBtn\" (click)=\"googleInit()\"><div class='holder'><img src=\"assets/img/plus.png\" style=\"width:23px;padding-left:2px\"></div></button>\n              </div>\n              <!-- <div class=\"g-signin2\" data-onsuccess=\"onSignIn\"></div> -->\n          </div>\n\n\n      </div>\n\n     </div>\n  \n  </div>\n</modal-content>\n\n</modal>\n\n\n\n"
 
 /***/ }),
-/* 269 */
+/* 270 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__(270);
+        var result = __webpack_require__(271);
 
         if (typeof result === "string") {
             module.exports = result;
@@ -97062,7 +97164,7 @@ module.exports = "<div id=\"snackbar\"></div>\n\n<modal #signUpModal\n[closeOnEs
     
 
 /***/ }),
-/* 270 */
+/* 271 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)(undefined);
@@ -97076,17 +97178,17 @@ exports.push([module.i, "\r\n@font-face {\r\n    font-family: 'Museo300';\r\n   
 
 
 /***/ }),
-/* 271 */
+/* 272 */
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"banner\">\n\n   <div class=\"banner-bottom\">\n        <div class=\"location-left\">\n            \n            <p *ngIf=\"!addressCheck\"><img src=\"assets/img/placeholder.png\">  Bolton Plaza</p>\n            <p *ngIf=\"addressCheck\"><img src=\"assets/img/placeholder.png\"> {{EnteredAddress.CityName}}, {{EnteredAddress.AreaName}}</p>\n        </div>\n        <div class=\"change-location\">\n          <button class=\"change\">Change Location</button>\n        </div>\n\n   </div>\n\n</div>\n\n<div class=\"container med-container\">\n\n  <div class=\"row breadcrumbs\">\n    \n    \n    <a href=\"\">Home</a><img src=\"/assets/img/right.png\" width=\"10px\"> <a href=\"\">Chemist</a>\n  \n  \n  </div> \n\n\n  \n  <div class=\"row breadcrumbs\">\n      \n      \n      <div class='voucher-form clearfix'>\n          <img src=\"/assets/img/search.png\" class=\"search-icon\">\n          <div class=\"inputField\" >\n            <input type=\"text\" placeholder=\"Enter Chemist Name\" name=\"searchChemistQuery\" (keyup)=\"searchThisMedicine(this)\" [(ngModel)]=\"searchChemistQuery\">\n          </div>\n          <div class=\"inputBtn\">\n              <button>Search</button>\n          </div>\n          \n      </div>\n    \n    \n  </div>\n\n  <div class=\"row\">\n      <div class=\"search-check\">\n             <p class=\"italic-search\">Search by </p>\n             <p>\n              <input type=\"radio\"  id=\"chemistCheck\" name=\"radio-group\" (change)=\"showChemistsData()\"  value=\"Chemists\" checked>\n              <label for=\"chemistCheck\" class='delivery-text'>Chemists</label>\n             </p>\n            <p>\n              <input type=\"radio\" id=\"medicineCheck\" name=\"radio-group\" (change)=\"showMedicinesData()\" value=\"Medicine\">\n              <label for=\"medicineCheck\" class='delivery-text'>Medicine</label>\n            </p>\n          </div>\n  </div>\n\n\n  \n  \n  <div class=\"filter-row row clearfix\">  <!-- Filter Row --> \n\n      <div class=\"filter-icons-left\">\n\n            <div class=\"inner\">\n                <h2 class=\"filter-heading\"><img class=\"level\" src='assets/img/levels.png' width=\"20px\">Filter Results </h2>\n            </div>\n            <ul class='filter-options'>\n                <li>Free Devliery</li>\n                <li>Fast Devliery</li>\n                <li>High Rating</li>\n                <li>Low Rating</li>\n              </ul>\n\n            <div class=\"quick-filters\">\n\n            \n            <h3>Quick Filters</h3>\n            <ul class=\"quick-filters-list\">\n              <li>Panadol</li>\n              <li>Flagyl</li>\n              <li>Disprin</li>\n            </ul>\n          </div>\n\n      </div>\n\n      <div class=\"filtered-list-right\">\n\n\n          <!-- Accordions -->\n\n        <ng-container *ngIf=\"showChemists\"> \n          <div class=\"panel-group\" id=\"accordion\" role=\"tablist\" aria-multiselectable=\"true\">\n            <ng-container *ngFor=\"let chemists of searchedChemists\">\n              <div class=\"panel panel-custom\">\n                  <div class=\"panel-heading\" role=\"tab\" id=\"headingOne\" (click)=\"getDetailForThisChemist(chemists)\">\n                      <h4 class=\"panel-title\">\n                          <a class=\"panel-head\" data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapse{{chemists.Id}}\" aria-expanded=\"true\" aria-controls=\"collapseOne\">\n\n                              <div class='header clearfix'>\n                                  <div class=\"left-image-side clearfix\">\n                                   <img src=\"{{chemists.ProfileURL}}\" width=\"75px\" height=\"72px\">\n                                  </div>\n                                  <div class='right-name clearfix'>\n                                   <p class=\"chemist-name\">{{chemists.Chemist.PharmacyName}}</p>\n                                    <p class=\"opening-hours\">{{chemists.DistanceFromUs}} KM</p>\n\n                                    <div class=\"chemist-ratings\">\n                                            <star-rating-comp [starType]=\"'icon'\" [disabled]=\"true\" [rating]=\"chemists.ChemistRatings\"></star-rating-comp>\n                                       \n                                    </div>\n                                  </div>\n                             </div>\n                              <div class=\"chevron\">\n                                <i class='fa fa-chevron-right'></i>\n                              </div>\n                          \n                          </a>\n                      </h4>\n                  </div>\n                  <!-- <div id=\"collapse{{chemists.Id}}\" class=\"panel-collapse collapse\" role=\"tabpanel\" aria-labelledby=\"headingOne\">\n                      <div class=\"panel-body animated zoomIn\">\n                          <div class=\"row\">\n                              <div class=\"col-md-6 alignCenter\">\n                                    <p class=\"chemist-name\"><img src=\"assets/img/map.png\" width=\"20px\">&nbsp; {{chemists.Chemist.Address}}</p>\n                              </div>\n                              <div class=\"col-md-6 alignCenter\">\n                                    <p class=\"chemist-name\"><img src=\"assets/img/phone.png\" width=\"20px\">&nbsp; {{chemists.MobileNumber}}</p>\n                                </div>\n                          </div>\n                      </div>\n                  </div> -->\n              </div>\n            </ng-container>\n          </div>\n        </ng-container>\n\n\n          <!-- Accordions -->\n\n        \n        <ng-container *ngIf=\"showMedicines\">\n\n                <div class=\"panel-group\" id=\"accordion\" role=\"tablist\" aria-multiselectable=\"true\">\n                        <ng-container *ngFor=\"let chemists of allMedicines\">\n                          <div class=\"panel panel-custom animated slideInDown\">\n                              <div class=\"panel-heading\" role=\"tab\" id=\"headingOne\">\n                                  <h4 class=\"panel-title\">\n                                      <a class=\"panel-head\" data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapse{{chemists.Id}}\" aria-expanded=\"true\" aria-controls=\"collapseOne\">\n            \n                                          <div class='header clearfix'>\n                                              <div class=\"left-image-side clearfix\">\n                                               <img src=\"{{chemists.ProfileURL}}\" width=\"75px\" height=\"72px\">\n                                              </div>\n                                              <div class='right-name clearfix'>\n                                               <p class=\"chemist-name\">{{chemists.PharmacyName}}</p>\n                                                <p class=\"opening-hours\">33</p>\n            \n                                                <div class=\"chemist-ratings\">\n                                                        <star-rating-comp [starType]=\"'icon'\" [disabled]=\"true\" [rating]=\"chemists.ChemistRatings\"></star-rating-comp>\n                                                   \n                                                </div>\n                                              </div>\n                                         </div>\n                                          <div class=\"chevron\">\n                                            <i class='fa fa-chevron-right'></i>\n                                          </div>\n                                      \n                                      </a>\n                                  </h4>\n                              </div>\n                              <div id=\"collapse{{chemists.Id}}\" class=\"panel-collapse collapse\" role=\"tabpanel\" aria-labelledby=\"headingOne\">\n                                  <div class=\"panel-body animated zoomIn\">\n                                      <div class=\"row\">\n                                          <div class=\"col-md-6 alignCenter\">\n                                                <p class=\"chemist-name\"><img src=\"assets/img/map.png\" width=\"20px\">&nbsp; {{chemists.Address}}</p>\n                                          </div>\n                                          <div class=\"col-md-6 alignCenter\">\n                                                <p class=\"chemist-name\"><img src=\"assets/img/phone.png\" width=\"20px\">&nbsp; {{chemists.MobileNumber}}</p>\n                                            </div>\n                                      </div>\n                                  </div>\n                              </div>\n                          </div>\n                        </ng-container>\n                      </div>\n\n        </ng-container>\n            \n      </div>\n\n\n  </div>  <!-- Filter Row --> \n  \n  \n\n</div>"
 
 /***/ }),
-/* 272 */
+/* 273 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__(273);
+        var result = __webpack_require__(274);
 
         if (typeof result === "string") {
             module.exports = result;
@@ -97096,7 +97198,7 @@ module.exports = "<div class=\"banner\">\n\n   <div class=\"banner-bottom\">\n  
     
 
 /***/ }),
-/* 273 */
+/* 274 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)(undefined);
@@ -97110,17 +97212,17 @@ exports.push([module.i, "\r\n.banner{\r\n    width:100%;\r\n    position: relati
 
 
 /***/ }),
-/* 274 */
+/* 275 */
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"orders-screen\">\n\n  <h2 class='my-orders-heading'>My orders</h2>\n\n  <hr class=\"saperator-orders\">\n\n  <div class=\"scheduled-orders\">\n\n    <div class=\"row clearfix\">\n\n      <div class=\"left-aligned-heading\">\n        <h3>Scheduled orders</h3>\n      </div>\n\n      <div class=\"right-aligned-lin\">\n        <hr class=\"saperator-orders\">\n      </div>\n\n\n    </div>\n\n    <div class=\"innner row one-order\">\n\n      <div class=\"col-md-9 col-sm-9 col-lg-9 left-row-detail\">\n        <p>1x Disprin 300mg - D.Watson Chemist, 23/11/2017</p>\n        <p>Total : Rs. 690/-</p>\n      </div>\n\n      <div class=\"col-md-3 col-sm-3 col-lg-3 right-time\">\n        <p class=\"huge-green\">45 mins</p>\n        <p>Delivery Time</p>\n      </div>\n\n    </div>\n\n\n\n  </div>\n\n  <div class=\"past-orders\">\n\n    <div class=\"row clearfix\">\n\n      <div class=\"left-aligned-heading\">\n        <h3>Past orders</h3>\n      </div>\n\n      <div class=\"right-aligned-lin\">\n        <hr class=\"saperator-orders\">\n      </div>\n\n\n    </div>\n\n\n    <div class=\"innner row one-order\">\n\n      <div class=\"col-md-9 col-sm-9 col-lg-9 left-row-detail\">\n        <p>1x Disprin 300mg - D.Watson Chemist, 23/11/2017</p>\n        <p>Total : Rs. 690/-</p>\n      </div>\n\n      <div class=\"col-md-3 col-sm-3 col-lg-3 right-time\">\n        <button class=\"re-order\">Reorder</button>\n      </div>\n\n    </div>\n\n    <div class=\"innner row one-order\">\n\n      <div class=\"col-md-9 col-sm-9 col-lg-9 left-row-detail\">\n        <p>1x Disprin 300mg - D.Watson Chemist, 23/11/2017</p>\n        <p>Total : Rs. 690/-</p>\n      </div>\n\n      <div class=\"col-md-3 col-sm-3 col-lg-3 right-time\">\n        <button class=\"re-order\">Reorder</button>\n      </div>\n\n    </div>\n\n\n  </div>\n\n</div>"
 
 /***/ }),
-/* 275 */
+/* 276 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__(276);
+        var result = __webpack_require__(277);
 
         if (typeof result === "string") {
             module.exports = result;
@@ -97130,7 +97232,7 @@ module.exports = "<div class=\"orders-screen\">\n\n  <h2 class='my-orders-headin
     
 
 /***/ }),
-/* 276 */
+/* 277 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)(undefined);
@@ -97144,17 +97246,17 @@ exports.push([module.i, ".my-orders-heading{\r\n    font-size:20px;\r\n    font-
 
 
 /***/ }),
-/* 277 */
+/* 278 */
 /***/ (function(module, exports) {
 
 module.exports = "<div id=\"snackbar\"></div>\n<div class=\"orders-screen\">\n\n  <h2 class='my-orders-heading'>Profile</h2>\n\n  <hr class=\"saperator-orders\">\n\n\n  <div class=\"form-profile\">\n\n      <div class=\"form-group\" style=\"padding:12px\">\n          <label>Change Display Picture</label>\n         <!--  <form id=\"form1\" runat=\"server\">\n            <input type='file'(change)=\"changeimage(event)\" id=\"imgInp\" />\n            <img  style=\"width:50%; height:50%\" id=\"blah\"  src=\"#\" alt=\"your image\" />\n      \n          </form> -->\n  </div>\n    <div class=\"form-group\">\n      <label>Email</label>\n      <input type=\"text\" class=\"form-control input-lg\" name=\"ThisUser.Email\" [(ngModel)]=\"ThisUser.Email\"/>\n    </div>\n\n    <div class=\"row\">\n\n      <div class=\"col-md-6 col-sm-6 col-lg-6\">\n\n        <div class=\"form-group\">\n          <label>Full name</label>\n          <input type=\"text\" class=\"form-control input-lg\" name=\"ThisUser.FullName\" [(ngModel)]=\"ThisUser.FullName\"/>\n        </div>\n\n      </div>\n\n      <div class=\"col-md-6 col-sm-6 col-lg-6\">\n\n        <div class=\"form-group\">\n          <label>Username</label>\n          <input type=\"text\" class=\"form-control input-lg\" name=\"ThisUser.UserName\" [(ngModel)]=\"ThisUser.UserName\" />\n        </div>\n\n      </div>\n\n    </div>\n\n    <div class=\"row\">\n\n      <div class=\"col-md-6 col-sm-6 col-lg-6\">\n\n        <div class=\"form-group\">\n          <label style=\"width: 114px;\">Mobile Number</label>\n          <input type=\"text\" class=\"form-control input-lg\" name=\"ThisUser.mobileNumber\" [(ngModel)]=\"ThisUser.mobileNumber\" />\n        </div>\n\n      </div>\n\n\n\n\n\n\n    </div>\n\n    <div class=\"row\">\n\n      <div class=\"col-md-offset-6 col-lg-offset-6 col-sm-offset-6 col-md-6 col-sm-6 col-lg-6\" style=\"text-align: right;\">\n\n        <button class=\"save-btn\" (click)=\"updateWithoutPassword()\">Save</button>\n      </div>\n\n    </div>\n\n  </div>\n\n  \n  <h2 class='my-orders-heading'>Password</h2>\n  \n    <hr class=\"saperator-orders\">\n\n\n    <div class=\"password-change\">\n        <div class=\"form-group\">\n          <input type=\"password\" class=\"password-fields\" placeholder=\"Current Password\" name=\"currentPass\" [(ngModel)]=\"currentPass\" >\n        </div>\n        <div class=\"form-group\">\n            <input type=\"password\" class=\"password-fields\" placeholder=\"New Password\" name=\"newPass\" [(ngModel)]=\"newPass\">\n        </div>\n        <div class=\"row\">\n            \n                  <div class=\"col-md-offset-6 col-lg-offset-6 col-sm-offset-6 col-md-6 col-sm-6 col-lg-6\" style=\"text-align: right;\">\n            \n                    <button class=\"save-btn\" (click)=\"updatePasswords()\">Save</button>\n                  </div>\n            \n        </div>\n    </div>\n\n\n</div>"
 
 /***/ }),
-/* 278 */
+/* 279 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__(279);
+        var result = __webpack_require__(280);
 
         if (typeof result === "string") {
             module.exports = result;
@@ -97164,7 +97266,7 @@ module.exports = "<div id=\"snackbar\"></div>\n<div class=\"orders-screen\">\n\n
     
 
 /***/ }),
-/* 279 */
+/* 280 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)(undefined);
@@ -97178,7 +97280,7 @@ exports.push([module.i, ".my-orders-heading{\r\n    font-size:20px;\r\n    font-
 
 
 /***/ }),
-/* 280 */
+/* 281 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -97213,8 +97315,8 @@ AppComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
         selector: 'app',
         encapsulation: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewEncapsulation"].None,
-        styles: [__webpack_require__(281), __webpack_require__(283)],
-        template: __webpack_require__(285)
+        styles: [__webpack_require__(282), __webpack_require__(284)],
+        template: __webpack_require__(286)
     }),
     __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__app_service__["a" /* AppState */]])
 ], AppComponent);
@@ -97222,11 +97324,11 @@ AppComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 
 /***/ }),
-/* 281 */
+/* 282 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__(282);
+        var result = __webpack_require__(283);
 
         if (typeof result === "string") {
             module.exports = result;
@@ -97236,7 +97338,7 @@ AppComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
     
 
 /***/ }),
-/* 282 */
+/* 283 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)(undefined);
@@ -97250,11 +97352,11 @@ exports.push([module.i, "/* @font-face {\r\n  font-family: 'myriadRegular';\r\n 
 
 
 /***/ }),
-/* 283 */
+/* 284 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__(284);
+        var result = __webpack_require__(285);
 
         if (typeof result === "string") {
             module.exports = result;
@@ -97264,7 +97366,7 @@ exports.push([module.i, "/* @font-face {\r\n  font-family: 'myriadRegular';\r\n 
     
 
 /***/ }),
-/* 284 */
+/* 285 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)(undefined);
@@ -97278,13 +97380,13 @@ exports.push([module.i, "@charset \"UTF-8\";\n\n/*!\n * animate.css -http://dane
 
 
 /***/ }),
-/* 285 */
+/* 286 */
 /***/ (function(module, exports) {
 
 module.exports = "<!-- <nav>\r\n    <a [routerLink]=\" ['./'] \"\r\n      routerLinkActive=\"active\" [routerLinkActiveOptions]= \"{exact: true}\">\r\n      Index\r\n    </a>\r\n    <a [routerLink]=\" ['./home'] \"\r\n      routerLinkActive=\"active\" [routerLinkActiveOptions]= \"{exact: true}\">\r\n      Home\r\n    </a>\r\n    <a [routerLink]=\" ['./detail'] \"\r\n      routerLinkActive=\"active\" [routerLinkActiveOptions]= \"{exact: true}\">\r\n      Detail\r\n    </a>\r\n    <a [routerLink]=\" ['./barrel'] \"\r\n      routerLinkActive=\"active\" [routerLinkActiveOptions]= \"{exact: true}\">\r\n      Barrel\r\n    </a>\r\n    <a [routerLink]=\" ['./about'] \"\r\n      routerLinkActive=\"active\" [routerLinkActiveOptions]= \"{exact: true}\">\r\n      About\r\n    </a>\r\n  </nav> -->\r\n  <app-header></app-header>\r\n\r\n  <main>\r\n    <router-outlet></router-outlet>\r\n  </main>\r\n\r\n\r\n\r\n <app-footer></app-footer>"
 
 /***/ }),
-/* 286 */
+/* 287 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -97294,7 +97396,7 @@ module.exports = "<!-- <nav>\r\n    <a [routerLink]=\" ['./'] \"\r\n      router
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_of__ = __webpack_require__(287);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_of__ = __webpack_require__(288);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_of___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_of__);
 
 
@@ -97321,7 +97423,7 @@ var APP_RESOLVER_PROVIDERS = [
 
 
 /***/ }),
-/* 287 */
+/* 288 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -97332,7 +97434,7 @@ Observable_1.Observable.of = of_1.of;
 //# sourceMappingURL=of.js.map
 
 /***/ }),
-/* 288 */
+/* 289 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -97376,17 +97478,17 @@ exports.ModalModule = ModalModule;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 289 */
+/* 290 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__x_large_directive__ = __webpack_require__(290);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__x_large_directive__ = __webpack_require__(291);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__x_large_directive__["a"]; });
 
 
 
 /***/ }),
-/* 290 */
+/* 291 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -97425,7 +97527,7 @@ XLargeDirective = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 
 /***/ }),
-/* 291 */
+/* 292 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -97433,8 +97535,8 @@ XLargeDirective = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_usersModel__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_userService__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_usersModel__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_userService__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_chemistService__ = __webpack_require__(73);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ngx_facebook__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_jquery__ = __webpack_require__(24);
@@ -97646,8 +97748,8 @@ __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 HeaderComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
         selector: 'app-header',
-        template: __webpack_require__(292),
-        styles: [__webpack_require__(293), __webpack_require__(124)],
+        template: __webpack_require__(293),
+        styles: [__webpack_require__(294), __webpack_require__(124)],
         encapsulation: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewEncapsulation"].None,
         providers: [__WEBPACK_IMPORTED_MODULE_4__services_userService__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_5__services_chemistService__["a" /* ChemistService */]]
     }),
@@ -97657,17 +97759,17 @@ HeaderComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 
 /***/ }),
-/* 292 */
+/* 293 */
 /***/ (function(module, exports) {
 
 module.exports = "<nav class=\"navbar navbar-default\" style=\"margin:0;\">\n  <div class=\"container\">\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#myNavbar\">\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n      </button>\n      <a class=\"navbar-brand\" href=\"#\">\n        <img src=\"assets/img/greenlogo.gif\">\n      </a>\n    </div>\n    <div class=\"collapse navbar-collapse\" id=\"myNavbar\">\n      <ng-container *ngIf=\"loggedIn==false\">\n\n        <ul class=\"nav navbar-nav navbar-right header-right\">\n          <li>\n            <a href=\"#\">sign up</a>\n          </li>\n          <li class=\"border-left\">\n            <a (click)='navigateToLogin()'>login</a>\n          </li>\n        </ul>\n\n      </ng-container>\n\n      <ng-container *ngIf=\"loggedIn==true\">\n\n        <ul class=\"nav navbar-nav navbar-right signedIn\">\n          <li style=\"padding-right: 20px;\" id=\"droppingMenu\">\n\n              <div class=\"dropdown\">\n                  <button class=\"dropbtn\" > <div class=\"left-photo\">\n                      <img src=\"/assets/img/user.png\" style=\"width:25px;\">\n                  </div>\n                  <div class=\"right-name\">\n                      <p class='username'>{{LoggedInUser}}</p>\n                  </div></button>\n                  <div class=\"dropdown-content\">\n                    <a href=\"/orders\">My Orders</a>\n                    <a href=\"/profile\">Profile</a>\n                    <a href=\"#\">Logout</a>\n                  </div>\n                </div>\n                \n           \n            \n          </li >\n          <li (click)=\"logOutUser()\" class=\"border-left\" style=\"padding-left: 10px;     margin-top: 18px;\">\n              <img src=\"/assets/img/cart.png\" style=\"width: 25px;\">\n          </li>\n        </ul>\n\n      </ng-container>\n\n     \n    </div>\n  </div>\n</nav>\n<div id=\"snackbar\"></div>\n\n<modal #loginModal [closeOnEscape]=\"false\" [closeOnOutsideClick]=\"false\" modalClass=\"modal-lg modal-md  signUpModal\" (onSubmit)=\"actionOnSubmit()\">\n  <modal-content>\n\n    <div class=\"signButton\">\n      <button class='SignUpLogin' (click)=\"routeToSignUp()\">Sign Up</button>\n    </div>\n\n    <div class=\"closeButton\">\n      <img src=\"/assets/img/cancel.png\" width=\"15px\">\n    </div>\n\n    <div class='login-container'>\n\n      <div class='login clearfix'>\n\n        <div class='left-side'>\n\n          <div class=\"centered\">\n            <h2 class='logIN white'>Log In</h2>\n            <p class=\"white small-text\">Login to Continue</p>\n          </div>\n          <div class=\"image-logo\">\n            <div class=\"left-image\">\n              <img src=\"assets/img/1.gif\">\n            </div>\n            <div class=\"right-text\">\n              <p>Pharma Aid</p>\n            </div>\n\n          </div>\n\n        </div>\n\n        <div class='right-side'>\n          <div class=\"myForms\">\n            <div class=\"form-group\">\n              <label for=\"email\">Email</label>\n              <input type=\"text\" class=\"form-control\" [ngClass]=\"{'errors': EmailError}\" name=\"user.username\" [(ngModel)]=\"user.username\">\n            </div>\n\n            <div class=\"form-group\">\n              <label for=\"email\">password</label>\n              <input type=\"password\" class=\"form-control\" [ngClass]=\"{'errors': PasswordError}\" name=\"user.password\" [(ngModel)]=\"user.password\">\n            </div>\n          </div>\n\n          <div class=\"loader\">\n            <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->\n            <svg width=\"50\" height=\"30\" viewBox=\"0 0 120 30\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"#1ec26b\">\n              <circle cx=\"15\" cy=\"15\" r=\"15\">\n                <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n              <circle cx=\"60\" cy=\"15\" r=\"9\" fill-opacity=\"0.3\">\n                <animate attributeName=\"r\" from=\"9\" to=\"9\" begin=\"0s\" dur=\"0.8s\" values=\"9;15;9\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"0.5\" to=\"0.5\" begin=\"0s\" dur=\"0.8s\" values=\".5;1;.5\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n              <circle cx=\"105\" cy=\"15\" r=\"15\">\n                <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n            </svg>\n\n          </div>\n\n          <div class=\"form-group\" style=\"text-align:center;margin-top:60px;\">\n            <button class=\"submit-custom\" (click)=\"login()\">Login</button>\n          </div>\n\n\n          <div class=\"row clearfix\">\n            <div class='col-md-4 col-sm-4  no-left'>\n              <hr>\n            </div>\n            <div class='col-md-4 col-sm-4 no-padding text-centered'>\n              <p class=\"loginWith\">Login With</p>\n            </div>\n            <div class='col-md-4 col-sm-4 no-right'>\n              <hr>\n            </div>\n          </div>\n\n\n          <div class=\"row clearfix facebook-gmail\">\n\n            <div class=\"half-left\">\n              <a class=\"pointers\" (click)=\"loginWithFacebook()\">\n                <div class='holder'>\n                  <i class='fa fa-facebook'></i>\n                </div>\n              </a>\n            </div>\n            <div class=\"half-right\">\n              <button id=\"googleSignInBtn\" (click)=\"googleInit()\">\n                <div class='holder'>\n                  <img src=\"assets/img/plus.png\" style=\"width:23px;padding-left:2px\">\n                </div>\n              </button>\n            </div>\n\n          </div>\n\n\n        </div>\n\n      </div>\n\n    </div>\n  </modal-content>\n\n</modal>"
 
 /***/ }),
-/* 293 */
+/* 294 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__(294);
+        var result = __webpack_require__(295);
 
         if (typeof result === "string") {
             module.exports = result;
@@ -97677,7 +97779,7 @@ module.exports = "<nav class=\"navbar navbar-default\" style=\"margin:0;\">\n  <
     
 
 /***/ }),
-/* 294 */
+/* 295 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)(undefined);
@@ -97691,7 +97793,7 @@ exports.push([module.i, "\r\n.header-right li a{\r\n    text-transform: uppercas
 
 
 /***/ }),
-/* 295 */
+/* 296 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -97710,8 +97812,8 @@ var FooterComponent = (function () {
 FooterComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
         selector: 'app-footer',
-        template: __webpack_require__(296),
-        styles: [__webpack_require__(297)],
+        template: __webpack_require__(297),
+        styles: [__webpack_require__(298)],
         encapsulation: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewEncapsulation"].None
     }),
     __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:paramtypes", [])
@@ -97720,17 +97822,17 @@ FooterComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 
 /***/ }),
-/* 296 */
+/* 297 */
 /***/ (function(module, exports) {
 
 module.exports = "<footer class=\"site-footer\">\n    <ul class=\"footer-links\">\n\n      <li><a href=\"\">Terms & Conditions</a></li>\n      <li><a href=\"\">Privacy Policy</a></li>\n      <li><a href=\"\">&copy; Copyright 2017, Pharmaaid is a registered trademark</a></li>\n      <li><a href=\"\">Pharmaaid Pakistan</a></li>\n\n    </ul> \n</footer>"
 
 /***/ }),
-/* 297 */
+/* 298 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__(298);
+        var result = __webpack_require__(299);
 
         if (typeof result === "string") {
             module.exports = result;
@@ -97740,7 +97842,7 @@ module.exports = "<footer class=\"site-footer\">\n    <ul class=\"footer-links\"
     
 
 /***/ }),
-/* 298 */
+/* 299 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)(undefined);
@@ -97754,7 +97856,7 @@ exports.push([module.i, ".site-footer{\r\n    position: absolute;\r\n    width:1
 
 
 /***/ }),
-/* 299 */
+/* 300 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -98661,7 +98763,7 @@ StarRatingModule.ctorParameters = function () { return []; };
 
 
 /***/ }),
-/* 300 */
+/* 301 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
@@ -98692,7 +98794,7 @@ if(true) {
 }
 
 /***/ }),
-/* 301 */
+/* 302 */
 /***/ (function(module, exports) {
 
 
@@ -98787,7 +98889,7 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 302 */
+/* 303 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
@@ -98818,27 +98920,12 @@ if(true) {
 }
 
 /***/ }),
-/* 303 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_index__ = __webpack_require__(304);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["a"]; });
-/**
- * @module
- * @description
- * Entry point for all public APIs of the async local storage package.
- */
-
-
-
-/***/ }),
 /* 304 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_ng2_google_place_module__ = __webpack_require__(305);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__app_ng2_google_place_module__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_index__ = __webpack_require__(305);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["a"]; });
 /**
  * @module
  * @description
@@ -98852,11 +98939,26 @@ if(true) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_ng2_google_place_module__ = __webpack_require__(306);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__app_ng2_google_place_module__["a"]; });
+/**
+ * @module
+ * @description
+ * Entry point for all public APIs of the async local storage package.
+ */
+
+
+
+/***/ }),
+/* 306 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GooglePlaceModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ng2_google_place_directive__ = __webpack_require__(306);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ng2_google_place_directive__ = __webpack_require__(307);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ng2_google_place_service__ = __webpack_require__(132);
 
 
@@ -98880,7 +98982,7 @@ GooglePlaceModule = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 
 /***/ }),
-/* 306 */
+/* 307 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -99087,19 +99189,19 @@ var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, 
 
 
 /***/ }),
-/* 307 */
+/* 308 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var tab_component_1 = __webpack_require__(133);
 exports.NguiTabComponent = tab_component_1.NguiTabComponent;
-var tab_module_1 = __webpack_require__(308);
+var tab_module_1 = __webpack_require__(309);
 exports.NguiTabModule = tab_module_1.NguiTabModule;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 308 */
+/* 309 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -99135,11 +99237,11 @@ exports.NguiTabModule = NguiTabModule;
 //# sourceMappingURL=tab.module.js.map
 
 /***/ }),
-/* 309 */
+/* 310 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lib_image_upload_module__ = __webpack_require__(310);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lib_image_upload_module__ = __webpack_require__(311);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lib_image_upload_module___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__lib_image_upload_module__);
 /* harmony reexport (binding) */ if(__webpack_require__.o(__WEBPACK_IMPORTED_MODULE_0__lib_image_upload_module__, "ImageUploadModule")) __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__lib_image_upload_module__["ImageUploadModule"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__lib_image_upload_image_upload_component__ = __webpack_require__(134);
@@ -99151,7 +99253,7 @@ exports.NguiTabModule = NguiTabModule;
 
 
 /***/ }),
-/* 310 */
+/* 311 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -99159,7 +99261,7 @@ exports.NguiTabModule = NguiTabModule;
 var common_1 = __webpack_require__(13);
 var core_1 = __webpack_require__(0);
 var http_1 = __webpack_require__(12);
-var file_drop_directive_1 = __webpack_require__(311);
+var file_drop_directive_1 = __webpack_require__(312);
 var image_upload_component_1 = __webpack_require__(134);
 var image_service_1 = __webpack_require__(135);
 var ImageUploadModule = (function () {
@@ -99185,7 +99287,7 @@ exports.ImageUploadModule = ImageUploadModule;
 
 
 /***/ }),
-/* 311 */
+/* 312 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
