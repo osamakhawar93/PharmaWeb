@@ -86,7 +86,7 @@ var ac_main =
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "1be60795484f3cefcf8b"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "28e7f193077bad9ad432"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -16707,10 +16707,10 @@ function toComment(sourceMap) {
 
 var _ = __webpack_require__(18);
 var cls = __webpack_require__(48);
-var defaultSettings = __webpack_require__(327);
+var defaultSettings = __webpack_require__(335);
 var dom = __webpack_require__(28);
-var EventManager = __webpack_require__(328);
-var guid = __webpack_require__(329);
+var EventManager = __webpack_require__(336);
+var guid = __webpack_require__(337);
 
 var instances = {};
 
@@ -56889,8 +56889,8 @@ var ChemistComponent = (function () {
 ChemistComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
         selector: 'app-chemist',
-        template: __webpack_require__(281),
-        styles: [__webpack_require__(282)],
+        template: __webpack_require__(289),
+        styles: [__webpack_require__(290)],
         encapsulation: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewEncapsulation"].None,
         providers: [__WEBPACK_IMPORTED_MODULE_6__services_mapService__["a" /* MapService */], __WEBPACK_IMPORTED_MODULE_3__services_chemistService__["a" /* ChemistService */], __WEBPACK_IMPORTED_MODULE_4__angular_common__["Location"], { provide: __WEBPACK_IMPORTED_MODULE_4__angular_common__["LocationStrategy"], useClass: __WEBPACK_IMPORTED_MODULE_4__angular_common__["PathLocationStrategy"] }]
     }),
@@ -56910,7 +56910,7 @@ ChemistComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_usersModel__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_userService__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_OrdersService__ = __webpack_require__(284);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_OrdersService__ = __webpack_require__(292);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_addtocartService__ = __webpack_require__(79);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_jquery__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_jquery__);
@@ -57036,8 +57036,8 @@ __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 OrdersComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
         selector: 'app-orders',
-        template: __webpack_require__(285),
-        styles: [__webpack_require__(286)],
+        template: __webpack_require__(293),
+        styles: [__webpack_require__(294)],
         providers: [__WEBPACK_IMPORTED_MODULE_3__services_userService__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_5__services_OrdersService__["a" /* OrdersService */], , __WEBPACK_IMPORTED_MODULE_6__services_addtocartService__["a" /* AddtocartService */]],
         encapsulation: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewEncapsulation"].None
     }),
@@ -57167,8 +57167,8 @@ __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 ProfileComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
         selector: 'app-profile',
-        template: __webpack_require__(288),
-        styles: [__webpack_require__(289)],
+        template: __webpack_require__(296),
+        styles: [__webpack_require__(297)],
         providers: [__WEBPACK_IMPORTED_MODULE_3__services_userService__["a" /* UserService */]],
         encapsulation: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewEncapsulation"].None
     }),
@@ -57224,7 +57224,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(312);
+var	fixUrls = __webpack_require__(320);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -59197,7 +59197,7 @@ exports.PerfectScrollbarComponent = PerfectScrollbarComponent;
 "use strict";
 
 
-module.exports = __webpack_require__(325);
+module.exports = __webpack_require__(333);
 
 
 /***/ }),
@@ -88460,33 +88460,33 @@ exports.hmrModule = hmrModule;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_platform_browser_animations__ = __webpack_require__(256);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__environment__ = __webpack_require__(109);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_routes__ = __webpack_require__(258);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_component__ = __webpack_require__(291);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__app_resolver__ = __webpack_require__(298);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_component__ = __webpack_require__(299);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__app_resolver__ = __webpack_require__(306);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__app_service__ = __webpack_require__(77);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_ng2_modal__ = __webpack_require__(117);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_ng2_modal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_ng2_modal__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__home__ = __webpack_require__(116);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__about__ = __webpack_require__(120);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__no_content__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__home_x_large__ = __webpack_require__(300);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__header_header_component__ = __webpack_require__(302);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__home_x_large__ = __webpack_require__(308);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__header_header_component__ = __webpack_require__(310);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__login_login_component__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__footer_footer_component__ = __webpack_require__(306);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__footer_footer_component__ = __webpack_require__(314);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__chemist_chemist_component__ = __webpack_require__(137);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_ngx_facebook__ = __webpack_require__(81);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_angular_star_rating__ = __webpack_require__(310);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__styles_styles_scss__ = __webpack_require__(311);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_angular_star_rating__ = __webpack_require__(318);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__styles_styles_scss__ = __webpack_require__(319);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__styles_styles_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_24__styles_styles_scss__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__styles_headings_css__ = __webpack_require__(313);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__styles_headings_css__ = __webpack_require__(321);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__styles_headings_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_25__styles_headings_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__services_sharedService__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27_ng2_google_place_autocomplete__ = __webpack_require__(314);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27_ng2_google_place_autocomplete__ = __webpack_require__(322);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__orders_orders_component__ = __webpack_require__(138);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__profile_profile_component__ = __webpack_require__(139);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__ngui_tab__ = __webpack_require__(318);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__ngui_tab__ = __webpack_require__(326);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__ngui_tab___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_30__ngui_tab__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31_angular2_image_upload__ = __webpack_require__(320);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32_angular2_perfect_scrollbar__ = __webpack_require__(323);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31_angular2_image_upload__ = __webpack_require__(328);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32_angular2_perfect_scrollbar__ = __webpack_require__(331);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_32_angular2_perfect_scrollbar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_32_angular2_perfect_scrollbar__);
 
 
@@ -97045,8 +97045,8 @@ var ROUTES = [
     { path: 'orders', component: __WEBPACK_IMPORTED_MODULE_5__orders_orders_component__["a" /* OrdersComponent */] },
     { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_6__profile_profile_component__["a" /* ProfileComponent */] },
     { path: 'about', component: __WEBPACK_IMPORTED_MODULE_1__about__["a" /* AboutComponent */] },
-    { path: 'detail', loadChildren: function() { return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 341))  .then( function(module) { return module['DetailModule']; } ); } },
-    { path: 'barrel', loadChildren: function() { return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 342))  .then( function(module) { return module['BarrelModule']; } ); } },
+    { path: 'detail', loadChildren: function() { return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 349))  .then( function(module) { return module['DetailModule']; } ); } },
+    { path: 'barrel', loadChildren: function() { return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 350))  .then( function(module) { return module['BarrelModule']; } ); } },
     { path: '**', component: __WEBPACK_IMPORTED_MODULE_2__no_content__["a" /* NoContentComponent */] },
 ];
 
@@ -98067,7 +98067,7 @@ var AboutComponent = (function () {
          * remember that 'es6-promise-loader' is a promise
          */
         setTimeout(function () {
-            __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 340))
+            __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 348))
                 .then(function (json) {
                 console.log('async mockData', json);
                 _this.localState = json;
@@ -98242,23 +98242,71 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, "\r\n@font-face {\r\n    font-family: 'Museo300';\r\n    font-style: normal;\r\n    font-weight: normal;\r\n    src: local('../assets/fonts/museo/Museo Sans Cyrl 300'), url('/assets/fonts/museo/MuseoSansCyrl_0.woff') format('woff');\r\n    }\r\n\r\n    @font-face {\r\n        font-family: 'noto_sansbold';\r\n        src: url(" + __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../assets/fonts/noto/notosans-bold.woff2\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())) + ") format('woff2'),\r\n             url(" + __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../assets/fonts/noto/notosans-bold.woff\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())) + ") format('woff');\r\n        font-weight: normal;\r\n        font-style: normal;\r\n    \r\n    }\r\n    \r\n    \r\n    \r\n    \r\n    @font-face {\r\n        font-family: 'noto_sansbold_italic';\r\n        src: url(" + __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../assets/fonts/noto/notosans-bolditalic.woff2\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())) + ") format('woff2'),\r\n             url(" + __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../assets/fonts/noto/notosans-bolditalic.woff\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())) + ") format('woff');\r\n        font-weight: normal;\r\n        font-style: normal;\r\n    \r\n    }\r\n    \r\n    \r\n    \r\n    \r\n    @font-face {\r\n        font-family: 'noto_sansitalic';\r\n        src: url(" + __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../assets/fonts/noto/notosans-italic.woff2\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())) + ") format('woff2'),\r\n             url(" + __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../assets/fonts/noto/notosans-italic.woff\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())) + ") format('woff');\r\n        font-weight: normal;\r\n        font-style: normal;\r\n    \r\n    }\r\n    \r\n    \r\n    \r\n    \r\n    @font-face {\r\n        font-family: 'noto_sansregular';\r\n        src: url(" + __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../assets/fonts/noto/notosans-regular.woff2\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())) + ") format('woff2'),\r\n             url(" + __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../assets/fonts/noto/notosans-regular.woff\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())) + ") format('woff');\r\n        font-weight: normal;\r\n        font-style: normal;\r\n    \r\n    }\r\n  \r\n\r\n  body,p,input,label,button{\r\n    font-family: 'Museo300';\r\n  }\r\n  \r\n  hr{\r\n      border-bottom:1px solid #575757;\r\n  }\r\n\r\n/* body,p,input,label{\r\n    font-family: 'myriadRegular';\r\n} */\r\n.modal.in .signUpModal .modal-content{\r\n    border-radius: 0;\r\n\r\n}\r\n.modal.in .signUpModal{\r\n    position: relative;\r\n}\r\n.left-image{\r\n    position: relative;\r\n    float:left;\r\n    width: 40px;\r\n}\r\n.left-image img{\r\n    width:30px;\r\n}\r\n.image-logo{\r\n    width: 260px;\r\n    margin: 0 auto;\r\n}\r\n.right-text p{\r\n    font-size:32px;\r\n    font-weight: bold;\r\n    text-transform: uppercase;\r\n    color:white;\r\n    font-family: 'noto_sansbold';\r\n}\r\n.login{\r\n    display: flex;\r\n}\r\n.modal.in .signUpModal .modal-content .modal-header,.modal.in .signUpModal .modal-content .modal-footer{\r\n    border-bottom: none;\r\n    display:none;\r\n}\r\n\r\n.modal.in .signUpModal .modal-content .modal-footer{\r\n    border-top:none;\r\n}\r\n\r\n.modal.in .signUpModal .modal-content .modal-body{\r\n    padding:0;\r\n}\r\n.left-side{\r\n    width:40%;\r\n    background: rgba(0,230,68,0.64);\r\n    background: -moz-linear-gradient(45deg, rgba(0,230,68,0.64) 0%, rgba(0,230,68,1) 23%, rgba(0,230,68,1) 35%, rgba(0,188,68,1) 86%);\r\n    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(0,230,68,0.64)), color-stop(23%, rgba(0,230,68,1)), color-stop(35%, rgba(0,230,68,1)), color-stop(86%, rgba(0,188,68,1)));\r\n    background: -webkit-linear-gradient(45deg, rgba(0,230,68,0.64) 0%, rgba(0,230,68,1) 23%, rgba(0,230,68,1) 35%, rgba(0,188,68,1) 86%);\r\n    background: -o-linear-gradient(45deg, rgba(0,230,68,0.64) 0%, rgba(0,230,68,1) 23%, rgba(0,230,68,1) 35%, rgba(0,188,68,1) 86%);\r\n    background: -ms-linear-gradient(45deg, rgba(0,230,68,0.64) 0%, rgba(0,230,68,1) 23%, rgba(0,230,68,1) 35%, rgba(0,188,68,1) 86%);\r\n    background: linear-gradient(45deg, rgba(0,230,68,0.64) 0%, rgba(0,230,68,1) 23%, rgba(0,230,68,1) 35%, rgba(0,188,68,1) 86%);\r\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00e644', endColorstr='#00bc44', GradientType=1 );\r\n    position: relative;\r\n    float:left;\r\n    \r\n    padding-bottom: 15px;\r\n    min-height: 550px;\r\n}\r\n\r\n.centered{\r\n    padding: 84px 80px;\r\n}\r\n\r\n.right-side{\r\n    width:60%;\r\n    position: relative;\r\n    float:left;\r\n    padding: 100px 80px;\r\n    padding-bottom: 15px;\r\n}\r\n\r\n.myForms .form-group label{\r\n    color:black;\r\n    font-weight:400;\r\n    font-size:11px;\r\n    text-transform: uppercase;\r\n    margin-bottom:0;\r\n}\r\n\r\n.myForms .form-group input{\r\n    border:none;\r\n    padding-top:0;\r\n    border-bottom-width: 1px;\r\n    border-bottom-style: solid;\r\n    border-bottom-color:#ccc;\r\n    border-radius: 0;\r\n    -webkit-transition: border-bottom-color 0.9s;\r\n    transition:border-bottom-color 0.9s;\r\n    box-shadow: none;\r\n    padding-left:0;\r\n    \r\n}\r\n\r\n\r\n.pointers{\r\n    cursor:pointer;\r\n   \r\n\r\n}\r\n.myForms .form-group input:focus{\r\n    border-bottom-color:green;\r\n}\r\n\r\n.signButton{\r\n    position: absolute;\r\n    right:50px;\r\n    top:25px;\r\n    z-index: 1;\r\n}\r\n\r\n.closeButton{\r\n    position: absolute;\r\n    right:25px;\r\n    top:25px;\r\n    z-index: 1;\r\n}\r\n\r\n\r\n.submit-custom{\r\n    background: none;\r\n    border:none;\r\n    padding:8px 40px;\r\n    color:white;\r\n    background:#3ad72a;\r\n}\r\n.no-right{\r\n    padding-right:20px;\r\n}\r\n.no-left{\r\n    padding-left:20px;\r\n}\r\n.no-padding{\r\n    padding-left:0;\r\n    padding-right:0;\r\n}\r\n.text-centered{\r\n    text-align: center;\r\n}\r\n\r\n.loginWith{\r\n    padding-top:10px;\r\n    font-size:11px;\r\n    font-weight: 400;\r\n    color:#575757;\r\n    font-family: 'Museo300';\r\n    font-weight: bold;\r\n}\r\n#googleSignInBtn{\r\n    background: none;\r\n    border:none;\r\n    outline:none;\r\n    width: 55px;\r\n}\r\n.logIN{\r\n    font-size:40px;\r\n}\r\n.white{\r\n    color:white;\r\n}\r\n\r\n.small-text{\r\n    margin-top: 120px;\r\n}\r\n.half-left,.half-right{\r\n    position: relative;\r\n    float:left;\r\n}\r\n.holder i{\r\n    font-size:22px;\r\n    color:white;\r\n}\r\n.holder{\r\n    box-shadow: 0 5px 15px rgba(0,0,0,0.3);\r\n    width:40px;\r\n    height: 40px;\r\n    border-radius: 50%;\r\n    background: #575757;\r\n    text-align: center;\r\n    padding-top: 10px;\r\n    margin-right: 25px; \r\n    box-shadow: 0 1px 2px rgba(0,0,0,0.15);\r\n    transition: box-shadow 0.3s ease-in-out;\r\n\r\n}\r\n\r\n.holder:hover{\r\n    box-shadow: 0 5px 15px rgba(0,0,0,0.3);\r\n\r\n}\r\n.facebook-gmail{\r\n    width: 130px;\r\n    margin: 20px auto;\r\n}\r\n\r\n.errors{\r\n    border-bottom:1px solid red !important;\r\n}\r\n\r\n.SignUpLogin{\r\n    border:none;\r\n    background:none;\r\n    color:#3ad72a;;\r\n    font-size:13px;\r\n    font-weight: bold;\r\n\r\n}\r\n/* The snackbar - position it at the bottom and in the middle of the screen */\r\n#snackbar {\r\n    color:white;\r\n    text-transform: capitalize;\r\n    visibility: hidden; /* Hidden by default. Visible on click */\r\n    min-width: 250px; /* Set a default minimum width */\r\n    margin-left: -125px; /* Divide value of min-width by 2 */\r\n    background-color: #1ec26b; /* Black background color */\r\n    color: #fff; /* White text color */\r\n    text-align: center; /* Centered text */\r\n    border-radius: 2px; /* Rounded borders */\r\n    padding: 16px; /* Padding */\r\n    position: fixed; /* Sit on top of the screen */\r\n    z-index: 1052; /* Add a z-index if needed */\r\n    left: 50%; /* Center the snackbar */\r\n    bottom: 30px; /* 30px from the bottom */\r\n}\r\n\r\n/* Show the snackbar when clicking on a button (class added with JavaScript) */\r\n#snackbar.show {\r\n    visibility: visible; /* Show the snackbar */\r\n\r\n/* Add animation: Take 0.5 seconds to fade in and out the snackbar. \r\nHowever, delay the fade out process for 2.5 seconds */\r\n    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;\r\n    animation: fadein 0.5s, fadeout 0.5s 2.5s;\r\n}\r\n\r\n/* Animations to fade the snackbar in and out */\r\n@-webkit-keyframes fadein {\r\n    from {bottom: 0; opacity: 0;} \r\n    to {bottom: 30px; opacity: 1;}\r\n}\r\n\r\n@keyframes fadein {\r\n    from {bottom: 0; opacity: 0;}\r\n    to {bottom: 30px; opacity: 1;}\r\n}\r\n\r\n@-webkit-keyframes fadeout {\r\n    from {bottom: 30px; opacity: 1;} \r\n    to {bottom: 0; opacity: 0;}\r\n}\r\n\r\n@keyframes fadeout {\r\n    from {bottom: 30px; opacity: 1;}\r\n    to {bottom: 0; opacity: 0;}\r\n}\r\n\r\n.header-top{\r\n    \r\n\r\n    height: 578px;\r\n    background:url('/assets/img/home.gif');\r\n    background-repeat:no-repeat;\r\n    background-size:cover;\r\n    background-position:center;\r\n    background-attachment: fixed;\r\n}\r\n\r\n.header-top h1{\r\n    font-size:50px;\r\n    color:#656565;\r\n    text-align: center;\r\n    padding-top: 200px;\r\n    margin:0;\r\n}\r\n\r\n.left-city,.middle-area,.right-button{\r\n  position: relative;;\r\n  float:left;\r\n}\r\n\r\n.search-box {\r\n    max-width: 890px;\r\n    margin:100px auto;\r\n    margin-bottom:0;\r\n}\r\n.wrap {\r\n    overflow: hidden; \r\n    height: 50px;    \r\n    position: relative;\r\n    display: block;\r\n    height:46px;\r\n    width:294px;\r\n    border:1px solid #1ec26b;\r\n    border-radius: 4px;\r\n    background: transparent;\r\n    outline: none;\r\n    border-radius: 0;\r\n    border-top-left-radius:5px;\r\n    border-bottom-left-radius: 5px;\r\n    border-right:none;\r\n}\r\n\r\nselect.dropdown{       \r\n    height:46px;\r\n    outline: none;\r\n    background: transparent;\r\n    width:294px;\r\n    padding: 10px;\r\n    border: 0;\r\n    font-weight: 500;\r\n    padding-left:20px;\r\n    color:#656565;\r\n    font-size: 20px;       \r\n    padding-top:8px;\r\n   -webkit-appearance: none;\r\n    -moz-appearance: none;\r\n    appearance: none;\r\n}\r\nlabel.wrap:after {\r\n/*     content:\"\\f13a \"; */\r\n    content: url('/assets/img/dropdown.png');\r\n    font-family: FontAwesome;\r\n    color: #000;\r\n    position: absolute; \r\n    outline: none;\r\n    right: 15px;\r\n    top: 5px;\r\n    z-index: 1;\r\n    width: 10%;\r\n    height: 100%;  \r\n    pointer-events: none;    \r\n}\r\n\r\n.area-input{\r\n    width:100%;\r\n    border:1px solid #1ec26b;\r\n    border-radius: 0;\r\n    width:294px;\r\n    height:46px;\r\n    background:transparent;\r\n    padding-left:20px;\r\n    font-size: 20px;\r\n    font-weight: 300;\r\n    outline:none;\r\n\r\n}\r\n\r\n.header-btn{\r\n    height:46px;\r\n    width: 294px;\r\n    border:none;\r\n    background:#1ec26b;\r\n    color:white;\r\n    font-size:20px;\r\n    font-weight: 500;\r\n    border-top-right-radius:5px;\r\n    border-bottom-right-radius: 5px;\r\n}\r\n\r\n.container-login{\r\n\r\n    background: #fff;\r\n    width: 100%;\r\n    padding-left: 190px;\r\n}\r\n.area-input::-webkit-input-placeholder {\r\n    /* WebKit, Blink, Edge */\r\n    font-style: italic;\r\n    color:#aeaeae;\r\n}\r\n.area-input:-moz-placeholder {\r\n    /* Mozilla Firefox 4 to 18 */\r\n    font-style: italic;\r\n    color:#aeaeae;\r\n}\r\n.area-input::-moz-placeholder {\r\n    /* Mozilla Firefox 19+ */\r\n    font-style: italic;\r\n    color:#aeaeae;\r\n}\r\n.area-input:-ms-input-placeholder {\r\n    /* Internet Explorer 10-11 */\r\n    font-style: italic;\r\n    color:#aeaeae;\r\n}\r\n\r\n.container-login{\r\n    min-height:260px;\r\n}\r\n.on-go{\r\n    width:100%;\r\n\r\n    background: #ffffff;\r\n}\r\n\r\n.on-go h1{\r\n    font-weight: 500;\r\n    font-size:45px;\r\n    color:#605f5b;\r\n    margin-top:160px;\r\n}\r\n\r\n.app-banner{\r\n    width:100%;\r\n    background: #1ec26b;\r\n    min-height: 410px;\r\n}\r\n\r\n.app-banner h3{\r\n    font-size:30px;\r\n    font-weight: 300;\r\n    color:white;\r\n    margin-bottom:30px;\r\n    margin-top:90px;\r\n}\r\n\r\n.app-banner p{\r\n    font-size:15px;\r\n    color:white;\r\n    font-weight: 300;\r\n    margin:0;\r\n}\r\n\r\n.app-buttons{\r\n    margin-top:90px;\r\n    position: relative;\r\n    float:left;\r\n    width:40%;\r\n}\r\n.mockup{\r\n    position: relative;\r\n    float:left;\r\n    width:60%;\r\n    margin-top: -380px;    \r\n}\r\n.left-png{\r\n    position: relative;\r\n    float:left;\r\n    width:50px;\r\n    padding-top: 6px;\r\n    padding-left: 6px;\r\n}\r\n.right-texty{   \r\n    position: relative;\r\n    float:left;\r\n    height: 55px;\r\n}\r\n\r\n.right-texty .small{\r\n    font-weight: 300;\r\n    font-size:14px;\r\n    height: 16px;\r\n}\r\n.right-texty .large{\r\n    font-weight: 300;\r\n    font-size: 26px;\r\n    text-align: center;\r\n    margin-top: -6px;\r\n}\r\n.apps{\r\n    padding-top: 4px;\r\n    position: relative;\r\n    display: inline-block;\r\n    width: 190px;\r\n    height:54px;\r\n    border:1px solid white;\r\n}\r\n\r\n.contact-form h1{\r\n    font-size:45px;\r\n    font-weight: 500;\r\n    color:#656565;\r\n    text-align: center;\r\n    margin-top:80px;\r\n    margin-bottom:80px;\r\n}\r\n.actual-form{\r\n    width: 78%;\r\n    margin: 0 auto;\r\n    height: 225px;\r\n}\r\n.left-fields,.right-fields{\r\n    position: relative;\r\n    float:left;\r\n    width:48%;\r\n   margin: 0.7%;\r\n}\r\n\r\n.left-fields textarea,.right-fields input{\r\n    width:100%;\r\n    background: #faf9f5;\r\n    border:1px solid #9ca5a5;\r\n    height:65px;\r\n    padding-left:15px;\r\n    border-radius:4px;\r\n    margin:0;\r\n}\r\n.left-fields textarea{\r\n    height: 225px;\r\n    padding: 15px;\r\n    color:#656565;\r\n}\r\n\r\n.left-fields textarea::-webkit-input-placeholder {\r\n    /* WebKit, Blink, Edge */\r\n   font-style: italic;\r\n}\r\n.left-fields textarea:-moz-placeholder {\r\n    /* Mozilla Firefox 4 to 18 */\r\n    font-style: italic;\r\n}\r\n.left-fields textarea::-moz-placeholder {\r\n    /* Mozilla Firefox 19+ */\r\n    font-style: italic;\r\n}\r\n.left-fields textarea:-ms-input-placeholder {\r\n    /* Internet Explorer 10-11 */\r\n    font-style: italic;\r\n}\r\n\r\n\r\n.right-fields .form-group button{\r\n    width:100%;\r\n    color:#656565;\r\n    background: #1ec26b;\r\n    border:none;\r\n    font-size:20px;\r\n    font-weight: 500;\r\n    color:white;\r\n    height:65px;\r\n    padding-left:15px;\r\n    border-radius:4px;\r\n    margin:0;\r\n}\r\n.right-fields .form-group{\r\n    margin-bottom:15px;\r\n}\r\n.right-fields input{\r\n    \r\n}\r\n\r\n@media only screen and (max-width: 1200px) and (min-width: 992px){\r\n    .mockup img{\r\n        width: 500px;\r\n    }\r\n    .mockup{\r\n        margin-top: -250px;\r\n        width: 30%;\r\n    }\r\n    .app-buttons{\r\n        width:46%;\r\n    }\r\n}\r\n@media only screen and (max-width: 992px) and (min-width: 768px){\r\n    .mockup img{\r\n        width:400px;\r\n        \r\n    }\r\n\r\n    .app-buttons{\r\n        width:58%;\r\n    }\r\n\r\n    .mockup{\r\n        width:30%;\r\n        margin-top: -230px;\r\n    }\r\n    .left-side {\r\n        padding: 81px 25px;\r\n        min-height: 620px;\r\n    }\r\n    .actual-form{\r\n        width:100%;\r\n    }\r\n   \r\n}\r\n\r\n@media only screen and (max-width: 768px) and (min-width: 640px){\r\n    .left-side {\r\n        min-height: 620px;\r\n    }\r\n    .mockup{\r\n        text-align: center;\r\n    }\r\n\r\n    .mockup{\r\n        margin-top: -250px;\r\n    }\r\n    .mockup img{\r\n       width:400px;\r\n    }\r\n    .right-texty .small{\r\n        font-size:9px;\r\n    }\r\n    .left-city, .middle-area, .right-button,.header-btn{\r\n        width:33%;\r\n    }\r\n   \r\n    .right-texty{\r\n        padding-top: 7px;\r\n    }\r\n    .right-texty .large{\r\n        font-size:16px;\r\n    }\r\n    .apps{\r\n        width: 46%;\r\n    }\r\n    \r\n}\r\n\r\n@media only screen and (max-width: 640px){\r\n    .left-city, .middle-area, .right-button{\r\n        width:100%;\r\n        text-align: center;\r\n    }\r\n    .on-go h1{\r\n        margin-top:100px;\r\n    }\r\n    .search-box{\r\n        width:90%;\r\n    }\r\n    .middle-area{\r\n        margin-bottom: 5px;\r\n    }\r\n    .wrap select{\r\n        border: 1px solid #1ec26b;\r\n        width: 100%;\r\n    }\r\n    .wrap{\r\n        width:100%;\r\n        border:none;\r\n    }\r\n    .area-input,.header-btn{\r\n        width:100% !important;\r\n        border-radius: 0;\r\n    }\r\n    .header-top h1{\r\n        padding-top:100px;\r\n    }\r\n    .left-side {\r\n        display:none;\r\n    }\r\n    .mockup,.app-buttons{\r\n        width:100%;\r\n    }\r\n    .mockup{\r\n        text-align: center;\r\n        margin-top:50px;\r\n        margin-bottom: 50px;\r\n    }\r\n    .app-buttons{\r\n        text-align:center;\r\n    }\r\n    .app-banner p,.app-banner h3{\r\n        text-align: center;\r\n        width: 100% !important;\r\n    }\r\n    .right-texty .small{\r\n        font-size:10px;\r\n    }\r\n    .left-fields, .right-fields{\r\n        width:100%;\r\n    }\r\n    .right-texty{\r\n        padding-top:6px;\r\n    }\r\n    .right-texty .large{\r\n        font-size: 18px;\r\n    }\r\n    .mockup img{\r\n        width:280px;\r\n    }\r\n    .apps{\r\n        width:48%;\r\n        margin:0 !important;\r\n    }\r\n    .right-side{\r\n        width:100%;\r\n    }\r\n    \r\n}", ""]);
+exports.push([module.i, "\r\n@font-face {\r\n    font-family: 'Museo300';\r\n    font-style: normal;\r\n    font-weight: normal;\r\n    src: local('../../assets/fonts/museo/Museo Sans Cyrl 300'), url('/assets/fonts/museo/MuseoSansCyrl_0.woff') format('woff');\r\n    }\r\n\r\n    @font-face {\r\n        font-family: 'noto_sansbold';\r\n        src: url(" + __webpack_require__(281) + ") format('woff2'),\r\n             url(" + __webpack_require__(282) + ") format('woff');\r\n        font-weight: normal;\r\n        font-style: normal;\r\n    \r\n    }\r\n    \r\n    \r\n    \r\n    \r\n    @font-face {\r\n        font-family: 'noto_sansbold_italic';\r\n        src: url(" + __webpack_require__(283) + ") format('woff2'),\r\n             url(" + __webpack_require__(284) + ") format('woff');\r\n        font-weight: normal;\r\n        font-style: normal;\r\n    \r\n    }\r\n    \r\n    \r\n    \r\n    \r\n    @font-face {\r\n        font-family: 'noto_sansitalic';\r\n        src: url(" + __webpack_require__(285) + ") format('woff2'),\r\n             url(" + __webpack_require__(286) + ") format('woff');\r\n        font-weight: normal;\r\n        font-style: normal;\r\n    \r\n    }\r\n    \r\n    \r\n    \r\n    \r\n    @font-face {\r\n        font-family: 'noto_sansregular';\r\n        src: url(" + __webpack_require__(287) + ") format('woff2'),\r\n             url(" + __webpack_require__(288) + ") format('woff');\r\n        font-weight: normal;\r\n        font-style: normal;\r\n    \r\n    }\r\n  \r\n\r\n  body,p,input,label,button{\r\n    font-family: 'Museo300';\r\n  }\r\n  \r\n  hr{\r\n      border-bottom:1px solid #575757;\r\n  }\r\n\r\n/* body,p,input,label{\r\n    font-family: 'myriadRegular';\r\n} */\r\n.modal.in .signUpModal .modal-content{\r\n    border-radius: 0;\r\n\r\n}\r\n.modal.in .signUpModal{\r\n    position: relative;\r\n}\r\n.left-image{\r\n    position: relative;\r\n    float:left;\r\n    width: 40px;\r\n}\r\n.left-image img{\r\n    width:30px;\r\n}\r\n.image-logo{\r\n    width: 260px;\r\n    margin: 0 auto;\r\n}\r\n.right-text p{\r\n    font-size:32px;\r\n    font-weight: bold;\r\n    text-transform: uppercase;\r\n    color:white;\r\n    font-family: 'noto_sansbold';\r\n}\r\n.login{\r\n    display: flex;\r\n}\r\n.modal.in .signUpModal .modal-content .modal-header,.modal.in .signUpModal .modal-content .modal-footer{\r\n    border-bottom: none;\r\n    display:none;\r\n}\r\n\r\n.modal.in .signUpModal .modal-content .modal-footer{\r\n    border-top:none;\r\n}\r\n\r\n.modal.in .signUpModal .modal-content .modal-body{\r\n    padding:0;\r\n}\r\n.left-side{\r\n    width:40%;\r\n    background: rgba(0,230,68,0.64);\r\n    background: -moz-linear-gradient(45deg, rgba(0,230,68,0.64) 0%, rgba(0,230,68,1) 23%, rgba(0,230,68,1) 35%, rgba(0,188,68,1) 86%);\r\n    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(0,230,68,0.64)), color-stop(23%, rgba(0,230,68,1)), color-stop(35%, rgba(0,230,68,1)), color-stop(86%, rgba(0,188,68,1)));\r\n    background: -webkit-linear-gradient(45deg, rgba(0,230,68,0.64) 0%, rgba(0,230,68,1) 23%, rgba(0,230,68,1) 35%, rgba(0,188,68,1) 86%);\r\n    background: -o-linear-gradient(45deg, rgba(0,230,68,0.64) 0%, rgba(0,230,68,1) 23%, rgba(0,230,68,1) 35%, rgba(0,188,68,1) 86%);\r\n    background: -ms-linear-gradient(45deg, rgba(0,230,68,0.64) 0%, rgba(0,230,68,1) 23%, rgba(0,230,68,1) 35%, rgba(0,188,68,1) 86%);\r\n    background: linear-gradient(45deg, rgba(0,230,68,0.64) 0%, rgba(0,230,68,1) 23%, rgba(0,230,68,1) 35%, rgba(0,188,68,1) 86%);\r\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00e644', endColorstr='#00bc44', GradientType=1 );\r\n    position: relative;\r\n    float:left;\r\n    \r\n    padding-bottom: 15px;\r\n    min-height: 550px;\r\n}\r\n\r\n.centered{\r\n    padding: 84px 80px;\r\n}\r\n\r\n.right-side{\r\n    width:60%;\r\n    position: relative;\r\n    float:left;\r\n    padding: 100px 80px;\r\n    padding-bottom: 15px;\r\n}\r\n\r\n.myForms .form-group label{\r\n    color:black;\r\n    font-weight:400;\r\n    font-size:11px;\r\n    text-transform: uppercase;\r\n    margin-bottom:0;\r\n}\r\n\r\n.myForms .form-group input{\r\n    border:none;\r\n    padding-top:0;\r\n    border-bottom-width: 1px;\r\n    border-bottom-style: solid;\r\n    border-bottom-color:#ccc;\r\n    border-radius: 0;\r\n    -webkit-transition: border-bottom-color 0.9s;\r\n    transition:border-bottom-color 0.9s;\r\n    box-shadow: none;\r\n    padding-left:0;\r\n    \r\n}\r\n\r\n\r\n.pointers{\r\n    cursor:pointer;\r\n   \r\n\r\n}\r\n.myForms .form-group input:focus{\r\n    border-bottom-color:green;\r\n}\r\n\r\n.signButton{\r\n    position: absolute;\r\n    right:50px;\r\n    top:25px;\r\n    z-index: 1;\r\n}\r\n\r\n.closeButton{\r\n    position: absolute;\r\n    right:25px;\r\n    top:25px;\r\n    z-index: 1;\r\n}\r\n\r\n\r\n.submit-custom{\r\n    background: none;\r\n    border:none;\r\n    padding:8px 40px;\r\n    color:white;\r\n    background:#3ad72a;\r\n}\r\n.no-right{\r\n    padding-right:20px;\r\n}\r\n.no-left{\r\n    padding-left:20px;\r\n}\r\n.no-padding{\r\n    padding-left:0;\r\n    padding-right:0;\r\n}\r\n.text-centered{\r\n    text-align: center;\r\n}\r\n\r\n.loginWith{\r\n    padding-top:10px;\r\n    font-size:11px;\r\n    font-weight: 400;\r\n    color:#575757;\r\n    font-family: 'Museo300';\r\n    font-weight: bold;\r\n}\r\n#googleSignInBtn{\r\n    background: none;\r\n    border:none;\r\n    outline:none;\r\n    width: 55px;\r\n}\r\n.logIN{\r\n    font-size:40px;\r\n}\r\n.white{\r\n    color:white;\r\n}\r\n\r\n.small-text{\r\n    margin-top: 120px;\r\n}\r\n.half-left,.half-right{\r\n    position: relative;\r\n    float:left;\r\n}\r\n.holder i{\r\n    font-size:22px;\r\n    color:white;\r\n}\r\n.holder{\r\n    box-shadow: 0 5px 15px rgba(0,0,0,0.3);\r\n    width:40px;\r\n    height: 40px;\r\n    border-radius: 50%;\r\n    background: #575757;\r\n    text-align: center;\r\n    padding-top: 10px;\r\n    margin-right: 25px; \r\n    box-shadow: 0 1px 2px rgba(0,0,0,0.15);\r\n    transition: box-shadow 0.3s ease-in-out;\r\n\r\n}\r\n\r\n.holder:hover{\r\n    box-shadow: 0 5px 15px rgba(0,0,0,0.3);\r\n\r\n}\r\n.facebook-gmail{\r\n    width: 130px;\r\n    margin: 20px auto;\r\n}\r\n\r\n.errors{\r\n    border-bottom:1px solid red !important;\r\n}\r\n\r\n.SignUpLogin{\r\n    border:none;\r\n    background:none;\r\n    color:#3ad72a;;\r\n    font-size:13px;\r\n    font-weight: bold;\r\n\r\n}\r\n/* The snackbar - position it at the bottom and in the middle of the screen */\r\n#snackbar {\r\n    color:white;\r\n    text-transform: capitalize;\r\n    visibility: hidden; /* Hidden by default. Visible on click */\r\n    min-width: 250px; /* Set a default minimum width */\r\n    margin-left: -125px; /* Divide value of min-width by 2 */\r\n    background-color: #1ec26b; /* Black background color */\r\n    color: #fff; /* White text color */\r\n    text-align: center; /* Centered text */\r\n    border-radius: 2px; /* Rounded borders */\r\n    padding: 16px; /* Padding */\r\n    position: fixed; /* Sit on top of the screen */\r\n    z-index: 1052; /* Add a z-index if needed */\r\n    left: 50%; /* Center the snackbar */\r\n    bottom: 30px; /* 30px from the bottom */\r\n}\r\n\r\n/* Show the snackbar when clicking on a button (class added with JavaScript) */\r\n#snackbar.show {\r\n    visibility: visible; /* Show the snackbar */\r\n\r\n/* Add animation: Take 0.5 seconds to fade in and out the snackbar. \r\nHowever, delay the fade out process for 2.5 seconds */\r\n    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;\r\n    animation: fadein 0.5s, fadeout 0.5s 2.5s;\r\n}\r\n\r\n/* Animations to fade the snackbar in and out */\r\n@-webkit-keyframes fadein {\r\n    from {bottom: 0; opacity: 0;} \r\n    to {bottom: 30px; opacity: 1;}\r\n}\r\n\r\n@keyframes fadein {\r\n    from {bottom: 0; opacity: 0;}\r\n    to {bottom: 30px; opacity: 1;}\r\n}\r\n\r\n@-webkit-keyframes fadeout {\r\n    from {bottom: 30px; opacity: 1;} \r\n    to {bottom: 0; opacity: 0;}\r\n}\r\n\r\n@keyframes fadeout {\r\n    from {bottom: 30px; opacity: 1;}\r\n    to {bottom: 0; opacity: 0;}\r\n}\r\n\r\n.header-top{\r\n    \r\n\r\n    height: 578px;\r\n    background:url('/assets/img/home.gif');\r\n    background-repeat:no-repeat;\r\n    background-size:cover;\r\n    background-position:center;\r\n    background-attachment: fixed;\r\n}\r\n\r\n.header-top h1{\r\n    font-size:50px;\r\n    color:#656565;\r\n    text-align: center;\r\n    padding-top: 200px;\r\n    margin:0;\r\n}\r\n\r\n.left-city,.middle-area,.right-button{\r\n  position: relative;;\r\n  float:left;\r\n}\r\n\r\n.search-box {\r\n    max-width: 890px;\r\n    margin:100px auto;\r\n    margin-bottom:0;\r\n}\r\n.wrap {\r\n    overflow: hidden; \r\n    height: 50px;    \r\n    position: relative;\r\n    display: block;\r\n    height:46px;\r\n    width:294px;\r\n    border:1px solid #1ec26b;\r\n    border-radius: 4px;\r\n    background: transparent;\r\n    outline: none;\r\n    border-radius: 0;\r\n    border-top-left-radius:5px;\r\n    border-bottom-left-radius: 5px;\r\n    border-right:none;\r\n}\r\n\r\nselect.dropdown{       \r\n    height:46px;\r\n    outline: none;\r\n    background: transparent;\r\n    width:294px;\r\n    padding: 10px;\r\n    border: 0;\r\n    font-weight: 500;\r\n    padding-left:20px;\r\n    color:#656565;\r\n    font-size: 20px;       \r\n    padding-top:8px;\r\n   -webkit-appearance: none;\r\n    -moz-appearance: none;\r\n    appearance: none;\r\n}\r\nlabel.wrap:after {\r\n/*     content:\"\\f13a \"; */\r\n    content: url('/assets/img/dropdown.png');\r\n    font-family: FontAwesome;\r\n    color: #000;\r\n    position: absolute; \r\n    outline: none;\r\n    right: 15px;\r\n    top: 5px;\r\n    z-index: 1;\r\n    width: 10%;\r\n    height: 100%;  \r\n    pointer-events: none;    \r\n}\r\n\r\n.area-input{\r\n    width:100%;\r\n    border:1px solid #1ec26b;\r\n    border-radius: 0;\r\n    width:294px;\r\n    height:46px;\r\n    background:transparent;\r\n    padding-left:20px;\r\n    font-size: 20px;\r\n    font-weight: 300;\r\n    outline:none;\r\n\r\n}\r\n\r\n.header-btn{\r\n    height:46px;\r\n    width: 294px;\r\n    border:none;\r\n    background:#1ec26b;\r\n    color:white;\r\n    font-size:20px;\r\n    font-weight: 500;\r\n    border-top-right-radius:5px;\r\n    border-bottom-right-radius: 5px;\r\n}\r\n\r\n.container-login{\r\n\r\n    background: #fff;\r\n    width: 100%;\r\n    padding-left: 190px;\r\n}\r\n.area-input::-webkit-input-placeholder {\r\n    /* WebKit, Blink, Edge */\r\n    font-style: italic;\r\n    color:#aeaeae;\r\n}\r\n.area-input:-moz-placeholder {\r\n    /* Mozilla Firefox 4 to 18 */\r\n    font-style: italic;\r\n    color:#aeaeae;\r\n}\r\n.area-input::-moz-placeholder {\r\n    /* Mozilla Firefox 19+ */\r\n    font-style: italic;\r\n    color:#aeaeae;\r\n}\r\n.area-input:-ms-input-placeholder {\r\n    /* Internet Explorer 10-11 */\r\n    font-style: italic;\r\n    color:#aeaeae;\r\n}\r\n\r\n.container-login{\r\n    min-height:260px;\r\n}\r\n.on-go{\r\n    width:100%;\r\n\r\n    background: #ffffff;\r\n}\r\n\r\n.on-go h1{\r\n    font-weight: 500;\r\n    font-size:45px;\r\n    color:#605f5b;\r\n    margin-top:160px;\r\n}\r\n\r\n.app-banner{\r\n    width:100%;\r\n    background: #1ec26b;\r\n    min-height: 410px;\r\n}\r\n\r\n.app-banner h3{\r\n    font-size:30px;\r\n    font-weight: 300;\r\n    color:white;\r\n    margin-bottom:30px;\r\n    margin-top:90px;\r\n}\r\n\r\n.app-banner p{\r\n    font-size:15px;\r\n    color:white;\r\n    font-weight: 300;\r\n    margin:0;\r\n}\r\n\r\n.app-buttons{\r\n    margin-top:90px;\r\n    position: relative;\r\n    float:left;\r\n    width:40%;\r\n}\r\n.mockup{\r\n    position: relative;\r\n    float:left;\r\n    width:60%;\r\n    margin-top: -380px;    \r\n}\r\n.left-png{\r\n    position: relative;\r\n    float:left;\r\n    width:50px;\r\n    padding-top: 6px;\r\n    padding-left: 6px;\r\n}\r\n.right-texty{   \r\n    position: relative;\r\n    float:left;\r\n    height: 55px;\r\n}\r\n\r\n.right-texty .small{\r\n    font-weight: 300;\r\n    font-size:14px;\r\n    height: 16px;\r\n}\r\n.right-texty .large{\r\n    font-weight: 300;\r\n    font-size: 26px;\r\n    text-align: center;\r\n    margin-top: -6px;\r\n}\r\n.apps{\r\n    padding-top: 4px;\r\n    position: relative;\r\n    display: inline-block;\r\n    width: 190px;\r\n    height:54px;\r\n    border:1px solid white;\r\n}\r\n\r\n.contact-form h1{\r\n    font-size:45px;\r\n    font-weight: 500;\r\n    color:#656565;\r\n    text-align: center;\r\n    margin-top:80px;\r\n    margin-bottom:80px;\r\n}\r\n.actual-form{\r\n    width: 78%;\r\n    margin: 0 auto;\r\n    height: 225px;\r\n}\r\n.left-fields,.right-fields{\r\n    position: relative;\r\n    float:left;\r\n    width:48%;\r\n   margin: 0.7%;\r\n}\r\n\r\n.left-fields textarea,.right-fields input{\r\n    width:100%;\r\n    background: #faf9f5;\r\n    border:1px solid #9ca5a5;\r\n    height:65px;\r\n    padding-left:15px;\r\n    border-radius:4px;\r\n    margin:0;\r\n}\r\n.left-fields textarea{\r\n    height: 225px;\r\n    padding: 15px;\r\n    color:#656565;\r\n}\r\n\r\n.left-fields textarea::-webkit-input-placeholder {\r\n    /* WebKit, Blink, Edge */\r\n   font-style: italic;\r\n}\r\n.left-fields textarea:-moz-placeholder {\r\n    /* Mozilla Firefox 4 to 18 */\r\n    font-style: italic;\r\n}\r\n.left-fields textarea::-moz-placeholder {\r\n    /* Mozilla Firefox 19+ */\r\n    font-style: italic;\r\n}\r\n.left-fields textarea:-ms-input-placeholder {\r\n    /* Internet Explorer 10-11 */\r\n    font-style: italic;\r\n}\r\n\r\n\r\n.right-fields .form-group button{\r\n    width:100%;\r\n    color:#656565;\r\n    background: #1ec26b;\r\n    border:none;\r\n    font-size:20px;\r\n    font-weight: 500;\r\n    color:white;\r\n    height:65px;\r\n    padding-left:15px;\r\n    border-radius:4px;\r\n    margin:0;\r\n}\r\n.right-fields .form-group{\r\n    margin-bottom:15px;\r\n}\r\n.right-fields input{\r\n    \r\n}\r\n\r\n@media only screen and (max-width: 1200px) and (min-width: 992px){\r\n    .mockup img{\r\n        width: 500px;\r\n    }\r\n    .mockup{\r\n        margin-top: -250px;\r\n        width: 30%;\r\n    }\r\n    .app-buttons{\r\n        width:46%;\r\n    }\r\n}\r\n@media only screen and (max-width: 992px) and (min-width: 768px){\r\n    .mockup img{\r\n        width:400px;\r\n        \r\n    }\r\n\r\n    .app-buttons{\r\n        width:58%;\r\n    }\r\n\r\n    .mockup{\r\n        width:30%;\r\n        margin-top: -230px;\r\n    }\r\n    .left-side {\r\n        padding: 81px 25px;\r\n        min-height: 620px;\r\n    }\r\n    .actual-form{\r\n        width:100%;\r\n    }\r\n   \r\n}\r\n\r\n@media only screen and (max-width: 768px) and (min-width: 640px){\r\n    .left-side {\r\n        min-height: 620px;\r\n    }\r\n    .mockup{\r\n        text-align: center;\r\n    }\r\n\r\n    .mockup{\r\n        margin-top: -250px;\r\n    }\r\n    .mockup img{\r\n       width:400px;\r\n    }\r\n    .right-texty .small{\r\n        font-size:9px;\r\n    }\r\n    .left-city, .middle-area, .right-button,.header-btn{\r\n        width:33%;\r\n    }\r\n   \r\n    .right-texty{\r\n        padding-top: 7px;\r\n    }\r\n    .right-texty .large{\r\n        font-size:16px;\r\n    }\r\n    .apps{\r\n        width: 46%;\r\n    }\r\n    \r\n}\r\n\r\n@media only screen and (max-width: 640px){\r\n    .left-city, .middle-area, .right-button{\r\n        width:100%;\r\n        text-align: center;\r\n    }\r\n    .on-go h1{\r\n        margin-top:100px;\r\n    }\r\n    .search-box{\r\n        width:90%;\r\n    }\r\n    .middle-area{\r\n        margin-bottom: 5px;\r\n    }\r\n    .wrap select{\r\n        border: 1px solid #1ec26b;\r\n        width: 100%;\r\n    }\r\n    .wrap{\r\n        width:100%;\r\n        border:none;\r\n    }\r\n    .area-input,.header-btn{\r\n        width:100% !important;\r\n        border-radius: 0;\r\n    }\r\n    .header-top h1{\r\n        padding-top:100px;\r\n    }\r\n    .left-side {\r\n        display:none;\r\n    }\r\n    .mockup,.app-buttons{\r\n        width:100%;\r\n    }\r\n    .mockup{\r\n        text-align: center;\r\n        margin-top:50px;\r\n        margin-bottom: 50px;\r\n    }\r\n    .app-buttons{\r\n        text-align:center;\r\n    }\r\n    .app-banner p,.app-banner h3{\r\n        text-align: center;\r\n        width: 100% !important;\r\n    }\r\n    .right-texty .small{\r\n        font-size:10px;\r\n    }\r\n    .left-fields, .right-fields{\r\n        width:100%;\r\n    }\r\n    .right-texty{\r\n        padding-top:6px;\r\n    }\r\n    .right-texty .large{\r\n        font-size: 18px;\r\n    }\r\n    .mockup img{\r\n        width:280px;\r\n    }\r\n    .apps{\r\n        width:48%;\r\n        margin:0 !important;\r\n    }\r\n    .right-side{\r\n        width:100%;\r\n    }\r\n    \r\n}", ""]);
 
 // exports
 
 
 /***/ }),
 /* 281 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = "<div class=\"banner\">\n\n    <div class=\"banner-bottom\">\n        <div class=\"location-left\">\n\n            <p *ngIf=\"!addressCheck\">\n                <img src=\"assets/img/placeholder.png\"> Bolton Plaza</p>\n            <p *ngIf=\"addressCheck\">\n                <img src=\"assets/img/placeholder.png\"> {{EnteredAddress.CityName}}, {{EnteredAddress.AreaName}}</p>\n        </div>\n        <div class=\"change-location\">\n            <button class=\"change\">Change Location</button>\n        </div>\n\n    </div>\n\n</div>\n\n<div class=\"container med-container\">\n\n    <div class=\"row breadcrumbs\">\n\n\n        <a href=\"\">Home</a>\n        <img src=\"/assets/img/right.png\" width=\"10px\">\n        <a href=\"\">Chemist</a>\n\n\n    </div>\n\n\n\n    <div class=\"row breadcrumbs\">\n\n\n        <div class='voucher-form clearfix'>\n            <img src=\"/assets/img/search.png\" class=\"search-icon\">\n            <div class=\"inputField\">\n                <input type=\"text\" placeholder=\"Enter Chemist Name\" name=\"searchChemistQuery\" (keyup)=\"searchThisMedicine(this)\" [(ngModel)]=\"searchChemistQuery\">\n            </div>\n            <div class=\"inputBtn\">\n                <button>Search</button>\n            </div>\n\n        </div>\n\n\n    </div>\n\n    <div class=\"row\">\n        <div class=\"search-check\">\n            <p class=\"italic-search\">Search by </p>\n            <p>\n                <input type=\"radio\" id=\"chemistCheck\" name=\"radio-group\" (change)=\"showChemistsData()\" value=\"Chemists\" checked>\n                <label for=\"chemistCheck\" class='delivery-text'>Chemists</label>\n            </p>\n            <p>\n                <input type=\"radio\" id=\"medicineCheck\" name=\"radio-group\" (change)=\"showMedicinesData()\" value=\"Medicine\">\n                <label for=\"medicineCheck\" class='delivery-text'>Medicine</label>\n            </p>\n        </div>\n    </div>\n\n\n\n\n    <div class=\"filter-row row clearfix\">\n        <!-- Filter Row -->\n\n        <div class=\"filter-icons-left\">\n\n            <div class=\"inner\">\n                <h2 class=\"filter-heading\">\n                    <img class=\"level\" src='assets/img/levels.png' width=\"20px\">Filter Results </h2>\n            </div>\n            <ul class='filter-options'>\n                <li>Free Devliery</li>\n                <li>Fast Devliery</li>\n                <li>High Rating</li>\n                <li>Low Rating</li>\n            </ul>\n\n            <div class=\"quick-filters\">\n\n\n                <h3>Quick Filters</h3>\n                <ul class=\"quick-filters-list\">\n                    <li>Panadol</li>\n                    <li>Flagyl</li>\n                    <li>Disprin</li>\n                </ul>\n            </div>\n\n        </div>\n\n        <div class=\"filtered-list-right\">\n\n            <perfect-scrollbar class=\"container\" [config]=\"config\">\n                <!-- Accordions -->\n\n                <ng-container *ngIf=\"showChemists\">\n                    <div class=\"panel-group\" id=\"accordion\" role=\"tablist\" aria-multiselectable=\"true\">\n                        <ng-container *ngFor=\"let chemists of searchedChemists\">\n                            <div class=\"panel panel-custom\">\n                                <div class=\"panel-heading\" role=\"tab\" id=\"headingOne\" (click)=\"getDetailForThisChemist(chemists)\">\n                                    <h4 class=\"panel-title\">\n                                        <a class=\"panel-head\" data-parent=\"#accordion\" >\n\n                                            <div class='header clearfix'>\n                                                <div class=\"left-image-side clearfix\">\n                                                    <img src=\"{{chemists.ProfileURL}}\" width=\"75px\" height=\"72px\">\n                                                </div>\n                                                <div class='right-name clearfix'>\n                                                    <p class=\"chemist-name\">{{chemists.Chemist.PharmacyName}}</p>\n                                                    <p class=\"opening-hours\">{{chemists.DistanceFromUs}} KM</p>\n\n                                                    <div class=\"chemist-ratings\">\n                                                        <star-rating-comp [starType]=\"'icon'\" [disabled]=\"true\" [rating]=\"chemists.ChemistRatings\"></star-rating-comp>\n\n                                                    </div>\n                                                </div>\n                                            </div>\n                                            <div class=\"chevron\">\n                                                <i class='fa fa-chevron-right'></i>\n                                            </div>\n\n                                        </a>\n                                    </h4>\n                                </div>\n                                \n                            </div>\n                        </ng-container>\n                    </div>\n                </ng-container>\n\n\n                <!-- Accordions -->\n\n\n                <ng-container *ngIf=\"showMedicines\">\n\n                    <div class=\"panel-group\" id=\"accordion\" role=\"tablist\" aria-multiselectable=\"true\">\n                        <ng-container *ngFor=\"let chemists of allMedicines\">\n                            <div class=\"panel panel-custom animated slideInDown\">\n                                <div class=\"panel-heading\" role=\"tab\" id=\"headingOne\">\n                                    <h4 class=\"panel-title\">\n                                        <a class=\"panel-head\" data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapse{{chemists.Id}}\" aria-expanded=\"true\"\n                                            aria-controls=\"collapseOne\">\n\n                                            <div class='header clearfix'>\n                                                <div class=\"left-image-side clearfix\">\n                                                    <img src=\"{{chemists.ProfileURL}}\" width=\"75px\" height=\"72px\">\n                                                </div>\n                                                <div class='right-name clearfix'>\n                                                    <p class=\"chemist-name\">{{chemists.PharmacyName}}</p>\n                                                    <p class=\"opening-hours\">33</p>\n\n                                                    <div class=\"chemist-ratings\">\n                                                        <star-rating-comp [starType]=\"'icon'\" [disabled]=\"true\" [rating]=\"chemists.ChemistRatings\"></star-rating-comp>\n\n                                                    </div>\n                                                </div>\n                                            </div>\n                                            <div class=\"chevron\">\n                                                <i class='fa fa-chevron-right'></i>\n                                            </div>\n\n                                        </a>\n                                    </h4>\n                                </div>\n                                <div id=\"collapse{{chemists.Id}}\" class=\"panel-collapse collapse\" role=\"tabpanel\" aria-labelledby=\"headingOne\">\n                                    <div class=\"panel-body animated zoomIn\">\n                                        <div class=\"row\">\n                                            <div class=\"col-md-6 alignCenter\">\n                                                <p class=\"chemist-name\">\n                                                    <img src=\"assets/img/map.png\" width=\"20px\">&nbsp; {{chemists.Address}}</p>\n                                            </div>\n                                            <div class=\"col-md-6 alignCenter\">\n                                                <p class=\"chemist-name\">\n                                                    <img src=\"assets/img/phone.png\" width=\"20px\">&nbsp; {{chemists.MobileNumber}}</p>\n                                            </div>\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                        </ng-container>\n                    </div>\n\n                </ng-container>\n            </perfect-scrollbar>\n        </div>\n\n\n\n\n    </div>\n    <!-- Filter Row -->\n\n\n\n</div>"
+module.exports = __webpack_require__.p + "ecbe12267d57197f1ad12172cb24477a.woff2";
 
 /***/ }),
 /* 282 */
 /***/ (function(module, exports, __webpack_require__) {
 
+module.exports = __webpack_require__.p + "28d3fbe2819fd3a47734681ed8defc43.woff";
 
-        var result = __webpack_require__(283);
+/***/ }),
+/* 283 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "f66566bb696dcc64f0d955d4c47468fc.woff2";
+
+/***/ }),
+/* 284 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "a21d66e104c8ef2e8c9fa26e8081b74e.woff";
+
+/***/ }),
+/* 285 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "0ab0dbda418a1c064e9d3627c59786b5.woff2";
+
+/***/ }),
+/* 286 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "ccfa0e1f1ab36a8085086dc4aceeba9d.woff";
+
+/***/ }),
+/* 287 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "c43ecf75f22cdbcb65a9b7087ab2bd58.woff2";
+
+/***/ }),
+/* 288 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "25464a6048b4e6087643ca4c18979c79.woff";
+
+/***/ }),
+/* 289 */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"banner\">\n\n    <div class=\"banner-bottom\">\n        <div class=\"location-left\">\n\n            <p *ngIf=\"!addressCheck\">\n                <img src=\"assets/img/placeholder.png\"> Bolton Plaza</p>\n            <p *ngIf=\"addressCheck\">\n                <img src=\"assets/img/placeholder.png\"> {{EnteredAddress.CityName}}, {{EnteredAddress.AreaName}}</p>\n        </div>\n        <div class=\"change-location\">\n            <button class=\"change\">Change Location</button>\n        </div>\n\n    </div>\n\n</div>\n\n<div class=\"container med-container\">\n\n    <div class=\"row breadcrumbs\">\n\n\n        <a href=\"\">Home</a>\n        <img src=\"/assets/img/right.png\" width=\"10px\">\n        <a href=\"\">Chemist</a>\n\n\n    </div>\n\n\n\n    <div class=\"row breadcrumbs\">\n\n\n        <div class='voucher-form clearfix'>\n            <img src=\"/assets/img/search.png\" class=\"search-icon\">\n            <div class=\"inputField\">\n                <input type=\"text\" placeholder=\"Enter Chemist Name\" name=\"searchChemistQuery\" (keyup)=\"searchThisMedicine(this)\" [(ngModel)]=\"searchChemistQuery\">\n            </div>\n            <div class=\"inputBtn\">\n                <button>Search</button>\n            </div>\n\n        </div>\n\n\n    </div>\n\n    <div class=\"row\">\n        <div class=\"search-check\">\n            <p class=\"italic-search\">Search by </p>\n            <p>\n                <input type=\"radio\" id=\"chemistCheck\" name=\"radio-group\" (change)=\"showChemistsData()\" value=\"Chemists\" checked>\n                <label for=\"chemistCheck\" class='delivery-text'>Chemists</label>\n            </p>\n            <p>\n                <input type=\"radio\" id=\"medicineCheck\" name=\"radio-group\" (change)=\"showMedicinesData()\" value=\"Medicine\">\n                <label for=\"medicineCheck\" class='delivery-text'>Medicine</label>\n            </p>\n        </div>\n    </div>\n\n\n\n\n    <div class=\"filter-row row clearfix\">\n        <!-- Filter Row -->\n\n        <div class=\"filter-icons-left\">\n\n            <div class=\"inner\">\n                <h2 class=\"filter-heading\">\n                    <img class=\"level\" src='assets/img/levels.png' width=\"20px\">Filter Results </h2>\n            </div>\n            <ul class='filter-options'>\n                <li>Free Devliery</li>\n                <li>Fast Devliery</li>\n                <li>High Rating</li>\n                <li>Low Rating</li>\n            </ul>\n\n            <div class=\"quick-filters\">\n\n\n                <h3>Quick Filters</h3>\n                <ul class=\"quick-filters-list\">\n                    <li>Panadol</li>\n                    <li>Flagyl</li>\n                    <li>Disprin</li>\n                </ul>\n            </div>\n\n        </div>\n\n        <div class=\"filtered-list-right\">\n\n            <perfect-scrollbar class=\"container\" [config]=\"config\">\n                <!-- Accordions -->\n\n                <ng-container *ngIf=\"showChemists\">\n                    <div class=\"panel-group\" id=\"accordion\" role=\"tablist\" aria-multiselectable=\"true\">\n                        <ng-container *ngFor=\"let chemists of searchedChemists\">\n                            <div class=\"panel panel-custom\">\n                                <div class=\"panel-heading\" role=\"tab\" id=\"headingOne\" (click)=\"getDetailForThisChemist(chemists)\">\n                                    <h4 class=\"panel-title\">\n                                        <a class=\"panel-head\" data-parent=\"#accordion\" >\n\n                                            <div class='header clearfix'>\n                                                <div class=\"left-image-side clearfix\">\n                                                    <img src=\"{{chemists.ProfileURL}}\" width=\"75px\" height=\"72px\">\n                                                </div>\n                                                <div class='right-name clearfix'>\n                                                    <p class=\"chemist-name\">{{chemists.Chemist.PharmacyName}}</p>\n                                                    <p class=\"opening-hours\">{{chemists.DistanceFromUs}} KM</p>\n\n                                                    <div class=\"chemist-ratings\">\n                                                        <star-rating-comp [starType]=\"'icon'\" [disabled]=\"true\" [rating]=\"chemists.ChemistRatings\"></star-rating-comp>\n\n                                                    </div>\n                                                </div>\n                                            </div>\n                                            <div class=\"chevron\">\n                                                <i class='fa fa-chevron-right'></i>\n                                            </div>\n\n                                        </a>\n                                    </h4>\n                                </div>\n                                \n                            </div>\n                        </ng-container>\n                    </div>\n                </ng-container>\n\n\n                <!-- Accordions -->\n\n\n                <ng-container *ngIf=\"showMedicines\">\n\n                    <div class=\"panel-group\" id=\"accordion\" role=\"tablist\" aria-multiselectable=\"true\">\n                        <ng-container *ngFor=\"let chemists of allMedicines\">\n                            <div class=\"panel panel-custom animated slideInDown\">\n                                <div class=\"panel-heading\" role=\"tab\" id=\"headingOne\">\n                                    <h4 class=\"panel-title\">\n                                        <a class=\"panel-head\" data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapse{{chemists.Id}}\" aria-expanded=\"true\"\n                                            aria-controls=\"collapseOne\">\n\n                                            <div class='header clearfix'>\n                                                <div class=\"left-image-side clearfix\">\n                                                    <img src=\"{{chemists.ProfileURL}}\" width=\"75px\" height=\"72px\">\n                                                </div>\n                                                <div class='right-name clearfix'>\n                                                    <p class=\"chemist-name\">{{chemists.PharmacyName}}</p>\n                                                    <p class=\"opening-hours\">33</p>\n\n                                                    <div class=\"chemist-ratings\">\n                                                        <star-rating-comp [starType]=\"'icon'\" [disabled]=\"true\" [rating]=\"chemists.ChemistRatings\"></star-rating-comp>\n\n                                                    </div>\n                                                </div>\n                                            </div>\n                                            <div class=\"chevron\">\n                                                <i class='fa fa-chevron-right'></i>\n                                            </div>\n\n                                        </a>\n                                    </h4>\n                                </div>\n                                <div id=\"collapse{{chemists.Id}}\" class=\"panel-collapse collapse\" role=\"tabpanel\" aria-labelledby=\"headingOne\">\n                                    <div class=\"panel-body animated zoomIn\">\n                                        <div class=\"row\">\n                                            <div class=\"col-md-6 alignCenter\">\n                                                <p class=\"chemist-name\">\n                                                    <img src=\"assets/img/map.png\" width=\"20px\">&nbsp; {{chemists.Address}}</p>\n                                            </div>\n                                            <div class=\"col-md-6 alignCenter\">\n                                                <p class=\"chemist-name\">\n                                                    <img src=\"assets/img/phone.png\" width=\"20px\">&nbsp; {{chemists.MobileNumber}}</p>\n                                            </div>\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                        </ng-container>\n                    </div>\n\n                </ng-container>\n            </perfect-scrollbar>\n        </div>\n\n\n\n\n    </div>\n    <!-- Filter Row -->\n\n\n\n</div>"
+
+/***/ }),
+/* 290 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+        var result = __webpack_require__(291);
 
         if (typeof result === "string") {
             module.exports = result;
@@ -98268,7 +98316,7 @@ module.exports = "<div class=\"banner\">\n\n    <div class=\"banner-bottom\">\n 
     
 
 /***/ }),
-/* 283 */
+/* 291 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)(undefined);
@@ -98282,7 +98330,7 @@ exports.push([module.i, "\r\n.banner{\r\n    width:100%;\r\n    position: relati
 
 
 /***/ }),
-/* 284 */
+/* 292 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -98328,17 +98376,17 @@ OrdersService = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 
 /***/ }),
-/* 285 */
+/* 293 */
 /***/ (function(module, exports) {
 
 module.exports = "\n\n<div id=\"snackbar\">Some text some message..</div>\n\n<div class=\"orders-screen\" >\n\n  <h2 class='my-orders-heading'>My orders</h2>\n\n  <hr class=\"saperator-orders\">\n\n  <div class=\"scheduled-orders\">\n\n    <div class=\"row clearfix\">\n\n      <div class=\"left-aligned-heading\">\n        <h3>Scheduled orders</h3>\n      </div>\n\n      <div class=\"right-aligned-lin\">\n        <hr class=\"saperator-orders\">\n      </div>\n\n\n    </div>\n\n    <div class=\"innner row one-order\" *ngFor=\"let laterOrder of laterOrders\">\n\n      <div class=\"col-md-9 col-sm-9 col-lg-9 left-row-detail\">\n          <p *ngFor=\"let products of laterOrder.ReturnOrderItemDTOList\">{{products.Quantity}}x {{products.ProductName}} {{products.DosageSize}}{{products.DosageSymbol}} </p>\n          <p>{{laterOrder.ChemistName}} - {{laterOrder.CreatedOnUTC}} - Total : Rs. {{laterOrder.OrderTotal}}/-</p>\n      </div>\n\n      <div class=\"col-md-3 col-sm-3 col-lg-3 right-time\">\n        <p class=\"huge-green\">{{laterOrder.StartingTime}} - {{laterOrder.EndingTime}}</p>\n        <p style=\"text-align: center\">Delivery Time</p>\n      </div>\n\n    </div>\n\n\n\n  </div>\n\n  <div class=\"past-orders\">\n\n    <div class=\"row clearfix\">\n\n      <div class=\"left-aligned-heading\">\n        <h3>Past orders</h3>\n      </div>\n\n      <div class=\"right-aligned-lin\">\n        <hr class=\"saperator-orders\">\n      </div>\n\n\n    </div>\n\n\n    <div class=\"innner row one-order\" *ngFor=\"let order of doneOrders\">\n        \n      <div class=\"col-md-9 col-sm-9 col-lg-9 left-row-detail\">\n          \n        <p *ngFor=\"let products of order.ReturnOrderItemDTOList\">{{products.Quantity}}x {{products.ProductName}} {{products.DosageSize}}{{products.DosageSymbol}} </p>\n        <p>{{order.ChemistName}} - {{order.CreatedOnUTC}} - Total : Rs. {{order.OrderTotal}}/-</p>\n      </div>\n\n      <div class=\"col-md-3 col-sm-3 col-lg-3 right-time\">\n        <button class=\"re-order\" (click)=\"Reorder(order)\">Reorder</button>\n      </div>\n     \n      <div class=\"col-md-12\">      <hr class=\"saperator-order-line\"> </div>\n\n\n    </div>\n\n\n  </div>\n\n</div>\n\n\n<modal  #reorderModal\ncancelButtonLabel=\"cancel\"\nsubmitButtonLabel=\"submit\"\nmodalClass=\"modal-lg modal-sm animated slideInDownBig\"\n(onSubmit)=\"actionOnSubmit()\">\n\n<modal-content>\n   \n\n  <div class=\"check1\">\n    <p>\n        <input type=\"radio\" id=\"test2\" (change)=\"soonReorder()\" name=\"radio-group\">\n        <label for=\"test2\" class='delivery-text'>As soon as possible</label>\n        <span class='delivery-text'>Estimated Delivery Time : {{estimatedDeliveryTime}} min</span>\n    </p>\n\n    <p>\n        <input type=\"radio\" id=\"test3\" (change)=\"showTimeSlotsForReorder()\" name=\"radio-group\">\n        <label for=\"test3\" class='delivery-text'>Later</label>\n    </p>\n\n    \n\n    <ng-container>\n\n        <ul class=\"time-slots\">\n            <li *ngFor=\"let timeSlot of timeSlots\" class=\"\">\n                <button class=\"time-slot\" (click)=\"selectThisSlot($event,timeSlot.Id)\">{{timeSlot.StartingTime}} - {{timeSlot.EndingTime}}</button>\n            </li>\n        </ul>\n\n    </ng-container>\n\n</div>\n\n\n\n<div class=\"row\" style=\"text-align:center\">\n\n    <div class=\"ordersLoader\">\n        <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->\n        <svg width=\"50\" height=\"30\" viewBox=\"0 0 120 30\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"#1ec26b\">\n            <circle cx=\"15\" cy=\"15\" r=\"15\">\n                <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n            </circle>\n            <circle cx=\"60\" cy=\"15\" r=\"9\" fill-opacity=\"0.3\">\n                <animate attributeName=\"r\" from=\"9\" to=\"9\" begin=\"0s\" dur=\"0.8s\" values=\"9;15;9\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"0.5\" to=\"0.5\" begin=\"0s\" dur=\"0.8s\" values=\".5;1;.5\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n            </circle>\n            <circle cx=\"105\" cy=\"15\" r=\"15\">\n                <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n            </circle>\n        </svg>\n\n    </div>\n\n  <button class=\"re-order\" id=\"order-again\" (click)=\"ReorderAgain()\">Place Order</button>\n</div>\n\n\n</modal-content>\n\n\n</modal>\n"
 
 /***/ }),
-/* 286 */
+/* 294 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__(287);
+        var result = __webpack_require__(295);
 
         if (typeof result === "string") {
             module.exports = result;
@@ -98348,7 +98396,7 @@ module.exports = "\n\n<div id=\"snackbar\">Some text some message..</div>\n\n<di
     
 
 /***/ }),
-/* 287 */
+/* 295 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)(undefined);
@@ -98362,17 +98410,17 @@ exports.push([module.i, ".my-orders-heading{\r\n    font-size:20px;\r\n    font-
 
 
 /***/ }),
-/* 288 */
+/* 296 */
 /***/ (function(module, exports) {
 
 module.exports = "<div id=\"snackbar\"></div>\n<div class=\"orders-screen\">\n\n  <h2 class='my-orders-heading'>Profile</h2>\n\n  <hr class=\"saperator-orders\">\n\n\n  <div class=\"form-profile\">\n\n      <div class=\"form-group\" style=\"padding:12px\">\n          <label style=\"    width: 170px;\">Change Display Picture</label>\n\n         \n          <form id=\"form1\" runat=\"server\"  (click)=\"changeImage()\">\n            <input type='file'(change)=\"changeimage($event)\" id=\"imgInp\"  style=\"visibility:hidden;\"/>\n            <img  src=\"{{ThisUser.ProfileURL}}\" style=\"\" id=\"blah\"  src=\"#\" alt=\"your image\" />\n      \n          </form> \n  </div>\n    <div class=\"form-group\">\n      <label>Email</label>\n      <input type=\"text\" class=\"form-control input-lg\" name=\"ThisUser.Email\" [(ngModel)]=\"ThisUser.Email\"/>\n    </div>\n\n    <div class=\"row\">\n\n      <div class=\"col-md-6 col-sm-6 col-lg-6\">\n\n        <div class=\"form-group\">\n          <label>Full name</label>\n          <input type=\"text\" class=\"form-control input-lg\" name=\"ThisUser.FullName\" [(ngModel)]=\"ThisUser.FullName\"/>\n        </div>\n\n      </div>\n\n      <div class=\"col-md-6 col-sm-6 col-lg-6\">\n\n        <div class=\"form-group\">\n          <label>Username</label>\n          <input type=\"text\" class=\"form-control input-lg\" name=\"ThisUser.UserName\" [(ngModel)]=\"ThisUser.UserName\" />\n        </div>\n\n      </div>\n\n    </div>\n\n    <div class=\"row\">\n\n      <div class=\"col-md-6 col-sm-6 col-lg-6\">\n\n        <div class=\"form-group\">\n          <label style=\"width: 114px;\">Mobile Number</label>\n          <input type=\"text\" class=\"form-control input-lg\" name=\"ThisUser.mobileNumber\" [(ngModel)]=\"ThisUser.mobileNumber\" />\n        </div>\n\n      </div>\n\n\n\n\n\n\n    </div>\n\n    <div class=\"row\">\n\n      <div class=\"col-md-offset-6 col-lg-offset-6 col-sm-offset-6 col-md-6 col-sm-6 col-lg-6\" style=\"text-align: right;\">\n\n        <button class=\"save-btn\" (click)=\"updateWithoutPassword()\">Save</button>\n      </div>\n\n    </div>\n\n  </div>\n\n  \n  <h2 class='my-orders-heading'>Password</h2>\n  \n    <hr class=\"saperator-orders\">\n\n\n    <div class=\"password-change\">\n        <div class=\"form-group\">\n          <input type=\"password\" class=\"password-fields\" placeholder=\"Current Password\" name=\"currentPass\" [(ngModel)]=\"currentPass\" >\n        </div>\n        <div class=\"form-group\">\n            <input type=\"password\" class=\"password-fields\" placeholder=\"New Password\" name=\"newPass\" [(ngModel)]=\"newPass\">\n        </div>\n        <div class=\"row\">\n            \n                  <div class=\"col-md-offset-6 col-lg-offset-6 col-sm-offset-6 col-md-6 col-sm-6 col-lg-6\" style=\"text-align: right;\">\n            \n                    <button class=\"save-btn\" (click)=\"updatePasswords()\">Save</button>\n                  </div>\n            \n        </div>\n    </div>\n\n\n</div>"
 
 /***/ }),
-/* 289 */
+/* 297 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__(290);
+        var result = __webpack_require__(298);
 
         if (typeof result === "string") {
             module.exports = result;
@@ -98382,7 +98430,7 @@ module.exports = "<div id=\"snackbar\"></div>\n<div class=\"orders-screen\">\n\n
     
 
 /***/ }),
-/* 290 */
+/* 298 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)(undefined);
@@ -98396,7 +98444,7 @@ exports.push([module.i, ".my-orders-heading{\r\n    font-size:20px;\r\n    font-
 
 
 /***/ }),
-/* 291 */
+/* 299 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -98431,8 +98479,8 @@ AppComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
         selector: 'app',
         encapsulation: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewEncapsulation"].None,
-        styles: [__webpack_require__(292), __webpack_require__(295)],
-        template: __webpack_require__(297)
+        styles: [__webpack_require__(300), __webpack_require__(303)],
+        template: __webpack_require__(305)
     }),
     __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__app_service__["a" /* AppState */]])
 ], AppComponent);
@@ -98440,11 +98488,11 @@ AppComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 
 /***/ }),
-/* 292 */
+/* 300 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__(293);
+        var result = __webpack_require__(301);
 
         if (typeof result === "string") {
             module.exports = result;
@@ -98454,7 +98502,7 @@ AppComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
     
 
 /***/ }),
-/* 293 */
+/* 301 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)(undefined);
@@ -98462,23 +98510,23 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, "@font-face {\r\n    font-family: 'Museo300';\r\n    font-style: normal;\r\n    font-weight: normal;\r\n    src: local('../assets/fonts/museo_old/Museo Sans Cyrl 300'), url(" + __webpack_require__(294) + ") format('woff');\r\n    }\r\n\r\nbody,p,input,label{\r\n    font-family: 'Museo300';\r\n}\r\n\r\nbody{\r\n  background:#faf9f5\r\n}\r\n.panel-heading{\r\n padding-bottom:5px !important;\r\n}\r\n[type=\"radio\"]:checked,\r\n[type=\"radio\"]:not(:checked) {\r\n    position: absolute;\r\n    left: -9999px;\r\n}\r\n[type=\"radio\"]:checked + label,\r\n[type=\"radio\"]:not(:checked) + label\r\n{\r\n    position: relative;\r\n    padding-left: 28px;\r\n    cursor: pointer;\r\n    line-height: 20px;\r\n    display: inline-block;\r\n\r\n}\r\n[type=\"radio\"]:checked + label:before,\r\n[type=\"radio\"]:not(:checked) + label:before {\r\n    content: '';\r\n    position: absolute;\r\n    left: 0;\r\n    top: 0;\r\n    width: 20px;\r\n    height: 20px;\r\n    border: 1px solid #b6b6b6;\r\n    border-radius: 100%;\r\n    background: #fff;\r\n    color:#aeaeae;\r\n}\r\n[type=\"radio\"]:checked + label:after,\r\n[type=\"radio\"]:not(:checked) + label:after {\r\n    content: '';\r\n    width: 12px;\r\n    height: 12px;\r\n    background: #1ec26b;\r\n    position: absolute;\r\n    top: 4px;\r\n    left: 4px;\r\n    border-radius: 100%;\r\n    -webkit-transition: all 0.2s ease;\r\n    transition: all 0.2s ease;\r\n    color:#676767;\r\n}\r\n[type=\"radio\"]:not(:checked) + label:after {\r\n    opacity: 0;\r\n    -webkit-transform: scale(0);\r\n    transform: scale(0);\r\n}\r\n[type=\"radio\"]:checked + label:after {\r\n    opacity: 1;\r\n    -webkit-transform: scale(1);\r\n    transform: scale(1);\r\n}\r\n\r\n.half-left a{\r\n    cursor:pointer;\r\n}\r\n\r\n.rating.color-positive .star-container .star i{\r\n    color:#5ca1f6 !important;\r\n}\r\n\r\n.search-icon{\r\n    position: absolute;\r\n    top: 11px;\r\n    z-index: 1;\r\n    width: 22px;\r\n    left: 12px;\r\n}\r\n\r\n\r\n\r\n/* animation */\r\n\r\n.loading {\r\n    opacity: 0;\r\n    transition: opacity .8s ease-in-out;\r\n    position: fixed;\r\n    height: 100%;\r\n    width: 100%;\r\n    top: 0;\r\n    left: 0;\r\n    background: #000;\r\n    z-index: -1;\r\n}\r\n/* .loading screen is visible when app is not bootstraped yet, .my-app is empty */\r\napp:empty + .loading {\r\n    opacity: 1;\r\n    z-index: 100;\r\n}\r\n\r\n\r\n.loader,.FetchingTimeSlots{\r\n    display:none;\r\n    text-align: center;\r\n    margin:50px;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n", ""]);
+exports.push([module.i, "@font-face {\r\n    font-family: 'Museo300';\r\n    font-style: normal;\r\n    font-weight: normal;\r\n    src: local('../assets/fonts/museo_old/Museo Sans Cyrl 300'), url(" + __webpack_require__(302) + ") format('woff');\r\n    }\r\n\r\nbody,p,input,label{\r\n    font-family: 'Museo300';\r\n}\r\n\r\nbody{\r\n  background:#faf9f5\r\n}\r\n.panel-heading{\r\n padding-bottom:5px !important;\r\n}\r\n[type=\"radio\"]:checked,\r\n[type=\"radio\"]:not(:checked) {\r\n    position: absolute;\r\n    left: -9999px;\r\n}\r\n[type=\"radio\"]:checked + label,\r\n[type=\"radio\"]:not(:checked) + label\r\n{\r\n    position: relative;\r\n    padding-left: 28px;\r\n    cursor: pointer;\r\n    line-height: 20px;\r\n    display: inline-block;\r\n\r\n}\r\n[type=\"radio\"]:checked + label:before,\r\n[type=\"radio\"]:not(:checked) + label:before {\r\n    content: '';\r\n    position: absolute;\r\n    left: 0;\r\n    top: 0;\r\n    width: 20px;\r\n    height: 20px;\r\n    border: 1px solid #b6b6b6;\r\n    border-radius: 100%;\r\n    background: #fff;\r\n    color:#aeaeae;\r\n}\r\n[type=\"radio\"]:checked + label:after,\r\n[type=\"radio\"]:not(:checked) + label:after {\r\n    content: '';\r\n    width: 12px;\r\n    height: 12px;\r\n    background: #1ec26b;\r\n    position: absolute;\r\n    top: 4px;\r\n    left: 4px;\r\n    border-radius: 100%;\r\n    -webkit-transition: all 0.2s ease;\r\n    transition: all 0.2s ease;\r\n    color:#676767;\r\n}\r\n[type=\"radio\"]:not(:checked) + label:after {\r\n    opacity: 0;\r\n    -webkit-transform: scale(0);\r\n    transform: scale(0);\r\n}\r\n[type=\"radio\"]:checked + label:after {\r\n    opacity: 1;\r\n    -webkit-transform: scale(1);\r\n    transform: scale(1);\r\n}\r\n\r\n.half-left a{\r\n    cursor:pointer;\r\n}\r\n\r\n.rating.color-positive .star-container .star i{\r\n    color:#5ca1f6 !important;\r\n}\r\n\r\n.search-icon{\r\n    position: absolute;\r\n    top: 11px;\r\n    z-index: 1;\r\n    width: 22px;\r\n    left: 12px;\r\n}\r\n\r\n\r\n\r\n/* animation */\r\n\r\n.loading {\r\n    opacity: 0;\r\n    transition: opacity .8s ease-in-out;\r\n    position: fixed;\r\n    height: 100%;\r\n    width: 100%;\r\n    top: 0;\r\n    left: 0;\r\n    background: #000;\r\n    z-index: -1;\r\n}\r\n/* .loading screen is visible when app is not bootstraped yet, .my-app is empty */\r\napp:empty + .loading {\r\n    opacity: 1;\r\n    z-index: 100;\r\n}\r\n\r\n\r\n.loader,.FetchingTimeSlots{\r\n    display:none;\r\n    text-align: center;\r\n    margin:50px;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 294 */
+/* 302 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "51b7330b03ff70e170c0c1b0ffc44d67.woff";
 
 /***/ }),
-/* 295 */
+/* 303 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__(296);
+        var result = __webpack_require__(304);
 
         if (typeof result === "string") {
             module.exports = result;
@@ -98488,7 +98536,7 @@ module.exports = __webpack_require__.p + "51b7330b03ff70e170c0c1b0ffc44d67.woff"
     
 
 /***/ }),
-/* 296 */
+/* 304 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)(undefined);
@@ -98502,13 +98550,13 @@ exports.push([module.i, "@charset \"UTF-8\";\n\n/*!\n * animate.css -http://dane
 
 
 /***/ }),
-/* 297 */
+/* 305 */
 /***/ (function(module, exports) {
 
 module.exports = "<!-- <nav>\r\n    <a [routerLink]=\" ['./'] \"\r\n      routerLinkActive=\"active\" [routerLinkActiveOptions]= \"{exact: true}\">\r\n      Index\r\n    </a>\r\n    <a [routerLink]=\" ['./home'] \"\r\n      routerLinkActive=\"active\" [routerLinkActiveOptions]= \"{exact: true}\">\r\n      Home\r\n    </a>\r\n    <a [routerLink]=\" ['./detail'] \"\r\n      routerLinkActive=\"active\" [routerLinkActiveOptions]= \"{exact: true}\">\r\n      Detail\r\n    </a>\r\n    <a [routerLink]=\" ['./barrel'] \"\r\n      routerLinkActive=\"active\" [routerLinkActiveOptions]= \"{exact: true}\">\r\n      Barrel\r\n    </a>\r\n    <a [routerLink]=\" ['./about'] \"\r\n      routerLinkActive=\"active\" [routerLinkActiveOptions]= \"{exact: true}\">\r\n      About\r\n    </a>\r\n  </nav> -->\r\n  <app-header></app-header>\r\n\r\n  <main>\r\n    <router-outlet></router-outlet>\r\n  </main>\r\n\r\n\r\n\r\n <app-footer></app-footer>"
 
 /***/ }),
-/* 298 */
+/* 306 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -98518,7 +98566,7 @@ module.exports = "<!-- <nav>\r\n    <a [routerLink]=\" ['./'] \"\r\n      router
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_of__ = __webpack_require__(299);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_of__ = __webpack_require__(307);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_of___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_of__);
 
 
@@ -98545,7 +98593,7 @@ var APP_RESOLVER_PROVIDERS = [
 
 
 /***/ }),
-/* 299 */
+/* 307 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -98556,17 +98604,17 @@ Observable_1.Observable.of = of_1.of;
 //# sourceMappingURL=of.js.map
 
 /***/ }),
-/* 300 */
+/* 308 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__x_large_directive__ = __webpack_require__(301);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__x_large_directive__ = __webpack_require__(309);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__x_large_directive__["a"]; });
 
 
 
 /***/ }),
-/* 301 */
+/* 309 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -98605,7 +98653,7 @@ XLargeDirective = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 
 /***/ }),
-/* 302 */
+/* 310 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -98977,8 +99025,8 @@ __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 HeaderComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
         selector: 'app-header',
-        template: __webpack_require__(303),
-        styles: [__webpack_require__(304), __webpack_require__(136)],
+        template: __webpack_require__(311),
+        styles: [__webpack_require__(312), __webpack_require__(136)],
         encapsulation: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewEncapsulation"].None,
         providers: [__WEBPACK_IMPORTED_MODULE_4__services_userService__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_5__services_chemistService__["a" /* ChemistService */], __WEBPACK_IMPORTED_MODULE_8__services_addtocartService__["a" /* AddtocartService */]]
     }),
@@ -98988,17 +99036,17 @@ HeaderComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 
 /***/ }),
-/* 303 */
+/* 311 */
 /***/ (function(module, exports) {
 
 module.exports = "<nav class=\"navbar navbar-default\" style=\"margin:0;\">\n  <div class=\"container\">\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#myNavbar\">\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n      </button>\n      <a class=\"navbar-brand\" href=\"#\">\n        <img src=\"assets/img/greenlogo.gif\">\n      </a>\n    </div>\n    <div class=\"collapse navbar-collapse\" id=\"myNavbar\">\n      <ng-container *ngIf=\"loggedIn==false\">\n\n        <ul class=\"nav navbar-nav navbar-right header-right\">\n          <li>\n            <a href=\"#\" (click)=\"signUpModal.open()\">sign up</a>\n          </li>\n          <li class=\"border-left\">\n            <a (click)='loginModal.open()'>login</a>\n          </li>\n        </ul>\n\n      </ng-container>\n\n      <ng-container *ngIf=\"loggedIn==true\">\n\n        <ul class=\"nav navbar-nav navbar-right signedIn\">\n          <li style=\"padding-right: 20px;\" id=\"droppingMenu\" (mouseenter)=\"hovered()\" (mouseleave)=\"hoverOut()\">\n\n              <div class=\"dropdown\">\n                  <button class=\"dropbtn\" > <div class=\"left-photo\">\n                      <img src=\"/assets/img/user.png\" id=\"profile-pic\" style=\"width:25px;\">\n                  </div>\n                  <div class=\"right-name\">\n                      <p class='username'>{{LoggedInUser.UserName}}</p>\n                  </div></button>\n                  <div class=\"dropdown-content\">\n                    <a href=\"/orders\">My Orders</a>\n                    <a href=\"/profile\">Profile</a>\n                    <a href=\"#\" (click)=\"logOutUser()\">Logout</a>\n                  </div>\n                </div>\n                \n           \n            \n          </li >\n          <li class=\"border-left\" style=\"padding-left: 10px;margin-top: 18px;\" (click)=\"navigateToHome()\">\n              <img src=\"/assets/img/cart.png\" style=\"width: 25px;\">\n              <div class=\"cart-count\">{{CartCount}}</div>\n          </li>\n        </ul>\n\n      </ng-container>\n\n     \n    </div>\n  </div>\n</nav>\n<div id=\"snackbar\"></div>\n\n<modal #loginModal  [closeOnEscape]=\"false\" [closeOnOutsideClick]=\"false\" modalClass=\"modal-lg modal-md  animated bounceInDown signUpModal\" (onSubmit)=\"actionOnSubmit()\">\n  <modal-content>\n\n  <!--   <div class=\"signButton\">\n      <button class='SignUpLogin' (click)=\"routeToSignUp()\">Sign Up</button>\n    </div> -->\n\n    <div class=\"closeButton\" (click)=\"loginModal.close()\">\n      <img src=\"/assets/img/cancel.png\" width=\"15px\">\n    </div>\n\n    <div class='login-container'>\n\n      <div class='login clearfix'>\n\n        <div class='left-side'>\n\n          <div class=\"centered\">\n            <h2 class='logIN white'>Log In</h2>\n            <p class=\"white small-text\">Login to Continue</p>\n          </div>\n          <div class=\"image-logo\">\n            <div class=\"left-image\">\n              <img src=\"assets/img/1.gif\">\n            </div>\n            <div class=\"right-text\">\n              <p>Pharma Aid</p>\n            </div>\n\n          </div>\n\n        </div>\n\n        <div class='right-side'>\n          <div class=\"myForms\">\n            <div class=\"form-group\">\n              <label for=\"email\">Email</label>\n              <input type=\"text\" class=\"form-control\" [ngClass]=\"{'errors': EmailError}\" name=\"user.UserName\" [(ngModel)]=\"user.UserName\">\n            </div>\n\n            <div class=\"form-group\">\n              <label for=\"email\">password</label>\n              <input type=\"password\" class=\"form-control\" [ngClass]=\"{'errors': PasswordError}\" name=\"user.Password\" [(ngModel)]=\"user.Password\">\n            </div>\n          </div>\n\n          <div class=\"loader\">\n            <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->\n            <svg width=\"50\" height=\"30\" viewBox=\"0 0 120 30\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"#1ec26b\">\n              <circle cx=\"15\" cy=\"15\" r=\"15\">\n                <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n              <circle cx=\"60\" cy=\"15\" r=\"9\" fill-opacity=\"0.3\">\n                <animate attributeName=\"r\" from=\"9\" to=\"9\" begin=\"0s\" dur=\"0.8s\" values=\"9;15;9\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"0.5\" to=\"0.5\" begin=\"0s\" dur=\"0.8s\" values=\".5;1;.5\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n              <circle cx=\"105\" cy=\"15\" r=\"15\">\n                <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n            </svg>\n\n          </div>\n\n          <div class=\"form-group\" style=\"text-align:center;margin-top:60px;\">\n            <button class=\"submit-custom\" (click)=\"login()\">Login</button>\n          </div>\n\n\n          <div class=\"row clearfix\">\n            <div class='col-md-4 col-sm-4  no-left'>\n              <hr>\n            </div>\n            <div class='col-md-4 col-sm-4 no-padding text-centered'>\n              <p class=\"loginWith\">Login With</p>\n            </div>\n            <div class='col-md-4 col-sm-4 no-right'>\n              <hr>\n            </div>\n          </div>\n\n\n          <div class=\"row clearfix facebook-gmail\">\n\n            <div class=\"half-left\">\n              <a class=\"pointers\" (click)=\"loginWithFacebook()\">\n                <div class='holder'>\n                  <i class='fa fa-facebook'></i>\n                </div>\n              </a>\n            </div>\n            <div class=\"half-right\">\n              <button id=\"googleSignInBtn\" (click)=\"googleInit()\">\n                <div class='holder'>\n                  <img src=\"assets/img/plus.png\" style=\"width:23px;padding-left:2px\">\n                </div>\n              </button>\n            </div>\n\n          </div>\n\n\n        </div>\n\n      </div>\n\n    </div>\n  </modal-content>\n\n</modal>\n\n\n<modal #signUpModal\n[closeOnEscape]=\"false\"\n[closeOnOutsideClick]=\"false\"\nmodalClass=\"modal-lg modal-md  animated bounceInDown signUpModal\"\n(onSubmit)=\"actionOnSubmit()\">\n<modal-content>\n\n  <!-- <div class=\"signButton\">\n    <button class='SignUpLogin' (click)=\"routeToLogin()\">Login</button>\n  </div> -->\n\n  <div class=\"closeButton\" (click)=\"signUpModal.close()\">\n    <img src=\"/assets/img/cancel.png\" width=\"15px\">\n  </div>\n\n<div class='login-container'>\n  \n     <div class='login clearfix'>\n  \n        <div class='left-side'>\n            \n            <div class=\"centered\">\n            <h2 class='logIN white'>Sign Up</h2>\n            <p class=\"white small-text\">Sign up now to enjoy faster and better experience</p>\n           </div>\n            <div class=\"image-logo\">\n             <div class=\"left-image\">\n              <img src=\"assets/img/1.gif\">\n             </div>\n             <div class=\"right-text\">\n              <p>Pharma Aid</p>\n            </div>\n   \n           </div>\n   \n         </div>\n  \n      <div class='right-side'>\n          <div class=\"myForms\">\n\n              <div class=\"form-group\">\n                  <label for=\"email\">username</label>\n                  <input type=\"text\" class=\"form-control\" [ngClass]=\"{'errors': UsernameError}\" name=\"user.UserName\" [(ngModel)]=\"user.UserName\">\n                </div>\n\n            <div class=\"form-group\">\n              <label for=\"email\">Email</label>\n              <input type=\"text\" class=\"form-control\" [ngClass]=\"{'errors': EmailError}\" name=\"user.Email\" [(ngModel)]=\"user.Email\">\n            </div>\n\n            <div class=\"form-group\">\n                <label for=\"email\">mobile number</label>\n                <input type=\"number\" class=\"form-control\" [ngClass]=\"{'errors': MobileError}\" name=\"user.MobileNumber\" [(ngModel)]=\"user.MobileNumber\">\n              </div>\n\n            <div class=\"form-group\">\n              <label for=\"email\">password</label>\n              <input type=\"password\" class=\"form-control\"  [ngClass]=\"{'errors': PasswordError}\" name=\"user.Password\" [(ngModel)]=\"user.Password\">\n            </div>\n\n            <div class=\"form-group\">\n                <label for=\"email\">confirm password</label>\n                <input type=\"password\" class=\"form-control\"  [ngClass]=\"{'errors': PasswordError}\" name=\"confrimPass\" [(ngModel)]=\"confrimPass\">\n              </div>\n          </div>\n\n\n          <div class=\"loader\">\n            <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->\n            <svg width=\"50\" height=\"30\" viewBox=\"0 0 120 30\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"#1ec26b\">\n              <circle cx=\"15\" cy=\"15\" r=\"15\">\n                <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n              <circle cx=\"60\" cy=\"15\" r=\"9\" fill-opacity=\"0.3\">\n                <animate attributeName=\"r\" from=\"9\" to=\"9\" begin=\"0s\" dur=\"0.8s\" values=\"9;15;9\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"0.5\" to=\"0.5\" begin=\"0s\" dur=\"0.8s\" values=\".5;1;.5\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n              <circle cx=\"105\" cy=\"15\" r=\"15\">\n                <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n            </svg>\n\n          </div>\n          \n          <div class=\"form-group\" style=\"text-align:center;margin-top:60px;\">\n            <button class=\"submit-custom\" (click)=\"signUp()\">Sign Up</button>\n          </div>\n\n\n          <div class=\"row clearfix\">\n            <div class='col-md-4 col-sm-4  no-left'>\n              <hr>\n            </div>\n            <div class='col-md-4 col-sm-4 no-padding text-centered'>\n              <p class=\"loginWith\">Sign up With</p>\n            </div>\n            <div class='col-md-4 col-sm-4 no-right'>\n              <hr>\n            </div>\n          </div>\n\n\n          <div class=\"row clearfix facebook-gmail\">\n\n              <div class=\"half-left\">\n                  <a (click)=\"signUpWithFacebook()\"><div class='holder'><i class='fa fa-facebook'></i></div></a>\n              </div>\n              <div class=\"half-right\">\n                  <button id=\"googleSignInBtn\" (click)=\"googleInit()\"><div class='holder'><img src=\"assets/img/plus.png\" style=\"width:23px;padding-left:2px\"></div></button>\n              </div>\n              <!-- <div class=\"g-signin2\" data-onsuccess=\"onSignIn\"></div> -->\n          </div>\n\n\n      </div>\n\n     </div>\n  \n  </div>\n</modal-content>\n\n</modal>"
 
 /***/ }),
-/* 304 */
+/* 312 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__(305);
+        var result = __webpack_require__(313);
 
         if (typeof result === "string") {
             module.exports = result;
@@ -99008,7 +99056,7 @@ module.exports = "<nav class=\"navbar navbar-default\" style=\"margin:0;\">\n  <
     
 
 /***/ }),
-/* 305 */
+/* 313 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)(undefined);
@@ -99022,7 +99070,7 @@ exports.push([module.i, "\r\n.header-right li a{\r\n    text-transform: uppercas
 
 
 /***/ }),
-/* 306 */
+/* 314 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -99041,8 +99089,8 @@ var FooterComponent = (function () {
 FooterComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
         selector: 'app-footer',
-        template: __webpack_require__(307),
-        styles: [__webpack_require__(308)],
+        template: __webpack_require__(315),
+        styles: [__webpack_require__(316)],
         encapsulation: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewEncapsulation"].None
     }),
     __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:paramtypes", [])
@@ -99051,17 +99099,17 @@ FooterComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 
 /***/ }),
-/* 307 */
+/* 315 */
 /***/ (function(module, exports) {
 
 module.exports = "<footer class=\"site-footer\">\n    <ul class=\"footer-links\">\n\n      <li><a href=\"\">Terms & Conditions</a></li>\n      <li><a href=\"\">Privacy Policy</a></li>\n      <li><a href=\"\">&copy; Copyright 2017, Pharmaaid is a registered trademark</a></li>\n      <li><a href=\"\">Pharmaaid Pakistan</a></li>\n\n    </ul> \n</footer>"
 
 /***/ }),
-/* 308 */
+/* 316 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__(309);
+        var result = __webpack_require__(317);
 
         if (typeof result === "string") {
             module.exports = result;
@@ -99071,7 +99119,7 @@ module.exports = "<footer class=\"site-footer\">\n    <ul class=\"footer-links\"
     
 
 /***/ }),
-/* 309 */
+/* 317 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)(undefined);
@@ -99085,7 +99133,7 @@ exports.push([module.i, ".site-footer{\r\n    position: absolute;\r\n    width:1
 
 
 /***/ }),
-/* 310 */
+/* 318 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -99992,7 +100040,7 @@ StarRatingModule.ctorParameters = function () { return []; };
 
 
 /***/ }),
-/* 311 */
+/* 319 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
@@ -100023,7 +100071,7 @@ if(true) {
 }
 
 /***/ }),
-/* 312 */
+/* 320 */
 /***/ (function(module, exports) {
 
 
@@ -100118,7 +100166,7 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 313 */
+/* 321 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
@@ -100149,11 +100197,11 @@ if(true) {
 }
 
 /***/ }),
-/* 314 */
+/* 322 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_index__ = __webpack_require__(315);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_index__ = __webpack_require__(323);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["a"]; });
 /**
  * @module
@@ -100164,11 +100212,11 @@ if(true) {
 
 
 /***/ }),
-/* 315 */
+/* 323 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_ng2_google_place_module__ = __webpack_require__(316);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_ng2_google_place_module__ = __webpack_require__(324);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__app_ng2_google_place_module__["a"]; });
 /**
  * @module
@@ -100179,7 +100227,7 @@ if(true) {
 
 
 /***/ }),
-/* 316 */
+/* 324 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -100187,7 +100235,7 @@ if(true) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ng2_google_place_directive__ = __webpack_require__(317);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ng2_google_place_directive__ = __webpack_require__(325);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ng2_google_place_service__ = __webpack_require__(141);
 
 
@@ -100211,7 +100259,7 @@ GooglePlaceModule = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 
 /***/ }),
-/* 317 */
+/* 325 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -100417,19 +100465,19 @@ GooglePlaceDirective = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]
 
 
 /***/ }),
-/* 318 */
+/* 326 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var tab_component_1 = __webpack_require__(142);
 exports.NguiTabComponent = tab_component_1.NguiTabComponent;
-var tab_module_1 = __webpack_require__(319);
+var tab_module_1 = __webpack_require__(327);
 exports.NguiTabModule = tab_module_1.NguiTabModule;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 319 */
+/* 327 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -100465,11 +100513,11 @@ exports.NguiTabModule = NguiTabModule;
 //# sourceMappingURL=tab.module.js.map
 
 /***/ }),
-/* 320 */
+/* 328 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lib_image_upload_module__ = __webpack_require__(321);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lib_image_upload_module__ = __webpack_require__(329);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lib_image_upload_module___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__lib_image_upload_module__);
 /* harmony reexport (binding) */ if(__webpack_require__.o(__WEBPACK_IMPORTED_MODULE_0__lib_image_upload_module__, "ImageUploadModule")) __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__lib_image_upload_module__["ImageUploadModule"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__lib_image_upload_image_upload_component__ = __webpack_require__(143);
@@ -100481,7 +100529,7 @@ exports.NguiTabModule = NguiTabModule;
 
 
 /***/ }),
-/* 321 */
+/* 329 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -100489,7 +100537,7 @@ exports.NguiTabModule = NguiTabModule;
 var common_1 = __webpack_require__(12);
 var core_1 = __webpack_require__(0);
 var http_1 = __webpack_require__(10);
-var file_drop_directive_1 = __webpack_require__(322);
+var file_drop_directive_1 = __webpack_require__(330);
 var image_upload_component_1 = __webpack_require__(143);
 var image_service_1 = __webpack_require__(144);
 var ImageUploadModule = (function () {
@@ -100515,7 +100563,7 @@ exports.ImageUploadModule = ImageUploadModule;
 
 
 /***/ }),
-/* 322 */
+/* 330 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -100602,7 +100650,7 @@ exports.FileDropDirective = FileDropDirective;
 
 
 /***/ }),
-/* 323 */
+/* 331 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -100610,11 +100658,11 @@ exports.FileDropDirective = FileDropDirective;
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
-__export(__webpack_require__(324));
+__export(__webpack_require__(332));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 324 */
+/* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -100625,19 +100673,19 @@ function __export(m) {
 __export(__webpack_require__(145));
 __export(__webpack_require__(147));
 __export(__webpack_require__(49));
-__export(__webpack_require__(339));
+__export(__webpack_require__(347));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 325 */
+/* 333 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var destroy = __webpack_require__(326);
-var initialize = __webpack_require__(330);
-var update = __webpack_require__(338);
+var destroy = __webpack_require__(334);
+var initialize = __webpack_require__(338);
+var update = __webpack_require__(346);
 
 module.exports = {
   initialize: initialize,
@@ -100647,7 +100695,7 @@ module.exports = {
 
 
 /***/ }),
-/* 326 */
+/* 334 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -100676,7 +100724,7 @@ module.exports = function (element) {
 
 
 /***/ }),
-/* 327 */
+/* 335 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -100699,7 +100747,7 @@ module.exports = {
 
 
 /***/ }),
-/* 328 */
+/* 336 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -100777,7 +100825,7 @@ module.exports = EventManager;
 
 
 /***/ }),
-/* 329 */
+/* 337 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -100797,7 +100845,7 @@ module.exports = (function () {
 
 
 /***/ }),
-/* 330 */
+/* 338 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -100810,14 +100858,14 @@ var updateGeometry = __webpack_require__(19);
 
 // Handlers
 var handlers = {
-  'click-rail': __webpack_require__(331),
-  'drag-scrollbar': __webpack_require__(332),
-  'keyboard': __webpack_require__(333),
-  'wheel': __webpack_require__(334),
-  'touch': __webpack_require__(335),
-  'selection': __webpack_require__(336)
+  'click-rail': __webpack_require__(339),
+  'drag-scrollbar': __webpack_require__(340),
+  'keyboard': __webpack_require__(341),
+  'wheel': __webpack_require__(342),
+  'touch': __webpack_require__(343),
+  'selection': __webpack_require__(344)
 };
-var nativeScrollHandler = __webpack_require__(337);
+var nativeScrollHandler = __webpack_require__(345);
 
 module.exports = function (element, userSettings) {
   userSettings = typeof userSettings === 'object' ? userSettings : {};
@@ -100841,7 +100889,7 @@ module.exports = function (element, userSettings) {
 
 
 /***/ }),
-/* 331 */
+/* 339 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -100887,7 +100935,7 @@ module.exports = function (element) {
 
 
 /***/ }),
-/* 332 */
+/* 340 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -100997,7 +101045,7 @@ module.exports = function (element) {
 
 
 /***/ }),
-/* 333 */
+/* 341 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -101158,7 +101206,7 @@ module.exports = function (element) {
 
 
 /***/ }),
-/* 334 */
+/* 342 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -101306,7 +101354,7 @@ module.exports = function (element) {
 
 
 /***/ }),
-/* 335 */
+/* 343 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -101492,7 +101540,7 @@ module.exports = function (element) {
 
 
 /***/ }),
-/* 336 */
+/* 344 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -101614,7 +101662,7 @@ module.exports = function (element) {
 
 
 /***/ }),
-/* 337 */
+/* 345 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -101636,7 +101684,7 @@ module.exports = function (element) {
 
 
 /***/ }),
-/* 338 */
+/* 346 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -101680,7 +101728,7 @@ module.exports = function (element) {
 
 
 /***/ }),
-/* 339 */
+/* 347 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
