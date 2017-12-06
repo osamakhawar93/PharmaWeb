@@ -86,7 +86,7 @@ var ac_main =
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "83e29bda36163acc0c6c"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "22e16b503ccca4038063"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -6674,7 +6674,7 @@ var SystemJsNgModuleLoader = (function () {
         if (exportName === undefined) {
             exportName = 'default';
         }
-        return __webpack_require__(107)(module)
+        return __webpack_require__(108)(module)
             .then(function (module) { return module[exportName]; })
             .then(function (type) { return checkNotEmpty(type, module, exportName); })
             .then(function (type) { return _this._compiler.compileModuleAsync(type); });
@@ -6690,7 +6690,7 @@ var SystemJsNgModuleLoader = (function () {
             exportName = 'default';
             factoryClassSuffix = '';
         }
-        return __webpack_require__(107)(this._config.factoryPathPrefix + module + this._config.factoryPathSuffix)
+        return __webpack_require__(108)(this._config.factoryPathPrefix + module + this._config.factoryPathSuffix)
             .then(function (module) { return module[exportName + factoryClassSuffix]; })
             .then(function (factory) { return checkNotEmpty(factory, module, exportName); });
     };
@@ -16042,7 +16042,7 @@ function __makeTemplateObject(cooked, raw) {
 var root_1 = __webpack_require__(24);
 var toSubscriber_1 = __webpack_require__(207);
 var observable_1 = __webpack_require__(68);
-var pipe_1 = __webpack_require__(99);
+var pipe_1 = __webpack_require__(100);
 /**
  * A representation of any set of values over any amount of time. This is the most basic building block
  * of RxJS.
@@ -16357,9 +16357,9 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var isFunction_1 = __webpack_require__(95);
+var isFunction_1 = __webpack_require__(96);
 var Subscription_1 = __webpack_require__(45);
-var Observer_1 = __webpack_require__(98);
+var Observer_1 = __webpack_require__(99);
 var rxSubscriber_1 = __webpack_require__(67);
 /**
  * Implements the {@link Observer} interface and extends the
@@ -16707,10 +16707,10 @@ function toComment(sourceMap) {
 
 var _ = __webpack_require__(18);
 var cls = __webpack_require__(48);
-var defaultSettings = __webpack_require__(324);
+var defaultSettings = __webpack_require__(325);
 var dom = __webpack_require__(28);
-var EventManager = __webpack_require__(325);
-var guid = __webpack_require__(326);
+var EventManager = __webpack_require__(326);
+var guid = __webpack_require__(327);
 
 var instances = {};
 
@@ -23238,13 +23238,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_BehaviorSubject__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_BehaviorSubject__ = __webpack_require__(113);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_BehaviorSubject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_BehaviorSubject__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Subject__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_Subject__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_observable_from__ = __webpack_require__(228);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_observable_from___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_observable_from__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_observable_of__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_observable_of__ = __webpack_require__(114);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_observable_of___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_observable_of__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_operator_concatMap__ = __webpack_require__(234);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_operator_concatMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_rxjs_operator_concatMap__);
@@ -23268,7 +23268,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_rxjs_operator_concatAll___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16_rxjs_operator_concatAll__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_rxjs_util_EmptyError__ = __webpack_require__(76);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_rxjs_util_EmptyError___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_17_rxjs_util_EmptyError__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_rxjs_observable_fromPromise__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_rxjs_observable_fromPromise__ = __webpack_require__(111);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_rxjs_observable_fromPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_18_rxjs_observable_fromPromise__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19_rxjs_operator_mergeAll__ = __webpack_require__(253);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19_rxjs_operator_mergeAll___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_19_rxjs_operator_mergeAll__);
@@ -34549,7 +34549,7 @@ var __extends = (this && this.__extends) || function (d, b) {
 var Observable_1 = __webpack_require__(3);
 var Subscriber_1 = __webpack_require__(6);
 var Subscription_1 = __webpack_require__(45);
-var ObjectUnsubscribedError_1 = __webpack_require__(105);
+var ObjectUnsubscribedError_1 = __webpack_require__(106);
 var SubjectSubscription_1 = __webpack_require__(219);
 var rxSubscriber_1 = __webpack_require__(67);
 /**
@@ -34722,7 +34722,7 @@ exports.AnonymousSubject = AnonymousSubject;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__serviceUrl__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__models_geoModel__ = __webpack_require__(78);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_BehaviorSubject__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_BehaviorSubject__ = __webpack_require__(113);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_BehaviorSubject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_BehaviorSubject__);
 
 
@@ -45155,10 +45155,10 @@ module.exports = g;
 "use strict";
 
 var isArray_1 = __webpack_require__(66);
-var isObject_1 = __webpack_require__(96);
-var isFunction_1 = __webpack_require__(95);
+var isObject_1 = __webpack_require__(97);
+var isFunction_1 = __webpack_require__(96);
 var tryCatch_1 = __webpack_require__(208);
-var errorObject_1 = __webpack_require__(97);
+var errorObject_1 = __webpack_require__(98);
 var UnsubscriptionError_1 = __webpack_require__(209);
 /**
  * Represents a disposable resource, such as the execution of an Observable. A
@@ -45600,7 +45600,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_forkJoin__ = __webpack_require__(225);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_forkJoin___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_observable_forkJoin__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_observable_fromPromise__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_observable_fromPromise__ = __webpack_require__(111);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_observable_fromPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_observable_fromPromise__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_operator_map__ = __webpack_require__(75);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_operator_map__);
@@ -51790,9 +51790,9 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Observable_1 = __webpack_require__(3);
-var ScalarObservable_1 = __webpack_require__(101);
+var ScalarObservable_1 = __webpack_require__(102);
 var EmptyObservable_1 = __webpack_require__(46);
-var isScheduler_1 = __webpack_require__(102);
+var isScheduler_1 = __webpack_require__(103);
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @extends {Ignored}
@@ -52151,9 +52151,9 @@ exports.MergeMapSubscriber = MergeMapSubscriber;
 "use strict";
 
 var root_1 = __webpack_require__(24);
-var isArrayLike_1 = __webpack_require__(103);
-var isPromise_1 = __webpack_require__(104);
-var isObject_1 = __webpack_require__(96);
+var isArrayLike_1 = __webpack_require__(104);
+var isPromise_1 = __webpack_require__(105);
+var isObject_1 = __webpack_require__(97);
 var Observable_1 = __webpack_require__(3);
 var iterator_1 = __webpack_require__(73);
 var InnerSubscriber_1 = __webpack_require__(213);
@@ -52465,6 +52465,85 @@ var GeoModel = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddtocartService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__serviceUrl__ = __webpack_require__(27);
+
+
+
+
+
+var AddtocartService = (function () {
+    function AddtocartService(http) {
+        this.http = http;
+        this.serviceUrl = new __WEBPACK_IMPORTED_MODULE_4__serviceUrl__["a" /* ServiceUrl */]();
+    }
+    AddtocartService.prototype.getTimeSlots = function () {
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["Headers"]();
+        headers.append('Content-Type', 'application/json; charset=UTF-8');
+        return this.http.get(this.serviceUrl.baseUrl + "admin/getallslots", { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    AddtocartService.prototype.addToBasket = function (userId, productId, DosageAndSizesValuesId, Quantity, MeasurementId) {
+        var data;
+        data = { UserId: userId, ProductId: productId, DosageAndSizesValuesId: DosageAndSizesValuesId, Quantity: Quantity, MeasurementsId: MeasurementId };
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["Headers"]();
+        headers.append('Content-Type', 'application/json; charset=UTF-8');
+        return this.http.post(this.serviceUrl.baseUrl + "User/addToBasket", data, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    /*  updateBasket() {
+         let headers = new Headers();
+ 
+         headers.append('Content-Type', 'application/json; charset=UTF-8');
+         return this.http.get(this.serviceUrl.baseUrl + "user/getShoppingCartByUserId?userId=" + thisUser, { headers: headers })
+             .map(res => res.json());
+ 
+     } */
+    AddtocartService.prototype.deleteRowFromCart = function (cartId) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["Headers"]();
+        headers.append('Content-Type', 'application/json; charset=UTF-8');
+        return this.http.get(this.serviceUrl.baseUrl + "/user/deleteCartItemByCartId?cartId=" + cartId, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    AddtocartService.prototype.placeOrder = function (userId, AddressId, OrderType, slotsId, OrderPlacementAppId) {
+        console.log(userId, AddressId, OrderType, slotsId, OrderPlacementAppId);
+        var data;
+        if (slotsId == undefined) {
+            data = { UserId: userId, AddressId: AddressId, OrderType: OrderType, OrderPlacementAppId: OrderPlacementAppId };
+        }
+        else {
+            data = { DeliverySlotId: slotsId, UserId: userId, AddressId: AddressId, OrderType: 200, OrderPlacementAppId: OrderPlacementAppId };
+        }
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["Headers"]();
+        headers.append('Content-Type', 'application/json; charset=UTF-8');
+        return this.http.post(this.serviceUrl.baseUrl + "User/placeOrder", data, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    AddtocartService.prototype.getCartCount = function (thisUser) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["Headers"]();
+        headers.append('Content-Type', 'application/json; charset=UTF-8');
+        return this.http.get(this.serviceUrl.baseUrl + "user/getShoppingCartByUserId?userId=" + thisUser, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    return AddtocartService;
+}());
+AddtocartService = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
+    __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__angular_http__["Http"]])
+], AddtocartService);
+
+
+
+/***/ }),
+/* 80 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChemistService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
@@ -52510,7 +52589,7 @@ ChemistService = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 
 /***/ }),
-/* 80 */
+/* 81 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -52559,7 +52638,7 @@ ChemistService = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 81 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)(undefined);
@@ -52573,7 +52652,7 @@ exports.push([module.i, "@charset \"UTF-8\";\n/* this file will be extracted to 
 
 
 /***/ }),
-/* 82 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)(undefined);
@@ -52587,7 +52666,6 @@ exports.push([module.i, "h1 {\r\n  color: #00BCD4;\r\n}", ""]);
 
 
 /***/ }),
-/* 83 */,
 /* 84 */,
 /* 85 */,
 /* 86 */,
@@ -52599,7 +52677,8 @@ exports.push([module.i, "h1 {\r\n  color: #00BCD4;\r\n}", ""]);
 /* 92 */,
 /* 93 */,
 /* 94 */,
-/* 95 */
+/* 95 */,
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52611,7 +52690,7 @@ exports.isFunction = isFunction;
 //# sourceMappingURL=isFunction.js.map
 
 /***/ }),
-/* 96 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52623,7 +52702,7 @@ exports.isObject = isObject;
 //# sourceMappingURL=isObject.js.map
 
 /***/ }),
-/* 97 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52633,7 +52712,7 @@ exports.errorObject = { e: {} };
 //# sourceMappingURL=errorObject.js.map
 
 /***/ }),
-/* 98 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52647,7 +52726,7 @@ exports.empty = {
 //# sourceMappingURL=Observer.js.map
 
 /***/ }),
-/* 99 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52678,7 +52757,7 @@ exports.pipeFromArray = pipeFromArray;
 //# sourceMappingURL=pipe.js.map
 
 /***/ }),
-/* 100 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52686,7 +52765,7 @@ exports.pipeFromArray = pipeFromArray;
 var Observable_1 = __webpack_require__(3);
 var ArrayObservable_1 = __webpack_require__(69);
 var mergeAll_1 = __webpack_require__(70);
-var isScheduler_1 = __webpack_require__(102);
+var isScheduler_1 = __webpack_require__(103);
 /* tslint:enable:max-line-length */
 function merge() {
     var observables = [];
@@ -52783,7 +52862,7 @@ exports.mergeStatic = mergeStatic;
 //# sourceMappingURL=merge.js.map
 
 /***/ }),
-/* 101 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52847,7 +52926,7 @@ exports.ScalarObservable = ScalarObservable;
 //# sourceMappingURL=ScalarObservable.js.map
 
 /***/ }),
-/* 102 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52859,7 +52938,7 @@ exports.isScheduler = isScheduler;
 //# sourceMappingURL=isScheduler.js.map
 
 /***/ }),
-/* 103 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52868,7 +52947,7 @@ exports.isArrayLike = (function (x) { return x && typeof x.length === 'number'; 
 //# sourceMappingURL=isArrayLike.js.map
 
 /***/ }),
-/* 104 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52880,7 +52959,7 @@ exports.isPromise = isPromise;
 //# sourceMappingURL=isPromise.js.map
 
 /***/ }),
-/* 105 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52913,7 +52992,7 @@ exports.ObjectUnsubscribedError = ObjectUnsubscribedError;
 //# sourceMappingURL=ObjectUnsubscribedError.js.map
 
 /***/ }),
-/* 106 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53004,7 +53083,7 @@ var RefCountSubscriber = (function (_super) {
 //# sourceMappingURL=refCount.js.map
 
 /***/ }),
-/* 107 */
+/* 108 */
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -53017,10 +53096,10 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 107;
+webpackEmptyAsyncContext.id = 108;
 
 /***/ }),
-/* 108 */
+/* 109 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -53070,7 +53149,7 @@ var ENV_PROVIDERS = PROVIDERS.slice();
 
 
 /***/ }),
-/* 109 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53086,17 +53165,17 @@ __export(__webpack_require__(222));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 110 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var PromiseObservable_1 = __webpack_require__(111);
+var PromiseObservable_1 = __webpack_require__(112);
 exports.fromPromise = PromiseObservable_1.PromiseObservable.create;
 //# sourceMappingURL=fromPromise.js.map
 
 /***/ }),
-/* 111 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53223,7 +53302,7 @@ function dispatchError(arg) {
 //# sourceMappingURL=PromiseObservable.js.map
 
 /***/ }),
-/* 112 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53234,7 +53313,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Subject_1 = __webpack_require__(35);
-var ObjectUnsubscribedError_1 = __webpack_require__(105);
+var ObjectUnsubscribedError_1 = __webpack_require__(106);
 /**
  * @class BehaviorSubject<T>
  */
@@ -53278,7 +53357,7 @@ exports.BehaviorSubject = BehaviorSubject;
 //# sourceMappingURL=BehaviorSubject.js.map
 
 /***/ }),
-/* 113 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53288,7 +53367,7 @@ exports.of = ArrayObservable_1.ArrayObservable.of;
 //# sourceMappingURL=of.js.map
 
 /***/ }),
-/* 114 */
+/* 115 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -54630,71 +54709,12 @@ var ɵPRE_STYLE = '!';
 
 
 /***/ }),
-/* 115 */
+/* 116 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__home_component__ = __webpack_require__(259);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__home_component__["a"]; });
-
-
-
-/***/ }),
-/* 116 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddtocartService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__serviceUrl__ = __webpack_require__(27);
-
-
-
-
-
-var AddtocartService = (function () {
-    function AddtocartService(http) {
-        this.http = http;
-        this.serviceUrl = new __WEBPACK_IMPORTED_MODULE_4__serviceUrl__["a" /* ServiceUrl */]();
-    }
-    AddtocartService.prototype.getTimeSlots = function () {
-        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["Headers"]();
-        headers.append('Content-Type', 'application/json; charset=UTF-8');
-        return this.http.get(this.serviceUrl.baseUrl + "admin/getallslots", { headers: headers })
-            .map(function (res) { return res.json(); });
-    };
-    AddtocartService.prototype.addToBasket = function (userId, productId, DosageAndSizesValuesId, Quantity, MeasurementId) {
-        var data;
-        data = { UserId: userId, ProductId: productId, DosageAndSizesValuesId: DosageAndSizesValuesId, Quantity: Quantity, MeasurementsId: MeasurementId };
-        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["Headers"]();
-        headers.append('Content-Type', 'application/json; charset=UTF-8');
-        return this.http.post(this.serviceUrl.baseUrl + "User/addToBasket", data, { headers: headers })
-            .map(function (res) { return res.json(); });
-    };
-    AddtocartService.prototype.placeOrder = function (userId, AddressId, OrderType, OrderPlacementAppId) {
-        var data;
-        data = { UserId: userId, AddressId: AddressId, OrderType: OrderType, OrderPlacementAppId: OrderPlacementAppId };
-        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["Headers"]();
-        headers.append('Content-Type', 'application/json; charset=UTF-8');
-        return this.http.post(this.serviceUrl.baseUrl + "User/placeOrder", data, { headers: headers })
-            .map(function (res) { return res.json(); });
-    };
-    AddtocartService.prototype.getCartCount = function (thisUser) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["Headers"]();
-        headers.append('Content-Type', 'application/json; charset=UTF-8');
-        return this.http.get(this.serviceUrl.baseUrl + "user/getShoppingCartByUserId?userId=" + thisUser, { headers: headers })
-            .map(function (res) { return res.json(); });
-    };
-    return AddtocartService;
-}());
-AddtocartService = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
-    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
-    __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__angular_http__["Http"]])
-], AddtocartService);
 
 
 
@@ -55051,14 +55071,17 @@ exports.RouteModal = RouteModal;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_usersModel__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_userService__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_chemistService__ = __webpack_require__(79);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ngx_facebook__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_chemistService__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ngx_facebook__ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__models_locationModel__ = __webpack_require__(276);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_sharedService__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_mapService__ = __webpack_require__(135);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__models_geoModel__ = __webpack_require__(78);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_jquery__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_jquery__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_aos_dist_aos_js__ = __webpack_require__(277);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_aos_dist_aos_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_aos_dist_aos_js__);
+
 
 
 
@@ -55220,6 +55243,7 @@ var LoginComponent = (function () {
         setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
     };
     LoginComponent.prototype.ngOnInit = function () {
+        __WEBPACK_IMPORTED_MODULE_12_aos_dist_aos_js__["init"]();
         __WEBPACK_IMPORTED_MODULE_11_jquery__('.dropdown').on('show.bs.dropdown', function () {
             __WEBPACK_IMPORTED_MODULE_11_jquery__(this).find('.dropdown-menu').first().stop(true, true).slideDown();
         });
@@ -55227,7 +55251,6 @@ var LoginComponent = (function () {
         __WEBPACK_IMPORTED_MODULE_11_jquery__('.dropdown').on('hide.bs.dropdown', function () {
             __WEBPACK_IMPORTED_MODULE_11_jquery__(this).find('.dropdown-menu').first().stop(true, true).slideUp();
         });
-        AOS.init();
         this.LatLong = new __WEBPACK_IMPORTED_MODULE_10__models_geoModel__["a" /* GeoModel */]();
         this.user = new __WEBPACK_IMPORTED_MODULE_2__models_usersModel__["a" /* UsersModel */]();
         this.myLocation = new __WEBPACK_IMPORTED_MODULE_7__models_locationModel__["a" /* LocationModel */]();
@@ -55246,7 +55269,7 @@ __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 LoginComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
         selector: 'app-login',
-        template: __webpack_require__(277),
+        template: __webpack_require__(278),
         styles: [__webpack_require__(136)],
         encapsulation: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewEncapsulation"].None,
         providers: [__WEBPACK_IMPORTED_MODULE_9__services_mapService__["a" /* MapService */], __WEBPACK_IMPORTED_MODULE_3__services_userService__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_5__services_chemistService__["a" /* ChemistService */]]
@@ -56704,7 +56727,7 @@ MapService = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 /***/ (function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__(278);
+        var result = __webpack_require__(279);
 
         if (typeof result === "string") {
             module.exports = result;
@@ -56722,7 +56745,7 @@ MapService = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_chemistService__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_chemistService__ = __webpack_require__(80);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_sharedService__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_mapService__ = __webpack_require__(135);
@@ -56842,8 +56865,8 @@ var ChemistComponent = (function () {
 ChemistComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
         selector: 'app-chemist',
-        template: __webpack_require__(279),
-        styles: [__webpack_require__(280)],
+        template: __webpack_require__(280),
+        styles: [__webpack_require__(281)],
         encapsulation: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewEncapsulation"].None,
         providers: [__WEBPACK_IMPORTED_MODULE_6__services_mapService__["a" /* MapService */], __WEBPACK_IMPORTED_MODULE_3__services_chemistService__["a" /* ChemistService */], __WEBPACK_IMPORTED_MODULE_4__angular_common__["Location"], { provide: __WEBPACK_IMPORTED_MODULE_4__angular_common__["LocationStrategy"], useClass: __WEBPACK_IMPORTED_MODULE_4__angular_common__["PathLocationStrategy"] }]
     }),
@@ -56863,7 +56886,9 @@ ChemistComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_usersModel__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_userService__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_OrdersService__ = __webpack_require__(282);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_OrdersService__ = __webpack_require__(283);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_addtocartService__ = __webpack_require__(79);
+
 
 
 
@@ -56871,12 +56896,15 @@ ChemistComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 
 var OrdersComponent = (function () {
-    function OrdersComponent(_userService, router, _ordersService) {
+    function OrdersComponent(_addtocartService, _userService, router, _ordersService) {
         var _this = this;
+        this._addtocartService = _addtocartService;
         this._userService = _userService;
         this.router = router;
         this._ordersService = _ordersService;
         this.doneOrders = [];
+        this.laterOrders = [];
+        this.timeSlots = [];
         if (JSON.parse(localStorage.getItem('UserObject')) == undefined || JSON.parse(localStorage.getItem('UserObject')) == null) {
             this.LoggedInUser = new __WEBPACK_IMPORTED_MODULE_2__models_usersModel__["a" /* UsersModel */]();
         }
@@ -56885,11 +56913,25 @@ var OrdersComponent = (function () {
             this.CartCount = this.LoggedInUser.shoppingCarts.length;
         }
         this._ordersService.GetAllPlacedOrders(this.LoggedInUser.Id).subscribe(function (a) {
-            console.log(a);
             _this.doneOrders = a.data;
             for (var i = 0; i < a.data.length; i++) {
-                var d = new Date(_this.doneOrders[i].CreatedOnUTC);
-                console.log(d);
+                var myDate = new Date(parseFloat(_this.doneOrders[i].CreatedOnUTC));
+                _this.doneOrders[i].CreatedOnUTC = myDate.toLocaleString();
+            }
+        });
+        this._addtocartService.getTimeSlots().subscribe(function (a) {
+            _this.timeSlots = a.data;
+            console.log(_this.timeSlots);
+        });
+        this._ordersService.GetOrdersPendingNow(this.LoggedInUser.Id).subscribe(function (a) {
+            console.log(a);
+            _this.laterOrders = a.data;
+            for (var i = 0; i < a.data.length; i++) {
+                var myDate = new Date(parseFloat(_this.laterOrders[i].CreatedOnUTC));
+                _this.laterOrders[i].CreatedOnUTC = myDate.toLocaleString();
+                var obj = _this.timeSlots.find(function (x) { return x.Id == _this.laterOrders[i].DeliverySlotId; });
+                _this.laterOrders[i].StartingTime = obj.StartingTime;
+                _this.laterOrders[i].EndingTime = obj.EndingTime;
             }
         });
     }
@@ -56909,12 +56951,12 @@ var OrdersComponent = (function () {
 OrdersComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
         selector: 'app-orders',
-        template: __webpack_require__(283),
-        styles: [__webpack_require__(284)],
-        providers: [__WEBPACK_IMPORTED_MODULE_3__services_userService__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_5__services_OrdersService__["a" /* OrdersService */]],
+        template: __webpack_require__(284),
+        styles: [__webpack_require__(285)],
+        providers: [__WEBPACK_IMPORTED_MODULE_3__services_userService__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_5__services_OrdersService__["a" /* OrdersService */], , __WEBPACK_IMPORTED_MODULE_6__services_addtocartService__["a" /* AddtocartService */]],
         encapsulation: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewEncapsulation"].None
     }),
-    __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__services_userService__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_4__angular_router__["Router"], __WEBPACK_IMPORTED_MODULE_5__services_OrdersService__["a" /* OrdersService */]])
+    __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_6__services_addtocartService__["a" /* AddtocartService */], __WEBPACK_IMPORTED_MODULE_3__services_userService__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_4__angular_router__["Router"], __WEBPACK_IMPORTED_MODULE_5__services_OrdersService__["a" /* OrdersService */]])
 ], OrdersComponent);
 
 
@@ -56993,13 +57035,17 @@ var ProfileComponent = (function () {
         this.readURL(elem);
     };
     ProfileComponent.prototype.readURL = function (input) {
+        var reader, target;
+        reader = new FileReader();
         input = document.getElementById('imgInp');
         if (input.files && input.files[0]) {
-            var reader = new FileReader();
+            // var reader = new FileReader();
             var self = this;
             reader.onload = function (e) {
+                console.log(e);
                 __WEBPACK_IMPORTED_MODULE_5_jquery__('#blah').attr('src', e.target.result);
                 self.ProfilePicture = input.files[0];
+                __WEBPACK_IMPORTED_MODULE_5_jquery__("#blah").css("width", "50px");
             };
             reader.readAsDataURL(input.files[0]);
         }
@@ -57022,6 +57068,9 @@ var ProfileComponent = (function () {
         setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
     };
     ProfileComponent.prototype.ngOnInit = function () {
+        __WEBPACK_IMPORTED_MODULE_5_jquery__(document).ready(function () {
+            __WEBPACK_IMPORTED_MODULE_5_jquery__("#blah").css("width", "49px");
+        });
         this.user = new __WEBPACK_IMPORTED_MODULE_2__models_usersModel__["a" /* UsersModel */]();
     };
     return ProfileComponent;
@@ -57033,8 +57082,8 @@ __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 ProfileComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
         selector: 'app-profile',
-        template: __webpack_require__(286),
-        styles: [__webpack_require__(287)],
+        template: __webpack_require__(287),
+        styles: [__webpack_require__(288)],
         providers: [__WEBPACK_IMPORTED_MODULE_3__services_userService__["a" /* UserService */]],
         encapsulation: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewEncapsulation"].None
     }),
@@ -57090,7 +57139,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(309);
+var	fixUrls = __webpack_require__(310);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -59063,7 +59112,7 @@ exports.PerfectScrollbarComponent = PerfectScrollbarComponent;
 "use strict";
 
 
-module.exports = __webpack_require__(322);
+module.exports = __webpack_require__(323);
 
 
 /***/ }),
@@ -59254,8 +59303,8 @@ exports.PerfectScrollbarDirective = PerfectScrollbarDirective;
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* WEBPACK VAR INJECTION */(function(module) {/* harmony export (immutable) */ __webpack_exports__["main"] = main;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_environment__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angularclass_hmr__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_environment__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angularclass_hmr__ = __webpack_require__(110);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angularclass_hmr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__angularclass_hmr__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app__ = __webpack_require__(223);
 /**
@@ -87421,7 +87470,7 @@ function _mergeArrays(parts) {
 
 var Subscriber_1 = __webpack_require__(6);
 var rxSubscriber_1 = __webpack_require__(67);
-var Observer_1 = __webpack_require__(98);
+var Observer_1 = __webpack_require__(99);
 function toSubscriber(nextOrObserver, error, complete) {
     if (nextOrObserver) {
         if (nextOrObserver instanceof Subscriber_1.Subscriber) {
@@ -87445,7 +87494,7 @@ exports.toSubscriber = toSubscriber;
 
 "use strict";
 
-var errorObject_1 = __webpack_require__(97);
+var errorObject_1 = __webpack_require__(98);
 var tryCatchTarget;
 function tryCatcher() {
     try {
@@ -87522,8 +87571,8 @@ exports.merge = merge_1.mergeStatic;
 
 "use strict";
 
-var merge_1 = __webpack_require__(100);
-var merge_2 = __webpack_require__(100);
+var merge_1 = __webpack_require__(101);
+var merge_2 = __webpack_require__(101);
 exports.mergeStatic = merge_2.mergeStatic;
 /* tslint:enable:max-line-length */
 /**
@@ -87673,7 +87722,7 @@ exports.share = share;
 "use strict";
 
 var multicast_1 = __webpack_require__(217);
-var refCount_1 = __webpack_require__(106);
+var refCount_1 = __webpack_require__(107);
 var Subject_1 = __webpack_require__(35);
 function shareSubjectFactory() {
     return new Subject_1.Subject();
@@ -87777,7 +87826,7 @@ var Subject_1 = __webpack_require__(35);
 var Observable_1 = __webpack_require__(3);
 var Subscriber_1 = __webpack_require__(6);
 var Subscription_1 = __webpack_require__(45);
-var refCount_1 = __webpack_require__(106);
+var refCount_1 = __webpack_require__(107);
 /**
  * @class ConnectableObservable<T>
  */
@@ -88320,39 +88369,39 @@ exports.hmrModule = hmrModule;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angularclass_hmr__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angularclass_hmr__ = __webpack_require__(110);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angularclass_hmr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__angularclass_hmr__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_router__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_platform_browser_animations__ = __webpack_require__(256);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__environment__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__environment__ = __webpack_require__(109);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_routes__ = __webpack_require__(258);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_component__ = __webpack_require__(289);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__app_resolver__ = __webpack_require__(295);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_component__ = __webpack_require__(290);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__app_resolver__ = __webpack_require__(296);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__app_service__ = __webpack_require__(77);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_ng2_modal__ = __webpack_require__(117);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_ng2_modal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_ng2_modal__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__home__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__home__ = __webpack_require__(116);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__about__ = __webpack_require__(120);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__no_content__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__home_x_large__ = __webpack_require__(297);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__header_header_component__ = __webpack_require__(299);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__home_x_large__ = __webpack_require__(298);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__header_header_component__ = __webpack_require__(300);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__login_login_component__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__footer_footer_component__ = __webpack_require__(303);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__footer_footer_component__ = __webpack_require__(304);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__chemist_chemist_component__ = __webpack_require__(137);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_ngx_facebook__ = __webpack_require__(80);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_angular_star_rating__ = __webpack_require__(307);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__styles_styles_scss__ = __webpack_require__(308);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_ngx_facebook__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_angular_star_rating__ = __webpack_require__(308);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__styles_styles_scss__ = __webpack_require__(309);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__styles_styles_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_24__styles_styles_scss__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__styles_headings_css__ = __webpack_require__(310);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__styles_headings_css__ = __webpack_require__(311);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__styles_headings_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_25__styles_headings_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__services_sharedService__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27_ng2_google_place_autocomplete__ = __webpack_require__(311);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27_ng2_google_place_autocomplete__ = __webpack_require__(312);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__orders_orders_component__ = __webpack_require__(138);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__profile_profile_component__ = __webpack_require__(139);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__ngui_tab__ = __webpack_require__(315);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__ngui_tab__ = __webpack_require__(316);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__ngui_tab___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_30__ngui_tab__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31_angular2_image_upload__ = __webpack_require__(317);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32_angular2_perfect_scrollbar__ = __webpack_require__(320);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31_angular2_image_upload__ = __webpack_require__(318);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32_angular2_perfect_scrollbar__ = __webpack_require__(321);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_32_angular2_perfect_scrollbar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_32_angular2_perfect_scrollbar__);
 
 
@@ -88843,9 +88892,9 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var isArray_1 = __webpack_require__(66);
-var isArrayLike_1 = __webpack_require__(103);
-var isPromise_1 = __webpack_require__(104);
-var PromiseObservable_1 = __webpack_require__(111);
+var isArrayLike_1 = __webpack_require__(104);
+var isPromise_1 = __webpack_require__(105);
+var PromiseObservable_1 = __webpack_require__(112);
 var IteratorObservable_1 = __webpack_require__(230);
 var ArrayObservable_1 = __webpack_require__(69);
 var ArrayLikeObservable_1 = __webpack_require__(231);
@@ -89140,7 +89189,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Observable_1 = __webpack_require__(3);
-var ScalarObservable_1 = __webpack_require__(101);
+var ScalarObservable_1 = __webpack_require__(102);
 var EmptyObservable_1 = __webpack_require__(46);
 /**
  * We need this JSDoc comment for affecting ESDoc.
@@ -90235,7 +90284,7 @@ exports.reduce = reduce;
 var scan_1 = __webpack_require__(245);
 var takeLast_1 = __webpack_require__(246);
 var defaultIfEmpty_1 = __webpack_require__(248);
-var pipe_1 = __webpack_require__(99);
+var pipe_1 = __webpack_require__(100);
 /* tslint:enable:max-line-length */
 /**
  * Applies an accumulator function over the source Observable, and returns the
@@ -91209,7 +91258,7 @@ var FilterSubscriber = (function (_super) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_animations__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_animations__ = __webpack_require__(115);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_animations_browser__ = __webpack_require__(257);
 
 /**
@@ -91970,7 +92019,7 @@ NoopAnimationsModule.ctorParameters = function () { return []; };
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return supportsWebAnimations; });
 /* unused harmony export ɵWebAnimationsPlayer */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_animations__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_animations__ = __webpack_require__(115);
 
 /**
  * @license Angular v4.4.6
@@ -96890,7 +96939,7 @@ function supportsWebAnimations() {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ROUTES; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__home__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__home__ = __webpack_require__(116);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__about__ = __webpack_require__(120);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__no_content__ = __webpack_require__(121);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__login_login_component__ = __webpack_require__(122);
@@ -96911,8 +96960,8 @@ var ROUTES = [
     { path: 'orders', component: __WEBPACK_IMPORTED_MODULE_5__orders_orders_component__["a" /* OrdersComponent */] },
     { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_6__profile_profile_component__["a" /* ProfileComponent */] },
     { path: 'about', component: __WEBPACK_IMPORTED_MODULE_1__about__["a" /* AboutComponent */] },
-    { path: 'detail', loadChildren: function() { return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 338))  .then( function(module) { return module['DetailModule']; } ); } },
-    { path: 'barrel', loadChildren: function() { return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 339))  .then( function(module) { return module['BarrelModule']; } ); } },
+    { path: 'detail', loadChildren: function() { return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 339))  .then( function(module) { return module['DetailModule']; } ); } },
+    { path: 'barrel', loadChildren: function() { return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 340))  .then( function(module) { return module['BarrelModule']; } ); } },
     { path: '**', component: __WEBPACK_IMPORTED_MODULE_2__no_content__["a" /* NoContentComponent */] },
 ];
 
@@ -96934,7 +96983,7 @@ var ROUTES = [
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_sharedService__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_jquery__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_jquery__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_addtocartService__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_addtocartService__ = __webpack_require__(79);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_userService__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__models_AddressModel__ = __webpack_require__(265);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_ng2_modal__ = __webpack_require__(117);
@@ -96982,6 +97031,7 @@ var HomeComponent = (function () {
         this.CreditCardPayment = false;
         this.cart = [];
         this.addressSet = false;
+        this.selectedTimeSlotId = undefined;
         this.cartHasItems = false;
         this.chemistId = localStorage.getItem("chemistId");
         this.EnteredAddress = new __WEBPACK_IMPORTED_MODULE_12__models_AddressModel__["a" /* AddressModel */]();
@@ -97023,9 +97073,12 @@ var HomeComponent = (function () {
     };
     HomeComponent.prototype.showTimeSlots = function () {
         var _this = this;
+        __WEBPACK_IMPORTED_MODULE_9_jquery__(".FetchingTimeSlots").show();
         __WEBPACK_IMPORTED_MODULE_9_jquery__(".time-slots").slideDown();
         this._addtocart.getTimeSlots().subscribe(function (a) {
             _this.timeSlots = a.data;
+            __WEBPACK_IMPORTED_MODULE_9_jquery__(".FetchingTimeSlots").hide();
+            _this.laterOrSoon = 0;
         });
         this.laterOrSoon = 200;
     };
@@ -97038,19 +97091,20 @@ var HomeComponent = (function () {
     HomeComponent.prototype.placeOrder = function () {
         var _this = this;
         __WEBPACK_IMPORTED_MODULE_9_jquery__(".place-now").hide();
-        __WEBPACK_IMPORTED_MODULE_9_jquery__(".loader").show();
+        __WEBPACK_IMPORTED_MODULE_9_jquery__(".Orderloader").show();
         if (this.CashOnDevliery) {
-            this._addtocart.placeOrder(this.ThisUser.Id, this.AddressId, this.laterOrSoon, this.OrderPlacemenAppId).subscribe(function (a) {
+            this._addtocart.placeOrder(this.ThisUser.Id, this.AddressId, this.laterOrSoon, this.selectedTimeSlotId, this.OrderPlacemenAppId).subscribe(function (a) {
                 console.log(a);
                 if (a.code == 200) {
                     __WEBPACK_IMPORTED_MODULE_9_jquery__(".place-now").show();
-                    __WEBPACK_IMPORTED_MODULE_9_jquery__(".loader").hide();
+                    __WEBPACK_IMPORTED_MODULE_9_jquery__(".Orderloader").hide();
                     _this.orderPlaced.open();
                     _this.globalUnset;
                 }
             });
         }
         else {
+            __WEBPACK_IMPORTED_MODULE_9_jquery__(".Orderloader").hide();
             __WEBPACK_IMPORTED_MODULE_9_jquery__("#snackbar").html("Please select a payment method");
         }
     };
@@ -97071,7 +97125,6 @@ var HomeComponent = (function () {
         __WEBPACK_IMPORTED_MODULE_9_jquery__(".time-slot").removeClass("selected");
         this.renderer.setElementClass(event.target, "selected", true);
         this.selectedTimeSlotId = timeSlotId;
-        console.log(this.selectedTimeSlotId);
     };
     HomeComponent.prototype.actionOnClose = function () {
         this.unsetValues();
@@ -97260,24 +97313,37 @@ var HomeComponent = (function () {
         this._sharedService.getCartCount(value);
     };
     HomeComponent.prototype.deletethisRow = function (thisRow) {
-        var obj = this.cart.find(function (x) { return x.ProductId == thisRow.ProductId; });
-        var index = this.cart.findIndex(function (x) { return x.ProductId == thisRow.ProductId; });
-        this.cart.splice(index, 1);
-        this.SubTotal = 0;
-        if (this.cart.length == 0) {
-            this.FinalTotal = 0;
-            this.SubTotal = 0;
-        }
-        else {
-            this.SubTotal = 0;
-            this.FinalTotal = 0;
-            for (var i = 0; i < this.cart.length; i++) {
-                this.SubTotal = this.SubTotal + this.cart[i].TotalPrice;
-                this.SubTotal = parseFloat(this.SubTotal.toFixed(2));
-                this.FinalTotal = this.SubTotal;
-                this.FinalTotal = parseFloat(this.FinalTotal.toFixed(2));
+        var _this = this;
+        console.log(thisRow);
+        this._addtocart.deleteRowFromCart(thisRow.Id).subscribe(function (response) {
+            console.log(response);
+            if (response.code == 200) {
+                var obj = _this.cart.find(function (x) { return x.ProductId == thisRow.ProductId; });
+                var index = _this.cart.findIndex(function (x) { return x.ProductId == thisRow.ProductId; });
+                _this.cart.splice(index, 1);
+                if (_this.cart.length == 0) {
+                    __WEBPACK_IMPORTED_MODULE_9_jquery__("#step2").prop("disabled", true);
+                    __WEBPACK_IMPORTED_MODULE_9_jquery__("#overlay2").show();
+                    _this.step1.nativeElement.click();
+                }
+                _this.cartset(_this.cart.length);
+                _this.SubTotal = 0;
+                if (_this.cart.length == 0) {
+                    _this.FinalTotal = 0;
+                    _this.SubTotal = 0;
+                }
+                else {
+                    _this.SubTotal = 0;
+                    _this.FinalTotal = 0;
+                    for (var i = 0; i < _this.cart.length; i++) {
+                        _this.SubTotal = _this.SubTotal + _this.cart[i].TotalPrice;
+                        _this.SubTotal = parseFloat(_this.SubTotal.toFixed(2));
+                        _this.FinalTotal = _this.SubTotal;
+                        _this.FinalTotal = parseFloat(_this.FinalTotal.toFixed(2));
+                    }
+                }
             }
-        }
+        });
     };
     HomeComponent.prototype.UppingReview = function (object) {
         console.log(object);
@@ -97327,7 +97393,7 @@ var HomeComponent = (function () {
             __WEBPACK_IMPORTED_MODULE_9_jquery__('.qtyminus').val("-").css('cursor', 'not-allowed');
         }
         var tempPrice = 0;
-        tempPrice = object.OriginalPrice * __WEBPACK_IMPORTED_MODULE_9_jquery__("#num_val_" + object.Id).val();
+        tempPrice = object.Price * __WEBPACK_IMPORTED_MODULE_9_jquery__("#num_val_" + object.Id).val();
         object.Total = tempPrice;
         this.SubTotal = 0;
         for (var i = 0; i < this.cart.length; i++) {
@@ -97467,12 +97533,19 @@ var HomeComponent = (function () {
         console.log(productModel);
     };
     HomeComponent.prototype.takeMeToReviewPage = function () {
-        this.step2.nativeElement.click();
-        __WEBPACK_IMPORTED_MODULE_9_jquery__("#step2").removeAttr("disabled");
-        __WEBPACK_IMPORTED_MODULE_9_jquery__("#overlay2").hide();
+        if (this.cart.length == 0) {
+            __WEBPACK_IMPORTED_MODULE_9_jquery__("#snackbar").html("There are no items in the cart!");
+            this.ShowToast();
+        }
+        else {
+            this.step2.nativeElement.click();
+            __WEBPACK_IMPORTED_MODULE_9_jquery__("#step2").removeAttr("disabled");
+            __WEBPACK_IMPORTED_MODULE_9_jquery__("#overlay2").hide();
+        }
     };
     HomeComponent.prototype.takeMeToStep3 = function () {
         this.step3.nativeElement.click();
+        /*   this._addtocart */
         __WEBPACK_IMPORTED_MODULE_9_jquery__("#step3").removeAttr("disabled");
         __WEBPACK_IMPORTED_MODULE_9_jquery__("#overlay3").hide();
     };
@@ -97493,6 +97566,14 @@ var HomeComponent = (function () {
         this.singleCartItem = new __WEBPACK_IMPORTED_MODULE_7__models_cartModel__["a" /* CartModel */]();
         this.AddressId = 0;
         __WEBPACK_IMPORTED_MODULE_9_jquery__("#overlay2,#overlay3").show();
+    };
+    HomeComponent.prototype.ShowToast = function () {
+        // Get the snackbar DIV
+        var x = document.getElementById("snackbar");
+        // Add the "show" class to DIV
+        x.className = "show";
+        // After 3 seconds, remove the show class from DIV
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
     };
     HomeComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -97558,6 +97639,10 @@ __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewChild"])("orderPlaced"),
     __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:type", __WEBPACK_IMPORTED_MODULE_13_ng2_modal__["ModalModule"])
 ], HomeComponent.prototype, "orderPlaced", void 0);
+__WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewChild"])('step1'),
+    __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:type", __WEBPACK_IMPORTED_MODULE_1__angular_core__["ElementRef"])
+], HomeComponent.prototype, "step1", void 0);
 __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewChild"])('step2'),
     __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:type", __WEBPACK_IMPORTED_MODULE_1__angular_core__["ElementRef"])
@@ -97761,7 +97846,7 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, "body {\r\n    margin-top:40px;\r\n\r\n}\r\np{\r\n    margin-bottom:0;\r\n}\r\n\r\n\r\n.modal-content{\r\n    border-radius:0 !important;\r\n}\r\n\r\n.stepwizard-step p {\r\n    margin-top: 10px;\r\n    color:#b9b9b8;\r\n}\r\n.stepwizard-row {\r\n    display: table-row;\r\n}\r\n.stepwizard {\r\n    display: table;\r\n    width: 30%;\r\n    margin: 30px auto;\r\n    position: relative;\r\n}\r\n#accordion3 .panel-heading{\r\n    height:auto !important;\r\n}\r\n.stepwizard-step button[disabled] {\r\n    opacity: 1 !important;\r\n    filter: alpha(opacity=100) !important;\r\n}\r\n.stepwizard-row:before {\r\n    top: 14px;\r\n    bottom: 0;\r\n    left: 77px;\r\n    position: absolute;\r\n    content: \" \";\r\n    width: 54%;\r\n    height: 1px;\r\n    background-color: #ccc;\r\n    z-order: 0;\r\n\r\n}\r\n.stepwizard-step {\r\n    display: table-cell;\r\n    text-align: center;\r\n    position: relative;\r\n}\r\n.btn-circle {\r\n    width: 28px;\r\n    height: 28px;\r\n    text-align: center;\r\n    padding: 2px 0;\r\n    font-size: 16px;\r\n    line-height: 1.428571429;\r\n    border-radius: 15px;\r\n    opacity: 1;\r\n}\r\n\r\n.btn-primary{\r\n    background: #1ec26b;\r\n    border:none;\r\n}\r\n\r\n.col-left{\r\n    position: relative;\r\n    float:left;\r\n    width:58%;\r\n    box-shadow: 0px 3px 10px 0px #ecebe7;\r\n    background: #fdfcfa;\r\n}\r\n\r\n.col-left .row,.col-right .row{\r\n    margin-left:0;\r\n    margin-right:0;\r\n}\r\n.col-right{\r\n    position: relative;\r\n    float:left;\r\n    box-shadow: 0px 3px 10px 0px #ecebe7;\r\n    background: #fdfcfa;\r\n    width:38%;\r\n    margin-left:2%;\r\n}\r\n\r\n.holder-box{\r\n    padding:16px;\r\n}\r\n\r\n.left-image-side{\r\n    width:90px;\r\n    position: relative;\r\n    float:left;\r\n    margin-top: 5px;\r\n}\r\n\r\n.right-name{\r\n    position: relative;\r\n    float:left;\r\n}\r\n\r\n.opening-hours{\r\n    color:#656565;\r\n    font-weight:400;\r\n    font-size:14px;\r\n}\r\n.chemist-name{\r\n    color:#656565;\r\n    font-weight:500;\r\n    font-size:20px;\r\n}\r\n\r\n.rating > span:hover:before {\r\n    content: \"\\2605\";\r\n    position: absolute;\r\n    font-size: 16px;\r\n }\r\n\r\n .rating {\r\n    unicode-bidi: bidi-override;\r\n  }\r\n  .rating > span:hover:before,\r\n  .rating > span:hover ~ span:before {\r\n     content: \"\\2605\";\r\n     position: absolute;\r\n  }\r\n  .rating > span {\r\n    display: inline-block;\r\n    position: relative;\r\n    width: 1.1em;\r\n    font-size: 16px;\r\n  }\r\n  .rating > span:hover:before,\r\n  .rating > span:hover ~ span:before {\r\n     content: \"\\2605\";\r\n     position: absolute;\r\n     font-size: 16px;\r\n  }\r\n\r\n  .chemist-ratings{\r\n      margin-top:10px;\r\n  } \r\n\r\n  .saperator{\r\n      margin-top:20px;\r\n      margin-bottom:10px;\r\n      border-bottom: 1px solid #aeaeae;\r\n  }\r\n\r\n  .one-row .name span{\r\n      color:#b4b4b4;\r\n      font-size:13px;\r\n      font-weight: 500;\r\n  }\r\n\r\n  .one-row .name .med-name{\r\n    font-weight: 500;\r\n    font-size:15px;\r\n    color:#656565;\r\n\r\n  }\r\n\r\n  .one-row .del{\r\n\r\n    position: relative;\r\n    float:left;\r\n    cursor: pointer;\r\n    width: 25px;\r\n    padding-top: 15px;\r\n  }\r\n  .one-row .name{\r\n    position: relative;\r\n    float:left;\r\n    padding-top: 0.5px;\r\n    width:40%;\r\n    padding-top: 15px;\r\n  }\r\n  .one-row .quantity{\r\n    position: relative;\r\n    float:left;\r\n\r\n  }\r\n\r\n  .one-row .subtotal{\r\n    position: relative;\r\n    float: left;\r\n    width: 41%;\r\n    text-align: right;\r\n    padding-top: 15px;\r\n  }\r\n  .one-row .subtotal p{\r\n      font-size:14px;\r\n      color:#656565;\r\n  }\r\n\r\n  .quantity input {\r\n      width: 80px;\r\n      height: 45px;\r\n      line-height: 1.65;\r\n      float: left;\r\n      display: block;\r\n      padding: 0;\r\n      margin: 0;\r\n      padding-left: 20px;\r\n      border: 1px solid #9b9b9b;\r\n      font-size: 16px;\r\n      font-weight: 400;\r\n      border-radius: 5px;   \r\n      margin-bottom: 4px; \r\n      background: none;\r\n      color:#656565;\r\n  }\r\n  \r\n  .quantity input:focus {\r\n      outline: 0;\r\n  }\r\n  \r\n  .quantity-nav {\r\n      float: left;\r\n      position: relative;\r\n      height: 44px;\r\n  }\r\n  \r\n  .quantity-button {\r\n      position: relative;\r\n      cursor: pointer;\r\n      border: 1px solid #9b9b9b !important;\r\n      width: 20px;\r\n      text-align: center;\r\n      color: #9b9b9b;\r\n      font-size: 13px;\r\n      font-family: \"Trebuchet MS\", Helvetica, sans-serif !important;\r\n      line-height: 1.7;\r\n      -webkit-transform: translateX(-100%);\r\n      transform: translateX(-100%);\r\n      -webkit-user-select: none;\r\n      -moz-user-select: none;\r\n      -ms-user-select: none;\r\n      -o-user-select: none;\r\n      user-select: none;\r\n      background: #edebe7;\r\n      width: 30px;\r\n      border: 0;\r\n      color: #fff;\r\n      font-size: 23px;\r\n      line-height: 23px;\r\n      border-radius:0 5px 0 0\r\n  \r\n  }\r\n  \r\n  .quantity-button.quantity-up {\r\n      position: absolute;\r\n      height: 52%;\r\n      top: 0;\r\n  }\r\n  \r\n  .quantity-button.quantity-down {\r\n      position: absolute;\r\n      bottom: -1px;\r\n      height: 50%;\r\n       border-radius:0 0 5px 0;\r\n  }\r\n  .footer-row p{\r\n      color:#656565;\r\n      font-size: 14px;\r\n  }\r\n  .footer-row{\r\n    padding:10px;\r\n    margin-top:20px;\r\n  }\r\n  .no-margin-top{\r\n      margin-top:0;\r\n  }\r\n\r\n  .subtotal-row{\r\n       background: #ededed;\r\n       padding:10px;\r\n       border-radius: 6px;\r\n       margin-top:20px;\r\n  }\r\n  .subtotal-heading{\r\n      width:56%;\r\n      position: relative;\r\n      float:left;\r\n      text-align: right;\r\n  }\r\n  .time-slots{\r\n      padding-left:0;\r\n      margin:0;\r\n      margin-top: 15px;\r\n  }\r\n\r\n  .time-slot{\r\n    background: transparent;\r\n    border: 1px solid #aeaeae;\r\n    padding: 5px;\r\n    width: 150px;\r\n\r\n  }\r\n  .selected{\r\n    background:#1ec26b;\r\n    color:white;\r\n    font-size:14px;\r\n  }\r\n  .time-slots li{\r\n    width: 50%;\r\n    display: inline-block;\r\n    list-style-type: none;\r\n    text-align: center;\r\n    margin: 0;\r\n    margin-bottom: 15px;\r\n  }\r\n  .subtotal-value{\r\n    width:44%;\r\n    position: relative;\r\n    float:left;\r\n    text-align: right;\r\n    font-size:15px;\r\n}\r\n\r\n.voucher-row h3{\r\n    color:#656565;\r\n    font-size:20px;\r\n    font-weight: 500;\r\n    margin-bottom:20px;\r\n}\r\n.voucher-form{\r\n    position: relative;\r\n    width: 70%;\r\n    height: 34px;\r\n}\r\n.inputBtn{\r\n    width:30%;\r\n    position: absolute;\r\n    left:65%;\r\n    top:0;\r\n    height: 34px;\r\n\r\n}\r\n.inputBtn button{\r\n    border-top-right-radius: 50px;\r\n    border-bottom-right-radius: 50px;\r\n    height: 34px;\r\n    width: 100%;\r\n    border: 1px solid #9b9b9b;\r\n    color:#3ad72a;\r\n    background: #ededed;\r\n    outline: none;\r\n    font-weight: bold;\r\n}\r\n.errors{\r\n    border:1px solid red;\r\n}\r\n.save-address{\r\n    font-size:16px;\r\n    font-weight: 500;\r\n    color:white;\r\n    background: #1ec26b;\r\n    text-transform: uppercase;\r\n    border-radius: 4px;\r\n    height: 40px;\r\n    width: 150px;\r\n    border:none;\r\n    margin-top: 5px;\r\n}\r\n.EnteredAddress li{\r\n   list-style-type:none;    margin: 15px 0;\r\n   width: 50%;\r\n   display: inline-block;\r\n}\r\n.EnteredAddress li button{\r\n    background: none;\r\n    border: 1px solid #ddd;\r\n    padding: 5px;\r\n}\r\n\r\n.activeAddress{\r\n    background:#1ec26b !important;\r\n    color:white;\r\n    font-size:14px;\r\n}\r\n.inputField input{\r\n    width:100%;\r\n    border-radius: 50px;\r\n    outline:none;\r\n    padding-left:15px;\r\n    border:1px solid #9b9b9b;\r\n    height: 34px;\r\n}\r\n.inputField{\r\n    width:70%;\r\n    position: relative;\r\n    float:left;\r\n    left:0;\r\n    border-top-right-radius: 50%;\r\n    border-bottom-right-radius: 50%;\r\n    height: 34px;\r\n}\r\n\r\n.font20{\r\n    font-size:20px;\r\n}\r\n\r\n.delivery-text{\r\n    font-size:14px; \r\n    color:#656565;\r\n    display: block;\r\n    padding-left: 28px;\r\n    color:#656565;\r\n}\r\n\r\n.col-right h3{\r\n    font-size:22px;\r\n    margin-top: 10px;\r\n    margin-bottom: 25px;\r\n\r\n\r\n}\r\n.italic-text{\r\n    font-style: italic;\r\n    font-size:12px;\r\n    word-spacing: 1px;\r\n    color:#656565;\r\n}\r\n.message-text img{\r\n    width:16px;\r\n}\r\n.message-text p{\r\n    font-size:14px;\r\n    word-spacing: 2px;\r\n    color:#1ec26b;\r\n    text-decoration: underline;\r\n    font-weight: 600;\r\n    cursor: pointer;\r\n}   \r\n\r\n.alignCenter{\r\n    text-align: center;\r\n}\r\n.checkout-btn{\r\n    background: #00b276;\r\n    color: white;\r\n    border-radius: 57px;\r\n    width: 100%;\r\n    border: none;\r\n    font-weight: 700;\r\n    height: 45px;\r\n    margin-top: 20px;\r\n    font-size:16px;\r\n    width:100%;\r\n}\r\n\r\n.inner-wrapper{\r\n    box-shadow: 0px 3px 10px 0px #ecebe7;\r\n    background: #fdfcfa;\r\n}\r\n.left-pane{\r\n    position: relative;\r\n    float: left;\r\n    width: 69%;\r\n    margin-right: 1.6%;\r\n    \r\n}\r\n\r\n.right-pane{\r\n    position: relative;\r\n    float:left;\r\n    margin-top: 20px;\r\n    width: 28%;\r\n    \r\n}\r\n\r\n.right-pane .one-row{\r\n    padding-left:20px;\r\n    padding-right:20px;\r\n}\r\n.right-pane .time-pane,.right-pane .cart{\r\n    box-shadow: 0px 3px 10px 0px #ecebe7;\r\n    background: #fdfcfa;\r\n}\r\n\r\n.left-pane h3,.right-pane h3{\r\n    font-size:20px;\r\n    color:#656565;\r\n    padding-top:22px;\r\n    margin-bottom:22px;\r\n    padding-left:20px;\r\n    \r\n}\r\n\r\n.lefty-side,.righty-side{\r\n    position: relative;\r\n    float:left;\r\n}\r\n.left-pane .body{\r\n    padding: 30px 20px;\r\n}\r\n.righty-side{\r\n    width:60%;\r\n}\r\n.lefty-side{\r\n    width: 140px;\r\n}\r\n.rightyVal{\r\n    margin-bottom:15px;\r\n    margin-top:0;\r\n    font-weight: 300;\r\n    font-size:15px;\r\n    color:#656565;\r\n}\r\n\r\n.green{\r\n    color:#1ec26b;\r\n    text-decoration: underline;\r\n}\r\n\r\n.leftyVa{\r\n    margin-bottom:15px;\r\n    margin-top:0;\r\n    font-weight: 700;\r\n    font-size:15px;\r\n    color:#656565;\r\n}\r\n\r\n.left-pane .header,.right-pane .header{\r\n    border-bottom:1px solid #aeaeae;\r\n\r\n}\r\n\r\n.left-pane .panel{\r\n    background:#fefefd;\r\n    border:1px solid #d5d5d4;\r\n}\r\n.oldAddress{\r\n    padding: 10px 15px;\r\n    border-bottom: 1px solid transparent;\r\n    background:#fefefd;\r\n    border-radius: 4px;\r\n    border:1px solid #d5d5d4;\r\n    margin-bottom:5px;\r\n}\r\n\r\n.pay-now-details{\r\n    background:#f9f9f8;\r\n    padding:30px 0 30px 30px;\r\n}\r\n\r\n.pay-now-details .form-group .form-control{\r\n    height:32px;\r\n    width:50%;\r\n    outline:none;\r\n    padding-left:10px;\r\n    display: inline-block;\r\n    border-radius: 0 !important;\r\n    margin-right: 15px;\r\n    border:1px solid #aeaeae;\r\n}\r\n.required{\r\n    font-size:14px;\r\n    font-weight: 300;\r\n    font-style:italic;\r\n}\r\n\r\n.requiredRed{\r\n    margin-right:6px;\r\n    color:#ff3b3b;\r\n}\r\n.normalText{\r\n    font-size:17px;\r\n    margin-top:20px;\r\n    font-weight: 700;\r\n}\r\n\r\n.address-field{\r\n    height:32px;\r\n    border:1px solid #aeaeae;\r\n    background:#ffffff;\r\n    width: 50%;\r\n    margin-right:25px;\r\n    margin-top:10px;\r\n    padding-left:15px;\r\n}\r\n.location-box{\r\n    margin-top:25px;\r\n}\r\n.location-text{\r\n     font-size: 14px;\r\n     font-weight: 300;\r\n    margin-top:10px;\r\n    margin-bottom:30px;\r\n}\r\n\r\n#accordion2 .panel-body{\r\n    padding:30px;\r\n}\r\n\r\n.optional{\r\n    font-size:14px;\r\n    font-weight: 500;\r\n    color:#656565;\r\n}\r\n#accordion2 .message-text img{\r\n    margin-right: 5px;\r\n   \r\n}\r\n#accordion2 .message-text{\r\n    padding-left: 15px;\r\n    margin-bottom:25px;\r\n}\r\n.inner-wrapper .message-text p{\r\n    display: inline-block;\r\n}\r\n\r\n.pay-now-details h3{\r\n    font-size:25px;\r\n    font-weight: bold;\r\n    color:#656565;\r\n    margin-top:25px;\r\n    margin-bottom:25px;\r\n}\r\n\r\n.custom-dropdown:checked + label:before,\r\n.custom-dropdown:not(:checked) + label:before {\r\n    content: '';\r\n    position: absolute;\r\n    display:none;\r\n    left: 0;\r\n    top: 0;\r\n    width: 20px;\r\n    height: 20px;\r\n    border: 1px solid #b6b6b6;\r\n    border-radius: 100%;\r\n    background: #fff;\r\n    color:#aeaeae;\r\n}\r\n\r\n.custom-dropdown:checked + label:after,\r\n.custom-dropdown:not(:checked) + label:after {\r\n    display: none;\r\n    content: '';\r\n    width: 12px;\r\n    height: 12px;\r\n    background: #1ec26b;\r\n    position: absolute;\r\n    top: 4px;\r\n    left: 4px;\r\n    border-radius: 100%;\r\n    -webkit-transition: all 0.2s ease;\r\n    transition: all 0.2s ease;\r\n    color:#676767;\r\n}\r\n\r\n.bottom-text{\r\n    margin-top:75px;\r\n}\r\n\r\n.bottom-text1{\r\n    font-size:14px;\r\n    font-weight: 300;\r\n    color:#656565;\r\n    \r\n}\r\n\r\n.bottom-text2{\r\n    font-size:14px;\r\n    font-weight: 300;\r\n    color:#656565;\r\n    margin-top:40px;\r\n}\r\n\r\n.left-equal{\r\n    position: relative;\r\n    float:left;\r\n    width:50%;\r\n    text-align:left;\r\n    font-size:20px;\r\n    font-weight: 700;\r\n    margin-bottom:40px;\r\n}\r\n\r\n.right-equal{\r\n    position: relative;\r\n    float:left;\r\n    width:50%;\r\n    text-align:right;\r\n    font-size:20px;\r\n    font-weight: 700;\r\n    margin-bottom:40px;\r\n}\r\n\r\n.special{\r\n    min-height: 250px;\r\n    margin-top: 15px;\r\n    padding-top:35px;\r\n}\r\n.place-now{\r\n    width:100%;\r\n    border:none;\r\n    height:58px;\r\n    line-height: 58px;\r\n    border-radius: 4px;\r\n    background: #1ec26b;\r\n    color:white;\r\n    font-size:22px;\r\n    font-weight: 700;\r\n    margin-top:10px;\r\n\r\n}\r\n\r\n.right-estimate{\r\n    font-size:12px;\r\n    font-weight: 700;\r\n    color:#656565;\r\n    padding: 30px 10px;\r\n}\r\n.big{\r\n    font-size:38px;\r\n    font-weight: 500;\r\n    color:#656565;\r\n    padding: 2px 10px;\r\n    height: 42px;\r\n}\r\n.small{\r\n    font-size:12px;\r\n    font-weight: 500;\r\n}\r\n.time{\r\n    width: 65px;\r\n    text-align: center;\r\n    float: right;\r\n    margin-top: 15px;\r\n}\r\n\r\n.item{\r\n    position: relative;\r\n    float:left;\r\n    width:70%;\r\n}\r\n\r\n.price{\r\n    position: relative;\r\n    float:left;\r\n    width:30%;\r\n}\r\n\r\n.item-detail{\r\n    display: inline-block;\r\n    padding-right: 4px;\r\n\r\n}\r\n.one-row{\r\n    margin-top:10px;\r\n    margin-bottom:10px;\r\n}\r\n\r\n.price{\r\n    text-align: right;\r\n}\r\n\r\n.item .optional{\r\n    color:#aeaeae;\r\n    font-size:12px;\r\n}\r\n.footer .one-row{\r\n    margin-bottom:15px;\r\n}\r\n\r\n.footer .one-row .item{\r\n    width:50%;\r\n    position: relative;\r\n    float:left;\r\n    text-align: left;\r\n}\r\n.footer .one-row .price{\r\n    width:50%;\r\n    position: relative;\r\n    float:left;\r\n    text-align: right;\r\n}\r\n.more-margin{\r\n    margin-top:20px;\r\n}\r\n.cart .body{\r\n /*    border-top:1px solid #cecdcc;\r\n    border-bottom:1px solid #cecdcc; */\r\n}\r\n\r\n.bigText{\r\n    font-size:28px;\r\n    font-weight: 300;\r\n}\r\n\r\n.opening-hours{\r\n    color:#50cb84;\r\n    font-weight:500;\r\n    font-size:12px;\r\n    margin-top: -4px;\r\n    \r\n}\r\n\r\n.headging-with-rating{\r\n    display:inline-block;\r\n    text-transform: capitalize;\r\n    font-size:23px;\r\n    color:#656565;\r\n    font-weight: 500;\r\n    word-wrap: break-word;\r\n    width: 100px;\r\n}\r\n\r\n#step-1 .chemist-ratings{\r\n    display:inline-block;\r\n    margin-left: 10px;\r\n}\r\n\r\n#step-1 .star{\r\n    height: 18px;\r\n}\r\n\r\n#step-1 .inner-wrapper{\r\n    padding: 30px 20px;\r\n}\r\n.right-search .voucher-form{\r\n    position: relative;\r\n    width: 100%;\r\n    height: 42px;\r\n    margin: 5px auto;\r\n}\r\n.right-search .inputBtn{\r\n    width:30%;\r\n    position: absolute;\r\n    left:70%;\r\n    top:0;\r\n    height: 42px;\r\n\r\n}\r\n.right-search .inputBtn button{\r\n    border-top-right-radius: 50px;\r\n    border-bottom-right-radius: 50px;\r\n    height: 42px;\r\n    width: 85%;\r\n    border: 1px solid #1ec26b;\r\n    color:#fff;\r\n    background: #1ec26b;\r\n    outline: none;\r\n    font-weight: 500;\r\n    font-size:18px;\r\n}\r\n.right-search .inputField input{\r\n    width:100%;\r\n    border-radius: 50px;\r\n    outline:none;\r\n    border:1px solid #1ec26b;\r\n    height: 42px;\r\n    padding-left: 40px;\r\n    color:#aeaeae;\r\n    font-size:18px;\r\n}\r\n.right-search .inputField{\r\n    width:80%;\r\n    position: relative;\r\n    float:left;\r\n    left:0;\r\n    border-top-right-radius: 50%;\r\n    border-bottom-right-radius: 50%;\r\n    height: 42px;\r\n}\r\n\r\n.left-chemist,.right-search{\r\n    position: relative;\r\n    float: left;\r\n    \r\n}\r\n\r\n.left-chemist{\r\n    width:45%;\r\n}\r\n\r\n.right-search{\r\n    width:55%;\r\n}\r\n\r\n.tabs{\r\n    padding: 8px !important;\r\n    padding-bottom: 0px !important;\r\n}\r\n.tabs div{\r\n    border:none;\r\n    border-radius:0;\r\n    padding-bottom:0;\r\n}\r\n.tabs .selected p{\r\n    font-weight: 700;\r\n    font-size:18px;\r\n    color:#656565;\r\n    padding-bottom:10px;\r\n    border-bottom:2px solid #1ec26b;\r\n}\r\n\r\n#step-1 .right-pane{\r\n    margin-top:0 !important;\r\n}\r\n.tabs div p{\r\n    font-weight: 300;\r\n    font-size:18px;\r\n    color:#656565;\r\n    padding-bottom:10px;\r\n}\r\n.tabs .selected{\r\n   \r\n    background:transparent;\r\n}\r\n.tab-contents{\r\n    border:none;\r\n}\r\n.product-image{\r\n    height: 216px;\r\n    border-bottom: 1px solid #bababa;\r\n}\r\n.product-image img{\r\n    max-width: 100%;\r\n    height: auto;\r\n    \r\n}\r\n.products-list{\r\n    padding-left:0;\r\n}\r\n\r\n.products-list li{\r\n    display: inline-block;\r\n    float: left;\r\n    list-style-type: none;\r\n    width: 29%;\r\n    margin-right: 30px;\r\n    margin-top:30px;\r\n    box-shadow: 0px 3px 10px 0px #c7c6c3;\r\n    transition: box-shadow 0.3s ease-in-out;\r\n    position: relative;\r\n}\r\n.products-list li:hover{\r\n    box-shadow: none;\r\n}\r\n.plus-sign{\r\n    cursor:pointer;\r\n    position: absolute;\r\n    bottom: -12px;\r\n    right: -12px;\r\n    text-align:center;\r\n    width:60px;\r\n    height:60px;\r\n    border-radius: 60px;\r\n    background:#1ec26b;\r\n    display:none;\r\n    box-shadow: 0px 3px 10px 0px #d9cdc8;\r\n}\r\n.plus-sign img{\r\n    padding-top: 13px;\r\n}\r\n.product-wrapper{\r\n    background:white;\r\n    border-radius:0;\r\n    padding:10px;\r\n    cursor:pointer;\r\n}\r\n\r\n.product-detail{\r\n    margin-top:10px;\r\n}\r\n.product-detail h2{\r\n    font-size:15px;\r\n    font-weight: 500;\r\n    color:#000000;\r\n    margin:0;\r\n    margin-bottom:15px;\r\n}\r\n.product-detail p{\r\n    font-size:14px;\r\n    font-weight: 300;\r\n    color:#000000;\r\n    margin:0;\r\n\r\n}\r\n\r\n/deep/ .orderPlaced .modal-content{\r\n    border-radius: 0 !important;\r\n}\r\n/deep/ .orderPlaced button.close{\r\n    position: absolute;\r\n    width: 38px;\r\n    height: 38px;\r\n    background: #1ec26b;\r\n    color: white;\r\n    border-radius: 38px;\r\n    opacity: 1;\r\n    z-index: 2;\r\n    right: 23px;\r\n    top: -21px;\r\n    box-shadow:0px 3px 10px 0px #d0d0d0;\r\n}\r\n/deep/ .detailModalClass .modal-content{\r\n    border-radius: 0 !important;\r\n}\r\n\r\n/deep/ .detailModalClass button.close{\r\n    position: absolute;\r\n    width: 38px;\r\n    height: 38px;\r\n    background: #1ec26b;\r\n    color: white;\r\n    border-radius: 38px;\r\n    opacity: 1;\r\n    z-index: 2;\r\n    right: 23px;\r\n    top: -21px;\r\n    box-shadow:0px 3px 10px 0px #d0d0d0;\r\n}\r\n.my-header{\r\n    margin-top: 60px;\r\n    text-align: center;\r\n    background-color: #1ec26b;\r\n    margin: 0;\r\n    padding: 30px 0;\r\n}\r\n\r\n.my-header-2{\r\n    margin:40px;\r\n    text-align: center;\r\n}\r\n\r\n.my-header-2 h1{\r\n    color: #1ec26b;\r\n}\r\n.circle{\r\n    width: 200px;\r\n    height: 200px;\r\n    border-radius: 300px;\r\n    background: white;\r\n    text-align: center;\r\n    margin: 0 auto;padding: 40px 0;\r\n    box-shadow: 0 8px 8px rgba(255,255,255,.24), 0 0 8px rgba(255,255,255,.12), 0 6px 18px rgba(255,255,255,.12);\r\n    transform: translate3d(0,-2px,0);\r\n}\r\n.closeThanks{\r\n    position: absolute;\r\n    border: none;\r\n    width: 50px;\r\n    background: #ddd;\r\n    height: 50px;\r\n    color: #1ec26b;\r\n    font-size: 26px;\r\n    right: 18px;\r\n    border-radius: 50px;\r\n    top: -28px;\r\n}\r\n.view-orders{\r\n    border:2px solid #ddd;\r\n    background:transparent;\r\n    color:#ddd;\r\n    font-size:16px;\r\n    padding:10px 20px;\r\n    margin-top:30px;\r\n    cursor:pointer;\r\n}\r\n/deep/ .orderPlaced .modal-body{\r\n    padding:0 !important;\r\n}\r\n/deep/ .orderPlaced .modal-footer, /deep/ .orderPlaced .modal-header{\r\n    display:none;\r\n}\r\n/deep/ .detailModalClass .modal-footer{\r\n    display:none;\r\n}\r\n/deep/ .detailModalClass .modal-header,/deep/ .orderPlaced .modal-footer{\r\n    padding:0;\r\n}\r\n/deep/ .detailModalClass .modal-body{\r\n    padding:40px;\r\n}\r\n\r\n.cart-button{\r\n    margin-top: 32px;\r\n    color: white;\r\n    background: #1ec26b;\r\n    width: 300px;\r\n    border-radius: 6px;\r\n    height: 58px;\r\n    font-size: 22px;\r\n    font-weight: 500;\r\n    margin: 20px auto;\r\n    border: none;\r\n    margin-bottom: 0;\r\n}\r\n .modal-name,.modal-quantity{\r\n\r\n    position: relative;\r\n    float:left;\r\n    width:50%;\r\n}\r\n.alingCenter{\r\n    text-align: center;\r\n\r\n}\r\n.image-box img{\r\n    width:70px;\r\n    margin: 0 auto;\r\n}\r\n.image-box{\r\n    text-align: center;\r\n    width:80px;\r\n    margin: 0 auto;\r\n}\r\n.modal-quantity{\r\n    text-align: right;\r\n}\r\n\r\n.modal-name p{\r\n    font-size:20px;\r\n    font-weight: 500;\r\n    color:black;\r\n\r\n}\r\n\r\n.modal-quantity i{\r\n    color:#1ec26b;\r\n    font-size: 18px;\r\n    margin-left:10px;\r\n}\r\n\r\n.center-align{\r\n    text-align: center;\r\n}\r\n\r\n.textarea-div,.textarea-div2,.textarea-div3,.textarea-div4{\r\n    display:none;\r\n}\r\n\r\n#overlay2,#overlay3{\r\n    background: transparent;\r\n    position: absolute;\r\n    width: 100%;\r\n    height: 100%;\r\n    z-index: 2;\r\n\r\n}\r\n.textarea-div textarea,.textarea-div2 textarea,.textarea-div3 textarea, .textarea-div4 textarea{\r\n    background: #eeeeee;\r\n    border-radius: 0;\r\n    border:1px solid #9b9b9b;\r\n    margin-top:20px;\r\n    width:100%;\r\n    height:100px;\r\n    padding-left:15px;\r\n}\r\n\r\n.thisone3,.thisone4{\r\n    font-size: 12px;\r\n    margin-right: 5px;\r\n}\r\n.slideInDown{\r\n    display:block !important;\r\n}\r\n\r\n/* quantity */\r\n\r\n\r\n.modal-quantity #prod-quantity-cart{\r\n    position: relative;\r\n    height: 66px;\r\n    text-align: right;\r\n    width: 234px;\r\n    margin-left: 0;\r\n    float: right;\r\n}\r\n\r\n#prod-quantity-cart .qtyplus{\r\n  \r\n    text-align: left;\r\n    color:#1ec26b;\r\n    font-weight: bold;\r\n    font-size: 24px;\r\n    width: 35px;\r\n    position: absolute;\r\n    left: 212px;\r\n    cursor: pointer;\r\n    border:none;\r\n    background:transparent;\r\n    width: 35px;\r\n    outline:none;\r\n}\r\n\r\n#prod-quantity-cart #num_val{\r\n    width: 110px;\r\n    position: absolute;\r\n    left:100px;\r\n    text-align: center;\r\n    font-size:25px;\r\n    font-weight: 500;\r\n    color:#656565;\r\n    border:none;\r\n}\r\n\r\n#prod-quantity-cart .qtyminus{\r\n    position: absolute;\r\n    left:62px;\r\n    width: 35px;\r\n    border:none;\r\n    background:transparent;\r\n    cursor:pointer;\r\n    text-align: right;\r\n    color:#1ec26b;\r\n    font-weight: bold;\r\n    font-size: 24px;\r\n    outline:none;\r\n}\r\n\r\n.dosage{\r\n    width:130px;\r\n    padding: 10px;\r\n}\r\n.clear{\r\n    clear:both;\r\n    float:none;\r\n}\r\n/* qunatity */\r\n\r\n/* Tabs */\r\n\r\n/***\r\nBootstrap Line Tabs by @keenthemes\r\nA component of Metronic Theme - #1 Selling Bootstrap 3 Admin Theme in Themeforest: http://j.mp/metronictheme\r\nLicensed under MIT\r\n***/\r\n\r\n/* Tabs panel */\r\n.tabbable-panel {\r\n    border:none;\r\n  }\r\n\r\n  .nav-tabs{\r\n      background:#fdfcfa;\r\n      height: 56px;\r\n      border-top:1px solid #a0a0a0 !important;\r\n  }\r\n  \r\n  /* Default mode */\r\n  .tabbable-line > .nav-tabs {\r\n    border: none;\r\n    margin: 0px;\r\n  }\r\n\r\n  .tabbable-line > .nav-tabs > li:after{\r\n    display:block;\r\n    content: '';\r\n    padding-bottom: 15px;\r\n    border-bottom: solid 2px #1ec26b;  \r\n    transform: scaleX(0);  \r\n    transition: transform 250ms ease-in-out;\r\n  }\r\n  \r\n  .tabbable-line > .nav-tabs > li:hover:after { transform: scaleX(1); }\r\n\r\n  .tabbable-line > .nav-tabs > li {\r\n    margin-right: 2px;\r\n    margin:0;\r\n    padding: 15px 0px;\r\n    margin: 0px 15px;\r\n  }\r\n  .tabbable-line > .nav-tabs > li > a {\r\n    border: 0;\r\n    margin-right: 0;\r\n    color: #737373;\r\n    text-transform: capitalize;\r\n  }\r\n  .tabbable-line > .nav-tabs > li > a > i {\r\n    color: #a6a6a6;\r\n  }\r\n/*   .tabbable-line > .nav-tabs > li.open, .tabbable-line > .nav-tabs > li:hover {\r\n    border-bottom: 2px solid #1ec26b;\r\n  } */\r\n  .tabbable-line > .nav-tabs > li.open > a, .tabbable-line > .nav-tabs > li:hover > a {\r\n    border: 0;\r\n    background: none !important;\r\n    color: #333333;\r\n  }\r\n  .tabbable-line > .nav-tabs > li.open > a > i, .tabbable-line > .nav-tabs > li:hover > a > i {\r\n    color: #a6a6a6;\r\n  }\r\n  .tabbable-line > .nav-tabs > li.open .dropdown-menu, .tabbable-line > .nav-tabs > li:hover .dropdown-menu {\r\n    margin-top: 0px;\r\n  }\r\n  .tabbable-line > .nav-tabs > li.active {\r\n    border-bottom: 2px solid #1ec26b;\r\n    position: relative;\r\n    padding-bottom: 0;\r\n  }\r\n  .tabbable-line > .nav-tabs > li.active > a {\r\n    border: 0;\r\n    background: transparent;\r\n    color: #333333;\r\n  }\r\n  .tabbable-line > .nav-tabs > li.active > a > i {\r\n    color: #404040;\r\n  }\r\n  .tabbable-line > .tab-content {\r\n    margin-top: -3px;\r\n    background-color: #faf9f5;\r\n    border: 0;\r\n    padding: 5px 0;\r\n  }\r\n  .nav>li>a {\r\n    position: relative;\r\n    display: block;\r\n    padding: 0 !important;\r\n}\r\n\r\n  .tab-content>.active{\r\n    background-color: #faf9f5;\r\n  }\r\n  .portlet .tabbable-line > .tab-content {\r\n    padding-bottom: 0;\r\n  }\r\n  \r\n  /* Below tabs mode */\r\n  \r\n  .tabbable-line.tabs-below > .nav-tabs > li {\r\n    border-top: 4px solid transparent;\r\n  }\r\n  .tabbable-line.tabs-below > .nav-tabs > li > a {\r\n    margin-top: 0;\r\n  }\r\n  .tabbable-line.tabs-below > .nav-tabs > li:hover {\r\n    border-bottom: 0;\r\n    border-top: 2px solid #1ec26b;\r\n  }\r\n  .tabbable-line.tabs-below > .nav-tabs > li.active {\r\n    margin-bottom: -2px;\r\n    border-bottom: 0;\r\n    border-top: 2px solid #1ec26b;\r\n  }\r\n  .tabbable-line.tabs-below > .tab-content {\r\n    margin-top: -10px;\r\n    border-top: 0;\r\n    border-bottom: 1px solid #eee;\r\n    padding-bottom: 15px;\r\n  }\r\n  .nav-tabs>li>a{\r\n      border-radius: 0 !important;\r\n  }\r\n\r\n  .addressesPane{\r\n    padding: 20px;\r\n    margin-bottom: 15px;\r\n    background: white;\r\n    border-radius: 4px;\r\n    border: 1px solid #ccc;\r\n  }\r\n  .addressesPane .row{\r\n      margin:0 !important;\r\n  }\r\n/* Tabs */\r\n\r\n\r\n/* My Button */\r\n\r\n.ajax-button{\r\n    position:relative;\r\n    display:inline-block;\r\n    height:40px;\r\n    left:50px;\r\n    top:50%;\r\n    margin-left:-50px;\r\n    text-align:center;\r\n  }\r\n  .submit{\r\n    -webkit-appearance: none;\r\n    -moz-appearance: none;\r\n    appearance: none;\r\n    height:40px;\r\n    background-color:transparent;\r\n    border:none;\r\n    border-radius:0;\r\n    color:#FFFFFF;\r\n    font-size:17px;\r\n    cursor:pointer !important;\r\n    outline:none;\r\n  }\r\n  \r\n \r\n  .loading{\r\n    font-size:0;\r\n    width:30px;\r\n    height:30px;\r\n    margin-top:5px;\r\n    border-radius:15px;\r\n    padding:0;\r\n    border:3px solid #FFFFFF;\r\n    border-bottom:3px solid rgba(255,255,255,0.0);\r\n    border-left:3px solid rgba(255,255,255,0.0);\r\n    background-color:transparent !important;\r\n    animation-name: rotateAnimation;\r\n    -webkit-animation-name: wk-rotateAnimation;\r\n    animation-duration: 1s;\r\n    -webkit-animation-duration: 1s;\r\n    animation-delay: 0.2s;\r\n    -webkit-animation-delay: 0.2s;\r\n    animation-iteration-count: infinite;\r\n    -webkit-animation-iteration-count: infinite;\r\n  }\r\n  \r\n  @keyframes rotateAnimation {\r\n      0%   {transform: rotate(0deg);}\r\n      100% {transform: rotate(360deg);}\r\n  }\r\n  @-webkit-keyframes wk-rotateAnimation {\r\n      0%   {-webkit-transform: rotate(0deg);}\r\n      100% {-webkit-transform: rotate(360deg);}\r\n  }\r\n  \r\n  .fa{\r\n    color:#ffffff;\r\n    font-size:18px !important;\r\n    position:absolute;\r\n    left:50%;\r\n    top:50%;\r\n    margin-left:-9px;\r\n    margin-top:-9px;\r\n    -webkit-transform:scaleX(0) !important;\r\n    transform:scaleX(0) !important;\r\n  }\r\n  \r\n  .finish{\r\n    -webkit-transform:scaleX(1) !important;\r\n    transform:scaleX(1) !important;\r\n  }\r\n  .hide-loading{\r\n    opacity:0;\r\n    -webkit-transform: rotate(0deg) !important;\r\n    transform: rotate(0deg) !important;\r\n    -webkit-transform:scale(0) !important;\r\n    transform:scale(0) !important;\r\n  }\r\n@media only screen and (max-width: 1200px) and (min-width: 992px){\r\n    .products-list li{\r\n        width: 32%;\r\n        margin-right:7px;\r\n    }\r\n    .one-row .subtotal{\r\n        width:29%;\r\n    }\r\n}\r\n\r\n@media only screen and (max-width: 992px) and (min-width: 768px){\r\n    .stepwizard-row:before{\r\n        left: 50px;\r\n    }\r\n    .left-chemist{\r\n        width:35%\r\n    }\r\n    .right-search{\r\n        width:65%;\r\n    }\r\n\r\n    #step-1 .chemist-ratings{\r\n        margin-left: -4px;\r\n        margin-bottom: 15px;\r\n    }\r\n\r\n    .products-list   li{\r\n        width:43%;\r\n    }\r\n    .one-row .subtotal{\r\n        width:29%;\r\n    }\r\n}\r\n\r\n@media only screen and (max-width: 768px) and (min-width:460px) {\r\n    .left-pane,.right-pane{\r\n        width:100%;\r\n    }\r\n    .products-list   li{\r\n        width:28%;\r\n    }\r\n    .product-image{\r\n        height:155px;\r\n    }\r\n}\r\n@media only screen and (max-width: 768px) {\r\n    .col-left,.col-right{\r\n        width:100%;\r\n    }\r\n    .one-row .subtotal{\r\n        width:40%;\r\n    }\r\n\r\n    .stepwizard-row:before{\r\n        left: 72px;\r\n        width:70%;\r\n    }\r\n\r\n    .stepwizard{\r\n        width:100%;\r\n    }\r\n\r\n\r\n    .col-right{\r\n        margin-left:0;\r\n        margin-top:20px;\r\n    }\r\n    \r\n    \r\n}\r\n\r\n@media only screen and (max-width: 640px){\r\n    .left-pane,.right-pane{\r\n        width:100%;\r\n        margin-left:0;\r\n        margin-top:15px;\r\n    }\r\n\r\n    .voucher-form{\r\n        width:100%;\r\n    }\r\n    .left-chemist{\r\n        width: 100%;\r\n        text-align: center;\r\n        margin-bottom: 15px;\r\n    }\r\n    .right-search {\r\n        width: 100%;\r\n    }\r\n\r\n    .products-list li{\r\n        width: 100%;\r\n        margin-right: 0;\r\n    }\r\n\r\n    .product-image{\r\n        height:270px;\r\n    }\r\n    .product-detail h2{\r\n        text-align:center;\r\n    }\r\n\r\n    .modal-name,.modal-quantity{\r\n        width: 100%;\r\n        margin-bottom:15px;\r\n    }\r\n    .cart-button{\r\n        width:100%;\r\n    }\r\n\r\n    /deep/ .detailModalClass .modal-body{\r\n        padding:15px;\r\n    }\r\n    .right-name{\r\n        width:65%;\r\n    }\r\n    .stepwizard-row:before{\r\n        left:50px;\r\n    }\r\n    .lefty-side {\r\n        width: 70px;\r\n    }\r\n    .address-field{\r\n        width:100%;\r\n    }\r\n    .dosage{\r\n        margin-bottom:6px;\r\n    }\r\n}", ""]);
+exports.push([module.i, "body {\r\n    margin-top:40px;\r\n\r\n}\r\np{\r\n    margin-bottom:0;\r\n}\r\n\r\n\r\n.modal-content{\r\n    border-radius:0 !important;\r\n}\r\n\r\n.stepwizard-step p {\r\n    margin-top: 10px;\r\n    color:#b9b9b8;\r\n}\r\n.stepwizard-row {\r\n    display: table-row;\r\n}\r\n.stepwizard {\r\n    display: table;\r\n    width: 30%;\r\n    margin: 30px auto;\r\n    position: relative;\r\n}\r\n#accordion3 .panel-heading{\r\n    height:auto !important;\r\n}\r\n.stepwizard-step button[disabled] {\r\n    opacity: 1 !important;\r\n    filter: alpha(opacity=100) !important;\r\n}\r\n.stepwizard-row:before {\r\n    top: 14px;\r\n    bottom: 0;\r\n    left: 77px;\r\n    position: absolute;\r\n    content: \" \";\r\n    width: 54%;\r\n    height: 1px;\r\n    background-color: #ccc;\r\n    z-order: 0;\r\n\r\n}\r\n.stepwizard-step {\r\n    display: table-cell;\r\n    text-align: center;\r\n    position: relative;\r\n}\r\n.btn-circle {\r\n    width: 28px;\r\n    height: 28px;\r\n    text-align: center;\r\n    padding: 2px 0;\r\n    font-size: 16px;\r\n    line-height: 1.428571429;\r\n    border-radius: 15px;\r\n    opacity: 1;\r\n}\r\n\r\n.btn-primary{\r\n    background: #1ec26b;\r\n    border:none;\r\n}\r\n\r\n.col-left{\r\n    position: relative;\r\n    float:left;\r\n    width:58%;\r\n    box-shadow: 0px 3px 10px 0px #ecebe7;\r\n    background: #fdfcfa;\r\n}\r\n\r\n.col-left .row,.col-right .row{\r\n    margin-left:0;\r\n    margin-right:0;\r\n}\r\n.col-right{\r\n    position: relative;\r\n    float:left;\r\n    box-shadow: 0px 3px 10px 0px #ecebe7;\r\n    background: #fdfcfa;\r\n    width:38%;\r\n    margin-left:2%;\r\n}\r\n\r\n.holder-box{\r\n    padding:16px;\r\n}\r\n\r\n.left-image-side{\r\n    width:90px;\r\n    position: relative;\r\n    float:left;\r\n    margin-top: 5px;\r\n}\r\n\r\n.right-name{\r\n    position: relative;\r\n    float:left;\r\n}\r\n\r\n.opening-hours{\r\n    color:#656565;\r\n    font-weight:400;\r\n    font-size:14px;\r\n}\r\n.chemist-name{\r\n    color:#656565;\r\n    font-weight:500;\r\n    font-size:20px;\r\n}\r\n\r\n.rating > span:hover:before {\r\n    content: \"\\2605\";\r\n    position: absolute;\r\n    font-size: 16px;\r\n }\r\n\r\n .rating {\r\n    unicode-bidi: bidi-override;\r\n  }\r\n  .rating > span:hover:before,\r\n  .rating > span:hover ~ span:before {\r\n     content: \"\\2605\";\r\n     position: absolute;\r\n  }\r\n  .rating > span {\r\n    display: inline-block;\r\n    position: relative;\r\n    width: 1.1em;\r\n    font-size: 16px;\r\n  }\r\n  .rating > span:hover:before,\r\n  .rating > span:hover ~ span:before {\r\n     content: \"\\2605\";\r\n     position: absolute;\r\n     font-size: 16px;\r\n  }\r\n\r\n  .chemist-ratings{\r\n      margin-top:10px;\r\n  } \r\n\r\n  .saperator{\r\n      margin-top:20px;\r\n      margin-bottom:10px;\r\n      border-bottom: 1px solid #aeaeae;\r\n  }\r\n\r\n  .one-row .name span{\r\n      color:#b4b4b4;\r\n      font-size:13px;\r\n      font-weight: 500;\r\n  }\r\n\r\n  .one-row .name .med-name{\r\n    font-weight: 500;\r\n    font-size:15px;\r\n    color:#656565;\r\n\r\n  }\r\n\r\n  .one-row .del{\r\n\r\n\r\n    position: relative;\r\n    float: left;\r\n    cursor: pointer;\r\n    width: 25px;\r\n    border-radius: 50%;\r\n    margin-top: 15px;\r\n    width: 17px;\r\n    height: 19px;\r\n    margin-right: 10px;\r\n    box-shadow: none;\r\n    transition: box-shadow 0.3s ease-in-out;\r\n\r\n  }\r\n\r\n  .one-row .del:hover{\r\n    box-shadow: 0px 4px 2px #42424233;\r\n  }\r\n  .one-row .name{\r\n    position: relative;\r\n    float:left;\r\n    padding-top: 0.5px;\r\n    width:40%;\r\n    padding-top: 15px;\r\n  }\r\n  .one-row .quantity{\r\n    position: relative;\r\n    float:left;\r\n    margin-top:5px;\r\n  }\r\n\r\n  .one-row .subtotal{\r\n    position: relative;\r\n    float: left;\r\n    width: 41%;\r\n    text-align: right;\r\n    padding-top: 15px;\r\n  }\r\n  .one-row .subtotal p{\r\n      font-size:14px;\r\n      color:#656565;\r\n  }\r\n\r\n  .quantity input {\r\n      width: 80px;\r\n      height: 45px;\r\n      line-height: 1.65;\r\n      float: left;\r\n      display: block;\r\n      padding: 0;\r\n      margin: 0;\r\n      padding-left: 20px;\r\n      border: 1px solid #9b9b9b;\r\n      font-size: 16px;\r\n      font-weight: 400;\r\n      border-radius: 5px;   \r\n      margin-bottom: 4px; \r\n      background: none;\r\n      color:#656565;\r\n  }\r\n  \r\n  .quantity input:focus {\r\n      outline: 0;\r\n  }\r\n  \r\n  .quantity-nav {\r\n      float: left;\r\n      position: relative;\r\n      height: 44px;\r\n  }\r\n  \r\n  .quantity-button {\r\n      position: relative;\r\n      cursor: pointer;\r\n      border: 1px solid #9b9b9b !important;\r\n      width: 20px;\r\n      text-align: center;\r\n      color: #9b9b9b;\r\n      font-size: 13px;\r\n      font-family: \"Trebuchet MS\", Helvetica, sans-serif !important;\r\n      line-height: 1.7;\r\n      -webkit-transform: translateX(-100%);\r\n      transform: translateX(-100%);\r\n      -webkit-user-select: none;\r\n      -moz-user-select: none;\r\n      -ms-user-select: none;\r\n      -o-user-select: none;\r\n      user-select: none;\r\n      background: #edebe7;\r\n      width: 30px;\r\n      border: 0;\r\n      color: #fff;\r\n      font-size: 23px;\r\n      line-height: 23px;\r\n      border-radius:0 5px 0 0\r\n  \r\n  }\r\n  \r\n  .quantity-button.quantity-up {\r\n      position: absolute;\r\n      height: 53%;\r\n      top: 0;\r\n  }\r\n  \r\n  .quantity-button.quantity-down {\r\n      position: absolute;\r\n      bottom: -1px;\r\n      height: 50%;\r\n       border-radius:0 0 5px 0;\r\n  }\r\n  .footer-row p{\r\n      color:#656565;\r\n      font-size: 14px;\r\n  }\r\n  .footer-row{\r\n    padding:10px;\r\n    margin-top:20px;\r\n  }\r\n  .no-margin-top{\r\n      margin-top:0;\r\n  }\r\n\r\n  .subtotal-row{\r\n       background: #ededed;\r\n       padding:10px;\r\n       border-radius: 6px;\r\n       margin-top:20px;\r\n  }\r\n  .subtotal-heading{\r\n      width:56%;\r\n      position: relative;\r\n      float:left;\r\n      text-align: right;\r\n  }\r\n  .time-slots{\r\n      padding-left:0;\r\n      margin:0;\r\n      margin-top: 15px;\r\n  }\r\n\r\n  .time-slot{\r\n    background: transparent;\r\n    border: 1px solid #aeaeae;\r\n    padding: 5px;\r\n    width: 150px;\r\n\r\n  }\r\n  .selected{\r\n    background:#1ec26b;\r\n    color:white;\r\n    font-size:14px;\r\n  }\r\n  .time-slots li{\r\n    width: 50%;\r\n    display: inline-block;\r\n    list-style-type: none;\r\n    text-align: center;\r\n    margin: 0;\r\n    margin-bottom: 15px;\r\n  }\r\n  .subtotal-value{\r\n    width:44%;\r\n    position: relative;\r\n    float:left;\r\n    text-align: right;\r\n    font-size:15px;\r\n}\r\n\r\n.voucher-row h3{\r\n    color:#656565;\r\n    font-size:20px;\r\n    font-weight: 500;\r\n    margin-bottom:20px;\r\n}\r\n.voucher-form{\r\n    position: relative;\r\n    width: 70%;\r\n    height: 34px;\r\n}\r\n.inputBtn{\r\n    width:30%;\r\n    position: absolute;\r\n    left:65%;\r\n    top:0;\r\n    height: 34px;\r\n\r\n}\r\n.inputBtn button{\r\n    border-top-right-radius: 50px;\r\n    border-bottom-right-radius: 50px;\r\n    height: 34px;\r\n    width: 100%;\r\n    border: 1px solid #9b9b9b;\r\n    color:#3ad72a;\r\n    background: #ededed;\r\n    outline: none;\r\n    font-weight: bold;\r\n}\r\n.errors{\r\n    border:1px solid red;\r\n}\r\n.save-address{\r\n    font-size:16px;\r\n    font-weight: 500;\r\n    color:white;\r\n    background: #1ec26b;\r\n    text-transform: uppercase;\r\n    border-radius: 4px;\r\n    height: 40px;\r\n    width: 150px;\r\n    border:none;\r\n    margin-top: 5px;\r\n}\r\n.EnteredAddress li{\r\n   list-style-type:none;    margin: 15px 0;\r\n   width: 50%;\r\n   display: inline-block;\r\n}\r\n.EnteredAddress li button{\r\n    background: none;\r\n    border: 1px solid #ddd;\r\n    padding: 5px;\r\n}\r\n\r\n.activeAddress{\r\n    background:#1ec26b !important;\r\n    color:white;\r\n    font-size:14px;\r\n}\r\n.inputField input{\r\n    width:100%;\r\n    border-radius: 50px;\r\n    outline:none;\r\n    padding-left:15px;\r\n    border:1px solid #9b9b9b;\r\n    height: 34px;\r\n}\r\n.inputField{\r\n    width:70%;\r\n    position: relative;\r\n    float:left;\r\n    left:0;\r\n    border-top-right-radius: 50%;\r\n    border-bottom-right-radius: 50%;\r\n    height: 34px;\r\n}\r\n\r\n.font20{\r\n    font-size:20px;\r\n}\r\n\r\n.delivery-text{\r\n    font-size:14px; \r\n    color:#656565;\r\n    display: block;\r\n    padding-left: 28px;\r\n    color:#656565;\r\n}\r\n\r\n.col-right h3{\r\n    font-size:22px;\r\n    margin-top: 10px;\r\n    margin-bottom: 25px;\r\n\r\n\r\n}\r\n.italic-text{\r\n    font-style: italic;\r\n    font-size:12px;\r\n    word-spacing: 1px;\r\n    color:#656565;\r\n}\r\n.message-text img{\r\n    width:16px;\r\n}\r\n.message-text p{\r\n    font-size:14px;\r\n    word-spacing: 2px;\r\n    color:#1ec26b;\r\n    text-decoration: underline;\r\n    font-weight: 600;\r\n    cursor: pointer;\r\n}   \r\n\r\n.alignCenter{\r\n    text-align: center;\r\n}\r\n.checkout-btn{\r\n    background: #00b276;\r\n    color: white;\r\n    border-radius: 57px;\r\n    width: 100%;\r\n    border: none;\r\n    font-weight: 700;\r\n    height: 45px;\r\n    margin-top: 20px;\r\n    font-size:16px;\r\n    width:100%;\r\n}\r\n\r\n.inner-wrapper{\r\n    box-shadow: 0px 3px 10px 0px #ecebe7;\r\n    background: #fdfcfa;\r\n}\r\n.left-pane{\r\n    position: relative;\r\n    float: left;\r\n    width: 69%;\r\n    margin-right: 1.6%;\r\n    \r\n}\r\n\r\n.right-pane{\r\n    position: relative;\r\n    float:left;\r\n    margin-top: 20px;\r\n    width: 28%;\r\n    \r\n}\r\n\r\n.right-pane .one-row{\r\n    padding-left:20px;\r\n    padding-right:20px;\r\n}\r\n.right-pane .time-pane,.right-pane .cart{\r\n    box-shadow: 0px 3px 10px 0px #ecebe7;\r\n    background: #fdfcfa;\r\n}\r\n\r\n.left-pane h3,.right-pane h3{\r\n    font-size:20px;\r\n    color:#656565;\r\n    padding-top:22px;\r\n    margin-bottom:22px;\r\n    padding-left:20px;\r\n    \r\n}\r\n\r\n.lefty-side,.righty-side{\r\n    position: relative;\r\n    float:left;\r\n}\r\n.left-pane .body{\r\n    padding: 30px 20px;\r\n}\r\n.righty-side{\r\n    width:60%;\r\n}\r\n.lefty-side{\r\n    width: 140px;\r\n}\r\n.rightyVal{\r\n    margin-bottom:15px;\r\n    margin-top:0;\r\n    font-weight: 300;\r\n    font-size:15px;\r\n    color:#656565;\r\n}\r\n\r\n.green{\r\n    color:#1ec26b;\r\n    text-decoration: underline;\r\n}\r\n\r\n.leftyVa{\r\n    margin-bottom:15px;\r\n    margin-top:0;\r\n    font-weight: 700;\r\n    font-size:15px;\r\n    color:#656565;\r\n}\r\n\r\n.left-pane .header,.right-pane .header{\r\n    border-bottom:1px solid #aeaeae;\r\n\r\n}\r\n\r\n.left-pane .panel{\r\n    background:#fefefd;\r\n    border:1px solid #d5d5d4;\r\n}\r\n.oldAddress{\r\n    padding: 10px 15px;\r\n    border-bottom: 1px solid transparent;\r\n    background:#fefefd;\r\n    border-radius: 4px;\r\n    border:1px solid #d5d5d4;\r\n    margin-bottom:5px;\r\n}\r\n\r\n.Orderloader{\r\n    display:none;\r\n    text-align: center;\r\n    margin:50px;\r\n}\r\n.pay-now-details{\r\n    background:#f9f9f8;\r\n    padding:30px 0 30px 30px;\r\n}\r\n\r\n.pay-now-details .form-group .form-control{\r\n    height:32px;\r\n    width:50%;\r\n    outline:none;\r\n    padding-left:10px;\r\n    display: inline-block;\r\n    border-radius: 0 !important;\r\n    margin-right: 15px;\r\n    border:1px solid #aeaeae;\r\n}\r\n.required{\r\n    font-size:14px;\r\n    font-weight: 300;\r\n    font-style:italic;\r\n}\r\n\r\n.requiredRed{\r\n    margin-right:6px;\r\n    color:#ff3b3b;\r\n}\r\n.normalText{\r\n    font-size:17px;\r\n    margin-top:20px;\r\n    font-weight: 700;\r\n}\r\n\r\n.address-field{\r\n    height:32px;\r\n    border:1px solid #aeaeae;\r\n    background:#ffffff;\r\n    width: 50%;\r\n    margin-right:25px;\r\n    margin-top:10px;\r\n    padding-left:15px;\r\n}\r\n.location-box{\r\n    margin-top:25px;\r\n}\r\n.location-text{\r\n     font-size: 14px;\r\n     font-weight: 300;\r\n    margin-top:10px;\r\n    margin-bottom:30px;\r\n}\r\n\r\n#accordion2 .panel-body{\r\n    padding:30px;\r\n}\r\n\r\n.optional{\r\n    font-size:14px;\r\n    font-weight: 500;\r\n    color:#656565;\r\n}\r\n#accordion2 .message-text img{\r\n    margin-right: 5px;\r\n   \r\n}\r\n#accordion2 .message-text{\r\n    padding-left: 15px;\r\n    margin-bottom:25px;\r\n}\r\n.inner-wrapper .message-text p{\r\n    display: inline-block;\r\n}\r\n\r\n.pay-now-details h3{\r\n    font-size:25px;\r\n    font-weight: bold;\r\n    color:#656565;\r\n    margin-top:25px;\r\n    margin-bottom:25px;\r\n}\r\n\r\n.custom-dropdown:checked + label:before,\r\n.custom-dropdown:not(:checked) + label:before {\r\n    content: '';\r\n    position: absolute;\r\n    display:none;\r\n    left: 0;\r\n    top: 0;\r\n    width: 20px;\r\n    height: 20px;\r\n    border: 1px solid #b6b6b6;\r\n    border-radius: 100%;\r\n    background: #fff;\r\n    color:#aeaeae;\r\n}\r\n\r\n.custom-dropdown:checked + label:after,\r\n.custom-dropdown:not(:checked) + label:after {\r\n    display: none;\r\n    content: '';\r\n    width: 12px;\r\n    height: 12px;\r\n    background: #1ec26b;\r\n    position: absolute;\r\n    top: 4px;\r\n    left: 4px;\r\n    border-radius: 100%;\r\n    -webkit-transition: all 0.2s ease;\r\n    transition: all 0.2s ease;\r\n    color:#676767;\r\n}\r\n\r\n.bottom-text{\r\n    margin-top:75px;\r\n}\r\n\r\n.bottom-text1{\r\n    font-size:14px;\r\n    font-weight: 300;\r\n    color:#656565;\r\n    \r\n}\r\n\r\n.bottom-text2{\r\n    font-size:14px;\r\n    font-weight: 300;\r\n    color:#656565;\r\n    margin-top:40px;\r\n}\r\n\r\n.left-equal{\r\n    position: relative;\r\n    float:left;\r\n    width:50%;\r\n    text-align:left;\r\n    font-size:20px;\r\n    font-weight: 700;\r\n    margin-bottom:40px;\r\n}\r\n\r\n.right-equal{\r\n    position: relative;\r\n    float:left;\r\n    width:50%;\r\n    text-align:right;\r\n    font-size:20px;\r\n    font-weight: 700;\r\n    margin-bottom:40px;\r\n}\r\n\r\n.special{\r\n    min-height: 250px;\r\n    margin-top: 15px;\r\n    padding-top:35px;\r\n}\r\n.place-now{\r\n    width:100%;\r\n    border:none;\r\n    height:58px;\r\n    line-height: 58px;\r\n    border-radius: 4px;\r\n    background: #1ec26b;\r\n    color:white;\r\n    font-size:22px;\r\n    font-weight: 700;\r\n    margin-top:10px;\r\n\r\n}\r\n\r\n.right-estimate{\r\n    font-size:12px;\r\n    font-weight: 700;\r\n    color:#656565;\r\n    padding: 30px 10px;\r\n}\r\n.big{\r\n    font-size:38px;\r\n    font-weight: 500;\r\n    color:#656565;\r\n    padding: 2px 10px;\r\n    height: 42px;\r\n}\r\n.small{\r\n    font-size:12px;\r\n    font-weight: 500;\r\n}\r\n.time{\r\n    width: 65px;\r\n    text-align: center;\r\n    float: right;\r\n    margin-top: 15px;\r\n}\r\n\r\n.item{\r\n    position: relative;\r\n    float:left;\r\n    width:70%;\r\n}\r\n\r\n.price{\r\n    position: relative;\r\n    float:left;\r\n    width:30%;\r\n}\r\n\r\n.item-detail{\r\n    display: inline-block;\r\n    padding-right: 4px;\r\n\r\n}\r\n.one-row{\r\n    margin-top:10px;\r\n    margin-bottom:10px;\r\n}\r\n\r\n.price{\r\n    text-align: right;\r\n}\r\n\r\n.item .optional{\r\n    color:#aeaeae;\r\n    font-size:12px;\r\n}\r\n.footer .one-row{\r\n    margin-bottom:15px;\r\n}\r\n\r\n.footer .one-row .item{\r\n    width:50%;\r\n    position: relative;\r\n    float:left;\r\n    text-align: left;\r\n}\r\n.footer .one-row .price{\r\n    width:50%;\r\n    position: relative;\r\n    float:left;\r\n    text-align: right;\r\n}\r\n.more-margin{\r\n    margin-top:20px;\r\n}\r\n.cart .body{\r\n /*    border-top:1px solid #cecdcc;\r\n    border-bottom:1px solid #cecdcc; */\r\n}\r\n\r\n.bigText{\r\n    font-size:28px;\r\n    font-weight: 300;\r\n}\r\n\r\n.opening-hours{\r\n    color:#50cb84;\r\n    font-weight:500;\r\n    font-size:12px;\r\n    margin-top: -4px;\r\n    \r\n}\r\n\r\n.headging-with-rating{\r\n    display:inline-block;\r\n    text-transform: capitalize;\r\n    font-size:23px;\r\n    color:#656565;\r\n    font-weight: 500;\r\n    word-wrap: break-word;\r\n    width: 100px;\r\n}\r\n#step-1{\r\n    min-height: 450px;\r\n}\r\n#step-1 .chemist-ratings{\r\n    display:inline-block;\r\n    margin-left: 10px;\r\n}\r\n\r\n#step-1 .star{\r\n    height: 18px;\r\n}\r\n\r\n#step-1 .inner-wrapper{\r\n    padding: 30px 20px;\r\n}\r\n.right-search .voucher-form{\r\n    position: relative;\r\n    width: 100%;\r\n    height: 42px;\r\n    margin: 5px auto;\r\n}\r\n.right-search .inputBtn{\r\n    width:30%;\r\n    position: absolute;\r\n    left:70%;\r\n    top:0;\r\n    height: 42px;\r\n\r\n}\r\n.right-search .inputBtn button{\r\n    border-top-right-radius: 50px;\r\n    border-bottom-right-radius: 50px;\r\n    height: 42px;\r\n    width: 85%;\r\n    border: 1px solid #1ec26b;\r\n    color:#fff;\r\n    background: #1ec26b;\r\n    outline: none;\r\n    font-weight: 500;\r\n    font-size:18px;\r\n}\r\n.right-search .inputField input{\r\n    width:100%;\r\n    border-radius: 50px;\r\n    outline:none;\r\n    border:1px solid #1ec26b;\r\n    height: 42px;\r\n    padding-left: 40px;\r\n    color:#aeaeae;\r\n    font-size:18px;\r\n}\r\n.right-search .inputField{\r\n    width:80%;\r\n    position: relative;\r\n    float:left;\r\n    left:0;\r\n    border-top-right-radius: 50%;\r\n    border-bottom-right-radius: 50%;\r\n    height: 42px;\r\n}\r\n\r\n.left-chemist,.right-search{\r\n    position: relative;\r\n    float: left;\r\n    \r\n}\r\n\r\n.left-chemist{\r\n    width:45%;\r\n}\r\n\r\n.right-search{\r\n    width:55%;\r\n}\r\n\r\n.tabs{\r\n    padding: 8px !important;\r\n    padding-bottom: 0px !important;\r\n}\r\n.tabs div{\r\n    border:none;\r\n    border-radius:0;\r\n    padding-bottom:0;\r\n}\r\n.tabs .selected p{\r\n    font-weight: 700;\r\n    font-size:18px;\r\n    color:#656565;\r\n    padding-bottom:10px;\r\n    border-bottom:2px solid #1ec26b;\r\n}\r\n\r\n#step-1 .right-pane{\r\n    margin-top:0 !important;\r\n}\r\n.tabs div p{\r\n    font-weight: 300;\r\n    font-size:18px;\r\n    color:#656565;\r\n    padding-bottom:10px;\r\n}\r\n.tabs .selected{\r\n   \r\n    background:transparent;\r\n}\r\n.tab-contents{\r\n    border:none;\r\n}\r\n.product-image{\r\n    height: 216px;\r\n    border-bottom: 1px solid #bababa;\r\n}\r\n.product-image img{\r\n    max-width: 100%;\r\n    height: auto;\r\n    \r\n}\r\n.products-list{\r\n    padding-left:0;\r\n}\r\n\r\n.products-list li{\r\n    display: inline-block;\r\n    float: left;\r\n    list-style-type: none;\r\n    width: 29%;\r\n    margin-right: 30px;\r\n    margin-top:30px;\r\n    box-shadow: 0px 3px 10px 0px #c7c6c3;\r\n    transition: box-shadow 0.3s ease-in-out;\r\n    position: relative;\r\n}\r\n.products-list li:hover{\r\n    box-shadow: none;\r\n}\r\n.plus-sign{\r\n    cursor:pointer;\r\n    position: absolute;\r\n    bottom: -12px;\r\n    right: -12px;\r\n    text-align:center;\r\n    width:60px;\r\n    height:60px;\r\n    border-radius: 60px;\r\n    background:#1ec26b;\r\n    display:none;\r\n    box-shadow: 0px 3px 10px 0px #d9cdc8;\r\n}\r\n.plus-sign img{\r\n    padding-top: 13px;\r\n}\r\n.product-wrapper{\r\n    background:white;\r\n    border-radius:0;\r\n    padding:10px;\r\n    cursor:pointer;\r\n}\r\n\r\n.product-detail{\r\n    margin-top:10px;\r\n}\r\n.product-detail h2{\r\n    font-size:15px;\r\n    font-weight: 500;\r\n    color:#000000;\r\n    margin:0;\r\n    margin-bottom:15px;\r\n}\r\n.product-detail p{\r\n    font-size:14px;\r\n    font-weight: 300;\r\n    color:#000000;\r\n    margin:0;\r\n\r\n}\r\n\r\n/deep/ .orderPlaced .modal-content{\r\n    border-radius: 0 !important;\r\n}\r\n/deep/ .orderPlaced button.close{\r\n    position: absolute;\r\n    width: 38px;\r\n    height: 38px;\r\n    background: #1ec26b;\r\n    color: white;\r\n    border-radius: 38px;\r\n    opacity: 1;\r\n    z-index: 2;\r\n    right: 23px;\r\n    top: -21px;\r\n    box-shadow:0px 3px 10px 0px #d0d0d0;\r\n}\r\n/deep/ .detailModalClass .modal-content{\r\n    border-radius: 0 !important;\r\n}\r\n\r\n/deep/ .detailModalClass button.close{\r\n    position: absolute;\r\n    width: 38px;\r\n    height: 38px;\r\n    background: #1ec26b;\r\n    color: white;\r\n    border-radius: 38px;\r\n    opacity: 1;\r\n    z-index: 2;\r\n    right: 23px;\r\n    top: -21px;\r\n    box-shadow:0px 3px 10px 0px #d0d0d0;\r\n}\r\n.my-header{\r\n    margin-top: 60px;\r\n    text-align: center;\r\n    background-color: #1ec26b;\r\n    margin: 0;\r\n    padding: 30px 0;\r\n}\r\n\r\n.my-header-2{\r\n    margin:40px;\r\n    text-align: center;\r\n}\r\n\r\n.my-header-2 h1{\r\n    color: #1ec26b;\r\n}\r\n.circle{\r\n    width: 200px;\r\n    height: 200px;\r\n    border-radius: 300px;\r\n    background: white;\r\n    text-align: center;\r\n    margin: 0 auto;padding: 40px 0;\r\n    box-shadow: 0 8px 8px rgba(255,255,255,.24), 0 0 8px rgba(255,255,255,.12), 0 6px 18px rgba(255,255,255,.12);\r\n    transform: translate3d(0,-2px,0);\r\n}\r\n.closeThanks{\r\n    position: absolute;\r\n    border: none;\r\n    width: 50px;\r\n    background: #ddd;\r\n    height: 50px;\r\n    color: #1ec26b;\r\n    font-size: 26px;\r\n    right: 18px;\r\n    border-radius: 50px;\r\n    top: -28px;\r\n    box-shadow:none;\r\n    transition: box-shadow 0.3s ease-in-out;\r\n}\r\n.closeThanks:hover{\r\n    transform: scale(1.2); box-shadow: 0 5px 15px rgba(0,0,0,0.3);\r\n}\r\n.view-orders{\r\n    border:2px solid #ddd;\r\n    background:transparent;\r\n    color:#ddd;\r\n    font-size:16px;\r\n    padding:10px 20px;\r\n    margin-top:30px;\r\n    cursor:pointer;\r\n}\r\n/deep/ .orderPlaced .modal-body{\r\n    padding:0 !important;\r\n}\r\n/deep/ .orderPlaced .modal-footer, /deep/ .orderPlaced .modal-header{\r\n    display:none;\r\n}\r\n/deep/ .detailModalClass .modal-footer{\r\n    display:none;\r\n}\r\n/deep/ .detailModalClass .modal-header,/deep/ .orderPlaced .modal-footer{\r\n    padding:0;\r\n}\r\n/deep/ .detailModalClass .modal-body{\r\n    padding:40px;\r\n}\r\n\r\n.cart-button{\r\n    margin-top: 32px;\r\n    color: white;\r\n    background: #1ec26b;\r\n    width: 300px;\r\n    border-radius: 6px;\r\n    height: 58px;\r\n    font-size: 22px;\r\n    font-weight: 500;\r\n    margin: 20px auto;\r\n    border: none;\r\n    margin-bottom: 0;\r\n}\r\n .modal-name,.modal-quantity{\r\n\r\n    position: relative;\r\n    float:left;\r\n    width:50%;\r\n}\r\n.alingCenter{\r\n    text-align: center;\r\n\r\n}\r\n.image-box img{\r\n    width:70px;\r\n    margin: 0 auto;\r\n}\r\n.image-box{\r\n    text-align: center;\r\n    width:80px;\r\n    margin: 0 auto;\r\n}\r\n.modal-quantity{\r\n    text-align: right;\r\n}\r\n\r\n.modal-name p{\r\n    font-size:20px;\r\n    font-weight: 500;\r\n    color:black;\r\n\r\n}\r\n\r\n.modal-quantity i{\r\n    color:#1ec26b;\r\n    font-size: 18px;\r\n    margin-left:10px;\r\n}\r\n\r\n.center-align{\r\n    text-align: center;\r\n}\r\n\r\n.textarea-div,.textarea-div2,.textarea-div3,.textarea-div4{\r\n    display:none;\r\n}\r\n\r\n#overlay2,#overlay3{\r\n    background: transparent;\r\n    position: absolute;\r\n    width: 100%;\r\n    height: 100%;\r\n    z-index: 2;\r\n\r\n}\r\n.textarea-div textarea,.textarea-div2 textarea,.textarea-div3 textarea, .textarea-div4 textarea{\r\n    background: #eeeeee;\r\n    border-radius: 0;\r\n    border:1px solid #9b9b9b;\r\n    margin-top:20px;\r\n    width:100%;\r\n    height:100px;\r\n    padding-left:15px;\r\n}\r\n\r\n.thisone3,.thisone4{\r\n    font-size: 12px;\r\n    margin-right: 5px;\r\n}\r\n.slideInDown{\r\n    display:block !important;\r\n}\r\n\r\n/* quantity */\r\n\r\n\r\n.modal-quantity #prod-quantity-cart{\r\n    position: relative;\r\n    height: 66px;\r\n    text-align: right;\r\n    width: 234px;\r\n    margin-left: 0;\r\n    float: right;\r\n}\r\n\r\n#prod-quantity-cart .qtyplus{\r\n  \r\n    text-align: left;\r\n    color:#1ec26b;\r\n    font-weight: bold;\r\n    font-size: 24px;\r\n    width: 35px;\r\n    position: absolute;\r\n    left: 212px;\r\n    cursor: pointer;\r\n    border:none;\r\n    background:transparent;\r\n    width: 35px;\r\n    outline:none;\r\n}\r\n\r\n#prod-quantity-cart #num_val{\r\n    width: 110px;\r\n    position: absolute;\r\n    left:100px;\r\n    text-align: center;\r\n    font-size:25px;\r\n    font-weight: 500;\r\n    color:#656565;\r\n    border:none;\r\n}\r\n\r\n#prod-quantity-cart .qtyminus{\r\n    position: absolute;\r\n    left:62px;\r\n    width: 35px;\r\n    border:none;\r\n    background:transparent;\r\n    cursor:pointer;\r\n    text-align: right;\r\n    color:#1ec26b;\r\n    font-weight: bold;\r\n    font-size: 24px;\r\n    outline:none;\r\n}\r\n\r\n.dosage{\r\n    width:130px;\r\n    padding: 10px;\r\n}\r\n.clear{\r\n    clear:both;\r\n    float:none;\r\n}\r\n/* qunatity */\r\n\r\n/* Tabs */\r\n\r\n/***\r\nBootstrap Line Tabs by @keenthemes\r\nA component of Metronic Theme - #1 Selling Bootstrap 3 Admin Theme in Themeforest: http://j.mp/metronictheme\r\nLicensed under MIT\r\n***/\r\n\r\n/* Tabs panel */\r\n.tabbable-panel {\r\n    border:none;\r\n  }\r\n\r\n  .nav-tabs{\r\n      background:#fdfcfa;\r\n      height: 56px;\r\n      border-top:1px solid #a0a0a0 !important;\r\n  }\r\n  \r\n  /* Default mode */\r\n  .tabbable-line > .nav-tabs {\r\n    border: none;\r\n    margin: 0px;\r\n  }\r\n\r\n  .tabbable-line > .nav-tabs > li:after{\r\n    display:block;\r\n    content: '';\r\n    padding-bottom: 15px;\r\n    border-bottom: solid 2px #1ec26b;  \r\n    transform: scaleX(0);  \r\n    transition: transform 250ms ease-in-out;\r\n  }\r\n  \r\n  .tabbable-line > .nav-tabs > li:hover:after { transform: scaleX(1); }\r\n\r\n  .tabbable-line > .nav-tabs > li {\r\n    margin-right: 2px;\r\n    margin:0;\r\n    padding: 15px 0px;\r\n    margin: 0px 15px;\r\n  }\r\n  .tabbable-line > .nav-tabs > li > a {\r\n    border: 0;\r\n    margin-right: 0;\r\n    color: #737373;\r\n    text-transform: capitalize;\r\n  }\r\n  .tabbable-line > .nav-tabs > li > a > i {\r\n    color: #a6a6a6;\r\n  }\r\n/*   .tabbable-line > .nav-tabs > li.open, .tabbable-line > .nav-tabs > li:hover {\r\n    border-bottom: 2px solid #1ec26b;\r\n  } */\r\n  .tabbable-line > .nav-tabs > li.open > a, .tabbable-line > .nav-tabs > li:hover > a {\r\n    border: 0;\r\n    background: none !important;\r\n    color: #333333;\r\n  }\r\n  .tabbable-line > .nav-tabs > li.open > a > i, .tabbable-line > .nav-tabs > li:hover > a > i {\r\n    color: #a6a6a6;\r\n  }\r\n  .tabbable-line > .nav-tabs > li.open .dropdown-menu, .tabbable-line > .nav-tabs > li:hover .dropdown-menu {\r\n    margin-top: 0px;\r\n  }\r\n  .tabbable-line > .nav-tabs > li.active {\r\n    border-bottom: 2px solid #1ec26b;\r\n    position: relative;\r\n    padding-bottom: 0;\r\n  }\r\n  .tabbable-line > .nav-tabs > li.active > a {\r\n    border: 0;\r\n    background: transparent;\r\n    color: #333333;\r\n  }\r\n  .tabbable-line > .nav-tabs > li.active > a > i {\r\n    color: #404040;\r\n  }\r\n  .tabbable-line > .tab-content {\r\n    margin-top: -3px;\r\n    background-color: #faf9f5;\r\n    border: 0;\r\n    padding: 5px 0;\r\n  }\r\n  .nav>li>a {\r\n    position: relative;\r\n    display: block;\r\n    padding: 0 !important;\r\n}\r\n\r\n  .tab-content>.active{\r\n    background-color: #faf9f5;\r\n  }\r\n  .portlet .tabbable-line > .tab-content {\r\n    padding-bottom: 0;\r\n  }\r\n  \r\n  /* Below tabs mode */\r\n  \r\n  .tabbable-line.tabs-below > .nav-tabs > li {\r\n    border-top: 4px solid transparent;\r\n  }\r\n  .tabbable-line.tabs-below > .nav-tabs > li > a {\r\n    margin-top: 0;\r\n  }\r\n  .tabbable-line.tabs-below > .nav-tabs > li:hover {\r\n    border-bottom: 0;\r\n    border-top: 2px solid #1ec26b;\r\n  }\r\n  .tabbable-line.tabs-below > .nav-tabs > li.active {\r\n    margin-bottom: -2px;\r\n    border-bottom: 0;\r\n    border-top: 2px solid #1ec26b;\r\n  }\r\n  .tabbable-line.tabs-below > .tab-content {\r\n    margin-top: -10px;\r\n    border-top: 0;\r\n    border-bottom: 1px solid #eee;\r\n    padding-bottom: 15px;\r\n  }\r\n  .nav-tabs>li>a{\r\n      border-radius: 0 !important;\r\n  }\r\n\r\n  .addressesPane{\r\n    padding: 20px;\r\n    margin-bottom: 15px;\r\n    background: white;\r\n    border-radius: 4px;\r\n    border: 1px solid #ccc;\r\n  }\r\n  .addressesPane .row{\r\n      margin:0 !important;\r\n  }\r\n/* Tabs */\r\n\r\n\r\n/* My Button */\r\n\r\n.ajax-button{\r\n    position:relative;\r\n    display:inline-block;\r\n    height:40px;\r\n    left:50px;\r\n    top:50%;\r\n    margin-left:-50px;\r\n    text-align:center;\r\n  }\r\n  .submit{\r\n    -webkit-appearance: none;\r\n    -moz-appearance: none;\r\n    appearance: none;\r\n    height:40px;\r\n    background-color:transparent;\r\n    border:none;\r\n    border-radius:0;\r\n    color:#FFFFFF;\r\n    font-size:17px;\r\n    cursor:pointer !important;\r\n    outline:none;\r\n  }\r\n  \r\n \r\n  .loading{\r\n    font-size:0;\r\n    width:30px;\r\n    height:30px;\r\n    margin-top:5px;\r\n    border-radius:15px;\r\n    padding:0;\r\n    border:3px solid #FFFFFF;\r\n    border-bottom:3px solid rgba(255,255,255,0.0);\r\n    border-left:3px solid rgba(255,255,255,0.0);\r\n    background-color:transparent !important;\r\n    animation-name: rotateAnimation;\r\n    -webkit-animation-name: wk-rotateAnimation;\r\n    animation-duration: 1s;\r\n    -webkit-animation-duration: 1s;\r\n    animation-delay: 0.2s;\r\n    -webkit-animation-delay: 0.2s;\r\n    animation-iteration-count: infinite;\r\n    -webkit-animation-iteration-count: infinite;\r\n  }\r\n  \r\n  @keyframes rotateAnimation {\r\n      0%   {transform: rotate(0deg);}\r\n      100% {transform: rotate(360deg);}\r\n  }\r\n  @-webkit-keyframes wk-rotateAnimation {\r\n      0%   {-webkit-transform: rotate(0deg);}\r\n      100% {-webkit-transform: rotate(360deg);}\r\n  }\r\n  \r\n  .fa{\r\n    color:#ffffff;\r\n    font-size:18px !important;\r\n    position:absolute;\r\n    left:50%;\r\n    top:50%;\r\n    margin-left:-9px;\r\n    margin-top:-9px;\r\n    -webkit-transform:scaleX(0) !important;\r\n    transform:scaleX(0) !important;\r\n  }\r\n  \r\n  .finish{\r\n    -webkit-transform:scaleX(1) !important;\r\n    transform:scaleX(1) !important;\r\n  }\r\n  .hide-loading{\r\n    opacity:0;\r\n    -webkit-transform: rotate(0deg) !important;\r\n    transform: rotate(0deg) !important;\r\n    -webkit-transform:scale(0) !important;\r\n    transform:scale(0) !important;\r\n  }\r\n@media only screen and (max-width: 1200px) and (min-width: 992px){\r\n    .products-list li{\r\n        width: 32%;\r\n        margin-right:7px;\r\n    }\r\n    .one-row .subtotal{\r\n        width:29%;\r\n    }\r\n}\r\n\r\n@media only screen and (max-width: 992px) and (min-width: 768px){\r\n    .stepwizard-row:before{\r\n        left: 50px;\r\n    }\r\n    .left-chemist{\r\n        width:35%\r\n    }\r\n    .right-search{\r\n        width:65%;\r\n    }\r\n\r\n    #step-1 .chemist-ratings{\r\n        margin-left: -4px;\r\n        margin-bottom: 15px;\r\n    }\r\n\r\n    .products-list   li{\r\n        width:43%;\r\n    }\r\n    .one-row .subtotal{\r\n        width:29%;\r\n    }\r\n}\r\n\r\n@media only screen and (max-width: 768px) and (min-width:460px) {\r\n    .left-pane,.right-pane{\r\n        width:100%;\r\n    }\r\n    .products-list   li{\r\n        width:28%;\r\n    }\r\n    .product-image{\r\n        height:155px;\r\n    }\r\n}\r\n@media only screen and (max-width: 768px) {\r\n    .col-left,.col-right{\r\n        width:100%;\r\n    }\r\n    .one-row .subtotal{\r\n        width:40%;\r\n    }\r\n\r\n    .stepwizard-row:before{\r\n        left: 72px;\r\n        width:70%;\r\n    }\r\n\r\n    .stepwizard{\r\n        width:100%;\r\n    }\r\n\r\n\r\n    .col-right{\r\n        margin-left:0;\r\n        margin-top:20px;\r\n    }\r\n    \r\n    \r\n}\r\n\r\n@media only screen and (max-width: 640px){\r\n    .left-pane,.right-pane{\r\n        width:100%;\r\n        margin-left:0;\r\n        margin-top:15px;\r\n    }\r\n\r\n    .voucher-form{\r\n        width:100%;\r\n    }\r\n    .left-chemist{\r\n        width: 100%;\r\n        text-align: center;\r\n        margin-bottom: 15px;\r\n    }\r\n    .right-search {\r\n        width: 100%;\r\n    }\r\n\r\n    .products-list li{\r\n        width: 100%;\r\n        margin-right: 0;\r\n    }\r\n\r\n    .product-image{\r\n        height:270px;\r\n    }\r\n    .product-detail h2{\r\n        text-align:center;\r\n    }\r\n\r\n    .modal-name,.modal-quantity{\r\n        width: 100%;\r\n        margin-bottom:15px;\r\n    }\r\n    .cart-button{\r\n        width:100%;\r\n    }\r\n\r\n    /deep/ .detailModalClass .modal-body{\r\n        padding:15px;\r\n    }\r\n    .right-name{\r\n        width:65%;\r\n    }\r\n    .stepwizard-row:before{\r\n        left:50px;\r\n    }\r\n    .lefty-side {\r\n        width: 70px;\r\n    }\r\n    .address-field{\r\n        width:100%;\r\n    }\r\n    .dosage{\r\n        margin-bottom:6px;\r\n    }\r\n}", ""]);
 
 // exports
 
@@ -97826,7 +97911,7 @@ exports.push([module.i, ".styled-checkbox {\n  position: absolute;\n  opacity: 0
 /* 272 */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"snackbar\"></div>\r\n\r\n<modal #orderPlaced modalClass=\"modal-lg modal-sm any-other-css-class orderPlaced\" [hideCloseButton]=\"true\" [closeOnEscape]=\"true\"\r\n    [closeOnOutsideClick]=\"true\" (onClose)=\"navigateToOriginal()\">\r\n\r\n    \r\n\r\n    <modal-content>\r\n            <button class=\"closeThanks\" (click)=\"orderPlaced.close()\" data-dismiss=\"modal\" type=\"button\" aria-label=\"Close\"><span aria-hidden=\"true\">×</span></button>\r\n   \r\n        <div class=\"my-header\">\r\n            <div class=\"circle\">\r\n                <img class=\"amiated jackInTheBox\" src=\"/assets/img/like.png\"     width=\"100px\">\r\n            </div>\r\n        </div>\r\n        <div class=\"my-header-2\">\r\n            <h1>Thank you! Your order was placed successfully!</h1>\r\n            <button class=\"view-orders\" (click)=\"navigatoToOrders()\">View Orders</button>\r\n        </div>\r\n    </modal-content>\r\n\r\n\r\n</modal>\r\n\r\n<modal #detailModal [closeOnEscape]=\"false\" [closeOnOutsideClick]=\"false\" modalClass=\"modal-lg modal-md detailModalClass\"\r\n    (onSubmit)=\"actionOnSubmit()\" (onClose)=\"actionOnClose()\">\r\n\r\n    <modal-content *ngIf=\"ifDataPopulated\">\r\n\r\n        <div class=\"full-row clearfix\">\r\n\r\n\r\n            <div class=\"modal-name\">\r\n\r\n                <p>{{singleMedicine.Name}}</p>\r\n                <p style=\"    margin-bottom: 20px;\">Rs. {{singleMedicine.TotalPrice}}</p>\r\n                <!-- <span>Reckitt Beckiser Ltd.</span> -->\r\n                <span>{{singleMedicine.ChemistCategoryName}}</span>\r\n\r\n            </div>\r\n\r\n            <div class=\"modal-quantity\">\r\n\r\n\r\n                <div class=\"\" id=\"prod-quantity-cart\">\r\n\r\n                    <button class=\"qtyminus\" field='quantity' (click)=\"Downing()\">-</button>\r\n\r\n                    <input type=\"number\" id=\"num_val\" min=\"1\" max=\"100\" class='qty' step=\"1\" value=\"1\" readonly>\r\n\r\n                    <button class=\"qtyplus \" field='quantity' (click)=\"Upping()\">+</button>\r\n\r\n                </div>\r\n\r\n                <div class='clear'></div>\r\n                <div class=\"selects\">\r\n                    <select class=\"dosage\" id=\"dosageName\" (change)=\"getDosageName($event.target.value)\">\r\n                        <option selected disabled>Select Dosage</option>\r\n                        <option *ngFor=\"let dosageArray of singleMedicine.WebDosageAndValuesDTOList\" value=\"{{dosageArray.DosageName}}\">{{dosageArray.DosageName}}</option>\r\n                    </select>\r\n\r\n                    <select class=\"dosage\" id=\"dosageValue\" (change)=\"getDosageValue($event.target.value)\">\r\n                        <option selected disabled>Select Value</option>\r\n                        <option *ngFor=\"let dosageArray of dosageValue\" value=\"{{dosageArray}}\">{{dosageArray}}</option>\r\n                    </select>\r\n\r\n                    <select class=\"dosage\" id=\"Measurements\" (change)=\"getMeasurement($event.target.value)\">\r\n                        <option selected disabled>Select Measurement</option>\r\n                        <option *ngFor=\"let measurement of measurementValue\" value=\"{{measurement}}\">{{measurement}}</option>\r\n                    </select>\r\n                </div>\r\n\r\n            </div>\r\n\r\n        </div>\r\n\r\n        <hr class=\"saperator\">\r\n\r\n\r\n        <div class=\"full-row clearfix\" (click)=\"showTextArea()\">\r\n\r\n\r\n            <div class=\"modal-name\">\r\n\r\n                <p>SPECIAL INSTRUCTIONS</p>\r\n\r\n            </div>\r\n\r\n            <div class=\"modal-quantity\">\r\n\r\n\r\n                <span class=\"optional\">(Optional)</span>\r\n                <i class=\"thisone fa fa-chevron-up\"></i>\r\n\r\n            </div>\r\n\r\n        </div>\r\n\r\n\r\n\r\n        <div class=\"textarea-div animated\">\r\n            <textarea placeholder=\"Write any instructions here ...\"></textarea>\r\n        </div>\r\n\r\n\r\n        <div class=\"full-row clearfix center-align\">\r\n            <button class=\"cart-button\" (click)=\"addToCart()\">Add to Cart</button>\r\n        </div>\r\n\r\n    </modal-content>\r\n\r\n</modal>\r\n\r\n<div class=\"container\" style=\"margin-top:20px;margin-bottom:20px;\">\r\n\r\n    <div class=\"stepwizard\">\r\n        <div class=\"stepwizard-row setup-panel\">\r\n            <div class=\"stepwizard-step\">\r\n                <div id=\"overlay\"></div>\r\n                <a href=\"#step-1\" type=\"button\" id=\"step1\" class=\"btn btn-primary btn-circle\">1</a>\r\n                <p>Your Details</p>\r\n            </div>\r\n            <div class=\"stepwizard-step\">\r\n                <div id=\"overlay2\"></div>\r\n                <a #step2 href=\"#step-2\" type=\"button\" id=\"step2\" class=\"btn btn-default btn-circle\" disabled=\"disabled\">2</a>\r\n                <p>Review Order</p>\r\n            </div>\r\n            <div class=\"stepwizard-step\">\r\n                <div id=\"overlay3\"></div>\r\n                <a #step3 href=\"#step-3\" type=\"button\" id=\"step3\" class=\"btn btn-default btn-circle\" disabled=\"disabled\">3</a>\r\n                <p>Place Order</p>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n\r\n    <div class=\"row setup-content\" id=\"step-1\">\r\n\r\n        <div class=\"col-md-12\">\r\n\r\n\r\n            <div class=\"left-pane\">\r\n\r\n                <div class=\"inner-wrapper clearfix\">\r\n\r\n\r\n                    <div class=\"upper-holder clearfix\">\r\n                        <!-- Upper Holder -->\r\n\r\n                        <div class=\"left-chemist clearfix\">\r\n                            <p class=\"headging-with-rating\">{{ChemistViewing.UserName}}</p>\r\n                            <div class=\"chemist-ratings\">\r\n                                <star-rating-comp [starType]=\"'icon'\" [disabled]=\"true\" [rating]=\"ChemistViewing.Chemist.ChemistRating\"></star-rating-comp>\r\n\r\n                            </div>\r\n                            <p class=\"opening-hours\">{{ChemistViewing.DistanceFromUs}} KM</p>\r\n                        </div>\r\n                        <div class=\"right-search clearfix\">\r\n\r\n\r\n                            <div class='voucher-form clearfix'>\r\n                                <img src=\"/assets/img/search.png\" class=\"search-icon\">\r\n                                <div class=\"inputField\">\r\n                                    <input type=\"text\" (keyup)=\"searchThisMedicine(e)\" name=\"searchMedicineQuery\" [(ngModel)]=\"searchMedicineQuery\" placeholder=\"Search Medicines\"\r\n                                        name=\"searchChemistQuery\" (keyup)=\"searchThisMedicine(this)\" [(ngModel)]=\"searchChemistQuery\">\r\n                                </div>\r\n                                <div class=\"inputBtn\">\r\n                                    <button>Search</button>\r\n                                </div>\r\n\r\n                            </div>\r\n                        </div>\r\n\r\n                    </div>\r\n                    <!-- Upper Holder -->\r\n                </div>\r\n\r\n\r\n                <div class=\"tabbable-panel\">\r\n                    <div class=\"tabbable-line\">\r\n                        <ul class=\"nav nav-tabs\">\r\n                            <li *ngFor=\"let categories of ChemistCategories;let i=index\" [ngClass]=\"{'active': i==0}\">\r\n                                <a (click)=\"showProductsForThisCateogry(categories.Id)\" href=\"#tab_1\" data-toggle=\"tab\">\r\n                                    {{categories.CategoryName}} </a>\r\n                            </li>\r\n                        </ul>\r\n                        <div class=\"tab-content\">\r\n                            <div class=\"tab-pane animated active\" id=\"tab_1\">\r\n\r\n\r\n                                <ul class=\"products-list\">\r\n\r\n                                    <li (mouseenter)=\"showPlus($event)\" (click)=\"getDetailsOfProduct(medicine)\" id=\"medicine{{medicine.Id}}\" (mouseleave)=\"hidePlus($event)\"\r\n                                        *ngFor=\"let medicine of SearchedMedicines;let i=index\" class=\"single-product animated zoomIn\">\r\n\r\n                                        <div class=\"product-wrapper\">\r\n\r\n                                            <div class=\"product-image\" id=\"image{{medicine.Id}}\">\r\n                                                <img src=\"{{medicine.PictureURL}}\">\r\n                                            </div>\r\n\r\n                                            <div class=\"product-detail\">\r\n                                                <h2>{{medicine.Name}}</h2>\r\n                                            </div>\r\n\r\n\r\n                                        </div>\r\n\r\n                                        <div class=\"plus-sign animated\">\r\n                                            <img src=\"/assets/img/add.png\">\r\n                                        </div>\r\n\r\n                                    </li>\r\n\r\n                                </ul>\r\n\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n            </div>\r\n\r\n\r\n            <div class=\"right-pane\">\r\n\r\n\r\n                <div class=\"time-pane\">\r\n\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6 col-sm-6 col-xs-6\" style=\"text-align:left\">\r\n                            <p class='right-estimate'>Estimated Delivery Time</p>\r\n                        </div>\r\n                        <div class=\"col-md-6 col-sm-6 col-xs-6\" style=\"text-align: right\">\r\n                            <div class=\"time\">\r\n                                <p class=\"big\">{{estimatedDeliveryTime}}</p>\r\n                                <p class=\"small\">mins</p>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n\r\n\r\n                </div>\r\n\r\n\r\n\r\n\r\n                <div class=\"cart animated\">\r\n\r\n                    <div class=\"header\">\r\n                        <h3>Your Order</h3>\r\n                    </div>\r\n                    <div class=\"body clearfix\">\r\n\r\n\r\n                        <div class=\"one-row clearfix\" *ngFor=\"let onerow of cart\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\">{{onerow?.Quantity}}x\r\n                                    <span style=\"color:#1ec26b;font-weight:bold;font-size:16px\">{{onerow?.Name}}</span>\r\n                                </P>\r\n                                <span class=\"optional\">{{onerow?.ChemistCategoryName}}</span>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail\">Rs. {{onerow?.Total}}</P>\r\n                            </div>\r\n                        </div>\r\n\r\n                    </div>\r\n                    <div class='footer clearfix'>\r\n\r\n                        <div class=\"one-row clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\">Subtotal</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail\">Rs. {{SubTotal}}</P>\r\n                            </div>\r\n                        </div>\r\n\r\n                        <div class=\"one-row clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\">Delivery Fee</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail\">Rs. 0</P>\r\n                            </div>\r\n                        </div>\r\n\r\n\r\n                        <div class=\"one-row more-margin clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\" style=\"padding-top:10px;\">Total</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail bigText\">Rs. {{FinalTotal}}</P>\r\n                            </div>\r\n                        </div>\r\n\r\n                        <div class=\"alignCenter row\" style=\"width: 80%;margin: 15px auto;\">\r\n\r\n                            <ng-container *ngIf=\"cartHasItems\">\r\n                                <button (click)=\"takeMeToReviewPage()\" id=\"proceedToReview\" class=\"checkout-btn nextBtn\">Proceed</button>\r\n                            </ng-container>\r\n\r\n                        </div>\r\n\r\n                    </div>\r\n                </div>\r\n\r\n            </div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n        </div>\r\n\r\n    </div>\r\n    <div class=\"row setup-content\" id=\"step-2\">\r\n        <div class=\"col-md-12 cleafix\">\r\n\r\n            <div class=\"col-left clearfix\">\r\n\r\n                <div class=\"holder-box clearfix\">\r\n                    <!-- wrapper -->\r\n\r\n                    <div class='header clearfix'>\r\n                        <div class=\"left-image-side clearfix\">\r\n                            <img src=\"assets/img/dw.png\" width=\"75px\">\r\n                        </div>\r\n                        <div class='right-name clearfix'>\r\n                            <p class=\"chemist-name\">{{ChemistViewing.UserName}}</p>\r\n                            <p class=\"opening-hours\">{{ChemistViewing.DistanceFromUs}} KM</p>\r\n\r\n                            <div class=\"chemist-ratings\">\r\n\r\n                                <star-rating-comp [starType]=\"'icon'\" [disabled]=\"true\" [rating]=\"ChemistViewing.Chemist.ChemistRating\"></star-rating-comp>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n\r\n                    <hr class=\"saperator\">\r\n\r\n\r\n                    <div class=\"table-details\">\r\n\r\n                        <div class=\"one-row clearfix\" *ngFor=\"let onerow of cart\">\r\n                            <div class=\"del\" (click)=\"deletethisRow(onerow)\">\r\n                                <img src=\"assets/img/del.png\">\r\n                            </div>\r\n                            <div class=\"name\">\r\n                                <span class=\"med-name\">{{onerow.Name}}</span>\r\n                                <span>({{onerow.ChemistCategoryName}}) {{onerow.DosageValue}}{{onerow.DosageName}} {{onerow.MeausurementName}}</span>\r\n                            </div>\r\n                            <div class=\"quantity\">\r\n                                <div class=\"quantity\" id=\"prod-quantity\">\r\n                                    <input type=\"number\" id=\"num_val_{{onerow.Id}}\" min=\"1\" max=\"10\" class='qty' step=\"1\" value=\"{{onerow.Quantity}}\" readonly>\r\n                                    <div class=\"quantity-nav\">\r\n                                        <div class=\"quantity-button quantity-up qtyplus \" field='quantity' (click)=\"UppingReview(onerow)\">+</div>\r\n                                        <div class=\"quantity-button quantity-down qtyminus\" field='quantity' (click)=\"DowningReview(onerow)\">-</div>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"subtotal\">\r\n                                <p>Rs. {{onerow.Total}}</p>\r\n                            </div>\r\n\r\n                        </div>\r\n\r\n                        <div class=\"row  subtotal-row clearfix\">\r\n                            <div class=\"subtotal-heading\">\r\n                                <p>Subtotal</p>\r\n                            </div>\r\n                            <div class=\"subtotal-value\">\r\n                                Rs. {{SubTotal}}\r\n                            </div>\r\n\r\n                        </div>\r\n\r\n\r\n                        <div class=\"row voucher-row clearfix\">\r\n                            <h3>Enter your voucher code here</h3>\r\n\r\n                            <div class='voucher-form clearfix'>\r\n                                <div class=\"inputField\">\r\n                                    <input type=\"text\">\r\n                                </div>\r\n                                <div class=\"inputBtn\">\r\n                                    <button>Submit</button>\r\n                                </div>\r\n                            </div>\r\n\r\n                        </div>\r\n\r\n                        <hr class=\"saperator\">\r\n\r\n\r\n                        <div class=\"row footer-row clearfix\">\r\n                            <div class=\"subtotal-heading\">\r\n                                <p>Delivery Fee</p>\r\n                            </div>\r\n                            <div class=\"subtotal-value\">\r\n                                0\r\n                            </div>\r\n\r\n                        </div>\r\n\r\n                        <div class=\"row  footer-row no-margin-top clearfix\">\r\n                            <div class=\"subtotal-heading\">\r\n                                <p>Total</p>\r\n                            </div>\r\n                            <div class=\"subtotal-value font20\">\r\n                                Rs. {{FinalTotal}}\r\n                            </div>\r\n\r\n                        </div>\r\n\r\n\r\n\r\n                    </div>\r\n\r\n                </div>\r\n                <!-- wrapper -->\r\n\r\n            </div>\r\n\r\n            <div class=\"col-right clearfix\">\r\n\r\n                <div class=\"holder-box clearfix\">\r\n\r\n                    <h3>Order Information</h3>\r\n\r\n\r\n\r\n                    <div class=\"check1\">\r\n                        <p>\r\n                            <input type=\"radio\" id=\"test2\" (change)=\"AsSoonAsPossibleSelected()\" name=\"radio-group\" checked>\r\n                            <label for=\"test2\" class='delivery-text'>As soon as possible</label>\r\n                            <span class='delivery-text'>Estimated Delivery Time : {{estimatedDeliveryTime}} min</span>\r\n                        </p>\r\n\r\n                        <p>\r\n                            <input type=\"radio\" id=\"test3\" (change)=\"showTimeSlots()\" name=\"radio-group\">\r\n                            <label for=\"test3\" class='delivery-text'>Later</label>\r\n                        </p>\r\n\r\n                        <ng-container>\r\n\r\n                            <ul class=\"time-slots\">\r\n                                <li *ngFor=\"let timeSlot of timeSlots\" class=\"\">\r\n                                    <button class=\"time-slot\" (click)=\"selectThisSlot($event,timeSlot.Id)\">{{timeSlot.StartingTime}} - {{timeSlot.EndingTime}}</button>\r\n                                </li>\r\n                            </ul>\r\n\r\n                        </ng-container>\r\n\r\n                    </div>\r\n\r\n                    <hr class=\"saperator\">\r\n\r\n                    <div class='italic-text row'>\r\n                        <p>(if you want to add any comment e.g. about delivery instructions, this is the right place)</p>\r\n                    </div>\r\n\r\n\r\n                    <div class='message-text row'>\r\n                        <p style=\"cursor:pointer;\" (click)=\"showMessageArea()\">\r\n                            <img src=\"assets/img/play-arrow.png\"> Add a message to your order\r\n\r\n                        </p>\r\n\r\n\r\n\r\n                        <div class=\"textarea-div2 animated\">\r\n                            <textarea placeholder=\"Write any instructions here ...\"></textarea>\r\n                        </div>\r\n\r\n\r\n\r\n                    </div>\r\n\r\n                    <div class=\"alignCenter row\">\r\n                        <ng-container *ngIf=\"cartHasItems\">\r\n                            <button (click)=\"takeMeToStep3()\" class=\"checkout-btn nextBtn\">Checkout</button>\r\n                        </ng-container>\r\n                    </div>\r\n\r\n                </div>\r\n\r\n\r\n            </div>\r\n\r\n\r\n        </div>\r\n    </div>\r\n    <div class=\"row setup-content\" id=\"step-3\">\r\n\r\n        <div class=\"col-md-12\">\r\n\r\n\r\n            <div class=\"left-pane\">\r\n                <div class=\"inner-wrapper\">\r\n                    <div class=\"header\">\r\n                        <h3>My Contact Details</h3>\r\n                    </div>\r\n                    <div class=\"body clearfix\">\r\n                        <div class=\"lefty-side clearfix\">\r\n                            <p class=\"leftyVa\">Full Name</p>\r\n                            <p class=\"leftyVa\">Email</p>\r\n                            <p class=\"leftyVa\">Mobile</p>\r\n                        </div>\r\n                        <div class=\"righty-side col-md-6 clearfix\">\r\n                            <p class=\"rightyVal\">{{ThisUser.UserName}}</p>\r\n                            <p class=\"rightyVal\">{{ThisUser.Email}}</p>\r\n                            <p class=\"rightyVal\"></p>\r\n                            <a class=\"rightyVal green\" (click)=\"logOut()\">Not {{ThisUser.UserName}}? Logout </a>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class=\"inner-wrapper\">\r\n                    <div class=\"header\">\r\n                        <h3>Your delivery address</h3>\r\n                    </div>\r\n                    <div class=\"body clearfix\">\r\n\r\n\r\n                        <p class=\"oldAddress\">\r\n\r\n                            <input type=\"radio\" id=\"newDeliveryCheck\" (change)=\"createNewAddress()\" name=\"radio-group\" value=\"NewAddress\">\r\n                            <label for=\"newDeliveryCheck\" class='delivery-text'>Create new delivery address</label>\r\n\r\n\r\n                        </p>\r\n                        <ng-container *ngIf=\"newAddressEnabled\">\r\n                            <div class=\"addressesPane\">\r\n                                <span class=\"requiredRed\">*</span>\r\n                                <span class=\"required\">Required Fields</span>\r\n\r\n                                <p>\r\n                                    <span class=\"requiredRed\">*</span>\r\n                                    <span class=\"normalText\">Address</span>\r\n                                </p>\r\n\r\n                                <div class=\"form-group\">\r\n\r\n                                    <input type=\"text\" class=\"address-field\" id=\"EnteredAddressCity\" name=\"EnteredAddress.City\" [(ngModel)]=\"EnteredAddress.City\">\r\n                                    <span class=\"required\">Enter your city for delivery address</span>\r\n                                </div>\r\n\r\n                                <div class=\"form-group\">\r\n\r\n                                    <input type=\"text\" class=\"address-field\" id=\"EnteredAddressArea\" name=\"EnteredAddress.Area\" [(ngModel)]=\"EnteredAddress.Area\">\r\n                                    <span class=\"required\">Enter your area delivery address</span>\r\n                                </div>\r\n\r\n\r\n                                <div class=\"form-group\">\r\n\r\n                                    <input type=\"text\" class=\"address-field\" id=\"EnteredAddressDetail\" name=\"EnteredAddress.AddressDetail\" [(ngModel)]=\"EnteredAddress.AddressDetail\">\r\n                                    <span class=\"required\">Enter your address delivery address</span>\r\n                                </div>\r\n\r\n                                <div class=\"loader\">\r\n                                    <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->\r\n                                    <svg width=\"50\" height=\"30\" viewBox=\"0 0 120 30\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"#1ec26b\">\r\n                                        <circle cx=\"15\" cy=\"15\" r=\"15\">\r\n                                            <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                            />\r\n                                            <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                            />\r\n                                        </circle>\r\n                                        <circle cx=\"60\" cy=\"15\" r=\"9\" fill-opacity=\"0.3\">\r\n                                            <animate attributeName=\"r\" from=\"9\" to=\"9\" begin=\"0s\" dur=\"0.8s\" values=\"9;15;9\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                            />\r\n                                            <animate attributeName=\"fill-opacity\" from=\"0.5\" to=\"0.5\" begin=\"0s\" dur=\"0.8s\" values=\".5;1;.5\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                            />\r\n                                        </circle>\r\n                                        <circle cx=\"105\" cy=\"15\" r=\"15\">\r\n                                            <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                            />\r\n                                            <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                            />\r\n                                        </circle>\r\n                                    </svg>\r\n\r\n                                </div>\r\n\r\n                                <div class=\"form-group\" id=\"saveAddressBtn\">\r\n                                    <button class=\"save-address\" (click)=\"saveThisAddress()\">Save Address</button>\r\n                                </div>\r\n\r\n                                <div class=\"location-box\">\r\n                                    <p>\r\n                                        <span class=\"normalText\">Your Location</span>\r\n                                    </p>\r\n                                    <ng-container *ngIf=\"addressSet\">\r\n\r\n                                \r\n                                    <p class=\"location-text\">{{NewAddressEnteredAndSelected.City}},{{NewAddressEnteredAndSelected.Area}},{{NewAddressEnteredAndSelected.AddressDetail}}</p>\r\n\r\n\r\n                                  </ng-container>\r\n                                </div>\r\n\r\n                                <div class='message-text row' (click)=\"showTextArea3()\">\r\n                                    <p>\r\n                                        <i class=\"thisone3 fa fa-chevron-right\"></i> Delivery Instructions</p>\r\n                                    <span class=\"optional\">(Optional)</span>\r\n\r\n\r\n                                    <div class=\"textarea-div3 animated\">\r\n                                        <textarea [(ngModel)]=\"EnteredAddress.DeliveryInstructions\" name=\"EnteredAddress.DeliveryInstructions\" placeholder=\"Write any instructions here ...\"></textarea>\r\n                                    </div>\r\n\r\n                                </div>\r\n\r\n                                <div class='message-text row' (click)=\"showTextArea4()\">\r\n                                    <p>\r\n                                        <i class=\"thisone4 fa fa-chevron-right\"></i> Additional Information</p>\r\n                                    <span class=\"optional\">(Optional)</span>\r\n                                    <div class=\"textarea-div4 animated\">\r\n                                        <textarea placeholder=\"Write any instructions here ...\"></textarea>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </ng-container>\r\n                        <p class=\"oldAddress\">\r\n\r\n                            <input type=\"radio\" id=\"oldDeliveryCheck\" (change)=\"oldAddress()\" name=\"radio-group\" value=\"oldAddress\">\r\n                            <label for=\"oldDeliveryCheck\" class='delivery-text'>Use saved delivery address</label>\r\n\r\n                        </p>\r\n\r\n                        <ng-container *ngIf=\"oldAddressEnabled\">\r\n                            <ul class=\"EnteredAddress\">\r\n                                <li class=\"listed-addresses\" *ngFor=\"let EnteredAddress of EnteredAddress\">\r\n                                    <button class=\"\" (click)=\"selectThisAddress($event,EnteredAddress.Id)\">{{EnteredAddress.City}},{{EnteredAddress.Area}},{{EnteredAddress.AddressDetail}}</button>\r\n                                </li>\r\n                            </ul>\r\n                        </ng-container>\r\n\r\n                    </div>\r\n                </div>\r\n\r\n\r\n\r\n\r\n                <div class=\"inner-wrapper\">\r\n                    <div class=\"header\">\r\n                        <h3>Choose how to pay</h3>\r\n                    </div>\r\n                    <div class=\"body clearfix\">\r\n\r\n\r\n                        <div class=\"panel-group\" id=\"accordion3\" role=\"tablist\" aria-multiselectable=\"true\">\r\n\r\n                            <div class=\"panel panel-custom\">\r\n                                <div class=\"panel-heading\" role=\"tab\" id=\"headingOne\">\r\n                                    <h4 class=\"panel-title\">\r\n                                        <a class=\"panel-head\" (click)=\"showPayingNowForm()\" data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapsePayNow\"\r\n                                            aria-expanded=\"true\" aria-controls=\"collapsePayNow\">\r\n\r\n                                            <input type=\"radio\" id=\"payingNow\" name=\"radio-group\" value=\"payingNow\">\r\n                                            <label for=\"payingNow\" class='delivery-text'>Pay Now</label>\r\n\r\n\r\n                                        </a>\r\n                                    </h4>\r\n                                </div>\r\n                                <div id=\"collapsePayNow\" class=\"panel-collapse collapse\" role=\"tabpanel\" aria-labelledby=\"headingOne\">\r\n                                    <div class=\"panel-body animated zoomIn\">\r\n\r\n                                        <div class=\"pay-now-details\">\r\n\r\n                                            <h3>Please provide your credit card details</h3>\r\n\r\n                                            <div class=\"form-group\">\r\n\r\n                                                <label for=\"cardName\">\r\n                                                    <span class=\"requiredRed\">*</span> Name on card</label>\r\n                                                <br/>\r\n                                                <input type=\"text\" class=\"form-control\" id=\"cardName\">\r\n                                                <span class=\"required\">As it appears on your credit card</span>\r\n\r\n                                            </div>\r\n\r\n                                            <div class=\"form-group\">\r\n\r\n                                                <label for=\"cardNumber\">\r\n                                                    <span class=\"requiredRed\">*</span> Card Number</label>\r\n                                                <br/>\r\n                                                <input type=\"text\" class=\"form-control\" id=\"cardNumber\">\r\n                                                <span class=\"required\">16 digits in front of your credit card. No spaces</span>\r\n\r\n                                            </div>\r\n\r\n\r\n                                            <div class=\"form-group\">\r\n                                                <label for=\"cardNumber\">\r\n                                                    <span class=\"requiredRed\">*</span> Expiration Date</label>\r\n                                                <br/>\r\n                                                <div class=\"col-md-6 col-sm-6\">\r\n                                                    <span class=\"dropdown-el\">\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"January\" checked=\"checked\" id=\"sort-relevance\">\r\n                                                        <label for=\"sort-relevance\">January</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"February\" id=\"sort-best\">\r\n                                                        <label for=\"sort-best\">February</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"March\" id=\"sort-low\">\r\n                                                        <label for=\"sort-low\">March</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"April\" id=\"sort-high\">\r\n                                                        <label for=\"sort-high\">April</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"May\" id=\"sort-brand\">\r\n                                                        <label for=\"sort-brand\">May</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"June\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">June</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"July\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">July</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"August\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">August</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"September\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">September</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"October\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">October</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"November\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">November</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"December\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">December</label>\r\n                                                    </span>\r\n                                                </div>\r\n\r\n                                                <div class=\"col-md-6 col-sm-6\">\r\n                                                    <span class=\"dropdown-el\">\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2016\" checked=\"checked\" id=\"sort-relevance\">\r\n                                                        <label for=\"sort-relevance\">2016</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2017\" id=\"sort-best\">\r\n                                                        <label for=\"sort-best\">2017</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2018\" id=\"sort-low\">\r\n                                                        <label for=\"sort-low\">2018</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2019\" id=\"sort-high\">\r\n                                                        <label for=\"sort-high\">2019</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2020\" id=\"sort-brand\">\r\n                                                        <label for=\"sort-brand\">2020</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2021\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">2021</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2022\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">2022</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2023\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">2023</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2024\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">2024</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2025\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">2025</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2026\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">2026</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2027\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">2027</label>\r\n                                                    </span>\r\n                                                </div>\r\n\r\n                                            </div>\r\n\r\n\r\n                                            <div class=\"form-group\" style=\"    margin-top: 47px;\">\r\n\r\n                                                <label for=\"cardNumber\">\r\n                                                    <span class=\"requiredRed\">*</span> Security Code</label>\r\n                                                <br/>\r\n                                                <input type=\"text\" class=\"form-control\" id=\"cardNumber\">\r\n                                                <span class=\"required\">CVV or CVV2. 3 Digits on the back. Amex 4, on the front</span>\r\n\r\n                                            </div>\r\n\r\n                                            <p>\r\n                                                <input class=\"styled-checkbox\" id=\"styled-checkbox-1\" type=\"checkbox\" value=\"value1\">\r\n                                                <label for=\"styled-checkbox-1\">Save my credit card details for future orders on the secure payment provider\r\n                                                    site.\r\n                                                </label>\r\n                                            </p>\r\n\r\n\r\n                                            <div class='bottom-text'>\r\n                                                <p class='bottom-text1'>After proceeding, you might be redirected to you card issuer page to verify\r\n                                                    this transaction</p>\r\n                                                <p class='bottom-text2'>Pay with master card or visa. You will be redirected to the second page of\r\n                                                    ouy patment partner. Transaction would be proceeded abroad.</p>\r\n                                            </div>\r\n\r\n                                        </div>\r\n\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n\r\n\r\n                            <div class=\"panel panel-custom\">\r\n                                <div class=\"panel-heading\" role=\"tab\" id=\"headingOne\">\r\n                                    <h4 class=\"panel-title\">\r\n                                        <a class=\"panel-head\" (click)=\"showOnDeliveryForm()\" data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapseCashonDelivery\"\r\n                                            aria-expanded=\"true\" aria-controls=\"collapseCashonDelivery\">\r\n\r\n                                            <input type=\"radio\" id=\"cashOnDelivery\" name=\"radio-group\" value=\"cashOnDelivery\">\r\n                                            <label for=\"cashOnDelivery\" class='delivery-text'>Cash on Delivery</label>\r\n\r\n\r\n                                        </a>\r\n                                    </h4>\r\n                                </div>\r\n\r\n                                <div id=\"collapseCashonDelivery\" class=\"panel-collapse collapse\" role=\"tabpanel\" aria-labelledby=\"headingTwo\">\r\n                                    <div class=\"panel-body animated zoomIn\">\r\n                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,\r\n                                        non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.\r\n                                        Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee\r\n                                        nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes\r\n                                        anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.\r\n                                        Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you\r\n                                        probably haven't heard of them accusamus labore sustainable VHS.\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n\r\n\r\n                        </div>\r\n\r\n\r\n\r\n                    </div>\r\n                </div>\r\n\r\n\r\n                <div class=\"inner-wrapper cleafix special\">\r\n\r\n                    <div class=\"col-md-6 cleafix\">\r\n\r\n                    </div>\r\n\r\n                    <div class=\"col-md-6 cleafix\">\r\n\r\n                        <div class=\"left-equal cleafix\">\r\n                            Total\r\n                        </div>\r\n                        <div class=\"right-equal cleafix\">\r\n                            Rs. 690\r\n                        </div>\r\n\r\n\r\n                        <p>By clicking this button, you agree with our\r\n                            <a>terms and conditions</a>\r\n                        </p>\r\n\r\n\r\n                        <div class=\"loader\">\r\n                            <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->\r\n                            <svg width=\"50\" height=\"30\" viewBox=\"0 0 120 30\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"#1ec26b\">\r\n                                <circle cx=\"15\" cy=\"15\" r=\"15\">\r\n                                    <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                    <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                </circle>\r\n                                <circle cx=\"60\" cy=\"15\" r=\"9\" fill-opacity=\"0.3\">\r\n                                    <animate attributeName=\"r\" from=\"9\" to=\"9\" begin=\"0s\" dur=\"0.8s\" values=\"9;15;9\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                    <animate attributeName=\"fill-opacity\" from=\"0.5\" to=\"0.5\" begin=\"0s\" dur=\"0.8s\" values=\".5;1;.5\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                </circle>\r\n                                <circle cx=\"105\" cy=\"15\" r=\"15\">\r\n                                    <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                    <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                </circle>\r\n                            </svg>\r\n\r\n                        </div>\r\n\r\n                        <button class=\"place-now\" (click)=\"placeOrder()\">Place order now</button>\r\n                    </div>\r\n\r\n                </div>\r\n\r\n\r\n\r\n\r\n            </div>\r\n\r\n\r\n            <div class=\"right-pane\">\r\n\r\n\r\n                <div class=\"time-pane\">\r\n\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6 col-sm-6 col-xs-6\" style=\"text-align:left\">\r\n                            <p class='right-estimate'>Estimated Delivery Time</p>\r\n                        </div>\r\n                        <div class=\"col-md-6 col-sm-6 col-xs-6\" style=\"text-align: right\">\r\n                            <div class=\"time\">\r\n                                <p class=\"big\">{{estimatedDeliveryTime}}</p>\r\n                                <p class=\"small\">mins</p>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n\r\n\r\n                </div>\r\n\r\n\r\n\r\n\r\n                <div class=\"cart\">\r\n\r\n                    <div class=\"header\">\r\n                        <h3>Your Order</h3>\r\n                    </div>\r\n                    <div class=\"body clearfix\">\r\n\r\n                        <div class=\"one-row clearfix\" *ngFor=\"let onerow of cart\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\">{{onerow?.Quantity}}x\r\n                                    <span style=\"color:#1ec26b;font-weight:bold;font-size:16px\">{{onerow?.Name}}</span>\r\n                                </P>\r\n                                <span class=\"optional\">{{onerow?.ChemistCategoryName}}</span>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail\">Rs. {{onerow?.Total}}</P>\r\n                            </div>\r\n                        </div>\r\n\r\n                    </div>\r\n                    <div class='footer clearfix'>\r\n\r\n                        <div class=\"one-row clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\">Subtotal</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail\">Rs. {{SubTotal}}</P>\r\n                            </div>\r\n                        </div>\r\n\r\n                        <div class=\"one-row clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\">Delivery Fee</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail\">Rs. 0</P>\r\n                            </div>\r\n                        </div>\r\n\r\n\r\n                        <div class=\"one-row more-margin clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\" style=\"padding-top:10px;\">Total</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail bigText\">Rs. {{FinalTotal}}</P>\r\n                            </div>\r\n                        </div>\r\n\r\n                    </div>\r\n                </div>\r\n\r\n            </div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n        </div>\r\n\r\n    </div>\r\n\r\n\r\n</div>"
+module.exports = "<div id=\"snackbar\"></div>\r\n\r\n<modal #orderPlaced modalClass=\"modal-lg modal-sm animated fadeInDownBig orderPlaced\" [hideCloseButton]=\"true\" [closeOnEscape]=\"true\"\r\n    [closeOnOutsideClick]=\"true\" (onClose)=\"navigateToOriginal()\">\r\n\r\n    \r\n\r\n    <modal-content>\r\n            <button class=\"closeThanks\" (click)=\"orderPlaced.close()\" data-dismiss=\"modal\" type=\"button\" aria-label=\"Close\"><span aria-hidden=\"true\">×</span></button>\r\n   \r\n        <div class=\"my-header\">\r\n            <div class=\"circle\">\r\n                <img class=\"amiated jackInTheBox\" src=\"/assets/img/like.png\"     width=\"100px\">\r\n            </div>\r\n        </div>\r\n        <div class=\"my-header-2\">\r\n            <h1>Thank you! Your order was placed successfully!</h1>\r\n            <button class=\"view-orders\" (click)=\"navigatoToOrders()\">View Orders</button>\r\n        </div>\r\n    </modal-content>\r\n\r\n\r\n</modal>\r\n\r\n<modal #detailModal [closeOnEscape]=\"false\" [closeOnOutsideClick]=\"false\" modalClass=\"modal-lg modal-md detailModalClass\"\r\n    (onSubmit)=\"actionOnSubmit()\" (onClose)=\"actionOnClose()\">\r\n\r\n    <modal-content *ngIf=\"ifDataPopulated\">\r\n\r\n        <div class=\"full-row clearfix\">\r\n\r\n\r\n            <div class=\"modal-name\">\r\n\r\n                <p>{{singleMedicine.Name}}</p>\r\n                <p style=\"    margin-bottom: 20px;\">Rs. {{singleMedicine.TotalPrice}}</p>\r\n                <!-- <span>Reckitt Beckiser Ltd.</span> -->\r\n                <span>{{singleMedicine.ChemistCategoryName}}</span>\r\n\r\n            </div>\r\n\r\n            <div class=\"modal-quantity\">\r\n\r\n\r\n                <div class=\"\" id=\"prod-quantity-cart\">\r\n\r\n                    <button class=\"qtyminus\" field='quantity' (click)=\"Downing()\">-</button>\r\n\r\n                    <input type=\"number\" id=\"num_val\" min=\"1\" max=\"100\" class='qty' step=\"1\" value=\"1\" readonly>\r\n\r\n                    <button class=\"qtyplus \" field='quantity' (click)=\"Upping()\">+</button>\r\n\r\n                </div>\r\n\r\n                <div class='clear'></div>\r\n                <div class=\"selects\">\r\n                    <select class=\"dosage\" id=\"dosageName\" (change)=\"getDosageName($event.target.value)\">\r\n                        <option selected disabled>Select Dosage</option>\r\n                        <option *ngFor=\"let dosageArray of singleMedicine.WebDosageAndValuesDTOList\" value=\"{{dosageArray.DosageName}}\">{{dosageArray.DosageName}}</option>\r\n                    </select>\r\n\r\n                    <select class=\"dosage\" id=\"dosageValue\" (change)=\"getDosageValue($event.target.value)\">\r\n                        <option selected disabled>Select Value</option>\r\n                        <option *ngFor=\"let dosageArray of dosageValue\" value=\"{{dosageArray}}\">{{dosageArray}}</option>\r\n                    </select>\r\n\r\n                    <select class=\"dosage\" id=\"Measurements\" (change)=\"getMeasurement($event.target.value)\">\r\n                        <option selected disabled>Select Measurement</option>\r\n                        <option *ngFor=\"let measurement of measurementValue\" value=\"{{measurement}}\">{{measurement}}</option>\r\n                    </select>\r\n                </div>\r\n\r\n            </div>\r\n\r\n        </div>\r\n\r\n        <hr class=\"saperator\">\r\n\r\n\r\n        <div class=\"full-row clearfix\" (click)=\"showTextArea()\">\r\n\r\n\r\n            <div class=\"modal-name\">\r\n\r\n                <p>SPECIAL INSTRUCTIONS</p>\r\n\r\n            </div>\r\n\r\n            <div class=\"modal-quantity\">\r\n\r\n\r\n                <span class=\"optional\">(Optional)</span>\r\n                <i class=\"thisone fa fa-chevron-up\"></i>\r\n\r\n            </div>\r\n\r\n        </div>\r\n\r\n\r\n\r\n        <div class=\"textarea-div animated\">\r\n            <textarea placeholder=\"Write any instructions here ...\"></textarea>\r\n        </div>\r\n\r\n\r\n        <div class=\"full-row clearfix center-align\">\r\n            <button class=\"cart-button\" (click)=\"addToCart()\">Add to Cart</button>\r\n        </div>\r\n\r\n    </modal-content>\r\n\r\n</modal>\r\n\r\n<div class=\"container\" style=\"margin-top:20px;margin-bottom:20px;\">\r\n\r\n    <div class=\"stepwizard\">\r\n        <div class=\"stepwizard-row setup-panel\">\r\n            <div class=\"stepwizard-step\">\r\n                <div id=\"overlay\"></div>\r\n                <a #step1 href=\"#step-1\" type=\"button\" id=\"step1\" class=\"btn btn-primary btn-circle\">1</a>\r\n                <p>Your Details</p>\r\n            </div>\r\n            <div class=\"stepwizard-step\">\r\n                <div id=\"overlay2\"></div>\r\n                <a #step2 href=\"#step-2\" type=\"button\" id=\"step2\" class=\"btn btn-default btn-circle\" disabled=\"disabled\">2</a>\r\n                <p>Review Order</p>\r\n            </div>\r\n            <div class=\"stepwizard-step\">\r\n                <div id=\"overlay3\"></div>\r\n                <a #step3 href=\"#step-3\" type=\"button\" id=\"step3\" class=\"btn btn-default btn-circle\" disabled=\"disabled\">3</a>\r\n                <p>Place Order</p>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n\r\n    <div class=\"row setup-content\" id=\"step-1\">\r\n\r\n        <div class=\"col-md-12\">\r\n\r\n\r\n            <div class=\"left-pane\">\r\n\r\n                <div class=\"inner-wrapper clearfix\">\r\n\r\n\r\n                    <div class=\"upper-holder clearfix\">\r\n                        <!-- Upper Holder -->\r\n\r\n                        <div class=\"left-chemist clearfix\">\r\n                            <p class=\"headging-with-rating\">{{ChemistViewing.UserName}}</p>\r\n                            <div class=\"chemist-ratings\">\r\n                                <star-rating-comp [starType]=\"'icon'\" [disabled]=\"true\" [rating]=\"ChemistViewing.Chemist.ChemistRating\"></star-rating-comp>\r\n\r\n                            </div>\r\n                            <p class=\"opening-hours\">{{ChemistViewing.DistanceFromUs}} KM</p>\r\n                        </div>\r\n                        <div class=\"right-search clearfix\">\r\n\r\n\r\n                            <div class='voucher-form clearfix'>\r\n                                <img src=\"/assets/img/search.png\" class=\"search-icon\">\r\n                                <div class=\"inputField\">\r\n                                    <input type=\"text\" (keyup)=\"searchThisMedicine(e)\" name=\"searchMedicineQuery\" [(ngModel)]=\"searchMedicineQuery\" placeholder=\"Search Medicines\"\r\n                                        name=\"searchChemistQuery\" (keyup)=\"searchThisMedicine(this)\" [(ngModel)]=\"searchChemistQuery\">\r\n                                </div>\r\n                                <div class=\"inputBtn\">\r\n                                    <button>Search</button>\r\n                                </div>\r\n\r\n                            </div>\r\n                        </div>\r\n\r\n                    </div>\r\n                    <!-- Upper Holder -->\r\n                </div>\r\n\r\n\r\n                <div class=\"tabbable-panel\">\r\n                    <div class=\"tabbable-line\">\r\n                        <ul class=\"nav nav-tabs\">\r\n                            <li *ngFor=\"let categories of ChemistCategories;let i=index\" [ngClass]=\"{'active': i==0}\">\r\n                                <a (click)=\"showProductsForThisCateogry(categories.Id)\" href=\"#tab_1\" data-toggle=\"tab\">\r\n                                    {{categories.CategoryName}} </a>\r\n                            </li>\r\n                        </ul>\r\n                        <div class=\"tab-content\">\r\n                            <div class=\"tab-pane animated active\" id=\"tab_1\">\r\n\r\n\r\n                                <ul class=\"products-list\">\r\n\r\n                                    <li (mouseenter)=\"showPlus($event)\" (click)=\"getDetailsOfProduct(medicine)\" id=\"medicine{{medicine.Id}}\" (mouseleave)=\"hidePlus($event)\"\r\n                                        *ngFor=\"let medicine of SearchedMedicines;let i=index\" class=\"single-product animated zoomIn\">\r\n\r\n                                        <div class=\"product-wrapper\">\r\n\r\n                                            <div class=\"product-image\" id=\"image{{medicine.Id}}\">\r\n                                                <img src=\"{{medicine.PictureURL}}\">\r\n                                            </div>\r\n\r\n                                            <div class=\"product-detail\">\r\n                                                <h2>{{medicine.Name}}</h2>\r\n                                            </div>\r\n\r\n\r\n                                        </div>\r\n\r\n                                        <div class=\"plus-sign animated\">\r\n                                            <img src=\"/assets/img/add.png\">\r\n                                        </div>\r\n\r\n                                    </li>\r\n\r\n                                </ul>\r\n\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n            </div>\r\n\r\n\r\n            <div class=\"right-pane\">\r\n\r\n\r\n                <div class=\"time-pane\">\r\n\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6 col-sm-6 col-xs-6\" style=\"text-align:left\">\r\n                            <p class='right-estimate'>Estimated Delivery Time</p>\r\n                        </div>\r\n                        <div class=\"col-md-6 col-sm-6 col-xs-6\" style=\"text-align: right\">\r\n                            <div class=\"time\">\r\n                                <p class=\"big\">{{estimatedDeliveryTime}}</p>\r\n                                <p class=\"small\">mins</p>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n\r\n\r\n                </div>\r\n\r\n\r\n\r\n\r\n                <div class=\"cart animated\">\r\n\r\n                    <div class=\"header\">\r\n                        <h3>Your Order</h3>\r\n                    </div>\r\n                    <div class=\"body clearfix\">\r\n\r\n\r\n                        <div class=\"one-row clearfix\" *ngFor=\"let onerow of cart\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\">{{onerow?.Quantity}}x\r\n                                    <span style=\"color:#1ec26b;font-weight:bold;font-size:16px\">{{onerow?.Name}}</span>\r\n                                </P>\r\n                                <span class=\"optional\">{{onerow?.ChemistCategoryName}}</span>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail\">Rs. {{onerow?.Total}}</P>\r\n                            </div>\r\n                        </div>\r\n\r\n                    </div>\r\n                    <div class='footer clearfix'>\r\n\r\n                        <div class=\"one-row clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\">Subtotal</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail\">Rs. {{SubTotal}}</P>\r\n                            </div>\r\n                        </div>\r\n\r\n                        <div class=\"one-row clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\">Delivery Fee</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail\">Rs. 0</P>\r\n                            </div>\r\n                        </div>\r\n\r\n\r\n                        <div class=\"one-row more-margin clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\" style=\"padding-top:10px;\">Total</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail bigText\">Rs. {{FinalTotal}}</P>\r\n                            </div>\r\n                        </div>\r\n\r\n                        <div class=\"alignCenter row\" style=\"width: 90%;margin: 15px auto;\">\r\n\r\n                            <ng-container *ngIf=\"cartHasItems\">\r\n                                <button (click)=\"takeMeToReviewPage()\" id=\"proceedToReview\" class=\"checkout-btn nextBtn\">Proceed</button>\r\n                            </ng-container>\r\n\r\n                        </div>\r\n\r\n                    </div>\r\n                </div>\r\n\r\n            </div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n        </div>\r\n\r\n    </div>\r\n    <div class=\"row setup-content\" id=\"step-2\">\r\n        <div class=\"col-md-12 cleafix\">\r\n\r\n            <div class=\"col-left clearfix\">\r\n\r\n                <div class=\"holder-box clearfix\">\r\n                    <!-- wrapper -->\r\n\r\n                    <div class='header clearfix'>\r\n                        <div class=\"left-image-side clearfix\">\r\n                            <img src=\"assets/img/dw.png\" width=\"75px\">\r\n                        </div>\r\n                        <div class='right-name clearfix'>\r\n                            <p class=\"chemist-name\">{{ChemistViewing.UserName}}</p>\r\n                            <p class=\"opening-hours\">{{ChemistViewing.DistanceFromUs}} KM</p>\r\n\r\n                            <div class=\"chemist-ratings\">\r\n\r\n                                <star-rating-comp [starType]=\"'icon'\" [disabled]=\"true\" [rating]=\"ChemistViewing.Chemist.ChemistRating\"></star-rating-comp>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n\r\n                    <hr class=\"saperator\">\r\n\r\n\r\n                    <div class=\"table-details\">\r\n\r\n                        <div class=\"one-row clearfix\" *ngFor=\"let onerow of cart\">\r\n                            <div class=\"del\" (click)=\"deletethisRow(onerow)\">\r\n                                <img src=\"assets/img/del.png\">\r\n                            </div>\r\n                            <div class=\"name\">\r\n                                <span class=\"med-name\">{{onerow.Name}}</span>\r\n                                <span>({{onerow.ChemistCategoryName}}) {{onerow.DosageValue}}{{onerow.DosageName}} {{onerow.MeausurementName}}</span>\r\n                            </div>\r\n                            <div class=\"quantity\">\r\n                                <div class=\"quantity\" id=\"prod-quantity\">\r\n                                    <input type=\"number\" id=\"num_val_{{onerow.Id}}\" min=\"1\" max=\"10\" class='qty' step=\"1\" value=\"{{onerow.Quantity}}\" readonly>\r\n                                    <div class=\"quantity-nav\">\r\n                                        <div class=\"quantity-button quantity-up qtyplus \" field='quantity' (click)=\"UppingReview(onerow)\">+</div>\r\n                                        <div class=\"quantity-button quantity-down qtyminus\" field='quantity' (click)=\"DowningReview(onerow)\">-</div>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"subtotal\">\r\n                                <p>Rs. {{onerow.Total}}</p>\r\n                            </div>\r\n\r\n                        </div>\r\n\r\n                        <div class=\"row  subtotal-row clearfix\">\r\n                            <div class=\"subtotal-heading\">\r\n                                <p>Subtotal</p>\r\n                            </div>\r\n                            <div class=\"subtotal-value\">\r\n                                Rs. {{SubTotal}}\r\n                            </div>\r\n\r\n                        </div>\r\n\r\n\r\n                        <div class=\"row voucher-row clearfix\">\r\n                            <h3>Enter your voucher code here</h3>\r\n\r\n                            <div class='voucher-form clearfix'>\r\n                                <div class=\"inputField\">\r\n                                    <input type=\"text\">\r\n                                </div>\r\n                                <div class=\"inputBtn\">\r\n                                    <button>Submit</button>\r\n                                </div>\r\n                            </div>\r\n\r\n                        </div>\r\n\r\n                        <hr class=\"saperator\">\r\n\r\n\r\n                        <div class=\"row footer-row clearfix\">\r\n                            <div class=\"subtotal-heading\">\r\n                                <p>Delivery Fee</p>\r\n                            </div>\r\n                            <div class=\"subtotal-value\">\r\n                                0\r\n                            </div>\r\n\r\n                        </div>\r\n\r\n                        <div class=\"row  footer-row no-margin-top clearfix\">\r\n                            <div class=\"subtotal-heading\">\r\n                                <p>Total</p>\r\n                            </div>\r\n                            <div class=\"subtotal-value font20\">\r\n                                Rs. {{FinalTotal}}\r\n                            </div>\r\n\r\n                        </div>\r\n\r\n\r\n\r\n                    </div>\r\n\r\n                </div>\r\n                <!-- wrapper -->\r\n\r\n            </div>\r\n\r\n            <div class=\"col-right clearfix\">\r\n\r\n                <div class=\"holder-box clearfix\">\r\n\r\n                    <h3>Order Information</h3>\r\n\r\n\r\n\r\n                    <div class=\"check1\">\r\n                        <p>\r\n                            <input type=\"radio\" id=\"test2\" (change)=\"AsSoonAsPossibleSelected()\" name=\"radio-group\" checked>\r\n                            <label for=\"test2\" class='delivery-text'>As soon as possible</label>\r\n                            <span class='delivery-text'>Estimated Delivery Time : {{estimatedDeliveryTime}} min</span>\r\n                        </p>\r\n\r\n                        <p>\r\n                            <input type=\"radio\" id=\"test3\" (change)=\"showTimeSlots()\" name=\"radio-group\">\r\n                            <label for=\"test3\" class='delivery-text'>Later</label>\r\n                        </p>\r\n\r\n                        <div class=\"FetchingTimeSlots\">\r\n                                <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->\r\n                                <svg width=\"50\" height=\"30\" viewBox=\"0 0 120 30\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"#1ec26b\">\r\n                                    <circle cx=\"15\" cy=\"15\" r=\"15\">\r\n                                        <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                        />\r\n                                        <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                        />\r\n                                    </circle>\r\n                                    <circle cx=\"60\" cy=\"15\" r=\"9\" fill-opacity=\"0.3\">\r\n                                        <animate attributeName=\"r\" from=\"9\" to=\"9\" begin=\"0s\" dur=\"0.8s\" values=\"9;15;9\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                        />\r\n                                        <animate attributeName=\"fill-opacity\" from=\"0.5\" to=\"0.5\" begin=\"0s\" dur=\"0.8s\" values=\".5;1;.5\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                        />\r\n                                    </circle>\r\n                                    <circle cx=\"105\" cy=\"15\" r=\"15\">\r\n                                        <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                        />\r\n                                        <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                        />\r\n                                    </circle>\r\n                                </svg>\r\n\r\n                            </div>\r\n\r\n                        <ng-container>\r\n\r\n                            <ul class=\"time-slots\">\r\n                                <li *ngFor=\"let timeSlot of timeSlots\" class=\"\">\r\n                                    <button class=\"time-slot\" (click)=\"selectThisSlot($event,timeSlot.Id)\">{{timeSlot.StartingTime}} - {{timeSlot.EndingTime}}</button>\r\n                                </li>\r\n                            </ul>\r\n\r\n                        </ng-container>\r\n\r\n                    </div>\r\n\r\n                    <hr class=\"saperator\">\r\n\r\n                    <div class='italic-text row'>\r\n                        <p>(if you want to add any comment e.g. about delivery instructions, this is the right place)</p>\r\n                    </div>\r\n\r\n\r\n                    <div class='message-text row'>\r\n                        <p style=\"cursor:pointer;\" (click)=\"showMessageArea()\">\r\n                            <img src=\"assets/img/play-arrow.png\"> Add a message to your order\r\n\r\n                        </p>\r\n\r\n\r\n\r\n                        <div class=\"textarea-div2 animated\">\r\n                            <textarea placeholder=\"Write any instructions here ...\"></textarea>\r\n                        </div>\r\n\r\n\r\n\r\n                    </div>\r\n\r\n                    <div class=\"alignCenter row\">\r\n                        <ng-container *ngIf=\"cartHasItems\">\r\n                            <button (click)=\"takeMeToStep3()\" class=\"checkout-btn nextBtn\">Checkout</button>\r\n                        </ng-container>\r\n                    </div>\r\n\r\n                </div>\r\n\r\n\r\n            </div>\r\n\r\n\r\n        </div>\r\n    </div>\r\n    <div class=\"row setup-content\" id=\"step-3\">\r\n\r\n        <div class=\"col-md-12\">\r\n\r\n\r\n            <div class=\"left-pane\">\r\n                <div class=\"inner-wrapper\">\r\n                    <div class=\"header\">\r\n                        <h3>My Contact Details</h3>\r\n                    </div>\r\n                    <div class=\"body clearfix\">\r\n                        <div class=\"lefty-side clearfix\">\r\n                            <p class=\"leftyVa\">Full Name</p>\r\n                            <p class=\"leftyVa\">Email</p>\r\n                            <p class=\"leftyVa\">Mobile</p>\r\n                        </div>\r\n                        <div class=\"righty-side col-md-6 clearfix\">\r\n                            <p class=\"rightyVal\">{{ThisUser.UserName}}</p>\r\n                            <p class=\"rightyVal\">{{ThisUser.Email}}</p>\r\n                            <p class=\"rightyVal\"></p>\r\n                            <a class=\"rightyVal green\" (click)=\"logOut()\">Not {{ThisUser.UserName}}? Logout </a>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class=\"inner-wrapper\">\r\n                    <div class=\"header\">\r\n                        <h3>Your delivery address</h3>\r\n                    </div>\r\n                    <div class=\"body clearfix\">\r\n\r\n\r\n                        <p class=\"oldAddress\">\r\n\r\n                            <input type=\"radio\" id=\"newDeliveryCheck\" (change)=\"createNewAddress()\" name=\"radio-group\" value=\"NewAddress\">\r\n                            <label for=\"newDeliveryCheck\" class='delivery-text'>Create new delivery address</label>\r\n\r\n\r\n                        </p>\r\n                        <ng-container *ngIf=\"newAddressEnabled\">\r\n                            <div class=\"addressesPane\">\r\n                                <span class=\"requiredRed\">*</span>\r\n                                <span class=\"required\">Required Fields</span>\r\n\r\n                                <p>\r\n                                    <span class=\"requiredRed\">*</span>\r\n                                    <span class=\"normalText\">Address</span>\r\n                                </p>\r\n\r\n                                <div class=\"form-group\">\r\n\r\n                                    <input type=\"text\" class=\"address-field\" id=\"EnteredAddressCity\" name=\"EnteredAddress.City\" [(ngModel)]=\"EnteredAddress.City\">\r\n                                    <span class=\"required\">Enter your city for delivery address</span>\r\n                                </div>\r\n\r\n                                <div class=\"form-group\">\r\n\r\n                                    <input type=\"text\" class=\"address-field\" id=\"EnteredAddressArea\" name=\"EnteredAddress.Area\" [(ngModel)]=\"EnteredAddress.Area\">\r\n                                    <span class=\"required\">Enter your area delivery address</span>\r\n                                </div>\r\n\r\n\r\n                                <div class=\"form-group\">\r\n\r\n                                    <input type=\"text\" class=\"address-field\" id=\"EnteredAddressDetail\" name=\"EnteredAddress.AddressDetail\" [(ngModel)]=\"EnteredAddress.AddressDetail\">\r\n                                    <span class=\"required\">Enter your address delivery address</span>\r\n                                </div>\r\n\r\n                                <div class=\"loader\">\r\n                                    <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->\r\n                                    <svg width=\"50\" height=\"30\" viewBox=\"0 0 120 30\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"#1ec26b\">\r\n                                        <circle cx=\"15\" cy=\"15\" r=\"15\">\r\n                                            <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                            />\r\n                                            <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                            />\r\n                                        </circle>\r\n                                        <circle cx=\"60\" cy=\"15\" r=\"9\" fill-opacity=\"0.3\">\r\n                                            <animate attributeName=\"r\" from=\"9\" to=\"9\" begin=\"0s\" dur=\"0.8s\" values=\"9;15;9\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                            />\r\n                                            <animate attributeName=\"fill-opacity\" from=\"0.5\" to=\"0.5\" begin=\"0s\" dur=\"0.8s\" values=\".5;1;.5\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                            />\r\n                                        </circle>\r\n                                        <circle cx=\"105\" cy=\"15\" r=\"15\">\r\n                                            <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                            />\r\n                                            <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                            />\r\n                                        </circle>\r\n                                    </svg>\r\n\r\n                                </div>\r\n\r\n                                <div class=\"form-group\" id=\"saveAddressBtn\">\r\n                                    <button class=\"save-address\" (click)=\"saveThisAddress()\">Save Address</button>\r\n                                </div>\r\n\r\n                                <div class=\"location-box\">\r\n                                    <p>\r\n                                        <span class=\"normalText\">Your Location</span>\r\n                                    </p>\r\n                                    <ng-container *ngIf=\"addressSet\">\r\n\r\n                                \r\n                                    <p class=\"location-text\">{{NewAddressEnteredAndSelected.City}},{{NewAddressEnteredAndSelected.Area}},{{NewAddressEnteredAndSelected.AddressDetail}}</p>\r\n\r\n\r\n                                  </ng-container>\r\n                                </div>\r\n\r\n                                <div class='message-text row' (click)=\"showTextArea3()\">\r\n                                    <p>\r\n                                        <i class=\"thisone3 fa fa-chevron-right\"></i> Delivery Instructions</p>\r\n                                    <span class=\"optional\">(Optional)</span>\r\n\r\n\r\n                                    <div class=\"textarea-div3 animated\">\r\n                                        <textarea [(ngModel)]=\"EnteredAddress.DeliveryInstructions\" name=\"EnteredAddress.DeliveryInstructions\" placeholder=\"Write any instructions here ...\"></textarea>\r\n                                    </div>\r\n\r\n                                </div>\r\n\r\n                                <div class='message-text row' (click)=\"showTextArea4()\">\r\n                                    <p>\r\n                                        <i class=\"thisone4 fa fa-chevron-right\"></i> Additional Information</p>\r\n                                    <span class=\"optional\">(Optional)</span>\r\n                                    <div class=\"textarea-div4 animated\">\r\n                                        <textarea placeholder=\"Write any instructions here ...\"></textarea>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </ng-container>\r\n                        <p class=\"oldAddress\">\r\n\r\n                            <input type=\"radio\" id=\"oldDeliveryCheck\" (change)=\"oldAddress()\" name=\"radio-group\" value=\"oldAddress\">\r\n                            <label for=\"oldDeliveryCheck\" class='delivery-text'>Use saved delivery address</label>\r\n\r\n                        </p>\r\n\r\n                        <ng-container *ngIf=\"oldAddressEnabled\">\r\n                            <ul class=\"EnteredAddress\">\r\n                                <li class=\"listed-addresses\" *ngFor=\"let EnteredAddress of EnteredAddress\">\r\n                                    <button class=\"\" (click)=\"selectThisAddress($event,EnteredAddress.Id)\">{{EnteredAddress.City}},{{EnteredAddress.Area}},{{EnteredAddress.AddressDetail}}</button>\r\n                                </li>\r\n                            </ul>\r\n                        </ng-container>\r\n\r\n                    </div>\r\n                </div>\r\n\r\n\r\n\r\n\r\n                <div class=\"inner-wrapper\">\r\n                    <div class=\"header\">\r\n                        <h3>Choose how to pay</h3>\r\n                    </div>\r\n                    <div class=\"body clearfix\">\r\n\r\n\r\n                        <div class=\"panel-group\" id=\"accordion3\" role=\"tablist\" aria-multiselectable=\"true\">\r\n\r\n                            <div class=\"panel panel-custom\">\r\n                                <div class=\"panel-heading\" role=\"tab\" id=\"headingOne\">\r\n                                    <h4 class=\"panel-title\">\r\n                                        <a class=\"panel-head\" (click)=\"showPayingNowForm()\" data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapsePayNow\"\r\n                                            aria-expanded=\"true\" aria-controls=\"collapsePayNow\">\r\n\r\n                                            <input type=\"radio\" id=\"payingNow\" name=\"radio-group\" value=\"payingNow\">\r\n                                            <label for=\"payingNow\" class='delivery-text'>Pay Now</label>\r\n\r\n\r\n                                        </a>\r\n                                    </h4>\r\n                                </div>\r\n                                <div id=\"collapsePayNow\" class=\"panel-collapse collapse\" role=\"tabpanel\" aria-labelledby=\"headingOne\">\r\n                                    <div class=\"panel-body animated zoomIn\">\r\n\r\n                                        <div class=\"pay-now-details\">\r\n\r\n                                            <h3>Please provide your credit card details</h3>\r\n\r\n                                            <div class=\"form-group\">\r\n\r\n                                                <label for=\"cardName\">\r\n                                                    <span class=\"requiredRed\">*</span> Name on card</label>\r\n                                                <br/>\r\n                                                <input type=\"text\" class=\"form-control\" id=\"cardName\">\r\n                                                <span class=\"required\">As it appears on your credit card</span>\r\n\r\n                                            </div>\r\n\r\n                                            <div class=\"form-group\">\r\n\r\n                                                <label for=\"cardNumber\">\r\n                                                    <span class=\"requiredRed\">*</span> Card Number</label>\r\n                                                <br/>\r\n                                                <input type=\"text\" class=\"form-control\" id=\"cardNumber\">\r\n                                                <span class=\"required\">16 digits in front of your credit card. No spaces</span>\r\n\r\n                                            </div>\r\n\r\n\r\n                                            <div class=\"form-group\">\r\n                                                <label for=\"cardNumber\">\r\n                                                    <span class=\"requiredRed\">*</span> Expiration Date</label>\r\n                                                <br/>\r\n                                                <div class=\"col-md-6 col-sm-6\">\r\n                                                    <span class=\"dropdown-el\">\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"January\" checked=\"checked\" id=\"sort-relevance\">\r\n                                                        <label for=\"sort-relevance\">January</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"February\" id=\"sort-best\">\r\n                                                        <label for=\"sort-best\">February</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"March\" id=\"sort-low\">\r\n                                                        <label for=\"sort-low\">March</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"April\" id=\"sort-high\">\r\n                                                        <label for=\"sort-high\">April</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"May\" id=\"sort-brand\">\r\n                                                        <label for=\"sort-brand\">May</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"June\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">June</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"July\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">July</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"August\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">August</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"September\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">September</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"October\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">October</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"November\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">November</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"December\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">December</label>\r\n                                                    </span>\r\n                                                </div>\r\n\r\n                                                <div class=\"col-md-6 col-sm-6\">\r\n                                                    <span class=\"dropdown-el\">\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2016\" checked=\"checked\" id=\"sort-relevance\">\r\n                                                        <label for=\"sort-relevance\">2016</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2017\" id=\"sort-best\">\r\n                                                        <label for=\"sort-best\">2017</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2018\" id=\"sort-low\">\r\n                                                        <label for=\"sort-low\">2018</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2019\" id=\"sort-high\">\r\n                                                        <label for=\"sort-high\">2019</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2020\" id=\"sort-brand\">\r\n                                                        <label for=\"sort-brand\">2020</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2021\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">2021</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2022\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">2022</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2023\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">2023</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2024\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">2024</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2025\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">2025</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2026\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">2026</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2027\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">2027</label>\r\n                                                    </span>\r\n                                                </div>\r\n\r\n                                            </div>\r\n\r\n\r\n                                            <div class=\"form-group\" style=\"    margin-top: 47px;\">\r\n\r\n                                                <label for=\"cardNumber\">\r\n                                                    <span class=\"requiredRed\">*</span> Security Code</label>\r\n                                                <br/>\r\n                                                <input type=\"text\" class=\"form-control\" id=\"cardNumber\">\r\n                                                <span class=\"required\">CVV or CVV2. 3 Digits on the back. Amex 4, on the front</span>\r\n\r\n                                            </div>\r\n\r\n                                            <p>\r\n                                                <input class=\"styled-checkbox\" id=\"styled-checkbox-1\" type=\"checkbox\" value=\"value1\">\r\n                                                <label for=\"styled-checkbox-1\">Save my credit card details for future orders on the secure payment provider\r\n                                                    site.\r\n                                                </label>\r\n                                            </p>\r\n\r\n\r\n                                            <div class='bottom-text'>\r\n                                                <p class='bottom-text1'>After proceeding, you might be redirected to you card issuer page to verify\r\n                                                    this transaction</p>\r\n                                                <p class='bottom-text2'>Pay with master card or visa. You will be redirected to the second page of\r\n                                                    ouy patment partner. Transaction would be proceeded abroad.</p>\r\n                                            </div>\r\n\r\n                                        </div>\r\n\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n\r\n\r\n                            <div class=\"panel panel-custom\">\r\n                                <div class=\"panel-heading\" role=\"tab\" id=\"headingOne\">\r\n                                    <h4 class=\"panel-title\">\r\n                                        <a class=\"panel-head\" (click)=\"showOnDeliveryForm()\" data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapseCashonDelivery\"\r\n                                            aria-expanded=\"true\" aria-controls=\"collapseCashonDelivery\">\r\n\r\n                                            <input type=\"radio\" id=\"cashOnDelivery\" name=\"radio-group\" value=\"cashOnDelivery\">\r\n                                            <label for=\"cashOnDelivery\" class='delivery-text'>Cash on Delivery</label>\r\n\r\n\r\n                                        </a>\r\n                                    </h4>\r\n                                </div>\r\n\r\n                                <div id=\"collapseCashonDelivery\" class=\"panel-collapse collapse\" role=\"tabpanel\" aria-labelledby=\"headingTwo\">\r\n                                    <div class=\"panel-body animated zoomIn\">\r\n                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,\r\n                                        non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.\r\n                                        Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee\r\n                                        nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes\r\n                                        anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.\r\n                                        Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you\r\n                                        probably haven't heard of them accusamus labore sustainable VHS.\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n\r\n\r\n                        </div>\r\n\r\n\r\n\r\n                    </div>\r\n                </div>\r\n\r\n\r\n                <div class=\"inner-wrapper cleafix special\">\r\n\r\n                    <div class=\"col-md-6 cleafix\">\r\n\r\n                    </div>\r\n\r\n                    <div class=\"col-md-6 cleafix\">\r\n\r\n                        <div class=\"left-equal cleafix\">\r\n                            Total\r\n                        </div>\r\n                        <div class=\"right-equal cleafix\">\r\n                            Rs. 690\r\n                        </div>\r\n\r\n\r\n                        <p>By clicking this button, you agree with our\r\n                            <a>terms and conditions</a>\r\n                        </p>\r\n\r\n\r\n                        <div class=\"Orderloader\">\r\n                            <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->\r\n                            <svg width=\"50\" height=\"30\" viewBox=\"0 0 120 30\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"#1ec26b\">\r\n                                <circle cx=\"15\" cy=\"15\" r=\"15\">\r\n                                    <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                    <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                </circle>\r\n                                <circle cx=\"60\" cy=\"15\" r=\"9\" fill-opacity=\"0.3\">\r\n                                    <animate attributeName=\"r\" from=\"9\" to=\"9\" begin=\"0s\" dur=\"0.8s\" values=\"9;15;9\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                    <animate attributeName=\"fill-opacity\" from=\"0.5\" to=\"0.5\" begin=\"0s\" dur=\"0.8s\" values=\".5;1;.5\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                </circle>\r\n                                <circle cx=\"105\" cy=\"15\" r=\"15\">\r\n                                    <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                    <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                </circle>\r\n                            </svg>\r\n\r\n                        </div>\r\n\r\n                        <button class=\"place-now\" (click)=\"placeOrder()\">Place order now</button>\r\n                    </div>\r\n\r\n                </div>\r\n\r\n\r\n\r\n\r\n            </div>\r\n\r\n\r\n            <div class=\"right-pane\">\r\n\r\n\r\n                <div class=\"time-pane\">\r\n\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6 col-sm-6 col-xs-6\" style=\"text-align:left\">\r\n                            <p class='right-estimate'>Estimated Delivery Time</p>\r\n                        </div>\r\n                        <div class=\"col-md-6 col-sm-6 col-xs-6\" style=\"text-align: right\">\r\n                            <div class=\"time\">\r\n                                <p class=\"big\">{{estimatedDeliveryTime}}</p>\r\n                                <p class=\"small\">mins</p>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n\r\n\r\n                </div>\r\n\r\n\r\n\r\n\r\n                <div class=\"cart\">\r\n\r\n                    <div class=\"header\">\r\n                        <h3>Your Order</h3>\r\n                    </div>\r\n                    <div class=\"body clearfix\">\r\n\r\n                        <div class=\"one-row clearfix\" *ngFor=\"let onerow of cart\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\">{{onerow?.Quantity}}x\r\n                                    <span style=\"color:#1ec26b;font-weight:bold;font-size:16px\">{{onerow?.Name}}</span>\r\n                                </P>\r\n                                <span class=\"optional\">{{onerow?.ChemistCategoryName}}</span>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail\">Rs. {{onerow?.Total}}</P>\r\n                            </div>\r\n                        </div>\r\n\r\n                    </div>\r\n                    <div class='footer clearfix'>\r\n\r\n                        <div class=\"one-row clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\">Subtotal</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail\">Rs. {{SubTotal}}</P>\r\n                            </div>\r\n                        </div>\r\n\r\n                        <div class=\"one-row clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\">Delivery Fee</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail\">Rs. 0</P>\r\n                            </div>\r\n                        </div>\r\n\r\n\r\n                        <div class=\"one-row more-margin clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\" style=\"padding-top:10px;\">Total</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail bigText\">Rs. {{FinalTotal}}</P>\r\n                            </div>\r\n                        </div>\r\n\r\n                    </div>\r\n                </div>\r\n\r\n            </div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n        </div>\r\n\r\n    </div>\r\n\r\n\r\n</div>"
 
 /***/ }),
 /* 273 */
@@ -97871,7 +97956,7 @@ var AboutComponent = (function () {
          * remember that 'es6-promise-loader' is a promise
          */
         setTimeout(function () {
-            __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 337))
+            __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 338))
                 .then(function (json) {
                 console.log('async mockData', json);
                 _this.localState = json;
@@ -98026,12 +98111,19 @@ var LocationModel = (function () {
 
 /***/ }),
 /* 277 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = "<div id=\"snackbar\"></div>\n\n<modal #loginModal [closeOnEscape]=\"false\" [closeOnOutsideClick]=\"false\" modalClass=\"modal-lg modal-md  signUpModal\" (onSubmit)=\"actionOnSubmit()\">\n  <modal-content>\n\n    <div class=\"signButton\">\n      <button class='SignUpLogin' (click)=\"routeToSignUp()\">Sign Up</button>\n    </div>\n\n    <div class=\"closeButton\">\n      <img src=\"/assets/img/cancel.png\" width=\"15px\">\n    </div>\n\n    <div class='login-container'>\n\n      <div class='login clearfix'>\n\n        <div class='left-side'>\n\n          <div class=\"centered\">\n            <h2 class='logIN white'>Log In</h2>\n            <p class=\"white small-text\">Login to Continue</p>\n          </div>\n          <div class=\"image-logo\">\n            <div class=\"left-image\">\n              <img src=\"assets/img/1.gif\">\n            </div>\n            <div class=\"right-text\">\n              <p>Pharma Aid</p>\n            </div>\n\n          </div>\n\n        </div>\n\n        <div class='right-side'>\n          <div class=\"myForms\">\n            <div class=\"form-group\">\n              <label for=\"email\">Email</label>\n              <input type=\"text\" class=\"form-control\" [ngClass]=\"{'errors': EmailError}\" name=\"user.username\" [(ngModel)]=\"user.username\">\n            </div>\n\n            <div class=\"form-group\">\n              <label for=\"email\">password</label>\n              <input type=\"password\" class=\"form-control\" [ngClass]=\"{'errors': PasswordError}\" name=\"user.password\" [(ngModel)]=\"user.password\">\n            </div>\n          </div>\n\n          <div class=\"loader\">\n            <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->\n            <svg width=\"50\" height=\"30\" viewBox=\"0 0 120 30\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"#1ec26b\">\n              <circle cx=\"15\" cy=\"15\" r=\"15\">\n                <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n              <circle cx=\"60\" cy=\"15\" r=\"9\" fill-opacity=\"0.3\">\n                <animate attributeName=\"r\" from=\"9\" to=\"9\" begin=\"0s\" dur=\"0.8s\" values=\"9;15;9\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"0.5\" to=\"0.5\" begin=\"0s\" dur=\"0.8s\" values=\".5;1;.5\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n              <circle cx=\"105\" cy=\"15\" r=\"15\">\n                <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n            </svg>\n\n          </div>\n\n          <div class=\"form-group\" style=\"text-align:center;margin-top:60px;\">\n            <button class=\"submit-custom\" (click)=\"login()\">Login</button>\n          </div>\n\n\n          <div class=\"row clearfix\">\n            <div class='col-md-4 col-sm-4  no-left'>\n              <hr>\n            </div>\n            <div class='col-md-4 col-sm-4 no-padding text-centered'>\n              <p class=\"loginWith\">Login With</p>\n            </div>\n            <div class='col-md-4 col-sm-4 no-right'>\n              <hr>\n            </div>\n          </div>\n\n\n          <div class=\"row clearfix facebook-gmail\">\n\n            <div class=\"half-left\">\n              <a class=\"pointers\" (click)=\"loginWithFacebook()\">\n                <div class='holder'>\n                  <i class='fa fa-facebook'></i>\n                </div>\n              </a>\n            </div>\n            <div class=\"half-right\">\n              <button id=\"googleSignInBtn\" (click)=\"googleInit()\">\n                <div class='holder'>\n                  <img src=\"assets/img/plus.png\" style=\"width:23px;padding-left:2px\">\n                </div>\n              </button>\n            </div>\n\n          </div>\n\n\n        </div>\n\n      </div>\n\n    </div>\n  </modal-content>\n\n</modal>\n\n<div class=\"header-top\">\n\n  <h1>Get Medicine Supplies from your Home!</h1>\n  <div class=\"search-box clearfix\">\n    <div class=\"left-city\">\n      <label class=\"wrap\">\n        <select class=\"dropdown\" (change)=\"getCityId($event.target.value)\">\n          <option disabled selected value> City </option>\n          <option *ngFor=\"let cities of allCitites\" value=\"{{cities.Id}}\">{{cities.Name}}</option>\n        </select>\n      </label>\n    </div>\n    <div class=\"middle-area\">\n      <input class=\"area-input\" type=\"text\" [(ngModel)]=\"address\" placeholder=\"Enter an area\" [options]='options' (setAddress)=\"getAddress($event)\"\n        (street_number)='street_number=$event' (street)='street=$event' (city)='city=$event' (state)='state=$event' (district)='district=$event'\n        (country)='Pakistan' (postal_code)='postal_code=$event' (lat)='lat=$event' (lng)='lng=$event' (adr_address)='adr_address=$event'\n        (name)='name=$event' (place_id)='place_id=$event' (types)='types=$event' (url)='url=$event' (utc_offset)='utc_offset=$event'\n        (vicinity)='vicinity=$event' (photos)='photos=$event' (airport)='airport=$event' (CountryCodes)='CountryCodes=$event'\n        id=\"autocomplete\" ng2-google-place-autocomplete/>\n      <!--    <input type=\"text\"   name=\"myLocation.AreaName\" [(ngModel)]=\"myLocation.AreaName\"> -->\n    </div>\n    <div class=\"right-btn\">\n      <button class=\"header-btn\" (click)=\"showChemistPage()\">Let's Start</button>\n    </div>\n  </div>\n\n</div>\n\n\n<div class=\"container container-login\">\n\n\n  <div class=\"on-go\">\n    <h1>Order Medicine on the go</h1>\n  </div>\n\n\n</div>\n\n<div class=\"app-banner\">\n  <div class='container'>\n    <h3>Download the App</h3>\n    <p style=\"width:40%\">Get the app right in your pocket and order the medicine on the go from anywhere you want</p>\n\n\n    <div class=\"app-banner-inner\" data-aos=\"fade-right\">\n\n      <div class=\"app-buttons clearfix\">\n\n        <div class=\"apps clearfix\">\n          <div class=\"left-png clearfix\">\n            <img src=\"assets/img/apple.png\">\n          </div>\n          <div class=\"right-texty clearfix\">\n            <p class='small'>Download on the</p>\n            <p class='large'>App Store</p>\n          </div>\n        </div>\n\n\n        <div class=\"apps clearfix\" style=\"margin-left: 18px;\">\n          <div class=\"left-png clearfix\">\n            <img src=\"assets/img/appstore.png\">\n          </div>\n          <div class=\"right-texty clearfix\">\n            <p class='small'>Download on the</p>\n            <p class='large'>App Store</p>\n          </div>\n        </div>\n\n      </div>\n\n      <div class=\"mockup\" data-aos=\"fade-left\">\n        <img src=\"assets/img/mockup.png\">\n      </div>\n\n    </div>\n\n  </div>\n</div>\n\n\n<div class=\"container contact-form-row\">\n\n  <div class=\"contact-form\">\n    <h1>Get in Touch</h1>\n  </div>\n\n\n  <div class=\"actual-form clearfix\">\n    <div class=\"left-fields\" data-aos=\"zoom-in\">\n      <textarea placeholder=\"Your message ... \"></textarea>\n    </div>\n    <div class=\"right-fields\" data-aos=\"zoom-in-up\">\n      <div class=\"form-group\">\n        <input type=\"text\" placeholder=\"Enter name\">\n      </div>\n      <div class=\"form-group\">\n        <input type=\"text\" placeholder=\"Enter email\">\n      </div>\n      <div class=\"form-group\">\n        <button class=\"sendBtn\">Send</button>\n      </div>\n    </div>\n  </div>\n\n\n</div>"
+!function(e,t){ true?module.exports=t():"function"==typeof define&&define.amd?define([],t):"object"==typeof exports?exports.AOS=t():e.AOS=t()}(this,function(){return function(e){function t(o){if(n[o])return n[o].exports;var i=n[o]={exports:{},id:o,loaded:!1};return e[o].call(i.exports,i,i.exports,t),i.loaded=!0,i.exports}var n={};return t.m=e,t.c=n,t.p="dist/",t(0)}([function(e,t,n){"use strict";function o(e){return e&&e.__esModule?e:{default:e}}var i=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var o in n)Object.prototype.hasOwnProperty.call(n,o)&&(e[o]=n[o])}return e},r=n(1),a=(o(r),n(6)),u=o(a),c=n(7),f=o(c),s=n(8),d=o(s),l=n(9),p=o(l),m=n(10),b=o(m),v=n(11),y=o(v),g=n(14),h=o(g),w=[],k=!1,x=document.all&&!window.atob,j={offset:120,delay:0,easing:"ease",duration:400,disable:!1,once:!1,startEvent:"DOMContentLoaded"},O=function(){var e=arguments.length>0&&void 0!==arguments[0]&&arguments[0];if(e&&(k=!0),k)return w=(0,y.default)(w,j),(0,b.default)(w,j.once),w},S=function(){w=(0,h.default)(),O()},_=function(){w.forEach(function(e,t){e.node.removeAttribute("data-aos"),e.node.removeAttribute("data-aos-easing"),e.node.removeAttribute("data-aos-duration"),e.node.removeAttribute("data-aos-delay")})},E=function(e){return e===!0||"mobile"===e&&p.default.mobile()||"phone"===e&&p.default.phone()||"tablet"===e&&p.default.tablet()||"function"==typeof e&&e()===!0},z=function(e){return j=i(j,e),w=(0,h.default)(),E(j.disable)||x?_():(document.querySelector("body").setAttribute("data-aos-easing",j.easing),document.querySelector("body").setAttribute("data-aos-duration",j.duration),document.querySelector("body").setAttribute("data-aos-delay",j.delay),"DOMContentLoaded"===j.startEvent&&["complete","interactive"].indexOf(document.readyState)>-1?O(!0):"load"===j.startEvent?window.addEventListener(j.startEvent,function(){O(!0)}):document.addEventListener(j.startEvent,function(){O(!0)}),window.addEventListener("resize",(0,f.default)(O,50,!0)),window.addEventListener("orientationchange",(0,f.default)(O,50,!0)),window.addEventListener("scroll",(0,u.default)(function(){(0,b.default)(w,j.once)},99)),document.addEventListener("DOMNodeRemoved",function(e){var t=e.target;t&&1===t.nodeType&&t.hasAttribute&&t.hasAttribute("data-aos")&&(0,f.default)(S,50,!0)}),(0,d.default)("[data-aos]",S),w)};e.exports={init:z,refresh:O,refreshHard:S}},function(e,t){},,,,,function(e,t){(function(t){"use strict";function n(e,t,n){function o(t){var n=b,o=v;return b=v=void 0,k=t,g=e.apply(o,n)}function r(e){return k=e,h=setTimeout(s,t),S?o(e):g}function a(e){var n=e-w,o=e-k,i=t-n;return _?j(i,y-o):i}function c(e){var n=e-w,o=e-k;return void 0===w||n>=t||n<0||_&&o>=y}function s(){var e=O();return c(e)?d(e):void(h=setTimeout(s,a(e)))}function d(e){return h=void 0,E&&b?o(e):(b=v=void 0,g)}function l(){void 0!==h&&clearTimeout(h),k=0,b=w=v=h=void 0}function p(){return void 0===h?g:d(O())}function m(){var e=O(),n=c(e);if(b=arguments,v=this,w=e,n){if(void 0===h)return r(w);if(_)return h=setTimeout(s,t),o(w)}return void 0===h&&(h=setTimeout(s,t)),g}var b,v,y,g,h,w,k=0,S=!1,_=!1,E=!0;if("function"!=typeof e)throw new TypeError(f);return t=u(t)||0,i(n)&&(S=!!n.leading,_="maxWait"in n,y=_?x(u(n.maxWait)||0,t):y,E="trailing"in n?!!n.trailing:E),m.cancel=l,m.flush=p,m}function o(e,t,o){var r=!0,a=!0;if("function"!=typeof e)throw new TypeError(f);return i(o)&&(r="leading"in o?!!o.leading:r,a="trailing"in o?!!o.trailing:a),n(e,t,{leading:r,maxWait:t,trailing:a})}function i(e){var t="undefined"==typeof e?"undefined":c(e);return!!e&&("object"==t||"function"==t)}function r(e){return!!e&&"object"==("undefined"==typeof e?"undefined":c(e))}function a(e){return"symbol"==("undefined"==typeof e?"undefined":c(e))||r(e)&&k.call(e)==d}function u(e){if("number"==typeof e)return e;if(a(e))return s;if(i(e)){var t="function"==typeof e.valueOf?e.valueOf():e;e=i(t)?t+"":t}if("string"!=typeof e)return 0===e?e:+e;e=e.replace(l,"");var n=m.test(e);return n||b.test(e)?v(e.slice(2),n?2:8):p.test(e)?s:+e}var c="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},f="Expected a function",s=NaN,d="[object Symbol]",l=/^\s+|\s+$/g,p=/^[-+]0x[0-9a-f]+$/i,m=/^0b[01]+$/i,b=/^0o[0-7]+$/i,v=parseInt,y="object"==("undefined"==typeof t?"undefined":c(t))&&t&&t.Object===Object&&t,g="object"==("undefined"==typeof self?"undefined":c(self))&&self&&self.Object===Object&&self,h=y||g||Function("return this")(),w=Object.prototype,k=w.toString,x=Math.max,j=Math.min,O=function(){return h.Date.now()};e.exports=o}).call(t,function(){return this}())},function(e,t){(function(t){"use strict";function n(e,t,n){function i(t){var n=b,o=v;return b=v=void 0,O=t,g=e.apply(o,n)}function r(e){return O=e,h=setTimeout(s,t),S?i(e):g}function u(e){var n=e-w,o=e-O,i=t-n;return _?x(i,y-o):i}function f(e){var n=e-w,o=e-O;return void 0===w||n>=t||n<0||_&&o>=y}function s(){var e=j();return f(e)?d(e):void(h=setTimeout(s,u(e)))}function d(e){return h=void 0,E&&b?i(e):(b=v=void 0,g)}function l(){void 0!==h&&clearTimeout(h),O=0,b=w=v=h=void 0}function p(){return void 0===h?g:d(j())}function m(){var e=j(),n=f(e);if(b=arguments,v=this,w=e,n){if(void 0===h)return r(w);if(_)return h=setTimeout(s,t),i(w)}return void 0===h&&(h=setTimeout(s,t)),g}var b,v,y,g,h,w,O=0,S=!1,_=!1,E=!0;if("function"!=typeof e)throw new TypeError(c);return t=a(t)||0,o(n)&&(S=!!n.leading,_="maxWait"in n,y=_?k(a(n.maxWait)||0,t):y,E="trailing"in n?!!n.trailing:E),m.cancel=l,m.flush=p,m}function o(e){var t="undefined"==typeof e?"undefined":u(e);return!!e&&("object"==t||"function"==t)}function i(e){return!!e&&"object"==("undefined"==typeof e?"undefined":u(e))}function r(e){return"symbol"==("undefined"==typeof e?"undefined":u(e))||i(e)&&w.call(e)==s}function a(e){if("number"==typeof e)return e;if(r(e))return f;if(o(e)){var t="function"==typeof e.valueOf?e.valueOf():e;e=o(t)?t+"":t}if("string"!=typeof e)return 0===e?e:+e;e=e.replace(d,"");var n=p.test(e);return n||m.test(e)?b(e.slice(2),n?2:8):l.test(e)?f:+e}var u="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},c="Expected a function",f=NaN,s="[object Symbol]",d=/^\s+|\s+$/g,l=/^[-+]0x[0-9a-f]+$/i,p=/^0b[01]+$/i,m=/^0o[0-7]+$/i,b=parseInt,v="object"==("undefined"==typeof t?"undefined":u(t))&&t&&t.Object===Object&&t,y="object"==("undefined"==typeof self?"undefined":u(self))&&self&&self.Object===Object&&self,g=v||y||Function("return this")(),h=Object.prototype,w=h.toString,k=Math.max,x=Math.min,j=function(){return g.Date.now()};e.exports=n}).call(t,function(){return this}())},function(e,t){"use strict";function n(e,t){a.push({selector:e,fn:t}),!u&&r&&(u=new r(o),u.observe(i.documentElement,{childList:!0,subtree:!0,removedNodes:!0})),o()}function o(){for(var e,t,n=0,o=a.length;n<o;n++){e=a[n],t=i.querySelectorAll(e.selector);for(var r,u=0,c=t.length;u<c;u++)r=t[u],r.ready||(r.ready=!0,e.fn.call(r,r))}}Object.defineProperty(t,"__esModule",{value:!0});var i=window.document,r=window.MutationObserver||window.WebKitMutationObserver,a=[],u=void 0;t.default=n},function(e,t){"use strict";function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function o(){return navigator.userAgent||navigator.vendor||window.opera||""}Object.defineProperty(t,"__esModule",{value:!0});var i=function(){function e(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,n,o){return n&&e(t.prototype,n),o&&e(t,o),t}}(),r=/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i,a=/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i,u=/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino|android|ipad|playbook|silk/i,c=/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i,f=function(){function e(){n(this,e)}return i(e,[{key:"phone",value:function(){var e=o();return!(!r.test(e)&&!a.test(e.substr(0,4)))}},{key:"mobile",value:function(){var e=o();return!(!u.test(e)&&!c.test(e.substr(0,4)))}},{key:"tablet",value:function(){return this.mobile()&&!this.phone()}}]),e}();t.default=new f},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n=function(e,t,n){var o=e.node.getAttribute("data-aos-once");t>e.position?e.node.classList.add("aos-animate"):"undefined"!=typeof o&&("false"===o||!n&&"true"!==o)&&e.node.classList.remove("aos-animate")},o=function(e,t){var o=window.pageYOffset,i=window.innerHeight;e.forEach(function(e,r){n(e,i+o,t)})};t.default=o},function(e,t,n){"use strict";function o(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var i=n(12),r=o(i),a=function(e,t){return e.forEach(function(e,n){e.node.classList.add("aos-init"),e.position=(0,r.default)(e.node,t.offset)}),e};t.default=a},function(e,t,n){"use strict";function o(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var i=n(13),r=o(i),a=function(e,t){var n=0,o=0,i=window.innerHeight,a={offset:e.getAttribute("data-aos-offset"),anchor:e.getAttribute("data-aos-anchor"),anchorPlacement:e.getAttribute("data-aos-anchor-placement")};switch(a.offset&&!isNaN(a.offset)&&(o=parseInt(a.offset)),a.anchor&&document.querySelectorAll(a.anchor)&&(e=document.querySelectorAll(a.anchor)[0]),n=(0,r.default)(e).top,a.anchorPlacement){case"top-bottom":break;case"center-bottom":n+=e.offsetHeight/2;break;case"bottom-bottom":n+=e.offsetHeight;break;case"top-center":n+=i/2;break;case"bottom-center":n+=i/2+e.offsetHeight;break;case"center-center":n+=i/2+e.offsetHeight/2;break;case"top-top":n+=i;break;case"bottom-top":n+=e.offsetHeight+i;break;case"center-top":n+=e.offsetHeight/2+i}return a.anchorPlacement||a.offset||isNaN(t)||(o=t),n+o};t.default=a},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n=function(e){for(var t=0,n=0;e&&!isNaN(e.offsetLeft)&&!isNaN(e.offsetTop);)t+=e.offsetLeft-("BODY"!=e.tagName?e.scrollLeft:0),n+=e.offsetTop-("BODY"!=e.tagName?e.scrollTop:0),e=e.offsetParent;return{top:n,left:t}};t.default=n},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n=function(e){e=e||document.querySelectorAll("[data-aos]");var t=[];return[].forEach.call(e,function(e,n){t.push({node:e})}),t};t.default=n}])});
+//# sourceMappingURL=aos.js.map
 
 /***/ }),
 /* 278 */
+/***/ (function(module, exports) {
+
+module.exports = "<div id=\"snackbar\"></div>\n\n<modal #loginModal [closeOnEscape]=\"false\" [closeOnOutsideClick]=\"false\" modalClass=\"modal-lg modal-md  signUpModal\" (onSubmit)=\"actionOnSubmit()\">\n  <modal-content>\n\n    <div class=\"signButton\">\n      <button class='SignUpLogin' (click)=\"routeToSignUp()\">Sign Up</button>\n    </div>\n\n    <div class=\"closeButton\">\n      <img src=\"/assets/img/cancel.png\" width=\"15px\">\n    </div>\n\n    <div class='login-container'>\n\n      <div class='login clearfix'>\n\n        <div class='left-side'>\n\n          <div class=\"centered\">\n            <h2 class='logIN white'>Log In</h2>\n            <p class=\"white small-text\">Login to Continue</p>\n          </div>\n          <div class=\"image-logo\">\n            <div class=\"left-image\">\n              <img src=\"assets/img/1.gif\">\n            </div>\n            <div class=\"right-text\">\n              <p>Pharma Aid</p>\n            </div>\n\n          </div>\n\n        </div>\n\n        <div class='right-side'>\n          <div class=\"myForms\">\n            <div class=\"form-group\">\n              <label for=\"email\">Email</label>\n              <input type=\"text\" class=\"form-control\" [ngClass]=\"{'errors': EmailError}\" name=\"user.UserName\" [(ngModel)]=\"user.UserName\">\n            </div>\n\n            <div class=\"form-group\">\n              <label for=\"email\">password</label>\n              <input type=\"password\" class=\"form-control\" [ngClass]=\"{'errors': PasswordError}\" name=\"user.Password\" [(ngModel)]=\"user.Password\">\n            </div>\n          </div>\n\n          <div class=\"loader\">\n            <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->\n            <svg width=\"50\" height=\"30\" viewBox=\"0 0 120 30\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"#1ec26b\">\n              <circle cx=\"15\" cy=\"15\" r=\"15\">\n                <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n              <circle cx=\"60\" cy=\"15\" r=\"9\" fill-opacity=\"0.3\">\n                <animate attributeName=\"r\" from=\"9\" to=\"9\" begin=\"0s\" dur=\"0.8s\" values=\"9;15;9\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"0.5\" to=\"0.5\" begin=\"0s\" dur=\"0.8s\" values=\".5;1;.5\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n              <circle cx=\"105\" cy=\"15\" r=\"15\">\n                <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n            </svg>\n\n          </div>\n\n          <div class=\"form-group\" style=\"text-align:center;margin-top:60px;\">\n            <button class=\"submit-custom\" (click)=\"login()\">Login</button>\n          </div>\n\n\n          <div class=\"row clearfix\">\n            <div class='col-md-4 col-sm-4  no-left'>\n              <hr>\n            </div>\n            <div class='col-md-4 col-sm-4 no-padding text-centered'>\n              <p class=\"loginWith\">Login With</p>\n            </div>\n            <div class='col-md-4 col-sm-4 no-right'>\n              <hr>\n            </div>\n          </div>\n\n\n          <div class=\"row clearfix facebook-gmail\">\n\n            <div class=\"half-left\">\n              <a class=\"pointers\" (click)=\"loginWithFacebook()\">\n                <div class='holder'>\n                  <i class='fa fa-facebook'></i>\n                </div>\n              </a>\n            </div>\n            <div class=\"half-right\">\n              <button id=\"googleSignInBtn\" (click)=\"googleInit()\">\n                <div class='holder'>\n                  <img src=\"assets/img/plus.png\" style=\"width:23px;padding-left:2px\">\n                </div>\n              </button>\n            </div>\n\n          </div>\n\n\n        </div>\n\n      </div>\n\n    </div>\n  </modal-content>\n\n</modal>\n\n<div class=\"header-top\">\n\n  <h1>Get Medicine Supplies from your Home!</h1>\n  <div class=\"search-box clearfix\">\n    <div class=\"left-city\">\n      <label class=\"wrap\">\n        <select class=\"dropdown\" (change)=\"getCityId($event.target.value)\">\n          <option disabled selected value> City </option>\n          <option *ngFor=\"let cities of allCitites\" value=\"{{cities.Id}}\">{{cities.Name}}</option>\n        </select>\n      </label>\n    </div>\n    <div class=\"middle-area\">\n      <input class=\"area-input\" type=\"text\" [(ngModel)]=\"address\" placeholder=\"Enter an area\" [options]='options' (setAddress)=\"getAddress($event)\"\n        (street_number)='street_number=$event' (street)='street=$event' (city)='city=$event' (state)='state=$event' (district)='district=$event'\n        (country)='Pakistan' (postal_code)='postal_code=$event' (lat)='lat=$event' (lng)='lng=$event' (adr_address)='adr_address=$event'\n        (name)='name=$event' (place_id)='place_id=$event' (types)='types=$event' (url)='url=$event' (utc_offset)='utc_offset=$event'\n        (vicinity)='vicinity=$event' (photos)='photos=$event' (airport)='airport=$event' (CountryCodes)='CountryCodes=$event'\n        id=\"autocomplete\" ng2-google-place-autocomplete/>\n      <!--    <input type=\"text\"   name=\"myLocation.AreaName\" [(ngModel)]=\"myLocation.AreaName\"> -->\n    </div>\n    <div class=\"right-btn\">\n      <button class=\"header-btn\" (click)=\"showChemistPage()\">Let's Start</button>\n    </div>\n  </div>\n\n</div>\n\n\n<div class=\"container container-login\">\n\n\n  <div class=\"on-go\">\n    <h1>Order Medicine on the go</h1>\n  </div>\n\n\n</div>\n\n<div class=\"app-banner\">\n  <div class='container'>\n    <h3>Download the App</h3>\n    <p style=\"width:40%\">Get the app right in your pocket and order the medicine on the go from anywhere you want</p>\n\n\n    <div class=\"app-banner-inner\" data-aos=\"fade-right\">\n\n      <div class=\"app-buttons clearfix\">\n\n        <div class=\"apps clearfix\">\n          <div class=\"left-png clearfix\">\n            <img src=\"assets/img/apple.png\">\n          </div>\n          <div class=\"right-texty clearfix\">\n            <p class='small'>Download on the</p>\n            <p class='large'>App Store</p>\n          </div>\n        </div>\n\n\n        <div class=\"apps clearfix\" style=\"margin-left: 18px;\">\n          <div class=\"left-png clearfix\">\n            <img src=\"assets/img/appstore.png\">\n          </div>\n          <div class=\"right-texty clearfix\">\n            <p class='small'>Download on the</p>\n            <p class='large'>App Store</p>\n          </div>\n        </div>\n\n      </div>\n\n      <div class=\"mockup\" data-aos=\"fade-left\">\n        <img src=\"assets/img/mockup.png\">\n      </div>\n\n    </div>\n\n  </div>\n</div>\n\n\n<div class=\"container contact-form-row\">\n\n  <div class=\"contact-form\">\n    <h1>Get in Touch</h1>\n  </div>\n\n\n  <div class=\"actual-form clearfix\">\n    <div class=\"left-fields\" data-aos=\"zoom-in\">\n      <textarea placeholder=\"Your message ... \"></textarea>\n    </div>\n    <div class=\"right-fields\" data-aos=\"zoom-in-up\">\n      <div class=\"form-group\">\n        <input type=\"text\" placeholder=\"Enter name\">\n      </div>\n      <div class=\"form-group\">\n        <input type=\"text\" placeholder=\"Enter email\">\n      </div>\n      <div class=\"form-group\">\n        <button class=\"sendBtn\">Send</button>\n      </div>\n    </div>\n  </div>\n\n\n</div>"
+
+/***/ }),
+/* 279 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)(undefined);
@@ -98045,17 +98137,17 @@ exports.push([module.i, "\r\n@font-face {\r\n    font-family: 'Museo300';\r\n   
 
 
 /***/ }),
-/* 279 */
+/* 280 */
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"banner\">\n\n    <div class=\"banner-bottom\">\n        <div class=\"location-left\">\n\n            <p *ngIf=\"!addressCheck\">\n                <img src=\"assets/img/placeholder.png\"> Bolton Plaza</p>\n            <p *ngIf=\"addressCheck\">\n                <img src=\"assets/img/placeholder.png\"> {{EnteredAddress.CityName}}, {{EnteredAddress.AreaName}}</p>\n        </div>\n        <div class=\"change-location\">\n            <button class=\"change\">Change Location</button>\n        </div>\n\n    </div>\n\n</div>\n\n<div class=\"container med-container\">\n\n    <div class=\"row breadcrumbs\">\n\n\n        <a href=\"\">Home</a>\n        <img src=\"/assets/img/right.png\" width=\"10px\">\n        <a href=\"\">Chemist</a>\n\n\n    </div>\n\n\n\n    <div class=\"row breadcrumbs\">\n\n\n        <div class='voucher-form clearfix'>\n            <img src=\"/assets/img/search.png\" class=\"search-icon\">\n            <div class=\"inputField\">\n                <input type=\"text\" placeholder=\"Enter Chemist Name\" name=\"searchChemistQuery\" (keyup)=\"searchThisMedicine(this)\" [(ngModel)]=\"searchChemistQuery\">\n            </div>\n            <div class=\"inputBtn\">\n                <button>Search</button>\n            </div>\n\n        </div>\n\n\n    </div>\n\n    <div class=\"row\">\n        <div class=\"search-check\">\n            <p class=\"italic-search\">Search by </p>\n            <p>\n                <input type=\"radio\" id=\"chemistCheck\" name=\"radio-group\" (change)=\"showChemistsData()\" value=\"Chemists\" checked>\n                <label for=\"chemistCheck\" class='delivery-text'>Chemists</label>\n            </p>\n            <p>\n                <input type=\"radio\" id=\"medicineCheck\" name=\"radio-group\" (change)=\"showMedicinesData()\" value=\"Medicine\">\n                <label for=\"medicineCheck\" class='delivery-text'>Medicine</label>\n            </p>\n        </div>\n    </div>\n\n\n\n\n    <div class=\"filter-row row clearfix\">\n        <!-- Filter Row -->\n\n        <div class=\"filter-icons-left\">\n\n            <div class=\"inner\">\n                <h2 class=\"filter-heading\">\n                    <img class=\"level\" src='assets/img/levels.png' width=\"20px\">Filter Results </h2>\n            </div>\n            <ul class='filter-options'>\n                <li>Free Devliery</li>\n                <li>Fast Devliery</li>\n                <li>High Rating</li>\n                <li>Low Rating</li>\n            </ul>\n\n            <div class=\"quick-filters\">\n\n\n                <h3>Quick Filters</h3>\n                <ul class=\"quick-filters-list\">\n                    <li>Panadol</li>\n                    <li>Flagyl</li>\n                    <li>Disprin</li>\n                </ul>\n            </div>\n\n        </div>\n\n        <div class=\"filtered-list-right\">\n\n            <perfect-scrollbar class=\"container\" [config]=\"config\">\n                <!-- Accordions -->\n\n                <ng-container *ngIf=\"showChemists\">\n                    <div class=\"panel-group\" id=\"accordion\" role=\"tablist\" aria-multiselectable=\"true\">\n                        <ng-container *ngFor=\"let chemists of searchedChemists\">\n                            <div class=\"panel panel-custom\">\n                                <div class=\"panel-heading\" role=\"tab\" id=\"headingOne\" (click)=\"getDetailForThisChemist(chemists)\">\n                                    <h4 class=\"panel-title\">\n                                        <a class=\"panel-head\" data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapse{{chemists.Id}}\" aria-expanded=\"true\"\n                                            aria-controls=\"collapseOne\">\n\n                                            <div class='header clearfix'>\n                                                <div class=\"left-image-side clearfix\">\n                                                    <img src=\"{{chemists.ProfileURL}}\" width=\"75px\" height=\"72px\">\n                                                </div>\n                                                <div class='right-name clearfix'>\n                                                    <p class=\"chemist-name\">{{chemists.Chemist.PharmacyName}}</p>\n                                                    <p class=\"opening-hours\">{{chemists.DistanceFromUs}} KM</p>\n\n                                                    <div class=\"chemist-ratings\">\n                                                        <star-rating-comp [starType]=\"'icon'\" [disabled]=\"true\" [rating]=\"chemists.ChemistRatings\"></star-rating-comp>\n\n                                                    </div>\n                                                </div>\n                                            </div>\n                                            <div class=\"chevron\">\n                                                <i class='fa fa-chevron-right'></i>\n                                            </div>\n\n                                        </a>\n                                    </h4>\n                                </div>\n                                <!-- <div id=\"collapse{{chemists.Id}}\" class=\"panel-collapse collapse\" role=\"tabpanel\" aria-labelledby=\"headingOne\">\n                      <div class=\"panel-body animated zoomIn\">\n                          <div class=\"row\">\n                              <div class=\"col-md-6 alignCenter\">\n                                    <p class=\"chemist-name\"><img src=\"assets/img/map.png\" width=\"20px\">&nbsp; {{chemists.Chemist.Address}}</p>\n                              </div>\n                              <div class=\"col-md-6 alignCenter\">\n                                    <p class=\"chemist-name\"><img src=\"assets/img/phone.png\" width=\"20px\">&nbsp; {{chemists.MobileNumber}}</p>\n                                </div>\n                          </div>\n                      </div>\n                  </div> -->\n                            </div>\n                        </ng-container>\n                    </div>\n                </ng-container>\n\n\n                <!-- Accordions -->\n\n\n                <ng-container *ngIf=\"showMedicines\">\n\n                    <div class=\"panel-group\" id=\"accordion\" role=\"tablist\" aria-multiselectable=\"true\">\n                        <ng-container *ngFor=\"let chemists of allMedicines\">\n                            <div class=\"panel panel-custom animated slideInDown\">\n                                <div class=\"panel-heading\" role=\"tab\" id=\"headingOne\">\n                                    <h4 class=\"panel-title\">\n                                        <a class=\"panel-head\" data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapse{{chemists.Id}}\" aria-expanded=\"true\"\n                                            aria-controls=\"collapseOne\">\n\n                                            <div class='header clearfix'>\n                                                <div class=\"left-image-side clearfix\">\n                                                    <img src=\"{{chemists.ProfileURL}}\" width=\"75px\" height=\"72px\">\n                                                </div>\n                                                <div class='right-name clearfix'>\n                                                    <p class=\"chemist-name\">{{chemists.PharmacyName}}</p>\n                                                    <p class=\"opening-hours\">33</p>\n\n                                                    <div class=\"chemist-ratings\">\n                                                        <star-rating-comp [starType]=\"'icon'\" [disabled]=\"true\" [rating]=\"chemists.ChemistRatings\"></star-rating-comp>\n\n                                                    </div>\n                                                </div>\n                                            </div>\n                                            <div class=\"chevron\">\n                                                <i class='fa fa-chevron-right'></i>\n                                            </div>\n\n                                        </a>\n                                    </h4>\n                                </div>\n                                <div id=\"collapse{{chemists.Id}}\" class=\"panel-collapse collapse\" role=\"tabpanel\" aria-labelledby=\"headingOne\">\n                                    <div class=\"panel-body animated zoomIn\">\n                                        <div class=\"row\">\n                                            <div class=\"col-md-6 alignCenter\">\n                                                <p class=\"chemist-name\">\n                                                    <img src=\"assets/img/map.png\" width=\"20px\">&nbsp; {{chemists.Address}}</p>\n                                            </div>\n                                            <div class=\"col-md-6 alignCenter\">\n                                                <p class=\"chemist-name\">\n                                                    <img src=\"assets/img/phone.png\" width=\"20px\">&nbsp; {{chemists.MobileNumber}}</p>\n                                            </div>\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                        </ng-container>\n                    </div>\n\n                </ng-container>\n            </perfect-scrollbar>\n        </div>\n\n\n\n\n    </div>\n    <!-- Filter Row -->\n\n\n\n</div>"
 
 /***/ }),
-/* 280 */
+/* 281 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__(281);
+        var result = __webpack_require__(282);
 
         if (typeof result === "string") {
             module.exports = result;
@@ -98065,7 +98157,7 @@ module.exports = "<div class=\"banner\">\n\n    <div class=\"banner-bottom\">\n 
     
 
 /***/ }),
-/* 281 */
+/* 282 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)(undefined);
@@ -98079,7 +98171,7 @@ exports.push([module.i, "\r\n.banner{\r\n    width:100%;\r\n    position: relati
 
 
 /***/ }),
-/* 282 */
+/* 283 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -98106,7 +98198,7 @@ var OrdersService = (function () {
     OrdersService.prototype.GetOrdersPendingNow = function (userId) {
         var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json; charset=UTF-8');
-        return this.http.get(this.serviceUrl.baseUrl + "/user/getCustomerOrdersByUserId?userId=" + userId + "&orderType=100", { headers: headers })
+        return this.http.get(this.serviceUrl.baseUrl + "/user/getCustomerOrdersByUserId?userId=" + userId + "&orderType=200", { headers: headers })
             .map(function (res) { return res.json(); });
     };
     OrdersService.prototype.GetAllPlacedOrders = function (userId) {
@@ -98125,17 +98217,17 @@ OrdersService = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 
 /***/ }),
-/* 283 */
+/* 284 */
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"orders-screen\" >\n\n  <h2 class='my-orders-heading'>My orders</h2>\n\n  <hr class=\"saperator-orders\">\n\n  <div class=\"scheduled-orders\">\n\n    <div class=\"row clearfix\">\n\n      <div class=\"left-aligned-heading\">\n        <h3>Scheduled orders</h3>\n      </div>\n\n      <div class=\"right-aligned-lin\">\n        <hr class=\"saperator-orders\">\n      </div>\n\n\n    </div>\n\n    <div class=\"innner row one-order\">\n\n      <div class=\"col-md-9 col-sm-9 col-lg-9 left-row-detail\">\n        <p>1x Disprin 300mg - D.Watson Chemist, 23/11/2017</p>\n        <p>Total : Rs. 690/-</p>\n      </div>\n\n      <div class=\"col-md-3 col-sm-3 col-lg-3 right-time\">\n        <p class=\"huge-green\">45 mins</p>\n        <p>Delivery Time</p>\n      </div>\n\n    </div>\n\n\n\n  </div>\n\n  <div class=\"past-orders\">\n\n    <div class=\"row clearfix\">\n\n      <div class=\"left-aligned-heading\">\n        <h3>Past orders</h3>\n      </div>\n\n      <div class=\"right-aligned-lin\">\n        <hr class=\"saperator-orders\">\n      </div>\n\n\n    </div>\n\n\n    <div class=\"innner row one-order\" *ngFor=\"let order of doneOrders\">\n\n      <div class=\"col-md-9 col-sm-9 col-lg-9 left-row-detail\">\n        \n        <p>1x Disprin 300mg - D.Watson Chemist, {{order.CreatedOnUTC}}</p>\n        <p>Total : Rs. {{order.OrderTotal}}/-</p>\n      </div>\n\n      <div class=\"col-md-3 col-sm-3 col-lg-3 right-time\">\n        <button class=\"re-order\">Reorder</button>\n      </div>\n\n    </div>\n\n\n  </div>\n\n</div>"
+module.exports = "\n<div class=\"orders-screen\" >\n\n  <h2 class='my-orders-heading'>My orders</h2>\n\n  <hr class=\"saperator-orders\">\n\n  <div class=\"scheduled-orders\">\n\n    <div class=\"row clearfix\">\n\n      <div class=\"left-aligned-heading\">\n        <h3>Scheduled orders</h3>\n      </div>\n\n      <div class=\"right-aligned-lin\">\n        <hr class=\"saperator-orders\">\n      </div>\n\n\n    </div>\n\n    <div class=\"innner row one-order\" *ngFor=\"let laterOrder of laterOrders\">\n\n      <div class=\"col-md-9 col-sm-9 col-lg-9 left-row-detail\">\n          <p *ngFor=\"let products of laterOrder.ReturnOrderItemDTOList\">{{products.Quantity}}x {{products.ProductName}} {{products.DosageSize}}{{products.DosageSymbol}} </p>\n          <p>{{laterOrder.ChemistName}} - {{laterOrder.CreatedOnUTC}} - Total : Rs. {{laterOrder.OrderTotal}}/-</p>\n      </div>\n\n      <div class=\"col-md-3 col-sm-3 col-lg-3 right-time\">\n        <p class=\"huge-green\">{{laterOrder.StartingTime}} - {{laterOrder.EndingTime}}</p>\n        <p style=\"text-align: center\">Delivery Time</p>\n      </div>\n\n    </div>\n\n\n\n  </div>\n\n  <div class=\"past-orders\">\n\n    <div class=\"row clearfix\">\n\n      <div class=\"left-aligned-heading\">\n        <h3>Past orders</h3>\n      </div>\n\n      <div class=\"right-aligned-lin\">\n        <hr class=\"saperator-orders\">\n      </div>\n\n\n    </div>\n\n\n    <div class=\"innner row one-order\" *ngFor=\"let order of doneOrders\">\n        \n      <div class=\"col-md-9 col-sm-9 col-lg-9 left-row-detail\">\n          \n        <p *ngFor=\"let products of order.ReturnOrderItemDTOList\">{{products.Quantity}}x {{products.ProductName}} {{products.DosageSize}}{{products.DosageSymbol}} </p>\n        <p>{{order.ChemistName}} - {{order.CreatedOnUTC}} - Total : Rs. {{order.OrderTotal}}/-</p>\n      </div>\n\n      <div class=\"col-md-3 col-sm-3 col-lg-3 right-time\">\n        <button class=\"re-order\">Reorder</button>\n      </div>\n     \n      <div class=\"col-md-12\">      <hr class=\"saperator-order-line\"> </div>\n\n\n    </div>\n\n\n  </div>\n\n</div>"
 
 /***/ }),
-/* 284 */
+/* 285 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__(285);
+        var result = __webpack_require__(286);
 
         if (typeof result === "string") {
             module.exports = result;
@@ -98145,7 +98237,7 @@ module.exports = "\n<div class=\"orders-screen\" >\n\n  <h2 class='my-orders-hea
     
 
 /***/ }),
-/* 285 */
+/* 286 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)(undefined);
@@ -98153,23 +98245,23 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, ".my-orders-heading{\r\n    font-size:20px;\r\n    font-weight: 500;\r\n    color:black;\r\n    text-transform: uppercase;\r\n    text-align: center;\r\n    margin-bottom:0;\r\n}\r\n.orders-screen{\r\n    width: 50%;\r\n    margin:115px auto;\r\n}\r\n.orders-screen .row{\r\n    margin:0;\r\n}\r\n.orders-saperator{\r\n    border-bottom:1px solid #aeaeae !important;\r\n    margin-top:15px !important;\r\n    \r\n}\r\n\r\n.innner{\r\n    margin:35px 0 !important;\r\n}\r\n\r\n.left-aligned-heading h3{\r\n    font-size:20px;\r\n    font-weight: 500;\r\n    text-transform: capitalize;\r\n    color:#1ec26b;\r\n}\r\n.left-aligned-heading{\r\n    position: relative;\r\n    float: left;\r\n    margin-right: 15px;\r\n}\r\n\r\n.right-aligned-lin{\r\n    padding-top: 12px;\r\n}\r\n\r\n.one-order p{\r\n    font-size:16px;\r\n    font-weight:500;\r\n    color:#656565;\r\n    margin:0;\r\n}\r\n\r\n.right-time p.huge-green{\r\n    font-weight: 500;\r\n    font-size:28px;\r\n    color:#1ec26b;\r\n\r\n}\r\n\r\n.re-order{\r\n    width:100%;\r\n    border:1px solid #1ec26b;\r\n    height: 45px;\r\n    background: transparent;\r\n    color:#1ec26b;\r\n    font-size:18px;\r\n    font-weight: 300;\r\n    border-radius:4px;\r\n    width:115px;\r\n}       \r\n\r\n\r\n@media only screen and (max-width: 640px){\r\n    .orders-screen{\r\n        width: 90%;\r\n        margin: 0 auto;\r\n    }\r\n    .right-time{\r\n        margin-top:15px;\r\n    }\r\n    \r\n}\r\n@media only screen and (max-width: 768px) and (min-width: 640px){\r\n    .orders-screen {\r\n        width: 80%;\r\n        margin: 0 auto;\r\n    }\r\n}\r\n@media only screen and (max-width: 992px) and (min-width: 768px){\r\n    .orders-screen {\r\n        width: 80%;\r\n        margin: 0 auto;\r\n    }\r\n}", ""]);
+exports.push([module.i, ".my-orders-heading{\r\n    font-size:20px;\r\n    font-weight: 500;\r\n    color:black;\r\n    text-transform: uppercase;\r\n    text-align: center;\r\n    margin-bottom:0;\r\n}\r\n.orders-screen{\r\n    width: 50%;\r\n    margin:115px auto;\r\n}\r\n.orders-screen .row{\r\n    margin:0;\r\n}\r\n.orders-saperator{\r\n    border-bottom:1px solid #aeaeae !important;\r\n    margin-top:15px !important;\r\n    \r\n}\r\n\r\n.saperator-order-line{\r\n    border-bottom:1px solid #ddd !important;\r\n    margin-top:15px !important;\r\n}\r\n\r\n.innner{\r\n    margin:35px 0 !important;\r\n}\r\n\r\n.left-aligned-heading h3{\r\n    font-size:20px;\r\n    font-weight: 500;\r\n    text-transform: capitalize;\r\n    color:#1ec26b;\r\n}\r\n.left-aligned-heading{\r\n    position: relative;\r\n    float: left;\r\n    margin-right: 15px;\r\n}\r\n\r\n.right-aligned-lin{\r\n    padding-top: 12px;\r\n}\r\n\r\n.one-order p{\r\n    font-size:16px;\r\n    font-weight:500;\r\n    color:#656565;\r\n    margin:0;\r\n}\r\n\r\n.right-time p.huge-green{\r\n    font-weight: 500;\r\n    font-size:16px;\r\n    color:#1ec26b;\r\n\r\n}\r\n\r\n.re-order{\r\n    width:100%;\r\n    border:1px solid #1ec26b;\r\n    height: 45px;\r\n    background: transparent;\r\n    color:#1ec26b;\r\n    font-size:18px;\r\n    font-weight: 300;\r\n    border-radius:4px;\r\n    width:115px;\r\n}       \r\n\r\n\r\n@media only screen and (max-width: 640px){\r\n    .orders-screen{\r\n        width: 90%;\r\n        margin: 0 auto;\r\n    }\r\n    .right-time{\r\n        margin-top:15px;\r\n    }\r\n    \r\n}\r\n@media only screen and (max-width: 768px) and (min-width: 640px){\r\n    .orders-screen {\r\n        width: 80%;\r\n        margin: 0 auto;\r\n    }\r\n}\r\n@media only screen and (max-width: 992px) and (min-width: 768px){\r\n    .orders-screen {\r\n        width: 80%;\r\n        margin: 0 auto;\r\n    }\r\n}", ""]);
 
 // exports
 
 
 /***/ }),
-/* 286 */
+/* 287 */
 /***/ (function(module, exports) {
 
 module.exports = "<div id=\"snackbar\"></div>\n<div class=\"orders-screen\">\n\n  <h2 class='my-orders-heading'>Profile</h2>\n\n  <hr class=\"saperator-orders\">\n\n\n  <div class=\"form-profile\">\n\n      <div class=\"form-group\" style=\"padding:12px\">\n          <label style=\"    width: 170px;\">Change Display Picture</label>\n\n         \n          <form id=\"form1\" runat=\"server\"  (click)=\"changeImage()\">\n            <input type='file'(change)=\"changeimage($event)\" id=\"imgInp\"  style=\"visibility:hidden;\"/>\n            <img  src=\"{{ThisUser.ProfileURL}}\" style=\"\" id=\"blah\"  src=\"#\" alt=\"your image\" />\n      \n          </form> \n  </div>\n    <div class=\"form-group\">\n      <label>Email</label>\n      <input type=\"text\" class=\"form-control input-lg\" name=\"ThisUser.Email\" [(ngModel)]=\"ThisUser.Email\"/>\n    </div>\n\n    <div class=\"row\">\n\n      <div class=\"col-md-6 col-sm-6 col-lg-6\">\n\n        <div class=\"form-group\">\n          <label>Full name</label>\n          <input type=\"text\" class=\"form-control input-lg\" name=\"ThisUser.FullName\" [(ngModel)]=\"ThisUser.FullName\"/>\n        </div>\n\n      </div>\n\n      <div class=\"col-md-6 col-sm-6 col-lg-6\">\n\n        <div class=\"form-group\">\n          <label>Username</label>\n          <input type=\"text\" class=\"form-control input-lg\" name=\"ThisUser.UserName\" [(ngModel)]=\"ThisUser.UserName\" />\n        </div>\n\n      </div>\n\n    </div>\n\n    <div class=\"row\">\n\n      <div class=\"col-md-6 col-sm-6 col-lg-6\">\n\n        <div class=\"form-group\">\n          <label style=\"width: 114px;\">Mobile Number</label>\n          <input type=\"text\" class=\"form-control input-lg\" name=\"ThisUser.mobileNumber\" [(ngModel)]=\"ThisUser.mobileNumber\" />\n        </div>\n\n      </div>\n\n\n\n\n\n\n    </div>\n\n    <div class=\"row\">\n\n      <div class=\"col-md-offset-6 col-lg-offset-6 col-sm-offset-6 col-md-6 col-sm-6 col-lg-6\" style=\"text-align: right;\">\n\n        <button class=\"save-btn\" (click)=\"updateWithoutPassword()\">Save</button>\n      </div>\n\n    </div>\n\n  </div>\n\n  \n  <h2 class='my-orders-heading'>Password</h2>\n  \n    <hr class=\"saperator-orders\">\n\n\n    <div class=\"password-change\">\n        <div class=\"form-group\">\n          <input type=\"password\" class=\"password-fields\" placeholder=\"Current Password\" name=\"currentPass\" [(ngModel)]=\"currentPass\" >\n        </div>\n        <div class=\"form-group\">\n            <input type=\"password\" class=\"password-fields\" placeholder=\"New Password\" name=\"newPass\" [(ngModel)]=\"newPass\">\n        </div>\n        <div class=\"row\">\n            \n                  <div class=\"col-md-offset-6 col-lg-offset-6 col-sm-offset-6 col-md-6 col-sm-6 col-lg-6\" style=\"text-align: right;\">\n            \n                    <button class=\"save-btn\" (click)=\"updatePasswords()\">Save</button>\n                  </div>\n            \n        </div>\n    </div>\n\n\n</div>"
 
 /***/ }),
-/* 287 */
+/* 288 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__(288);
+        var result = __webpack_require__(289);
 
         if (typeof result === "string") {
             module.exports = result;
@@ -98179,7 +98271,7 @@ module.exports = "<div id=\"snackbar\"></div>\n<div class=\"orders-screen\">\n\n
     
 
 /***/ }),
-/* 288 */
+/* 289 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)(undefined);
@@ -98193,7 +98285,7 @@ exports.push([module.i, ".my-orders-heading{\r\n    font-size:20px;\r\n    font-
 
 
 /***/ }),
-/* 289 */
+/* 290 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -98215,7 +98307,7 @@ var AppComponent = (function () {
     function AppComponent(appState) {
         this.appState = appState;
         this.angularclassLogo = 'assets/img/angularclass-avatar.png';
-        this.name = 'Angular 2 Webpack Starter';
+        this.name = 'Pharma Aid';
         this.url = 'https://twitter.com/AngularClass';
     }
     AppComponent.prototype.ngOnInit = function () {
@@ -98228,8 +98320,8 @@ AppComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
         selector: 'app',
         encapsulation: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewEncapsulation"].None,
-        styles: [__webpack_require__(290), __webpack_require__(292)],
-        template: __webpack_require__(294)
+        styles: [__webpack_require__(291), __webpack_require__(293)],
+        template: __webpack_require__(295)
     }),
     __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__app_service__["a" /* AppState */]])
 ], AppComponent);
@@ -98237,11 +98329,11 @@ AppComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 
 /***/ }),
-/* 290 */
+/* 291 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__(291);
+        var result = __webpack_require__(292);
 
         if (typeof result === "string") {
             module.exports = result;
@@ -98251,7 +98343,7 @@ AppComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
     
 
 /***/ }),
-/* 291 */
+/* 292 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)(undefined);
@@ -98259,17 +98351,17 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, "/* @font-face {\r\n  font-family: 'myriadRegular';\r\n  src: url('/assets/fonts/myriad/MyriadPro-Regular.eot?#iefix') format('embedded-opentype'),  url('/assets/fonts/myriad/MyriadPro-Regular.otf')  format('opentype'),\r\n         url('/assets/fonts/myriad/MyriadPro-Regular.woff') format('woff'), url('/assets/fonts/myriad/MyriadPro-Regular.ttf')  format('truetype'), url('/assets/fonts/myriad/MyriadPro-Regular.svg#MyriadPro-Regular') format('svg');\r\n  font-weight: normal;\r\n  font-style: normal;\r\n}\r\n */\r\n\r\n\r\n@font-face {\r\n  font-family: 'Museo Sans Cyrl 300';\r\n  font-style: normal;\r\n  font-weight: normal;\r\n  src: local('/assets/fonts/museo/Museo Sans Cyrl 300'), url('/assets/fonts/museo/MuseoSansCyrl_0.woff') format('woff');\r\n  }\r\n\r\nbody,p,input,label{\r\n  font-family: 'Museo Sans Cyrl 300';\r\n}\r\n\r\nbody{\r\n  background:#faf9f5\r\n}\r\n.panel-heading{\r\n padding-bottom:5px !important;\r\n}\r\n[type=\"radio\"]:checked,\r\n[type=\"radio\"]:not(:checked) {\r\n    position: absolute;\r\n    left: -9999px;\r\n}\r\n[type=\"radio\"]:checked + label,\r\n[type=\"radio\"]:not(:checked) + label\r\n{\r\n    position: relative;\r\n    padding-left: 28px;\r\n    cursor: pointer;\r\n    line-height: 20px;\r\n    display: inline-block;\r\n\r\n}\r\n[type=\"radio\"]:checked + label:before,\r\n[type=\"radio\"]:not(:checked) + label:before {\r\n    content: '';\r\n    position: absolute;\r\n    left: 0;\r\n    top: 0;\r\n    width: 20px;\r\n    height: 20px;\r\n    border: 1px solid #b6b6b6;\r\n    border-radius: 100%;\r\n    background: #fff;\r\n    color:#aeaeae;\r\n}\r\n[type=\"radio\"]:checked + label:after,\r\n[type=\"radio\"]:not(:checked) + label:after {\r\n    content: '';\r\n    width: 12px;\r\n    height: 12px;\r\n    background: #1ec26b;\r\n    position: absolute;\r\n    top: 4px;\r\n    left: 4px;\r\n    border-radius: 100%;\r\n    -webkit-transition: all 0.2s ease;\r\n    transition: all 0.2s ease;\r\n    color:#676767;\r\n}\r\n[type=\"radio\"]:not(:checked) + label:after {\r\n    opacity: 0;\r\n    -webkit-transform: scale(0);\r\n    transform: scale(0);\r\n}\r\n[type=\"radio\"]:checked + label:after {\r\n    opacity: 1;\r\n    -webkit-transform: scale(1);\r\n    transform: scale(1);\r\n}\r\n\r\n.half-left a{\r\n    cursor:pointer;\r\n}\r\n\r\n.rating.color-positive .star-container .star i{\r\n    color:#5ca1f6 !important;\r\n}\r\n\r\n.search-icon{\r\n    position: absolute;\r\n    top: 11px;\r\n    z-index: 1;\r\n    width: 22px;\r\n    left: 12px;\r\n}\r\n\r\n\r\n\r\n/* animation */\r\n\r\n.loading {\r\n    opacity: 0;\r\n    transition: opacity .8s ease-in-out;\r\n    position: fixed;\r\n    height: 100%;\r\n    width: 100%;\r\n    top: 0;\r\n    left: 0;\r\n    background: #000;\r\n    z-index: -1;\r\n}\r\n/* .loading screen is visible when app is not bootstraped yet, .my-app is empty */\r\napp:empty + .loading {\r\n    opacity: 1;\r\n    z-index: 100;\r\n}\r\n\r\n\r\n.loader{\r\n    display:none;\r\n    text-align: center;\r\n    margin:50px;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n", ""]);
+exports.push([module.i, "/* @font-face {\r\n  font-family: 'myriadRegular';\r\n  src: url('/assets/fonts/myriad/MyriadPro-Regular.eot?#iefix') format('embedded-opentype'),  url('/assets/fonts/myriad/MyriadPro-Regular.otf')  format('opentype'),\r\n         url('/assets/fonts/myriad/MyriadPro-Regular.woff') format('woff'), url('/assets/fonts/myriad/MyriadPro-Regular.ttf')  format('truetype'), url('/assets/fonts/myriad/MyriadPro-Regular.svg#MyriadPro-Regular') format('svg');\r\n  font-weight: normal;\r\n  font-style: normal;\r\n}\r\n */\r\n\r\n\r\n@font-face {\r\n  font-family: 'Museo Sans Cyrl 300';\r\n  font-style: normal;\r\n  font-weight: normal;\r\n  src: local('/assets/fonts/museo/Museo Sans Cyrl 300'), url('/assets/fonts/museo/MuseoSansCyrl_0.woff') format('woff');\r\n  }\r\n\r\nbody,p,input,label{\r\n  font-family: 'Museo Sans Cyrl 300';\r\n}\r\n\r\nbody{\r\n  background:#faf9f5\r\n}\r\n.panel-heading{\r\n padding-bottom:5px !important;\r\n}\r\n[type=\"radio\"]:checked,\r\n[type=\"radio\"]:not(:checked) {\r\n    position: absolute;\r\n    left: -9999px;\r\n}\r\n[type=\"radio\"]:checked + label,\r\n[type=\"radio\"]:not(:checked) + label\r\n{\r\n    position: relative;\r\n    padding-left: 28px;\r\n    cursor: pointer;\r\n    line-height: 20px;\r\n    display: inline-block;\r\n\r\n}\r\n[type=\"radio\"]:checked + label:before,\r\n[type=\"radio\"]:not(:checked) + label:before {\r\n    content: '';\r\n    position: absolute;\r\n    left: 0;\r\n    top: 0;\r\n    width: 20px;\r\n    height: 20px;\r\n    border: 1px solid #b6b6b6;\r\n    border-radius: 100%;\r\n    background: #fff;\r\n    color:#aeaeae;\r\n}\r\n[type=\"radio\"]:checked + label:after,\r\n[type=\"radio\"]:not(:checked) + label:after {\r\n    content: '';\r\n    width: 12px;\r\n    height: 12px;\r\n    background: #1ec26b;\r\n    position: absolute;\r\n    top: 4px;\r\n    left: 4px;\r\n    border-radius: 100%;\r\n    -webkit-transition: all 0.2s ease;\r\n    transition: all 0.2s ease;\r\n    color:#676767;\r\n}\r\n[type=\"radio\"]:not(:checked) + label:after {\r\n    opacity: 0;\r\n    -webkit-transform: scale(0);\r\n    transform: scale(0);\r\n}\r\n[type=\"radio\"]:checked + label:after {\r\n    opacity: 1;\r\n    -webkit-transform: scale(1);\r\n    transform: scale(1);\r\n}\r\n\r\n.half-left a{\r\n    cursor:pointer;\r\n}\r\n\r\n.rating.color-positive .star-container .star i{\r\n    color:#5ca1f6 !important;\r\n}\r\n\r\n.search-icon{\r\n    position: absolute;\r\n    top: 11px;\r\n    z-index: 1;\r\n    width: 22px;\r\n    left: 12px;\r\n}\r\n\r\n\r\n\r\n/* animation */\r\n\r\n.loading {\r\n    opacity: 0;\r\n    transition: opacity .8s ease-in-out;\r\n    position: fixed;\r\n    height: 100%;\r\n    width: 100%;\r\n    top: 0;\r\n    left: 0;\r\n    background: #000;\r\n    z-index: -1;\r\n}\r\n/* .loading screen is visible when app is not bootstraped yet, .my-app is empty */\r\napp:empty + .loading {\r\n    opacity: 1;\r\n    z-index: 100;\r\n}\r\n\r\n\r\n.loader,.FetchingTimeSlots{\r\n    display:none;\r\n    text-align: center;\r\n    margin:50px;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 292 */
+/* 293 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__(293);
+        var result = __webpack_require__(294);
 
         if (typeof result === "string") {
             module.exports = result;
@@ -98279,7 +98371,7 @@ exports.push([module.i, "/* @font-face {\r\n  font-family: 'myriadRegular';\r\n 
     
 
 /***/ }),
-/* 293 */
+/* 294 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)(undefined);
@@ -98293,13 +98385,13 @@ exports.push([module.i, "@charset \"UTF-8\";\n\n/*!\n * animate.css -http://dane
 
 
 /***/ }),
-/* 294 */
+/* 295 */
 /***/ (function(module, exports) {
 
 module.exports = "<!-- <nav>\r\n    <a [routerLink]=\" ['./'] \"\r\n      routerLinkActive=\"active\" [routerLinkActiveOptions]= \"{exact: true}\">\r\n      Index\r\n    </a>\r\n    <a [routerLink]=\" ['./home'] \"\r\n      routerLinkActive=\"active\" [routerLinkActiveOptions]= \"{exact: true}\">\r\n      Home\r\n    </a>\r\n    <a [routerLink]=\" ['./detail'] \"\r\n      routerLinkActive=\"active\" [routerLinkActiveOptions]= \"{exact: true}\">\r\n      Detail\r\n    </a>\r\n    <a [routerLink]=\" ['./barrel'] \"\r\n      routerLinkActive=\"active\" [routerLinkActiveOptions]= \"{exact: true}\">\r\n      Barrel\r\n    </a>\r\n    <a [routerLink]=\" ['./about'] \"\r\n      routerLinkActive=\"active\" [routerLinkActiveOptions]= \"{exact: true}\">\r\n      About\r\n    </a>\r\n  </nav> -->\r\n  <app-header></app-header>\r\n\r\n  <main>\r\n    <router-outlet></router-outlet>\r\n  </main>\r\n\r\n\r\n\r\n <app-footer></app-footer>"
 
 /***/ }),
-/* 295 */
+/* 296 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -98309,7 +98401,7 @@ module.exports = "<!-- <nav>\r\n    <a [routerLink]=\" ['./'] \"\r\n      router
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_of__ = __webpack_require__(296);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_of__ = __webpack_require__(297);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_of___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_of__);
 
 
@@ -98336,28 +98428,28 @@ var APP_RESOLVER_PROVIDERS = [
 
 
 /***/ }),
-/* 296 */
+/* 297 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var Observable_1 = __webpack_require__(3);
-var of_1 = __webpack_require__(113);
+var of_1 = __webpack_require__(114);
 Observable_1.Observable.of = of_1.of;
 //# sourceMappingURL=of.js.map
 
 /***/ }),
-/* 297 */
+/* 298 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__x_large_directive__ = __webpack_require__(298);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__x_large_directive__ = __webpack_require__(299);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__x_large_directive__["a"]; });
 
 
 
 /***/ }),
-/* 298 */
+/* 299 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -98396,7 +98488,7 @@ XLargeDirective = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 
 /***/ }),
-/* 299 */
+/* 300 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -98406,10 +98498,10 @@ XLargeDirective = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_usersModel__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_userService__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_chemistService__ = __webpack_require__(79);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ngx_facebook__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_chemistService__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ngx_facebook__ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_sharedService__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_addtocartService__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_addtocartService__ = __webpack_require__(79);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_jquery__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_jquery__);
 
@@ -98744,9 +98836,6 @@ var HeaderComponent = (function () {
         this.signUpModal["open"]();
     };
     HeaderComponent.prototype.ngOnInit = function () {
-        __WEBPACK_IMPORTED_MODULE_9_jquery__('.signedIn #droppingMenu').click(function () {
-            alert();
-        });
         __WEBPACK_IMPORTED_MODULE_9_jquery__('.signedIn #droppingMenu .dropdown').hover(function () {
             console.log("hoverin");
         }, function () {
@@ -98771,8 +98860,8 @@ __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 HeaderComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
         selector: 'app-header',
-        template: __webpack_require__(300),
-        styles: [__webpack_require__(301), __webpack_require__(136)],
+        template: __webpack_require__(301),
+        styles: [__webpack_require__(302), __webpack_require__(136)],
         encapsulation: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewEncapsulation"].None,
         providers: [__WEBPACK_IMPORTED_MODULE_4__services_userService__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_5__services_chemistService__["a" /* ChemistService */], __WEBPACK_IMPORTED_MODULE_8__services_addtocartService__["a" /* AddtocartService */]]
     }),
@@ -98782,17 +98871,17 @@ HeaderComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 
 /***/ }),
-/* 300 */
+/* 301 */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default\" style=\"margin:0;\">\n  <div class=\"container\">\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#myNavbar\">\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n      </button>\n      <a class=\"navbar-brand\" href=\"#\">\n        <img src=\"assets/img/greenlogo.gif\">\n      </a>\n    </div>\n    <div class=\"collapse navbar-collapse\" id=\"myNavbar\">\n      <ng-container *ngIf=\"loggedIn==false\">\n\n        <ul class=\"nav navbar-nav navbar-right header-right\">\n          <li>\n            <a href=\"#\" (click)=\"signUpModal.open()\">sign up</a>\n          </li>\n          <li class=\"border-left\">\n            <a (click)='loginModal.open()'>login</a>\n          </li>\n        </ul>\n\n      </ng-container>\n\n      <ng-container *ngIf=\"loggedIn==true\">\n\n        <ul class=\"nav navbar-nav navbar-right signedIn\">\n          <li style=\"padding-right: 20px;\" id=\"droppingMenu\" (mouseenter)=\"hovered()\" (mouseleave)=\"hoverOut()\">\n\n              <div class=\"dropdown\">\n                  <button class=\"dropbtn\" > <div class=\"left-photo\">\n                      <img src=\"/assets/img/user.png\" id=\"profile-pic\" style=\"width:25px;\">\n                  </div>\n                  <div class=\"right-name\">\n                      <p class='username'>{{LoggedInUser.UserName}}</p>\n                  </div></button>\n                  <div class=\"dropdown-content\">\n                    <a href=\"/orders\">My Orders</a>\n                    <a href=\"/profile\">Profile</a>\n                    <a href=\"#\" (click)=\"logOutUser()\">Logout</a>\n                  </div>\n                </div>\n                \n           \n            \n          </li >\n          <li class=\"border-left\" style=\"padding-left: 10px;margin-top: 18px;\" (click)=\"navigateToHome()\">\n              <img src=\"/assets/img/cart.png\" style=\"width: 25px;\">\n              <div class=\"cart-count\">{{CartCount}}</div>\n          </li>\n        </ul>\n\n      </ng-container>\n\n     \n    </div>\n  </div>\n</nav>\n<div id=\"snackbar\"></div>\n\n<modal #loginModal  [closeOnEscape]=\"false\" [closeOnOutsideClick]=\"false\" modalClass=\"modal-lg modal-md  signUpModal\" (onSubmit)=\"actionOnSubmit()\">\n  <modal-content>\n\n  <!--   <div class=\"signButton\">\n      <button class='SignUpLogin' (click)=\"routeToSignUp()\">Sign Up</button>\n    </div> -->\n\n    <div class=\"closeButton\" (click)=\"loginModal.close()\">\n      <img src=\"/assets/img/cancel.png\" width=\"15px\">\n    </div>\n\n    <div class='login-container'>\n\n      <div class='login clearfix'>\n\n        <div class='left-side'>\n\n          <div class=\"centered\">\n            <h2 class='logIN white'>Log In</h2>\n            <p class=\"white small-text\">Login to Continue</p>\n          </div>\n          <div class=\"image-logo\">\n            <div class=\"left-image\">\n              <img src=\"assets/img/1.gif\">\n            </div>\n            <div class=\"right-text\">\n              <p>Pharma Aid</p>\n            </div>\n\n          </div>\n\n        </div>\n\n        <div class='right-side'>\n          <div class=\"myForms\">\n            <div class=\"form-group\">\n              <label for=\"email\">Email</label>\n              <input type=\"text\" class=\"form-control\" [ngClass]=\"{'errors': EmailError}\" name=\"user.UserName\" [(ngModel)]=\"user.UserName\">\n            </div>\n\n            <div class=\"form-group\">\n              <label for=\"email\">password</label>\n              <input type=\"password\" class=\"form-control\" [ngClass]=\"{'errors': PasswordError}\" name=\"user.Password\" [(ngModel)]=\"user.Password\">\n            </div>\n          </div>\n\n          <div class=\"loader\">\n            <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->\n            <svg width=\"50\" height=\"30\" viewBox=\"0 0 120 30\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"#1ec26b\">\n              <circle cx=\"15\" cy=\"15\" r=\"15\">\n                <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n              <circle cx=\"60\" cy=\"15\" r=\"9\" fill-opacity=\"0.3\">\n                <animate attributeName=\"r\" from=\"9\" to=\"9\" begin=\"0s\" dur=\"0.8s\" values=\"9;15;9\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"0.5\" to=\"0.5\" begin=\"0s\" dur=\"0.8s\" values=\".5;1;.5\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n              <circle cx=\"105\" cy=\"15\" r=\"15\">\n                <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n            </svg>\n\n          </div>\n\n          <div class=\"form-group\" style=\"text-align:center;margin-top:60px;\">\n            <button class=\"submit-custom\" (click)=\"login()\">Login</button>\n          </div>\n\n\n          <div class=\"row clearfix\">\n            <div class='col-md-4 col-sm-4  no-left'>\n              <hr>\n            </div>\n            <div class='col-md-4 col-sm-4 no-padding text-centered'>\n              <p class=\"loginWith\">Login With</p>\n            </div>\n            <div class='col-md-4 col-sm-4 no-right'>\n              <hr>\n            </div>\n          </div>\n\n\n          <div class=\"row clearfix facebook-gmail\">\n\n            <div class=\"half-left\">\n              <a class=\"pointers\" (click)=\"loginWithFacebook()\">\n                <div class='holder'>\n                  <i class='fa fa-facebook'></i>\n                </div>\n              </a>\n            </div>\n            <div class=\"half-right\">\n              <button id=\"googleSignInBtn\" (click)=\"googleInit()\">\n                <div class='holder'>\n                  <img src=\"assets/img/plus.png\" style=\"width:23px;padding-left:2px\">\n                </div>\n              </button>\n            </div>\n\n          </div>\n\n\n        </div>\n\n      </div>\n\n    </div>\n  </modal-content>\n\n</modal>\n\n\n<modal #signUpModal\n[closeOnEscape]=\"false\"\n[closeOnOutsideClick]=\"false\"\nmodalClass=\"modal-lg modal-md  signUpModal\"\n(onSubmit)=\"actionOnSubmit()\">\n<modal-content>\n\n  <!-- <div class=\"signButton\">\n    <button class='SignUpLogin' (click)=\"routeToLogin()\">Login</button>\n  </div> -->\n\n  <div class=\"closeButton\" (click)=\"signUpModal.close()\">\n    <img src=\"/assets/img/cancel.png\" width=\"15px\">\n  </div>\n\n<div class='login-container'>\n  \n     <div class='login clearfix'>\n  \n        <div class='left-side'>\n            \n            <div class=\"centered\">\n            <h2 class='logIN white'>Sign Up</h2>\n            <p class=\"white small-text\">Sign up now to enjoy faster and better experience</p>\n           </div>\n            <div class=\"image-logo\">\n             <div class=\"left-image\">\n              <img src=\"assets/img/1.gif\">\n             </div>\n             <div class=\"right-text\">\n              <p>Pharma Aid</p>\n            </div>\n   \n           </div>\n   \n         </div>\n  \n      <div class='right-side'>\n          <div class=\"myForms\">\n\n              <div class=\"form-group\">\n                  <label for=\"email\">username</label>\n                  <input type=\"text\" class=\"form-control\" [ngClass]=\"{'errors': UsernameError}\" name=\"user.UserName\" [(ngModel)]=\"user.UserName\">\n                </div>\n\n            <div class=\"form-group\">\n              <label for=\"email\">Email</label>\n              <input type=\"text\" class=\"form-control\" [ngClass]=\"{'errors': EmailError}\" name=\"user.Email\" [(ngModel)]=\"user.Email\">\n            </div>\n\n            <div class=\"form-group\">\n                <label for=\"email\">mobile number</label>\n                <input type=\"number\" class=\"form-control\" [ngClass]=\"{'errors': MobileError}\" name=\"user.MobileNumber\" [(ngModel)]=\"user.MobileNumber\">\n              </div>\n\n            <div class=\"form-group\">\n              <label for=\"email\">password</label>\n              <input type=\"password\" class=\"form-control\"  [ngClass]=\"{'errors': PasswordError}\" name=\"user.Password\" [(ngModel)]=\"user.Password\">\n            </div>\n\n            <div class=\"form-group\">\n                <label for=\"email\">confirm password</label>\n                <input type=\"password\" class=\"form-control\"  [ngClass]=\"{'errors': PasswordError}\" name=\"confrimPass\" [(ngModel)]=\"confrimPass\">\n              </div>\n          </div>\n\n\n          <div class=\"loader\">\n            <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->\n            <svg width=\"50\" height=\"30\" viewBox=\"0 0 120 30\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"#1ec26b\">\n              <circle cx=\"15\" cy=\"15\" r=\"15\">\n                <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n              <circle cx=\"60\" cy=\"15\" r=\"9\" fill-opacity=\"0.3\">\n                <animate attributeName=\"r\" from=\"9\" to=\"9\" begin=\"0s\" dur=\"0.8s\" values=\"9;15;9\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"0.5\" to=\"0.5\" begin=\"0s\" dur=\"0.8s\" values=\".5;1;.5\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n              <circle cx=\"105\" cy=\"15\" r=\"15\">\n                <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n            </svg>\n\n          </div>\n          \n          <div class=\"form-group\" style=\"text-align:center;margin-top:60px;\">\n            <button class=\"submit-custom\" (click)=\"signUp()\">Sign Up</button>\n          </div>\n\n\n          <div class=\"row clearfix\">\n            <div class='col-md-4 col-sm-4  no-left'>\n              <hr>\n            </div>\n            <div class='col-md-4 col-sm-4 no-padding text-centered'>\n              <p class=\"loginWith\">Sign up With</p>\n            </div>\n            <div class='col-md-4 col-sm-4 no-right'>\n              <hr>\n            </div>\n          </div>\n\n\n          <div class=\"row clearfix facebook-gmail\">\n\n              <div class=\"half-left\">\n                  <a (click)=\"signUpWithFacebook()\"><div class='holder'><i class='fa fa-facebook'></i></div></a>\n              </div>\n              <div class=\"half-right\">\n                  <button id=\"googleSignInBtn\" (click)=\"googleInit()\"><div class='holder'><img src=\"assets/img/plus.png\" style=\"width:23px;padding-left:2px\"></div></button>\n              </div>\n              <!-- <div class=\"g-signin2\" data-onsuccess=\"onSignIn\"></div> -->\n          </div>\n\n\n      </div>\n\n     </div>\n  \n  </div>\n</modal-content>\n\n</modal>"
+module.exports = "<nav class=\"navbar navbar-default\" style=\"margin:0;\">\n  <div class=\"container\">\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#myNavbar\">\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n      </button>\n      <a class=\"navbar-brand\" href=\"#\">\n        <img src=\"assets/img/greenlogo.gif\">\n      </a>\n    </div>\n    <div class=\"collapse navbar-collapse\" id=\"myNavbar\">\n      <ng-container *ngIf=\"loggedIn==false\">\n\n        <ul class=\"nav navbar-nav navbar-right header-right\">\n          <li>\n            <a href=\"#\" (click)=\"signUpModal.open()\">sign up</a>\n          </li>\n          <li class=\"border-left\">\n            <a (click)='loginModal.open()'>login</a>\n          </li>\n        </ul>\n\n      </ng-container>\n\n      <ng-container *ngIf=\"loggedIn==true\">\n\n        <ul class=\"nav navbar-nav navbar-right signedIn\">\n          <li style=\"padding-right: 20px;\" id=\"droppingMenu\" (mouseenter)=\"hovered()\" (mouseleave)=\"hoverOut()\">\n\n              <div class=\"dropdown\">\n                  <button class=\"dropbtn\" > <div class=\"left-photo\">\n                      <img src=\"/assets/img/user.png\" id=\"profile-pic\" style=\"width:25px;\">\n                  </div>\n                  <div class=\"right-name\">\n                      <p class='username'>{{LoggedInUser.UserName}}</p>\n                  </div></button>\n                  <div class=\"dropdown-content\">\n                    <a href=\"/orders\">My Orders</a>\n                    <a href=\"/profile\">Profile</a>\n                    <a href=\"#\" (click)=\"logOutUser()\">Logout</a>\n                  </div>\n                </div>\n                \n           \n            \n          </li >\n          <li class=\"border-left\" style=\"padding-left: 10px;margin-top: 18px;\" (click)=\"navigateToHome()\">\n              <img src=\"/assets/img/cart.png\" style=\"width: 25px;\">\n              <div class=\"cart-count\">{{CartCount}}</div>\n          </li>\n        </ul>\n\n      </ng-container>\n\n     \n    </div>\n  </div>\n</nav>\n<div id=\"snackbar\"></div>\n\n<modal #loginModal  [closeOnEscape]=\"false\" [closeOnOutsideClick]=\"false\" modalClass=\"modal-lg modal-md  animated bounceInDown signUpModal\" (onSubmit)=\"actionOnSubmit()\">\n  <modal-content>\n\n  <!--   <div class=\"signButton\">\n      <button class='SignUpLogin' (click)=\"routeToSignUp()\">Sign Up</button>\n    </div> -->\n\n    <div class=\"closeButton\" (click)=\"loginModal.close()\">\n      <img src=\"/assets/img/cancel.png\" width=\"15px\">\n    </div>\n\n    <div class='login-container'>\n\n      <div class='login clearfix'>\n\n        <div class='left-side'>\n\n          <div class=\"centered\">\n            <h2 class='logIN white'>Log In</h2>\n            <p class=\"white small-text\">Login to Continue</p>\n          </div>\n          <div class=\"image-logo\">\n            <div class=\"left-image\">\n              <img src=\"assets/img/1.gif\">\n            </div>\n            <div class=\"right-text\">\n              <p>Pharma Aid</p>\n            </div>\n\n          </div>\n\n        </div>\n\n        <div class='right-side'>\n          <div class=\"myForms\">\n            <div class=\"form-group\">\n              <label for=\"email\">Email</label>\n              <input type=\"text\" class=\"form-control\" [ngClass]=\"{'errors': EmailError}\" name=\"user.UserName\" [(ngModel)]=\"user.UserName\">\n            </div>\n\n            <div class=\"form-group\">\n              <label for=\"email\">password</label>\n              <input type=\"password\" class=\"form-control\" [ngClass]=\"{'errors': PasswordError}\" name=\"user.Password\" [(ngModel)]=\"user.Password\">\n            </div>\n          </div>\n\n          <div class=\"loader\">\n            <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->\n            <svg width=\"50\" height=\"30\" viewBox=\"0 0 120 30\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"#1ec26b\">\n              <circle cx=\"15\" cy=\"15\" r=\"15\">\n                <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n              <circle cx=\"60\" cy=\"15\" r=\"9\" fill-opacity=\"0.3\">\n                <animate attributeName=\"r\" from=\"9\" to=\"9\" begin=\"0s\" dur=\"0.8s\" values=\"9;15;9\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"0.5\" to=\"0.5\" begin=\"0s\" dur=\"0.8s\" values=\".5;1;.5\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n              <circle cx=\"105\" cy=\"15\" r=\"15\">\n                <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n            </svg>\n\n          </div>\n\n          <div class=\"form-group\" style=\"text-align:center;margin-top:60px;\">\n            <button class=\"submit-custom\" (click)=\"login()\">Login</button>\n          </div>\n\n\n          <div class=\"row clearfix\">\n            <div class='col-md-4 col-sm-4  no-left'>\n              <hr>\n            </div>\n            <div class='col-md-4 col-sm-4 no-padding text-centered'>\n              <p class=\"loginWith\">Login With</p>\n            </div>\n            <div class='col-md-4 col-sm-4 no-right'>\n              <hr>\n            </div>\n          </div>\n\n\n          <div class=\"row clearfix facebook-gmail\">\n\n            <div class=\"half-left\">\n              <a class=\"pointers\" (click)=\"loginWithFacebook()\">\n                <div class='holder'>\n                  <i class='fa fa-facebook'></i>\n                </div>\n              </a>\n            </div>\n            <div class=\"half-right\">\n              <button id=\"googleSignInBtn\" (click)=\"googleInit()\">\n                <div class='holder'>\n                  <img src=\"assets/img/plus.png\" style=\"width:23px;padding-left:2px\">\n                </div>\n              </button>\n            </div>\n\n          </div>\n\n\n        </div>\n\n      </div>\n\n    </div>\n  </modal-content>\n\n</modal>\n\n\n<modal #signUpModal\n[closeOnEscape]=\"false\"\n[closeOnOutsideClick]=\"false\"\nmodalClass=\"modal-lg modal-md  animated bounceInDown signUpModal\"\n(onSubmit)=\"actionOnSubmit()\">\n<modal-content>\n\n  <!-- <div class=\"signButton\">\n    <button class='SignUpLogin' (click)=\"routeToLogin()\">Login</button>\n  </div> -->\n\n  <div class=\"closeButton\" (click)=\"signUpModal.close()\">\n    <img src=\"/assets/img/cancel.png\" width=\"15px\">\n  </div>\n\n<div class='login-container'>\n  \n     <div class='login clearfix'>\n  \n        <div class='left-side'>\n            \n            <div class=\"centered\">\n            <h2 class='logIN white'>Sign Up</h2>\n            <p class=\"white small-text\">Sign up now to enjoy faster and better experience</p>\n           </div>\n            <div class=\"image-logo\">\n             <div class=\"left-image\">\n              <img src=\"assets/img/1.gif\">\n             </div>\n             <div class=\"right-text\">\n              <p>Pharma Aid</p>\n            </div>\n   \n           </div>\n   \n         </div>\n  \n      <div class='right-side'>\n          <div class=\"myForms\">\n\n              <div class=\"form-group\">\n                  <label for=\"email\">username</label>\n                  <input type=\"text\" class=\"form-control\" [ngClass]=\"{'errors': UsernameError}\" name=\"user.UserName\" [(ngModel)]=\"user.UserName\">\n                </div>\n\n            <div class=\"form-group\">\n              <label for=\"email\">Email</label>\n              <input type=\"text\" class=\"form-control\" [ngClass]=\"{'errors': EmailError}\" name=\"user.Email\" [(ngModel)]=\"user.Email\">\n            </div>\n\n            <div class=\"form-group\">\n                <label for=\"email\">mobile number</label>\n                <input type=\"number\" class=\"form-control\" [ngClass]=\"{'errors': MobileError}\" name=\"user.MobileNumber\" [(ngModel)]=\"user.MobileNumber\">\n              </div>\n\n            <div class=\"form-group\">\n              <label for=\"email\">password</label>\n              <input type=\"password\" class=\"form-control\"  [ngClass]=\"{'errors': PasswordError}\" name=\"user.Password\" [(ngModel)]=\"user.Password\">\n            </div>\n\n            <div class=\"form-group\">\n                <label for=\"email\">confirm password</label>\n                <input type=\"password\" class=\"form-control\"  [ngClass]=\"{'errors': PasswordError}\" name=\"confrimPass\" [(ngModel)]=\"confrimPass\">\n              </div>\n          </div>\n\n\n          <div class=\"loader\">\n            <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->\n            <svg width=\"50\" height=\"30\" viewBox=\"0 0 120 30\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"#1ec26b\">\n              <circle cx=\"15\" cy=\"15\" r=\"15\">\n                <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n              <circle cx=\"60\" cy=\"15\" r=\"9\" fill-opacity=\"0.3\">\n                <animate attributeName=\"r\" from=\"9\" to=\"9\" begin=\"0s\" dur=\"0.8s\" values=\"9;15;9\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"0.5\" to=\"0.5\" begin=\"0s\" dur=\"0.8s\" values=\".5;1;.5\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n              <circle cx=\"105\" cy=\"15\" r=\"15\">\n                <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n            </svg>\n\n          </div>\n          \n          <div class=\"form-group\" style=\"text-align:center;margin-top:60px;\">\n            <button class=\"submit-custom\" (click)=\"signUp()\">Sign Up</button>\n          </div>\n\n\n          <div class=\"row clearfix\">\n            <div class='col-md-4 col-sm-4  no-left'>\n              <hr>\n            </div>\n            <div class='col-md-4 col-sm-4 no-padding text-centered'>\n              <p class=\"loginWith\">Sign up With</p>\n            </div>\n            <div class='col-md-4 col-sm-4 no-right'>\n              <hr>\n            </div>\n          </div>\n\n\n          <div class=\"row clearfix facebook-gmail\">\n\n              <div class=\"half-left\">\n                  <a (click)=\"signUpWithFacebook()\"><div class='holder'><i class='fa fa-facebook'></i></div></a>\n              </div>\n              <div class=\"half-right\">\n                  <button id=\"googleSignInBtn\" (click)=\"googleInit()\"><div class='holder'><img src=\"assets/img/plus.png\" style=\"width:23px;padding-left:2px\"></div></button>\n              </div>\n              <!-- <div class=\"g-signin2\" data-onsuccess=\"onSignIn\"></div> -->\n          </div>\n\n\n      </div>\n\n     </div>\n  \n  </div>\n</modal-content>\n\n</modal>"
 
 /***/ }),
-/* 301 */
+/* 302 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__(302);
+        var result = __webpack_require__(303);
 
         if (typeof result === "string") {
             module.exports = result;
@@ -98802,7 +98891,7 @@ module.exports = "<nav class=\"navbar navbar-default\" style=\"margin:0;\">\n  <
     
 
 /***/ }),
-/* 302 */
+/* 303 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)(undefined);
@@ -98810,13 +98899,13 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, "\r\n.header-right li a{\r\n    text-transform: uppercase;\r\n    font-size:15px;\r\n    color:#656565;\r\n    padding-top: 6px;\r\n    padding-bottom: 6px;\r\n    margin-top: 4px;\r\n    font-weight: bold;\r\n    cursor: pointer;\r\n}\r\n.signedIn{\r\n    height: 60px;\r\n}\r\n.left-photo{\r\n    margin-right: 5px;\r\n}\r\n.right-name,.left-photo{\r\n    position: relative;\r\n    float:left;\r\n}\r\n.username{\r\n    padding-top: 1px;\r\n    text-transform: capitalize;\r\n    font-size:18px;\r\n    font-weight: 500;\r\n    color:#1ec26b;\r\n\r\n}\r\n.cart-count{\r\n    position: absolute;\r\n    top: -6px;\r\n    right: -10px;\r\n    background: #1ec26b;\r\n    border-radius: 50%;\r\n    color: white;\r\n    padding: 4px;\r\n    width: 20px;\r\n    font-size: 10px;\r\n    height: 20px;\r\n    text-align: center;\r\n}\r\n.header-right li{\r\n    border:none;\r\n}\r\n\r\nnav a{\r\nbackground:none !important;\r\n}\r\n\r\n.navbar-brand{\r\n\r\n    margin-top: 0;\r\n    padding-top: 10px;\r\n\r\n}\r\n.navbar-brand img{\r\n\r\n    width:150px;    \r\n    \r\n}\r\n\r\n.navbar-default{\r\n    background: white;\r\n    box-shadow: 0px 2px 8px 0px #ecebe7;\r\n}\r\n\r\n.header-right{\r\n    margin-top: 8px;\r\n    border-radius:10px;\r\n    height: 40px;\r\n    min-width: 190px;\r\n    border:1px solid #3ad72a;\r\n    overflow: hidden;\r\n}\r\n\r\n.border-left{\r\n    border-left:1px solid #3ad72a !important;\r\n    cursor: pointer;\r\n}\r\n\r\n.navbar-default{\r\n    border-radius: 0 !important;\r\n}\r\n\r\n.closeButton{\r\n    position: absolute;\r\n    right:25px;\r\n    top:25px;\r\n    z-index: 1;\r\n    cursor: pointer;\r\n}\r\n\r\n\r\n.dropbtn {\r\n    background-color: transparent;\r\n    color: white;\r\n    cursor: pointer;\r\n    border: none;    height: 60px;\r\n    padding-top: 12px;\r\n    padding-left: 15px;\r\n    padding-right: 15px;\r\n}\r\n\r\n/* The container <div> - needed to position the dropdown content */\r\n.dropdown {\r\n    position: relative;\r\n    display: inline-block;\r\n}\r\n\r\n/* Dropdown Content (Hidden by Default) */\r\n.dropdown-content {\r\n    display: none;\r\n    position: absolute;\r\n    background-color: #1ec26b;\r\n    min-width: 160px;\r\n    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);\r\n    z-index: 1;\r\n}\r\n\r\n/* Links inside the dropdown */\r\n.dropdown-content a {\r\n    color: black;\r\n    padding: 12px 16px;\r\n    text-decoration: none;\r\n    display: block;\r\n    text-align: left;\r\n    color:white;\r\n    font-size:15px;\r\n    font-weight: 500;\r\n    border-bottom:1px solid #66b88d;\r\n}\r\n\r\n/* Change color of dropdown links on hover */\r\n.dropdown-content a:hover {background-color: #f1f1f1}\r\n\r\n/* Show the dropdown menu on hover */\r\n.dropdown:hover .dropdown-content {\r\n    display: block;\r\n    top:60px;\r\n    \r\n}\r\n\r\n/* Change the background color of the dropdown button when the dropdown content is shown */\r\n.dropdown:hover .dropbtn {\r\n    background-color: #1ec26b;\r\n    color:white;\r\n}\r\n\r\n@media only screen and (max-width: 640px){\r\n    .header-right{\r\n        border:none;\r\n        height:auto;\r\n    }\r\n    \r\n}", ""]);
+exports.push([module.i, "\r\n.header-right li a{\r\n    text-transform: uppercase;\r\n    font-size:15px;\r\n    color:#656565;\r\n    padding-top: 6px;\r\n    padding-bottom: 6px;\r\n    margin-top: 4px;\r\n    font-weight: bold;\r\n    cursor: pointer;\r\n}\r\n.signedIn{\r\n    height: 60px;\r\n}\r\n.left-photo{\r\n    margin-right: 5px;\r\n}\r\n.right-name,.left-photo{\r\n    position: relative;\r\n    float:left;\r\n}\r\n.username{\r\n    padding-top: 1px;\r\n    text-transform: capitalize;\r\n    font-size:18px;\r\n    font-weight: 500;\r\n    color:#1ec26b;\r\n\r\n}\r\n.cart-count{\r\n    position: absolute;\r\n    top: -6px;\r\n    right: -10px;\r\n    background: #1ec26b;\r\n    border-radius: 50%;\r\n    color: white;\r\n    padding: 4px;\r\n    width: 20px;\r\n    font-size: 10px;\r\n    height: 20px;\r\n    text-align: center;\r\n}\r\n.header-right li{\r\n    border:none;\r\n}\r\n\r\nnav a{\r\nbackground:none !important;\r\n}\r\n\r\n.navbar-brand{\r\n\r\n    margin-top: 0;\r\n    padding-top: 10px;\r\n\r\n}\r\n.navbar-brand img{\r\n\r\n    width:150px;    \r\n    \r\n}\r\n\r\n.navbar-default{\r\n    background: white;\r\n    box-shadow: 0px 2px 8px 0px #ecebe7;\r\n}\r\n\r\n.header-right{\r\n    margin-top: 8px;\r\n    border-radius:10px;\r\n    height: 40px;\r\n    min-width: 190px;\r\n    border:1px solid #3ad72a;\r\n    overflow: hidden;\r\n}\r\n\r\n.border-left{\r\n    border-left:1px solid #3ad72a !important;\r\n    cursor: pointer;\r\n}\r\n\r\n\r\n.closeButton:hover { transform: scale(1.3); box-shadow: 0 5px 15px rgba(0,0,0,0.3);}\r\n\r\n.navbar-default{\r\n    border-radius: 0 !important;\r\n}\r\n\r\n.closeButton{\r\n    position: absolute;\r\n    right:25px;\r\n    top:25px;\r\n    z-index: 1;transition: all .2s ease-in-out;\r\n    cursor: pointer;\r\n    box-shadow:none;\r\n    transition: box-shadow 0.3s ease-in-out;\r\n  \r\n}\r\n\r\n\r\n.dropbtn {\r\n    background-color: transparent;\r\n    color: white;\r\n    cursor: pointer;\r\n    border: none;    height: 60px;\r\n    padding-top: 12px;\r\n    padding-left: 15px;\r\n    padding-right: 15px;\r\n}\r\n\r\n/* The container <div> - needed to position the dropdown content */\r\n.dropdown {\r\n    position: relative;\r\n    display: inline-block;\r\n}\r\n\r\n/* Dropdown Content (Hidden by Default) */\r\n.dropdown-content {\r\n    display: none;\r\n    position: absolute;\r\n    background-color: #1ec26b;\r\n    min-width: 160px;\r\n    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);\r\n    z-index: 1;\r\n}\r\n\r\n/* Links inside the dropdown */\r\n.dropdown-content a {\r\n    color: black;\r\n    padding: 12px 16px;\r\n    text-decoration: none;\r\n    display: block;\r\n    text-align: left;\r\n    color:white;\r\n    font-size:15px;\r\n    font-weight: 500;\r\n    border-bottom:1px solid #66b88d;\r\n}\r\n\r\n/* Change color of dropdown links on hover */\r\n.dropdown-content a:hover {background-color: #f1f1f1}\r\n\r\n/* Show the dropdown menu on hover */\r\n.dropdown:hover .dropdown-content {\r\n    display: block;\r\n    top:60px;\r\n    \r\n}\r\n\r\n/* Change the background color of the dropdown button when the dropdown content is shown */\r\n.dropdown:hover .dropbtn {\r\n    background-color: #1ec26b;\r\n    color:white;\r\n}\r\n\r\n@media only screen and (max-width: 640px){\r\n    .header-right{\r\n        border:none;\r\n        height:auto;\r\n    }\r\n    \r\n}", ""]);
 
 // exports
 
 
 /***/ }),
-/* 303 */
+/* 304 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -98835,8 +98924,8 @@ var FooterComponent = (function () {
 FooterComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
         selector: 'app-footer',
-        template: __webpack_require__(304),
-        styles: [__webpack_require__(305)],
+        template: __webpack_require__(305),
+        styles: [__webpack_require__(306)],
         encapsulation: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewEncapsulation"].None
     }),
     __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:paramtypes", [])
@@ -98845,17 +98934,17 @@ FooterComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 
 /***/ }),
-/* 304 */
+/* 305 */
 /***/ (function(module, exports) {
 
 module.exports = "<footer class=\"site-footer\">\n    <ul class=\"footer-links\">\n\n      <li><a href=\"\">Terms & Conditions</a></li>\n      <li><a href=\"\">Privacy Policy</a></li>\n      <li><a href=\"\">&copy; Copyright 2017, Pharmaaid is a registered trademark</a></li>\n      <li><a href=\"\">Pharmaaid Pakistan</a></li>\n\n    </ul> \n</footer>"
 
 /***/ }),
-/* 305 */
+/* 306 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__(306);
+        var result = __webpack_require__(307);
 
         if (typeof result === "string") {
             module.exports = result;
@@ -98865,7 +98954,7 @@ module.exports = "<footer class=\"site-footer\">\n    <ul class=\"footer-links\"
     
 
 /***/ }),
-/* 306 */
+/* 307 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)(undefined);
@@ -98879,7 +98968,7 @@ exports.push([module.i, ".site-footer{\r\n    position: absolute;\r\n    width:1
 
 
 /***/ }),
-/* 307 */
+/* 308 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -99786,13 +99875,13 @@ StarRatingModule.ctorParameters = function () { return []; };
 
 
 /***/ }),
-/* 308 */
+/* 309 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(81);
+var content = __webpack_require__(82);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -99806,8 +99895,8 @@ if(content.locals) module.exports = content.locals;
 if(true) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept(81, function() {
-			var newContent = __webpack_require__(81);
+		module.hot.accept(82, function() {
+			var newContent = __webpack_require__(82);
 			if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
 			update(newContent);
 		});
@@ -99817,7 +99906,7 @@ if(true) {
 }
 
 /***/ }),
-/* 309 */
+/* 310 */
 /***/ (function(module, exports) {
 
 
@@ -99912,13 +100001,13 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 310 */
+/* 311 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(82);
+var content = __webpack_require__(83);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -99932,8 +100021,8 @@ if(content.locals) module.exports = content.locals;
 if(true) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept(82, function() {
-			var newContent = __webpack_require__(82);
+		module.hot.accept(83, function() {
+			var newContent = __webpack_require__(83);
 			if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
 			update(newContent);
 		});
@@ -99943,27 +100032,12 @@ if(true) {
 }
 
 /***/ }),
-/* 311 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_index__ = __webpack_require__(312);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["a"]; });
-/**
- * @module
- * @description
- * Entry point for all public APIs of the async local storage package.
- */
-
-
-
-/***/ }),
 /* 312 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_ng2_google_place_module__ = __webpack_require__(313);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__app_ng2_google_place_module__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_index__ = __webpack_require__(313);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["a"]; });
 /**
  * @module
  * @description
@@ -99977,11 +100051,26 @@ if(true) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_ng2_google_place_module__ = __webpack_require__(314);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__app_ng2_google_place_module__["a"]; });
+/**
+ * @module
+ * @description
+ * Entry point for all public APIs of the async local storage package.
+ */
+
+
+
+/***/ }),
+/* 314 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GooglePlaceModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ng2_google_place_directive__ = __webpack_require__(314);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ng2_google_place_directive__ = __webpack_require__(315);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ng2_google_place_service__ = __webpack_require__(141);
 
 
@@ -100005,7 +100094,7 @@ GooglePlaceModule = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 
 /***/ }),
-/* 314 */
+/* 315 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -100211,19 +100300,19 @@ GooglePlaceDirective = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]
 
 
 /***/ }),
-/* 315 */
+/* 316 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var tab_component_1 = __webpack_require__(142);
 exports.NguiTabComponent = tab_component_1.NguiTabComponent;
-var tab_module_1 = __webpack_require__(316);
+var tab_module_1 = __webpack_require__(317);
 exports.NguiTabModule = tab_module_1.NguiTabModule;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 316 */
+/* 317 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -100259,11 +100348,11 @@ exports.NguiTabModule = NguiTabModule;
 //# sourceMappingURL=tab.module.js.map
 
 /***/ }),
-/* 317 */
+/* 318 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lib_image_upload_module__ = __webpack_require__(318);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lib_image_upload_module__ = __webpack_require__(319);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lib_image_upload_module___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__lib_image_upload_module__);
 /* harmony reexport (binding) */ if(__webpack_require__.o(__WEBPACK_IMPORTED_MODULE_0__lib_image_upload_module__, "ImageUploadModule")) __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__lib_image_upload_module__["ImageUploadModule"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__lib_image_upload_image_upload_component__ = __webpack_require__(143);
@@ -100275,7 +100364,7 @@ exports.NguiTabModule = NguiTabModule;
 
 
 /***/ }),
-/* 318 */
+/* 319 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -100283,7 +100372,7 @@ exports.NguiTabModule = NguiTabModule;
 var common_1 = __webpack_require__(12);
 var core_1 = __webpack_require__(0);
 var http_1 = __webpack_require__(10);
-var file_drop_directive_1 = __webpack_require__(319);
+var file_drop_directive_1 = __webpack_require__(320);
 var image_upload_component_1 = __webpack_require__(143);
 var image_service_1 = __webpack_require__(144);
 var ImageUploadModule = (function () {
@@ -100309,7 +100398,7 @@ exports.ImageUploadModule = ImageUploadModule;
 
 
 /***/ }),
-/* 319 */
+/* 320 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -100396,7 +100485,7 @@ exports.FileDropDirective = FileDropDirective;
 
 
 /***/ }),
-/* 320 */
+/* 321 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -100404,11 +100493,11 @@ exports.FileDropDirective = FileDropDirective;
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
-__export(__webpack_require__(321));
+__export(__webpack_require__(322));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 321 */
+/* 322 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -100419,19 +100508,19 @@ function __export(m) {
 __export(__webpack_require__(145));
 __export(__webpack_require__(147));
 __export(__webpack_require__(49));
-__export(__webpack_require__(336));
+__export(__webpack_require__(337));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 322 */
+/* 323 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var destroy = __webpack_require__(323);
-var initialize = __webpack_require__(327);
-var update = __webpack_require__(335);
+var destroy = __webpack_require__(324);
+var initialize = __webpack_require__(328);
+var update = __webpack_require__(336);
 
 module.exports = {
   initialize: initialize,
@@ -100441,7 +100530,7 @@ module.exports = {
 
 
 /***/ }),
-/* 323 */
+/* 324 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -100470,7 +100559,7 @@ module.exports = function (element) {
 
 
 /***/ }),
-/* 324 */
+/* 325 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -100493,7 +100582,7 @@ module.exports = {
 
 
 /***/ }),
-/* 325 */
+/* 326 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -100571,7 +100660,7 @@ module.exports = EventManager;
 
 
 /***/ }),
-/* 326 */
+/* 327 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -100591,7 +100680,7 @@ module.exports = (function () {
 
 
 /***/ }),
-/* 327 */
+/* 328 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -100604,14 +100693,14 @@ var updateGeometry = __webpack_require__(19);
 
 // Handlers
 var handlers = {
-  'click-rail': __webpack_require__(328),
-  'drag-scrollbar': __webpack_require__(329),
-  'keyboard': __webpack_require__(330),
-  'wheel': __webpack_require__(331),
-  'touch': __webpack_require__(332),
-  'selection': __webpack_require__(333)
+  'click-rail': __webpack_require__(329),
+  'drag-scrollbar': __webpack_require__(330),
+  'keyboard': __webpack_require__(331),
+  'wheel': __webpack_require__(332),
+  'touch': __webpack_require__(333),
+  'selection': __webpack_require__(334)
 };
-var nativeScrollHandler = __webpack_require__(334);
+var nativeScrollHandler = __webpack_require__(335);
 
 module.exports = function (element, userSettings) {
   userSettings = typeof userSettings === 'object' ? userSettings : {};
@@ -100635,7 +100724,7 @@ module.exports = function (element, userSettings) {
 
 
 /***/ }),
-/* 328 */
+/* 329 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -100681,7 +100770,7 @@ module.exports = function (element) {
 
 
 /***/ }),
-/* 329 */
+/* 330 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -100791,7 +100880,7 @@ module.exports = function (element) {
 
 
 /***/ }),
-/* 330 */
+/* 331 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -100952,7 +101041,7 @@ module.exports = function (element) {
 
 
 /***/ }),
-/* 331 */
+/* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -101100,7 +101189,7 @@ module.exports = function (element) {
 
 
 /***/ }),
-/* 332 */
+/* 333 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -101286,7 +101375,7 @@ module.exports = function (element) {
 
 
 /***/ }),
-/* 333 */
+/* 334 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -101408,7 +101497,7 @@ module.exports = function (element) {
 
 
 /***/ }),
-/* 334 */
+/* 335 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -101430,7 +101519,7 @@ module.exports = function (element) {
 
 
 /***/ }),
-/* 335 */
+/* 336 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -101474,7 +101563,7 @@ module.exports = function (element) {
 
 
 /***/ }),
-/* 336 */
+/* 337 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
