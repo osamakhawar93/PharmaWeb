@@ -86,7 +86,7 @@ var ac_main =
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "434d8c6d79cd13541eb3"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "8916a20cf9c42bd33d84"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -804,7 +804,7 @@ var ac_main =
 /******/ 	__webpack_require__.h = function() { return hotCurrentHash; };
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return hotCreateRequire(203)(__webpack_require__.s = 203);
+/******/ 	return hotCreateRequire(206)(__webpack_require__.s = 206);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -1010,9 +1010,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_merge__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_merge__ = __webpack_require__(214);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_merge___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_observable_merge__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_share__ = __webpack_require__(215);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_share__ = __webpack_require__(218);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_share___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_operator_share__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Subject__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_Subject__);
@@ -16040,7 +16040,7 @@ function __makeTemplateObject(cooked, raw) {
 "use strict";
 
 var root_1 = __webpack_require__(24);
-var toSubscriber_1 = __webpack_require__(207);
+var toSubscriber_1 = __webpack_require__(210);
 var observable_1 = __webpack_require__(68);
 var pipe_1 = __webpack_require__(100);
 /**
@@ -16707,10 +16707,10 @@ function toComment(sourceMap) {
 
 var _ = __webpack_require__(18);
 var cls = __webpack_require__(48);
-var defaultSettings = __webpack_require__(338);
+var defaultSettings = __webpack_require__(340);
 var dom = __webpack_require__(28);
-var EventManager = __webpack_require__(339);
-var guid = __webpack_require__(340);
+var EventManager = __webpack_require__(341);
+var guid = __webpack_require__(342);
 
 var instances = {};
 
@@ -23242,38 +23242,38 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_BehaviorSubject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_BehaviorSubject__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Subject__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_Subject__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_observable_from__ = __webpack_require__(228);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_observable_from__ = __webpack_require__(231);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_observable_from___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_observable_from__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_observable_of__ = __webpack_require__(114);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_observable_of___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_observable_of__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_operator_concatMap__ = __webpack_require__(234);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_operator_concatMap__ = __webpack_require__(237);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_operator_concatMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_rxjs_operator_concatMap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_operator_every__ = __webpack_require__(236);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_operator_every__ = __webpack_require__(239);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_operator_every___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_rxjs_operator_every__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_operator_first__ = __webpack_require__(238);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_operator_first__ = __webpack_require__(241);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_operator_first___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_rxjs_operator_first__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_last__ = __webpack_require__(240);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_last__ = __webpack_require__(243);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_last___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_rxjs_operator_last__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_map__ = __webpack_require__(75);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_rxjs_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_rxjs_operator_mergeMap__ = __webpack_require__(242);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_rxjs_operator_mergeMap__ = __webpack_require__(245);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_rxjs_operator_mergeMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_rxjs_operator_mergeMap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_rxjs_operator_reduce__ = __webpack_require__(243);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_rxjs_operator_reduce__ = __webpack_require__(246);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_rxjs_operator_reduce___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_rxjs_operator_reduce__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_rxjs_Observable__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_rxjs_operator_catch__ = __webpack_require__(249);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_rxjs_operator_catch__ = __webpack_require__(252);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_rxjs_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15_rxjs_operator_catch__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_rxjs_operator_concatAll__ = __webpack_require__(251);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_rxjs_operator_concatAll__ = __webpack_require__(254);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_rxjs_operator_concatAll___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16_rxjs_operator_concatAll__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_rxjs_util_EmptyError__ = __webpack_require__(76);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_rxjs_util_EmptyError___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_17_rxjs_util_EmptyError__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_rxjs_observable_fromPromise__ = __webpack_require__(111);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_rxjs_observable_fromPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_18_rxjs_observable_fromPromise__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19_rxjs_operator_mergeAll__ = __webpack_require__(253);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19_rxjs_operator_mergeAll__ = __webpack_require__(256);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19_rxjs_operator_mergeAll___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_19_rxjs_operator_mergeAll__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__angular_platform_browser__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_rxjs_operator_filter__ = __webpack_require__(254);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_rxjs_operator_filter__ = __webpack_require__(257);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_rxjs_operator_filter___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_21_rxjs_operator_filter__);
 
 /**
@@ -44810,7 +44810,7 @@ var Observable_1 = __webpack_require__(3);
 var Subscriber_1 = __webpack_require__(6);
 var Subscription_1 = __webpack_require__(45);
 var ObjectUnsubscribedError_1 = __webpack_require__(106);
-var SubjectSubscription_1 = __webpack_require__(219);
+var SubjectSubscription_1 = __webpack_require__(222);
 var rxSubscriber_1 = __webpack_require__(67);
 /**
  * @class SubjectSubscriber<T>
@@ -45157,9 +45157,9 @@ module.exports = g;
 var isArray_1 = __webpack_require__(66);
 var isObject_1 = __webpack_require__(97);
 var isFunction_1 = __webpack_require__(96);
-var tryCatch_1 = __webpack_require__(208);
+var tryCatch_1 = __webpack_require__(211);
 var errorObject_1 = __webpack_require__(98);
-var UnsubscriptionError_1 = __webpack_require__(209);
+var UnsubscriptionError_1 = __webpack_require__(212);
 /**
  * Represents a disposable resource, such as the execution of an Observable. A
  * Subscription has one important method, `unsubscribe`, that takes no argument
@@ -45598,7 +45598,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵr", function() { return REQUIRED_VALIDATOR; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_forkJoin__ = __webpack_require__(225);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_forkJoin__ = __webpack_require__(228);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_forkJoin___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_observable_forkJoin__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_observable_fromPromise__ = __webpack_require__(111);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_observable_fromPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_observable_fromPromise__);
@@ -51913,7 +51913,7 @@ exports.ArrayObservable = ArrayObservable;
 "use strict";
 
 var mergeMap_1 = __webpack_require__(71);
-var identity_1 = __webpack_require__(214);
+var identity_1 = __webpack_require__(217);
 /**
  * Converts a higher-order Observable into a first-order Observable which
  * concurrently delivers all values that are emitted on the inner Observables.
@@ -52156,7 +52156,7 @@ var isPromise_1 = __webpack_require__(105);
 var isObject_1 = __webpack_require__(97);
 var Observable_1 = __webpack_require__(3);
 var iterator_1 = __webpack_require__(73);
-var InnerSubscriber_1 = __webpack_require__(213);
+var InnerSubscriber_1 = __webpack_require__(216);
 var observable_1 = __webpack_require__(68);
 function subscribeToResult(outerSubscriber, result, outerValue, outerIndex) {
     var destination = new InnerSubscriber_1.InnerSubscriber(outerSubscriber, outerValue, outerIndex);
@@ -52315,7 +52315,7 @@ exports.OuterSubscriber = OuterSubscriber;
 
 "use strict";
 
-var map_1 = __webpack_require__(227);
+var map_1 = __webpack_require__(230);
 /**
  * Applies a given `project` function to each value emitted by the source
  * Observable, and emits the resulting values as an Observable.
@@ -52641,7 +52641,7 @@ ChemistService = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 /* unused harmony reexport FBVideoComponent */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__providers_facebook__ = __webpack_require__(134);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_11__providers_facebook__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__facebook_module__ = __webpack_require__(276);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__facebook_module__ = __webpack_require__(279);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_12__facebook_module__["a"]; });
 // components
 
@@ -52755,7 +52755,7 @@ exports.empty = {
 
 "use strict";
 
-var noop_1 = __webpack_require__(210);
+var noop_1 = __webpack_require__(213);
 /* tslint:enable:max-line-length */
 function pipe() {
     var fns = [];
@@ -53183,9 +53183,9 @@ function __export(m) {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 // Hot Module Replacement
-__export(__webpack_require__(220));
-__export(__webpack_require__(221));
-__export(__webpack_require__(222));
+__export(__webpack_require__(223));
+__export(__webpack_require__(224));
+__export(__webpack_require__(225));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
@@ -54737,7 +54737,7 @@ var ɵPRE_STYLE = '!';
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__home_component__ = __webpack_require__(259);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__home_component__ = __webpack_require__(262);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__home_component__["a"]; });
 
 
@@ -55069,7 +55069,7 @@ exports.RouteModal = RouteModal;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__about_component__ = __webpack_require__(274);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__about_component__ = __webpack_require__(277);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__about_component__["a"]; });
 
 
@@ -55079,7 +55079,7 @@ exports.RouteModal = RouteModal;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__no_content_component__ = __webpack_require__(275);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__no_content_component__ = __webpack_require__(278);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__no_content_component__["a"]; });
 
 
@@ -55097,13 +55097,13 @@ exports.RouteModal = RouteModal;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_chemistService__ = __webpack_require__(80);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ngx_facebook__ = __webpack_require__(81);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__models_locationModel__ = __webpack_require__(277);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__models_locationModel__ = __webpack_require__(280);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_sharedService__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_mapService__ = __webpack_require__(135);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__models_geoModel__ = __webpack_require__(78);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_jquery__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_jquery__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_aos_dist_aos_js__ = __webpack_require__(278);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_aos_dist_aos_js__ = __webpack_require__(281);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_aos_dist_aos_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_aos_dist_aos_js__);
 
 
@@ -55124,57 +55124,14 @@ var LoginComponent = (function () {
         this.mapService = mapService;
         this.sharedService = sharedService;
         this._userService = _userService;
+        this.router = router;
         this.fb = fb;
         this._chemistService = _chemistService;
         this.allCitites = [];
         this._chemistService.getAllCities().subscribe(function (a) {
             _this.allCitites = a.data;
         });
-        var initParams = {
-            appId: '130624990977887',
-            xfbml: true,
-            version: 'v2.8'
-        };
-        fb.init(initParams);
-        this.router = router;
     }
-    LoginComponent.prototype.loginWithFacebook = function () {
-        var _this = this;
-        var fbCustomer = new __WEBPACK_IMPORTED_MODULE_2__models_usersModel__["a" /* UsersModel */]();
-        var options = {
-            scope: 'public_profile,email',
-            return_scopes: true,
-            enable_profile_selector: true
-        };
-        this.fb.login(options)
-            .then(function (response) {
-            _this.fb.api('/me?fields=id,email,first_name,last_name,picture')
-                .then(function (profileData) {
-                console.log(profileData);
-                fbCustomer.UserName = profileData.email;
-                fbCustomer.UserType = 2;
-                fbCustomer.Password = profileData.email;
-                _this._userService.loginUser(fbCustomer.Email, fbCustomer.Password, fbCustomer.UserType).subscribe(function (a) {
-                    console.log(a);
-                    if (a.code == 200) {
-                        __WEBPACK_IMPORTED_MODULE_11_jquery__("#snackbar").html(a.message);
-                        __WEBPACK_IMPORTED_MODULE_11_jquery__(".loader").hide();
-                        localStorage.setItem("UserId", a.data.Id);
-                        _this.showToast();
-                        _this.user = new __WEBPACK_IMPORTED_MODULE_2__models_usersModel__["a" /* UsersModel */]();
-                        var self = _this;
-                        setTimeout(function () {
-                            self.router.navigate(['/home']);
-                        }, 1000);
-                    }
-                    else {
-                        __WEBPACK_IMPORTED_MODULE_11_jquery__("#snackbar").html(a.message);
-                        _this.showToast();
-                    }
-                });
-            });
-        });
-    };
     LoginComponent.prototype.getAddress = function (event) {
         this.myLocation.AreaName = event.name;
         var radius = 40;
@@ -55184,11 +55141,8 @@ var LoginComponent = (function () {
         localStorage.setItem('userLocationInWords', JSON.stringify(this.myLocation));
         localStorage.setItem('userLocation', JSON.stringify(this.LatLong));
         this.sharedService.setGeoAddress(this.LatLong);
-    };
-    LoginComponent.prototype.getCityId = function (elem) {
-        var City = this.allCitites.find(function (x) { return x.Id == elem; });
-        this.myLocation.CityName = City.Name;
-        this.myLocation.cityId = elem;
+        console.log(this.myLocation);
+        console.log(this.LatLong);
     };
     LoginComponent.prototype.showChemistPage = function () {
         var error;
@@ -55202,58 +55156,13 @@ var LoginComponent = (function () {
             __WEBPACK_IMPORTED_MODULE_11_jquery__("#snackbar").html("Pleasae login/signup to proceed!");
             this.showToast();
         }
-        if (this.myLocation.cityId == undefined) {
-            __WEBPACK_IMPORTED_MODULE_11_jquery__("#snackbar").html("Please select a location!");
-            this.showToast();
-            error = true;
-        }
         if (error) {
         }
         else {
+            console.log(this.myLocation);
             this.sharedService.setAddress(this.myLocation);
             this.router.navigate(['/chemist']);
         }
-    };
-    LoginComponent.prototype.googleInit = function () {
-        var that = this;
-        gapi.load('auth2', function () {
-            that.auth2 = gapi.auth2.init({
-                apiKey: 'AIzaSyD2Cnux3uF0MVgyOkVERSmTqhw1om6tegU',
-                client_id: '1074486889014-lh35efmr5a74gurtgb3si2obcmdhs6kr.apps.googleusercontent.com',
-                scope: 'profile'
-            });
-            that.attachSignin(document.getElementById('googleSignInBtn'));
-        });
-    };
-    LoginComponent.prototype.attachSignin = function (element) {
-        var that = this;
-        var self = this;
-        this.auth2.attachClickHandler(element, {}, function (googleUser) {
-            var profile = googleUser.getBasicProfile();
-            that.user.Email = profile.getEmail();
-            that.user.UserType = 3;
-            that._userService.loginUser(that.user.UserName, that.user.Password, that.user.UserType).subscribe(function (a) {
-                console.log(a);
-                if (a.code == 200) {
-                    __WEBPACK_IMPORTED_MODULE_11_jquery__(".loader").hide();
-                    localStorage.setItem("UserId", a.data.Id);
-                    __WEBPACK_IMPORTED_MODULE_11_jquery__("#snackbar").html(a.message);
-                    that.showToast();
-                    that.user = new __WEBPACK_IMPORTED_MODULE_2__models_usersModel__["a" /* UsersModel */]();
-                    __WEBPACK_IMPORTED_MODULE_11_jquery__(".modal,.in").hide();
-                    self.router.navigate(['/home']);
-                    setTimeout(function () {
-                        //self.attachSignin(document.getElementById('googleSignInBtn'));
-                    }, 3000);
-                }
-                else {
-                    __WEBPACK_IMPORTED_MODULE_11_jquery__("#snackbar").html(a.message);
-                    that.showToast();
-                }
-            });
-        }, function (error) {
-            console.log(error);
-        });
     };
     LoginComponent.prototype.routeToSignUp = function () {
         this.router.navigate(['/signup']);
@@ -55278,22 +55187,13 @@ var LoginComponent = (function () {
         this.LatLong = new __WEBPACK_IMPORTED_MODULE_10__models_geoModel__["a" /* GeoModel */]();
         this.user = new __WEBPACK_IMPORTED_MODULE_2__models_usersModel__["a" /* UsersModel */]();
         this.myLocation = new __WEBPACK_IMPORTED_MODULE_7__models_locationModel__["a" /* LocationModel */]();
-        /*     this.loginModal["open"](); */
-        var self = this;
-        setTimeout(function () {
-            self.googleInit();
-        }, 1000);
     };
     return LoginComponent;
 }());
-__WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
-    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewChild"])('loginModal'),
-    __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:type", __WEBPACK_IMPORTED_MODULE_1__angular_core__["ElementRef"])
-], LoginComponent.prototype, "loginModal", void 0);
 LoginComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
         selector: 'app-login',
-        template: __webpack_require__(279),
+        template: __webpack_require__(282),
         styles: [__webpack_require__(136)],
         encapsulation: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewEncapsulation"].None,
         providers: [__WEBPACK_IMPORTED_MODULE_9__services_mapService__["a" /* MapService */], __WEBPACK_IMPORTED_MODULE_3__services_userService__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_5__services_chemistService__["a" /* ChemistService */]]
@@ -56751,7 +56651,7 @@ MapService = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 /***/ (function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__(280);
+        var result = __webpack_require__(283);
 
         if (typeof result === "string") {
             module.exports = result;
@@ -56762,6 +56662,24 @@ MapService = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 /***/ }),
 /* 137 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "e8f677903fb48b8b9fd26c3cd43cd5ee.woff2";
+
+/***/ }),
+/* 138 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "ef57ea84ec47993ad099dde800c2e0b7.woff";
+
+/***/ }),
+/* 139 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "a6dc930be12e9629b25f0dce04672df9.ttf";
+
+/***/ }),
+/* 140 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -56889,8 +56807,8 @@ var ChemistComponent = (function () {
 ChemistComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
         selector: 'app-chemist',
-        template: __webpack_require__(292),
-        styles: [__webpack_require__(293)],
+        template: __webpack_require__(295),
+        styles: [__webpack_require__(296)],
         encapsulation: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewEncapsulation"].None,
         providers: [__WEBPACK_IMPORTED_MODULE_6__services_mapService__["a" /* MapService */], __WEBPACK_IMPORTED_MODULE_3__services_chemistService__["a" /* ChemistService */], __WEBPACK_IMPORTED_MODULE_4__angular_common__["Location"], { provide: __WEBPACK_IMPORTED_MODULE_4__angular_common__["LocationStrategy"], useClass: __WEBPACK_IMPORTED_MODULE_4__angular_common__["PathLocationStrategy"] }]
     }),
@@ -56900,7 +56818,7 @@ ChemistComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 
 /***/ }),
-/* 138 */
+/* 141 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -56910,7 +56828,7 @@ ChemistComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_usersModel__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_userService__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_OrdersService__ = __webpack_require__(295);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_OrdersService__ = __webpack_require__(298);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_addtocartService__ = __webpack_require__(79);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_jquery__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_jquery__);
@@ -57036,8 +56954,8 @@ __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 OrdersComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
         selector: 'app-orders',
-        template: __webpack_require__(296),
-        styles: [__webpack_require__(297)],
+        template: __webpack_require__(299),
+        styles: [__webpack_require__(300)],
         providers: [__WEBPACK_IMPORTED_MODULE_3__services_userService__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_5__services_OrdersService__["a" /* OrdersService */], , __WEBPACK_IMPORTED_MODULE_6__services_addtocartService__["a" /* AddtocartService */]],
         encapsulation: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewEncapsulation"].None
     }),
@@ -57047,7 +56965,7 @@ OrdersComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 
 /***/ }),
-/* 139 */
+/* 142 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -57167,8 +57085,8 @@ __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 ProfileComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
         selector: 'app-profile',
-        template: __webpack_require__(299),
-        styles: [__webpack_require__(300)],
+        template: __webpack_require__(302),
+        styles: [__webpack_require__(303)],
         providers: [__WEBPACK_IMPORTED_MODULE_3__services_userService__["a" /* UserService */]],
         encapsulation: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewEncapsulation"].None
     }),
@@ -57178,7 +57096,7 @@ ProfileComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 
 /***/ }),
-/* 140 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -57224,7 +57142,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(323);
+var	fixUrls = __webpack_require__(325);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -57537,7 +57455,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 141 */
+/* 144 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -58695,7 +58613,7 @@ GooglePlaceService = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 
 /***/ }),
-/* 142 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -58781,7 +58699,7 @@ exports.NguiTabComponent = NguiTabComponent;
 //# sourceMappingURL=tab.component.js.map
 
 /***/ }),
-/* 143 */
+/* 146 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -58822,7 +58740,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 var core_1 = __webpack_require__(0);
-var image_service_1 = __webpack_require__(144);
+var image_service_1 = __webpack_require__(147);
 var FileHolder = (function () {
     function FileHolder(src, file) {
         this.src = src;
@@ -59028,7 +58946,7 @@ exports.ImageUploadComponent = ImageUploadComponent;
 
 
 /***/ }),
-/* 144 */
+/* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -59070,12 +58988,12 @@ exports.ImageService = ImageService;
 
 
 /***/ }),
-/* 145 */
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var Ps = __webpack_require__(146);
+var Ps = __webpack_require__(149);
 var core_1 = __webpack_require__(0);
 var perfect_scrollbar_interfaces_1 = __webpack_require__(49);
 var PerfectScrollbarComponent = (function () {
@@ -59191,22 +59109,22 @@ exports.PerfectScrollbarComponent = PerfectScrollbarComponent;
 //# sourceMappingURL=perfect-scrollbar.component.js.map
 
 /***/ }),
-/* 146 */
+/* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-module.exports = __webpack_require__(336);
+module.exports = __webpack_require__(338);
 
 
 /***/ }),
-/* 147 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var Ps = __webpack_require__(146);
+var Ps = __webpack_require__(149);
 var core_1 = __webpack_require__(0);
 var perfect_scrollbar_interfaces_1 = __webpack_require__(49);
 var PerfectScrollbarDirective = (function () {
@@ -59326,9 +59244,6 @@ exports.PerfectScrollbarDirective = PerfectScrollbarDirective;
 //# sourceMappingURL=perfect-scrollbar.directive.js.map
 
 /***/ }),
-/* 148 */,
-/* 149 */,
-/* 150 */,
 /* 151 */,
 /* 152 */,
 /* 153 */,
@@ -59381,17 +59296,20 @@ exports.PerfectScrollbarDirective = PerfectScrollbarDirective;
 /* 200 */,
 /* 201 */,
 /* 202 */,
-/* 203 */
+/* 203 */,
+/* 204 */,
+/* 205 */,
+/* 206 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* WEBPACK VAR INJECTION */(function(module) {/* harmony export (immutable) */ __webpack_exports__["main"] = main;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(208);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_environment__ = __webpack_require__(109);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angularclass_hmr__ = __webpack_require__(110);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angularclass_hmr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__angularclass_hmr__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app__ = __webpack_require__(223);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app__ = __webpack_require__(226);
 /**
  * Angular bootstrapping
  */
@@ -59435,10 +59353,10 @@ function _domReadyHandler() {
     main();
 }
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(204)(module)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(207)(module)))
 
 /***/ }),
-/* 204 */
+/* 207 */
 /***/ (function(module, exports) {
 
 module.exports = function(originalModule) {
@@ -59468,7 +59386,7 @@ module.exports = function(originalModule) {
 
 
 /***/ }),
-/* 205 */
+/* 208 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -59478,7 +59396,7 @@ module.exports = function(originalModule) {
 /* unused harmony export ɵINTERNAL_BROWSER_DYNAMIC_PLATFORM_PROVIDERS */
 /* unused harmony export ɵResourceLoaderImpl */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_compiler__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_compiler__ = __webpack_require__(209);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__ = __webpack_require__(25);
@@ -59651,7 +59569,7 @@ var platformBrowserDynamic = Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__[
 
 
 /***/ }),
-/* 206 */
+/* 209 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -87548,7 +87466,7 @@ function _mergeArrays(parts) {
 //# sourceMappingURL=compiler.es5.js.map
 
 /***/ }),
-/* 207 */
+/* 210 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -87574,7 +87492,7 @@ exports.toSubscriber = toSubscriber;
 //# sourceMappingURL=toSubscriber.js.map
 
 /***/ }),
-/* 208 */
+/* 211 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -87599,7 +87517,7 @@ exports.tryCatch = tryCatch;
 //# sourceMappingURL=tryCatch.js.map
 
 /***/ }),
-/* 209 */
+/* 212 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -87630,7 +87548,7 @@ exports.UnsubscriptionError = UnsubscriptionError;
 //# sourceMappingURL=UnsubscriptionError.js.map
 
 /***/ }),
-/* 210 */
+/* 213 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -87641,17 +87559,17 @@ exports.noop = noop;
 //# sourceMappingURL=noop.js.map
 
 /***/ }),
-/* 211 */
+/* 214 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var merge_1 = __webpack_require__(212);
+var merge_1 = __webpack_require__(215);
 exports.merge = merge_1.mergeStatic;
 //# sourceMappingURL=merge.js.map
 
 /***/ }),
-/* 212 */
+/* 215 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -87717,7 +87635,7 @@ exports.merge = merge;
 //# sourceMappingURL=merge.js.map
 
 /***/ }),
-/* 213 */
+/* 216 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -87759,7 +87677,7 @@ exports.InnerSubscriber = InnerSubscriber;
 //# sourceMappingURL=InnerSubscriber.js.map
 
 /***/ }),
-/* 214 */
+/* 217 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -87771,12 +87689,12 @@ exports.identity = identity;
 //# sourceMappingURL=identity.js.map
 
 /***/ }),
-/* 215 */
+/* 218 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var share_1 = __webpack_require__(216);
+var share_1 = __webpack_require__(219);
 /**
  * Returns a new Observable that multicasts (shares) the original Observable. As long as there is at least one
  * Subscriber this Observable will be subscribed and emitting data. When all subscribers have unsubscribed it will
@@ -87801,12 +87719,12 @@ exports.share = share;
 //# sourceMappingURL=share.js.map
 
 /***/ }),
-/* 216 */
+/* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var multicast_1 = __webpack_require__(217);
+var multicast_1 = __webpack_require__(220);
 var refCount_1 = __webpack_require__(107);
 var Subject_1 = __webpack_require__(36);
 function shareSubjectFactory() {
@@ -87832,12 +87750,12 @@ exports.share = share;
 //# sourceMappingURL=share.js.map
 
 /***/ }),
-/* 217 */
+/* 220 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var ConnectableObservable_1 = __webpack_require__(218);
+var ConnectableObservable_1 = __webpack_require__(221);
 /* tslint:enable:max-line-length */
 /**
  * Returns an Observable that emits the results of invoking a specified selector on items
@@ -87897,7 +87815,7 @@ exports.MulticastOperator = MulticastOperator;
 //# sourceMappingURL=multicast.js.map
 
 /***/ }),
-/* 218 */
+/* 221 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -88073,7 +87991,7 @@ var RefCountSubscriber = (function (_super) {
 //# sourceMappingURL=ConnectableObservable.js.map
 
 /***/ }),
-/* 219 */
+/* 222 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -88119,7 +88037,7 @@ exports.SubjectSubscription = SubjectSubscription;
 //# sourceMappingURL=SubjectSubscription.js.map
 
 /***/ }),
-/* 220 */
+/* 223 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -88218,7 +88136,7 @@ exports.createInputTransfer = createInputTransfer;
 //# sourceMappingURL=helpers.js.map
 
 /***/ }),
-/* 221 */
+/* 224 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -88377,7 +88295,7 @@ exports.__createInputTransfer = __createInputTransfer;
 //# sourceMappingURL=experimental.js.map
 
 /***/ }),
-/* 222 */
+/* 225 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -88431,11 +88349,11 @@ exports.hmrModule = hmrModule;
 //# sourceMappingURL=hmr.js.map
 
 /***/ }),
-/* 223 */
+/* 226 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_module__ = __webpack_require__(224);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_module__ = __webpack_require__(227);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__app_module__["a"]; });
 /**
  * App
@@ -88444,7 +88362,7 @@ exports.hmrModule = hmrModule;
 
 
 /***/ }),
-/* 224 */
+/* 227 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -88457,36 +88375,36 @@ exports.hmrModule = hmrModule;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angularclass_hmr__ = __webpack_require__(110);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angularclass_hmr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__angularclass_hmr__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_router__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_platform_browser_animations__ = __webpack_require__(256);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_platform_browser_animations__ = __webpack_require__(259);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__environment__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_routes__ = __webpack_require__(258);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_component__ = __webpack_require__(302);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__app_resolver__ = __webpack_require__(309);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_routes__ = __webpack_require__(261);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_component__ = __webpack_require__(305);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__app_resolver__ = __webpack_require__(311);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__app_service__ = __webpack_require__(77);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_ng2_modal__ = __webpack_require__(117);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_ng2_modal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_ng2_modal__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__home__ = __webpack_require__(116);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__about__ = __webpack_require__(120);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__no_content__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__home_x_large__ = __webpack_require__(311);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__header_header_component__ = __webpack_require__(313);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__home_x_large__ = __webpack_require__(313);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__header_header_component__ = __webpack_require__(315);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__login_login_component__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__footer_footer_component__ = __webpack_require__(317);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__chemist_chemist_component__ = __webpack_require__(137);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__footer_footer_component__ = __webpack_require__(319);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__chemist_chemist_component__ = __webpack_require__(140);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_ngx_facebook__ = __webpack_require__(81);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_angular_star_rating__ = __webpack_require__(321);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__styles_styles_scss__ = __webpack_require__(322);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_angular_star_rating__ = __webpack_require__(323);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__styles_styles_scss__ = __webpack_require__(324);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__styles_styles_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_24__styles_styles_scss__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__styles_headings_css__ = __webpack_require__(324);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__styles_headings_css__ = __webpack_require__(326);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__styles_headings_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_25__styles_headings_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__services_sharedService__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27_ng2_google_place_autocomplete__ = __webpack_require__(325);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__orders_orders_component__ = __webpack_require__(138);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__profile_profile_component__ = __webpack_require__(139);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__ngui_tab__ = __webpack_require__(329);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27_ng2_google_place_autocomplete__ = __webpack_require__(327);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__orders_orders_component__ = __webpack_require__(141);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__profile_profile_component__ = __webpack_require__(142);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__ngui_tab__ = __webpack_require__(331);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__ngui_tab___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_30__ngui_tab__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31_angular2_image_upload__ = __webpack_require__(331);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32_angular2_perfect_scrollbar__ = __webpack_require__(334);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31_angular2_image_upload__ = __webpack_require__(333);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32_angular2_perfect_scrollbar__ = __webpack_require__(336);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_32_angular2_perfect_scrollbar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_32_angular2_perfect_scrollbar__);
 
 
@@ -88643,17 +88561,17 @@ AppModule = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 
 /***/ }),
-/* 225 */
+/* 228 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var ForkJoinObservable_1 = __webpack_require__(226);
+var ForkJoinObservable_1 = __webpack_require__(229);
 exports.forkJoin = ForkJoinObservable_1.ForkJoinObservable.create;
 //# sourceMappingURL=forkJoin.js.map
 
 /***/ }),
-/* 226 */
+/* 229 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -88861,7 +88779,7 @@ var ForkJoinSubscriber = (function (_super) {
 //# sourceMappingURL=ForkJoinObservable.js.map
 
 /***/ }),
-/* 227 */
+/* 230 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -88956,17 +88874,17 @@ var MapSubscriber = (function (_super) {
 //# sourceMappingURL=map.js.map
 
 /***/ }),
-/* 228 */
+/* 231 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var FromObservable_1 = __webpack_require__(229);
+var FromObservable_1 = __webpack_require__(232);
 exports.from = FromObservable_1.FromObservable.create;
 //# sourceMappingURL=from.js.map
 
 /***/ }),
-/* 229 */
+/* 232 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -88980,12 +88898,12 @@ var isArray_1 = __webpack_require__(66);
 var isArrayLike_1 = __webpack_require__(104);
 var isPromise_1 = __webpack_require__(105);
 var PromiseObservable_1 = __webpack_require__(112);
-var IteratorObservable_1 = __webpack_require__(230);
+var IteratorObservable_1 = __webpack_require__(233);
 var ArrayObservable_1 = __webpack_require__(69);
-var ArrayLikeObservable_1 = __webpack_require__(231);
+var ArrayLikeObservable_1 = __webpack_require__(234);
 var iterator_1 = __webpack_require__(73);
 var Observable_1 = __webpack_require__(3);
-var observeOn_1 = __webpack_require__(232);
+var observeOn_1 = __webpack_require__(235);
 var observable_1 = __webpack_require__(68);
 /**
  * We need this JSDoc comment for affecting ESDoc.
@@ -89094,7 +89012,7 @@ exports.FromObservable = FromObservable;
 //# sourceMappingURL=FromObservable.js.map
 
 /***/ }),
-/* 230 */
+/* 233 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -89263,7 +89181,7 @@ function sign(value) {
 //# sourceMappingURL=IteratorObservable.js.map
 
 /***/ }),
-/* 231 */
+/* 234 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -89339,7 +89257,7 @@ exports.ArrayLikeObservable = ArrayLikeObservable;
 //# sourceMappingURL=ArrayLikeObservable.js.map
 
 /***/ }),
-/* 232 */
+/* 235 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -89350,7 +89268,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Subscriber_1 = __webpack_require__(6);
-var Notification_1 = __webpack_require__(233);
+var Notification_1 = __webpack_require__(236);
 /**
  *
  * Re-emits all notifications from source Observable with specified scheduler.
@@ -89460,7 +89378,7 @@ exports.ObserveOnMessage = ObserveOnMessage;
 //# sourceMappingURL=observeOn.js.map
 
 /***/ }),
-/* 233 */
+/* 236 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -89593,12 +89511,12 @@ exports.Notification = Notification;
 //# sourceMappingURL=Notification.js.map
 
 /***/ }),
-/* 234 */
+/* 237 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var concatMap_1 = __webpack_require__(235);
+var concatMap_1 = __webpack_require__(238);
 /* tslint:enable:max-line-length */
 /**
  * Projects each source value to an Observable which is merged in the output
@@ -89666,7 +89584,7 @@ exports.concatMap = concatMap;
 //# sourceMappingURL=concatMap.js.map
 
 /***/ }),
-/* 235 */
+/* 238 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -89739,12 +89657,12 @@ exports.concatMap = concatMap;
 //# sourceMappingURL=concatMap.js.map
 
 /***/ }),
-/* 236 */
+/* 239 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var every_1 = __webpack_require__(237);
+var every_1 = __webpack_require__(240);
 /**
  * Returns an Observable that emits whether or not every item of the source satisfies the condition specified.
  *
@@ -89766,7 +89684,7 @@ exports.every = every;
 //# sourceMappingURL=every.js.map
 
 /***/ }),
-/* 237 */
+/* 240 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -89846,12 +89764,12 @@ var EverySubscriber = (function (_super) {
 //# sourceMappingURL=every.js.map
 
 /***/ }),
-/* 238 */
+/* 241 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var first_1 = __webpack_require__(239);
+var first_1 = __webpack_require__(242);
 /**
  * Emits only the first value (or the first value that meets some condition)
  * emitted by the source Observable.
@@ -89908,7 +89826,7 @@ exports.first = first;
 //# sourceMappingURL=first.js.map
 
 /***/ }),
-/* 239 */
+/* 242 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -90066,12 +89984,12 @@ var FirstSubscriber = (function (_super) {
 //# sourceMappingURL=first.js.map
 
 /***/ }),
-/* 240 */
+/* 243 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var last_1 = __webpack_require__(241);
+var last_1 = __webpack_require__(244);
 /* tslint:enable:max-line-length */
 /**
  * Returns an Observable that emits only the last item emitted by the source Observable.
@@ -90097,7 +90015,7 @@ exports.last = last;
 //# sourceMappingURL=last.js.map
 
 /***/ }),
-/* 241 */
+/* 244 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -90222,7 +90140,7 @@ var LastSubscriber = (function (_super) {
 //# sourceMappingURL=last.js.map
 
 /***/ }),
-/* 242 */
+/* 245 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -90295,12 +90213,12 @@ exports.mergeMap = mergeMap;
 //# sourceMappingURL=mergeMap.js.map
 
 /***/ }),
-/* 243 */
+/* 246 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var reduce_1 = __webpack_require__(244);
+var reduce_1 = __webpack_require__(247);
 /* tslint:enable:max-line-length */
 /**
  * Applies an accumulator function over the source Observable, and returns the
@@ -90361,14 +90279,14 @@ exports.reduce = reduce;
 //# sourceMappingURL=reduce.js.map
 
 /***/ }),
-/* 244 */
+/* 247 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var scan_1 = __webpack_require__(245);
-var takeLast_1 = __webpack_require__(246);
-var defaultIfEmpty_1 = __webpack_require__(248);
+var scan_1 = __webpack_require__(248);
+var takeLast_1 = __webpack_require__(249);
+var defaultIfEmpty_1 = __webpack_require__(251);
 var pipe_1 = __webpack_require__(100);
 /* tslint:enable:max-line-length */
 /**
@@ -90436,7 +90354,7 @@ exports.reduce = reduce;
 //# sourceMappingURL=reduce.js.map
 
 /***/ }),
-/* 245 */
+/* 248 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -90563,7 +90481,7 @@ var ScanSubscriber = (function (_super) {
 //# sourceMappingURL=scan.js.map
 
 /***/ }),
-/* 246 */
+/* 249 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -90574,7 +90492,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Subscriber_1 = __webpack_require__(6);
-var ArgumentOutOfRangeError_1 = __webpack_require__(247);
+var ArgumentOutOfRangeError_1 = __webpack_require__(250);
 var EmptyObservable_1 = __webpack_require__(46);
 /**
  * Emits only the last `count` values emitted by the source Observable.
@@ -90678,7 +90596,7 @@ var TakeLastSubscriber = (function (_super) {
 //# sourceMappingURL=takeLast.js.map
 
 /***/ }),
-/* 247 */
+/* 250 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -90712,7 +90630,7 @@ exports.ArgumentOutOfRangeError = ArgumentOutOfRangeError;
 //# sourceMappingURL=ArgumentOutOfRangeError.js.map
 
 /***/ }),
-/* 248 */
+/* 251 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -90795,12 +90713,12 @@ var DefaultIfEmptySubscriber = (function (_super) {
 //# sourceMappingURL=defaultIfEmpty.js.map
 
 /***/ }),
-/* 249 */
+/* 252 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var catchError_1 = __webpack_require__(250);
+var catchError_1 = __webpack_require__(253);
 /**
  * Catches errors on the observable to be handled by returning a new observable or throwing an error.
  *
@@ -90867,7 +90785,7 @@ exports._catch = _catch;
 //# sourceMappingURL=catch.js.map
 
 /***/ }),
-/* 250 */
+/* 253 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -90989,12 +90907,12 @@ var CatchSubscriber = (function (_super) {
 //# sourceMappingURL=catchError.js.map
 
 /***/ }),
-/* 251 */
+/* 254 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var concatAll_1 = __webpack_require__(252);
+var concatAll_1 = __webpack_require__(255);
 /* tslint:enable:max-line-length */
 /**
  * Converts a higher-order Observable into a first-order Observable by
@@ -91051,7 +90969,7 @@ exports.concatAll = concatAll;
 //# sourceMappingURL=concatAll.js.map
 
 /***/ }),
-/* 252 */
+/* 255 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -91112,7 +91030,7 @@ exports.concatAll = concatAll;
 //# sourceMappingURL=concatAll.js.map
 
 /***/ }),
-/* 253 */
+/* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -91170,12 +91088,12 @@ exports.mergeAll = mergeAll;
 //# sourceMappingURL=mergeAll.js.map
 
 /***/ }),
-/* 254 */
+/* 257 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var filter_1 = __webpack_require__(255);
+var filter_1 = __webpack_require__(258);
 /* tslint:enable:max-line-length */
 /**
  * Filter items emitted by the source Observable by only emitting those that
@@ -91223,7 +91141,7 @@ exports.filter = filter;
 //# sourceMappingURL=filter.js.map
 
 /***/ }),
-/* 255 */
+/* 258 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -91323,7 +91241,7 @@ var FilterSubscriber = (function (_super) {
 //# sourceMappingURL=filter.js.map
 
 /***/ }),
-/* 256 */
+/* 259 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -91344,7 +91262,7 @@ var FilterSubscriber = (function (_super) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_animations__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_animations_browser__ = __webpack_require__(257);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_animations_browser__ = __webpack_require__(260);
 
 /**
  * @license Angular v4.4.6
@@ -92089,7 +92007,7 @@ NoopAnimationsModule.ctorParameters = function () { return []; };
 
 
 /***/ }),
-/* 257 */
+/* 260 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -97019,7 +96937,7 @@ function supportsWebAnimations() {
 
 
 /***/ }),
-/* 258 */
+/* 261 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -97028,9 +96946,9 @@ function supportsWebAnimations() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__about__ = __webpack_require__(120);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__no_content__ = __webpack_require__(121);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__login_login_component__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__chemist_chemist_component__ = __webpack_require__(137);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__orders_orders_component__ = __webpack_require__(138);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__profile_profile_component__ = __webpack_require__(139);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__chemist_chemist_component__ = __webpack_require__(140);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__orders_orders_component__ = __webpack_require__(141);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__profile_profile_component__ = __webpack_require__(142);
 
 
 
@@ -97045,14 +96963,14 @@ var ROUTES = [
     { path: 'orders', component: __WEBPACK_IMPORTED_MODULE_5__orders_orders_component__["a" /* OrdersComponent */] },
     { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_6__profile_profile_component__["a" /* ProfileComponent */] },
     { path: 'about', component: __WEBPACK_IMPORTED_MODULE_1__about__["a" /* AboutComponent */] },
-    { path: 'detail', loadChildren: function() { return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 352))  .then( function(module) { return module['DetailModule']; } ); } },
-    { path: 'barrel', loadChildren: function() { return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 353))  .then( function(module) { return module['BarrelModule']; } ); } },
+    { path: 'detail', loadChildren: function() { return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 354))  .then( function(module) { return module['DetailModule']; } ); } },
+    { path: 'barrel', loadChildren: function() { return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 355))  .then( function(module) { return module['BarrelModule']; } ); } },
     { path: '**', component: __WEBPACK_IMPORTED_MODULE_2__no_content__["a" /* NoContentComponent */] },
 ];
 
 
 /***/ }),
-/* 259 */
+/* 262 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -97061,19 +96979,19 @@ var ROUTES = [
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_service__ = __webpack_require__(77);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__title__ = __webpack_require__(260);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_productsService__ = __webpack_require__(262);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__models_medicinesModel__ = __webpack_require__(263);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__models_cartModel__ = __webpack_require__(264);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__title__ = __webpack_require__(263);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_productsService__ = __webpack_require__(265);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__models_medicinesModel__ = __webpack_require__(266);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__models_cartModel__ = __webpack_require__(267);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_sharedService__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_jquery__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_jquery__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_addtocartService__ = __webpack_require__(79);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_userService__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__models_AddressModel__ = __webpack_require__(265);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__models_AddressModel__ = __webpack_require__(268);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_ng2_modal__ = __webpack_require__(117);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_ng2_modal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_ng2_modal__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__models_update_Model__ = __webpack_require__(266);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__models_update_Model__ = __webpack_require__(269);
 
 
 
@@ -97132,6 +97050,10 @@ var HomeComponent = (function () {
             console.log(a);
             _this.ChemistCategories = a.data;
             _this.cateogiesPopulated = true;
+            _this._productService.showProductsForThisCategory(_this.ChemistCategories[0].Id).subscribe(function (a) {
+                _this.SearchedMedicines = a.data;
+                console.log(_this.SearchedMedicines);
+            });
         });
         this.getCartCount();
     }
@@ -97596,6 +97518,8 @@ var HomeComponent = (function () {
     HomeComponent.prototype.showProductsForThisCateogry = function (elem) {
         var _this = this;
         console.log(elem);
+        __WEBPACK_IMPORTED_MODULE_9_jquery__(".tabs-list").removeClass("active");
+        __WEBPACK_IMPORTED_MODULE_9_jquery__("#list_" + elem).addClass("active");
         this._productService.showProductsForThisCategory(elem).subscribe(function (a) {
             _this.SearchedMedicines = a.data;
             console.log(_this.SearchedMedicines);
@@ -97765,11 +97689,11 @@ HomeComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
             __WEBPACK_IMPORTED_MODULE_10__services_addtocartService__["a" /* AddtocartService */],
             __WEBPACK_IMPORTED_MODULE_11__services_userService__["a" /* UserService */]
         ],
-        styles: [__webpack_require__(267), __webpack_require__(269), __webpack_require__(271)],
+        styles: [__webpack_require__(270), __webpack_require__(272), __webpack_require__(274)],
         /**
          * Every Angular template is first compiled by the browser before Angular runs it's compiler.
          */
-        template: __webpack_require__(273)
+        template: __webpack_require__(276)
     }),
     __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__app_service__["a" /* AppState */],
         __WEBPACK_IMPORTED_MODULE_10__services_addtocartService__["a" /* AddtocartService */],
@@ -97784,17 +97708,17 @@ HomeComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 
 /***/ }),
-/* 260 */
+/* 263 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__title_service__ = __webpack_require__(261);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__title_service__ = __webpack_require__(264);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__title_service__["a"]; });
 
 
 
 /***/ }),
-/* 261 */
+/* 264 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -97830,7 +97754,7 @@ Title = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 
 /***/ }),
-/* 262 */
+/* 265 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -97879,7 +97803,7 @@ ProductsService = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 
 /***/ }),
-/* 263 */
+/* 266 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -97893,7 +97817,7 @@ var MedicinesModel = (function () {
 
 
 /***/ }),
-/* 264 */
+/* 267 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -97907,7 +97831,7 @@ var CartModel = (function () {
 
 
 /***/ }),
-/* 265 */
+/* 268 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -97921,7 +97845,7 @@ var AddressModel = (function () {
 
 
 /***/ }),
-/* 266 */
+/* 269 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -97935,11 +97859,11 @@ var UpdateModel = (function () {
 
 
 /***/ }),
-/* 267 */
+/* 270 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__(268);
+        var result = __webpack_require__(271);
 
         if (typeof result === "string") {
             module.exports = result;
@@ -97949,7 +97873,7 @@ var UpdateModel = (function () {
     
 
 /***/ }),
-/* 268 */
+/* 271 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)(undefined);
@@ -97963,11 +97887,11 @@ exports.push([module.i, "body {\r\n    margin-top:40px;\r\n\r\n}\r\np{\r\n    ma
 
 
 /***/ }),
-/* 269 */
+/* 272 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__(270);
+        var result = __webpack_require__(273);
 
         if (typeof result === "string") {
             module.exports = result;
@@ -97977,7 +97901,7 @@ exports.push([module.i, "body {\r\n    margin-top:40px;\r\n\r\n}\r\np{\r\n    ma
     
 
 /***/ }),
-/* 270 */
+/* 273 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)(undefined);
@@ -97991,11 +97915,11 @@ exports.push([module.i, "\n\n.dropdown-el {\n  min-width: 110px;\n  position: re
 
 
 /***/ }),
-/* 271 */
+/* 274 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__(272);
+        var result = __webpack_require__(275);
 
         if (typeof result === "string") {
             module.exports = result;
@@ -98005,7 +97929,7 @@ exports.push([module.i, "\n\n.dropdown-el {\n  min-width: 110px;\n  position: re
     
 
 /***/ }),
-/* 272 */
+/* 275 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)(undefined);
@@ -98019,13 +97943,13 @@ exports.push([module.i, ".styled-checkbox {\n  position: absolute;\n  opacity: 0
 
 
 /***/ }),
-/* 273 */
+/* 276 */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"snackbar\"></div>\r\n\r\n<modal #orderPlaced modalClass=\"modal-lg modal-sm animated fadeInDownBig orderPlaced\" [hideCloseButton]=\"true\" [closeOnEscape]=\"true\"\r\n    [closeOnOutsideClick]=\"true\" (onClose)=\"navigateToOriginal()\">\r\n\r\n    \r\n\r\n    <modal-content>\r\n            <button class=\"closeThanks\" (click)=\"orderPlaced.close()\" data-dismiss=\"modal\" type=\"button\" aria-label=\"Close\"><span aria-hidden=\"true\">×</span></button>\r\n   \r\n        <div class=\"my-header\">\r\n            <div class=\"circle\">\r\n                <img class=\"amiated jackInTheBox\" src=\"/assets/img/like.png\"     width=\"100px\">\r\n            </div>\r\n        </div>\r\n        <div class=\"my-header-2\">\r\n            <h1>Thank you! Your order was placed successfully!</h1>\r\n            <button class=\"view-orders\" (click)=\"navigatoToOrders()\">View Orders</button>\r\n        </div>\r\n    </modal-content>\r\n\r\n\r\n</modal>\r\n\r\n<modal #detailModal [closeOnEscape]=\"false\" [closeOnOutsideClick]=\"false\" modalClass=\"modal-lg modal-md detailModalClass\"\r\n    (onSubmit)=\"actionOnSubmit()\" (onClose)=\"actionOnClose()\">\r\n\r\n    <modal-content *ngIf=\"ifDataPopulated\">\r\n\r\n        <div class=\"full-row clearfix\">\r\n\r\n\r\n            <div class=\"modal-name\">\r\n\r\n                <p>{{singleMedicine.Name}}</p>\r\n                <p style=\"    margin-bottom: 20px;\">Rs. {{singleMedicine.TotalPrice}}</p>\r\n                <!-- <span>Reckitt Beckiser Ltd.</span> -->\r\n                <span>{{singleMedicine.ChemistCategoryName}}</span>\r\n\r\n            </div>\r\n\r\n            <div class=\"modal-quantity\">\r\n\r\n\r\n                <div class=\"\" id=\"prod-quantity-cart\">\r\n\r\n                    <button class=\"qtyminus\" field='quantity' (click)=\"Downing()\">-</button>\r\n\r\n                    <input type=\"number\" id=\"num_val\" min=\"1\" max=\"100\" class='qty' step=\"1\" value=\"1\" readonly>\r\n\r\n                    <button class=\"qtyplus \" field='quantity' (click)=\"Upping()\">+</button>\r\n\r\n                </div>\r\n\r\n                <div class='clear'></div>\r\n                <div class=\"selects\">\r\n                    <select class=\"dosage\" id=\"dosageName\" (change)=\"getDosageName($event.target.value)\">\r\n                        <option selected disabled>Select Dosage</option>\r\n                        <option *ngFor=\"let dosageArray of singleMedicine.WebDosageAndValuesDTOList\" value=\"{{dosageArray.DosageName}}\">{{dosageArray.DosageName}}</option>\r\n                    </select>\r\n\r\n                    <select class=\"dosage\" id=\"dosageValue\" (change)=\"getDosageValue($event.target.value)\">\r\n                        <option selected disabled>Select Value</option>\r\n                        <option *ngFor=\"let dosageArray of dosageValue\" value=\"{{dosageArray}}\">{{dosageArray}}</option>\r\n                    </select>\r\n\r\n                    <select class=\"dosage\" id=\"Measurements\" (change)=\"getMeasurement($event.target.value)\">\r\n                        <option selected disabled>Select Measurement</option>\r\n                        <option *ngFor=\"let measurement of measurementValue\" value=\"{{measurement}}\">{{measurement}}</option>\r\n                    </select>\r\n                </div>\r\n\r\n            </div>\r\n\r\n        </div>\r\n\r\n        <hr class=\"saperator\">\r\n\r\n\r\n        <div class=\"full-row clearfix\" (click)=\"showTextArea()\">\r\n\r\n\r\n            <div class=\"modal-name\">\r\n\r\n                <p>SPECIAL INSTRUCTIONS</p>\r\n\r\n            </div>\r\n\r\n            <div class=\"modal-quantity\">\r\n\r\n\r\n                <span class=\"optional\">(Optional)</span>\r\n                <i class=\"thisone fa fa-chevron-up\"></i>\r\n\r\n            </div>\r\n\r\n        </div>\r\n\r\n\r\n\r\n        <div class=\"textarea-div animated\">\r\n            <textarea placeholder=\"Write any instructions here ...\"></textarea>\r\n        </div>\r\n\r\n\r\n        <div class=\"full-row clearfix center-align\">\r\n            <button class=\"cart-button\" (click)=\"addToCart()\">Add to Cart</button>\r\n        </div>\r\n\r\n    </modal-content>\r\n\r\n</modal>\r\n\r\n<div class=\"container\" style=\"margin-top:20px;margin-bottom:20px;\">\r\n\r\n    <div class=\"stepwizard\">\r\n        <div class=\"stepwizard-row setup-panel\">\r\n            <div class=\"stepwizard-step\">\r\n                <div id=\"overlay\"></div>\r\n                <a #step1 href=\"#step-1\" type=\"button\" id=\"step1\" class=\"btn btn-primary btn-circle\">1</a>\r\n                <p>Your Details</p>\r\n            </div>\r\n            <div class=\"stepwizard-step\">\r\n                <div id=\"overlay2\"></div>\r\n                <a #step2 href=\"#step-2\" type=\"button\" id=\"step2\" class=\"btn btn-default btn-circle\" disabled=\"disabled\">2</a>\r\n                <p>Review Order</p>\r\n            </div>\r\n            <div class=\"stepwizard-step\">\r\n                <div id=\"overlay3\"></div>\r\n                <a #step3 href=\"#step-3\" type=\"button\" id=\"step3\" class=\"btn btn-default btn-circle\" disabled=\"disabled\">3</a>\r\n                <p>Place Order</p>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n\r\n    <div class=\"row setup-content\" id=\"step-1\">\r\n\r\n        <div class=\"col-md-12\">\r\n\r\n\r\n            <div class=\"left-pane\">\r\n\r\n                <div class=\"inner-wrapper clearfix\">\r\n\r\n\r\n                    <div class=\"upper-holder clearfix\">\r\n                        <!-- Upper Holder -->\r\n\r\n                        <div class=\"left-chemist clearfix\">\r\n                            <p class=\"headging-with-rating\">{{ChemistViewing.UserName}}</p>\r\n                            <div class=\"chemist-ratings\">\r\n                                <star-rating-comp [starType]=\"'icon'\" [disabled]=\"true\" [rating]=\"ChemistViewing.Chemist.ChemistRating\"></star-rating-comp>\r\n\r\n                            </div>\r\n                            <p class=\"opening-hours\">{{ChemistViewing.DistanceFromUs}} KM</p>\r\n                        </div>\r\n                        <div class=\"right-search clearfix\">\r\n\r\n\r\n                            <div class='voucher-form clearfix'>\r\n                                <img src=\"/assets/img/search.png\" class=\"search-icon\">\r\n                                <div class=\"inputField\">\r\n                                    <input type=\"text\" (keyup)=\"searchThisMedicine(e)\" name=\"searchMedicineQuery\" [(ngModel)]=\"searchMedicineQuery\" placeholder=\"Search Medicines\"\r\n                                        name=\"searchChemistQuery\" (keyup)=\"searchThisMedicine(this)\" [(ngModel)]=\"searchChemistQuery\">\r\n                                </div>\r\n                                <div class=\"inputBtn\">\r\n                                    <button>Search</button>\r\n                                </div>\r\n\r\n                            </div>\r\n                        </div>\r\n\r\n                    </div>\r\n                    <!-- Upper Holder -->\r\n                </div>\r\n\r\n\r\n                <div class=\"tabbable-panel\">\r\n                    <div class=\"tabbable-line\">\r\n                        <ul class=\"nav nav-tabs\">\r\n                            <li *ngFor=\"let categories of ChemistCategories;let i=index\" [ngClass]=\"{'active': i==0}\">\r\n                                <a style=\"cursor:pointer;\" (click)=\"showProductsForThisCateogry(categories.Id)\" data-target=\"#tab_1\" data-toggle=\"tab\">\r\n                                    {{categories.CategoryName}} </a>\r\n                            </li>\r\n                        </ul>\r\n                        <div class=\"tab-content\">\r\n                            <div class=\"tab-pane animated active\" id=\"tab_1\">\r\n\r\n\r\n                                <ul class=\"products-list\">\r\n\r\n                                    <li (mouseenter)=\"showPlus($event)\" (click)=\"getDetailsOfProduct(medicine)\" id=\"medicine{{medicine.Id}}\" (mouseleave)=\"hidePlus($event)\"\r\n                                        *ngFor=\"let medicine of SearchedMedicines;let i=index\" class=\"single-product animated zoomIn\">\r\n\r\n                                        <div class=\"product-wrapper\">\r\n\r\n                                            <div class=\"product-image\" id=\"image{{medicine.Id}}\">\r\n                                                <img src=\"{{medicine.PictureURL}}\">\r\n                                            </div>\r\n\r\n                                            <div class=\"product-detail\">\r\n                                                <h2>{{medicine.Name}}</h2>\r\n                                            </div>\r\n\r\n\r\n                                        </div>\r\n\r\n                                        <div class=\"plus-sign animated\">\r\n                                            <img src=\"/assets/img/add.png\">\r\n                                        </div>\r\n\r\n                                    </li>\r\n\r\n                                </ul>\r\n\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n            </div>\r\n\r\n\r\n            <div class=\"right-pane\">\r\n\r\n\r\n                <div class=\"time-pane\">\r\n\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6 col-sm-6 col-xs-6\" style=\"text-align:left\">\r\n                            <p class='right-estimate'>Estimated Delivery Time</p>\r\n                        </div>\r\n                        <div class=\"col-md-6 col-sm-6 col-xs-6\" style=\"text-align: right\">\r\n                            <div class=\"time\">\r\n                                <p class=\"big\">{{estimatedDeliveryTime}}</p>\r\n                                <p class=\"small\">mins</p>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n\r\n\r\n                </div>\r\n\r\n\r\n\r\n\r\n                <div class=\"cart animated\">\r\n\r\n                    <div class=\"header\">\r\n                        <h3>Your Order</h3>\r\n                    </div>\r\n                    <div class=\"body clearfix\">\r\n\r\n\r\n                        <div class=\"one-row clearfix\" *ngFor=\"let onerow of cart\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\">{{onerow?.Quantity}}x\r\n                                    <span style=\"color:#1ec26b;font-weight:bold;font-size:16px\">{{onerow?.Name}}</span>\r\n                                </P>\r\n                                <span class=\"optional\">{{onerow?.ChemistCategoryName}}</span>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail\">Rs. {{onerow?.Total}}</P>\r\n                            </div>\r\n                        </div>\r\n\r\n                    </div>\r\n                    <div class='footer clearfix'>\r\n\r\n                        <div class=\"one-row clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\">Subtotal</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail\">Rs. {{SubTotal}}</P>\r\n                            </div>\r\n                        </div>\r\n\r\n                        <div class=\"one-row clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\">Delivery Fee</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail\">Rs. 0</P>\r\n                            </div>\r\n                        </div>\r\n\r\n\r\n                        <div class=\"one-row more-margin clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\" style=\"padding-top:10px;\">Total</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail bigText\">Rs. {{FinalTotal}}</P>\r\n                            </div>\r\n                        </div>\r\n\r\n                        <div class=\"alignCenter row\" style=\"width: 90%;margin: 15px auto;\">\r\n\r\n                            <ng-container *ngIf=\"cartHasItems\">\r\n                                <button (click)=\"takeMeToReviewPage()\" id=\"proceedToReview\" class=\"checkout-btn nextBtn\">Proceed</button>\r\n                            </ng-container>\r\n\r\n                        </div>\r\n\r\n                    </div>\r\n                </div>\r\n\r\n            </div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n        </div>\r\n\r\n    </div>\r\n    <div class=\"row setup-content\" id=\"step-2\">\r\n        <div class=\"col-md-12 cleafix\">\r\n\r\n            <div class=\"col-left clearfix\">\r\n\r\n                <div class=\"holder-box clearfix\">\r\n                    <!-- wrapper -->\r\n\r\n                    <div class='header clearfix'>\r\n                        <div class=\"left-image-side clearfix\">\r\n                            <img src=\"assets/img/dw.png\" width=\"75px\">\r\n                        </div>\r\n                        <div class='right-name clearfix'>\r\n                            <p class=\"chemist-name\">{{ChemistViewing.UserName}}</p>\r\n                            <p class=\"opening-hours\">{{ChemistViewing.DistanceFromUs}} KM</p>\r\n\r\n                            <div class=\"chemist-ratings\">\r\n\r\n                                <star-rating-comp [starType]=\"'icon'\" [disabled]=\"true\" [rating]=\"ChemistViewing.Chemist.ChemistRating\"></star-rating-comp>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n\r\n                    <hr class=\"saperator\">\r\n\r\n\r\n                    <div class=\"table-details\">\r\n\r\n                        <div class=\"one-row clearfix\" *ngFor=\"let onerow of cart\">\r\n                            <div class=\"del\" (click)=\"deletethisRow(onerow)\">\r\n                                <img src=\"assets/img/del.png\">\r\n                            </div>\r\n                            <div class=\"name\">\r\n                                <span class=\"med-name\">{{onerow.Name}}</span>\r\n                                <span>({{onerow.ChemistCategoryName}}) {{onerow.DosageValue}}{{onerow.DosageName}} {{onerow.MeausurementName}}</span>\r\n                            </div>\r\n                            <div class=\"quantity\">\r\n                                <div class=\"quantity\" id=\"prod-quantity\">\r\n                                    <input type=\"number\" id=\"num_val_{{onerow.Id}}\" min=\"1\" max=\"10\" class='qty' step=\"1\" value=\"{{onerow.Quantity}}\" readonly>\r\n                                    <div class=\"quantity-nav\">\r\n                                        <div class=\"quantity-button quantity-up qtyplus \" field='quantity' (click)=\"UppingReview(onerow)\">+</div>\r\n                                        <div class=\"quantity-button quantity-down qtyminus\" field='quantity' (click)=\"DowningReview(onerow)\">-</div>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"subtotal\">\r\n                                <p>Rs. {{onerow.Total}}</p>\r\n                            </div>\r\n\r\n                        </div>\r\n\r\n                        <div class=\"row  subtotal-row clearfix\">\r\n                            <div class=\"subtotal-heading\">\r\n                                <p>Subtotal</p>\r\n                            </div>\r\n                            <div class=\"subtotal-value\">\r\n                                Rs. {{SubTotal}}\r\n                            </div>\r\n\r\n                        </div>\r\n\r\n\r\n                        <div class=\"row voucher-row clearfix\">\r\n                            <h3>Enter your voucher code here</h3>\r\n\r\n                            <div class='voucher-form clearfix'>\r\n                                <div class=\"inputField\">\r\n                                    <input type=\"text\">\r\n                                </div>\r\n                                <div class=\"inputBtn\">\r\n                                    <button>Submit</button>\r\n                                </div>\r\n                            </div>\r\n\r\n                        </div>\r\n\r\n                        <hr class=\"saperator\">\r\n\r\n\r\n                        <div class=\"row footer-row clearfix\">\r\n                            <div class=\"subtotal-heading\">\r\n                                <p>Delivery Fee</p>\r\n                            </div>\r\n                            <div class=\"subtotal-value\">\r\n                                0\r\n                            </div>\r\n\r\n                        </div>\r\n\r\n                        <div class=\"row  footer-row no-margin-top clearfix\">\r\n                            <div class=\"subtotal-heading\">\r\n                                <p>Total</p>\r\n                            </div>\r\n                            <div class=\"subtotal-value font20\">\r\n                                Rs. {{FinalTotal}}\r\n                            </div>\r\n\r\n                        </div>\r\n\r\n\r\n\r\n                    </div>\r\n\r\n                </div>\r\n                <!-- wrapper -->\r\n\r\n            </div>\r\n\r\n            <div class=\"col-right clearfix\">\r\n\r\n                <div class=\"holder-box clearfix\">\r\n\r\n                    <h3>Order Information</h3>\r\n\r\n\r\n\r\n                    <div class=\"check1\">\r\n                        <p>\r\n                            <input type=\"radio\" id=\"test2\" (change)=\"AsSoonAsPossibleSelected()\" name=\"radio-group\" checked>\r\n                            <label for=\"test2\" class='delivery-text'>As soon as possible</label>\r\n                            <span class='delivery-text'>Estimated Delivery Time : {{estimatedDeliveryTime}} min</span>\r\n                        </p>\r\n\r\n                        <p>\r\n                            <input type=\"radio\" id=\"test3\" (change)=\"showTimeSlots()\" name=\"radio-group\">\r\n                            <label for=\"test3\" class='delivery-text'>Later</label>\r\n                        </p>\r\n\r\n                        <div class=\"FetchingTimeSlots\">\r\n                                <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->\r\n                                <svg width=\"50\" height=\"30\" viewBox=\"0 0 120 30\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"#1ec26b\">\r\n                                    <circle cx=\"15\" cy=\"15\" r=\"15\">\r\n                                        <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                        />\r\n                                        <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                        />\r\n                                    </circle>\r\n                                    <circle cx=\"60\" cy=\"15\" r=\"9\" fill-opacity=\"0.3\">\r\n                                        <animate attributeName=\"r\" from=\"9\" to=\"9\" begin=\"0s\" dur=\"0.8s\" values=\"9;15;9\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                        />\r\n                                        <animate attributeName=\"fill-opacity\" from=\"0.5\" to=\"0.5\" begin=\"0s\" dur=\"0.8s\" values=\".5;1;.5\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                        />\r\n                                    </circle>\r\n                                    <circle cx=\"105\" cy=\"15\" r=\"15\">\r\n                                        <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                        />\r\n                                        <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                        />\r\n                                    </circle>\r\n                                </svg>\r\n\r\n                            </div>\r\n\r\n                        <ng-container>\r\n\r\n                            <ul class=\"time-slots\">\r\n                                <li *ngFor=\"let timeSlot of timeSlots\" class=\"\">\r\n                                    <button class=\"time-slot\" (click)=\"selectThisSlot($event,timeSlot.Id)\">{{timeSlot.StartingTime}} - {{timeSlot.EndingTime}}</button>\r\n                                </li>\r\n                            </ul>\r\n\r\n                        </ng-container>\r\n\r\n                    </div>\r\n\r\n                    <hr class=\"saperator\">\r\n\r\n                    <div class='italic-text row'>\r\n                        <p>(if you want to add any comment e.g. about delivery instructions, this is the right place)</p>\r\n                    </div>\r\n\r\n\r\n                    <div class='message-text row'>\r\n                        <p style=\"cursor:pointer;\" (click)=\"showMessageArea()\">\r\n                            <img src=\"assets/img/play-arrow.png\"> Add a message to your order\r\n\r\n                        </p>\r\n\r\n\r\n\r\n                        <div class=\"textarea-div2 animated\">\r\n                            <textarea placeholder=\"Write any instructions here ...\"></textarea>\r\n                        </div>\r\n\r\n\r\n\r\n                    </div>\r\n\r\n                    <div class=\"alignCenter row\">\r\n                        <ng-container *ngIf=\"cartHasItems\">\r\n                            <button (click)=\"takeMeToStep3()\" class=\"checkout-btn nextBtn\">Checkout</button>\r\n                        </ng-container>\r\n                    </div>\r\n\r\n                </div>\r\n\r\n\r\n            </div>\r\n\r\n\r\n        </div>\r\n    </div>\r\n    <div class=\"row setup-content\" id=\"step-3\">\r\n\r\n        <div class=\"col-md-12\">\r\n\r\n\r\n            <div class=\"left-pane\">\r\n                <div class=\"inner-wrapper\">\r\n                    <div class=\"header\">\r\n                        <h3>My Contact Details</h3>\r\n                    </div>\r\n                    <div class=\"body clearfix\">\r\n                        <div class=\"lefty-side clearfix\">\r\n                            <p class=\"leftyVa\">Full Name</p>\r\n                            <p class=\"leftyVa\">Email</p>\r\n                            <p class=\"leftyVa\">Mobile</p>\r\n                        </div>\r\n                        <div class=\"righty-side col-md-6 clearfix\">\r\n                            <p class=\"rightyVal\">{{ThisUser.UserName}}</p>\r\n                            <p class=\"rightyVal\">{{ThisUser.Email}}</p>\r\n                            <p class=\"rightyVal\"></p>\r\n                            <a class=\"rightyVal green\" (click)=\"logOut()\">Not {{ThisUser.UserName}}? Logout </a>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class=\"inner-wrapper\">\r\n                    <div class=\"header\">\r\n                        <h3>Your delivery address</h3>\r\n                    </div>\r\n                    <div class=\"body clearfix\">\r\n\r\n\r\n                        <p class=\"oldAddress\">\r\n\r\n                            <input type=\"radio\" id=\"newDeliveryCheck\" (change)=\"createNewAddress()\" name=\"radio-group\" value=\"NewAddress\">\r\n                            <label for=\"newDeliveryCheck\" class='delivery-text'>Create new delivery address</label>\r\n\r\n\r\n                        </p>\r\n                        <ng-container *ngIf=\"newAddressEnabled\">\r\n                            <div class=\"addressesPane\">\r\n                                <span class=\"requiredRed\">*</span>\r\n                                <span class=\"required\">Required Fields</span>\r\n\r\n                                <p>\r\n                                    <span class=\"requiredRed\">*</span>\r\n                                    <span class=\"normalText\">Address</span>\r\n                                </p>\r\n\r\n                                <div class=\"form-group\">\r\n\r\n                                    <input type=\"text\" class=\"address-field\" id=\"EnteredAddressCity\" name=\"EnteredAddress.City\" [(ngModel)]=\"EnteredAddress.City\">\r\n                                    <span class=\"required\">Enter your city for delivery address</span>\r\n                                </div>\r\n\r\n                                <div class=\"form-group\">\r\n\r\n                                    <input type=\"text\" class=\"address-field\" id=\"EnteredAddressArea\" name=\"EnteredAddress.Area\" [(ngModel)]=\"EnteredAddress.Area\">\r\n                                    <span class=\"required\">Enter your area delivery address</span>\r\n                                </div>\r\n\r\n\r\n                                <div class=\"form-group\">\r\n\r\n                                    <input type=\"text\" class=\"address-field\" id=\"EnteredAddressDetail\" name=\"EnteredAddress.AddressDetail\" [(ngModel)]=\"EnteredAddress.AddressDetail\">\r\n                                    <span class=\"required\">Enter your address delivery address</span>\r\n                                </div>\r\n\r\n                                <div class=\"loader\">\r\n                                    <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->\r\n                                    <svg width=\"50\" height=\"30\" viewBox=\"0 0 120 30\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"#1ec26b\">\r\n                                        <circle cx=\"15\" cy=\"15\" r=\"15\">\r\n                                            <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                            />\r\n                                            <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                            />\r\n                                        </circle>\r\n                                        <circle cx=\"60\" cy=\"15\" r=\"9\" fill-opacity=\"0.3\">\r\n                                            <animate attributeName=\"r\" from=\"9\" to=\"9\" begin=\"0s\" dur=\"0.8s\" values=\"9;15;9\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                            />\r\n                                            <animate attributeName=\"fill-opacity\" from=\"0.5\" to=\"0.5\" begin=\"0s\" dur=\"0.8s\" values=\".5;1;.5\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                            />\r\n                                        </circle>\r\n                                        <circle cx=\"105\" cy=\"15\" r=\"15\">\r\n                                            <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                            />\r\n                                            <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                            />\r\n                                        </circle>\r\n                                    </svg>\r\n\r\n                                </div>\r\n\r\n                                <div class=\"form-group\" id=\"saveAddressBtn\">\r\n                                    <button class=\"save-address\" (click)=\"saveThisAddress()\">Save Address</button>\r\n                                </div>\r\n\r\n                                <div class=\"location-box\">\r\n                                    <p>\r\n                                        <span class=\"normalText\">Your Location</span>\r\n                                    </p>\r\n                                    <ng-container *ngIf=\"addressSet\">\r\n\r\n                                \r\n                                    <p class=\"location-text\">{{NewAddressEnteredAndSelected.City}},{{NewAddressEnteredAndSelected.Area}},{{NewAddressEnteredAndSelected.AddressDetail}}</p>\r\n\r\n\r\n                                  </ng-container>\r\n                                </div>\r\n\r\n                                <div class='message-text row' (click)=\"showTextArea3()\">\r\n                                    <p>\r\n                                        <i class=\"thisone3 fa fa-chevron-right\"></i> Delivery Instructions</p>\r\n                                    <span class=\"optional\">(Optional)</span>\r\n\r\n\r\n                                    <div class=\"textarea-div3 animated\">\r\n                                        <textarea [(ngModel)]=\"EnteredAddress.DeliveryInstructions\" name=\"EnteredAddress.DeliveryInstructions\" placeholder=\"Write any instructions here ...\"></textarea>\r\n                                    </div>\r\n\r\n                                </div>\r\n\r\n                                <div class='message-text row' (click)=\"showTextArea4()\">\r\n                                    <p>\r\n                                        <i class=\"thisone4 fa fa-chevron-right\"></i> Additional Information</p>\r\n                                    <span class=\"optional\">(Optional)</span>\r\n                                    <div class=\"textarea-div4 animated\">\r\n                                        <textarea placeholder=\"Write any instructions here ...\"></textarea>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </ng-container>\r\n                        <p class=\"oldAddress\">\r\n\r\n                            <input type=\"radio\" id=\"oldDeliveryCheck\" (change)=\"oldAddress()\" name=\"radio-group\" value=\"oldAddress\">\r\n                            <label for=\"oldDeliveryCheck\" class='delivery-text'>Use saved delivery address</label>\r\n\r\n                        </p>\r\n\r\n                        <ng-container *ngIf=\"oldAddressEnabled\">\r\n                            <ul class=\"EnteredAddress\">\r\n                                <li class=\"listed-addresses\" *ngFor=\"let EnteredAddress of EnteredAddress\">\r\n                                    <button class=\"\" (click)=\"selectThisAddress($event,EnteredAddress.Id)\">{{EnteredAddress.City}},{{EnteredAddress.Area}},{{EnteredAddress.AddressDetail}}</button>\r\n                                </li>\r\n                            </ul>\r\n                        </ng-container>\r\n\r\n                    </div>\r\n                </div>\r\n\r\n\r\n\r\n\r\n                <div class=\"inner-wrapper\">\r\n                    <div class=\"header\">\r\n                        <h3>Choose how to pay</h3>\r\n                    </div>\r\n                    <div class=\"body clearfix\">\r\n\r\n\r\n                        <div class=\"panel-group\" id=\"accordion3\" role=\"tablist\" aria-multiselectable=\"true\">\r\n\r\n                            <div class=\"panel panel-custom\">\r\n                                <div class=\"panel-heading\" role=\"tab\" id=\"headingOne\">\r\n                                    <h4 class=\"panel-title\">\r\n                                        <a class=\"panel-head\" (click)=\"showPayingNowForm()\" data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapsePayNow\"\r\n                                            aria-expanded=\"true\" aria-controls=\"collapsePayNow\">\r\n\r\n                                            <input type=\"radio\" id=\"payingNow\" name=\"radio-group\" value=\"payingNow\">\r\n                                            <label for=\"payingNow\" class='delivery-text'>Pay Now</label>\r\n\r\n\r\n                                        </a>\r\n                                    </h4>\r\n                                </div>\r\n                                <div id=\"collapsePayNow\" class=\"panel-collapse collapse\" role=\"tabpanel\" aria-labelledby=\"headingOne\">\r\n                                    <div class=\"panel-body animated zoomIn\">\r\n\r\n                                        <div class=\"pay-now-details\">\r\n\r\n                                            <h3>Please provide your credit card details</h3>\r\n\r\n                                            <div class=\"form-group\">\r\n\r\n                                                <label for=\"cardName\">\r\n                                                    <span class=\"requiredRed\">*</span> Name on card</label>\r\n                                                <br/>\r\n                                                <input type=\"text\" class=\"form-control\" id=\"cardName\">\r\n                                                <span class=\"required\">As it appears on your credit card</span>\r\n\r\n                                            </div>\r\n\r\n                                            <div class=\"form-group\">\r\n\r\n                                                <label for=\"cardNumber\">\r\n                                                    <span class=\"requiredRed\">*</span> Card Number</label>\r\n                                                <br/>\r\n                                                <input type=\"text\" class=\"form-control\" id=\"cardNumber\">\r\n                                                <span class=\"required\">16 digits in front of your credit card. No spaces</span>\r\n\r\n                                            </div>\r\n\r\n\r\n                                            <div class=\"form-group\">\r\n                                                <label for=\"cardNumber\">\r\n                                                    <span class=\"requiredRed\">*</span> Expiration Date</label>\r\n                                                <br/>\r\n                                                <div class=\"col-md-6 col-sm-6\">\r\n                                                    <span class=\"dropdown-el\">\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"January\" checked=\"checked\" id=\"sort-relevance\">\r\n                                                        <label for=\"sort-relevance\">January</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"February\" id=\"sort-best\">\r\n                                                        <label for=\"sort-best\">February</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"March\" id=\"sort-low\">\r\n                                                        <label for=\"sort-low\">March</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"April\" id=\"sort-high\">\r\n                                                        <label for=\"sort-high\">April</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"May\" id=\"sort-brand\">\r\n                                                        <label for=\"sort-brand\">May</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"June\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">June</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"July\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">July</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"August\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">August</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"September\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">September</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"October\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">October</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"November\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">November</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"December\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">December</label>\r\n                                                    </span>\r\n                                                </div>\r\n\r\n                                                <div class=\"col-md-6 col-sm-6\">\r\n                                                    <span class=\"dropdown-el\">\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2016\" checked=\"checked\" id=\"sort-relevance\">\r\n                                                        <label for=\"sort-relevance\">2016</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2017\" id=\"sort-best\">\r\n                                                        <label for=\"sort-best\">2017</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2018\" id=\"sort-low\">\r\n                                                        <label for=\"sort-low\">2018</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2019\" id=\"sort-high\">\r\n                                                        <label for=\"sort-high\">2019</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2020\" id=\"sort-brand\">\r\n                                                        <label for=\"sort-brand\">2020</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2021\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">2021</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2022\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">2022</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2023\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">2023</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2024\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">2024</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2025\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">2025</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2026\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">2026</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2027\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">2027</label>\r\n                                                    </span>\r\n                                                </div>\r\n\r\n                                            </div>\r\n\r\n\r\n                                            <div class=\"form-group\" style=\"    margin-top: 47px;\">\r\n\r\n                                                <label for=\"cardNumber\">\r\n                                                    <span class=\"requiredRed\">*</span> Security Code</label>\r\n                                                <br/>\r\n                                                <input type=\"text\" class=\"form-control\" id=\"cardNumber\">\r\n                                                <span class=\"required\">CVV or CVV2. 3 Digits on the back. Amex 4, on the front</span>\r\n\r\n                                            </div>\r\n\r\n                                            <p>\r\n                                                <input class=\"styled-checkbox\" id=\"styled-checkbox-1\" type=\"checkbox\" value=\"value1\">\r\n                                                <label for=\"styled-checkbox-1\">Save my credit card details for future orders on the secure payment provider\r\n                                                    site.\r\n                                                </label>\r\n                                            </p>\r\n\r\n\r\n                                            <div class='bottom-text'>\r\n                                                <p class='bottom-text1'>After proceeding, you might be redirected to you card issuer page to verify\r\n                                                    this transaction</p>\r\n                                                <p class='bottom-text2'>Pay with master card or visa. You will be redirected to the second page of\r\n                                                    ouy patment partner. Transaction would be proceeded abroad.</p>\r\n                                            </div>\r\n\r\n                                        </div>\r\n\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n\r\n\r\n                            <div class=\"panel panel-custom\">\r\n                                <div class=\"panel-heading\" role=\"tab\" id=\"headingOne\">\r\n                                    <h4 class=\"panel-title\">\r\n                                        <a class=\"panel-head\" (click)=\"showOnDeliveryForm()\" data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapseCashonDelivery\"\r\n                                            aria-expanded=\"true\" aria-controls=\"collapseCashonDelivery\">\r\n\r\n                                            <input type=\"radio\" id=\"cashOnDelivery\" name=\"radio-group\" value=\"cashOnDelivery\">\r\n                                            <label for=\"cashOnDelivery\" class='delivery-text'>Cash on Delivery</label>\r\n\r\n\r\n                                        </a>\r\n                                    </h4>\r\n                                </div>\r\n\r\n                                <div id=\"collapseCashonDelivery\" class=\"panel-collapse collapse\" role=\"tabpanel\" aria-labelledby=\"headingTwo\">\r\n                                    <div class=\"panel-body animated zoomIn\">\r\n                                        Please pay on delivery\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n\r\n\r\n                        </div>\r\n\r\n\r\n\r\n                    </div>\r\n                </div>\r\n\r\n\r\n                <div class=\"inner-wrapper cleafix special\">\r\n\r\n                    <div class=\"col-md-6 cleafix\">\r\n\r\n                    </div>\r\n\r\n                    <div class=\"col-md-6 cleafix\">\r\n\r\n                        <div class=\"left-equal cleafix\">\r\n                            Total\r\n                        </div>\r\n                        <div class=\"right-equal cleafix\">\r\n                            Rs. {{FinalTotal}}\r\n                        </div>\r\n\r\n\r\n                        <p>By clicking this button, you agree with our\r\n                            <a>terms and conditions</a>\r\n                        </p>\r\n\r\n\r\n                        <div class=\"Orderloader\">\r\n                            <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->\r\n                            <svg width=\"50\" height=\"30\" viewBox=\"0 0 120 30\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"#1ec26b\">\r\n                                <circle cx=\"15\" cy=\"15\" r=\"15\">\r\n                                    <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                    <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                </circle>\r\n                                <circle cx=\"60\" cy=\"15\" r=\"9\" fill-opacity=\"0.3\">\r\n                                    <animate attributeName=\"r\" from=\"9\" to=\"9\" begin=\"0s\" dur=\"0.8s\" values=\"9;15;9\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                    <animate attributeName=\"fill-opacity\" from=\"0.5\" to=\"0.5\" begin=\"0s\" dur=\"0.8s\" values=\".5;1;.5\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                </circle>\r\n                                <circle cx=\"105\" cy=\"15\" r=\"15\">\r\n                                    <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                    <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                </circle>\r\n                            </svg>\r\n\r\n                        </div>\r\n\r\n                        <button class=\"place-now\" (click)=\"placeOrder()\">Place order now</button>\r\n                    </div>\r\n\r\n                </div>\r\n\r\n\r\n\r\n\r\n            </div>\r\n\r\n\r\n            <div class=\"right-pane\">\r\n\r\n\r\n                <div class=\"time-pane\">\r\n\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6 col-sm-6 col-xs-6\" style=\"text-align:left\">\r\n                            <p class='right-estimate'>Estimated Delivery Time</p>\r\n                        </div>\r\n                        <div class=\"col-md-6 col-sm-6 col-xs-6\" style=\"text-align: right\">\r\n                            <div class=\"time\">\r\n                                <p class=\"big\">{{estimatedDeliveryTime}}</p>\r\n                                <p class=\"small\">mins</p>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n\r\n\r\n                </div>\r\n\r\n\r\n\r\n\r\n                <div class=\"cart\">\r\n\r\n                    <div class=\"header\">\r\n                        <h3>Your Order</h3>\r\n                    </div>\r\n                    <div class=\"body clearfix\">\r\n\r\n                        <div class=\"one-row clearfix\" *ngFor=\"let onerow of cart\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\">{{onerow?.Quantity}}x\r\n                                    <span style=\"color:#1ec26b;font-weight:bold;font-size:16px\">{{onerow?.Name}}</span>\r\n                                </P>\r\n                                <span class=\"optional\">{{onerow?.ChemistCategoryName}}</span>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail\">Rs. {{onerow?.Total}}</P>\r\n                            </div>\r\n                        </div>\r\n\r\n                    </div>\r\n                    <div class='footer clearfix'>\r\n\r\n                        <div class=\"one-row clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\">Subtotal</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail\">Rs. {{SubTotal}}</P>\r\n                            </div>\r\n                        </div>\r\n\r\n                        <div class=\"one-row clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\">Delivery Fee</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail\">Rs. 0</P>\r\n                            </div>\r\n                        </div>\r\n\r\n\r\n                        <div class=\"one-row more-margin clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\" style=\"padding-top:10px;\">Total</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail bigText\">Rs. {{FinalTotal}}</P>\r\n                            </div>\r\n                        </div>\r\n\r\n                    </div>\r\n                </div>\r\n\r\n            </div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n        </div>\r\n\r\n    </div>\r\n\r\n\r\n</div>"
+module.exports = "<div id=\"snackbar\"></div>\r\n\r\n<modal #orderPlaced modalClass=\"modal-lg modal-sm animated fadeInDownBig orderPlaced\" [hideCloseButton]=\"true\" [closeOnEscape]=\"true\"\r\n    [closeOnOutsideClick]=\"true\" (onClose)=\"navigateToOriginal()\">\r\n\r\n    \r\n\r\n    <modal-content>\r\n            <button class=\"closeThanks\" (click)=\"orderPlaced.close()\" data-dismiss=\"modal\" type=\"button\" aria-label=\"Close\"><span aria-hidden=\"true\">×</span></button>\r\n   \r\n        <div class=\"my-header\">\r\n            <div class=\"circle\">\r\n                <img class=\"amiated jackInTheBox\" src=\"/assets/img/like.png\"     width=\"100px\">\r\n            </div>\r\n        </div>\r\n        <div class=\"my-header-2\">\r\n            <h1>Thank you! Your order was placed successfully!</h1>\r\n            <button class=\"view-orders\" (click)=\"navigatoToOrders()\">View Orders</button>\r\n        </div>\r\n    </modal-content>\r\n\r\n\r\n</modal>\r\n\r\n<modal #detailModal [closeOnEscape]=\"false\" [closeOnOutsideClick]=\"false\" modalClass=\"modal-lg modal-md detailModalClass\"\r\n    (onSubmit)=\"actionOnSubmit()\" (onClose)=\"actionOnClose()\">\r\n\r\n    <modal-content *ngIf=\"ifDataPopulated\">\r\n\r\n        <div class=\"full-row clearfix\">\r\n\r\n\r\n            <div class=\"modal-name\">\r\n\r\n                <p>{{singleMedicine.Name}}</p>\r\n                <p style=\"    margin-bottom: 20px;\">Rs. {{singleMedicine.TotalPrice}}</p>\r\n                <!-- <span>Reckitt Beckiser Ltd.</span> -->\r\n                <span>{{singleMedicine.ChemistCategoryName}}</span>\r\n\r\n            </div>\r\n\r\n            <div class=\"modal-quantity\">\r\n\r\n\r\n                <div class=\"\" id=\"prod-quantity-cart\">\r\n\r\n                    <button class=\"qtyminus\" field='quantity' (click)=\"Downing()\">-</button>\r\n\r\n                    <input type=\"number\" id=\"num_val\" min=\"1\" max=\"100\" class='qty' step=\"1\" value=\"1\" readonly>\r\n\r\n                    <button class=\"qtyplus \" field='quantity' (click)=\"Upping()\">+</button>\r\n\r\n                </div>\r\n\r\n                <div class='clear'></div>\r\n                <div class=\"selects\">\r\n                    <select class=\"dosage\" id=\"dosageName\" (change)=\"getDosageName($event.target.value)\">\r\n                        <option selected disabled>Select Dosage</option>\r\n                        <option *ngFor=\"let dosageArray of singleMedicine.WebDosageAndValuesDTOList\" value=\"{{dosageArray.DosageName}}\">{{dosageArray.DosageName}}</option>\r\n                    </select>\r\n\r\n                    <select class=\"dosage\" id=\"dosageValue\" (change)=\"getDosageValue($event.target.value)\">\r\n                        <option selected disabled>Select Value</option>\r\n                        <option *ngFor=\"let dosageArray of dosageValue\" value=\"{{dosageArray}}\">{{dosageArray}}</option>\r\n                    </select>\r\n\r\n                    <select class=\"dosage\" id=\"Measurements\" (change)=\"getMeasurement($event.target.value)\">\r\n                        <option selected disabled>Select Measurement</option>\r\n                        <option *ngFor=\"let measurement of measurementValue\" value=\"{{measurement}}\">{{measurement}}</option>\r\n                    </select>\r\n                </div>\r\n\r\n            </div>\r\n\r\n        </div>\r\n\r\n        <hr class=\"saperator\">\r\n\r\n\r\n        <div class=\"full-row clearfix\" (click)=\"showTextArea()\">\r\n\r\n\r\n            <div class=\"modal-name\">\r\n\r\n                <p>SPECIAL INSTRUCTIONS</p>\r\n\r\n            </div>\r\n\r\n            <div class=\"modal-quantity\">\r\n\r\n\r\n                <span class=\"optional\">(Optional)</span>\r\n                <i class=\"thisone fa fa-chevron-up\"></i>\r\n\r\n            </div>\r\n\r\n        </div>\r\n\r\n\r\n\r\n        <div class=\"textarea-div animated\">\r\n            <textarea placeholder=\"Write any instructions here ...\"></textarea>\r\n        </div>\r\n\r\n\r\n        <div class=\"full-row clearfix center-align\">\r\n            <button class=\"cart-button\" (click)=\"addToCart()\">Add to Cart</button>\r\n        </div>\r\n\r\n    </modal-content>\r\n\r\n</modal>\r\n\r\n<div class=\"container\" style=\"margin-top:20px;margin-bottom:20px;\">\r\n\r\n    <div class=\"stepwizard\">\r\n        <div class=\"stepwizard-row setup-panel\">\r\n            <div class=\"stepwizard-step\">\r\n                <div id=\"overlay\"></div>\r\n                <a #step1 href=\"#step-1\" type=\"button\" id=\"step1\" class=\"btn btn-primary btn-circle\">1</a>\r\n                <p>Your Details</p>\r\n            </div>\r\n            <div class=\"stepwizard-step\">\r\n                <div id=\"overlay2\"></div>\r\n                <a #step2 href=\"#step-2\" type=\"button\" id=\"step2\" class=\"btn btn-default btn-circle\" disabled=\"disabled\">2</a>\r\n                <p>Review Order</p>\r\n            </div>\r\n            <div class=\"stepwizard-step\">\r\n                <div id=\"overlay3\"></div>\r\n                <a #step3 href=\"#step-3\" type=\"button\" id=\"step3\" class=\"btn btn-default btn-circle\" disabled=\"disabled\">3</a>\r\n                <p>Place Order</p>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n\r\n    <div class=\"row setup-content\" id=\"step-1\">\r\n\r\n        <div class=\"col-md-12\">\r\n\r\n\r\n            <div class=\"left-pane\">\r\n\r\n                <div class=\"inner-wrapper clearfix\">\r\n\r\n\r\n                    <div class=\"upper-holder clearfix\">\r\n                        <!-- Upper Holder -->\r\n\r\n                        <div class=\"left-chemist clearfix\">\r\n                            <p class=\"headging-with-rating\">{{ChemistViewing.UserName}}</p>\r\n                            <div class=\"chemist-ratings\">\r\n                                <star-rating-comp [starType]=\"'icon'\" [disabled]=\"true\" [rating]=\"ChemistViewing.Chemist.ChemistRating\"></star-rating-comp>\r\n\r\n                            </div>\r\n                            <p class=\"opening-hours\">{{ChemistViewing.DistanceFromUs}} KM</p>\r\n                        </div>\r\n                        <div class=\"right-search clearfix\">\r\n\r\n\r\n                            <div class='voucher-form clearfix'>\r\n                                <img src=\"/assets/img/search.png\" class=\"search-icon\">\r\n                                <div class=\"inputField\">\r\n                                    <input type=\"text\" (keyup)=\"searchThisMedicine(e)\" name=\"searchMedicineQuery\" [(ngModel)]=\"searchMedicineQuery\" placeholder=\"Search Medicines\"\r\n                                        name=\"searchChemistQuery\" (keyup)=\"searchThisMedicine(this)\" [(ngModel)]=\"searchChemistQuery\">\r\n                                </div>\r\n                                <div class=\"inputBtn\">\r\n                                    <button>Search</button>\r\n                                </div>\r\n\r\n                            </div>\r\n                        </div>\r\n\r\n                    </div>\r\n                    <!-- Upper Holder -->\r\n                </div>\r\n\r\n\r\n                <div class=\"tabbable-panel\">\r\n                    <div class=\"tabbable-line\">\r\n                        <ul class=\"nav nav-tabs\">\r\n                            <li *ngFor=\"let categories of ChemistCategories;let i=index\" (click)=\"showProductsForThisCateogry(categories.Id)\" id=\"list_{{categories.Id}}\" class=\"tabs-list\" [ngClass]=\"{'active': i==0}\">\r\n                                <a style=\"cursor:pointer;\"  data-target=\"#tab_1\" data-toggle=\"tab\">\r\n                                    {{categories.CategoryName}} </a>\r\n                            </li>\r\n                        </ul>\r\n                        <div class=\"tab-content\">\r\n                            <div class=\"tab-pane animated active\" id=\"tab_1\">\r\n\r\n\r\n                                <ul class=\"products-list\">\r\n\r\n                                    <li (mouseenter)=\"showPlus($event)\" (click)=\"getDetailsOfProduct(medicine)\" id=\"medicine{{medicine.Id}}\" (mouseleave)=\"hidePlus($event)\"\r\n                                        *ngFor=\"let medicine of SearchedMedicines;let i=index\" class=\"single-product animated zoomIn\">\r\n\r\n                                        <div class=\"product-wrapper\">\r\n\r\n                                            <div class=\"product-image\" id=\"image{{medicine.Id}}\">\r\n                                                <img src=\"{{medicine.PictureURL}}\">\r\n                                            </div>\r\n\r\n                                            <div class=\"product-detail\">\r\n                                                <h2>{{medicine.Name}}</h2>\r\n                                            </div>\r\n\r\n\r\n                                        </div>\r\n\r\n                                        <div class=\"plus-sign animated\">\r\n                                            <img src=\"/assets/img/add.png\">\r\n                                        </div>\r\n\r\n                                    </li>\r\n\r\n                                </ul>\r\n\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n            </div>\r\n\r\n\r\n            <div class=\"right-pane\">\r\n\r\n\r\n                <div class=\"time-pane\">\r\n\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6 col-sm-6 col-xs-6\" style=\"text-align:left\">\r\n                            <p class='right-estimate'>Estimated Delivery Time</p>\r\n                        </div>\r\n                        <div class=\"col-md-6 col-sm-6 col-xs-6\" style=\"text-align: right\">\r\n                            <div class=\"time\">\r\n                                <p class=\"big\">{{estimatedDeliveryTime}}</p>\r\n                                <p class=\"small\">mins</p>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n\r\n\r\n                </div>\r\n\r\n\r\n\r\n\r\n                <div class=\"cart animated\">\r\n\r\n                    <div class=\"header\">\r\n                        <h3>Your Order</h3>\r\n                    </div>\r\n                    <div class=\"body clearfix\">\r\n\r\n\r\n                        <div class=\"one-row clearfix\" *ngFor=\"let onerow of cart\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\">{{onerow?.Quantity}}x\r\n                                    <span style=\"color:#1ec26b;font-weight:bold;font-size:16px\">{{onerow?.Name}}</span>\r\n                                </P>\r\n                                <span class=\"optional\">{{onerow?.ChemistCategoryName}}</span>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail\">Rs. {{onerow?.Total}}</P>\r\n                            </div>\r\n                        </div>\r\n\r\n                    </div>\r\n                    <div class='footer clearfix'>\r\n\r\n                        <div class=\"one-row clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\">Subtotal</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail\">Rs. {{SubTotal}}</P>\r\n                            </div>\r\n                        </div>\r\n\r\n                        <div class=\"one-row clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\">Delivery Fee</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail\">Rs. 0</P>\r\n                            </div>\r\n                        </div>\r\n\r\n\r\n                        <div class=\"one-row more-margin clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\" style=\"padding-top:10px;\">Total</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail bigText\">Rs. {{FinalTotal}}</P>\r\n                            </div>\r\n                        </div>\r\n\r\n                        <div class=\"alignCenter row\" style=\"width: 90%;margin: 15px auto;\">\r\n\r\n                            <ng-container *ngIf=\"cartHasItems\">\r\n                                <button (click)=\"takeMeToReviewPage()\" id=\"proceedToReview\" class=\"checkout-btn nextBtn\">Proceed</button>\r\n                            </ng-container>\r\n\r\n                        </div>\r\n\r\n                    </div>\r\n                </div>\r\n\r\n            </div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n        </div>\r\n\r\n    </div>\r\n    <div class=\"row setup-content\" id=\"step-2\">\r\n        <div class=\"col-md-12 cleafix\">\r\n\r\n            <div class=\"col-left clearfix\">\r\n\r\n                <div class=\"holder-box clearfix\">\r\n                    <!-- wrapper -->\r\n\r\n                    <div class='header clearfix'>\r\n                        <div class=\"left-image-side clearfix\">\r\n                            <img src=\"assets/img/dw.png\" width=\"75px\">\r\n                        </div>\r\n                        <div class='right-name clearfix'>\r\n                            <p class=\"chemist-name\">{{ChemistViewing.UserName}}</p>\r\n                            <p class=\"opening-hours\">{{ChemistViewing.DistanceFromUs}} KM</p>\r\n\r\n                            <div class=\"chemist-ratings\">\r\n\r\n                                <star-rating-comp [starType]=\"'icon'\" [disabled]=\"true\" [rating]=\"ChemistViewing.Chemist.ChemistRating\"></star-rating-comp>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n\r\n                    <hr class=\"saperator\">\r\n\r\n\r\n                    <div class=\"table-details\">\r\n\r\n                        <div class=\"one-row clearfix\" *ngFor=\"let onerow of cart\">\r\n                            <div class=\"del\" (click)=\"deletethisRow(onerow)\">\r\n                                <img src=\"assets/img/del.png\">\r\n                            </div>\r\n                            <div class=\"name\">\r\n                                <span class=\"med-name\">{{onerow.Name}}</span>\r\n                                <span>({{onerow.ChemistCategoryName}}) {{onerow.DosageValue}}{{onerow.DosageName}} {{onerow.MeausurementName}}</span>\r\n                            </div>\r\n                            <div class=\"quantity\">\r\n                                <div class=\"quantity\" id=\"prod-quantity\">\r\n                                    <input type=\"number\" id=\"num_val_{{onerow.Id}}\" min=\"1\" max=\"10\" class='qty' step=\"1\" value=\"{{onerow.Quantity}}\" readonly>\r\n                                    <div class=\"quantity-nav\">\r\n                                        <div class=\"quantity-button quantity-up qtyplus \" field='quantity' (click)=\"UppingReview(onerow)\">+</div>\r\n                                        <div class=\"quantity-button quantity-down qtyminus\" field='quantity' (click)=\"DowningReview(onerow)\">-</div>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"subtotal\">\r\n                                <p>Rs. {{onerow.Total}}</p>\r\n                            </div>\r\n\r\n                        </div>\r\n\r\n                        <div class=\"row  subtotal-row clearfix\">\r\n                            <div class=\"subtotal-heading\">\r\n                                <p>Subtotal</p>\r\n                            </div>\r\n                            <div class=\"subtotal-value\">\r\n                                Rs. {{SubTotal}}\r\n                            </div>\r\n\r\n                        </div>\r\n\r\n\r\n                        <div class=\"row voucher-row clearfix\">\r\n                            <h3>Enter your voucher code here</h3>\r\n\r\n                            <div class='voucher-form clearfix'>\r\n                                <div class=\"inputField\">\r\n                                    <input type=\"text\">\r\n                                </div>\r\n                                <div class=\"inputBtn\">\r\n                                    <button>Submit</button>\r\n                                </div>\r\n                            </div>\r\n\r\n                        </div>\r\n\r\n                        <hr class=\"saperator\">\r\n\r\n\r\n                        <div class=\"row footer-row clearfix\">\r\n                            <div class=\"subtotal-heading\">\r\n                                <p>Delivery Fee</p>\r\n                            </div>\r\n                            <div class=\"subtotal-value\">\r\n                                0\r\n                            </div>\r\n\r\n                        </div>\r\n\r\n                        <div class=\"row  footer-row no-margin-top clearfix\">\r\n                            <div class=\"subtotal-heading\">\r\n                                <p>Total</p>\r\n                            </div>\r\n                            <div class=\"subtotal-value font20\">\r\n                                Rs. {{FinalTotal}}\r\n                            </div>\r\n\r\n                        </div>\r\n\r\n\r\n\r\n                    </div>\r\n\r\n                </div>\r\n                <!-- wrapper -->\r\n\r\n            </div>\r\n\r\n            <div class=\"col-right clearfix\">\r\n\r\n                <div class=\"holder-box clearfix\">\r\n\r\n                    <h3>Order Information</h3>\r\n\r\n\r\n\r\n                    <div class=\"check1\">\r\n                        <p>\r\n                            <input type=\"radio\" id=\"test2\" (change)=\"AsSoonAsPossibleSelected()\" name=\"radio-group\" checked>\r\n                            <label for=\"test2\" class='delivery-text'>As soon as possible</label>\r\n                            <span class='delivery-text'>Estimated Delivery Time : {{estimatedDeliveryTime}} min</span>\r\n                        </p>\r\n\r\n                        <p>\r\n                            <input type=\"radio\" id=\"test3\" (change)=\"showTimeSlots()\" name=\"radio-group\">\r\n                            <label for=\"test3\" class='delivery-text'>Later</label>\r\n                        </p>\r\n\r\n                        <div class=\"FetchingTimeSlots\">\r\n                                <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->\r\n                                <svg width=\"50\" height=\"30\" viewBox=\"0 0 120 30\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"#1ec26b\">\r\n                                    <circle cx=\"15\" cy=\"15\" r=\"15\">\r\n                                        <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                        />\r\n                                        <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                        />\r\n                                    </circle>\r\n                                    <circle cx=\"60\" cy=\"15\" r=\"9\" fill-opacity=\"0.3\">\r\n                                        <animate attributeName=\"r\" from=\"9\" to=\"9\" begin=\"0s\" dur=\"0.8s\" values=\"9;15;9\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                        />\r\n                                        <animate attributeName=\"fill-opacity\" from=\"0.5\" to=\"0.5\" begin=\"0s\" dur=\"0.8s\" values=\".5;1;.5\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                        />\r\n                                    </circle>\r\n                                    <circle cx=\"105\" cy=\"15\" r=\"15\">\r\n                                        <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                        />\r\n                                        <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                        />\r\n                                    </circle>\r\n                                </svg>\r\n\r\n                            </div>\r\n\r\n                        <ng-container>\r\n\r\n                            <ul class=\"time-slots\">\r\n                                <li *ngFor=\"let timeSlot of timeSlots\" class=\"\">\r\n                                    <button class=\"time-slot\" (click)=\"selectThisSlot($event,timeSlot.Id)\">{{timeSlot.StartingTime}} - {{timeSlot.EndingTime}}</button>\r\n                                </li>\r\n                            </ul>\r\n\r\n                        </ng-container>\r\n\r\n                    </div>\r\n\r\n                    <hr class=\"saperator\">\r\n\r\n                    <div class='italic-text row'>\r\n                        <p>(if you want to add any comment e.g. about delivery instructions, this is the right place)</p>\r\n                    </div>\r\n\r\n\r\n                    <div class='message-text row'>\r\n                        <p style=\"cursor:pointer;\" (click)=\"showMessageArea()\">\r\n                            <img src=\"assets/img/play-arrow.png\"> Add a message to your order\r\n\r\n                        </p>\r\n\r\n\r\n\r\n                        <div class=\"textarea-div2 animated\">\r\n                            <textarea placeholder=\"Write any instructions here ...\"></textarea>\r\n                        </div>\r\n\r\n\r\n\r\n                    </div>\r\n\r\n                    <div class=\"alignCenter row\">\r\n                        <ng-container *ngIf=\"cartHasItems\">\r\n                            <button (click)=\"takeMeToStep3()\" class=\"checkout-btn nextBtn\">Checkout</button>\r\n                        </ng-container>\r\n                    </div>\r\n\r\n                </div>\r\n\r\n\r\n            </div>\r\n\r\n\r\n        </div>\r\n    </div>\r\n    <div class=\"row setup-content\" id=\"step-3\">\r\n\r\n        <div class=\"col-md-12\">\r\n\r\n\r\n            <div class=\"left-pane\">\r\n                <div class=\"inner-wrapper\">\r\n                    <div class=\"header\">\r\n                        <h3>My Contact Details</h3>\r\n                    </div>\r\n                    <div class=\"body clearfix\">\r\n                        <div class=\"lefty-side clearfix\">\r\n                            <p class=\"leftyVa\">Full Name</p>\r\n                            <p class=\"leftyVa\">Email</p>\r\n                            <p class=\"leftyVa\">Mobile</p>\r\n                        </div>\r\n                        <div class=\"righty-side col-md-6 clearfix\">\r\n                            <p class=\"rightyVal\">{{ThisUser.UserName}}</p>\r\n                            <p class=\"rightyVal\">{{ThisUser.Email}}</p>\r\n                            <p class=\"rightyVal\"></p>\r\n                            <a class=\"rightyVal green\" (click)=\"logOut()\">Not {{ThisUser.UserName}}? Logout </a>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class=\"inner-wrapper\">\r\n                    <div class=\"header\">\r\n                        <h3>Your delivery address</h3>\r\n                    </div>\r\n                    <div class=\"body clearfix\">\r\n\r\n\r\n                        <p class=\"oldAddress\">\r\n\r\n                            <input type=\"radio\" id=\"newDeliveryCheck\" (change)=\"createNewAddress()\" name=\"radio-group\" value=\"NewAddress\">\r\n                            <label for=\"newDeliveryCheck\" class='delivery-text'>Create new delivery address</label>\r\n\r\n\r\n                        </p>\r\n                        <ng-container *ngIf=\"newAddressEnabled\">\r\n                            <div class=\"addressesPane\">\r\n                                <span class=\"requiredRed\">*</span>\r\n                                <span class=\"required\">Required Fields</span>\r\n\r\n                                <p>\r\n                                    <span class=\"requiredRed\">*</span>\r\n                                    <span class=\"normalText\">Address</span>\r\n                                </p>\r\n\r\n                                <div class=\"form-group\">\r\n\r\n                                    <input type=\"text\" class=\"address-field\" id=\"EnteredAddressCity\" name=\"EnteredAddress.City\" [(ngModel)]=\"EnteredAddress.City\">\r\n                                    <span class=\"required\">Enter your city for delivery address</span>\r\n                                </div>\r\n\r\n                                <div class=\"form-group\">\r\n\r\n                                    <input type=\"text\" class=\"address-field\" id=\"EnteredAddressArea\" name=\"EnteredAddress.Area\" [(ngModel)]=\"EnteredAddress.Area\">\r\n                                    <span class=\"required\">Enter your area delivery address</span>\r\n                                </div>\r\n\r\n\r\n                                <div class=\"form-group\">\r\n\r\n                                    <input type=\"text\" class=\"address-field\" id=\"EnteredAddressDetail\" name=\"EnteredAddress.AddressDetail\" [(ngModel)]=\"EnteredAddress.AddressDetail\">\r\n                                    <span class=\"required\">Enter your address delivery address</span>\r\n                                </div>\r\n\r\n                                <div class=\"loader\">\r\n                                    <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->\r\n                                    <svg width=\"50\" height=\"30\" viewBox=\"0 0 120 30\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"#1ec26b\">\r\n                                        <circle cx=\"15\" cy=\"15\" r=\"15\">\r\n                                            <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                            />\r\n                                            <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                            />\r\n                                        </circle>\r\n                                        <circle cx=\"60\" cy=\"15\" r=\"9\" fill-opacity=\"0.3\">\r\n                                            <animate attributeName=\"r\" from=\"9\" to=\"9\" begin=\"0s\" dur=\"0.8s\" values=\"9;15;9\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                            />\r\n                                            <animate attributeName=\"fill-opacity\" from=\"0.5\" to=\"0.5\" begin=\"0s\" dur=\"0.8s\" values=\".5;1;.5\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                            />\r\n                                        </circle>\r\n                                        <circle cx=\"105\" cy=\"15\" r=\"15\">\r\n                                            <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                            />\r\n                                            <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                            />\r\n                                        </circle>\r\n                                    </svg>\r\n\r\n                                </div>\r\n\r\n                                <div class=\"form-group\" id=\"saveAddressBtn\">\r\n                                    <button class=\"save-address\" (click)=\"saveThisAddress()\">Save Address</button>\r\n                                </div>\r\n\r\n                                <div class=\"location-box\">\r\n                                    <p>\r\n                                        <span class=\"normalText\">Your Location</span>\r\n                                    </p>\r\n                                    <ng-container *ngIf=\"addressSet\">\r\n\r\n                                \r\n                                    <p class=\"location-text\">{{NewAddressEnteredAndSelected.City}},{{NewAddressEnteredAndSelected.Area}},{{NewAddressEnteredAndSelected.AddressDetail}}</p>\r\n\r\n\r\n                                  </ng-container>\r\n                                </div>\r\n\r\n                                <div class='message-text row' (click)=\"showTextArea3()\">\r\n                                    <p>\r\n                                        <i class=\"thisone3 fa fa-chevron-right\"></i> Delivery Instructions</p>\r\n                                    <span class=\"optional\">(Optional)</span>\r\n\r\n\r\n                                    <div class=\"textarea-div3 animated\">\r\n                                        <textarea [(ngModel)]=\"EnteredAddress.DeliveryInstructions\" name=\"EnteredAddress.DeliveryInstructions\" placeholder=\"Write any instructions here ...\"></textarea>\r\n                                    </div>\r\n\r\n                                </div>\r\n\r\n                                <div class='message-text row' (click)=\"showTextArea4()\">\r\n                                    <p>\r\n                                        <i class=\"thisone4 fa fa-chevron-right\"></i> Additional Information</p>\r\n                                    <span class=\"optional\">(Optional)</span>\r\n                                    <div class=\"textarea-div4 animated\">\r\n                                        <textarea placeholder=\"Write any instructions here ...\"></textarea>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </ng-container>\r\n                        <p class=\"oldAddress\">\r\n\r\n                            <input type=\"radio\" id=\"oldDeliveryCheck\" (change)=\"oldAddress()\" name=\"radio-group\" value=\"oldAddress\">\r\n                            <label for=\"oldDeliveryCheck\" class='delivery-text'>Use saved delivery address</label>\r\n\r\n                        </p>\r\n\r\n                        <ng-container *ngIf=\"oldAddressEnabled\">\r\n                            <ul class=\"EnteredAddress\">\r\n                                <li class=\"listed-addresses\" *ngFor=\"let EnteredAddress of EnteredAddress\">\r\n                                    <button class=\"\" (click)=\"selectThisAddress($event,EnteredAddress.Id)\">{{EnteredAddress.City}},{{EnteredAddress.Area}},{{EnteredAddress.AddressDetail}}</button>\r\n                                </li>\r\n                            </ul>\r\n                        </ng-container>\r\n\r\n                    </div>\r\n                </div>\r\n\r\n\r\n\r\n\r\n                <div class=\"inner-wrapper\">\r\n                    <div class=\"header\">\r\n                        <h3>Choose how to pay</h3>\r\n                    </div>\r\n                    <div class=\"body clearfix\">\r\n\r\n\r\n                        <div class=\"panel-group\" id=\"accordion3\" role=\"tablist\" aria-multiselectable=\"true\">\r\n\r\n                            <div class=\"panel panel-custom\">\r\n                                <div class=\"panel-heading\" role=\"tab\" id=\"headingOne\">\r\n                                    <h4 class=\"panel-title\">\r\n                                        <a class=\"panel-head\" (click)=\"showPayingNowForm()\" data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapsePayNow\"\r\n                                            aria-expanded=\"true\" aria-controls=\"collapsePayNow\">\r\n\r\n                                            <input type=\"radio\" id=\"payingNow\" name=\"radio-group\" value=\"payingNow\">\r\n                                            <label for=\"payingNow\" class='delivery-text'>Pay Now</label>\r\n\r\n\r\n                                        </a>\r\n                                    </h4>\r\n                                </div>\r\n                                <div id=\"collapsePayNow\" class=\"panel-collapse collapse\" role=\"tabpanel\" aria-labelledby=\"headingOne\">\r\n                                    <div class=\"panel-body animated zoomIn\">\r\n\r\n                                        <div class=\"pay-now-details\">\r\n\r\n                                            <h3>Please provide your credit card details</h3>\r\n\r\n                                            <div class=\"form-group\">\r\n\r\n                                                <label for=\"cardName\">\r\n                                                    <span class=\"requiredRed\">*</span> Name on card</label>\r\n                                                <br/>\r\n                                                <input type=\"text\" class=\"form-control\" id=\"cardName\">\r\n                                                <span class=\"required\">As it appears on your credit card</span>\r\n\r\n                                            </div>\r\n\r\n                                            <div class=\"form-group\">\r\n\r\n                                                <label for=\"cardNumber\">\r\n                                                    <span class=\"requiredRed\">*</span> Card Number</label>\r\n                                                <br/>\r\n                                                <input type=\"text\" class=\"form-control\" id=\"cardNumber\">\r\n                                                <span class=\"required\">16 digits in front of your credit card. No spaces</span>\r\n\r\n                                            </div>\r\n\r\n\r\n                                            <div class=\"form-group\">\r\n                                                <label for=\"cardNumber\">\r\n                                                    <span class=\"requiredRed\">*</span> Expiration Date</label>\r\n                                                <br/>\r\n                                                <div class=\"col-md-6 col-sm-6\">\r\n                                                    <span class=\"dropdown-el\">\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"January\" checked=\"checked\" id=\"sort-relevance\">\r\n                                                        <label for=\"sort-relevance\">January</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"February\" id=\"sort-best\">\r\n                                                        <label for=\"sort-best\">February</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"March\" id=\"sort-low\">\r\n                                                        <label for=\"sort-low\">March</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"April\" id=\"sort-high\">\r\n                                                        <label for=\"sort-high\">April</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"May\" id=\"sort-brand\">\r\n                                                        <label for=\"sort-brand\">May</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"June\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">June</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"July\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">July</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"August\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">August</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"September\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">September</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"October\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">October</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"November\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">November</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"December\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">December</label>\r\n                                                    </span>\r\n                                                </div>\r\n\r\n                                                <div class=\"col-md-6 col-sm-6\">\r\n                                                    <span class=\"dropdown-el\">\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2016\" checked=\"checked\" id=\"sort-relevance\">\r\n                                                        <label for=\"sort-relevance\">2016</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2017\" id=\"sort-best\">\r\n                                                        <label for=\"sort-best\">2017</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2018\" id=\"sort-low\">\r\n                                                        <label for=\"sort-low\">2018</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2019\" id=\"sort-high\">\r\n                                                        <label for=\"sort-high\">2019</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2020\" id=\"sort-brand\">\r\n                                                        <label for=\"sort-brand\">2020</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2021\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">2021</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2022\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">2022</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2023\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">2023</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2024\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">2024</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2025\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">2025</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2026\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">2026</label>\r\n                                                        <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2027\" id=\"sort-name\">\r\n                                                        <label for=\"sort-name\">2027</label>\r\n                                                    </span>\r\n                                                </div>\r\n\r\n                                            </div>\r\n\r\n\r\n                                            <div class=\"form-group\" style=\"    margin-top: 47px;\">\r\n\r\n                                                <label for=\"cardNumber\">\r\n                                                    <span class=\"requiredRed\">*</span> Security Code</label>\r\n                                                <br/>\r\n                                                <input type=\"text\" class=\"form-control\" id=\"cardNumber\">\r\n                                                <span class=\"required\">CVV or CVV2. 3 Digits on the back. Amex 4, on the front</span>\r\n\r\n                                            </div>\r\n\r\n                                            <p>\r\n                                                <input class=\"styled-checkbox\" id=\"styled-checkbox-1\" type=\"checkbox\" value=\"value1\">\r\n                                                <label for=\"styled-checkbox-1\">Save my credit card details for future orders on the secure payment provider\r\n                                                    site.\r\n                                                </label>\r\n                                            </p>\r\n\r\n\r\n                                            <div class='bottom-text'>\r\n                                                <p class='bottom-text1'>After proceeding, you might be redirected to you card issuer page to verify\r\n                                                    this transaction</p>\r\n                                                <p class='bottom-text2'>Pay with master card or visa. You will be redirected to the second page of\r\n                                                    ouy patment partner. Transaction would be proceeded abroad.</p>\r\n                                            </div>\r\n\r\n                                        </div>\r\n\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n\r\n\r\n                            <div class=\"panel panel-custom\">\r\n                                <div class=\"panel-heading\" role=\"tab\" id=\"headingOne\">\r\n                                    <h4 class=\"panel-title\">\r\n                                        <a class=\"panel-head\" (click)=\"showOnDeliveryForm()\" data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapseCashonDelivery\"\r\n                                            aria-expanded=\"true\" aria-controls=\"collapseCashonDelivery\">\r\n\r\n                                            <input type=\"radio\" id=\"cashOnDelivery\" name=\"radio-group\" value=\"cashOnDelivery\">\r\n                                            <label for=\"cashOnDelivery\" class='delivery-text'>Cash on Delivery</label>\r\n\r\n\r\n                                        </a>\r\n                                    </h4>\r\n                                </div>\r\n\r\n                                <div id=\"collapseCashonDelivery\" class=\"panel-collapse collapse\" role=\"tabpanel\" aria-labelledby=\"headingTwo\">\r\n                                    <div class=\"panel-body animated zoomIn\">\r\n                                        Please pay on delivery\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n\r\n\r\n                        </div>\r\n\r\n\r\n\r\n                    </div>\r\n                </div>\r\n\r\n\r\n                <div class=\"inner-wrapper cleafix special\">\r\n\r\n                    <div class=\"col-md-6 cleafix\">\r\n\r\n                    </div>\r\n\r\n                    <div class=\"col-md-6 cleafix\">\r\n\r\n                        <div class=\"left-equal cleafix\">\r\n                            Total\r\n                        </div>\r\n                        <div class=\"right-equal cleafix\">\r\n                            Rs. {{FinalTotal}}\r\n                        </div>\r\n\r\n\r\n                        <p>By clicking this button, you agree with our\r\n                            <a>terms and conditions</a>\r\n                        </p>\r\n\r\n\r\n                        <div class=\"Orderloader\">\r\n                            <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->\r\n                            <svg width=\"50\" height=\"30\" viewBox=\"0 0 120 30\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"#1ec26b\">\r\n                                <circle cx=\"15\" cy=\"15\" r=\"15\">\r\n                                    <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                    <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                </circle>\r\n                                <circle cx=\"60\" cy=\"15\" r=\"9\" fill-opacity=\"0.3\">\r\n                                    <animate attributeName=\"r\" from=\"9\" to=\"9\" begin=\"0s\" dur=\"0.8s\" values=\"9;15;9\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                    <animate attributeName=\"fill-opacity\" from=\"0.5\" to=\"0.5\" begin=\"0s\" dur=\"0.8s\" values=\".5;1;.5\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                </circle>\r\n                                <circle cx=\"105\" cy=\"15\" r=\"15\">\r\n                                    <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                    <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                </circle>\r\n                            </svg>\r\n\r\n                        </div>\r\n\r\n                        <button class=\"place-now\" (click)=\"placeOrder()\">Place order now</button>\r\n                    </div>\r\n\r\n                </div>\r\n\r\n\r\n\r\n\r\n            </div>\r\n\r\n\r\n            <div class=\"right-pane\">\r\n\r\n\r\n                <div class=\"time-pane\">\r\n\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6 col-sm-6 col-xs-6\" style=\"text-align:left\">\r\n                            <p class='right-estimate'>Estimated Delivery Time</p>\r\n                        </div>\r\n                        <div class=\"col-md-6 col-sm-6 col-xs-6\" style=\"text-align: right\">\r\n                            <div class=\"time\">\r\n                                <p class=\"big\">{{estimatedDeliveryTime}}</p>\r\n                                <p class=\"small\">mins</p>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n\r\n\r\n                </div>\r\n\r\n\r\n\r\n\r\n                <div class=\"cart\">\r\n\r\n                    <div class=\"header\">\r\n                        <h3>Your Order</h3>\r\n                    </div>\r\n                    <div class=\"body clearfix\">\r\n\r\n                        <div class=\"one-row clearfix\" *ngFor=\"let onerow of cart\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\">{{onerow?.Quantity}}x\r\n                                    <span style=\"color:#1ec26b;font-weight:bold;font-size:16px\">{{onerow?.Name}}</span>\r\n                                </P>\r\n                                <span class=\"optional\">{{onerow?.ChemistCategoryName}}</span>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail\">Rs. {{onerow?.Total}}</P>\r\n                            </div>\r\n                        </div>\r\n\r\n                    </div>\r\n                    <div class='footer clearfix'>\r\n\r\n                        <div class=\"one-row clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\">Subtotal</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail\">Rs. {{SubTotal}}</P>\r\n                            </div>\r\n                        </div>\r\n\r\n                        <div class=\"one-row clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\">Delivery Fee</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail\">Rs. 0</P>\r\n                            </div>\r\n                        </div>\r\n\r\n\r\n                        <div class=\"one-row more-margin clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\" style=\"padding-top:10px;\">Total</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail bigText\">Rs. {{FinalTotal}}</P>\r\n                            </div>\r\n                        </div>\r\n\r\n                    </div>\r\n                </div>\r\n\r\n            </div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n        </div>\r\n\r\n    </div>\r\n\r\n\r\n</div>"
 
 /***/ }),
-/* 274 */
+/* 277 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -98067,7 +97991,7 @@ var AboutComponent = (function () {
          * remember that 'es6-promise-loader' is a promise
          */
         setTimeout(function () {
-            __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 351))
+            __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 353))
                 .then(function (json) {
                 console.log('async mockData', json);
                 _this.localState = json;
@@ -98088,7 +98012,7 @@ AboutComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 
 /***/ }),
-/* 275 */
+/* 278 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -98112,7 +98036,7 @@ NoContentComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 
 /***/ }),
-/* 276 */
+/* 279 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -98207,7 +98131,7 @@ FacebookModule.ctorParameters = function () { return []; };
 //# sourceMappingURL=facebook.module.js.map
 
 /***/ }),
-/* 277 */
+/* 280 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -98221,20 +98145,20 @@ var LocationModel = (function () {
 
 
 /***/ }),
-/* 278 */
+/* 281 */
 /***/ (function(module, exports, __webpack_require__) {
 
 !function(e,t){ true?module.exports=t():"function"==typeof define&&define.amd?define([],t):"object"==typeof exports?exports.AOS=t():e.AOS=t()}(this,function(){return function(e){function t(o){if(n[o])return n[o].exports;var i=n[o]={exports:{},id:o,loaded:!1};return e[o].call(i.exports,i,i.exports,t),i.loaded=!0,i.exports}var n={};return t.m=e,t.c=n,t.p="dist/",t(0)}([function(e,t,n){"use strict";function o(e){return e&&e.__esModule?e:{default:e}}var i=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var o in n)Object.prototype.hasOwnProperty.call(n,o)&&(e[o]=n[o])}return e},r=n(1),a=(o(r),n(6)),u=o(a),c=n(7),f=o(c),s=n(8),d=o(s),l=n(9),p=o(l),m=n(10),b=o(m),v=n(11),y=o(v),g=n(14),h=o(g),w=[],k=!1,x=document.all&&!window.atob,j={offset:120,delay:0,easing:"ease",duration:400,disable:!1,once:!1,startEvent:"DOMContentLoaded"},O=function(){var e=arguments.length>0&&void 0!==arguments[0]&&arguments[0];if(e&&(k=!0),k)return w=(0,y.default)(w,j),(0,b.default)(w,j.once),w},S=function(){w=(0,h.default)(),O()},_=function(){w.forEach(function(e,t){e.node.removeAttribute("data-aos"),e.node.removeAttribute("data-aos-easing"),e.node.removeAttribute("data-aos-duration"),e.node.removeAttribute("data-aos-delay")})},E=function(e){return e===!0||"mobile"===e&&p.default.mobile()||"phone"===e&&p.default.phone()||"tablet"===e&&p.default.tablet()||"function"==typeof e&&e()===!0},z=function(e){return j=i(j,e),w=(0,h.default)(),E(j.disable)||x?_():(document.querySelector("body").setAttribute("data-aos-easing",j.easing),document.querySelector("body").setAttribute("data-aos-duration",j.duration),document.querySelector("body").setAttribute("data-aos-delay",j.delay),"DOMContentLoaded"===j.startEvent&&["complete","interactive"].indexOf(document.readyState)>-1?O(!0):"load"===j.startEvent?window.addEventListener(j.startEvent,function(){O(!0)}):document.addEventListener(j.startEvent,function(){O(!0)}),window.addEventListener("resize",(0,f.default)(O,50,!0)),window.addEventListener("orientationchange",(0,f.default)(O,50,!0)),window.addEventListener("scroll",(0,u.default)(function(){(0,b.default)(w,j.once)},99)),document.addEventListener("DOMNodeRemoved",function(e){var t=e.target;t&&1===t.nodeType&&t.hasAttribute&&t.hasAttribute("data-aos")&&(0,f.default)(S,50,!0)}),(0,d.default)("[data-aos]",S),w)};e.exports={init:z,refresh:O,refreshHard:S}},function(e,t){},,,,,function(e,t){(function(t){"use strict";function n(e,t,n){function o(t){var n=b,o=v;return b=v=void 0,k=t,g=e.apply(o,n)}function r(e){return k=e,h=setTimeout(s,t),S?o(e):g}function a(e){var n=e-w,o=e-k,i=t-n;return _?j(i,y-o):i}function c(e){var n=e-w,o=e-k;return void 0===w||n>=t||n<0||_&&o>=y}function s(){var e=O();return c(e)?d(e):void(h=setTimeout(s,a(e)))}function d(e){return h=void 0,E&&b?o(e):(b=v=void 0,g)}function l(){void 0!==h&&clearTimeout(h),k=0,b=w=v=h=void 0}function p(){return void 0===h?g:d(O())}function m(){var e=O(),n=c(e);if(b=arguments,v=this,w=e,n){if(void 0===h)return r(w);if(_)return h=setTimeout(s,t),o(w)}return void 0===h&&(h=setTimeout(s,t)),g}var b,v,y,g,h,w,k=0,S=!1,_=!1,E=!0;if("function"!=typeof e)throw new TypeError(f);return t=u(t)||0,i(n)&&(S=!!n.leading,_="maxWait"in n,y=_?x(u(n.maxWait)||0,t):y,E="trailing"in n?!!n.trailing:E),m.cancel=l,m.flush=p,m}function o(e,t,o){var r=!0,a=!0;if("function"!=typeof e)throw new TypeError(f);return i(o)&&(r="leading"in o?!!o.leading:r,a="trailing"in o?!!o.trailing:a),n(e,t,{leading:r,maxWait:t,trailing:a})}function i(e){var t="undefined"==typeof e?"undefined":c(e);return!!e&&("object"==t||"function"==t)}function r(e){return!!e&&"object"==("undefined"==typeof e?"undefined":c(e))}function a(e){return"symbol"==("undefined"==typeof e?"undefined":c(e))||r(e)&&k.call(e)==d}function u(e){if("number"==typeof e)return e;if(a(e))return s;if(i(e)){var t="function"==typeof e.valueOf?e.valueOf():e;e=i(t)?t+"":t}if("string"!=typeof e)return 0===e?e:+e;e=e.replace(l,"");var n=m.test(e);return n||b.test(e)?v(e.slice(2),n?2:8):p.test(e)?s:+e}var c="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},f="Expected a function",s=NaN,d="[object Symbol]",l=/^\s+|\s+$/g,p=/^[-+]0x[0-9a-f]+$/i,m=/^0b[01]+$/i,b=/^0o[0-7]+$/i,v=parseInt,y="object"==("undefined"==typeof t?"undefined":c(t))&&t&&t.Object===Object&&t,g="object"==("undefined"==typeof self?"undefined":c(self))&&self&&self.Object===Object&&self,h=y||g||Function("return this")(),w=Object.prototype,k=w.toString,x=Math.max,j=Math.min,O=function(){return h.Date.now()};e.exports=o}).call(t,function(){return this}())},function(e,t){(function(t){"use strict";function n(e,t,n){function i(t){var n=b,o=v;return b=v=void 0,O=t,g=e.apply(o,n)}function r(e){return O=e,h=setTimeout(s,t),S?i(e):g}function u(e){var n=e-w,o=e-O,i=t-n;return _?x(i,y-o):i}function f(e){var n=e-w,o=e-O;return void 0===w||n>=t||n<0||_&&o>=y}function s(){var e=j();return f(e)?d(e):void(h=setTimeout(s,u(e)))}function d(e){return h=void 0,E&&b?i(e):(b=v=void 0,g)}function l(){void 0!==h&&clearTimeout(h),O=0,b=w=v=h=void 0}function p(){return void 0===h?g:d(j())}function m(){var e=j(),n=f(e);if(b=arguments,v=this,w=e,n){if(void 0===h)return r(w);if(_)return h=setTimeout(s,t),i(w)}return void 0===h&&(h=setTimeout(s,t)),g}var b,v,y,g,h,w,O=0,S=!1,_=!1,E=!0;if("function"!=typeof e)throw new TypeError(c);return t=a(t)||0,o(n)&&(S=!!n.leading,_="maxWait"in n,y=_?k(a(n.maxWait)||0,t):y,E="trailing"in n?!!n.trailing:E),m.cancel=l,m.flush=p,m}function o(e){var t="undefined"==typeof e?"undefined":u(e);return!!e&&("object"==t||"function"==t)}function i(e){return!!e&&"object"==("undefined"==typeof e?"undefined":u(e))}function r(e){return"symbol"==("undefined"==typeof e?"undefined":u(e))||i(e)&&w.call(e)==s}function a(e){if("number"==typeof e)return e;if(r(e))return f;if(o(e)){var t="function"==typeof e.valueOf?e.valueOf():e;e=o(t)?t+"":t}if("string"!=typeof e)return 0===e?e:+e;e=e.replace(d,"");var n=p.test(e);return n||m.test(e)?b(e.slice(2),n?2:8):l.test(e)?f:+e}var u="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},c="Expected a function",f=NaN,s="[object Symbol]",d=/^\s+|\s+$/g,l=/^[-+]0x[0-9a-f]+$/i,p=/^0b[01]+$/i,m=/^0o[0-7]+$/i,b=parseInt,v="object"==("undefined"==typeof t?"undefined":u(t))&&t&&t.Object===Object&&t,y="object"==("undefined"==typeof self?"undefined":u(self))&&self&&self.Object===Object&&self,g=v||y||Function("return this")(),h=Object.prototype,w=h.toString,k=Math.max,x=Math.min,j=function(){return g.Date.now()};e.exports=n}).call(t,function(){return this}())},function(e,t){"use strict";function n(e,t){a.push({selector:e,fn:t}),!u&&r&&(u=new r(o),u.observe(i.documentElement,{childList:!0,subtree:!0,removedNodes:!0})),o()}function o(){for(var e,t,n=0,o=a.length;n<o;n++){e=a[n],t=i.querySelectorAll(e.selector);for(var r,u=0,c=t.length;u<c;u++)r=t[u],r.ready||(r.ready=!0,e.fn.call(r,r))}}Object.defineProperty(t,"__esModule",{value:!0});var i=window.document,r=window.MutationObserver||window.WebKitMutationObserver,a=[],u=void 0;t.default=n},function(e,t){"use strict";function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function o(){return navigator.userAgent||navigator.vendor||window.opera||""}Object.defineProperty(t,"__esModule",{value:!0});var i=function(){function e(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,n,o){return n&&e(t.prototype,n),o&&e(t,o),t}}(),r=/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i,a=/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i,u=/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino|android|ipad|playbook|silk/i,c=/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i,f=function(){function e(){n(this,e)}return i(e,[{key:"phone",value:function(){var e=o();return!(!r.test(e)&&!a.test(e.substr(0,4)))}},{key:"mobile",value:function(){var e=o();return!(!u.test(e)&&!c.test(e.substr(0,4)))}},{key:"tablet",value:function(){return this.mobile()&&!this.phone()}}]),e}();t.default=new f},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n=function(e,t,n){var o=e.node.getAttribute("data-aos-once");t>e.position?e.node.classList.add("aos-animate"):"undefined"!=typeof o&&("false"===o||!n&&"true"!==o)&&e.node.classList.remove("aos-animate")},o=function(e,t){var o=window.pageYOffset,i=window.innerHeight;e.forEach(function(e,r){n(e,i+o,t)})};t.default=o},function(e,t,n){"use strict";function o(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var i=n(12),r=o(i),a=function(e,t){return e.forEach(function(e,n){e.node.classList.add("aos-init"),e.position=(0,r.default)(e.node,t.offset)}),e};t.default=a},function(e,t,n){"use strict";function o(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var i=n(13),r=o(i),a=function(e,t){var n=0,o=0,i=window.innerHeight,a={offset:e.getAttribute("data-aos-offset"),anchor:e.getAttribute("data-aos-anchor"),anchorPlacement:e.getAttribute("data-aos-anchor-placement")};switch(a.offset&&!isNaN(a.offset)&&(o=parseInt(a.offset)),a.anchor&&document.querySelectorAll(a.anchor)&&(e=document.querySelectorAll(a.anchor)[0]),n=(0,r.default)(e).top,a.anchorPlacement){case"top-bottom":break;case"center-bottom":n+=e.offsetHeight/2;break;case"bottom-bottom":n+=e.offsetHeight;break;case"top-center":n+=i/2;break;case"bottom-center":n+=i/2+e.offsetHeight;break;case"center-center":n+=i/2+e.offsetHeight/2;break;case"top-top":n+=i;break;case"bottom-top":n+=e.offsetHeight+i;break;case"center-top":n+=e.offsetHeight/2+i}return a.anchorPlacement||a.offset||isNaN(t)||(o=t),n+o};t.default=a},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n=function(e){for(var t=0,n=0;e&&!isNaN(e.offsetLeft)&&!isNaN(e.offsetTop);)t+=e.offsetLeft-("BODY"!=e.tagName?e.scrollLeft:0),n+=e.offsetTop-("BODY"!=e.tagName?e.scrollTop:0),e=e.offsetParent;return{top:n,left:t}};t.default=n},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n=function(e){e=e||document.querySelectorAll("[data-aos]");var t=[];return[].forEach.call(e,function(e,n){t.push({node:e})}),t};t.default=n}])});
 //# sourceMappingURL=aos.js.map
 
 /***/ }),
-/* 279 */
+/* 282 */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"snackbar\"></div>\n\n<modal #loginModal [closeOnEscape]=\"false\" [closeOnOutsideClick]=\"false\" modalClass=\"modal-lg modal-md  signUpModal\" (onSubmit)=\"actionOnSubmit()\">\n  <modal-content>\n\n    <div class=\"signButton\">\n      <button class='SignUpLogin' (click)=\"routeToSignUp()\">Sign Up</button>\n    </div>\n\n    <div class=\"closeButton\">\n      <img src=\"/assets/img/cancel.png\" width=\"15px\">\n    </div>\n\n    <div class='login-container'>\n\n      <div class='login clearfix'>\n\n        <div class='left-side'>\n\n          <div class=\"centered\">\n            <h2 class='logIN white'>Log In</h2>\n            <p class=\"white small-text\">Login to Continue</p>\n          </div>\n          <div class=\"image-logo\">\n            <div class=\"left-image\">\n              <img src=\"assets/img/1.gif\">\n            </div>\n            <div class=\"right-text\">\n              <p>Pharma Aid</p>\n            </div>\n\n          </div>\n\n        </div>\n\n        <div class='right-side'>\n          <div class=\"myForms\">\n            <div class=\"form-group\">\n              <label for=\"email\">Email</label>\n              <input type=\"text\" class=\"form-control\" [ngClass]=\"{'errors': EmailError}\" name=\"user.UserName\" [(ngModel)]=\"user.UserName\">\n            </div>\n\n            <div class=\"form-group\">\n              <label for=\"email\">password</label>\n              <input type=\"password\" class=\"form-control\" [ngClass]=\"{'errors': PasswordError}\" name=\"user.Password\" [(ngModel)]=\"user.Password\">\n            </div>\n          </div>\n\n          <div class=\"loader\">\n            <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->\n            <svg width=\"50\" height=\"30\" viewBox=\"0 0 120 30\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"#1ec26b\">\n              <circle cx=\"15\" cy=\"15\" r=\"15\">\n                <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n              <circle cx=\"60\" cy=\"15\" r=\"9\" fill-opacity=\"0.3\">\n                <animate attributeName=\"r\" from=\"9\" to=\"9\" begin=\"0s\" dur=\"0.8s\" values=\"9;15;9\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"0.5\" to=\"0.5\" begin=\"0s\" dur=\"0.8s\" values=\".5;1;.5\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n              <circle cx=\"105\" cy=\"15\" r=\"15\">\n                <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n            </svg>\n\n          </div>\n\n          <div class=\"form-group\" style=\"text-align:center;margin-top:60px;\">\n            <button class=\"submit-custom\" (click)=\"login()\">Login</button>\n          </div>\n\n\n          <div class=\"row clearfix\">\n            <div class='col-md-4 col-sm-4  no-left'>\n              <hr>\n            </div>\n            <div class='col-md-4 col-sm-4 no-padding text-centered'>\n              <p class=\"loginWith\">Login With</p>\n            </div>\n            <div class='col-md-4 col-sm-4 no-right'>\n              <hr>\n            </div>\n          </div>\n\n\n          <div class=\"row clearfix facebook-gmail\">\n\n            <div class=\"half-left\">\n              <a class=\"pointers\" (click)=\"loginWithFacebook()\">\n                <div class='holder'>\n                  <i class='fa fa-facebook'></i>\n                </div>\n              </a>\n            </div>\n            <div class=\"half-right\">\n              <button id=\"googleSignInBtn\" (click)=\"googleInit()\">\n                <div class='holder'>\n                  <img src=\"assets/img/plus.png\" style=\"width:23px;padding-left:2px\">\n                </div>\n              </button>\n            </div>\n\n          </div>\n\n\n        </div>\n\n      </div>\n\n    </div>\n  </modal-content>\n\n</modal>\n\n<div class=\"header-top\">\n\n  <h1>Get Medicine Supplies from your Home!</h1>\n  <div class=\"search-box clearfix\">\n    <div class=\"left-city\">\n      <label class=\"wrap\">\n        <select class=\"dropdown\" (change)=\"getCityId($event.target.value)\">\n          <option disabled selected value> City </option>\n          <option *ngFor=\"let cities of allCitites\" value=\"{{cities.Id}}\">{{cities.Name}}</option>\n        </select>\n      </label>\n    </div>\n    <div class=\"middle-area\">\n      <input class=\"area-input\" type=\"text\" [(ngModel)]=\"address\" placeholder=\"Enter an area\" [options]='options' (setAddress)=\"getAddress($event)\"\n        (street_number)='street_number=$event' (street)='street=$event' (city)='city=$event' (state)='state=$event' (district)='district=$event'\n        (country)='Pakistan' (postal_code)='postal_code=$event' (lat)='lat=$event' (lng)='lng=$event' (adr_address)='adr_address=$event'\n        (name)='name=$event' (place_id)='place_id=$event' (types)='types=$event' (url)='url=$event' (utc_offset)='utc_offset=$event'\n        (vicinity)='vicinity=$event' (photos)='photos=$event' (airport)='airport=$event' (CountryCodes)='CountryCodes=$event'\n        id=\"autocomplete\" ng2-google-place-autocomplete/>\n      <!--    <input type=\"text\"   name=\"myLocation.AreaName\" [(ngModel)]=\"myLocation.AreaName\"> -->\n    </div>\n    <div class=\"right-btn\">\n      <button class=\"header-btn\" (click)=\"showChemistPage()\">Let's Start</button>\n    </div>\n  </div>\n\n</div>\n\n\n<div class=\"container container-login\">\n\n\n  <div class=\"on-go\">\n    <h1>Order Medicine on the go</h1>\n  </div>\n\n\n</div>\n\n<div class=\"app-banner\">\n  <div class='container'>\n    <h3>Download the App</h3>\n    <p style=\"width:40%\">Get the app right in your pocket and order the medicine on the go from anywhere you want</p>\n\n\n    <div class=\"app-banner-inner\" data-aos=\"fade-right\">\n\n      <div class=\"app-buttons clearfix\">\n\n        <div class=\"apps clearfix\">\n          <div class=\"left-png clearfix\">\n            <img src=\"assets/img/apple.png\">\n          </div>\n          <div class=\"right-texty clearfix\">\n            <p class='small'>Download on the</p>\n            <p class='large'>App Store</p>\n          </div>\n        </div>\n\n\n        <div class=\"apps clearfix\" style=\"margin-left: 18px;\">\n          <div class=\"left-png clearfix\">\n            <img src=\"assets/img/appstore.png\">\n          </div>\n          <div class=\"right-texty clearfix\">\n            <p class='small'>Download on the</p>\n            <p class='large'>App Store</p>\n          </div>\n        </div>\n\n      </div>\n\n      <div class=\"mockup\" data-aos=\"fade-left\">\n        <img src=\"assets/img/mockup.png\">\n      </div>\n\n    </div>\n\n  </div>\n</div>\n\n\n<div class=\"container contact-form-row\">\n\n  <div class=\"contact-form\">\n    <h1>Get in Touch</h1>\n  </div>\n\n\n  <div class=\"actual-form clearfix\">\n    <div class=\"left-fields\" data-aos=\"zoom-in\">\n      <textarea placeholder=\"Your message ... \"></textarea>\n    </div>\n    <div class=\"right-fields\" data-aos=\"zoom-in-up\">\n      <div class=\"form-group\">\n        <input type=\"text\" placeholder=\"Enter name\">\n      </div>\n      <div class=\"form-group\">\n        <input type=\"text\" placeholder=\"Enter email\">\n      </div>\n      <div class=\"form-group\">\n        <button class=\"sendBtn\">Send</button>\n      </div>\n    </div>\n  </div>\n\n\n</div>"
+module.exports = "<div id=\"snackbar\"></div>\n\n\n\n<div class=\"header-top\">\n\n  <h1>Get Medicine Supplies from your Home!</h1>\n  <div class=\"search-box clearfix\">\n    <!-- <div class=\"left-city\">\n      <label class=\"wrap\">\n        <select class=\"dropdown\" (change)=\"getCityId($event.target.value)\">\n          <option disabled selected value> City </option>\n          <option *ngFor=\"let cities of allCitites\" value=\"{{cities.Id}}\">{{cities.Name}}</option>\n        </select>\n      </label>\n    </div> -->\n    <div class=\"middle-area\">\n      <input class=\"area-input\" type=\"text\" [(ngModel)]=\"address\" placeholder=\"Enter an area\" [options]='options' (setAddress)=\"getAddress($event)\"\n        (street_number)='street_number=$event' (street)='street=$event' (city)='city=$event' (state)='state=$event' (district)='district=$event'\n        (country)='Pakistan' (postal_code)='postal_code=$event' (lat)='lat=$event' (lng)='lng=$event' (adr_address)='adr_address=$event'\n        (name)='name=$event' (place_id)='place_id=$event' (types)='types=$event' (url)='url=$event' (utc_offset)='utc_offset=$event'\n        (vicinity)='vicinity=$event' (photos)='photos=$event' (airport)='airport=$event' (CountryCodes)='CountryCodes=$event'\n        id=\"autocomplete\" ng2-google-place-autocomplete/>\n      <!--    <input type=\"text\"   name=\"myLocation.AreaName\" [(ngModel)]=\"myLocation.AreaName\"> -->\n    </div>\n    <div class=\"right-btn\">\n      <button class=\"header-btn\" (click)=\"showChemistPage()\">Let's Start</button>\n    </div>\n  </div>\n\n</div>\n\n\n<div class=\"container container-login\">\n\n\n  <div class=\"on-go\">\n    <h1>Order Medicine on the go</h1>\n  </div>\n\n\n</div>\n\n<div class=\"app-banner\">\n  <div class='container'>\n    <h3>Download the App</h3>\n    <p style=\"width:40%\">Get the app right in your pocket and order the medicine on the go from anywhere you want</p>\n\n\n    <div class=\"app-banner-inner\" data-aos=\"fade-right\">\n\n      <div class=\"app-buttons clearfix\">\n\n        <div class=\"apps clearfix\">\n          <div class=\"left-png clearfix\">\n            <img src=\"assets/img/apple.png\">\n          </div>\n          <div class=\"right-texty clearfix\">\n            <p class='small'>Download on the</p>\n            <p class='large'>App Store</p>\n          </div>\n        </div>\n\n\n        <div class=\"apps clearfix\" style=\"margin-left: 18px;\">\n          <div class=\"left-png clearfix\">\n            <img src=\"assets/img/appstore.png\">\n          </div>\n          <div class=\"right-texty clearfix\">\n            <p class='small'>Download on the</p>\n            <p class='large'>App Store</p>\n          </div>\n        </div>\n\n      </div>\n\n      <div class=\"mockup\" data-aos=\"fade-left\">\n        <img src=\"assets/img/mockup.png\">\n      </div>\n\n    </div>\n\n  </div>\n</div>\n\n\n<div class=\"container contact-form-row\">\n\n  <div class=\"contact-form\">\n    <h1>Get in Touch</h1>\n  </div>\n\n\n  <div class=\"actual-form clearfix\">\n    <div class=\"left-fields\" data-aos=\"zoom-in\">\n      <textarea placeholder=\"Your message ... \"></textarea>\n    </div>\n    <div class=\"right-fields\" data-aos=\"zoom-in-up\">\n      <div class=\"form-group\">\n        <input type=\"text\" placeholder=\"Enter name\">\n      </div>\n      <div class=\"form-group\">\n        <input type=\"text\" placeholder=\"Enter email\">\n      </div>\n      <div class=\"form-group\">\n        <button class=\"sendBtn\">Send</button>\n      </div>\n    </div>\n  </div>\n\n\n</div>"
 
 /***/ }),
-/* 280 */
+/* 283 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)(undefined);
@@ -98242,89 +98166,89 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, "@font-face {\r\n    font-family: 'museo_sans500';\r\n    src: url(" + __webpack_require__(281) + ") format('woff2'),\r\n         url(" + __webpack_require__(282) + ") format('woff'),\r\n         url(" + __webpack_require__(283) + ")  format('truetype');\r\n    font-weight: normal;\r\n    font-style: normal;\r\n\r\n}\r\n\r\n    @font-face {\r\n        font-family: 'noto_sansbold';\r\n        src: url(" + __webpack_require__(284) + ") format('woff2'),\r\n             url(" + __webpack_require__(285) + ") format('woff');\r\n        font-weight: normal;\r\n        font-style: normal;\r\n    \r\n    }\r\n    \r\n    \r\n    \r\n    \r\n    @font-face {\r\n        font-family: 'noto_sansbold_italic';\r\n        src: url(" + __webpack_require__(286) + ") format('woff2'),\r\n             url(" + __webpack_require__(287) + ") format('woff');\r\n        font-weight: normal;\r\n        font-style: normal;\r\n    \r\n    }\r\n    \r\n    \r\n    \r\n    \r\n    @font-face {\r\n        font-family: 'noto_sansitalic';\r\n        src: url(" + __webpack_require__(288) + ") format('woff2'),\r\n             url(" + __webpack_require__(289) + ") format('woff');\r\n        font-weight: normal;\r\n        font-style: normal;\r\n    \r\n    }\r\n    \r\n    \r\n    \r\n    \r\n    @font-face {\r\n        font-family: 'noto_sansregular';\r\n        src: url(" + __webpack_require__(290) + ") format('woff2'),\r\n             url(" + __webpack_require__(291) + ") format('woff');\r\n        font-weight: normal;\r\n        font-style: normal;\r\n    \r\n    }\r\n  \r\n\r\n  body,p,input,label,button{\r\n    font-family: 'Museo300';\r\n    font-family: 'museo_sans500';\r\n  }\r\n  \r\n  hr{\r\n      border-bottom:1px solid #575757;\r\n  }\r\n\r\n/* body,p,input,label{\r\n    font-family: 'myriadRegular';\r\n} */\r\n.modal.in .signUpModal .modal-content{\r\n    border-radius: 0;\r\n\r\n}\r\n.modal.in .signUpModal{\r\n    position: relative;\r\n}\r\n.left-image{\r\n    position: relative;\r\n    float:left;\r\n    width: 40px;\r\n}\r\n.left-image img{\r\n    width:30px;\r\n}\r\n.image-logo{\r\n    width: 260px;\r\n    margin: 0 auto;\r\n}\r\n.right-text p{\r\n    font-size:32px;\r\n    font-weight: bold;\r\n    text-transform: uppercase;\r\n    color:white;\r\n    font-family: 'noto_sansbold';\r\n}\r\n.login{\r\n    display: flex;\r\n}\r\n.modal.in .signUpModal .modal-content .modal-header,.modal.in .signUpModal .modal-content .modal-footer{\r\n    border-bottom: none;\r\n    display:none;\r\n}\r\n\r\n.modal.in .signUpModal .modal-content .modal-footer{\r\n    border-top:none;\r\n}\r\n\r\n.modal.in .signUpModal .modal-content .modal-body{\r\n    padding:0;\r\n}\r\n.left-side{\r\n    width:40%;\r\n    background: rgba(0,230,68,0.64);\r\n    background: -moz-linear-gradient(45deg, rgba(0,230,68,0.64) 0%, rgba(0,230,68,1) 23%, rgba(0,230,68,1) 35%, rgba(0,188,68,1) 86%);\r\n    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(0,230,68,0.64)), color-stop(23%, rgba(0,230,68,1)), color-stop(35%, rgba(0,230,68,1)), color-stop(86%, rgba(0,188,68,1)));\r\n    background: -webkit-linear-gradient(45deg, rgba(0,230,68,0.64) 0%, rgba(0,230,68,1) 23%, rgba(0,230,68,1) 35%, rgba(0,188,68,1) 86%);\r\n    background: -o-linear-gradient(45deg, rgba(0,230,68,0.64) 0%, rgba(0,230,68,1) 23%, rgba(0,230,68,1) 35%, rgba(0,188,68,1) 86%);\r\n    background: -ms-linear-gradient(45deg, rgba(0,230,68,0.64) 0%, rgba(0,230,68,1) 23%, rgba(0,230,68,1) 35%, rgba(0,188,68,1) 86%);\r\n    background: linear-gradient(45deg, rgba(0,230,68,0.64) 0%, rgba(0,230,68,1) 23%, rgba(0,230,68,1) 35%, rgba(0,188,68,1) 86%);\r\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00e644', endColorstr='#00bc44', GradientType=1 );\r\n    position: relative;\r\n    float:left;\r\n    \r\n    padding-bottom: 15px;\r\n    min-height: 550px;\r\n}\r\n\r\n.centered{\r\n    padding: 84px 80px;\r\n}\r\n\r\n.right-side{\r\n    width:60%;\r\n    position: relative;\r\n    float:left;\r\n    padding: 100px 80px;\r\n    padding-bottom: 15px;\r\n}\r\n\r\n.myForms .form-group label{\r\n    color:black;\r\n    font-weight:400;\r\n    font-size:11px;\r\n    text-transform: uppercase;\r\n    margin-bottom:0;\r\n}\r\n\r\n.myForms .form-group input{\r\n    border:none;\r\n    padding-top:0;\r\n    border-bottom-width: 1px;\r\n    border-bottom-style: solid;\r\n    border-bottom-color:#ccc;\r\n    border-radius: 0;\r\n    -webkit-transition: border-bottom-color 0.9s;\r\n    transition:border-bottom-color 0.9s;\r\n    box-shadow: none;\r\n    padding-left:0;\r\n    \r\n}\r\n\r\n\r\n.pointers{\r\n    cursor:pointer;\r\n   \r\n\r\n}\r\n.myForms .form-group input:focus{\r\n    border-bottom-color:green;\r\n}\r\n\r\n.signButton{\r\n    position: absolute;\r\n    right:50px;\r\n    top:25px;\r\n    z-index: 1;\r\n}\r\n\r\n.closeButton{\r\n    position: absolute;\r\n    right:25px;\r\n    top:25px;\r\n    z-index: 1;\r\n}\r\n\r\n\r\n.submit-custom{\r\n    background: none;\r\n    border:none;\r\n    padding:8px 40px;\r\n    color:white;\r\n    background:#3ad72a;\r\n}\r\n.no-right{\r\n    padding-right:20px;\r\n}\r\n.no-left{\r\n    padding-left:20px;\r\n}\r\n.no-padding{\r\n    padding-left:0;\r\n    padding-right:0;\r\n}\r\n.text-centered{\r\n    text-align: center;\r\n}\r\n\r\n.loginWith{\r\n    padding-top:10px;\r\n    font-size:11px;\r\n    font-weight: 400;\r\n    color:#575757;\r\n    font-family: 'Museo300';\r\n    font-weight: bold;\r\n}\r\n#googleSignInBtn{\r\n    background: none;\r\n    border:none;\r\n    outline:none;\r\n    width: 55px;\r\n}\r\n.logIN{\r\n    font-size:40px;\r\n}\r\n.white{\r\n    color:white;\r\n}\r\n\r\n.small-text{\r\n    margin-top: 120px;\r\n}\r\n.half-left,.half-right{\r\n    position: relative;\r\n    float:left;\r\n}\r\n.holder i{\r\n    font-size:22px;\r\n    color:white;\r\n}\r\n.holder{\r\n    box-shadow: 0 5px 15px rgba(0,0,0,0.3);\r\n    width:40px;\r\n    height: 40px;\r\n    border-radius: 50%;\r\n    background: #575757;\r\n    text-align: center;\r\n    padding-top: 10px;\r\n    margin-right: 25px; \r\n    box-shadow: 0 1px 2px rgba(0,0,0,0.15);\r\n    transition: box-shadow 0.3s ease-in-out;\r\n\r\n}\r\n\r\n.holder:hover{\r\n    box-shadow: 0 5px 15px rgba(0,0,0,0.3);\r\n\r\n}\r\n.facebook-gmail{\r\n    width: 130px;\r\n    margin: 20px auto;\r\n}\r\n\r\n.errors{\r\n    border-bottom:1px solid red !important;\r\n}\r\n\r\n.SignUpLogin{\r\n    border:none;\r\n    background:none;\r\n    color:#3ad72a;;\r\n    font-size:13px;\r\n    font-weight: bold;\r\n\r\n}\r\n/* The snackbar - position it at the bottom and in the middle of the screen */\r\n#snackbar {\r\n    color:white;\r\n    text-transform: capitalize;\r\n    visibility: hidden; /* Hidden by default. Visible on click */\r\n    min-width: 250px; /* Set a default minimum width */\r\n    margin-left: -125px; /* Divide value of min-width by 2 */\r\n    background-color: #1ec26b; /* Black background color */\r\n    color: #fff; /* White text color */\r\n    text-align: center; /* Centered text */\r\n    border-radius: 2px; /* Rounded borders */\r\n    padding: 16px; /* Padding */\r\n    position: fixed; /* Sit on top of the screen */\r\n    z-index: 1052; /* Add a z-index if needed */\r\n    left: 50%; /* Center the snackbar */\r\n    bottom: 30px; /* 30px from the bottom */\r\n}\r\n\r\n/* Show the snackbar when clicking on a button (class added with JavaScript) */\r\n#snackbar.show {\r\n    visibility: visible; /* Show the snackbar */\r\n\r\n/* Add animation: Take 0.5 seconds to fade in and out the snackbar. \r\nHowever, delay the fade out process for 2.5 seconds */\r\n    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;\r\n    animation: fadein 0.5s, fadeout 0.5s 2.5s;\r\n}\r\n\r\n/* Animations to fade the snackbar in and out */\r\n@-webkit-keyframes fadein {\r\n    from {bottom: 0; opacity: 0;} \r\n    to {bottom: 30px; opacity: 1;}\r\n}\r\n\r\n@keyframes fadein {\r\n    from {bottom: 0; opacity: 0;}\r\n    to {bottom: 30px; opacity: 1;}\r\n}\r\n\r\n@-webkit-keyframes fadeout {\r\n    from {bottom: 30px; opacity: 1;} \r\n    to {bottom: 0; opacity: 0;}\r\n}\r\n\r\n@keyframes fadeout {\r\n    from {bottom: 30px; opacity: 1;}\r\n    to {bottom: 0; opacity: 0;}\r\n}\r\n\r\n.header-top{\r\n    \r\n\r\n    height: 578px;\r\n    background:url('/assets/img/home.gif');\r\n    background-repeat:no-repeat;\r\n    background-size:cover;\r\n    background-position:center;\r\n    background-attachment: fixed;\r\n}\r\n\r\n.header-top h1{\r\n    font-size:50px;\r\n    color:#656565;\r\n    text-align: center;\r\n    padding-top: 200px;\r\n    margin:0;\r\n}\r\n\r\n.left-city,.middle-area,.right-button{\r\n  position: relative;;\r\n  float:left;\r\n}\r\n\r\n.search-box {\r\n    max-width: 890px;\r\n    margin:100px auto;\r\n    margin-bottom:0;\r\n}\r\n.wrap {\r\n    overflow: hidden; \r\n    height: 50px;    \r\n    position: relative;\r\n    display: block;\r\n    height:46px;\r\n    width:294px;\r\n    border:1px solid #1ec26b;\r\n    border-radius: 4px;\r\n    background: transparent;\r\n    outline: none;\r\n    border-radius: 0;\r\n    border-top-left-radius:5px;\r\n    border-bottom-left-radius: 5px;\r\n    border-right:none;\r\n}\r\n\r\nselect.dropdown{       \r\n    height:46px;\r\n    outline: none;\r\n    background: transparent;\r\n    width:294px;\r\n    padding: 10px;\r\n    border: 0;\r\n    font-weight: 500;\r\n    padding-left:20px;\r\n    color:#656565;\r\n    font-size: 20px;       \r\n    padding-top:8px;\r\n   -webkit-appearance: none;\r\n    -moz-appearance: none;\r\n    appearance: none;\r\n}\r\nlabel.wrap:after {\r\n/*     content:\"\\f13a \"; */\r\n    content: url('/assets/img/dropdown.png');\r\n    font-family: FontAwesome;\r\n    color: #000;\r\n    position: absolute; \r\n    outline: none;\r\n    right: 15px;\r\n    top: 5px;\r\n    z-index: 1;\r\n    width: 10%;\r\n    height: 100%;  \r\n    pointer-events: none;    \r\n}\r\n\r\n.area-input{\r\n    width:100%;\r\n    border:1px solid #1ec26b;\r\n    border-radius: 0;\r\n    width:294px;\r\n    height:46px;\r\n    background:transparent;\r\n    padding-left:20px;\r\n    font-size: 20px;\r\n    font-weight: 300;\r\n    outline:none;\r\n\r\n}\r\n\r\n.header-btn{\r\n    height:46px;\r\n    width: 294px;\r\n    border:none;\r\n    background:#1ec26b;\r\n    color:white;\r\n    font-size:20px;\r\n    font-weight: 500;\r\n    border-top-right-radius:5px;\r\n    border-bottom-right-radius: 5px;\r\n}\r\n\r\n.container-login{\r\n\r\n    background: #fff;\r\n    width: 100%;\r\n    padding-left: 190px;\r\n}\r\n.area-input::-webkit-input-placeholder {\r\n    /* WebKit, Blink, Edge */\r\n    font-style: italic;\r\n    color:#aeaeae;\r\n}\r\n.area-input:-moz-placeholder {\r\n    /* Mozilla Firefox 4 to 18 */\r\n    font-style: italic;\r\n    color:#aeaeae;\r\n}\r\n.area-input::-moz-placeholder {\r\n    /* Mozilla Firefox 19+ */\r\n    font-style: italic;\r\n    color:#aeaeae;\r\n}\r\n.area-input:-ms-input-placeholder {\r\n    /* Internet Explorer 10-11 */\r\n    font-style: italic;\r\n    color:#aeaeae;\r\n}\r\n\r\n.container-login{\r\n    min-height:260px;\r\n}\r\n.on-go{\r\n    width:100%;\r\n\r\n    background: #ffffff;\r\n}\r\n\r\n.on-go h1{\r\n    font-weight: 500;\r\n    font-size:45px;\r\n    color:#605f5b;\r\n    margin-top:160px;\r\n}\r\n\r\n.app-banner{\r\n    width:100%;\r\n    background: #1ec26b;\r\n    min-height: 410px;\r\n}\r\n\r\n.app-banner h3{\r\n    font-size:30px;\r\n    font-weight: 300;\r\n    color:white;\r\n    margin-bottom:30px;\r\n    margin-top:90px;\r\n}\r\n\r\n.app-banner p{\r\n    font-size:15px;\r\n    color:white;\r\n    font-weight: 300;\r\n    margin:0;\r\n}\r\n\r\n.app-buttons{\r\n    margin-top:90px;\r\n    position: relative;\r\n    float:left;\r\n    width:40%;\r\n}\r\n.mockup{\r\n    position: relative;\r\n    float:left;\r\n    width:60%;\r\n    margin-top: -380px;    \r\n}\r\n.left-png{\r\n    position: relative;\r\n    float:left;\r\n    width:50px;\r\n    padding-top: 6px;\r\n    padding-left: 6px;\r\n}\r\n.right-texty{   \r\n    position: relative;\r\n    float:left;\r\n    height: 55px;\r\n}\r\n\r\n.right-texty .small{\r\n    font-weight: 300;\r\n    font-size:14px;\r\n    height: 16px;\r\n}\r\n.right-texty .large{\r\n    font-weight: 300;\r\n    font-size: 26px;\r\n    text-align: center;\r\n    margin-top: -6px;\r\n}\r\n.apps{\r\n    padding-top: 4px;\r\n    position: relative;\r\n    display: inline-block;\r\n    width: 190px;\r\n    height:54px;\r\n    border:1px solid white;\r\n}\r\n\r\n.contact-form h1{\r\n    font-size:45px;\r\n    font-weight: 500;\r\n    color:#656565;\r\n    text-align: center;\r\n    margin-top:80px;\r\n    margin-bottom:80px;\r\n}\r\n.actual-form{\r\n    width: 78%;\r\n    margin: 0 auto;\r\n    height: 225px;\r\n}\r\n.left-fields,.right-fields{\r\n    position: relative;\r\n    float:left;\r\n    width:48%;\r\n   margin: 0.7%;\r\n}\r\n\r\n.left-fields textarea,.right-fields input{\r\n    width:100%;\r\n    background: #faf9f5;\r\n    border:1px solid #9ca5a5;\r\n    height:65px;\r\n    padding-left:15px;\r\n    border-radius:4px;\r\n    margin:0;\r\n}\r\n.left-fields textarea{\r\n    height: 225px;\r\n    padding: 15px;\r\n    color:#656565;\r\n}\r\n\r\n.left-fields textarea::-webkit-input-placeholder {\r\n    /* WebKit, Blink, Edge */\r\n   font-style: italic;\r\n}\r\n.left-fields textarea:-moz-placeholder {\r\n    /* Mozilla Firefox 4 to 18 */\r\n    font-style: italic;\r\n}\r\n.left-fields textarea::-moz-placeholder {\r\n    /* Mozilla Firefox 19+ */\r\n    font-style: italic;\r\n}\r\n.left-fields textarea:-ms-input-placeholder {\r\n    /* Internet Explorer 10-11 */\r\n    font-style: italic;\r\n}\r\n\r\n\r\n.right-fields .form-group button{\r\n    width:100%;\r\n    color:#656565;\r\n    background: #1ec26b;\r\n    border:none;\r\n    font-size:20px;\r\n    font-weight: 500;\r\n    color:white;\r\n    height:65px;\r\n    padding-left:15px;\r\n    border-radius:4px;\r\n    margin:0;\r\n}\r\n.right-fields .form-group{\r\n    margin-bottom:15px;\r\n}\r\n.right-fields input{\r\n    \r\n}\r\n\r\n@media only screen and (max-width: 1200px) and (min-width: 992px){\r\n    .mockup img{\r\n        width: 500px;\r\n    }\r\n    .mockup{\r\n        margin-top: -250px;\r\n        width: 30%;\r\n    }\r\n    .app-buttons{\r\n        width:46%;\r\n    }\r\n}\r\n@media only screen and (max-width: 992px) and (min-width: 768px){\r\n    .mockup img{\r\n        width:400px;\r\n        \r\n    }\r\n\r\n    .app-buttons{\r\n        width:58%;\r\n    }\r\n\r\n    .mockup{\r\n        width:30%;\r\n        margin-top: -230px;\r\n    }\r\n    .left-side {\r\n        padding: 81px 25px;\r\n        min-height: 620px;\r\n    }\r\n    .actual-form{\r\n        width:100%;\r\n    }\r\n   \r\n}\r\n\r\n@media only screen and (max-width: 768px) and (min-width: 640px){\r\n    .left-side {\r\n        min-height: 620px;\r\n    }\r\n    .mockup{\r\n        text-align: center;\r\n    }\r\n\r\n    .mockup{\r\n        margin-top: -250px;\r\n    }\r\n    .mockup img{\r\n       width:400px;\r\n    }\r\n    .right-texty .small{\r\n        font-size:9px;\r\n    }\r\n    .left-city, .middle-area, .right-button,.header-btn{\r\n        width:33%;\r\n    }\r\n   \r\n    .right-texty{\r\n        padding-top: 7px;\r\n    }\r\n    .right-texty .large{\r\n        font-size:16px;\r\n    }\r\n    .apps{\r\n        width: 46%;\r\n    }\r\n    \r\n}\r\n\r\n@media only screen and (max-width: 640px){\r\n    .left-city, .middle-area, .right-button{\r\n        width:100%;\r\n        text-align: center;\r\n    }\r\n    .on-go h1{\r\n        margin-top:100px;\r\n    }\r\n    .search-box{\r\n        width:90%;\r\n    }\r\n    .middle-area{\r\n        margin-bottom: 5px;\r\n    }\r\n    .wrap select{\r\n        border: 1px solid #1ec26b;\r\n        width: 100%;\r\n    }\r\n    .wrap{\r\n        width:100%;\r\n        border:none;\r\n    }\r\n    .area-input,.header-btn{\r\n        width:100% !important;\r\n        border-radius: 0;\r\n    }\r\n    .header-top h1{\r\n        padding-top:100px;\r\n    }\r\n    .left-side {\r\n        display:none;\r\n    }\r\n    .mockup,.app-buttons{\r\n        width:100%;\r\n    }\r\n    .mockup{\r\n        text-align: center;\r\n        margin-top:50px;\r\n        margin-bottom: 50px;\r\n    }\r\n    .app-buttons{\r\n        text-align:center;\r\n    }\r\n    .app-banner p,.app-banner h3{\r\n        text-align: center;\r\n        width: 100% !important;\r\n    }\r\n    .right-texty .small{\r\n        font-size:10px;\r\n    }\r\n    .left-fields, .right-fields{\r\n        width:100%;\r\n    }\r\n    .right-texty{\r\n        padding-top:6px;\r\n    }\r\n    .right-texty .large{\r\n        font-size: 18px;\r\n    }\r\n    .mockup img{\r\n        width:280px;\r\n    }\r\n    .apps{\r\n        width:48%;\r\n        margin:0 !important;\r\n    }\r\n    .right-side{\r\n        width:100%;\r\n    }\r\n    \r\n}", ""]);
+exports.push([module.i, "@font-face {\r\n    font-family: 'museo_sans500';\r\n    src: url(" + __webpack_require__(284) + ") format('woff2'),\r\n         url(" + __webpack_require__(285) + ") format('woff'),\r\n         url(" + __webpack_require__(286) + ")  format('truetype');\r\n    font-weight: normal;\r\n    font-style: normal;\r\n\r\n}\r\n\r\n\r\n@font-face {\r\n    font-family: 'museo_sans300';\r\n    src: url(" + __webpack_require__(137) + ") format('woff2'),\r\n         url(" + __webpack_require__(138) + ") format('woff'),\r\n         url(" + __webpack_require__(139) + ")  format('truetype');;\r\n    font-weight: normal;\r\n    font-style: normal;\r\n\r\n}\r\n\r\n    @font-face {\r\n        font-family: 'noto_sansbold';\r\n        src: url(" + __webpack_require__(287) + ") format('woff2'),\r\n             url(" + __webpack_require__(288) + ") format('woff');\r\n        font-weight: normal;\r\n        font-style: normal;\r\n    \r\n    }\r\n    \r\n    \r\n    \r\n    \r\n    @font-face {\r\n        font-family: 'noto_sansbold_italic';\r\n        src: url(" + __webpack_require__(289) + ") format('woff2'),\r\n             url(" + __webpack_require__(290) + ") format('woff');\r\n        font-weight: normal;\r\n        font-style: normal;\r\n    \r\n    }\r\n    \r\n    \r\n    \r\n    \r\n    @font-face {\r\n        font-family: 'noto_sansitalic';\r\n        src: url(" + __webpack_require__(291) + ") format('woff2'),\r\n             url(" + __webpack_require__(292) + ") format('woff');\r\n        font-weight: normal;\r\n        font-style: normal;\r\n    \r\n    }\r\n    \r\n    \r\n    \r\n    \r\n    @font-face {\r\n        font-family: 'noto_sansregular';\r\n        src: url(" + __webpack_require__(293) + ") format('woff2'),\r\n             url(" + __webpack_require__(294) + ") format('woff');\r\n        font-weight: normal;\r\n        font-style: normal;\r\n    \r\n    }\r\n  \r\n\r\n  body,p,input,label,button{\r\n    font-family: 'museo_sans300';\r\n  }\r\n  \r\n  hr{\r\n      border-bottom:1px solid #575757;\r\n  }\r\n\r\n/* body,p,input,label{\r\n    font-family: 'myriadRegular';\r\n} */\r\n.modal.in .signUpModal .modal-content{\r\n    border-radius: 0;\r\n\r\n}\r\n.modal.in .signUpModal{\r\n    position: relative;\r\n}\r\n.left-image{\r\n    position: relative;\r\n    float:left;\r\n    width: 40px;\r\n}\r\n.left-image img{\r\n    width:30px;\r\n}\r\n.image-logo{\r\n    width: 260px;\r\n    margin: 0 auto;\r\n}\r\n.right-text p{\r\n    font-size:32px;\r\n    font-weight: bold;\r\n    text-transform: uppercase;\r\n    color:white;\r\n    font-family: 'noto_sansbold';\r\n}\r\n.login{\r\n    display: flex;\r\n}\r\n.modal.in .signUpModal .modal-content .modal-header,.modal.in .signUpModal .modal-content .modal-footer{\r\n    border-bottom: none;\r\n    display:none;\r\n}\r\n\r\n.modal.in .signUpModal .modal-content .modal-footer{\r\n    border-top:none;\r\n}\r\n\r\n.modal.in .signUpModal .modal-content .modal-body{\r\n    padding:0;\r\n}\r\n.left-side{\r\n    width:40%;\r\n    background: rgba(0,230,68,0.64);\r\n    background: -moz-linear-gradient(45deg, rgba(0,230,68,0.64) 0%, rgba(0,230,68,1) 23%, rgba(0,230,68,1) 35%, rgba(0,188,68,1) 86%);\r\n    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(0,230,68,0.64)), color-stop(23%, rgba(0,230,68,1)), color-stop(35%, rgba(0,230,68,1)), color-stop(86%, rgba(0,188,68,1)));\r\n    background: -webkit-linear-gradient(45deg, rgba(0,230,68,0.64) 0%, rgba(0,230,68,1) 23%, rgba(0,230,68,1) 35%, rgba(0,188,68,1) 86%);\r\n    background: -o-linear-gradient(45deg, rgba(0,230,68,0.64) 0%, rgba(0,230,68,1) 23%, rgba(0,230,68,1) 35%, rgba(0,188,68,1) 86%);\r\n    background: -ms-linear-gradient(45deg, rgba(0,230,68,0.64) 0%, rgba(0,230,68,1) 23%, rgba(0,230,68,1) 35%, rgba(0,188,68,1) 86%);\r\n    background: linear-gradient(45deg, rgba(0,230,68,0.64) 0%, rgba(0,230,68,1) 23%, rgba(0,230,68,1) 35%, rgba(0,188,68,1) 86%);\r\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00e644', endColorstr='#00bc44', GradientType=1 );\r\n    position: relative;\r\n    float:left;\r\n    \r\n    padding-bottom: 15px;\r\n    min-height: 550px;\r\n}\r\n\r\n.centered{\r\n    padding: 84px 80px;\r\n}\r\n\r\n.right-side{\r\n    width:60%;\r\n    position: relative;\r\n    float:left;\r\n    padding: 100px 80px;\r\n    padding-bottom: 15px;\r\n}\r\n\r\n.myForms .form-group label{\r\n    color:black;\r\n    font-weight:400;\r\n    font-size:11px;\r\n    text-transform: uppercase;\r\n    margin-bottom:0;\r\n}\r\n\r\n.myForms .form-group input{\r\n    border:none;\r\n    padding-top:0;\r\n    border-bottom-width: 1px;\r\n    border-bottom-style: solid;\r\n    border-bottom-color:#ccc;\r\n    border-radius: 0;\r\n    -webkit-transition: border-bottom-color 0.9s;\r\n    transition:border-bottom-color 0.9s;\r\n    box-shadow: none;\r\n    padding-left:0;\r\n    \r\n}\r\n\r\n\r\n.pointers{\r\n    cursor:pointer;\r\n   \r\n\r\n}\r\n.myForms .form-group input:focus{\r\n    border-bottom-color:green;\r\n}\r\n\r\n.signButton{\r\n    position: absolute;\r\n    right:50px;\r\n    top:25px;\r\n    z-index: 1;\r\n}\r\n\r\n.closeButton{\r\n    position: absolute;\r\n    right:25px;\r\n    top:25px;\r\n    z-index: 1;\r\n}\r\n\r\n\r\n.submit-custom{\r\n    background: none;\r\n    border:none;\r\n    padding:8px 40px;\r\n    color:white;\r\n    background:#3ad72a;\r\n}\r\n.no-right{\r\n    padding-right:20px;\r\n}\r\n.no-left{\r\n    padding-left:20px;\r\n}\r\n.no-padding{\r\n    padding-left:0;\r\n    padding-right:0;\r\n}\r\n.text-centered{\r\n    text-align: center;\r\n}\r\n\r\n.loginWith{\r\n    padding-top:10px;\r\n    font-size:11px;\r\n    font-weight: 400;\r\n    color:#575757;\r\n    font-family: 'Museo300';\r\n    font-weight: bold;\r\n}\r\n#googleSignInBtn{\r\n    background: none;\r\n    border:none;\r\n    outline:none;\r\n    width: 55px;\r\n}\r\n.logIN{\r\n    font-size:40px;\r\n}\r\n.white{\r\n    color:white;\r\n}\r\n\r\n.small-text{\r\n    margin-top: 120px;\r\n}\r\n.half-left,.half-right{\r\n    position: relative;\r\n    float:left;\r\n}\r\n.holder i{\r\n    font-size:22px;\r\n    color:white;\r\n}\r\n.holder{\r\n    box-shadow: 0 5px 15px rgba(0,0,0,0.3);\r\n    width:40px;\r\n    height: 40px;\r\n    border-radius: 50%;\r\n    background: #575757;\r\n    text-align: center;\r\n    padding-top: 10px;\r\n    margin-right: 25px; \r\n    box-shadow: 0 1px 2px rgba(0,0,0,0.15);\r\n    transition: box-shadow 0.3s ease-in-out;\r\n\r\n}\r\n\r\n.holder:hover{\r\n    box-shadow: 0 5px 15px rgba(0,0,0,0.3);\r\n\r\n}\r\n.facebook-gmail{\r\n    width: 130px;\r\n    margin: 20px auto;\r\n}\r\n\r\n.errors{\r\n    border-bottom:1px solid red !important;\r\n}\r\n\r\n.SignUpLogin{\r\n    border:none;\r\n    background:none;\r\n    color:#3ad72a;;\r\n    font-size:13px;\r\n    font-weight: bold;\r\n\r\n}\r\n/* The snackbar - position it at the bottom and in the middle of the screen */\r\n#snackbar {\r\n    color:white;\r\n    text-transform: capitalize;\r\n    visibility: hidden; /* Hidden by default. Visible on click */\r\n    min-width: 250px; /* Set a default minimum width */\r\n    margin-left: -125px; /* Divide value of min-width by 2 */\r\n    background-color: #1ec26b; /* Black background color */\r\n    color: #fff; /* White text color */\r\n    text-align: center; /* Centered text */\r\n    border-radius: 2px; /* Rounded borders */\r\n    padding: 16px; /* Padding */\r\n    position: fixed; /* Sit on top of the screen */\r\n    z-index: 1052; /* Add a z-index if needed */\r\n    left: 50%; /* Center the snackbar */\r\n    bottom: 30px; /* 30px from the bottom */\r\n}\r\n\r\n/* Show the snackbar when clicking on a button (class added with JavaScript) */\r\n#snackbar.show {\r\n    visibility: visible; /* Show the snackbar */\r\n\r\n/* Add animation: Take 0.5 seconds to fade in and out the snackbar. \r\nHowever, delay the fade out process for 2.5 seconds */\r\n    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;\r\n    animation: fadein 0.5s, fadeout 0.5s 2.5s;\r\n}\r\n\r\n/* Animations to fade the snackbar in and out */\r\n@-webkit-keyframes fadein {\r\n    from {bottom: 0; opacity: 0;} \r\n    to {bottom: 30px; opacity: 1;}\r\n}\r\n\r\n@keyframes fadein {\r\n    from {bottom: 0; opacity: 0;}\r\n    to {bottom: 30px; opacity: 1;}\r\n}\r\n\r\n@-webkit-keyframes fadeout {\r\n    from {bottom: 30px; opacity: 1;} \r\n    to {bottom: 0; opacity: 0;}\r\n}\r\n\r\n@keyframes fadeout {\r\n    from {bottom: 30px; opacity: 1;}\r\n    to {bottom: 0; opacity: 0;}\r\n}\r\n\r\n.header-top{\r\n    \r\n\r\n    height: 578px;\r\n    background:url('/assets/img/home.gif');\r\n    background-repeat:no-repeat;\r\n    background-size:cover;\r\n    background-position:center;\r\n    background-attachment: fixed;\r\n}\r\n\r\n.header-top h1{\r\n    font-size:50px;\r\n    color:#656565;\r\n    text-align: center;\r\n    padding-top: 200px;\r\n    margin:0;\r\n}\r\n\r\n.middle-area{\r\n    width:65%;\r\n}\r\n.left-city,.middle-area,.right-button{\r\n  position: relative;;\r\n  float:left;\r\n}\r\n\r\n.search-box {\r\n    max-width: 890px;\r\n    margin:100px auto;\r\n    margin-bottom:0;\r\n}\r\n.wrap {\r\n    overflow: hidden; \r\n    height: 50px;    \r\n    position: relative;\r\n    display: block;\r\n    height:46px;\r\n    width:294px;\r\n    border:1px solid #1ec26b;\r\n    border-radius: 4px;\r\n    background: transparent;\r\n    outline: none;\r\n    border-radius: 0;\r\n    border-top-left-radius:5px;\r\n    border-bottom-left-radius: 5px;\r\n    border-right:none;\r\n}\r\n\r\nselect.dropdown{       \r\n    height:46px;\r\n    outline: none;\r\n    background: transparent;\r\n    width:294px;\r\n    padding: 10px;\r\n    border: 0;\r\n    font-weight: 500;\r\n    padding-left:20px;\r\n    color:#656565;\r\n    font-size: 20px;       \r\n    padding-top:8px;\r\n   -webkit-appearance: none;\r\n    -moz-appearance: none;\r\n    appearance: none;\r\n}\r\nlabel.wrap:after {\r\n/*     content:\"\\f13a \"; */\r\n    content: url('/assets/img/dropdown.png');\r\n    font-family: FontAwesome;\r\n    color: #000;\r\n    position: absolute; \r\n    outline: none;\r\n    right: 15px;\r\n    top: 5px;\r\n    z-index: 1;\r\n    width: 10%;\r\n    height: 100%;  \r\n    pointer-events: none;    \r\n}\r\n\r\n.area-input{\r\n    width:100%;\r\n    border:1px solid #1ec26b;\r\n    border-radius: 0;\r\n    height:46px;\r\n    background:transparent;\r\n    padding-left:20px;\r\n    font-size: 20px;\r\n    font-weight: 300;\r\n    outline:none;\r\n\r\n}\r\n\r\n.header-btn{\r\n    height:46px;\r\n    width: 294px;\r\n    border:none;\r\n    background:#1ec26b;\r\n    color:white;\r\n    font-size:20px;\r\n    font-weight: 500;\r\n    border-top-right-radius:5px;\r\n    border-bottom-right-radius: 5px;\r\n}\r\n\r\n.container-login{\r\n\r\n    background: #fff;\r\n    width: 100%;\r\n    padding-left: 190px;\r\n}\r\n.area-input::-webkit-input-placeholder {\r\n    /* WebKit, Blink, Edge */\r\n    font-style: italic;\r\n    color:#aeaeae;\r\n}\r\n.area-input:-moz-placeholder {\r\n    /* Mozilla Firefox 4 to 18 */\r\n    font-style: italic;\r\n    color:#aeaeae;\r\n}\r\n.area-input::-moz-placeholder {\r\n    /* Mozilla Firefox 19+ */\r\n    font-style: italic;\r\n    color:#aeaeae;\r\n}\r\n.area-input:-ms-input-placeholder {\r\n    /* Internet Explorer 10-11 */\r\n    font-style: italic;\r\n    color:#aeaeae;\r\n}\r\n\r\n.container-login{\r\n    min-height:260px;\r\n}\r\n.on-go{\r\n    width:100%;\r\n\r\n    background: #ffffff;\r\n}\r\n\r\n.on-go h1{\r\n    font-weight: 500;\r\n    font-size:45px;\r\n    color:#605f5b;\r\n    margin-top:160px;\r\n}\r\n\r\n.app-banner{\r\n    width:100%;\r\n    background: #1ec26b;\r\n    min-height: 410px;\r\n}\r\n\r\n.app-banner h3{\r\n    font-size:30px;\r\n    font-weight: 300;\r\n    color:white;\r\n    margin-bottom:30px;\r\n    margin-top:90px;\r\n}\r\n\r\n.app-banner p{\r\n    font-size:15px;\r\n    color:white;\r\n    font-weight: 300;\r\n    margin:0;\r\n}\r\n\r\n.app-buttons{\r\n    margin-top:90px;\r\n    position: relative;\r\n    float:left;\r\n    width:40%;\r\n}\r\n.mockup{\r\n    position: relative;\r\n    float:left;\r\n    width:60%;\r\n    margin-top: -380px;    \r\n}\r\n.left-png{\r\n    position: relative;\r\n    float:left;\r\n    width:50px;\r\n    padding-top: 6px;\r\n    padding-left: 6px;\r\n}\r\n.right-texty{   \r\n    position: relative;\r\n    float:left;\r\n    height: 55px;\r\n}\r\n\r\n.right-texty .small{\r\n    font-weight: 300;\r\n    font-size:14px;\r\n    height: 16px;\r\n}\r\n.right-texty .large{\r\n    font-weight: 300;\r\n    font-size: 26px;\r\n    text-align: center;\r\n    margin-top: -6px;\r\n}\r\n.apps{\r\n    padding-top: 4px;\r\n    position: relative;\r\n    display: inline-block;\r\n    width: 190px;\r\n    height:54px;\r\n    border:1px solid white;\r\n}\r\n\r\n.contact-form h1{\r\n    font-size:45px;\r\n    font-weight: 500;\r\n    color:#656565;\r\n    text-align: center;\r\n    margin-top:80px;\r\n    margin-bottom:80px;\r\n}\r\n.actual-form{\r\n    width: 78%;\r\n    margin: 0 auto;\r\n    height: 225px;\r\n}\r\n.left-fields,.right-fields{\r\n    position: relative;\r\n    float:left;\r\n    width:48%;\r\n   margin: 0.7%;\r\n}\r\n\r\n.left-fields textarea,.right-fields input{\r\n    width:100%;\r\n    background: #faf9f5;\r\n    border:1px solid #9ca5a5;\r\n    height:65px;\r\n    padding-left:15px;\r\n    border-radius:4px;\r\n    margin:0;\r\n}\r\n.left-fields textarea{\r\n    height: 225px;\r\n    padding: 15px;\r\n    color:#656565;\r\n}\r\n\r\n.left-fields textarea::-webkit-input-placeholder {\r\n    /* WebKit, Blink, Edge */\r\n   font-style: italic;\r\n}\r\n.left-fields textarea:-moz-placeholder {\r\n    /* Mozilla Firefox 4 to 18 */\r\n    font-style: italic;\r\n}\r\n.left-fields textarea::-moz-placeholder {\r\n    /* Mozilla Firefox 19+ */\r\n    font-style: italic;\r\n}\r\n.left-fields textarea:-ms-input-placeholder {\r\n    /* Internet Explorer 10-11 */\r\n    font-style: italic;\r\n}\r\n\r\n\r\n.right-fields .form-group button{\r\n    width:100%;\r\n    color:#656565;\r\n    background: #1ec26b;\r\n    border:none;\r\n    font-size:20px;\r\n    font-weight: 500;\r\n    color:white;\r\n    height:65px;\r\n    padding-left:15px;\r\n    border-radius:4px;\r\n    margin:0;\r\n}\r\n.right-fields .form-group{\r\n    margin-bottom:15px;\r\n}\r\n.right-fields input{\r\n    \r\n}\r\n\r\n@media only screen and (max-width: 1200px) and (min-width: 992px){\r\n    .mockup img{\r\n        width: 400px;\r\n    }\r\n    .mockup{\r\n        margin-top: -165px;\r\n        width: 30%;\r\n    }\r\n    .app-buttons{\r\n        width:46%;\r\n    }\r\n}\r\n@media only screen and (max-width: 992px) and (min-width: 768px){\r\n    .mockup img{\r\n        width:400px;\r\n        \r\n    }\r\n\r\n    .app-buttons{\r\n        width:58%;\r\n    }\r\n\r\n    .mockup{\r\n        width:30%;\r\n        margin-top: -230px;\r\n    }\r\n    .left-side {\r\n        padding: 81px 25px;\r\n        min-height: 620px;\r\n    }\r\n    .actual-form{\r\n        width:100%;\r\n    }\r\n   \r\n}\r\n\r\n@media only screen and (max-width: 768px) and (min-width: 640px){\r\n    .left-side {\r\n        min-height: 620px;\r\n    }\r\n     .site-footer{\r\n        width:auto;\r\n    }\r\n    .mockup{\r\n        text-align: center;\r\n    }\r\n\r\n  \r\n    .mockup img{\r\n       width:290px;\r\n    }\r\n    .right-texty .small{\r\n        font-size:9px;\r\n    }\r\n    .left-city, .middle-area, .right-button,.header-btn{\r\n        width:33%;\r\n    }\r\n   \r\n    .right-texty{\r\n        padding-top: 7px;\r\n    }\r\n    .right-texty .large{\r\n        font-size:16px;\r\n    }\r\n    .apps{\r\n        width: 46%;\r\n    }\r\n    \r\n}\r\n\r\n@media only screen and (max-width: 640px){\r\n    .container-login{\r\n        padding-left:30px;\r\n    }\r\n    .site-footer{\r\n        width:auto;\r\n    }\r\n    .left-city, .middle-area, .right-button{\r\n        width:100%;\r\n        text-align: center;\r\n    }\r\n    .on-go h1{\r\n        margin-top:100px;\r\n    }\r\n    .search-box{\r\n        width:90%;\r\n    }\r\n    .middle-area{\r\n        margin-bottom: 5px;\r\n    }\r\n    .wrap select{\r\n        border: 1px solid #1ec26b;\r\n        width: 100%;\r\n    }\r\n    .wrap{\r\n        width:100%;\r\n        border:none;\r\n    }\r\n    .area-input,.header-btn{\r\n        width:100% !important;\r\n        border-radius: 0;\r\n    }\r\n    .header-top h1{\r\n        padding-top:100px;\r\n    }\r\n    .left-side {\r\n        display:none;\r\n    }\r\n    .mockup,.app-buttons{\r\n        width:100%;\r\n    }\r\n    .mockup{\r\n        text-align: center;\r\n        margin-top:50px;\r\n        margin-bottom: 50px;\r\n    }\r\n    .app-buttons{\r\n        text-align:center;\r\n    }\r\n    .app-banner p,.app-banner h3{\r\n        text-align: center;\r\n        width: 100% !important;\r\n    }\r\n    .right-texty .small{\r\n        font-size:10px;\r\n    }\r\n    .left-fields, .right-fields{\r\n        width:100%;\r\n    }\r\n    .right-texty{\r\n        padding-top:6px;\r\n    }\r\n    .right-texty .large{\r\n        font-size: 18px;\r\n    }\r\n    .mockup img{\r\n        width:280px;\r\n    }\r\n    .apps{\r\n        width:48%;\r\n        margin:0 !important;\r\n    }\r\n    .right-side{\r\n        width:100%;\r\n    }\r\n    \r\n}", ""]);
 
 // exports
 
 
 /***/ }),
-/* 281 */
+/* 284 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "a9f0a07c53376631c4972b97256f8aa9.woff2";
 
 /***/ }),
-/* 282 */
+/* 285 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "71078611971e57bcda566cb2079d51d6.woff";
 
 /***/ }),
-/* 283 */
+/* 286 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "02d0b31043e7164c1de50d8bb164454f.ttf";
 
 /***/ }),
-/* 284 */
+/* 287 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "ecbe12267d57197f1ad12172cb24477a.woff2";
 
 /***/ }),
-/* 285 */
+/* 288 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "28d3fbe2819fd3a47734681ed8defc43.woff";
 
 /***/ }),
-/* 286 */
+/* 289 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "f66566bb696dcc64f0d955d4c47468fc.woff2";
 
 /***/ }),
-/* 287 */
+/* 290 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "a21d66e104c8ef2e8c9fa26e8081b74e.woff";
 
 /***/ }),
-/* 288 */
+/* 291 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "0ab0dbda418a1c064e9d3627c59786b5.woff2";
 
 /***/ }),
-/* 289 */
+/* 292 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "ccfa0e1f1ab36a8085086dc4aceeba9d.woff";
 
 /***/ }),
-/* 290 */
+/* 293 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "c43ecf75f22cdbcb65a9b7087ab2bd58.woff2";
 
 /***/ }),
-/* 291 */
+/* 294 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "25464a6048b4e6087643ca4c18979c79.woff";
 
 /***/ }),
-/* 292 */
+/* 295 */
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"banner\">\n\n    <div class=\"banner-bottom\">\n        <div class=\"location-left\">\n\n            <p *ngIf=\"!addressCheck\">\n                <img src=\"assets/img/placeholder.png\"> Bolton Plaza</p>\n            <p *ngIf=\"addressCheck\">\n                <img src=\"assets/img/placeholder.png\"> {{EnteredAddress.CityName}}, {{EnteredAddress.AreaName}}</p>\n        </div>\n        <div class=\"change-location\">\n            <button class=\"change\">Change Location</button>\n        </div>\n\n    </div>\n\n</div>\n\n<div class=\"container med-container\">\n\n    <div class=\"row breadcrumbs\">\n\n\n        <a href=\"\">Home</a>\n        <img src=\"/assets/img/right.png\" width=\"10px\">\n        <a href=\"\">Chemist</a>\n\n\n    </div>\n\n\n\n    <div class=\"row breadcrumbs\">\n\n\n        <div class='voucher-form clearfix'>\n            <img src=\"/assets/img/search.png\" class=\"search-icon\">\n            <div class=\"inputField\">\n                <input type=\"text\" placeholder=\"Enter Chemist Name\" name=\"searchChemistQuery\" (keyup)=\"searchThisMedicine(this)\" [(ngModel)]=\"searchChemistQuery\">\n            </div>\n            <div class=\"inputBtn\">\n                <button>Search</button>\n            </div>\n\n        </div>\n\n\n    </div>\n\n    <div class=\"row\">\n        <div class=\"search-check\">\n            <p class=\"italic-search\">Search by </p>\n            <p>\n                <input type=\"radio\" id=\"chemistCheck\" name=\"radio-group\" (change)=\"showChemistsData()\" value=\"Chemists\" checked>\n                <label for=\"chemistCheck\" class='delivery-text'>Chemists</label>\n            </p>\n            <p>\n                <input type=\"radio\" id=\"medicineCheck\" name=\"radio-group\" (change)=\"showMedicinesData()\" value=\"Medicine\">\n                <label for=\"medicineCheck\" class='delivery-text'>Medicine</label>\n            </p>\n        </div>\n    </div>\n\n\n\n\n    <div class=\"filter-row row clearfix\">\n        <!-- Filter Row -->\n\n        <div class=\"filter-icons-left\">\n\n            <div class=\"inner\">\n                <h2 class=\"filter-heading\">\n                    <img class=\"level\" src='assets/img/levels.png' width=\"20px\">Filter Results </h2>\n            </div>\n            <ul class='filter-options'>\n                <li>Free Devliery</li>\n                <li>Fast Devliery</li>\n                <li>High Rating</li>\n                <li>Low Rating</li>\n            </ul>\n\n            <div class=\"quick-filters\">\n\n\n                <h3>Quick Filters</h3>\n                <ul class=\"quick-filters-list\">\n                    <li>Panadol</li>\n                    <li>Flagyl</li>\n                    <li>Disprin</li>\n                </ul>\n            </div>\n\n        </div>\n\n        <div class=\"filtered-list-right\">\n\n            <perfect-scrollbar class=\"container\" [config]=\"config\">\n                <!-- Accordions -->\n\n                <ng-container *ngIf=\"showChemists\">\n                    <div class=\"panel-group\" id=\"accordion\" role=\"tablist\" aria-multiselectable=\"true\">\n                        <ng-container *ngFor=\"let chemists of searchedChemists\">\n                            <div class=\"panel panel-custom\">\n                                <div class=\"panel-heading\" role=\"tab\" id=\"headingOne\" (click)=\"getDetailForThisChemist(chemists)\">\n                                    <h4 class=\"panel-title\">\n                                        <a class=\"panel-head\" data-parent=\"#accordion\" >\n\n                                            <div class='header clearfix'>\n                                                <div class=\"left-image-side clearfix\">\n                                                    <img src=\"{{chemists.ProfileURL}}\" width=\"75px\" height=\"72px\">\n                                                </div>\n                                                <div class='right-name clearfix'>\n                                                    <p class=\"chemist-name\">{{chemists.Chemist.PharmacyName}}</p>\n                                                    <p class=\"opening-hours\">{{chemists.DistanceFromUs}} KM</p>\n\n                                                    <div class=\"chemist-ratings\">\n                                                        <star-rating-comp [starType]=\"'icon'\" [disabled]=\"true\" [rating]=\"chemists.ChemistRatings\"></star-rating-comp>\n\n                                                    </div>\n                                                </div>\n                                            </div>\n                                            <div class=\"chevron\">\n                                                <i class='fa fa-chevron-right'></i>\n                                            </div>\n\n                                        </a>\n                                    </h4>\n                                </div>\n                                \n                            </div>\n                        </ng-container>\n                    </div>\n                </ng-container>\n\n\n                <!-- Accordions -->\n\n\n                <ng-container *ngIf=\"showMedicines\">\n\n                    <div class=\"panel-group\" id=\"accordion\" role=\"tablist\" aria-multiselectable=\"true\">\n                        <ng-container *ngFor=\"let chemists of allMedicines\">\n                            <div class=\"panel panel-custom animated slideInDown\">\n                                <div class=\"panel-heading\" role=\"tab\" id=\"headingOne\">\n                                    <h4 class=\"panel-title\">\n                                        <a class=\"panel-head\" data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapse{{chemists.Id}}\" aria-expanded=\"true\"\n                                            aria-controls=\"collapseOne\">\n\n                                            <div class='header clearfix'>\n                                                <div class=\"left-image-side clearfix\">\n                                                    <img src=\"{{chemists.ProfileURL}}\" width=\"75px\" height=\"72px\">\n                                                </div>\n                                                <div class='right-name clearfix'>\n                                                    <p class=\"chemist-name\">{{chemists.PharmacyName}}</p>\n                                                    <p class=\"opening-hours\">33</p>\n\n                                                    <div class=\"chemist-ratings\">\n                                                        <star-rating-comp [starType]=\"'icon'\" [disabled]=\"true\" [rating]=\"chemists.ChemistRatings\"></star-rating-comp>\n\n                                                    </div>\n                                                </div>\n                                            </div>\n                                            <div class=\"chevron\">\n                                                <i class='fa fa-chevron-right'></i>\n                                            </div>\n\n                                        </a>\n                                    </h4>\n                                </div>\n                                <div id=\"collapse{{chemists.Id}}\" class=\"panel-collapse collapse\" role=\"tabpanel\" aria-labelledby=\"headingOne\">\n                                    <div class=\"panel-body animated zoomIn\">\n                                        <div class=\"row\">\n                                            <div class=\"col-md-6 alignCenter\">\n                                                <p class=\"chemist-name\">\n                                                    <img src=\"assets/img/map.png\" width=\"20px\">&nbsp; {{chemists.Address}}</p>\n                                            </div>\n                                            <div class=\"col-md-6 alignCenter\">\n                                                <p class=\"chemist-name\">\n                                                    <img src=\"assets/img/phone.png\" width=\"20px\">&nbsp; {{chemists.MobileNumber}}</p>\n                                            </div>\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                        </ng-container>\n                    </div>\n\n                </ng-container>\n            </perfect-scrollbar>\n        </div>\n\n\n\n\n    </div>\n    <!-- Filter Row -->\n\n\n\n</div>"
 
 /***/ }),
-/* 293 */
+/* 296 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__(294);
+        var result = __webpack_require__(297);
 
         if (typeof result === "string") {
             module.exports = result;
@@ -98334,7 +98258,7 @@ module.exports = "<div class=\"banner\">\n\n    <div class=\"banner-bottom\">\n 
     
 
 /***/ }),
-/* 294 */
+/* 297 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)(undefined);
@@ -98342,13 +98266,13 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, "\r\n.banner{\r\n    width:100%;\r\n    position: relative;\r\n    height: 235px;\r\n    background:url('/assets/img/meds.gif');\r\n    background-size:cover;\r\n}\r\n\r\n.banner-bottom{\r\n    position: absolute;\r\n    width:100%;\r\n    text-align: center;\r\n    bottom: 0;\r\n    height:66px;\r\n    background: rgba(255,255,255,0.9);\r\n    box-shadow: 0px -2px 3px 0px rgb( 0, 0, 0 );\r\n}\r\n\r\n.location-left{\r\n    position: relative;\r\n    float: left;\r\n    width: 46%;\r\n    text-align: right;\r\n    padding-top: 22px;\r\n    margin-right:15px;\r\n}\r\n\r\n.change-location{\r\n\r\n    position: relative;\r\n    float: left;\r\n    width: 37%;\r\n    padding-top: 12px;\r\n    text-align: left;\r\n    margin-left: 15px;\r\n\r\n}\r\n\r\n.change{\r\n    background:transparent;\r\n    border:1px solid #1ec26b;\r\n    color:#1ec26b;\r\n    border-radius: 6px;\r\n    padding: 9px 20px;\r\n    \r\n}\r\n\r\n.breadcrumbs .voucher-form{\r\n    position: relative;\r\n    width: 36%;\r\n    height: 42px;\r\n    margin: 0px auto;\r\n}\r\n.breadcrumbs .inputBtn{\r\n    width:30%;\r\n    position: absolute;\r\n    left:65%;\r\n    top:0;\r\n    height: 42px;\r\n\r\n}\r\n.breadcrumbs .inputBtn button{\r\n    border-top-right-radius: 50px;\r\n    border-bottom-right-radius: 50px;\r\n    height: 42px;\r\n    width: 85%;\r\n    border: 1px solid #1ec26b;\r\n    color:#fff;\r\n    background: #1ec26b;\r\n    outline: none;\r\n    font-weight: 500;\r\n    font-size:18px;\r\n}\r\n.breadcrumbs .inputField input{\r\n    width:100%;\r\n    border-radius: 50px;\r\n    outline:none;\r\n    border:1px solid #1ec26b;\r\n    height: 42px;\r\n    padding-left: 40px;\r\n    color:#aeaeae;\r\n    font-size:18px;\r\n}\r\n.breadcrumbs .inputField{\r\n    width:70%;\r\n    position: relative;\r\n    float:left;\r\n    left:0;\r\n    border-top-right-radius: 50%;\r\n    border-bottom-right-radius: 50%;\r\n    height: 42px;\r\n}\r\n.breadcrumbs {\r\n    margin-top:40px;\r\n}\r\n.breadcrumbs a:hover{\r\n    color:#656565;\r\n    text-decoration: none;\r\n    font-size:15px;\r\n    font-weight: 300;\r\n}\r\n.breadcrumbs a{\r\n    color:#656565;\r\n    text-decoration: none;\r\n    padding-right: 10px;\r\n    padding-left:10px;\r\n    font-size:15px;\r\n    font-weight: 300;\r\n}\r\n\r\n\r\n::-webkit-input-placeholder { /* Chrome/Opera/Safari */\r\n    color: #aeaeae;\r\n  }\r\n  ::-moz-placeholder { /* Firefox 19+ */\r\n    color:#aeaeae;\r\n  }\r\n  :-ms-input-placeholder { /* IE 10+ */\r\n    color: #aeaeae;\r\n  }\r\n  :-moz-placeholder { /* Firefox 18- */\r\n    color: #aeaeae;\r\n  }\r\n\r\n  .italic-search{\r\n      display: block;\r\n      color:#afafaf;\r\n      font-size:16px;\r\n      font-style: italic;\r\n  }\r\n\r\n  .search-check{\r\n    width: 36%;\r\n    margin: 15px auto;\r\n  }\r\n\r\n.search-check p{\r\n display: inline-block;\r\n padding-left:20px;\r\n margin-bottom:0;\r\n}\r\n.search-check p:first-child{\r\n    padding-left:0;\r\n    padding-top: 5px;\r\n}\r\n\r\n.filter-icons-left{\r\n    width: 27%;\r\n    position: relative;\r\n    float:left;\r\n\r\n}\r\n\r\n.filtered-list-right{\r\n    width: 73%;\r\n    position: relative;\r\n    float:left;\r\n}\r\n\r\n.filter-heading{\r\n    font-size:18px;\r\n    color:#656565;\r\n    font-weight: 500;\r\n    margin-top: 0px;\r\n}\r\n\r\n.level{\r\n    -webkit-transform: rotate(90deg);\r\n    -moz-transform: rotate(90deg);\r\n    -o-transform: rotate(90deg);\r\n    -ms-transform: rotate(90deg);\r\n    transform: rotate(90deg);\r\n    margin-right: 15px;\r\n}\r\n\r\n.filter-options{\r\n    padding-left: 35px;\r\n    margin-left:0;\r\n    margin-top:15px;\r\n\r\n}\r\n.panel-group .panel-heading+.panel-collapse>.list-group, .panel-group .panel-heading+.panel-collapse>.panel-body{\r\n    border-top:none;\r\n}\r\n.quick-filters-list li{\r\n     list-style-type: none;\r\n     border-radius: 4px;\r\n     border:1px solid #bcbbba;\r\n     color:#1ec26b;\r\n     text-transform: uppercase;\r\n     display: inline-block;\r\n     padding: 5px 10px;\r\n     margin-right:8px;\r\n     margin-top:8px;\r\n}\r\n.quick-filters h3{\r\n    margin-bottom:10px;\r\n    margin-top: 30px;\r\n    font-size:18px;\r\n}\r\n.quick-filters-list{\r\n    padding-left:0;\r\n}\r\n.filter-options li{\r\n    list-style-type:none;\r\n    font-size:15px;\r\n    font-weight: 300;\r\n    padding-bottom:15px;\r\n    color:#656565;\r\n}\r\n/*Accordions*/\r\n\r\n/*\r\nsnippet from Animate.css - zoomIn effect\r\n*/\r\n.animated{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.animated.infinite{-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite}.animated.hinge{-webkit-animation-duration:2s;animation-duration:2s\r\n}@-webkit-keyframes zoomIn{0%{opacity:0;-webkit-transform:scale3d(.3,.3,.3);transform:scale3d(.3,.3,.3)}50%{opacity:1}}@keyframes zoomIn{0%{opacity:0;-webkit-transform:scale3d(.3,.3,.3);transform:scale3d(.3,.3,.3)}50%{opacity:1}}.zoomIn{-webkit-animation-name:zoomIn;animation-name:zoomIn}\r\n@-webkit-keyframes zoomOut{0%{opacity:1}50%{opacity:0;-webkit-transform:scale3d(.3,.3,.3);transform:scale3d(.3,.3,.3)}100%{opacity:0}}@keyframes zoomOut{0%{opacity:1}50%{opacity:0;-webkit-transform:scale3d(.3,.3,.3);transform:scale3d(.3,.3,.3)}100%{opacity:0}}.zoomOut{-webkit-animation-name:zoomOut;animation-name:zoomOut}\r\n\r\n#accordion .panel-title i.glyphicon{\r\n    -moz-transition: -moz-transform 0.5s ease-in-out;\r\n    -o-transition: -o-transform 0.5s ease-in-out;\r\n    -webkit-transition: -webkit-transform 0.5s ease-in-out;\r\n    transition: transform 0.5s ease-in-out;\r\n}\r\n\r\n\r\n.rotate-icon{\r\n    transition: transform 0.5s linear;\r\n    -webkit-transform: rotate(-270deg);\r\n    -moz-transform: rotate(-270deg);\r\n    transform: rotate(-270deg);\r\n}\r\n\r\n.panel{\r\n    border: 0px;\r\n    border-bottom: 1px solid #b7b7b7;\r\n}\r\n.panel-group .panel+.panel{\r\n    margin-top: 0px;\r\n}\r\n.panel-group .panel{\r\n    border-radius: 0px;\r\n}\r\n.panel-heading{\r\n    border-radius: 0px;\r\n    color: black;\r\n    height: 100px;\r\n    padding: 15px 15px;\r\n}\r\n.panel-custom>.panel-heading{\r\n    background-color: white;\r\n}\r\n.panel-group .panel:last-child{\r\n    border-bottom: 5px solid white;\r\n}\r\n\r\npanel-collapse .collapse.in{\r\n    border-bottom:0;\r\n}\r\n\r\n\r\n.left-image-side{\r\n    width:90px;\r\n    position: relative;\r\n    float:left;\r\n}\r\n.left-image-side img{\r\n    width: 60px;\r\n    object-fit: cover;\r\n}\r\n.right-name{\r\n    position: relative;\r\n    float:left;\r\n}\r\n\r\n.opening-hours{\r\n    color:#50cb84;\r\n    font-weight:500;\r\n    font-size:14px;\r\n    \r\n}\r\n.chemist-name{\r\n    color:#656565;\r\n    font-weight:500;\r\n    font-size:20px;\r\n}\r\n\r\n.rating > span:hover:before {\r\n    content: \"\\2605\";\r\n    position: absolute;\r\n    font-size: 16px;\r\n }\r\n .star-container{\r\n     margin-left:0;\r\n }\r\n .rating {\r\n    align-items: left;\r\n    justify-content: left;\r\n  }\r\n  .rating > span:hover:before,\r\n  .rating > span:hover ~ span:before {\r\n     content: \"\\2605\";\r\n     position: absolute;\r\n  }\r\n  .rating > span {\r\n    display: inline-block;\r\n    position: relative;\r\n    width: 1.1em;\r\n    font-size: 16px;\r\n  }\r\n  .rating > span:hover:before,\r\n  .rating > span:hover ~ span:before {\r\n     content: \"\\2605\";\r\n     position: absolute;\r\n     font-size: 16px;\r\n  }\r\n.ps-theme-default{\r\n    width:100%;\r\n}\r\n  .chemist-ratings{\r\n      margin-top:10px;\r\n  } \r\n  .chevron{\r\n   position:relative;\r\n  }\r\n  .chevron i{\r\n      color:#656565;\r\n      position: absolute;\r\n      right: 38px;\r\n      top: -45px;\r\n      font-size:20px;\r\n  }\r\n\r\n  .alignCenter{\r\n    text-align: center;\r\n}\r\n.alignCenter .chemist-name{\r\n    font-size: 16px;\r\n}\r\n/*Accordions*/\r\n\r\n\r\n\r\n@media only screen and (max-width: 992px) and (min-width: 768px){\r\n    .breadcrumbs .voucher-form,.search-check{\r\n       width:60%;\r\n    }\r\n    \r\n}\r\n\r\n\r\n@media only screen and (max-width: 768px) and (min-width: 640px){\r\n    .breadcrumbs .voucher-form,.search-check{\r\n       width:60%;\r\n    }\r\n    .med-container .row{\r\n        margin-left:0;\r\n        margin-right:0;\r\n    }\r\n}\r\n\r\n@media only screen and (max-width: 640px){\r\n    .breadcrumbs .voucher-form,.search-check{\r\n       width:100%;\r\n    }\r\n    .search-check p{\r\n        padding-left:5px;\r\n    }\r\n    .med-container .row{\r\n        margin-left:0;\r\n        margin-right:0;\r\n    }\r\n    .breadcrumbs .inputField input,.breadcrumbs .inputBtn button{\r\n        font-size:14px;\r\n    }\r\n    .filter-icons-left{\r\n        width:100%;\r\n        text-align: center;\r\n    }\r\n    .filtered-list-right{\r\n        width:100%;\r\n        margin-top:15px;\r\n    }\r\n}\r\n\r\n", ""]);
+exports.push([module.i, "\r\n.banner{\r\n    width:100%;\r\n    position: relative;\r\n    height: 235px;\r\n    background:url('/assets/img/meds.gif');\r\n    background-size:cover;\r\n}\r\n\r\n.banner-bottom{\r\n    position: absolute;\r\n    width:100%;\r\n    text-align: center;\r\n    bottom: 0;\r\n    height:66px;\r\n    background: rgba(255,255,255,0.9);\r\n    box-shadow: 0px -2px 3px 0px rgb( 0, 0, 0 );\r\n}\r\n#accordion .panel{\r\n    -webkit-transition: all .2s ease-in-out;\r\n    cursor: pointer;\r\n    transition: all .2s ease-in-out;\r\n}\r\n#accordion .panel:hover{\r\n    -webkit-transition: all .2s ease-in-out;\r\n    transition: all .2s ease-in-out;\r\n    -webkit-transform: scale(1.001);\r\n    -ms-transform: scale(1.001);\r\n        transform: scale(1.001);\r\n        box-shadow: 1px 2px 15px #C7C7C7;\r\n}\r\n.location-left{\r\n    position: relative;\r\n    float: left;\r\n    width: 46%;\r\n    text-align: right;\r\n    padding-top: 22px;\r\n    margin-right:15px;\r\n}\r\n\r\n.change-location{\r\n\r\n    position: relative;\r\n    float: left;\r\n    width: 37%;\r\n    padding-top: 12px;\r\n    text-align: left;\r\n    margin-left: 15px;\r\n\r\n}\r\n\r\n.change{\r\n    background:transparent;\r\n    border:1px solid #1ec26b;\r\n    color:#1ec26b;\r\n    border-radius: 6px;\r\n    padding: 9px 20px;\r\n    \r\n}\r\n\r\n.breadcrumbs .voucher-form{\r\n    position: relative;\r\n    width: 36%;\r\n    height: 42px;\r\n    margin: 0px auto;\r\n}\r\n.breadcrumbs .inputBtn{\r\n    width:30%;\r\n    position: absolute;\r\n    left:65%;\r\n    top:0;\r\n    height: 42px;\r\n\r\n}\r\n.breadcrumbs .inputBtn button{\r\n    border-top-right-radius: 50px;\r\n    border-bottom-right-radius: 50px;\r\n    height: 42px;\r\n    width: 85%;\r\n    border: 1px solid #1ec26b;\r\n    color:#fff;\r\n    background: #1ec26b;\r\n    outline: none;\r\n    font-weight: 500;\r\n    font-size:18px;\r\n}\r\n.breadcrumbs .inputField input{\r\n    width:100%;\r\n    border-radius: 50px;\r\n    outline:none;\r\n    border:1px solid #1ec26b;\r\n    height: 42px;\r\n    padding-left: 40px;\r\n    color:#aeaeae;\r\n    font-size:18px;\r\n}\r\n.breadcrumbs .inputField{\r\n    width:70%;\r\n    position: relative;\r\n    float:left;\r\n    left:0;\r\n    border-top-right-radius: 50%;\r\n    border-bottom-right-radius: 50%;\r\n    height: 42px;\r\n}\r\n.breadcrumbs {\r\n    margin-top:40px;\r\n}\r\n.breadcrumbs a:hover{\r\n    color:#656565;\r\n    text-decoration: none;\r\n    font-size:15px;\r\n    font-weight: 300;\r\n}\r\n.breadcrumbs a{\r\n    color:#656565;\r\n    text-decoration: none;\r\n    padding-right: 10px;\r\n    padding-left:10px;\r\n    font-size:15px;\r\n    font-weight: 300;\r\n}\r\n\r\n\r\n::-webkit-input-placeholder { /* Chrome/Opera/Safari */\r\n    color: #aeaeae;\r\n  }\r\n  ::-moz-placeholder { /* Firefox 19+ */\r\n    color:#aeaeae;\r\n  }\r\n  :-ms-input-placeholder { /* IE 10+ */\r\n    color: #aeaeae;\r\n  }\r\n  :-moz-placeholder { /* Firefox 18- */\r\n    color: #aeaeae;\r\n  }\r\n\r\n  .italic-search{\r\n      display: block;\r\n      color:#afafaf;\r\n      font-size:16px;\r\n      font-style: italic;\r\n  }\r\n\r\n  .search-check{\r\n    width: 36%;\r\n    margin: 15px auto;\r\n  }\r\n\r\n.search-check p{\r\n display: inline-block;\r\n padding-left:20px;\r\n margin-bottom:0;\r\n}\r\n.search-check p:first-child{\r\n    padding-left:0;\r\n    padding-top: 5px;\r\n}\r\n\r\n.filter-icons-left{\r\n    width: 27%;\r\n    position: relative;\r\n    float:left;\r\n\r\n}\r\n\r\n.filtered-list-right{\r\n    width: 73%;\r\n    position: relative;\r\n    float:left;\r\n}\r\n\r\n.filter-heading{\r\n    font-size:18px;\r\n    color:#656565;\r\n    font-weight: 500;\r\n    margin-top: 0px;\r\n}\r\n\r\n.level{\r\n    -webkit-transform: rotate(90deg);\r\n    -moz-transform: rotate(90deg);\r\n    -o-transform: rotate(90deg);\r\n    -ms-transform: rotate(90deg);\r\n    transform: rotate(90deg);\r\n    margin-right: 15px;\r\n}\r\n\r\n.filter-options{\r\n    padding-left: 35px;\r\n    margin-left:0;\r\n    margin-top:15px;\r\n\r\n}\r\n.panel-group .panel-heading+.panel-collapse>.list-group, .panel-group .panel-heading+.panel-collapse>.panel-body{\r\n    border-top:none;\r\n}\r\n.quick-filters-list li{\r\n     list-style-type: none;\r\n     border-radius: 4px;\r\n     border:1px solid #bcbbba;\r\n     color:#1ec26b;\r\n     text-transform: uppercase;\r\n     display: inline-block;\r\n     padding: 5px 10px;\r\n     margin-right:8px;\r\n     margin-top:8px;\r\n}\r\n.quick-filters h3{\r\n    margin-bottom:10px;\r\n    margin-top: 30px;\r\n    font-size:18px;\r\n}\r\n.quick-filters-list{\r\n    padding-left:0;\r\n}\r\n.filter-options li{\r\n    list-style-type:none;\r\n    font-size:15px;\r\n    font-weight: 300;\r\n    padding-bottom:15px;\r\n    color:#656565;\r\n}\r\n/*Accordions*/\r\n\r\n/*\r\nsnippet from Animate.css - zoomIn effect\r\n*/\r\n.animated{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.animated.infinite{-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite}.animated.hinge{-webkit-animation-duration:2s;animation-duration:2s\r\n}@-webkit-keyframes zoomIn{0%{opacity:0;-webkit-transform:scale3d(.3,.3,.3);transform:scale3d(.3,.3,.3)}50%{opacity:1}}@keyframes zoomIn{0%{opacity:0;-webkit-transform:scale3d(.3,.3,.3);transform:scale3d(.3,.3,.3)}50%{opacity:1}}.zoomIn{-webkit-animation-name:zoomIn;animation-name:zoomIn}\r\n@-webkit-keyframes zoomOut{0%{opacity:1}50%{opacity:0;-webkit-transform:scale3d(.3,.3,.3);transform:scale3d(.3,.3,.3)}100%{opacity:0}}@keyframes zoomOut{0%{opacity:1}50%{opacity:0;-webkit-transform:scale3d(.3,.3,.3);transform:scale3d(.3,.3,.3)}100%{opacity:0}}.zoomOut{-webkit-animation-name:zoomOut;animation-name:zoomOut}\r\n\r\n#accordion .panel-title i.glyphicon{\r\n    -moz-transition: -moz-transform 0.5s ease-in-out;\r\n    -o-transition: -o-transform 0.5s ease-in-out;\r\n    -webkit-transition: -webkit-transform 0.5s ease-in-out;\r\n    transition: transform 0.5s ease-in-out;\r\n}\r\n\r\n\r\n.rotate-icon{\r\n    transition: transform 0.5s linear;\r\n    -webkit-transform: rotate(-270deg);\r\n    -moz-transform: rotate(-270deg);\r\n    transform: rotate(-270deg);\r\n}\r\n\r\n.panel{\r\n    border: 0px;\r\n    border-bottom: 1px solid #b7b7b7;\r\n}\r\n.panel-group .panel+.panel{\r\n    margin-top: 0px;\r\n}\r\n.panel-group .panel{\r\n    border-radius: 0px;\r\n}\r\n.panel-heading{\r\n    border-radius: 0px;\r\n    color: black;\r\n    height: 100px;\r\n    padding: 15px 15px;\r\n}\r\n.panel-custom>.panel-heading{\r\n    background-color: white;\r\n}\r\n.panel-group .panel:last-child{\r\n    border-bottom: 5px solid white;\r\n}\r\n\r\npanel-collapse .collapse.in{\r\n    border-bottom:0;\r\n}\r\n\r\n\r\n.left-image-side{\r\n    width:90px;\r\n    position: relative;\r\n    float:left;\r\n}\r\n.left-image-side img{\r\n    width: 60px;\r\n    object-fit: cover;\r\n}\r\n.right-name{\r\n    position: relative;\r\n    float:left;\r\n}\r\n\r\n.opening-hours{\r\n    color:#50cb84;\r\n    font-weight:500;\r\n    font-size:14px;\r\n    \r\n}\r\n.chemist-name{\r\n    color:#656565;\r\n    font-weight:500;\r\n    font-size:20px;\r\n}\r\n\r\n.rating > span:hover:before {\r\n    content: \"\\2605\";\r\n    position: absolute;\r\n    font-size: 16px;\r\n }\r\n .star-container{\r\n     margin-left:0;\r\n }\r\n .rating {\r\n    align-items: left;\r\n    justify-content: left;\r\n  }\r\n  .rating > span:hover:before,\r\n  .rating > span:hover ~ span:before {\r\n     content: \"\\2605\";\r\n     position: absolute;\r\n  }\r\n  .rating > span {\r\n    display: inline-block;\r\n    position: relative;\r\n    width: 1.1em;\r\n    font-size: 16px;\r\n  }\r\n  .rating > span:hover:before,\r\n  .rating > span:hover ~ span:before {\r\n     content: \"\\2605\";\r\n     position: absolute;\r\n     font-size: 16px;\r\n  }\r\n.ps-theme-default{\r\n    width:100%;\r\n}\r\n  .chemist-ratings{\r\n      margin-top:10px;\r\n  } \r\n  .chevron{\r\n   position:relative;\r\n  }\r\n  .chevron i{\r\n      color:#656565;\r\n      position: absolute;\r\n      right: 38px;\r\n      top: -45px;\r\n      font-size:20px;\r\n  }\r\n\r\n  .alignCenter{\r\n    text-align: center;\r\n}\r\n.alignCenter .chemist-name{\r\n    font-size: 16px;\r\n}\r\n/*Accordions*/\r\n\r\n\r\n\r\n@media only screen and (max-width: 992px) and (min-width: 768px){\r\n    .breadcrumbs .voucher-form,.search-check{\r\n       width:60%;\r\n    }\r\n    \r\n}\r\n\r\n\r\n@media only screen and (max-width: 768px) and (min-width: 640px){\r\n    .breadcrumbs .voucher-form,.search-check{\r\n       width:60%;\r\n    }\r\n    .med-container .row{\r\n        margin-left:0;\r\n        margin-right:0;\r\n    }\r\n}\r\n\r\n@media only screen and (max-width: 640px){\r\n    .breadcrumbs .voucher-form,.search-check{\r\n       width:100%;\r\n    }\r\n    .search-check p{\r\n        padding-left:5px;\r\n    }\r\n    .med-container .row{\r\n        margin-left:0;\r\n        margin-right:0;\r\n    }\r\n    .breadcrumbs .inputField input,.breadcrumbs .inputBtn button{\r\n        font-size:14px;\r\n    }\r\n    .filter-icons-left{\r\n        width:100%;\r\n        text-align: center;\r\n    }\r\n    .filtered-list-right{\r\n        width:100%;\r\n        margin-top:15px;\r\n    }\r\n}\r\n\r\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 295 */
+/* 298 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -98394,44 +98318,10 @@ OrdersService = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 
 /***/ }),
-/* 296 */
-/***/ (function(module, exports) {
-
-module.exports = "\n\n<div id=\"snackbar\">Some text some message..</div>\n\n<div class=\"orders-screen\" >\n\n  <h2 class='my-orders-heading'>My orders</h2>\n\n  <hr class=\"saperator-orders\">\n\n  <div class=\"scheduled-orders\">\n\n    <div class=\"row clearfix\">\n\n      <div class=\"left-aligned-heading\">\n        <h3>Scheduled orders</h3>\n      </div>\n\n      <div class=\"right-aligned-lin\">\n        <hr class=\"saperator-orders\">\n      </div>\n\n\n    </div>\n\n    <div class=\"innner row one-order\" *ngFor=\"let laterOrder of laterOrders\">\n\n      <div class=\"col-md-9 col-sm-9 col-lg-9 left-row-detail\">\n          <p *ngFor=\"let products of laterOrder.ReturnOrderItemDTOList\">{{products.Quantity}}x {{products.ProductName}} {{products.DosageSize}}{{products.DosageSymbol}} </p>\n          <p>{{laterOrder.ChemistName}} - {{laterOrder.CreatedOnUTC}} - Total : Rs. {{laterOrder.OrderTotal}}/-</p>\n      </div>\n\n      <div class=\"col-md-3 col-sm-3 col-lg-3 right-time\">\n        <p class=\"huge-green\">{{laterOrder.StartingTime}} - {{laterOrder.EndingTime}}</p>\n        <p style=\"text-align: center\">Delivery Time</p>\n      </div>\n\n    </div>\n\n\n\n  </div>\n\n  <div class=\"past-orders\">\n\n    <div class=\"row clearfix\">\n\n      <div class=\"left-aligned-heading\">\n        <h3>Past orders</h3>\n      </div>\n\n      <div class=\"right-aligned-lin\">\n        <hr class=\"saperator-orders\">\n      </div>\n\n\n    </div>\n\n\n    <div class=\"innner row one-order\" *ngFor=\"let order of doneOrders\">\n        \n      <div class=\"col-md-9 col-sm-9 col-lg-9 left-row-detail\">\n          \n        <p *ngFor=\"let products of order.ReturnOrderItemDTOList\">{{products.Quantity}}x {{products.ProductName}} {{products.DosageSize}}{{products.DosageSymbol}} </p>\n        <p>{{order.ChemistName}} - {{order.CreatedOnUTC}} - Total : Rs. {{order.OrderTotal}}/-</p>\n      </div>\n\n      <div class=\"col-md-3 col-sm-3 col-lg-3 right-time\">\n        <button class=\"re-order\" (click)=\"Reorder(order)\">Reorder</button>\n      </div>\n     \n      <div class=\"col-md-12\">      <hr class=\"saperator-order-line\"> </div>\n\n\n    </div>\n\n\n  </div>\n\n</div>\n\n\n<modal  #reorderModal\ncancelButtonLabel=\"cancel\"\nsubmitButtonLabel=\"submit\"\nmodalClass=\"modal-lg modal-sm animated slideInDownBig\"\n(onSubmit)=\"actionOnSubmit()\">\n\n<modal-content>\n   \n\n  <div class=\"check1\">\n    <p>\n        <input type=\"radio\" id=\"test2\" (change)=\"soonReorder()\" name=\"radio-group\">\n        <label for=\"test2\" class='delivery-text'>As soon as possible</label>\n        <span class='delivery-text'>Estimated Delivery Time : {{estimatedDeliveryTime}} min</span>\n    </p>\n\n    <p>\n        <input type=\"radio\" id=\"test3\" (change)=\"showTimeSlotsForReorder()\" name=\"radio-group\">\n        <label for=\"test3\" class='delivery-text'>Later</label>\n    </p>\n\n    \n\n    <ng-container>\n\n        <ul class=\"time-slots\">\n            <li *ngFor=\"let timeSlot of timeSlots\" class=\"\">\n                <button class=\"time-slot\" (click)=\"selectThisSlot($event,timeSlot.Id)\">{{timeSlot.StartingTime}} - {{timeSlot.EndingTime}}</button>\n            </li>\n        </ul>\n\n    </ng-container>\n\n</div>\n\n\n\n<div class=\"row\" style=\"text-align:center\">\n\n    <div class=\"ordersLoader\">\n        <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->\n        <svg width=\"50\" height=\"30\" viewBox=\"0 0 120 30\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"#1ec26b\">\n            <circle cx=\"15\" cy=\"15\" r=\"15\">\n                <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n            </circle>\n            <circle cx=\"60\" cy=\"15\" r=\"9\" fill-opacity=\"0.3\">\n                <animate attributeName=\"r\" from=\"9\" to=\"9\" begin=\"0s\" dur=\"0.8s\" values=\"9;15;9\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"0.5\" to=\"0.5\" begin=\"0s\" dur=\"0.8s\" values=\".5;1;.5\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n            </circle>\n            <circle cx=\"105\" cy=\"15\" r=\"15\">\n                <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n            </circle>\n        </svg>\n\n    </div>\n\n  <button class=\"re-order\" id=\"order-again\" (click)=\"ReorderAgain()\">Place Order</button>\n</div>\n\n\n</modal-content>\n\n\n</modal>\n"
-
-/***/ }),
-/* 297 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-        var result = __webpack_require__(298);
-
-        if (typeof result === "string") {
-            module.exports = result;
-        } else {
-            module.exports = result.toString();
-        }
-    
-
-/***/ }),
-/* 298 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(7)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, ".my-orders-heading{\r\n    font-size:20px;\r\n    font-weight: 500;\r\n    color:black;\r\n    text-transform: uppercase;\r\n    text-align: center;\r\n    margin-bottom:0;\r\n}\r\n.orders-screen{\r\n    width: 50%;\r\n    margin:115px auto;\r\n}\r\n.orders-screen .row{\r\n    margin:0;\r\n}\r\n.orders-saperator{\r\n    border-bottom:1px solid #aeaeae !important;\r\n    margin-top:15px !important;\r\n    \r\n}\r\n\r\n.saperator-order-line{\r\n    border-bottom:1px solid #ddd !important;\r\n    margin-top:15px !important;\r\n}\r\n\r\n.innner{\r\n    margin:35px 0 !important;\r\n}\r\n\r\n.left-aligned-heading h3{\r\n    font-size:20px;\r\n    font-weight: 500;\r\n    text-transform: capitalize;\r\n    color:#1ec26b;\r\n}\r\n.left-aligned-heading{\r\n    position: relative;\r\n    float: left;\r\n    margin-right: 15px;\r\n}\r\n\r\n.right-aligned-lin{\r\n    padding-top: 12px;\r\n}\r\n\r\n.one-order p{\r\n    font-size:16px;\r\n    font-weight:500;\r\n    color:#656565;\r\n    margin:0;\r\n}\r\n\r\n.right-time p.huge-green{\r\n    font-weight: 500;\r\n    font-size:16px;\r\n    color:#1ec26b;\r\n\r\n}\r\n.re-order:hover{\r\n    background-color: #1ec26b;\r\n    color:white;\r\n    -webkit-transition: background-color 500ms linear,color 500ms linear;\r\n    -ms-transition: background-color 500ms linear,color 500ms linear;\r\n    transition: background-color 500ms linear,color 500ms linear;\r\n}\r\n.re-order{\r\n    width:100%;\r\n    border:1px solid #1ec26b;\r\n    height: 45px;\r\n    background: transparent;\r\n    color:#1ec26b;\r\n    font-size:18px;\r\n    font-weight: 300;\r\n    border-radius:4px;\r\n    width:115px;\r\n}       \r\n\r\n\r\n\r\n.time-slots{\r\n    display: none;\r\n    padding-left:0;\r\n    margin:0;\r\n    margin-top: 15px;\r\n}\r\n\r\n#order-again{\r\n    display:none;\r\n}\r\n.time-slot{\r\n  background: transparent;\r\n  border: 1px solid #aeaeae;\r\n  padding: 5px;\r\n  width: 150px;\r\n\r\n}\r\n\r\n.ordersLoader{\r\n    margin:25px auto;\r\n    display: none\r\n}\r\n.selected{\r\n  background:#1ec26b;\r\n  color:white;\r\n  font-size:14px;\r\n}\r\n.time-slots li{\r\n  width: 50%;\r\n  display: inline-block;\r\n  list-style-type: none;\r\n  text-align: center;\r\n  margin: 0;\r\n  margin-bottom: 15px;\r\n}\r\n\r\n#snackbar {\r\n    visibility: hidden; /* Hidden by default. Visible on click */\r\n    min-width: 250px; /* Set a default minimum width */\r\n    margin-left: -125px; /* Divide value of min-width by 2 */\r\n    background-color: #1ec26b; /* Black background color */\r\n    color: #fff; /* White text color */\r\n    text-align: center; /* Centered text */\r\n    border-radius: 2px; /* Rounded borders */\r\n    padding: 16px; /* Padding */\r\n    position: fixed; /* Sit on top of the screen */\r\n    z-index: 1; /* Add a z-index if needed */\r\n    left: 50%; /* Center the snackbar */\r\n    bottom: 30px; /* 30px from the bottom */\r\n}\r\n\r\n/* Show the snackbar when clicking on a button (class added with JavaScript) */\r\n#snackbar.show {\r\n    visibility: visible; /* Show the snackbar */\r\n\r\n/* Add animation: Take 0.5 seconds to fade in and out the snackbar. \r\nHowever, delay the fade out process for 2.5 seconds */\r\n    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;\r\n    animation: fadein 0.5s, fadeout 0.5s 2.5s;\r\n}\r\n\r\n/* Animations to fade the snackbar in and out */\r\n@-webkit-keyframes fadein {\r\n    from {bottom: 0; opacity: 0;} \r\n    to {bottom: 30px; opacity: 1;}\r\n}\r\n\r\n@keyframes fadein {\r\n    from {bottom: 0; opacity: 0;}\r\n    to {bottom: 30px; opacity: 1;}\r\n}\r\n\r\n@-webkit-keyframes fadeout {\r\n    from {bottom: 30px; opacity: 1;} \r\n    to {bottom: 0; opacity: 0;}\r\n}\r\n\r\n@keyframes fadeout {\r\n    from {bottom: 30px; opacity: 1;}\r\n    to {bottom: 0; opacity: 0;}\r\n}\r\n\r\n\r\n@media only screen and (max-width: 640px){\r\n    .orders-screen{\r\n        width: 90%;\r\n        margin: 0 auto;\r\n    }\r\n    .right-time{\r\n        margin-top:15px;\r\n    }\r\n    \r\n}\r\n@media only screen and (max-width: 768px) and (min-width: 640px){\r\n    .orders-screen {\r\n        width: 80%;\r\n        margin: 0 auto;\r\n    }\r\n}\r\n@media only screen and (max-width: 992px) and (min-width: 768px){\r\n    .orders-screen {\r\n        width: 80%;\r\n        margin: 0 auto;\r\n    }\r\n}", ""]);
-
-// exports
-
-
-/***/ }),
 /* 299 */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"snackbar\"></div>\n<div class=\"orders-screen\">\n\n  <h2 class='my-orders-heading'>Profile</h2>\n\n  <hr class=\"saperator-orders\">\n\n\n  <div class=\"form-profile\">\n\n      <div class=\"form-group\" style=\"padding:12px\">\n          <label style=\"    width: 170px;\">Change Display Picture</label>\n\n         \n          <form id=\"form1\" runat=\"server\"  (click)=\"changeImage()\">\n            <input type='file'(change)=\"changeimage($event)\" id=\"imgInp\"  style=\"visibility:hidden;\"/>\n            <img  src=\"{{ThisUser.ProfileURL}}\" style=\"\" id=\"blah\"  src=\"#\" alt=\"your image\" />\n      \n          </form> \n  </div>\n    <div class=\"form-group\">\n      <label>Email</label>\n      <input type=\"text\" class=\"form-control input-lg\" name=\"ThisUser.Email\" [(ngModel)]=\"ThisUser.Email\"/>\n    </div>\n\n    <div class=\"row\">\n\n      <div class=\"col-md-6 col-sm-6 col-lg-6\">\n\n        <div class=\"form-group\">\n          <label>Full name</label>\n          <input type=\"text\" class=\"form-control input-lg\" name=\"ThisUser.FullName\" [(ngModel)]=\"ThisUser.FullName\"/>\n        </div>\n\n      </div>\n\n      <div class=\"col-md-6 col-sm-6 col-lg-6\">\n\n        <div class=\"form-group\">\n          <label>Username</label>\n          <input type=\"text\" class=\"form-control input-lg\" name=\"ThisUser.UserName\" [(ngModel)]=\"ThisUser.UserName\" />\n        </div>\n\n      </div>\n\n    </div>\n\n    <div class=\"row\">\n\n      <div class=\"col-md-6 col-sm-6 col-lg-6\">\n\n        <div class=\"form-group\">\n          <label style=\"width: 114px;\">Mobile Number</label>\n          <input type=\"text\" class=\"form-control input-lg\" name=\"ThisUser.mobileNumber\" [(ngModel)]=\"ThisUser.mobileNumber\" />\n        </div>\n\n      </div>\n\n\n\n\n\n\n    </div>\n\n    <div class=\"row\">\n\n      <div class=\"col-md-offset-6 col-lg-offset-6 col-sm-offset-6 col-md-6 col-sm-6 col-lg-6\" style=\"text-align: right;\">\n\n        <button class=\"save-btn\" (click)=\"updateWithoutPassword()\">Save</button>\n      </div>\n\n    </div>\n\n  </div>\n\n  \n  <h2 class='my-orders-heading'>Password</h2>\n  \n    <hr class=\"saperator-orders\">\n\n\n    <div class=\"password-change\">\n        <div class=\"form-group\">\n          <input type=\"password\" class=\"password-fields\" placeholder=\"Current Password\" name=\"currentPass\" [(ngModel)]=\"currentPass\" >\n        </div>\n        <div class=\"form-group\">\n            <input type=\"password\" class=\"password-fields\" placeholder=\"New Password\" name=\"newPass\" [(ngModel)]=\"newPass\">\n        </div>\n        <div class=\"row\">\n            \n                  <div class=\"col-md-offset-6 col-lg-offset-6 col-sm-offset-6 col-md-6 col-sm-6 col-lg-6\" style=\"text-align: right;\">\n            \n                    <button class=\"save-btn\" (click)=\"updatePasswords()\">Save</button>\n                  </div>\n            \n        </div>\n    </div>\n\n\n</div>"
+module.exports = "\n\n<div id=\"snackbar\">Some text some message..</div>\n\n<div class=\"orders-screen\" >\n\n  <h2 class='my-orders-heading'>My orders</h2>\n\n  <hr class=\"saperator-orders\">\n\n  <div class=\"scheduled-orders\">\n\n    <div class=\"row clearfix\">\n\n      <div class=\"left-aligned-heading\">\n        <h3>Scheduled orders</h3>\n      </div>\n\n      <div class=\"right-aligned-lin\">\n        <hr class=\"saperator-orders\">\n      </div>\n\n\n    </div>\n\n    <div class=\"innner row one-order\" *ngFor=\"let laterOrder of laterOrders\">\n\n      <div class=\"col-md-9 col-sm-9 col-lg-9 left-row-detail\">\n          <p *ngFor=\"let products of laterOrder.ReturnOrderItemDTOList\">{{products.Quantity}}x {{products.ProductName}} {{products.DosageSize}}{{products.DosageSymbol}} </p>\n          <p>{{laterOrder.ChemistName}} - {{laterOrder.CreatedOnUTC}} - Total : Rs. {{laterOrder.OrderTotal}}/-</p>\n      </div>\n\n      <div class=\"col-md-3 col-sm-3 col-lg-3 right-time\">\n        <p class=\"huge-green\">{{laterOrder.StartingTime}} - {{laterOrder.EndingTime}}</p>\n        <p style=\"text-align: center\">Delivery Time</p>\n      </div>\n\n    </div>\n\n\n\n  </div>\n\n  <div class=\"past-orders\">\n\n    <div class=\"row clearfix\">\n\n      <div class=\"left-aligned-heading\">\n        <h3>Past orders</h3>\n      </div>\n\n      <div class=\"right-aligned-lin\">\n        <hr class=\"saperator-orders\">\n      </div>\n\n\n    </div>\n\n\n    <div class=\"innner row one-order\" *ngFor=\"let order of doneOrders\">\n        \n      <div class=\"col-md-9 col-sm-9 col-lg-9 left-row-detail\">\n          \n        <p *ngFor=\"let products of order.ReturnOrderItemDTOList\">{{products.Quantity}}x {{products.ProductName}} {{products.DosageSize}}{{products.DosageSymbol}} </p>\n        <p>{{order.ChemistName}} - {{order.CreatedOnUTC}} - Total : Rs. {{order.OrderTotal}}/-</p>\n      </div>\n\n      <div class=\"col-md-3 col-sm-3 col-lg-3 right-time\">\n        <button class=\"re-order\" (click)=\"Reorder(order)\">Reorder</button>\n      </div>\n     \n      <div class=\"col-md-12\">      <hr class=\"saperator-order-line\"> </div>\n\n\n    </div>\n\n\n  </div>\n\n</div>\n\n\n<modal  #reorderModal\ncancelButtonLabel=\"cancel\"\nsubmitButtonLabel=\"submit\"\nmodalClass=\"modal-lg modal-sm animated slideInDownBig\"\n(onSubmit)=\"actionOnSubmit()\">\n\n<modal-content>\n   \n\n  <div class=\"check1\">\n    <p>\n        <input type=\"radio\" id=\"test2\" (change)=\"soonReorder()\" name=\"radio-group\">\n        <label for=\"test2\" class='delivery-text'>As soon as possible</label>\n        <span class='delivery-text'>Estimated Delivery Time : {{estimatedDeliveryTime}} min</span>\n    </p>\n\n    <p>\n        <input type=\"radio\" id=\"test3\" (change)=\"showTimeSlotsForReorder()\" name=\"radio-group\">\n        <label for=\"test3\" class='delivery-text'>Later</label>\n    </p>\n\n    \n\n    <ng-container>\n\n        <ul class=\"time-slots\">\n            <li *ngFor=\"let timeSlot of timeSlots\" class=\"\">\n                <button class=\"time-slot\" (click)=\"selectThisSlot($event,timeSlot.Id)\">{{timeSlot.StartingTime}} - {{timeSlot.EndingTime}}</button>\n            </li>\n        </ul>\n\n    </ng-container>\n\n</div>\n\n\n\n<div class=\"row\" style=\"text-align:center\">\n\n    <div class=\"ordersLoader\">\n        <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->\n        <svg width=\"50\" height=\"30\" viewBox=\"0 0 120 30\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"#1ec26b\">\n            <circle cx=\"15\" cy=\"15\" r=\"15\">\n                <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n            </circle>\n            <circle cx=\"60\" cy=\"15\" r=\"9\" fill-opacity=\"0.3\">\n                <animate attributeName=\"r\" from=\"9\" to=\"9\" begin=\"0s\" dur=\"0.8s\" values=\"9;15;9\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"0.5\" to=\"0.5\" begin=\"0s\" dur=\"0.8s\" values=\".5;1;.5\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n            </circle>\n            <circle cx=\"105\" cy=\"15\" r=\"15\">\n                <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n            </circle>\n        </svg>\n\n    </div>\n\n  <button class=\"re-order\" id=\"order-again\" (click)=\"ReorderAgain()\">Place Order</button>\n</div>\n\n\n</modal-content>\n\n\n</modal>\n"
 
 /***/ }),
 /* 300 */
@@ -98456,13 +98346,47 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, ".my-orders-heading{\r\n    font-size:20px;\r\n    font-weight: 500;\r\n    color:black;\r\n    text-transform: uppercase;\r\n    text-align: center;\r\n    margin-bottom:0;\r\n}\r\n\r\n.form-profile{\r\n    margin-top: 50px;\r\n}\r\n.orders-screen{\r\n    width: 50%;\r\n    margin:115px auto;\r\n}\r\n.form-profile .form-group{\r\n    padding:0px;\r\n    border:2px solid;\r\n    margin:10px;\r\n    position: relative;\r\n    border: 1px solid #aeaeae;\r\n  }\r\n\r\n  #form1{\r\n      cursor: pointer;\r\n  }\r\n #blah{\r\n     height:100%;\r\n     width:50px; cursor:pointer;\r\n    \r\n }\r\n  .form-profile .form-group>label{\r\n    position:absolute;\r\n    top:-10px;\r\n    left:20px;\r\n    background-color:#faf9f5;\r\n    width: 80px;\r\n    padding-left: 5px;\r\n    color:#aeaeae;\r\n  }\r\n  \r\n  .form-profile .form-group>input{\r\n    border:none !important;\r\n    background: transparent;\r\n    color:black;\r\n    outline:none;\r\n  }\r\n\r\n  .form-profile .form-control{\r\n      box-shadow: none !important;\r\n  }\r\n\r\n  .save-btn{\r\n      font-size:16px;\r\n      font-weight: 500;\r\n      color:white;\r\n      background: #1ec26b;\r\n      text-transform: uppercase;\r\n      border-radius: 4px;\r\n      height: 40px;\r\n      width: 100px;\r\n      border:none;\r\n      margin-top: 30px;\r\n  }\r\n\r\n  .password-fields{\r\n      padding-left: 15px;\r\n      height:40px;\r\n      border:1px solid #aeaeae;\r\n      border-radius: 0;\r\n      background: transparent;\r\n      width: 100%;\r\n      outline:none;\r\n  }\r\n  .password-change{\r\n    margin-top: 50px;\r\n  }\r\n\r\n\r\n  @media only screen and (max-width: 640px){\r\n    .orders-screen{\r\n        width: 90%;\r\n        margin: 0 auto;\r\n    }\r\n    .right-time{\r\n        margin-top:15px;\r\n    }\r\n    \r\n}\r\n@media only screen and (max-width: 768px) and (min-width: 640px){\r\n    .orders-screen {\r\n        width: 80%;\r\n        margin: 0 auto;\r\n    }\r\n}\r\n@media only screen and (max-width: 992px) and (min-width: 768px){\r\n    .orders-screen {\r\n        width: 80%;\r\n        margin: 0 auto;\r\n    }\r\n}", ""]);
+exports.push([module.i, ".my-orders-heading{\r\n    font-size:20px;\r\n    font-weight: 500;\r\n    color:black;\r\n    text-transform: uppercase;\r\n    text-align: center;\r\n    margin-bottom:0;\r\n}\r\n.orders-screen{\r\n    width: 50%;\r\n    margin:115px auto;\r\n    min-height: 400px;\r\n}\r\n.orders-screen .row{\r\n    margin:0;\r\n}\r\n.orders-saperator{\r\n    border-bottom:1px solid #aeaeae !important;\r\n    margin-top:15px !important;\r\n    \r\n}\r\n\r\n.saperator-order-line{\r\n    border-bottom:1px solid #ddd !important;\r\n    margin-top:15px !important;\r\n}\r\n\r\n.innner{\r\n    margin:35px 0 !important;\r\n}\r\n\r\n.left-aligned-heading h3{\r\n    font-size:20px;\r\n    font-weight: 500;\r\n    text-transform: capitalize;\r\n    color:#1ec26b;\r\n}\r\n.left-aligned-heading{\r\n    position: relative;\r\n    float: left;\r\n    margin-right: 15px;\r\n}\r\n\r\n.right-aligned-lin{\r\n    padding-top: 12px;\r\n}\r\n\r\n.one-order p{\r\n    font-size:16px;\r\n    font-weight:500;\r\n    color:#656565;\r\n    margin:0;\r\n}\r\n\r\n.right-time p.huge-green{\r\n    font-weight: 500;\r\n    font-size:16px;\r\n    color:#1ec26b;\r\n\r\n}\r\n.re-order:hover{\r\n    background-color: #1ec26b;\r\n    color:white;\r\n    -webkit-transition: background-color 500ms linear,color 500ms linear;\r\n    -ms-transition: background-color 500ms linear,color 500ms linear;\r\n    transition: background-color 500ms linear,color 500ms linear;\r\n}\r\n.re-order{\r\n    width:100%;\r\n    border:1px solid #1ec26b;\r\n    height: 45px;\r\n    background: transparent;\r\n    color:#1ec26b;\r\n    font-size:18px;\r\n    font-weight: 300;\r\n    border-radius:4px;\r\n    width:115px;\r\n}       \r\n\r\n\r\n\r\n.time-slots{\r\n    display: none;\r\n    padding-left:0;\r\n    margin:0;\r\n    margin-top: 15px;\r\n}\r\n\r\n#order-again{\r\n    display:none;\r\n}\r\n.time-slot{\r\n  background: transparent;\r\n  border: 1px solid #aeaeae;\r\n  padding: 5px;\r\n  width: 150px;\r\n\r\n}\r\n\r\n.ordersLoader{\r\n    margin:25px auto;\r\n    display: none\r\n}\r\n.selected{\r\n  background:#1ec26b;\r\n  color:white;\r\n  font-size:14px;\r\n}\r\n.time-slots li{\r\n  width: 50%;\r\n  display: inline-block;\r\n  list-style-type: none;\r\n  text-align: center;\r\n  margin: 0;\r\n  margin-bottom: 15px;\r\n}\r\n\r\n#snackbar {\r\n    visibility: hidden; /* Hidden by default. Visible on click */\r\n    min-width: 250px; /* Set a default minimum width */\r\n    margin-left: -125px; /* Divide value of min-width by 2 */\r\n    background-color: #1ec26b; /* Black background color */\r\n    color: #fff; /* White text color */\r\n    text-align: center; /* Centered text */\r\n    border-radius: 2px; /* Rounded borders */\r\n    padding: 16px; /* Padding */\r\n    position: fixed; /* Sit on top of the screen */\r\n    z-index: 1; /* Add a z-index if needed */\r\n    left: 50%; /* Center the snackbar */\r\n    bottom: 30px; /* 30px from the bottom */\r\n}\r\n\r\n/* Show the snackbar when clicking on a button (class added with JavaScript) */\r\n#snackbar.show {\r\n    visibility: visible; /* Show the snackbar */\r\n\r\n/* Add animation: Take 0.5 seconds to fade in and out the snackbar. \r\nHowever, delay the fade out process for 2.5 seconds */\r\n    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;\r\n    animation: fadein 0.5s, fadeout 0.5s 2.5s;\r\n}\r\n\r\n/* Animations to fade the snackbar in and out */\r\n@-webkit-keyframes fadein {\r\n    from {bottom: 0; opacity: 0;} \r\n    to {bottom: 30px; opacity: 1;}\r\n}\r\n\r\n@keyframes fadein {\r\n    from {bottom: 0; opacity: 0;}\r\n    to {bottom: 30px; opacity: 1;}\r\n}\r\n\r\n@-webkit-keyframes fadeout {\r\n    from {bottom: 30px; opacity: 1;} \r\n    to {bottom: 0; opacity: 0;}\r\n}\r\n\r\n@keyframes fadeout {\r\n    from {bottom: 30px; opacity: 1;}\r\n    to {bottom: 0; opacity: 0;}\r\n}\r\n\r\n\r\n@media only screen and (max-width: 640px){\r\n    .orders-screen{\r\n        width: 90%;\r\n        margin: 0 auto;\r\n    }\r\n    .right-time{\r\n        margin-top:15px;\r\n    }\r\n    \r\n}\r\n@media only screen and (max-width: 768px) and (min-width: 640px){\r\n    .orders-screen {\r\n        width: 80%;\r\n        margin: 0 auto;\r\n    }\r\n}\r\n@media only screen and (max-width: 992px) and (min-width: 768px){\r\n    .orders-screen {\r\n        width: 80%;\r\n        margin: 0 auto;\r\n    }\r\n}", ""]);
 
 // exports
 
 
 /***/ }),
 /* 302 */
+/***/ (function(module, exports) {
+
+module.exports = "<div id=\"snackbar\"></div>\n<div class=\"orders-screen\">\n\n  <h2 class='my-orders-heading'>Profile</h2>\n\n  <hr class=\"saperator-orders\">\n\n\n  <div class=\"form-profile\">\n\n      <div class=\"form-group\" style=\"padding:12px\">\n          <label style=\"    width: 170px;\">Change Display Picture</label>\n\n         \n          <form id=\"form1\" runat=\"server\"  (click)=\"changeImage()\">\n            <input type='file'(change)=\"changeimage($event)\" id=\"imgInp\"  style=\"visibility:hidden;\"/>\n            <img  src=\"{{ThisUser.ProfileURL}}\" style=\"\" id=\"blah\"  src=\"#\" alt=\"your image\" />\n      \n          </form> \n  </div>\n    <div class=\"form-group\">\n      <label>Email</label>\n      <input type=\"text\" class=\"form-control input-lg\" name=\"ThisUser.Email\" [(ngModel)]=\"ThisUser.Email\"/>\n    </div>\n\n    <div class=\"row\">\n\n      <div class=\"col-md-6 col-sm-6 col-lg-6\">\n\n        <div class=\"form-group\">\n          <label>Full name</label>\n          <input type=\"text\" class=\"form-control input-lg\" name=\"ThisUser.FullName\" [(ngModel)]=\"ThisUser.FullName\"/>\n        </div>\n\n      </div>\n\n      <div class=\"col-md-6 col-sm-6 col-lg-6\">\n\n        <div class=\"form-group\">\n          <label>Username</label>\n          <input type=\"text\" class=\"form-control input-lg\" name=\"ThisUser.UserName\" [(ngModel)]=\"ThisUser.UserName\" />\n        </div>\n\n      </div>\n\n    </div>\n\n    <div class=\"row\">\n\n      <div class=\"col-md-6 col-sm-6 col-lg-6\">\n\n        <div class=\"form-group\">\n          <label style=\"width: 114px;\">Mobile Number</label>\n          <input type=\"text\" class=\"form-control input-lg\" name=\"ThisUser.mobileNumber\" [(ngModel)]=\"ThisUser.mobileNumber\" />\n        </div>\n\n      </div>\n\n\n\n\n\n\n    </div>\n\n    <div class=\"row\">\n\n      <div class=\"col-md-offset-6 col-lg-offset-6 col-sm-offset-6 col-md-6 col-sm-6 col-lg-6\" style=\"text-align: right;\">\n\n        <button class=\"save-btn\" (click)=\"updateWithoutPassword()\">Save</button>\n      </div>\n\n    </div>\n\n  </div>\n\n  \n  <h2 class='my-orders-heading'>Password</h2>\n  \n    <hr class=\"saperator-orders\">\n\n\n    <div class=\"password-change\">\n        <div class=\"form-group\">\n          <input type=\"password\" class=\"password-fields\" placeholder=\"Current Password\" name=\"currentPass\" [(ngModel)]=\"currentPass\" >\n        </div>\n        <div class=\"form-group\">\n            <input type=\"password\" class=\"password-fields\" placeholder=\"New Password\" name=\"newPass\" [(ngModel)]=\"newPass\">\n        </div>\n        <div class=\"row\">\n            \n                  <div class=\"col-md-offset-6 col-lg-offset-6 col-sm-offset-6 col-md-6 col-sm-6 col-lg-6\" style=\"text-align: right;\">\n            \n                    <button class=\"save-btn\" (click)=\"updatePasswords()\">Save</button>\n                  </div>\n            \n        </div>\n    </div>\n\n\n</div>"
+
+/***/ }),
+/* 303 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+        var result = __webpack_require__(304);
+
+        if (typeof result === "string") {
+            module.exports = result;
+        } else {
+            module.exports = result.toString();
+        }
+    
+
+/***/ }),
+/* 304 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(7)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, ".my-orders-heading{\r\n    font-size:20px;\r\n    font-weight: 500;\r\n    color:black;\r\n    text-transform: uppercase;\r\n    text-align: center;\r\n    margin-bottom:0;\r\n}\r\n\r\n.form-profile{\r\n    margin-top: 50px;\r\n}\r\n.orders-screen{\r\n    width: 50%;\r\n    margin:115px auto;\r\n}\r\n.form-profile .form-group{\r\n    padding:0px;\r\n    border:2px solid;\r\n    margin:10px;\r\n    position: relative;\r\n    border: 1px solid #aeaeae;\r\n  }\r\n\r\n  #form1{\r\n      cursor: pointer;\r\n  }\r\n #blah{\r\n     height:100%;\r\n     width:50px; cursor:pointer;\r\n    \r\n }\r\n  .form-profile .form-group>label{\r\n    position:absolute;\r\n    top:-10px;\r\n    left:20px;\r\n    background-color:#faf9f5;\r\n    width: 80px;\r\n    padding-left: 5px;\r\n    color:#aeaeae;\r\n  }\r\n  \r\n  .form-profile .form-group>input{\r\n    border:none !important;\r\n    background: transparent;\r\n    color:black;\r\n    outline:none;\r\n  }\r\n\r\n  .form-profile .form-control{\r\n      box-shadow: none !important;\r\n  }\r\n\r\n  .save-btn{\r\n      font-size:16px;\r\n      font-weight: 500;\r\n      color:white;\r\n      background: #1ec26b;\r\n      text-transform: uppercase;\r\n      border-radius: 4px;\r\n      height: 40px;\r\n      width: 100px;\r\n      border:none;\r\n      margin-top: 30px;\r\n  }\r\n\r\n  .password-fields{\r\n      padding-left: 15px;\r\n      height:40px;\r\n      border:1px solid #aeaeae;\r\n      border-radius: 0;\r\n      background: transparent;\r\n      width: 100%;\r\n      outline:none;\r\n  }\r\n  .password-change{\r\n    margin-top: 50px;\r\n  }\r\n\r\n\r\n  @media only screen and (max-width: 640px){\r\n    .orders-screen{\r\n        width: 90%;\r\n        margin: 0 auto;\r\n    }\r\n    .right-time{\r\n        margin-top:15px;\r\n    }\r\n    \r\n}\r\n@media only screen and (max-width: 768px) and (min-width: 640px){\r\n    .orders-screen {\r\n        width: 80%;\r\n        margin: 0 auto;\r\n    }\r\n}\r\n@media only screen and (max-width: 992px) and (min-width: 768px){\r\n    .orders-screen {\r\n        width: 80%;\r\n        margin: 0 auto;\r\n    }\r\n}", ""]);
+
+// exports
+
+
+/***/ }),
+/* 305 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -98497,47 +98421,13 @@ AppComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
         selector: 'app',
         encapsulation: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewEncapsulation"].None,
-        styles: [__webpack_require__(303), __webpack_require__(306)],
-        template: __webpack_require__(308)
+        styles: [__webpack_require__(306), __webpack_require__(308)],
+        template: __webpack_require__(310)
     }),
     __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__app_service__["a" /* AppState */]])
 ], AppComponent);
 
 
-
-/***/ }),
-/* 303 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-        var result = __webpack_require__(304);
-
-        if (typeof result === "string") {
-            module.exports = result;
-        } else {
-            module.exports = result.toString();
-        }
-    
-
-/***/ }),
-/* 304 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(7)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "@font-face {\r\n    font-family: 'Museo300';\r\n    font-style: normal;\r\n    font-weight: normal;\r\n    src: local('../assets/fonts/museo_old/Museo Sans Cyrl 300'), url(" + __webpack_require__(305) + ") format('woff');\r\n    }\r\n\r\n   \r\n\r\nbody,p,input,label{\r\n    font-family: 'Museo300';\r\n}\r\n\r\nbody{\r\n  background:#faf9f5\r\n}\r\n.panel-heading{\r\n padding-bottom:5px !important;\r\n}\r\n[type=\"radio\"]:checked,\r\n[type=\"radio\"]:not(:checked) {\r\n    position: absolute;\r\n    left: -9999px;\r\n}\r\n[type=\"radio\"]:checked + label,\r\n[type=\"radio\"]:not(:checked) + label\r\n{\r\n    position: relative;\r\n    padding-left: 28px;\r\n    cursor: pointer;\r\n    line-height: 20px;\r\n    display: inline-block;\r\n\r\n}\r\n[type=\"radio\"]:checked + label:before,\r\n[type=\"radio\"]:not(:checked) + label:before {\r\n    content: '';\r\n    position: absolute;\r\n    left: 0;\r\n    top: 0;\r\n    width: 20px;\r\n    height: 20px;\r\n    border: 1px solid #b6b6b6;\r\n    border-radius: 100%;\r\n    background: #fff;\r\n    color:#aeaeae;\r\n}\r\n[type=\"radio\"]:checked + label:after,\r\n[type=\"radio\"]:not(:checked) + label:after {\r\n    content: '';\r\n    width: 12px;\r\n    height: 12px;\r\n    background: #1ec26b;\r\n    position: absolute;\r\n    top: 4px;\r\n    left: 4px;\r\n    border-radius: 100%;\r\n    -webkit-transition: all 0.2s ease;\r\n    transition: all 0.2s ease;\r\n    color:#676767;\r\n}\r\n[type=\"radio\"]:not(:checked) + label:after {\r\n    opacity: 0;\r\n    -webkit-transform: scale(0);\r\n    transform: scale(0);\r\n}\r\n[type=\"radio\"]:checked + label:after {\r\n    opacity: 1;\r\n    -webkit-transform: scale(1);\r\n    transform: scale(1);\r\n}\r\n\r\n.half-left a{\r\n    cursor:pointer;\r\n}\r\n\r\n.rating.color-positive .star-container .star i{\r\n    color:#5ca1f6 !important;\r\n}\r\n\r\n.search-icon{\r\n    position: absolute;\r\n    top: 11px;\r\n    z-index: 1;\r\n    width: 22px;\r\n    left: 12px;\r\n}\r\n\r\n\r\n\r\n/* animation */\r\n\r\n.loading {\r\n    opacity: 0;\r\n    transition: opacity .8s ease-in-out;\r\n    position: fixed;\r\n    height: 100%;\r\n    width: 100%;\r\n    top: 0;\r\n    left: 0;\r\n    background: #000;\r\n    z-index: -1;\r\n}\r\n/* .loading screen is visible when app is not bootstraped yet, .my-app is empty */\r\napp:empty + .loading {\r\n    opacity: 1;\r\n    z-index: 100;\r\n}\r\n\r\n\r\n.loader,.FetchingTimeSlots{\r\n    display:none;\r\n    text-align: center;\r\n    margin:50px;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 305 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "51b7330b03ff70e170c0c1b0ffc44d67.woff";
 
 /***/ }),
 /* 306 */
@@ -98562,19 +98452,47 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, "@charset \"UTF-8\";\n\n/*!\n * animate.css -http://daneden.me/animate\n * Version - 3.5.2\n * Licensed under the MIT license - http://opensource.org/licenses/MIT\n *\n * Copyright (c) 2017 Daniel Eden\n */\n\n.animated {\n  animation-duration: 1s;\n  animation-fill-mode: both;\n}\n\n.animated.infinite {\n  animation-iteration-count: infinite;\n}\n\n.animated.hinge {\n  animation-duration: 2s;\n}\n\n.animated.flipOutX,\n.animated.flipOutY,\n.animated.bounceIn,\n.animated.bounceOut {\n  animation-duration: .75s;\n}\n\n@keyframes bounce {\n  from, 20%, 53%, 80%, to {\n    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);\n    transform: translate3d(0,0,0);\n  }\n\n  40%, 43% {\n    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);\n    transform: translate3d(0, -30px, 0);\n  }\n\n  70% {\n    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);\n    transform: translate3d(0, -15px, 0);\n  }\n\n  90% {\n    transform: translate3d(0,-4px,0);\n  }\n}\n\n.bounce {\n  animation-name: bounce;\n  transform-origin: center bottom;\n}\n\n@keyframes flash {\n  from, 50%, to {\n    opacity: 1;\n  }\n\n  25%, 75% {\n    opacity: 0;\n  }\n}\n\n.flash {\n  animation-name: flash;\n}\n\n/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */\n\n@keyframes pulse {\n  from {\n    transform: scale3d(1, 1, 1);\n  }\n\n  50% {\n    transform: scale3d(1.05, 1.05, 1.05);\n  }\n\n  to {\n    transform: scale3d(1, 1, 1);\n  }\n}\n\n.pulse {\n  animation-name: pulse;\n}\n\n@keyframes rubberBand {\n  from {\n    transform: scale3d(1, 1, 1);\n  }\n\n  30% {\n    transform: scale3d(1.25, 0.75, 1);\n  }\n\n  40% {\n    transform: scale3d(0.75, 1.25, 1);\n  }\n\n  50% {\n    transform: scale3d(1.15, 0.85, 1);\n  }\n\n  65% {\n    transform: scale3d(.95, 1.05, 1);\n  }\n\n  75% {\n    transform: scale3d(1.05, .95, 1);\n  }\n\n  to {\n    transform: scale3d(1, 1, 1);\n  }\n}\n\n.rubberBand {\n  animation-name: rubberBand;\n}\n\n@keyframes shake {\n  from, to {\n    transform: translate3d(0, 0, 0);\n  }\n\n  10%, 30%, 50%, 70%, 90% {\n    transform: translate3d(-10px, 0, 0);\n  }\n\n  20%, 40%, 60%, 80% {\n    transform: translate3d(10px, 0, 0);\n  }\n}\n\n.shake {\n  animation-name: shake;\n}\n\n@keyframes headShake {\n  0% {\n    transform: translateX(0);\n  }\n\n  6.5% {\n    transform: translateX(-6px) rotateY(-9deg);\n  }\n\n  18.5% {\n    transform: translateX(5px) rotateY(7deg);\n  }\n\n  31.5% {\n    transform: translateX(-3px) rotateY(-5deg);\n  }\n\n  43.5% {\n    transform: translateX(2px) rotateY(3deg);\n  }\n\n  50% {\n    transform: translateX(0);\n  }\n}\n\n.headShake {\n  animation-timing-function: ease-in-out;\n  animation-name: headShake;\n}\n\n@keyframes swing {\n  20% {\n    transform: rotate3d(0, 0, 1, 15deg);\n  }\n\n  40% {\n    transform: rotate3d(0, 0, 1, -10deg);\n  }\n\n  60% {\n    transform: rotate3d(0, 0, 1, 5deg);\n  }\n\n  80% {\n    transform: rotate3d(0, 0, 1, -5deg);\n  }\n\n  to {\n    transform: rotate3d(0, 0, 1, 0deg);\n  }\n}\n\n.swing {\n  transform-origin: top center;\n  animation-name: swing;\n}\n\n@keyframes tada {\n  from {\n    transform: scale3d(1, 1, 1);\n  }\n\n  10%, 20% {\n    transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);\n  }\n\n  30%, 50%, 70%, 90% {\n    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);\n  }\n\n  40%, 60%, 80% {\n    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);\n  }\n\n  to {\n    transform: scale3d(1, 1, 1);\n  }\n}\n\n.tada {\n  animation-name: tada;\n}\n\n/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */\n\n@keyframes wobble {\n  from {\n    transform: none;\n  }\n\n  15% {\n    transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);\n  }\n\n  30% {\n    transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);\n  }\n\n  45% {\n    transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);\n  }\n\n  60% {\n    transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);\n  }\n\n  75% {\n    transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);\n  }\n\n  to {\n    transform: none;\n  }\n}\n\n.wobble {\n  animation-name: wobble;\n}\n\n@keyframes jello {\n  from, 11.1%, to {\n    transform: none;\n  }\n\n  22.2% {\n    transform: skewX(-12.5deg) skewY(-12.5deg);\n  }\n\n  33.3% {\n    transform: skewX(6.25deg) skewY(6.25deg);\n  }\n\n  44.4% {\n    transform: skewX(-3.125deg) skewY(-3.125deg);\n  }\n\n  55.5% {\n    transform: skewX(1.5625deg) skewY(1.5625deg);\n  }\n\n  66.6% {\n    transform: skewX(-0.78125deg) skewY(-0.78125deg);\n  }\n\n  77.7% {\n    transform: skewX(0.390625deg) skewY(0.390625deg);\n  }\n\n  88.8% {\n    transform: skewX(-0.1953125deg) skewY(-0.1953125deg);\n  }\n}\n\n.jello {\n  animation-name: jello;\n  transform-origin: center;\n}\n\n@keyframes bounceIn {\n  from, 20%, 40%, 60%, 80%, to {\n    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);\n  }\n\n  0% {\n    opacity: 0;\n    transform: scale3d(.3, .3, .3);\n  }\n\n  20% {\n    transform: scale3d(1.1, 1.1, 1.1);\n  }\n\n  40% {\n    transform: scale3d(.9, .9, .9);\n  }\n\n  60% {\n    opacity: 1;\n    transform: scale3d(1.03, 1.03, 1.03);\n  }\n\n  80% {\n    transform: scale3d(.97, .97, .97);\n  }\n\n  to {\n    opacity: 1;\n    transform: scale3d(1, 1, 1);\n  }\n}\n\n.bounceIn {\n  animation-name: bounceIn;\n}\n\n@keyframes bounceInDown {\n  from, 60%, 75%, 90%, to {\n    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);\n  }\n\n  0% {\n    opacity: 0;\n    transform: translate3d(0, -3000px, 0);\n  }\n\n  60% {\n    opacity: 1;\n    transform: translate3d(0, 25px, 0);\n  }\n\n  75% {\n    transform: translate3d(0, -10px, 0);\n  }\n\n  90% {\n    transform: translate3d(0, 5px, 0);\n  }\n\n  to {\n    transform: none;\n  }\n}\n\n.bounceInDown {\n  animation-name: bounceInDown;\n}\n\n@keyframes bounceInLeft {\n  from, 60%, 75%, 90%, to {\n    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);\n  }\n\n  0% {\n    opacity: 0;\n    transform: translate3d(-3000px, 0, 0);\n  }\n\n  60% {\n    opacity: 1;\n    transform: translate3d(25px, 0, 0);\n  }\n\n  75% {\n    transform: translate3d(-10px, 0, 0);\n  }\n\n  90% {\n    transform: translate3d(5px, 0, 0);\n  }\n\n  to {\n    transform: none;\n  }\n}\n\n.bounceInLeft {\n  animation-name: bounceInLeft;\n}\n\n@keyframes bounceInRight {\n  from, 60%, 75%, 90%, to {\n    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);\n  }\n\n  from {\n    opacity: 0;\n    transform: translate3d(3000px, 0, 0);\n  }\n\n  60% {\n    opacity: 1;\n    transform: translate3d(-25px, 0, 0);\n  }\n\n  75% {\n    transform: translate3d(10px, 0, 0);\n  }\n\n  90% {\n    transform: translate3d(-5px, 0, 0);\n  }\n\n  to {\n    transform: none;\n  }\n}\n\n.bounceInRight {\n  animation-name: bounceInRight;\n}\n\n@keyframes bounceInUp {\n  from, 60%, 75%, 90%, to {\n    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);\n  }\n\n  from {\n    opacity: 0;\n    transform: translate3d(0, 3000px, 0);\n  }\n\n  60% {\n    opacity: 1;\n    transform: translate3d(0, -20px, 0);\n  }\n\n  75% {\n    transform: translate3d(0, 10px, 0);\n  }\n\n  90% {\n    transform: translate3d(0, -5px, 0);\n  }\n\n  to {\n    transform: translate3d(0, 0, 0);\n  }\n}\n\n.bounceInUp {\n  animation-name: bounceInUp;\n}\n\n@keyframes bounceOut {\n  20% {\n    transform: scale3d(.9, .9, .9);\n  }\n\n  50%, 55% {\n    opacity: 1;\n    transform: scale3d(1.1, 1.1, 1.1);\n  }\n\n  to {\n    opacity: 0;\n    transform: scale3d(.3, .3, .3);\n  }\n}\n\n.bounceOut {\n  animation-name: bounceOut;\n}\n\n@keyframes bounceOutDown {\n  20% {\n    transform: translate3d(0, 10px, 0);\n  }\n\n  40%, 45% {\n    opacity: 1;\n    transform: translate3d(0, -20px, 0);\n  }\n\n  to {\n    opacity: 0;\n    transform: translate3d(0, 2000px, 0);\n  }\n}\n\n.bounceOutDown {\n  animation-name: bounceOutDown;\n}\n\n@keyframes bounceOutLeft {\n  20% {\n    opacity: 1;\n    transform: translate3d(20px, 0, 0);\n  }\n\n  to {\n    opacity: 0;\n    transform: translate3d(-2000px, 0, 0);\n  }\n}\n\n.bounceOutLeft {\n  animation-name: bounceOutLeft;\n}\n\n@keyframes bounceOutRight {\n  20% {\n    opacity: 1;\n    transform: translate3d(-20px, 0, 0);\n  }\n\n  to {\n    opacity: 0;\n    transform: translate3d(2000px, 0, 0);\n  }\n}\n\n.bounceOutRight {\n  animation-name: bounceOutRight;\n}\n\n@keyframes bounceOutUp {\n  20% {\n    transform: translate3d(0, -10px, 0);\n  }\n\n  40%, 45% {\n    opacity: 1;\n    transform: translate3d(0, 20px, 0);\n  }\n\n  to {\n    opacity: 0;\n    transform: translate3d(0, -2000px, 0);\n  }\n}\n\n.bounceOutUp {\n  animation-name: bounceOutUp;\n}\n\n@keyframes fadeIn {\n  from {\n    opacity: 0;\n  }\n\n  to {\n    opacity: 1;\n  }\n}\n\n.fadeIn {\n  animation-name: fadeIn;\n}\n\n@keyframes fadeInDown {\n  from {\n    opacity: 0;\n    transform: translate3d(0, -100%, 0);\n  }\n\n  to {\n    opacity: 1;\n    transform: none;\n  }\n}\n\n.fadeInDown {\n  animation-name: fadeInDown;\n}\n\n@keyframes fadeInDownBig {\n  from {\n    opacity: 0;\n    transform: translate3d(0, -2000px, 0);\n  }\n\n  to {\n    opacity: 1;\n    transform: none;\n  }\n}\n\n.fadeInDownBig {\n  animation-name: fadeInDownBig;\n}\n\n@keyframes fadeInLeft {\n  from {\n    opacity: 0;\n    transform: translate3d(-100%, 0, 0);\n  }\n\n  to {\n    opacity: 1;\n    transform: none;\n  }\n}\n\n.fadeInLeft {\n  animation-name: fadeInLeft;\n}\n\n@keyframes fadeInLeftBig {\n  from {\n    opacity: 0;\n    transform: translate3d(-2000px, 0, 0);\n  }\n\n  to {\n    opacity: 1;\n    transform: none;\n  }\n}\n\n.fadeInLeftBig {\n  animation-name: fadeInLeftBig;\n}\n\n@keyframes fadeInRight {\n  from {\n    opacity: 0;\n    transform: translate3d(100%, 0, 0);\n  }\n\n  to {\n    opacity: 1;\n    transform: none;\n  }\n}\n\n.fadeInRight {\n  animation-name: fadeInRight;\n}\n\n@keyframes fadeInRightBig {\n  from {\n    opacity: 0;\n    transform: translate3d(2000px, 0, 0);\n  }\n\n  to {\n    opacity: 1;\n    transform: none;\n  }\n}\n\n.fadeInRightBig {\n  animation-name: fadeInRightBig;\n}\n\n@keyframes fadeInUp {\n  from {\n    opacity: 0;\n    transform: translate3d(0, 100%, 0);\n  }\n\n  to {\n    opacity: 1;\n    transform: none;\n  }\n}\n\n.fadeInUp {\n  animation-name: fadeInUp;\n}\n\n@keyframes fadeInUpBig {\n  from {\n    opacity: 0;\n    transform: translate3d(0, 2000px, 0);\n  }\n\n  to {\n    opacity: 1;\n    transform: none;\n  }\n}\n\n.fadeInUpBig {\n  animation-name: fadeInUpBig;\n}\n\n@keyframes fadeOut {\n  from {\n    opacity: 1;\n  }\n\n  to {\n    opacity: 0;\n  }\n}\n\n.fadeOut {\n  animation-name: fadeOut;\n}\n\n@keyframes fadeOutDown {\n  from {\n    opacity: 1;\n  }\n\n  to {\n    opacity: 0;\n    transform: translate3d(0, 100%, 0);\n  }\n}\n\n.fadeOutDown {\n  animation-name: fadeOutDown;\n}\n\n@keyframes fadeOutDownBig {\n  from {\n    opacity: 1;\n  }\n\n  to {\n    opacity: 0;\n    transform: translate3d(0, 2000px, 0);\n  }\n}\n\n.fadeOutDownBig {\n  animation-name: fadeOutDownBig;\n}\n\n@keyframes fadeOutLeft {\n  from {\n    opacity: 1;\n  }\n\n  to {\n    opacity: 0;\n    transform: translate3d(-100%, 0, 0);\n  }\n}\n\n.fadeOutLeft {\n  animation-name: fadeOutLeft;\n}\n\n@keyframes fadeOutLeftBig {\n  from {\n    opacity: 1;\n  }\n\n  to {\n    opacity: 0;\n    transform: translate3d(-2000px, 0, 0);\n  }\n}\n\n.fadeOutLeftBig {\n  animation-name: fadeOutLeftBig;\n}\n\n@keyframes fadeOutRight {\n  from {\n    opacity: 1;\n  }\n\n  to {\n    opacity: 0;\n    transform: translate3d(100%, 0, 0);\n  }\n}\n\n.fadeOutRight {\n  animation-name: fadeOutRight;\n}\n\n@keyframes fadeOutRightBig {\n  from {\n    opacity: 1;\n  }\n\n  to {\n    opacity: 0;\n    transform: translate3d(2000px, 0, 0);\n  }\n}\n\n.fadeOutRightBig {\n  animation-name: fadeOutRightBig;\n}\n\n@keyframes fadeOutUp {\n  from {\n    opacity: 1;\n  }\n\n  to {\n    opacity: 0;\n    transform: translate3d(0, -100%, 0);\n  }\n}\n\n.fadeOutUp {\n  animation-name: fadeOutUp;\n}\n\n@keyframes fadeOutUpBig {\n  from {\n    opacity: 1;\n  }\n\n  to {\n    opacity: 0;\n    transform: translate3d(0, -2000px, 0);\n  }\n}\n\n.fadeOutUpBig {\n  animation-name: fadeOutUpBig;\n}\n\n@keyframes flip {\n  from {\n    transform: perspective(400px) rotate3d(0, 1, 0, -360deg);\n    animation-timing-function: ease-out;\n  }\n\n  40% {\n    transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -190deg);\n    animation-timing-function: ease-out;\n  }\n\n  50% {\n    transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -170deg);\n    animation-timing-function: ease-in;\n  }\n\n  80% {\n    transform: perspective(400px) scale3d(.95, .95, .95);\n    animation-timing-function: ease-in;\n  }\n\n  to {\n    transform: perspective(400px);\n    animation-timing-function: ease-in;\n  }\n}\n\n.animated.flip {\n  -webkit-backface-visibility: visible;\n  backface-visibility: visible;\n  animation-name: flip;\n}\n\n@keyframes flipInX {\n  from {\n    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);\n    animation-timing-function: ease-in;\n    opacity: 0;\n  }\n\n  40% {\n    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);\n    animation-timing-function: ease-in;\n  }\n\n  60% {\n    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);\n    opacity: 1;\n  }\n\n  80% {\n    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);\n  }\n\n  to {\n    transform: perspective(400px);\n  }\n}\n\n.flipInX {\n  -webkit-backface-visibility: visible !important;\n  backface-visibility: visible !important;\n  animation-name: flipInX;\n}\n\n@keyframes flipInY {\n  from {\n    transform: perspective(400px) rotate3d(0, 1, 0, 90deg);\n    animation-timing-function: ease-in;\n    opacity: 0;\n  }\n\n  40% {\n    transform: perspective(400px) rotate3d(0, 1, 0, -20deg);\n    animation-timing-function: ease-in;\n  }\n\n  60% {\n    transform: perspective(400px) rotate3d(0, 1, 0, 10deg);\n    opacity: 1;\n  }\n\n  80% {\n    transform: perspective(400px) rotate3d(0, 1, 0, -5deg);\n  }\n\n  to {\n    transform: perspective(400px);\n  }\n}\n\n.flipInY {\n  -webkit-backface-visibility: visible !important;\n  backface-visibility: visible !important;\n  animation-name: flipInY;\n}\n\n@keyframes flipOutX {\n  from {\n    transform: perspective(400px);\n  }\n\n  30% {\n    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);\n    opacity: 1;\n  }\n\n  to {\n    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);\n    opacity: 0;\n  }\n}\n\n.flipOutX {\n  animation-name: flipOutX;\n  -webkit-backface-visibility: visible !important;\n  backface-visibility: visible !important;\n}\n\n@keyframes flipOutY {\n  from {\n    transform: perspective(400px);\n  }\n\n  30% {\n    transform: perspective(400px) rotate3d(0, 1, 0, -15deg);\n    opacity: 1;\n  }\n\n  to {\n    transform: perspective(400px) rotate3d(0, 1, 0, 90deg);\n    opacity: 0;\n  }\n}\n\n.flipOutY {\n  -webkit-backface-visibility: visible !important;\n  backface-visibility: visible !important;\n  animation-name: flipOutY;\n}\n\n@keyframes lightSpeedIn {\n  from {\n    transform: translate3d(100%, 0, 0) skewX(-30deg);\n    opacity: 0;\n  }\n\n  60% {\n    transform: skewX(20deg);\n    opacity: 1;\n  }\n\n  80% {\n    transform: skewX(-5deg);\n    opacity: 1;\n  }\n\n  to {\n    transform: none;\n    opacity: 1;\n  }\n}\n\n.lightSpeedIn {\n  animation-name: lightSpeedIn;\n  animation-timing-function: ease-out;\n}\n\n@keyframes lightSpeedOut {\n  from {\n    opacity: 1;\n  }\n\n  to {\n    transform: translate3d(100%, 0, 0) skewX(30deg);\n    opacity: 0;\n  }\n}\n\n.lightSpeedOut {\n  animation-name: lightSpeedOut;\n  animation-timing-function: ease-in;\n}\n\n@keyframes rotateIn {\n  from {\n    transform-origin: center;\n    transform: rotate3d(0, 0, 1, -200deg);\n    opacity: 0;\n  }\n\n  to {\n    transform-origin: center;\n    transform: none;\n    opacity: 1;\n  }\n}\n\n.rotateIn {\n  animation-name: rotateIn;\n}\n\n@keyframes rotateInDownLeft {\n  from {\n    transform-origin: left bottom;\n    transform: rotate3d(0, 0, 1, -45deg);\n    opacity: 0;\n  }\n\n  to {\n    transform-origin: left bottom;\n    transform: none;\n    opacity: 1;\n  }\n}\n\n.rotateInDownLeft {\n  animation-name: rotateInDownLeft;\n}\n\n@keyframes rotateInDownRight {\n  from {\n    transform-origin: right bottom;\n    transform: rotate3d(0, 0, 1, 45deg);\n    opacity: 0;\n  }\n\n  to {\n    transform-origin: right bottom;\n    transform: none;\n    opacity: 1;\n  }\n}\n\n.rotateInDownRight {\n  animation-name: rotateInDownRight;\n}\n\n@keyframes rotateInUpLeft {\n  from {\n    transform-origin: left bottom;\n    transform: rotate3d(0, 0, 1, 45deg);\n    opacity: 0;\n  }\n\n  to {\n    transform-origin: left bottom;\n    transform: none;\n    opacity: 1;\n  }\n}\n\n.rotateInUpLeft {\n  animation-name: rotateInUpLeft;\n}\n\n@keyframes rotateInUpRight {\n  from {\n    transform-origin: right bottom;\n    transform: rotate3d(0, 0, 1, -90deg);\n    opacity: 0;\n  }\n\n  to {\n    transform-origin: right bottom;\n    transform: none;\n    opacity: 1;\n  }\n}\n\n.rotateInUpRight {\n  animation-name: rotateInUpRight;\n}\n\n@keyframes rotateOut {\n  from {\n    transform-origin: center;\n    opacity: 1;\n  }\n\n  to {\n    transform-origin: center;\n    transform: rotate3d(0, 0, 1, 200deg);\n    opacity: 0;\n  }\n}\n\n.rotateOut {\n  animation-name: rotateOut;\n}\n\n@keyframes rotateOutDownLeft {\n  from {\n    transform-origin: left bottom;\n    opacity: 1;\n  }\n\n  to {\n    transform-origin: left bottom;\n    transform: rotate3d(0, 0, 1, 45deg);\n    opacity: 0;\n  }\n}\n\n.rotateOutDownLeft {\n  animation-name: rotateOutDownLeft;\n}\n\n@keyframes rotateOutDownRight {\n  from {\n    transform-origin: right bottom;\n    opacity: 1;\n  }\n\n  to {\n    transform-origin: right bottom;\n    transform: rotate3d(0, 0, 1, -45deg);\n    opacity: 0;\n  }\n}\n\n.rotateOutDownRight {\n  animation-name: rotateOutDownRight;\n}\n\n@keyframes rotateOutUpLeft {\n  from {\n    transform-origin: left bottom;\n    opacity: 1;\n  }\n\n  to {\n    transform-origin: left bottom;\n    transform: rotate3d(0, 0, 1, -45deg);\n    opacity: 0;\n  }\n}\n\n.rotateOutUpLeft {\n  animation-name: rotateOutUpLeft;\n}\n\n@keyframes rotateOutUpRight {\n  from {\n    transform-origin: right bottom;\n    opacity: 1;\n  }\n\n  to {\n    transform-origin: right bottom;\n    transform: rotate3d(0, 0, 1, 90deg);\n    opacity: 0;\n  }\n}\n\n.rotateOutUpRight {\n  animation-name: rotateOutUpRight;\n}\n\n@keyframes hinge {\n  0% {\n    transform-origin: top left;\n    animation-timing-function: ease-in-out;\n  }\n\n  20%, 60% {\n    transform: rotate3d(0, 0, 1, 80deg);\n    transform-origin: top left;\n    animation-timing-function: ease-in-out;\n  }\n\n  40%, 80% {\n    transform: rotate3d(0, 0, 1, 60deg);\n    transform-origin: top left;\n    animation-timing-function: ease-in-out;\n    opacity: 1;\n  }\n\n  to {\n    transform: translate3d(0, 700px, 0);\n    opacity: 0;\n  }\n}\n\n.hinge {\n  animation-name: hinge;\n}\n\n@keyframes jackInTheBox {\n  from {\n    opacity: 0;\n    transform: scale(0.1) rotate(30deg);\n    transform-origin: center bottom;\n  }\n\n  50% {\n    transform: rotate(-10deg);\n  }\n\n  70% {\n    transform: rotate(3deg);\n  }\n\n  to {\n    opacity: 1;\n    transform: scale(1);\n  }\n}\n\n.jackInTheBox {\n  animation-name: jackInTheBox;\n}\n\n/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */\n\n@keyframes rollIn {\n  from {\n    opacity: 0;\n    transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);\n  }\n\n  to {\n    opacity: 1;\n    transform: none;\n  }\n}\n\n.rollIn {\n  animation-name: rollIn;\n}\n\n/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */\n\n@keyframes rollOut {\n  from {\n    opacity: 1;\n  }\n\n  to {\n    opacity: 0;\n    transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);\n  }\n}\n\n.rollOut {\n  animation-name: rollOut;\n}\n\n@keyframes zoomIn {\n  from {\n    opacity: 0;\n    transform: scale3d(.3, .3, .3);\n  }\n\n  50% {\n    opacity: 1;\n  }\n}\n\n.zoomIn {\n  animation-name: zoomIn;\n}\n\n@keyframes zoomInDown {\n  from {\n    opacity: 0;\n    transform: scale3d(.1, .1, .1) translate3d(0, -1000px, 0);\n    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);\n  }\n\n  60% {\n    opacity: 1;\n    transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0);\n    animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);\n  }\n}\n\n.zoomInDown {\n  animation-name: zoomInDown;\n}\n\n@keyframes zoomInLeft {\n  from {\n    opacity: 0;\n    transform: scale3d(.1, .1, .1) translate3d(-1000px, 0, 0);\n    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);\n  }\n\n  60% {\n    opacity: 1;\n    transform: scale3d(.475, .475, .475) translate3d(10px, 0, 0);\n    animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);\n  }\n}\n\n.zoomInLeft {\n  animation-name: zoomInLeft;\n}\n\n@keyframes zoomInRight {\n  from {\n    opacity: 0;\n    transform: scale3d(.1, .1, .1) translate3d(1000px, 0, 0);\n    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);\n  }\n\n  60% {\n    opacity: 1;\n    transform: scale3d(.475, .475, .475) translate3d(-10px, 0, 0);\n    animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);\n  }\n}\n\n.zoomInRight {\n  animation-name: zoomInRight;\n}\n\n@keyframes zoomInUp {\n  from {\n    opacity: 0;\n    transform: scale3d(.1, .1, .1) translate3d(0, 1000px, 0);\n    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);\n  }\n\n  60% {\n    opacity: 1;\n    transform: scale3d(.475, .475, .475) translate3d(0, -60px, 0);\n    animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);\n  }\n}\n\n.zoomInUp {\n  animation-name: zoomInUp;\n}\n\n@keyframes zoomOut {\n  from {\n    opacity: 1;\n  }\n\n  50% {\n    opacity: 0;\n    transform: scale3d(.3, .3, .3);\n  }\n\n  to {\n    opacity: 0;\n  }\n}\n\n.zoomOut {\n  animation-name: zoomOut;\n}\n\n@keyframes zoomOutDown {\n  40% {\n    opacity: 1;\n    transform: scale3d(.475, .475, .475) translate3d(0, -60px, 0);\n    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);\n  }\n\n  to {\n    opacity: 0;\n    transform: scale3d(.1, .1, .1) translate3d(0, 2000px, 0);\n    transform-origin: center bottom;\n    animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);\n  }\n}\n\n.zoomOutDown {\n  animation-name: zoomOutDown;\n}\n\n@keyframes zoomOutLeft {\n  40% {\n    opacity: 1;\n    transform: scale3d(.475, .475, .475) translate3d(42px, 0, 0);\n  }\n\n  to {\n    opacity: 0;\n    transform: scale(.1) translate3d(-2000px, 0, 0);\n    transform-origin: left center;\n  }\n}\n\n.zoomOutLeft {\n  animation-name: zoomOutLeft;\n}\n\n@keyframes zoomOutRight {\n  40% {\n    opacity: 1;\n    transform: scale3d(.475, .475, .475) translate3d(-42px, 0, 0);\n  }\n\n  to {\n    opacity: 0;\n    transform: scale(.1) translate3d(2000px, 0, 0);\n    transform-origin: right center;\n  }\n}\n\n.zoomOutRight {\n  animation-name: zoomOutRight;\n}\n\n@keyframes zoomOutUp {\n  40% {\n    opacity: 1;\n    transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0);\n    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);\n  }\n\n  to {\n    opacity: 0;\n    transform: scale3d(.1, .1, .1) translate3d(0, -2000px, 0);\n    transform-origin: center bottom;\n    animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);\n  }\n}\n\n.zoomOutUp {\n  animation-name: zoomOutUp;\n}\n\n@keyframes slideInDown {\n  from {\n    transform: translate3d(0, -100%, 0);\n    visibility: visible;\n  }\n\n  to {\n    transform: translate3d(0, 0, 0);\n  }\n}\n\n.slideInDown {\n  animation-name: slideInDown;\n}\n\n@keyframes slideInLeft {\n  from {\n    transform: translate3d(-100%, 0, 0);\n    visibility: visible;\n  }\n\n  to {\n    transform: translate3d(0, 0, 0);\n  }\n}\n\n.slideInLeft {\n  animation-name: slideInLeft;\n}\n\n@keyframes slideInRight {\n  from {\n    transform: translate3d(100%, 0, 0);\n    visibility: visible;\n  }\n\n  to {\n    transform: translate3d(0, 0, 0);\n  }\n}\n\n.slideInRight {\n  animation-name: slideInRight;\n}\n\n@keyframes slideInUp {\n  from {\n    transform: translate3d(0, 100%, 0);\n    visibility: visible;\n  }\n\n  to {\n    transform: translate3d(0, 0, 0);\n  }\n}\n\n.slideInUp {\n  animation-name: slideInUp;\n}\n\n@keyframes slideOutDown {\n  from {\n    transform: translate3d(0, 0, 0);\n  }\n\n  to {\n    visibility: hidden;\n    transform: translate3d(0, 100%, 0);\n  }\n}\n\n.slideOutDown {\n  animation-name: slideOutDown;\n}\n\n@keyframes slideOutLeft {\n  from {\n    transform: translate3d(0, 0, 0);\n  }\n\n  to {\n    visibility: hidden;\n    transform: translate3d(-100%, 0, 0);\n  }\n}\n\n.slideOutLeft {\n  animation-name: slideOutLeft;\n}\n\n@keyframes slideOutRight {\n  from {\n    transform: translate3d(0, 0, 0);\n  }\n\n  to {\n    visibility: hidden;\n    transform: translate3d(100%, 0, 0);\n  }\n}\n\n.slideOutRight {\n  animation-name: slideOutRight;\n}\n\n@keyframes slideOutUp {\n  from {\n    transform: translate3d(0, 0, 0);\n  }\n\n  to {\n    visibility: hidden;\n    transform: translate3d(0, -100%, 0);\n  }\n}\n\n.slideOutUp {\n  animation-name: slideOutUp;\n}\n", ""]);
+exports.push([module.i, "@font-face {\r\n    font-family: 'museo_sans300';\r\n    src: url(" + __webpack_require__(137) + ") format('woff2'),\r\n         url(" + __webpack_require__(138) + ") format('woff'),\r\n         url(" + __webpack_require__(139) + ")  format('truetype');;\r\n    font-weight: normal;\r\n    font-style: normal;\r\n\r\n}\r\n\r\n   \r\n\r\nbody,p,input,label{\r\n    font-family: 'museo_sans300';\r\n}\r\n\r\nbody{\r\n  background:#faf9f5\r\n}\r\n.panel-heading{\r\n padding-bottom:5px !important;\r\n}\r\n[type=\"radio\"]:checked,\r\n[type=\"radio\"]:not(:checked) {\r\n    position: absolute;\r\n    left: -9999px;\r\n}\r\n[type=\"radio\"]:checked + label,\r\n[type=\"radio\"]:not(:checked) + label\r\n{\r\n    position: relative;\r\n    padding-left: 28px;\r\n    cursor: pointer;\r\n    line-height: 20px;\r\n    display: inline-block;\r\n\r\n}\r\n[type=\"radio\"]:checked + label:before,\r\n[type=\"radio\"]:not(:checked) + label:before {\r\n    content: '';\r\n    position: absolute;\r\n    left: 0;\r\n    top: 0;\r\n    width: 20px;\r\n    height: 20px;\r\n    border: 1px solid #b6b6b6;\r\n    border-radius: 100%;\r\n    background: #fff;\r\n    color:#aeaeae;\r\n}\r\n[type=\"radio\"]:checked + label:after,\r\n[type=\"radio\"]:not(:checked) + label:after {\r\n    content: '';\r\n    width: 12px;\r\n    height: 12px;\r\n    background: #1ec26b;\r\n    position: absolute;\r\n    top: 4px;\r\n    left: 4px;\r\n    border-radius: 100%;\r\n    -webkit-transition: all 0.2s ease;\r\n    transition: all 0.2s ease;\r\n    color:#676767;\r\n}\r\n[type=\"radio\"]:not(:checked) + label:after {\r\n    opacity: 0;\r\n    -webkit-transform: scale(0);\r\n    transform: scale(0);\r\n}\r\n[type=\"radio\"]:checked + label:after {\r\n    opacity: 1;\r\n    -webkit-transform: scale(1);\r\n    transform: scale(1);\r\n}\r\n\r\n.half-left a{\r\n    cursor:pointer;\r\n}\r\n\r\n.rating.color-positive .star-container .star i{\r\n    color:#5ca1f6 !important;\r\n}\r\n\r\n.search-icon{\r\n    position: absolute;\r\n    top: 11px;\r\n    z-index: 1;\r\n    width: 22px;\r\n    left: 12px;\r\n}\r\n\r\n\r\n\r\n/* animation */\r\n\r\n.loading {\r\n    opacity: 0;\r\n    transition: opacity .8s ease-in-out;\r\n    position: fixed;\r\n    height: 100%;\r\n    width: 100%;\r\n    top: 0;\r\n    left: 0;\r\n    background: #000;\r\n    z-index: -1;\r\n}\r\n/* .loading screen is visible when app is not bootstraped yet, .my-app is empty */\r\napp:empty + .loading {\r\n    opacity: 1;\r\n    z-index: 100;\r\n}\r\n\r\n\r\n.loader,.FetchingTimeSlots{\r\n    display:none;\r\n    text-align: center;\r\n    margin:50px;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n", ""]);
 
 // exports
 
 
 /***/ }),
 /* 308 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+        var result = __webpack_require__(309);
+
+        if (typeof result === "string") {
+            module.exports = result;
+        } else {
+            module.exports = result.toString();
+        }
+    
+
+/***/ }),
+/* 309 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(7)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "@charset \"UTF-8\";\n\n/*!\n * animate.css -http://daneden.me/animate\n * Version - 3.5.2\n * Licensed under the MIT license - http://opensource.org/licenses/MIT\n *\n * Copyright (c) 2017 Daniel Eden\n */\n\n.animated {\n  animation-duration: 1s;\n  animation-fill-mode: both;\n}\n\n.animated.infinite {\n  animation-iteration-count: infinite;\n}\n\n.animated.hinge {\n  animation-duration: 2s;\n}\n\n.animated.flipOutX,\n.animated.flipOutY,\n.animated.bounceIn,\n.animated.bounceOut {\n  animation-duration: .75s;\n}\n\n@keyframes bounce {\n  from, 20%, 53%, 80%, to {\n    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);\n    transform: translate3d(0,0,0);\n  }\n\n  40%, 43% {\n    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);\n    transform: translate3d(0, -30px, 0);\n  }\n\n  70% {\n    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);\n    transform: translate3d(0, -15px, 0);\n  }\n\n  90% {\n    transform: translate3d(0,-4px,0);\n  }\n}\n\n.bounce {\n  animation-name: bounce;\n  transform-origin: center bottom;\n}\n\n@keyframes flash {\n  from, 50%, to {\n    opacity: 1;\n  }\n\n  25%, 75% {\n    opacity: 0;\n  }\n}\n\n.flash {\n  animation-name: flash;\n}\n\n/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */\n\n@keyframes pulse {\n  from {\n    transform: scale3d(1, 1, 1);\n  }\n\n  50% {\n    transform: scale3d(1.05, 1.05, 1.05);\n  }\n\n  to {\n    transform: scale3d(1, 1, 1);\n  }\n}\n\n.pulse {\n  animation-name: pulse;\n}\n\n@keyframes rubberBand {\n  from {\n    transform: scale3d(1, 1, 1);\n  }\n\n  30% {\n    transform: scale3d(1.25, 0.75, 1);\n  }\n\n  40% {\n    transform: scale3d(0.75, 1.25, 1);\n  }\n\n  50% {\n    transform: scale3d(1.15, 0.85, 1);\n  }\n\n  65% {\n    transform: scale3d(.95, 1.05, 1);\n  }\n\n  75% {\n    transform: scale3d(1.05, .95, 1);\n  }\n\n  to {\n    transform: scale3d(1, 1, 1);\n  }\n}\n\n.rubberBand {\n  animation-name: rubberBand;\n}\n\n@keyframes shake {\n  from, to {\n    transform: translate3d(0, 0, 0);\n  }\n\n  10%, 30%, 50%, 70%, 90% {\n    transform: translate3d(-10px, 0, 0);\n  }\n\n  20%, 40%, 60%, 80% {\n    transform: translate3d(10px, 0, 0);\n  }\n}\n\n.shake {\n  animation-name: shake;\n}\n\n@keyframes headShake {\n  0% {\n    transform: translateX(0);\n  }\n\n  6.5% {\n    transform: translateX(-6px) rotateY(-9deg);\n  }\n\n  18.5% {\n    transform: translateX(5px) rotateY(7deg);\n  }\n\n  31.5% {\n    transform: translateX(-3px) rotateY(-5deg);\n  }\n\n  43.5% {\n    transform: translateX(2px) rotateY(3deg);\n  }\n\n  50% {\n    transform: translateX(0);\n  }\n}\n\n.headShake {\n  animation-timing-function: ease-in-out;\n  animation-name: headShake;\n}\n\n@keyframes swing {\n  20% {\n    transform: rotate3d(0, 0, 1, 15deg);\n  }\n\n  40% {\n    transform: rotate3d(0, 0, 1, -10deg);\n  }\n\n  60% {\n    transform: rotate3d(0, 0, 1, 5deg);\n  }\n\n  80% {\n    transform: rotate3d(0, 0, 1, -5deg);\n  }\n\n  to {\n    transform: rotate3d(0, 0, 1, 0deg);\n  }\n}\n\n.swing {\n  transform-origin: top center;\n  animation-name: swing;\n}\n\n@keyframes tada {\n  from {\n    transform: scale3d(1, 1, 1);\n  }\n\n  10%, 20% {\n    transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);\n  }\n\n  30%, 50%, 70%, 90% {\n    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);\n  }\n\n  40%, 60%, 80% {\n    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);\n  }\n\n  to {\n    transform: scale3d(1, 1, 1);\n  }\n}\n\n.tada {\n  animation-name: tada;\n}\n\n/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */\n\n@keyframes wobble {\n  from {\n    transform: none;\n  }\n\n  15% {\n    transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);\n  }\n\n  30% {\n    transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);\n  }\n\n  45% {\n    transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);\n  }\n\n  60% {\n    transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);\n  }\n\n  75% {\n    transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);\n  }\n\n  to {\n    transform: none;\n  }\n}\n\n.wobble {\n  animation-name: wobble;\n}\n\n@keyframes jello {\n  from, 11.1%, to {\n    transform: none;\n  }\n\n  22.2% {\n    transform: skewX(-12.5deg) skewY(-12.5deg);\n  }\n\n  33.3% {\n    transform: skewX(6.25deg) skewY(6.25deg);\n  }\n\n  44.4% {\n    transform: skewX(-3.125deg) skewY(-3.125deg);\n  }\n\n  55.5% {\n    transform: skewX(1.5625deg) skewY(1.5625deg);\n  }\n\n  66.6% {\n    transform: skewX(-0.78125deg) skewY(-0.78125deg);\n  }\n\n  77.7% {\n    transform: skewX(0.390625deg) skewY(0.390625deg);\n  }\n\n  88.8% {\n    transform: skewX(-0.1953125deg) skewY(-0.1953125deg);\n  }\n}\n\n.jello {\n  animation-name: jello;\n  transform-origin: center;\n}\n\n@keyframes bounceIn {\n  from, 20%, 40%, 60%, 80%, to {\n    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);\n  }\n\n  0% {\n    opacity: 0;\n    transform: scale3d(.3, .3, .3);\n  }\n\n  20% {\n    transform: scale3d(1.1, 1.1, 1.1);\n  }\n\n  40% {\n    transform: scale3d(.9, .9, .9);\n  }\n\n  60% {\n    opacity: 1;\n    transform: scale3d(1.03, 1.03, 1.03);\n  }\n\n  80% {\n    transform: scale3d(.97, .97, .97);\n  }\n\n  to {\n    opacity: 1;\n    transform: scale3d(1, 1, 1);\n  }\n}\n\n.bounceIn {\n  animation-name: bounceIn;\n}\n\n@keyframes bounceInDown {\n  from, 60%, 75%, 90%, to {\n    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);\n  }\n\n  0% {\n    opacity: 0;\n    transform: translate3d(0, -3000px, 0);\n  }\n\n  60% {\n    opacity: 1;\n    transform: translate3d(0, 25px, 0);\n  }\n\n  75% {\n    transform: translate3d(0, -10px, 0);\n  }\n\n  90% {\n    transform: translate3d(0, 5px, 0);\n  }\n\n  to {\n    transform: none;\n  }\n}\n\n.bounceInDown {\n  animation-name: bounceInDown;\n}\n\n@keyframes bounceInLeft {\n  from, 60%, 75%, 90%, to {\n    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);\n  }\n\n  0% {\n    opacity: 0;\n    transform: translate3d(-3000px, 0, 0);\n  }\n\n  60% {\n    opacity: 1;\n    transform: translate3d(25px, 0, 0);\n  }\n\n  75% {\n    transform: translate3d(-10px, 0, 0);\n  }\n\n  90% {\n    transform: translate3d(5px, 0, 0);\n  }\n\n  to {\n    transform: none;\n  }\n}\n\n.bounceInLeft {\n  animation-name: bounceInLeft;\n}\n\n@keyframes bounceInRight {\n  from, 60%, 75%, 90%, to {\n    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);\n  }\n\n  from {\n    opacity: 0;\n    transform: translate3d(3000px, 0, 0);\n  }\n\n  60% {\n    opacity: 1;\n    transform: translate3d(-25px, 0, 0);\n  }\n\n  75% {\n    transform: translate3d(10px, 0, 0);\n  }\n\n  90% {\n    transform: translate3d(-5px, 0, 0);\n  }\n\n  to {\n    transform: none;\n  }\n}\n\n.bounceInRight {\n  animation-name: bounceInRight;\n}\n\n@keyframes bounceInUp {\n  from, 60%, 75%, 90%, to {\n    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);\n  }\n\n  from {\n    opacity: 0;\n    transform: translate3d(0, 3000px, 0);\n  }\n\n  60% {\n    opacity: 1;\n    transform: translate3d(0, -20px, 0);\n  }\n\n  75% {\n    transform: translate3d(0, 10px, 0);\n  }\n\n  90% {\n    transform: translate3d(0, -5px, 0);\n  }\n\n  to {\n    transform: translate3d(0, 0, 0);\n  }\n}\n\n.bounceInUp {\n  animation-name: bounceInUp;\n}\n\n@keyframes bounceOut {\n  20% {\n    transform: scale3d(.9, .9, .9);\n  }\n\n  50%, 55% {\n    opacity: 1;\n    transform: scale3d(1.1, 1.1, 1.1);\n  }\n\n  to {\n    opacity: 0;\n    transform: scale3d(.3, .3, .3);\n  }\n}\n\n.bounceOut {\n  animation-name: bounceOut;\n}\n\n@keyframes bounceOutDown {\n  20% {\n    transform: translate3d(0, 10px, 0);\n  }\n\n  40%, 45% {\n    opacity: 1;\n    transform: translate3d(0, -20px, 0);\n  }\n\n  to {\n    opacity: 0;\n    transform: translate3d(0, 2000px, 0);\n  }\n}\n\n.bounceOutDown {\n  animation-name: bounceOutDown;\n}\n\n@keyframes bounceOutLeft {\n  20% {\n    opacity: 1;\n    transform: translate3d(20px, 0, 0);\n  }\n\n  to {\n    opacity: 0;\n    transform: translate3d(-2000px, 0, 0);\n  }\n}\n\n.bounceOutLeft {\n  animation-name: bounceOutLeft;\n}\n\n@keyframes bounceOutRight {\n  20% {\n    opacity: 1;\n    transform: translate3d(-20px, 0, 0);\n  }\n\n  to {\n    opacity: 0;\n    transform: translate3d(2000px, 0, 0);\n  }\n}\n\n.bounceOutRight {\n  animation-name: bounceOutRight;\n}\n\n@keyframes bounceOutUp {\n  20% {\n    transform: translate3d(0, -10px, 0);\n  }\n\n  40%, 45% {\n    opacity: 1;\n    transform: translate3d(0, 20px, 0);\n  }\n\n  to {\n    opacity: 0;\n    transform: translate3d(0, -2000px, 0);\n  }\n}\n\n.bounceOutUp {\n  animation-name: bounceOutUp;\n}\n\n@keyframes fadeIn {\n  from {\n    opacity: 0;\n  }\n\n  to {\n    opacity: 1;\n  }\n}\n\n.fadeIn {\n  animation-name: fadeIn;\n}\n\n@keyframes fadeInDown {\n  from {\n    opacity: 0;\n    transform: translate3d(0, -100%, 0);\n  }\n\n  to {\n    opacity: 1;\n    transform: none;\n  }\n}\n\n.fadeInDown {\n  animation-name: fadeInDown;\n}\n\n@keyframes fadeInDownBig {\n  from {\n    opacity: 0;\n    transform: translate3d(0, -2000px, 0);\n  }\n\n  to {\n    opacity: 1;\n    transform: none;\n  }\n}\n\n.fadeInDownBig {\n  animation-name: fadeInDownBig;\n}\n\n@keyframes fadeInLeft {\n  from {\n    opacity: 0;\n    transform: translate3d(-100%, 0, 0);\n  }\n\n  to {\n    opacity: 1;\n    transform: none;\n  }\n}\n\n.fadeInLeft {\n  animation-name: fadeInLeft;\n}\n\n@keyframes fadeInLeftBig {\n  from {\n    opacity: 0;\n    transform: translate3d(-2000px, 0, 0);\n  }\n\n  to {\n    opacity: 1;\n    transform: none;\n  }\n}\n\n.fadeInLeftBig {\n  animation-name: fadeInLeftBig;\n}\n\n@keyframes fadeInRight {\n  from {\n    opacity: 0;\n    transform: translate3d(100%, 0, 0);\n  }\n\n  to {\n    opacity: 1;\n    transform: none;\n  }\n}\n\n.fadeInRight {\n  animation-name: fadeInRight;\n}\n\n@keyframes fadeInRightBig {\n  from {\n    opacity: 0;\n    transform: translate3d(2000px, 0, 0);\n  }\n\n  to {\n    opacity: 1;\n    transform: none;\n  }\n}\n\n.fadeInRightBig {\n  animation-name: fadeInRightBig;\n}\n\n@keyframes fadeInUp {\n  from {\n    opacity: 0;\n    transform: translate3d(0, 100%, 0);\n  }\n\n  to {\n    opacity: 1;\n    transform: none;\n  }\n}\n\n.fadeInUp {\n  animation-name: fadeInUp;\n}\n\n@keyframes fadeInUpBig {\n  from {\n    opacity: 0;\n    transform: translate3d(0, 2000px, 0);\n  }\n\n  to {\n    opacity: 1;\n    transform: none;\n  }\n}\n\n.fadeInUpBig {\n  animation-name: fadeInUpBig;\n}\n\n@keyframes fadeOut {\n  from {\n    opacity: 1;\n  }\n\n  to {\n    opacity: 0;\n  }\n}\n\n.fadeOut {\n  animation-name: fadeOut;\n}\n\n@keyframes fadeOutDown {\n  from {\n    opacity: 1;\n  }\n\n  to {\n    opacity: 0;\n    transform: translate3d(0, 100%, 0);\n  }\n}\n\n.fadeOutDown {\n  animation-name: fadeOutDown;\n}\n\n@keyframes fadeOutDownBig {\n  from {\n    opacity: 1;\n  }\n\n  to {\n    opacity: 0;\n    transform: translate3d(0, 2000px, 0);\n  }\n}\n\n.fadeOutDownBig {\n  animation-name: fadeOutDownBig;\n}\n\n@keyframes fadeOutLeft {\n  from {\n    opacity: 1;\n  }\n\n  to {\n    opacity: 0;\n    transform: translate3d(-100%, 0, 0);\n  }\n}\n\n.fadeOutLeft {\n  animation-name: fadeOutLeft;\n}\n\n@keyframes fadeOutLeftBig {\n  from {\n    opacity: 1;\n  }\n\n  to {\n    opacity: 0;\n    transform: translate3d(-2000px, 0, 0);\n  }\n}\n\n.fadeOutLeftBig {\n  animation-name: fadeOutLeftBig;\n}\n\n@keyframes fadeOutRight {\n  from {\n    opacity: 1;\n  }\n\n  to {\n    opacity: 0;\n    transform: translate3d(100%, 0, 0);\n  }\n}\n\n.fadeOutRight {\n  animation-name: fadeOutRight;\n}\n\n@keyframes fadeOutRightBig {\n  from {\n    opacity: 1;\n  }\n\n  to {\n    opacity: 0;\n    transform: translate3d(2000px, 0, 0);\n  }\n}\n\n.fadeOutRightBig {\n  animation-name: fadeOutRightBig;\n}\n\n@keyframes fadeOutUp {\n  from {\n    opacity: 1;\n  }\n\n  to {\n    opacity: 0;\n    transform: translate3d(0, -100%, 0);\n  }\n}\n\n.fadeOutUp {\n  animation-name: fadeOutUp;\n}\n\n@keyframes fadeOutUpBig {\n  from {\n    opacity: 1;\n  }\n\n  to {\n    opacity: 0;\n    transform: translate3d(0, -2000px, 0);\n  }\n}\n\n.fadeOutUpBig {\n  animation-name: fadeOutUpBig;\n}\n\n@keyframes flip {\n  from {\n    transform: perspective(400px) rotate3d(0, 1, 0, -360deg);\n    animation-timing-function: ease-out;\n  }\n\n  40% {\n    transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -190deg);\n    animation-timing-function: ease-out;\n  }\n\n  50% {\n    transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -170deg);\n    animation-timing-function: ease-in;\n  }\n\n  80% {\n    transform: perspective(400px) scale3d(.95, .95, .95);\n    animation-timing-function: ease-in;\n  }\n\n  to {\n    transform: perspective(400px);\n    animation-timing-function: ease-in;\n  }\n}\n\n.animated.flip {\n  -webkit-backface-visibility: visible;\n  backface-visibility: visible;\n  animation-name: flip;\n}\n\n@keyframes flipInX {\n  from {\n    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);\n    animation-timing-function: ease-in;\n    opacity: 0;\n  }\n\n  40% {\n    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);\n    animation-timing-function: ease-in;\n  }\n\n  60% {\n    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);\n    opacity: 1;\n  }\n\n  80% {\n    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);\n  }\n\n  to {\n    transform: perspective(400px);\n  }\n}\n\n.flipInX {\n  -webkit-backface-visibility: visible !important;\n  backface-visibility: visible !important;\n  animation-name: flipInX;\n}\n\n@keyframes flipInY {\n  from {\n    transform: perspective(400px) rotate3d(0, 1, 0, 90deg);\n    animation-timing-function: ease-in;\n    opacity: 0;\n  }\n\n  40% {\n    transform: perspective(400px) rotate3d(0, 1, 0, -20deg);\n    animation-timing-function: ease-in;\n  }\n\n  60% {\n    transform: perspective(400px) rotate3d(0, 1, 0, 10deg);\n    opacity: 1;\n  }\n\n  80% {\n    transform: perspective(400px) rotate3d(0, 1, 0, -5deg);\n  }\n\n  to {\n    transform: perspective(400px);\n  }\n}\n\n.flipInY {\n  -webkit-backface-visibility: visible !important;\n  backface-visibility: visible !important;\n  animation-name: flipInY;\n}\n\n@keyframes flipOutX {\n  from {\n    transform: perspective(400px);\n  }\n\n  30% {\n    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);\n    opacity: 1;\n  }\n\n  to {\n    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);\n    opacity: 0;\n  }\n}\n\n.flipOutX {\n  animation-name: flipOutX;\n  -webkit-backface-visibility: visible !important;\n  backface-visibility: visible !important;\n}\n\n@keyframes flipOutY {\n  from {\n    transform: perspective(400px);\n  }\n\n  30% {\n    transform: perspective(400px) rotate3d(0, 1, 0, -15deg);\n    opacity: 1;\n  }\n\n  to {\n    transform: perspective(400px) rotate3d(0, 1, 0, 90deg);\n    opacity: 0;\n  }\n}\n\n.flipOutY {\n  -webkit-backface-visibility: visible !important;\n  backface-visibility: visible !important;\n  animation-name: flipOutY;\n}\n\n@keyframes lightSpeedIn {\n  from {\n    transform: translate3d(100%, 0, 0) skewX(-30deg);\n    opacity: 0;\n  }\n\n  60% {\n    transform: skewX(20deg);\n    opacity: 1;\n  }\n\n  80% {\n    transform: skewX(-5deg);\n    opacity: 1;\n  }\n\n  to {\n    transform: none;\n    opacity: 1;\n  }\n}\n\n.lightSpeedIn {\n  animation-name: lightSpeedIn;\n  animation-timing-function: ease-out;\n}\n\n@keyframes lightSpeedOut {\n  from {\n    opacity: 1;\n  }\n\n  to {\n    transform: translate3d(100%, 0, 0) skewX(30deg);\n    opacity: 0;\n  }\n}\n\n.lightSpeedOut {\n  animation-name: lightSpeedOut;\n  animation-timing-function: ease-in;\n}\n\n@keyframes rotateIn {\n  from {\n    transform-origin: center;\n    transform: rotate3d(0, 0, 1, -200deg);\n    opacity: 0;\n  }\n\n  to {\n    transform-origin: center;\n    transform: none;\n    opacity: 1;\n  }\n}\n\n.rotateIn {\n  animation-name: rotateIn;\n}\n\n@keyframes rotateInDownLeft {\n  from {\n    transform-origin: left bottom;\n    transform: rotate3d(0, 0, 1, -45deg);\n    opacity: 0;\n  }\n\n  to {\n    transform-origin: left bottom;\n    transform: none;\n    opacity: 1;\n  }\n}\n\n.rotateInDownLeft {\n  animation-name: rotateInDownLeft;\n}\n\n@keyframes rotateInDownRight {\n  from {\n    transform-origin: right bottom;\n    transform: rotate3d(0, 0, 1, 45deg);\n    opacity: 0;\n  }\n\n  to {\n    transform-origin: right bottom;\n    transform: none;\n    opacity: 1;\n  }\n}\n\n.rotateInDownRight {\n  animation-name: rotateInDownRight;\n}\n\n@keyframes rotateInUpLeft {\n  from {\n    transform-origin: left bottom;\n    transform: rotate3d(0, 0, 1, 45deg);\n    opacity: 0;\n  }\n\n  to {\n    transform-origin: left bottom;\n    transform: none;\n    opacity: 1;\n  }\n}\n\n.rotateInUpLeft {\n  animation-name: rotateInUpLeft;\n}\n\n@keyframes rotateInUpRight {\n  from {\n    transform-origin: right bottom;\n    transform: rotate3d(0, 0, 1, -90deg);\n    opacity: 0;\n  }\n\n  to {\n    transform-origin: right bottom;\n    transform: none;\n    opacity: 1;\n  }\n}\n\n.rotateInUpRight {\n  animation-name: rotateInUpRight;\n}\n\n@keyframes rotateOut {\n  from {\n    transform-origin: center;\n    opacity: 1;\n  }\n\n  to {\n    transform-origin: center;\n    transform: rotate3d(0, 0, 1, 200deg);\n    opacity: 0;\n  }\n}\n\n.rotateOut {\n  animation-name: rotateOut;\n}\n\n@keyframes rotateOutDownLeft {\n  from {\n    transform-origin: left bottom;\n    opacity: 1;\n  }\n\n  to {\n    transform-origin: left bottom;\n    transform: rotate3d(0, 0, 1, 45deg);\n    opacity: 0;\n  }\n}\n\n.rotateOutDownLeft {\n  animation-name: rotateOutDownLeft;\n}\n\n@keyframes rotateOutDownRight {\n  from {\n    transform-origin: right bottom;\n    opacity: 1;\n  }\n\n  to {\n    transform-origin: right bottom;\n    transform: rotate3d(0, 0, 1, -45deg);\n    opacity: 0;\n  }\n}\n\n.rotateOutDownRight {\n  animation-name: rotateOutDownRight;\n}\n\n@keyframes rotateOutUpLeft {\n  from {\n    transform-origin: left bottom;\n    opacity: 1;\n  }\n\n  to {\n    transform-origin: left bottom;\n    transform: rotate3d(0, 0, 1, -45deg);\n    opacity: 0;\n  }\n}\n\n.rotateOutUpLeft {\n  animation-name: rotateOutUpLeft;\n}\n\n@keyframes rotateOutUpRight {\n  from {\n    transform-origin: right bottom;\n    opacity: 1;\n  }\n\n  to {\n    transform-origin: right bottom;\n    transform: rotate3d(0, 0, 1, 90deg);\n    opacity: 0;\n  }\n}\n\n.rotateOutUpRight {\n  animation-name: rotateOutUpRight;\n}\n\n@keyframes hinge {\n  0% {\n    transform-origin: top left;\n    animation-timing-function: ease-in-out;\n  }\n\n  20%, 60% {\n    transform: rotate3d(0, 0, 1, 80deg);\n    transform-origin: top left;\n    animation-timing-function: ease-in-out;\n  }\n\n  40%, 80% {\n    transform: rotate3d(0, 0, 1, 60deg);\n    transform-origin: top left;\n    animation-timing-function: ease-in-out;\n    opacity: 1;\n  }\n\n  to {\n    transform: translate3d(0, 700px, 0);\n    opacity: 0;\n  }\n}\n\n.hinge {\n  animation-name: hinge;\n}\n\n@keyframes jackInTheBox {\n  from {\n    opacity: 0;\n    transform: scale(0.1) rotate(30deg);\n    transform-origin: center bottom;\n  }\n\n  50% {\n    transform: rotate(-10deg);\n  }\n\n  70% {\n    transform: rotate(3deg);\n  }\n\n  to {\n    opacity: 1;\n    transform: scale(1);\n  }\n}\n\n.jackInTheBox {\n  animation-name: jackInTheBox;\n}\n\n/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */\n\n@keyframes rollIn {\n  from {\n    opacity: 0;\n    transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);\n  }\n\n  to {\n    opacity: 1;\n    transform: none;\n  }\n}\n\n.rollIn {\n  animation-name: rollIn;\n}\n\n/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */\n\n@keyframes rollOut {\n  from {\n    opacity: 1;\n  }\n\n  to {\n    opacity: 0;\n    transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);\n  }\n}\n\n.rollOut {\n  animation-name: rollOut;\n}\n\n@keyframes zoomIn {\n  from {\n    opacity: 0;\n    transform: scale3d(.3, .3, .3);\n  }\n\n  50% {\n    opacity: 1;\n  }\n}\n\n.zoomIn {\n  animation-name: zoomIn;\n}\n\n@keyframes zoomInDown {\n  from {\n    opacity: 0;\n    transform: scale3d(.1, .1, .1) translate3d(0, -1000px, 0);\n    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);\n  }\n\n  60% {\n    opacity: 1;\n    transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0);\n    animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);\n  }\n}\n\n.zoomInDown {\n  animation-name: zoomInDown;\n}\n\n@keyframes zoomInLeft {\n  from {\n    opacity: 0;\n    transform: scale3d(.1, .1, .1) translate3d(-1000px, 0, 0);\n    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);\n  }\n\n  60% {\n    opacity: 1;\n    transform: scale3d(.475, .475, .475) translate3d(10px, 0, 0);\n    animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);\n  }\n}\n\n.zoomInLeft {\n  animation-name: zoomInLeft;\n}\n\n@keyframes zoomInRight {\n  from {\n    opacity: 0;\n    transform: scale3d(.1, .1, .1) translate3d(1000px, 0, 0);\n    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);\n  }\n\n  60% {\n    opacity: 1;\n    transform: scale3d(.475, .475, .475) translate3d(-10px, 0, 0);\n    animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);\n  }\n}\n\n.zoomInRight {\n  animation-name: zoomInRight;\n}\n\n@keyframes zoomInUp {\n  from {\n    opacity: 0;\n    transform: scale3d(.1, .1, .1) translate3d(0, 1000px, 0);\n    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);\n  }\n\n  60% {\n    opacity: 1;\n    transform: scale3d(.475, .475, .475) translate3d(0, -60px, 0);\n    animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);\n  }\n}\n\n.zoomInUp {\n  animation-name: zoomInUp;\n}\n\n@keyframes zoomOut {\n  from {\n    opacity: 1;\n  }\n\n  50% {\n    opacity: 0;\n    transform: scale3d(.3, .3, .3);\n  }\n\n  to {\n    opacity: 0;\n  }\n}\n\n.zoomOut {\n  animation-name: zoomOut;\n}\n\n@keyframes zoomOutDown {\n  40% {\n    opacity: 1;\n    transform: scale3d(.475, .475, .475) translate3d(0, -60px, 0);\n    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);\n  }\n\n  to {\n    opacity: 0;\n    transform: scale3d(.1, .1, .1) translate3d(0, 2000px, 0);\n    transform-origin: center bottom;\n    animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);\n  }\n}\n\n.zoomOutDown {\n  animation-name: zoomOutDown;\n}\n\n@keyframes zoomOutLeft {\n  40% {\n    opacity: 1;\n    transform: scale3d(.475, .475, .475) translate3d(42px, 0, 0);\n  }\n\n  to {\n    opacity: 0;\n    transform: scale(.1) translate3d(-2000px, 0, 0);\n    transform-origin: left center;\n  }\n}\n\n.zoomOutLeft {\n  animation-name: zoomOutLeft;\n}\n\n@keyframes zoomOutRight {\n  40% {\n    opacity: 1;\n    transform: scale3d(.475, .475, .475) translate3d(-42px, 0, 0);\n  }\n\n  to {\n    opacity: 0;\n    transform: scale(.1) translate3d(2000px, 0, 0);\n    transform-origin: right center;\n  }\n}\n\n.zoomOutRight {\n  animation-name: zoomOutRight;\n}\n\n@keyframes zoomOutUp {\n  40% {\n    opacity: 1;\n    transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0);\n    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);\n  }\n\n  to {\n    opacity: 0;\n    transform: scale3d(.1, .1, .1) translate3d(0, -2000px, 0);\n    transform-origin: center bottom;\n    animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);\n  }\n}\n\n.zoomOutUp {\n  animation-name: zoomOutUp;\n}\n\n@keyframes slideInDown {\n  from {\n    transform: translate3d(0, -100%, 0);\n    visibility: visible;\n  }\n\n  to {\n    transform: translate3d(0, 0, 0);\n  }\n}\n\n.slideInDown {\n  animation-name: slideInDown;\n}\n\n@keyframes slideInLeft {\n  from {\n    transform: translate3d(-100%, 0, 0);\n    visibility: visible;\n  }\n\n  to {\n    transform: translate3d(0, 0, 0);\n  }\n}\n\n.slideInLeft {\n  animation-name: slideInLeft;\n}\n\n@keyframes slideInRight {\n  from {\n    transform: translate3d(100%, 0, 0);\n    visibility: visible;\n  }\n\n  to {\n    transform: translate3d(0, 0, 0);\n  }\n}\n\n.slideInRight {\n  animation-name: slideInRight;\n}\n\n@keyframes slideInUp {\n  from {\n    transform: translate3d(0, 100%, 0);\n    visibility: visible;\n  }\n\n  to {\n    transform: translate3d(0, 0, 0);\n  }\n}\n\n.slideInUp {\n  animation-name: slideInUp;\n}\n\n@keyframes slideOutDown {\n  from {\n    transform: translate3d(0, 0, 0);\n  }\n\n  to {\n    visibility: hidden;\n    transform: translate3d(0, 100%, 0);\n  }\n}\n\n.slideOutDown {\n  animation-name: slideOutDown;\n}\n\n@keyframes slideOutLeft {\n  from {\n    transform: translate3d(0, 0, 0);\n  }\n\n  to {\n    visibility: hidden;\n    transform: translate3d(-100%, 0, 0);\n  }\n}\n\n.slideOutLeft {\n  animation-name: slideOutLeft;\n}\n\n@keyframes slideOutRight {\n  from {\n    transform: translate3d(0, 0, 0);\n  }\n\n  to {\n    visibility: hidden;\n    transform: translate3d(100%, 0, 0);\n  }\n}\n\n.slideOutRight {\n  animation-name: slideOutRight;\n}\n\n@keyframes slideOutUp {\n  from {\n    transform: translate3d(0, 0, 0);\n  }\n\n  to {\n    visibility: hidden;\n    transform: translate3d(0, -100%, 0);\n  }\n}\n\n.slideOutUp {\n  animation-name: slideOutUp;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 310 */
 /***/ (function(module, exports) {
 
 module.exports = "<!-- <nav>\r\n    <a [routerLink]=\" ['./'] \"\r\n      routerLinkActive=\"active\" [routerLinkActiveOptions]= \"{exact: true}\">\r\n      Index\r\n    </a>\r\n    <a [routerLink]=\" ['./home'] \"\r\n      routerLinkActive=\"active\" [routerLinkActiveOptions]= \"{exact: true}\">\r\n      Home\r\n    </a>\r\n    <a [routerLink]=\" ['./detail'] \"\r\n      routerLinkActive=\"active\" [routerLinkActiveOptions]= \"{exact: true}\">\r\n      Detail\r\n    </a>\r\n    <a [routerLink]=\" ['./barrel'] \"\r\n      routerLinkActive=\"active\" [routerLinkActiveOptions]= \"{exact: true}\">\r\n      Barrel\r\n    </a>\r\n    <a [routerLink]=\" ['./about'] \"\r\n      routerLinkActive=\"active\" [routerLinkActiveOptions]= \"{exact: true}\">\r\n      About\r\n    </a>\r\n  </nav> -->\r\n  <app-header></app-header>\r\n\r\n  <main>\r\n    <router-outlet></router-outlet>\r\n  </main>\r\n\r\n\r\n\r\n <app-footer></app-footer>"
 
 /***/ }),
-/* 309 */
+/* 311 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -98584,7 +98502,7 @@ module.exports = "<!-- <nav>\r\n    <a [routerLink]=\" ['./'] \"\r\n      router
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_of__ = __webpack_require__(310);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_of__ = __webpack_require__(312);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_of___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_of__);
 
 
@@ -98611,7 +98529,7 @@ var APP_RESOLVER_PROVIDERS = [
 
 
 /***/ }),
-/* 310 */
+/* 312 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -98622,17 +98540,17 @@ Observable_1.Observable.of = of_1.of;
 //# sourceMappingURL=of.js.map
 
 /***/ }),
-/* 311 */
+/* 313 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__x_large_directive__ = __webpack_require__(312);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__x_large_directive__ = __webpack_require__(314);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__x_large_directive__["a"]; });
 
 
 
 /***/ }),
-/* 312 */
+/* 314 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -98671,7 +98589,7 @@ XLargeDirective = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 
 /***/ }),
-/* 313 */
+/* 315 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -98707,7 +98625,6 @@ var HeaderComponent = (function () {
         this._chemistService = _chemistService;
         this.UsernameError = false;
         this.MobileError = false;
-        console.log(JSON.parse(localStorage.getItem('UserObject')));
         if (JSON.parse(localStorage.getItem('UserObject')) == undefined || JSON.parse(localStorage.getItem('UserObject')) == null) {
             this.LoggedInUser = new __WEBPACK_IMPORTED_MODULE_3__models_usersModel__["a" /* UsersModel */]();
         }
@@ -98717,6 +98634,7 @@ var HeaderComponent = (function () {
                 _this.CartCount = response.data.length;
                 _this.cartset(_this.CartCount);
             });
+            console.log(this.LoggedInUser);
         }
         var initParams = {
             appId: '130624990977887',
@@ -98904,6 +98822,115 @@ var HeaderComponent = (function () {
             });
         }
     };
+    HeaderComponent.prototype.signUpOnEnter = function (event) {
+        var _this = this;
+        if (event.keyCode == 13) {
+            var error = false;
+            this.user.UserName = __WEBPACK_IMPORTED_MODULE_9_jquery__["trim"](this.user.UserName);
+            this.user.Email = __WEBPACK_IMPORTED_MODULE_9_jquery__["trim"](this.user.Email);
+            this.user.MobileNumber = __WEBPACK_IMPORTED_MODULE_9_jquery__["trim"](this.user.MobileNumber);
+            this.user.Password = __WEBPACK_IMPORTED_MODULE_9_jquery__["trim"](this.user.Password);
+            this.confrimPass = __WEBPACK_IMPORTED_MODULE_9_jquery__["trim"](this.confrimPass);
+            if (this.user.UserName == "" || this.user.UserName.length == 0) {
+                this.UsernameError = true;
+                error = true;
+            }
+            if (this.user.Email == "" || this.user.Email.length == 0) {
+                this.EmailError = true;
+                error = true;
+            }
+            if (this.user.MobileNumber == undefined) {
+                this.MobileError = true;
+                error = true;
+            }
+            if (this.user.Password == "" || this.user.Password.length == 0) {
+                this.PasswordError = true;
+                error = true;
+            }
+            else if (this.user.Password !== this.confrimPass) {
+                this.PasswordError = true;
+                error = true;
+            }
+            if (error) {
+            }
+            else {
+                __WEBPACK_IMPORTED_MODULE_9_jquery__(".loader").show();
+                __WEBPACK_IMPORTED_MODULE_9_jquery__(".submit-custom").hide();
+                this.user.UserType = 1;
+                this._userService.signUp(this.user).subscribe(function (a) {
+                    console.log(a);
+                    if (a.code == 200) {
+                        localStorage.setItem("UserId", a.data.Id);
+                        localStorage.setItem('UserObject', JSON.stringify(a.data));
+                        _this.LoggedInUser = JSON.parse(localStorage.getItem('UserObject'));
+                        localStorage.setItem("logStatus", "loggedIn");
+                        _this.loggedIn = true;
+                        __WEBPACK_IMPORTED_MODULE_9_jquery__(".loader").hide();
+                        __WEBPACK_IMPORTED_MODULE_9_jquery__(".submit-custom").show();
+                        __WEBPACK_IMPORTED_MODULE_9_jquery__("#snackbar").html(a.message);
+                        _this.showToast();
+                        _this.user = new __WEBPACK_IMPORTED_MODULE_3__models_usersModel__["a" /* UsersModel */]();
+                        _this.confrimPass = "";
+                        _this.signUpModal.close();
+                    }
+                    else {
+                        __WEBPACK_IMPORTED_MODULE_9_jquery__("#snackbar").html(a.message);
+                        __WEBPACK_IMPORTED_MODULE_9_jquery__(".loader").hide();
+                        __WEBPACK_IMPORTED_MODULE_9_jquery__(".submit-custom").show();
+                        _this.showToast();
+                    }
+                });
+            }
+        }
+    };
+    HeaderComponent.prototype.onKey = function (event) {
+        var _this = this;
+        if (event.keyCode == 13) {
+            this.user.UserName = __WEBPACK_IMPORTED_MODULE_9_jquery__["trim"](this.user.UserName);
+            this.user.Password = __WEBPACK_IMPORTED_MODULE_9_jquery__["trim"](this.user.Password);
+            this.EmailError = false;
+            this.PasswordError = false;
+            if (this.user.UserName == "" || this.user.UserName.length == 0) {
+                this.EmailError = true;
+            }
+            if (this.user.Password == "" || this.user.Password.length == 0) {
+                this.PasswordError = true;
+            }
+            if (this.PasswordError || this.EmailError) {
+                console.log("Errors");
+            }
+            else {
+                __WEBPACK_IMPORTED_MODULE_9_jquery__(".loader").show();
+                __WEBPACK_IMPORTED_MODULE_9_jquery__(".submit-custom").hide();
+                this.user.UserType = 1;
+                this._userService.loginUser(this.user.UserName, this.user.Password, this.user.UserType).subscribe(function (a) {
+                    if (a.code == 200) {
+                        __WEBPACK_IMPORTED_MODULE_9_jquery__("#snackbar").html(a.message);
+                        __WEBPACK_IMPORTED_MODULE_9_jquery__(".loader").hide();
+                        localStorage.setItem("UserId", a.data.Id);
+                        localStorage.setItem('UserObject', JSON.stringify(a.data));
+                        _this.LoggedInUser = JSON.parse(localStorage.getItem('UserObject'));
+                        localStorage.setItem("logStatus", "loggedIn");
+                        _this.cartset(_this.LoggedInUser.shoppingCarts.length);
+                        _this.loggedIn = true;
+                        _this.showToast();
+                        _this.user = new __WEBPACK_IMPORTED_MODULE_3__models_usersModel__["a" /* UsersModel */]();
+                        var self = _this;
+                        setTimeout(function () {
+                            self.loginModal.close();
+                            __WEBPACK_IMPORTED_MODULE_9_jquery__(".submit-custom").show();
+                        }, 1000);
+                    }
+                    else {
+                        __WEBPACK_IMPORTED_MODULE_9_jquery__("#snackbar").html(a.message);
+                        _this.showToast();
+                        __WEBPACK_IMPORTED_MODULE_9_jquery__(".loader").hide();
+                        __WEBPACK_IMPORTED_MODULE_9_jquery__(".submit-custom").show();
+                    }
+                });
+            }
+        }
+    };
     HeaderComponent.prototype.loginWithFacebook = function () {
         var _this = this;
         var fbCustomer = new __WEBPACK_IMPORTED_MODULE_3__models_usersModel__["a" /* UsersModel */]();
@@ -99023,7 +99050,7 @@ var HeaderComponent = (function () {
         }, function () {
             console.log("hoverout");
         });
-        this.LoggedInUser = new __WEBPACK_IMPORTED_MODULE_3__models_usersModel__["a" /* UsersModel */]();
+        // this.LoggedInUser = new UsersModel();
         this.user = new __WEBPACK_IMPORTED_MODULE_3__models_usersModel__["a" /* UsersModel */]();
         var self = this;
         setTimeout(function () {
@@ -99043,8 +99070,8 @@ __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 HeaderComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
         selector: 'app-header',
-        template: __webpack_require__(314),
-        styles: [__webpack_require__(315), __webpack_require__(136)],
+        template: __webpack_require__(316),
+        styles: [__webpack_require__(317), __webpack_require__(136)],
         encapsulation: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewEncapsulation"].None,
         providers: [__WEBPACK_IMPORTED_MODULE_4__services_userService__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_5__services_chemistService__["a" /* ChemistService */], __WEBPACK_IMPORTED_MODULE_8__services_addtocartService__["a" /* AddtocartService */]]
     }),
@@ -99054,17 +99081,17 @@ HeaderComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 
 /***/ }),
-/* 314 */
+/* 316 */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default\" style=\"margin:0;\">\n  <div class=\"container\">\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#myNavbar\">\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n      </button>\n      <a class=\"navbar-brand\" href=\"#\">\n        <img src=\"assets/img/greenlogo.gif\">\n      </a>\n    </div>\n    <div class=\"collapse navbar-collapse\" id=\"myNavbar\">\n      <ng-container *ngIf=\"loggedIn==false\">\n\n        <ul class=\"nav navbar-nav navbar-right header-right\">\n          <li>\n            <a href=\"#\" (click)=\"signUpModal.open()\">sign up</a>\n          </li>\n          <li class=\"border-left\">\n            <a (click)='loginModal.open()'>login</a>\n          </li>\n        </ul>\n\n      </ng-container>\n\n      <ng-container *ngIf=\"loggedIn==true\">\n\n        <ul class=\"nav navbar-nav navbar-right signedIn\">\n          <li style=\"padding-right: 20px;\" id=\"droppingMenu\" (mouseenter)=\"hovered()\" (mouseleave)=\"hoverOut()\">\n\n              <div class=\"dropdown\">\n                  <button class=\"dropbtn\" > <div class=\"left-photo\">\n                      <img src=\"/assets/img/user.png\" id=\"profile-pic\" style=\"width:25px;\">\n                  </div>\n                  <div class=\"right-name\">\n                      <p class='username'>{{LoggedInUser.UserName}}</p>\n                  </div></button>\n                  <div class=\"dropdown-content\">\n                    <a href=\"/orders\">My Orders</a>\n                    <a href=\"/profile\">Profile</a>\n                    <a href=\"#\" (click)=\"logOutUser()\">Logout</a>\n                  </div>\n                </div>\n                \n           \n            \n          </li >\n          <li class=\"border-left\" style=\"padding-left: 10px;margin-top: 18px;\" (click)=\"navigateToHome()\">\n              <img src=\"/assets/img/cart.png\" style=\"width: 25px;\">\n              <div class=\"cart-count\">{{CartCount}}</div>\n          </li>\n        </ul>\n\n      </ng-container>\n\n     \n    </div>\n  </div>\n</nav>\n<div id=\"snackbar\"></div>\n\n<modal #loginModal  [closeOnEscape]=\"false\" [closeOnOutsideClick]=\"false\" modalClass=\"modal-lg modal-md  animated bounceInDown signUpModal\" (onSubmit)=\"actionOnSubmit()\">\n  <modal-content>\n\n  <!--   <div class=\"signButton\">\n      <button class='SignUpLogin' (click)=\"routeToSignUp()\">Sign Up</button>\n    </div> -->\n\n    <div class=\"closeButton\" (click)=\"loginModal.close()\">\n      <img src=\"/assets/img/cancel.png\" width=\"15px\">\n    </div>\n\n    <div class='login-container'>\n\n      <div class='login clearfix'>\n\n        <div class='left-side'>\n\n          <div class=\"centered\">\n            <h2 class='logIN white'>Log In</h2>\n            <p class=\"white small-text\">Login to Continue</p>\n          </div>\n          <div class=\"image-logo\">\n            <div class=\"left-image\">\n              <img src=\"assets/img/1.gif\">\n            </div>\n            <div class=\"right-text\">\n              <p>Pharma Aid</p>\n            </div>\n\n          </div>\n\n        </div>\n\n        <div class='right-side'>\n          <div class=\"myForms\">\n            <div class=\"form-group\">\n              <label for=\"email\">Email</label>\n              <input type=\"text\" class=\"form-control\" [ngClass]=\"{'errors': EmailError}\" name=\"user.UserName\" [(ngModel)]=\"user.UserName\">\n            </div>\n\n            <div class=\"form-group\">\n              <label for=\"email\">password</label>\n              <input type=\"password\" class=\"form-control\" [ngClass]=\"{'errors': PasswordError}\" name=\"user.Password\" [(ngModel)]=\"user.Password\">\n            </div>\n          </div>\n\n          <div class=\"loader\">\n            <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->\n            <svg width=\"50\" height=\"30\" viewBox=\"0 0 120 30\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"#1ec26b\">\n              <circle cx=\"15\" cy=\"15\" r=\"15\">\n                <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n              <circle cx=\"60\" cy=\"15\" r=\"9\" fill-opacity=\"0.3\">\n                <animate attributeName=\"r\" from=\"9\" to=\"9\" begin=\"0s\" dur=\"0.8s\" values=\"9;15;9\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"0.5\" to=\"0.5\" begin=\"0s\" dur=\"0.8s\" values=\".5;1;.5\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n              <circle cx=\"105\" cy=\"15\" r=\"15\">\n                <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n            </svg>\n\n          </div>\n\n          <div class=\"form-group\" style=\"text-align:center;margin-top:60px;\">\n            <button class=\"submit-custom\" (click)=\"login()\">Login</button>\n          </div>\n\n\n          <div class=\"row clearfix\">\n            <div class='col-md-4 col-sm-4  no-left'>\n              <hr>\n            </div>\n            <div class='col-md-4 col-sm-4 no-padding text-centered'>\n              <p class=\"loginWith\">Login With</p>\n            </div>\n            <div class='col-md-4 col-sm-4 no-right'>\n              <hr>\n            </div>\n          </div>\n\n\n          <div class=\"row clearfix facebook-gmail\">\n\n            <div class=\"half-left\">\n              <a class=\"pointers\" (click)=\"loginWithFacebook()\">\n                <div class='holder'>\n                  <i class='fa fa-facebook'></i>\n                </div>\n              </a>\n            </div>\n            <div class=\"half-right\">\n              <button id=\"googleSignInBtn\" (click)=\"googleInit()\">\n                <div class='holder'>\n                  <img src=\"assets/img/plus.png\" style=\"width:23px;padding-left:2px\">\n                </div>\n              </button>\n            </div>\n\n          </div>\n\n\n        </div>\n\n      </div>\n\n    </div>\n  </modal-content>\n\n</modal>\n\n\n<modal #signUpModal\n[closeOnEscape]=\"false\"\n[closeOnOutsideClick]=\"false\"\nmodalClass=\"modal-lg modal-md  animated bounceInDown signUpModal\"\n(onSubmit)=\"actionOnSubmit()\">\n<modal-content>\n\n  <!-- <div class=\"signButton\">\n    <button class='SignUpLogin' (click)=\"routeToLogin()\">Login</button>\n  </div> -->\n\n  <div class=\"closeButton\" (click)=\"signUpModal.close()\">\n    <img src=\"/assets/img/cancel.png\" width=\"15px\">\n  </div>\n\n<div class='login-container'>\n  \n     <div class='login clearfix'>\n  \n        <div class='left-side'>\n            \n            <div class=\"centered\">\n            <h2 class='logIN white'>Sign Up</h2>\n            <p class=\"white small-text\">Sign up now to enjoy faster and better experience</p>\n           </div>\n            <div class=\"image-logo\">\n             <div class=\"left-image\">\n              <img src=\"assets/img/1.gif\">\n             </div>\n             <div class=\"right-text\">\n              <p>Pharma Aid</p>\n            </div>\n   \n           </div>\n   \n         </div>\n  \n      <div class='right-side'>\n          <div class=\"myForms\">\n\n              <div class=\"form-group\">\n                  <label for=\"email\">username</label>\n                  <input type=\"text\" class=\"form-control\" [ngClass]=\"{'errors': UsernameError}\" name=\"user.UserName\" [(ngModel)]=\"user.UserName\">\n                </div>\n\n            <div class=\"form-group\">\n              <label for=\"email\">Email</label>\n              <input type=\"text\" class=\"form-control\" [ngClass]=\"{'errors': EmailError}\" name=\"user.Email\" [(ngModel)]=\"user.Email\">\n            </div>\n\n            <div class=\"form-group\">\n                <label for=\"email\">mobile number</label>\n                <input type=\"number\" class=\"form-control\" [ngClass]=\"{'errors': MobileError}\" name=\"user.MobileNumber\" [(ngModel)]=\"user.MobileNumber\">\n              </div>\n\n            <div class=\"form-group\">\n              <label for=\"email\">password</label>\n              <input type=\"password\" class=\"form-control\"  [ngClass]=\"{'errors': PasswordError}\" name=\"user.Password\" [(ngModel)]=\"user.Password\">\n            </div>\n\n            <div class=\"form-group\">\n                <label for=\"email\">confirm password</label>\n                <input type=\"password\" class=\"form-control\"  [ngClass]=\"{'errors': PasswordError}\" name=\"confrimPass\" [(ngModel)]=\"confrimPass\">\n              </div>\n          </div>\n\n\n          <div class=\"loader\">\n            <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->\n            <svg width=\"50\" height=\"30\" viewBox=\"0 0 120 30\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"#1ec26b\">\n              <circle cx=\"15\" cy=\"15\" r=\"15\">\n                <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n              <circle cx=\"60\" cy=\"15\" r=\"9\" fill-opacity=\"0.3\">\n                <animate attributeName=\"r\" from=\"9\" to=\"9\" begin=\"0s\" dur=\"0.8s\" values=\"9;15;9\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"0.5\" to=\"0.5\" begin=\"0s\" dur=\"0.8s\" values=\".5;1;.5\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n              <circle cx=\"105\" cy=\"15\" r=\"15\">\n                <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n            </svg>\n\n          </div>\n          \n          <div class=\"form-group\" style=\"text-align:center;margin-top:60px;\">\n            <button class=\"submit-custom\" (click)=\"signUp()\">Sign Up</button>\n          </div>\n\n\n          <div class=\"row clearfix\">\n            <div class='col-md-4 col-sm-4  no-left'>\n              <hr>\n            </div>\n            <div class='col-md-4 col-sm-4 no-padding text-centered'>\n              <p class=\"loginWith\">Sign up With</p>\n            </div>\n            <div class='col-md-4 col-sm-4 no-right'>\n              <hr>\n            </div>\n          </div>\n\n\n          <div class=\"row clearfix facebook-gmail\">\n\n              <div class=\"half-left\">\n                  <a (click)=\"signUpWithFacebook()\"><div class='holder'><i class='fa fa-facebook'></i></div></a>\n              </div>\n              <div class=\"half-right\">\n                  <button id=\"googleSignInBtn\" (click)=\"googleInit()\"><div class='holder'><img src=\"assets/img/plus.png\" style=\"width:23px;padding-left:2px\"></div></button>\n              </div>\n              <!-- <div class=\"g-signin2\" data-onsuccess=\"onSignIn\"></div> -->\n          </div>\n\n\n      </div>\n\n     </div>\n  \n  </div>\n</modal-content>\n\n</modal>"
+module.exports = "<nav class=\"navbar navbar-default\" style=\"margin:0;\">\n  <div class=\"container\">\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#myNavbar\">\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n      </button>\n      <a class=\"navbar-brand\" href=\"#\">\n        <img src=\"assets/img/greenlogo.gif\">\n      </a>\n    </div>\n    <div class=\"collapse navbar-collapse\" id=\"myNavbar\">\n      <ng-container *ngIf=\"loggedIn==false\">\n\n        <ul class=\"nav navbar-nav navbar-right header-right\">\n          <li>\n            <a href=\"#\" (click)=\"signUpModal.open()\">sign up</a>\n          </li>\n          <li class=\"border-left\">\n            <a (click)='loginModal.open()'>login</a>\n          </li>\n        </ul>\n\n      </ng-container>\n\n      <ng-container *ngIf=\"loggedIn==true\">\n\n        <ul class=\"nav navbar-nav navbar-right signedIn\">\n          <li style=\"margin-right: 20px;\" id=\"droppingMenu\" (mouseenter)=\"hovered()\" (mouseleave)=\"hoverOut()\">\n\n              <div class=\"dropdown\">\n                  <button class=\"dropbtn\" > <div class=\"left-photo\">\n                      <img src=\"/assets/img/user.png\" id=\"profile-pic\" style=\"width:25px;\">\n                  </div>\n                  <div class=\"right-name\">\n                      <p class='username'>{{LoggedInUser.UserName}}</p>\n                  </div></button>\n                  <div class=\"dropdown-content\">\n                    <a href=\"/orders\">My Orders</a>\n                    <a href=\"/profile\">Profile</a>\n                    <a href=\"#\" (click)=\"logOutUser()\">Logout</a>\n                  </div>\n                </div>\n                \n           \n            \n          </li >\n          <li class=\"border-left\" style=\"padding-left: 10px;margin-top: 18px;\" (click)=\"navigateToHome()\">\n              <img src=\"/assets/img/cart.png\" style=\"width: 25px;\">\n              <div class=\"cart-count\">{{CartCount}}</div>\n          </li>\n        </ul>\n\n      </ng-container>\n\n     \n    </div>\n  </div>\n</nav>\n<div id=\"snackbar\"></div>\n\n<modal #loginModal  [closeOnEscape]=\"false\" [closeOnOutsideClick]=\"false\" modalClass=\"modal-lg modal-md  animated bounceInDown signUpModal\" (onSubmit)=\"actionOnSubmit()\">\n  <modal-content>\n\n  <!--   <div class=\"signButton\">\n      <button class='SignUpLogin' (click)=\"routeToSignUp()\">Sign Up</button>\n    </div> -->\n\n    <div class=\"closeButton\" (click)=\"loginModal.close()\">\n      <img src=\"/assets/img/cancel.png\" width=\"15px\">\n    </div>\n\n    <div class='login-container'>\n\n      <div class='login clearfix'>\n\n        <div class='left-side'>\n\n          <div class=\"centered\">\n            <h2 class='logIN white'>Log In</h2>\n            <p class=\"white small-text\">Login to Continue</p>\n          </div>\n          <div class=\"image-logo\">\n            <div class=\"left-image\">\n              <img src=\"assets/img/1.gif\">\n            </div>\n            <div class=\"right-text\">\n              <p>Pharma Aid</p>\n            </div>\n\n          </div>\n\n        </div>\n\n        <div class='right-side'>\n          <div class=\"myForms\">\n            <div class=\"form-group\">\n              <label for=\"email\">Email</label>\n              <input type=\"text\" class=\"form-control\" [ngClass]=\"{'errors': EmailError}\" name=\"user.UserName\" [(ngModel)]=\"user.UserName\">\n            </div>\n\n            <div class=\"form-group\">\n              <label for=\"email\">password</label>\n              <input type=\"password\" (keydown)=\"onKey($event)\" class=\"form-control\" [ngClass]=\"{'errors': PasswordError}\" name=\"user.Password\" [(ngModel)]=\"user.Password\">\n            </div>\n          </div>\n\n          <div class=\"loader\">\n            <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->\n            <svg width=\"50\" height=\"30\" viewBox=\"0 0 120 30\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"#1ec26b\">\n              <circle cx=\"15\" cy=\"15\" r=\"15\">\n                <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n              <circle cx=\"60\" cy=\"15\" r=\"9\" fill-opacity=\"0.3\">\n                <animate attributeName=\"r\" from=\"9\" to=\"9\" begin=\"0s\" dur=\"0.8s\" values=\"9;15;9\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"0.5\" to=\"0.5\" begin=\"0s\" dur=\"0.8s\" values=\".5;1;.5\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n              <circle cx=\"105\" cy=\"15\" r=\"15\">\n                <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n            </svg>\n\n          </div>\n\n          <div class=\"form-group\" style=\"text-align:center;margin-top:60px;\">\n            <button class=\"submit-custom\" (click)=\"login()\">Login</button>\n          </div>\n\n\n          <div class=\"row clearfix\">\n            <div class='col-md-4 col-sm-4  no-left'>\n              <hr>\n            </div>\n            <div class='col-md-4 col-sm-4 no-padding text-centered'>\n              <p class=\"loginWith\">Login With</p>\n            </div>\n            <div class='col-md-4 col-sm-4 no-right'>\n              <hr>\n            </div>\n          </div>\n\n\n          <div class=\"row clearfix facebook-gmail\">\n\n            <div class=\"half-left\">\n              <a class=\"pointers\" (click)=\"loginWithFacebook()\">\n                <div class='holder'>\n                  <i class='fa fa-facebook'></i>\n                </div>\n              </a>\n            </div>\n            <div class=\"half-right\">\n              <button id=\"googleSignInBtn\" (click)=\"googleInit()\">\n                <div class='holder'>\n                  <img src=\"assets/img/plus.png\" style=\"width:23px;padding-left:2px\">\n                </div>\n              </button>\n            </div>\n\n          </div>\n\n\n        </div>\n\n      </div>\n\n    </div>\n  </modal-content>\n\n</modal>\n\n\n<modal #signUpModal\n[closeOnEscape]=\"false\"\n[closeOnOutsideClick]=\"false\"\nmodalClass=\"modal-lg modal-md  animated bounceInDown signUpModal\"\n(onSubmit)=\"actionOnSubmit()\">\n<modal-content>\n\n  <!-- <div class=\"signButton\">\n    <button class='SignUpLogin' (click)=\"routeToLogin()\">Login</button>\n  </div> -->\n\n  <div class=\"closeButton\" (click)=\"signUpModal.close()\">\n    <img src=\"/assets/img/cancel.png\" width=\"15px\">\n  </div>\n\n<div class='login-container'>\n  \n     <div class='login clearfix'>\n  \n        <div class='left-side'>\n            \n            <div class=\"centered\">\n            <h2 class='logIN white'>Sign Up</h2>\n            <p class=\"white small-text\">Sign up now to enjoy faster and better experience</p>\n           </div>\n            <div class=\"image-logo\">\n             <div class=\"left-image\">\n              <img src=\"assets/img/1.gif\">\n             </div>\n             <div class=\"right-text\">\n              <p>Pharma Aid</p>\n            </div>\n   \n           </div>\n   \n         </div>\n  \n      <div class='right-side'>\n          <div class=\"myForms\">\n\n              <div class=\"form-group\">\n                  <label for=\"email\">username</label>\n                  <input type=\"text\" class=\"form-control\" [ngClass]=\"{'errors': UsernameError}\" name=\"user.UserName\" [(ngModel)]=\"user.UserName\">\n                </div>\n\n            <div class=\"form-group\">\n              <label for=\"email\">Email</label>\n              <input type=\"text\" class=\"form-control\" [ngClass]=\"{'errors': EmailError}\" name=\"user.Email\" [(ngModel)]=\"user.Email\">\n            </div>\n\n            <div class=\"form-group\">\n                <label for=\"email\">mobile number</label>\n                <input type=\"number\" class=\"form-control\" [ngClass]=\"{'errors': MobileError}\" name=\"user.MobileNumber\" [(ngModel)]=\"user.MobileNumber\">\n              </div>\n\n            <div class=\"form-group\">\n              <label for=\"email\">password</label>\n              <input type=\"password\" class=\"form-control\"  [ngClass]=\"{'errors': PasswordError}\" name=\"user.Password\" [(ngModel)]=\"user.Password\">\n            </div>\n\n            <div class=\"form-group\">\n                <label for=\"email\">confirm password</label>\n                <input type=\"password\" class=\"form-control\"  (keydown)=\"signUpOnEnter($event)\" [ngClass]=\"{'errors': PasswordError}\" name=\"confrimPass\" [(ngModel)]=\"confrimPass\">\n              </div>\n          </div>\n\n\n          <div class=\"loader\">\n            <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->\n            <svg width=\"50\" height=\"30\" viewBox=\"0 0 120 30\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"#1ec26b\">\n              <circle cx=\"15\" cy=\"15\" r=\"15\">\n                <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n              <circle cx=\"60\" cy=\"15\" r=\"9\" fill-opacity=\"0.3\">\n                <animate attributeName=\"r\" from=\"9\" to=\"9\" begin=\"0s\" dur=\"0.8s\" values=\"9;15;9\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"0.5\" to=\"0.5\" begin=\"0s\" dur=\"0.8s\" values=\".5;1;.5\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n              <circle cx=\"105\" cy=\"15\" r=\"15\">\n                <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n            </svg>\n\n          </div>\n          \n          <div class=\"form-group\" style=\"text-align:center;margin-top:60px;\">\n            <button class=\"submit-custom\" (click)=\"signUp()\">Sign Up</button>\n          </div>\n\n\n          <div class=\"row clearfix\">\n            <div class='col-md-4 col-sm-4  no-left'>\n              <hr>\n            </div>\n            <div class='col-md-4 col-sm-4 no-padding text-centered'>\n              <p class=\"loginWith\">Sign up With</p>\n            </div>\n            <div class='col-md-4 col-sm-4 no-right'>\n              <hr>\n            </div>\n          </div>\n\n\n          <div class=\"row clearfix facebook-gmail\">\n\n              <div class=\"half-left\">\n                  <a (click)=\"signUpWithFacebook()\"><div class='holder'><i class='fa fa-facebook'></i></div></a>\n              </div>\n              <div class=\"half-right\">\n                  <button id=\"googleSignInBtn\" (click)=\"googleInit()\"><div class='holder'><img src=\"assets/img/plus.png\" style=\"width:23px;padding-left:2px\"></div></button>\n              </div>\n              <!-- <div class=\"g-signin2\" data-onsuccess=\"onSignIn\"></div> -->\n          </div>\n\n\n      </div>\n\n     </div>\n  \n  </div>\n</modal-content>\n\n</modal>"
 
 /***/ }),
-/* 315 */
+/* 317 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__(316);
+        var result = __webpack_require__(318);
 
         if (typeof result === "string") {
             module.exports = result;
@@ -99074,7 +99101,7 @@ module.exports = "<nav class=\"navbar navbar-default\" style=\"margin:0;\">\n  <
     
 
 /***/ }),
-/* 316 */
+/* 318 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)(undefined);
@@ -99088,7 +99115,7 @@ exports.push([module.i, "\r\n.header-right li a{\r\n    text-transform: uppercas
 
 
 /***/ }),
-/* 317 */
+/* 319 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -99107,8 +99134,8 @@ var FooterComponent = (function () {
 FooterComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
         selector: 'app-footer',
-        template: __webpack_require__(318),
-        styles: [__webpack_require__(319)],
+        template: __webpack_require__(320),
+        styles: [__webpack_require__(321)],
         encapsulation: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewEncapsulation"].None
     }),
     __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:paramtypes", [])
@@ -99117,17 +99144,17 @@ FooterComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 
 /***/ }),
-/* 318 */
+/* 320 */
 /***/ (function(module, exports) {
 
 module.exports = "<footer class=\"site-footer\">\n    <ul class=\"footer-links\">\n\n      <li><a href=\"\">Terms & Conditions</a></li>\n      <li><a href=\"\">Privacy Policy</a></li>\n      <li><a href=\"\">&copy; Copyright 2017, Pharmaaid is a registered trademark</a></li>\n      <li><a href=\"\">Pharmaaid Pakistan</a></li>\n\n    </ul> \n</footer>"
 
 /***/ }),
-/* 319 */
+/* 321 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__(320);
+        var result = __webpack_require__(322);
 
         if (typeof result === "string") {
             module.exports = result;
@@ -99137,7 +99164,7 @@ module.exports = "<footer class=\"site-footer\">\n    <ul class=\"footer-links\"
     
 
 /***/ }),
-/* 320 */
+/* 322 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)(undefined);
@@ -99151,7 +99178,7 @@ exports.push([module.i, ".site-footer{\r\n    position: absolute;\r\n    width:1
 
 
 /***/ }),
-/* 321 */
+/* 323 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -100058,7 +100085,7 @@ StarRatingModule.ctorParameters = function () { return []; };
 
 
 /***/ }),
-/* 322 */
+/* 324 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
@@ -100072,7 +100099,7 @@ var transform;
 var options = {}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(140)(content, options);
+var update = __webpack_require__(143)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(true) {
@@ -100089,7 +100116,7 @@ if(true) {
 }
 
 /***/ }),
-/* 323 */
+/* 325 */
 /***/ (function(module, exports) {
 
 
@@ -100184,7 +100211,7 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 324 */
+/* 326 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
@@ -100198,7 +100225,7 @@ var transform;
 var options = {}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(140)(content, options);
+var update = __webpack_require__(143)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(true) {
@@ -100215,11 +100242,11 @@ if(true) {
 }
 
 /***/ }),
-/* 325 */
+/* 327 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_index__ = __webpack_require__(326);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_index__ = __webpack_require__(328);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["a"]; });
 /**
  * @module
@@ -100230,11 +100257,11 @@ if(true) {
 
 
 /***/ }),
-/* 326 */
+/* 328 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_ng2_google_place_module__ = __webpack_require__(327);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_ng2_google_place_module__ = __webpack_require__(329);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__app_ng2_google_place_module__["a"]; });
 /**
  * @module
@@ -100245,7 +100272,7 @@ if(true) {
 
 
 /***/ }),
-/* 327 */
+/* 329 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -100253,8 +100280,8 @@ if(true) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ng2_google_place_directive__ = __webpack_require__(328);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ng2_google_place_service__ = __webpack_require__(141);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ng2_google_place_directive__ = __webpack_require__(330);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ng2_google_place_service__ = __webpack_require__(144);
 
 
 
@@ -100277,14 +100304,14 @@ GooglePlaceModule = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 
 /***/ }),
-/* 328 */
+/* 330 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GooglePlaceDirective; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ng2_google_place_service__ = __webpack_require__(141);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ng2_google_place_service__ = __webpack_require__(144);
 
 
 
@@ -100483,19 +100510,19 @@ GooglePlaceDirective = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]
 
 
 /***/ }),
-/* 329 */
+/* 331 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var tab_component_1 = __webpack_require__(142);
+var tab_component_1 = __webpack_require__(145);
 exports.NguiTabComponent = tab_component_1.NguiTabComponent;
-var tab_module_1 = __webpack_require__(330);
+var tab_module_1 = __webpack_require__(332);
 exports.NguiTabModule = tab_module_1.NguiTabModule;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 330 */
+/* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -100512,7 +100539,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = __webpack_require__(0);
 var forms_1 = __webpack_require__(50);
 var common_1 = __webpack_require__(12);
-var tab_component_1 = __webpack_require__(142);
+var tab_component_1 = __webpack_require__(145);
 exports.NguiTabComponent = tab_component_1.NguiTabComponent;
 var NguiTabModule = (function () {
     function NguiTabModule() {
@@ -100531,14 +100558,14 @@ exports.NguiTabModule = NguiTabModule;
 //# sourceMappingURL=tab.module.js.map
 
 /***/ }),
-/* 331 */
+/* 333 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lib_image_upload_module__ = __webpack_require__(332);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lib_image_upload_module__ = __webpack_require__(334);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lib_image_upload_module___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__lib_image_upload_module__);
 /* harmony reexport (binding) */ if(__webpack_require__.o(__WEBPACK_IMPORTED_MODULE_0__lib_image_upload_module__, "ImageUploadModule")) __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__lib_image_upload_module__["ImageUploadModule"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__lib_image_upload_image_upload_component__ = __webpack_require__(143);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__lib_image_upload_image_upload_component__ = __webpack_require__(146);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__lib_image_upload_image_upload_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__lib_image_upload_image_upload_component__);
 /* unused harmony reexport ImageUploadComponent */
 /* unused harmony reexport FileHolder */
@@ -100547,7 +100574,7 @@ exports.NguiTabModule = NguiTabModule;
 
 
 /***/ }),
-/* 332 */
+/* 334 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -100555,9 +100582,9 @@ exports.NguiTabModule = NguiTabModule;
 var common_1 = __webpack_require__(12);
 var core_1 = __webpack_require__(0);
 var http_1 = __webpack_require__(10);
-var file_drop_directive_1 = __webpack_require__(333);
-var image_upload_component_1 = __webpack_require__(143);
-var image_service_1 = __webpack_require__(144);
+var file_drop_directive_1 = __webpack_require__(335);
+var image_upload_component_1 = __webpack_require__(146);
+var image_service_1 = __webpack_require__(147);
 var ImageUploadModule = (function () {
     function ImageUploadModule() {
     }
@@ -100581,7 +100608,7 @@ exports.ImageUploadModule = ImageUploadModule;
 
 
 /***/ }),
-/* 333 */
+/* 335 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -100668,42 +100695,42 @@ exports.FileDropDirective = FileDropDirective;
 
 
 /***/ }),
-/* 334 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-function __export(m) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
-__export(__webpack_require__(335));
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-/* 335 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-function __export(m) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
-__export(__webpack_require__(145));
-__export(__webpack_require__(147));
-__export(__webpack_require__(49));
-__export(__webpack_require__(350));
-//# sourceMappingURL=index.js.map
-
-/***/ }),
 /* 336 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+__export(__webpack_require__(337));
+//# sourceMappingURL=index.js.map
 
-var destroy = __webpack_require__(337);
-var initialize = __webpack_require__(341);
-var update = __webpack_require__(349);
+/***/ }),
+/* 337 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+__export(__webpack_require__(148));
+__export(__webpack_require__(150));
+__export(__webpack_require__(49));
+__export(__webpack_require__(352));
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+/* 338 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var destroy = __webpack_require__(339);
+var initialize = __webpack_require__(343);
+var update = __webpack_require__(351);
 
 module.exports = {
   initialize: initialize,
@@ -100713,7 +100740,7 @@ module.exports = {
 
 
 /***/ }),
-/* 337 */
+/* 339 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -100742,7 +100769,7 @@ module.exports = function (element) {
 
 
 /***/ }),
-/* 338 */
+/* 340 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -100765,7 +100792,7 @@ module.exports = {
 
 
 /***/ }),
-/* 339 */
+/* 341 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -100843,7 +100870,7 @@ module.exports = EventManager;
 
 
 /***/ }),
-/* 340 */
+/* 342 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -100863,7 +100890,7 @@ module.exports = (function () {
 
 
 /***/ }),
-/* 341 */
+/* 343 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -100876,14 +100903,14 @@ var updateGeometry = __webpack_require__(19);
 
 // Handlers
 var handlers = {
-  'click-rail': __webpack_require__(342),
-  'drag-scrollbar': __webpack_require__(343),
-  'keyboard': __webpack_require__(344),
-  'wheel': __webpack_require__(345),
-  'touch': __webpack_require__(346),
-  'selection': __webpack_require__(347)
+  'click-rail': __webpack_require__(344),
+  'drag-scrollbar': __webpack_require__(345),
+  'keyboard': __webpack_require__(346),
+  'wheel': __webpack_require__(347),
+  'touch': __webpack_require__(348),
+  'selection': __webpack_require__(349)
 };
-var nativeScrollHandler = __webpack_require__(348);
+var nativeScrollHandler = __webpack_require__(350);
 
 module.exports = function (element, userSettings) {
   userSettings = typeof userSettings === 'object' ? userSettings : {};
@@ -100907,7 +100934,7 @@ module.exports = function (element, userSettings) {
 
 
 /***/ }),
-/* 342 */
+/* 344 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -100953,7 +100980,7 @@ module.exports = function (element) {
 
 
 /***/ }),
-/* 343 */
+/* 345 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -101063,7 +101090,7 @@ module.exports = function (element) {
 
 
 /***/ }),
-/* 344 */
+/* 346 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -101224,7 +101251,7 @@ module.exports = function (element) {
 
 
 /***/ }),
-/* 345 */
+/* 347 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -101372,7 +101399,7 @@ module.exports = function (element) {
 
 
 /***/ }),
-/* 346 */
+/* 348 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -101558,7 +101585,7 @@ module.exports = function (element) {
 
 
 /***/ }),
-/* 347 */
+/* 349 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -101680,7 +101707,7 @@ module.exports = function (element) {
 
 
 /***/ }),
-/* 348 */
+/* 350 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -101702,7 +101729,7 @@ module.exports = function (element) {
 
 
 /***/ }),
-/* 349 */
+/* 351 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -101746,15 +101773,15 @@ module.exports = function (element) {
 
 
 /***/ }),
-/* 350 */
+/* 352 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var common_1 = __webpack_require__(12);
 var core_1 = __webpack_require__(0);
-var perfect_scrollbar_component_1 = __webpack_require__(145);
-var perfect_scrollbar_directive_1 = __webpack_require__(147);
+var perfect_scrollbar_component_1 = __webpack_require__(148);
+var perfect_scrollbar_directive_1 = __webpack_require__(150);
 var perfect_scrollbar_interfaces_1 = __webpack_require__(49);
 exports.PERFECT_SCROLLBAR_GUARD = new core_1.OpaqueToken('PERFECT_SCROLLBAR_GUARD');
 exports.PERFECT_SCROLLBAR_CONFIG = new core_1.OpaqueToken('PERFECT_SCROLLBAR_CONFIG');
