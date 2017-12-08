@@ -86,7 +86,7 @@ var ac_main =
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "d0acc76b3925dcc28450"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "3e91ab68a3c72a1777ee"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -88539,8 +88539,7 @@ AppModule = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
             __WEBPACK_IMPORTED_MODULE_32_angular2_perfect_scrollbar__["PerfectScrollbarModule"].forRoot(PERFECT_SCROLLBAR_CONFIG),
             __WEBPACK_IMPORTED_MODULE_31_angular2_image_upload__["a" /* ImageUploadModule */].forRoot(),
             __WEBPACK_IMPORTED_MODULE_6__angular_router__["RouterModule"].forRoot(__WEBPACK_IMPORTED_MODULE_9__app_routes__["a" /* ROUTES */], {
-                useHash: Boolean(history.pushState) === false,
-                preloadingStrategy: __WEBPACK_IMPORTED_MODULE_6__angular_router__["PreloadAllModules"]
+                useHash: true
             })
         ],
         /**
@@ -88557,6 +88556,10 @@ AppModule = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
         __WEBPACK_IMPORTED_MODULE_26__services_sharedService__["a" /* SharedService */]])
 ], AppModule);
 
+/*RouterModule.forRoot(ROUTES, {
+      useHash: Boolean(history.pushState) === false,
+      preloadingStrategy: PreloadAllModules
+    }) */ 
 
 
 /***/ }),
