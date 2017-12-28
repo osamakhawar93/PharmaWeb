@@ -86,7 +86,7 @@ var ac_main =
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "c72677cad07ffa16d90c"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "c3fc8f059a4fd7d4f9f1"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -99569,9 +99569,9 @@ var HeaderComponent = (function () {
     };
     HeaderComponent.prototype.ngAfterViewInit = function () {
         var self = this;
-        setTimeout(function () {
-            self.googleInit();
-        }, 4000);
+        /* setTimeout(function () {
+          self.googleInit();
+        }, 4000); */
     };
     HeaderComponent.prototype.ngOnInit = function () {
         __WEBPACK_IMPORTED_MODULE_11_jquery__('.signedIn #droppingMenu .dropdown').hover(function () {
