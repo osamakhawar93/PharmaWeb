@@ -27,8 +27,8 @@ var ac_main =
 /******/ 	function hotDisposeChunk(chunkId) {
 /******/ 		delete installedChunks[chunkId];
 /******/ 	}
-/******/ 	var parentHotUpdateCallback = this["webpackHotUpdateac__name_"];
-/******/ 	this["webpackHotUpdateac__name_"] = 
+/******/ 	var parentHotUpdateCallback = window["webpackHotUpdateac__name_"];
+/******/ 	window["webpackHotUpdateac__name_"] = 
 /******/ 	function webpackHotUpdateCallback(chunkId, moreModules) { // eslint-disable-line no-unused-vars
 /******/ 		hotAddUpdateChunk(chunkId, moreModules);
 /******/ 		if(parentHotUpdateCallback) parentHotUpdateCallback(chunkId, moreModules);
@@ -86,7 +86,7 @@ var ac_main =
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "c3fc8f059a4fd7d4f9f1"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "2194b024b9211a53e94d"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -1012,9 +1012,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_merge__ = __webpack_require__(215);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_merge___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_observable_merge__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_share__ = __webpack_require__(219);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_share__ = __webpack_require__(218);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_share___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_operator_share__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Subject__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Subject__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_Subject__);
 
 /**
@@ -6674,7 +6674,7 @@ var SystemJsNgModuleLoader = (function () {
         if (exportName === undefined) {
             exportName = 'default';
         }
-        return __webpack_require__(108)(module)
+        return __webpack_require__(107)(module)
             .then(function (module) { return module[exportName]; })
             .then(function (type) { return checkNotEmpty(type, module, exportName); })
             .then(function (type) { return _this._compiler.compileModuleAsync(type); });
@@ -6690,7 +6690,7 @@ var SystemJsNgModuleLoader = (function () {
             exportName = 'default';
             factoryClassSuffix = '';
         }
-        return __webpack_require__(108)(this._config.factoryPathPrefix + module + this._config.factoryPathSuffix)
+        return __webpack_require__(107)(this._config.factoryPathPrefix + module + this._config.factoryPathSuffix)
             .then(function (module) { return module[exportName + factoryClassSuffix]; })
             .then(function (factory) { return checkNotEmpty(factory, module, exportName); });
     };
@@ -15840,7 +15840,7 @@ function transition$$1(stateChangeExpr, steps) {
 
 //# sourceMappingURL=core.es5.js.map
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(45)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(37)))
 
 /***/ }),
 /* 1 */
@@ -16041,7 +16041,7 @@ function __makeTemplateObject(cooked, raw) {
 
 var root_1 = __webpack_require__(25);
 var toSubscriber_1 = __webpack_require__(211);
-var observable_1 = __webpack_require__(69);
+var observable_1 = __webpack_require__(70);
 var pipe_1 = __webpack_require__(100);
 /**
  * A representation of any set of values over any amount of time. This is the most basic building block
@@ -16197,7 +16197,7 @@ var Observable = (function () {
             operator.call(sink, this.source);
         }
         else {
-            sink.add(this.source ? this._subscribe(sink) : this._trySubscribe(sink));
+            sink.add(this.source || !sink.syncErrorThrowable ? this._subscribe(sink) : this._trySubscribe(sink));
         }
         if (sink.syncErrorThrowable) {
             sink.syncErrorThrowable = false;
@@ -16360,7 +16360,7 @@ var __extends = (this && this.__extends) || function (d, b) {
 var isFunction_1 = __webpack_require__(96);
 var Subscription_1 = __webpack_require__(46);
 var Observer_1 = __webpack_require__(99);
-var rxSubscriber_1 = __webpack_require__(68);
+var rxSubscriber_1 = __webpack_require__(69);
 /**
  * Implements the {@link Observer} interface and extends the
  * {@link Subscription} class. While the {@link Observer} is the public API for
@@ -16398,6 +16398,7 @@ var Subscriber = (function (_super) {
                 }
                 if (typeof destinationOrNext === 'object') {
                     if (destinationOrNext instanceof Subscriber) {
+                        this.syncErrorThrowable = destinationOrNext.syncErrorThrowable;
                         this.destination = destinationOrNext;
                         this.destination.add(this);
                     }
@@ -16618,88 +16619,6 @@ var SafeSubscriber = (function (_super) {
 
 /***/ }),
 /* 7 */
-/***/ (function(module, exports) {
-
-/*
-	MIT License http://www.opensource.org/licenses/mit-license.php
-	Author Tobias Koppers @sokra
-*/
-// css base code, injected by the css-loader
-module.exports = function(useSourceMap) {
-	var list = [];
-
-	// return the list of modules as css string
-	list.toString = function toString() {
-		return this.map(function (item) {
-			var content = cssWithMappingToString(item, useSourceMap);
-			if(item[2]) {
-				return "@media " + item[2] + "{" + content + "}";
-			} else {
-				return content;
-			}
-		}).join("");
-	};
-
-	// import a list of modules into the list
-	list.i = function(modules, mediaQuery) {
-		if(typeof modules === "string")
-			modules = [[null, modules, ""]];
-		var alreadyImportedModules = {};
-		for(var i = 0; i < this.length; i++) {
-			var id = this[i][0];
-			if(typeof id === "number")
-				alreadyImportedModules[id] = true;
-		}
-		for(i = 0; i < modules.length; i++) {
-			var item = modules[i];
-			// skip already imported module
-			// this implementation is not 100% perfect for weird media query combinations
-			//  when a module is imported multiple times with different media queries.
-			//  I hope this will never occur (Hey this way we have smaller bundles)
-			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-				if(mediaQuery && !item[2]) {
-					item[2] = mediaQuery;
-				} else if(mediaQuery) {
-					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-				}
-				list.push(item);
-			}
-		}
-	};
-	return list;
-};
-
-function cssWithMappingToString(item, useSourceMap) {
-	var content = item[1] || '';
-	var cssMapping = item[3];
-	if (!cssMapping) {
-		return content;
-	}
-
-	if (useSourceMap && typeof btoa === 'function') {
-		var sourceMapping = toComment(cssMapping);
-		var sourceURLs = cssMapping.sources.map(function (source) {
-			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
-		});
-
-		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
-	}
-
-	return [content].join('\n');
-}
-
-// Adapted from convert-source-map (MIT)
-function toComment(sourceMap) {
-	// eslint-disable-next-line no-undef
-	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
-	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
-
-	return '/*# ' + data + ' */';
-}
-
-
-/***/ }),
-/* 8 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -18928,18 +18847,18 @@ var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["Version"]('4.4.6'
 
 
 /***/ }),
-/* 9 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var _ = __webpack_require__(18);
-var cls = __webpack_require__(49);
-var defaultSettings = __webpack_require__(342);
+var cls = __webpack_require__(50);
+var defaultSettings = __webpack_require__(343);
 var dom = __webpack_require__(28);
-var EventManager = __webpack_require__(343);
-var guid = __webpack_require__(344);
+var EventManager = __webpack_require__(344);
+var guid = __webpack_require__(345);
 
 var instances = {};
 
@@ -19042,8 +18961,8 @@ exports.get = function (element) {
 
 
 /***/ }),
-/* 10 */,
-/* 11 */
+/* 9 */,
+/* 10 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -19112,6 +19031,88 @@ var FBMLComponent = (function () {
 }());
 
 //# sourceMappingURL=fbml-component.js.map
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function(useSourceMap) {
+	var list = [];
+
+	// return the list of modules as css string
+	list.toString = function toString() {
+		return this.map(function (item) {
+			var content = cssWithMappingToString(item, useSourceMap);
+			if(item[2]) {
+				return "@media " + item[2] + "{" + content + "}";
+			} else {
+				return content;
+			}
+		}).join("");
+	};
+
+	// import a list of modules into the list
+	list.i = function(modules, mediaQuery) {
+		if(typeof modules === "string")
+			modules = [[null, modules, ""]];
+		var alreadyImportedModules = {};
+		for(var i = 0; i < this.length; i++) {
+			var id = this[i][0];
+			if(typeof id === "number")
+				alreadyImportedModules[id] = true;
+		}
+		for(i = 0; i < modules.length; i++) {
+			var item = modules[i];
+			// skip already imported module
+			// this implementation is not 100% perfect for weird media query combinations
+			//  when a module is imported multiple times with different media queries.
+			//  I hope this will never occur (Hey this way we have smaller bundles)
+			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+				if(mediaQuery && !item[2]) {
+					item[2] = mediaQuery;
+				} else if(mediaQuery) {
+					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+				}
+				list.push(item);
+			}
+		}
+	};
+	return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+	var content = item[1] || '';
+	var cssMapping = item[3];
+	if (!cssMapping) {
+		return content;
+	}
+
+	if (useSourceMap && typeof btoa === 'function') {
+		var sourceMapping = toComment(cssMapping);
+		var sourceURLs = cssMapping.sources.map(function (source) {
+			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
+		});
+
+		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+	}
+
+	return [content].join('\n');
+}
+
+// Adapted from convert-source-map (MIT)
+function toComment(sourceMap) {
+	// eslint-disable-next-line no-undef
+	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
+
+	return '/*# ' + data + ' */';
+}
+
 
 /***/ }),
 /* 12 */
@@ -23238,42 +23239,42 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_BehaviorSubject__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_BehaviorSubject__ = __webpack_require__(112);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_BehaviorSubject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_BehaviorSubject__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Subject__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Subject__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_Subject__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_observable_from__ = __webpack_require__(232);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_observable_from__ = __webpack_require__(231);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_observable_from___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_observable_from__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_observable_of__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_observable_of__ = __webpack_require__(113);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_observable_of___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_observable_of__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_operator_concatMap__ = __webpack_require__(238);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_operator_concatMap__ = __webpack_require__(237);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_operator_concatMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_rxjs_operator_concatMap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_operator_every__ = __webpack_require__(240);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_operator_every__ = __webpack_require__(239);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_operator_every___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_rxjs_operator_every__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_operator_first__ = __webpack_require__(242);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_operator_first__ = __webpack_require__(241);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_operator_first___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_rxjs_operator_first__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_last__ = __webpack_require__(244);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_last__ = __webpack_require__(243);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_last___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_rxjs_operator_last__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_map__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_map__ = __webpack_require__(77);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_rxjs_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_rxjs_operator_mergeMap__ = __webpack_require__(246);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_rxjs_operator_mergeMap__ = __webpack_require__(245);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_rxjs_operator_mergeMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_rxjs_operator_mergeMap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_rxjs_operator_reduce__ = __webpack_require__(247);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_rxjs_operator_reduce__ = __webpack_require__(246);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_rxjs_operator_reduce___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_rxjs_operator_reduce__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_rxjs_Observable__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_rxjs_operator_catch__ = __webpack_require__(253);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_rxjs_operator_catch__ = __webpack_require__(252);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_rxjs_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15_rxjs_operator_catch__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_rxjs_operator_concatAll__ = __webpack_require__(255);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_rxjs_operator_concatAll__ = __webpack_require__(254);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_rxjs_operator_concatAll___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16_rxjs_operator_concatAll__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_rxjs_util_EmptyError__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_rxjs_util_EmptyError__ = __webpack_require__(78);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_rxjs_util_EmptyError___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_17_rxjs_util_EmptyError__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_rxjs_observable_fromPromise__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_rxjs_observable_fromPromise__ = __webpack_require__(110);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_rxjs_observable_fromPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_18_rxjs_observable_fromPromise__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19_rxjs_operator_mergeAll__ = __webpack_require__(257);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19_rxjs_operator_mergeAll__ = __webpack_require__(256);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19_rxjs_operator_mergeAll___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_19_rxjs_operator_mergeAll__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__angular_platform_browser__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_rxjs_operator_filter__ = __webpack_require__(258);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_rxjs_operator_filter__ = __webpack_require__(257);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_rxjs_operator_filter___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_21_rxjs_operator_filter__);
 
 /**
@@ -29575,7 +29576,7 @@ var VERSION = new __WEBPACK_IMPORTED_MODULE_2__angular_core__["Version"]('4.4.6'
 "use strict";
 
 
-var cls = __webpack_require__(49);
+var cls = __webpack_require__(50);
 var dom = __webpack_require__(28);
 
 var toInt = exports.toInt = function (x) {
@@ -29666,9 +29667,9 @@ exports.env = {
 
 
 var _ = __webpack_require__(18);
-var cls = __webpack_require__(49);
+var cls = __webpack_require__(50);
 var dom = __webpack_require__(28);
-var instances = __webpack_require__(9);
+var instances = __webpack_require__(8);
 var updateScroll = __webpack_require__(22);
 
 function getThumbSize(i, thumbSize) {
@@ -29799,7 +29800,7 @@ module.exports = function (element) {
 "use strict";
 
 var Observable_1 = __webpack_require__(3);
-var map_1 = __webpack_require__(76);
+var map_1 = __webpack_require__(77);
 Observable_1.Observable.prototype.map = map_1.map;
 //# sourceMappingURL=map.js.map
 
@@ -29810,7 +29811,7 @@ Observable_1.Observable.prototype.map = map_1.map;
 "use strict";
 
 
-var instances = __webpack_require__(9);
+var instances = __webpack_require__(8);
 
 var lastTop;
 var lastLeft;
@@ -29933,7 +29934,7 @@ exports.root = _root;
     }
 })();
 //# sourceMappingURL=root.js.map
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(45)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(37)))
 
 /***/ }),
 /* 26 */
@@ -34531,6 +34532,20 @@ module.exports = DOM;
 
 /***/ }),
 /* 29 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UsersModel; });
+var UsersModel = (function () {
+    function UsersModel() {
+    }
+    return UsersModel;
+}());
+
+
+
+/***/ }),
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -44746,9 +44761,9 @@ jQuery.nodeName = nodeName;
 // https://github.com/jrburke/requirejs/wiki/Updating-existing-libraries#wiki-anon
 
 if ( true ) {
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function() {
 		return jQuery;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+	}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 }
 
@@ -44790,20 +44805,6 @@ return jQuery;
 
 
 /***/ }),
-/* 30 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UsersModel; });
-var UsersModel = (function () {
-    function UsersModel() {
-    }
-    return UsersModel;
-}());
-
-
-
-/***/ }),
 /* 31 */,
 /* 32 */,
 /* 33 */,
@@ -44811,6 +44812,33 @@ var UsersModel = (function () {
 /* 35 */,
 /* 36 */,
 /* 37 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44823,9 +44851,9 @@ var __extends = (this && this.__extends) || function (d, b) {
 var Observable_1 = __webpack_require__(3);
 var Subscriber_1 = __webpack_require__(6);
 var Subscription_1 = __webpack_require__(46);
-var ObjectUnsubscribedError_1 = __webpack_require__(106);
-var SubjectSubscription_1 = __webpack_require__(223);
-var rxSubscriber_1 = __webpack_require__(68);
+var ObjectUnsubscribedError_1 = __webpack_require__(105);
+var SubjectSubscription_1 = __webpack_require__(222);
+var rxSubscriber_1 = __webpack_require__(69);
 /**
  * @class SubjectSubscriber<T>
  */
@@ -44984,67 +45012,6 @@ exports.AnonymousSubject = AnonymousSubject;
 //# sourceMappingURL=Subject.js.map
 
 /***/ }),
-/* 38 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SharedService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__serviceUrl__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__models_geoModel__ = __webpack_require__(79);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_BehaviorSubject__ = __webpack_require__(113);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_BehaviorSubject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_BehaviorSubject__);
-
-
-
-
-
-
-
-var SharedService = (function () {
-    function SharedService(http) {
-        this.http = http;
-        this.serviceUrl = new __WEBPACK_IMPORTED_MODULE_4__serviceUrl__["a" /* ServiceUrl */]();
-        this.cartCount = new __WEBPACK_IMPORTED_MODULE_6_rxjs_BehaviorSubject__["BehaviorSubject"](0);
-        this.currentCount = this.cartCount.asObservable();
-        this.geoModel = __WEBPACK_IMPORTED_MODULE_5__models_geoModel__["a" /* GeoModel */];
-    }
-    SharedService.prototype.setAddress = function (address) {
-        this.locationAddress = address;
-    };
-    SharedService.prototype.getAddress = function () {
-        return this.locationAddress;
-    };
-    SharedService.prototype.setGeoAddress = function (latLongRadius) {
-        this.geoModel = latLongRadius;
-    };
-    SharedService.prototype.getGeoAddress = function () {
-        return this.geoModel;
-    };
-    SharedService.prototype.setWhichChemistToGet = function (chemistObject) {
-        this.gettingThisChemist = chemistObject;
-    };
-    SharedService.prototype.getWhichChemistToGet = function () {
-        return this.gettingThisChemist;
-    };
-    SharedService.prototype.getCartCount = function (count) {
-        console.log(count);
-        this.cartCount.next(count);
-    };
-    return SharedService;
-}());
-SharedService = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
-    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
-    __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__angular_http__["Http"]])
-], SharedService);
-
-
-
-/***/ }),
 /* 39 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -45054,7 +45021,7 @@ SharedService = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__serviceUrl__ = __webpack_require__(27);
 
 
@@ -45156,44 +45123,78 @@ UserService = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 
 /***/ }),
-/* 40 */,
+/* 40 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SharedService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__serviceUrl__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__models_geoModel__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_BehaviorSubject__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_BehaviorSubject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_BehaviorSubject__);
+
+
+
+
+
+
+
+var SharedService = (function () {
+    function SharedService(http) {
+        this.http = http;
+        this.serviceUrl = new __WEBPACK_IMPORTED_MODULE_4__serviceUrl__["a" /* ServiceUrl */]();
+        this.cartCount = new __WEBPACK_IMPORTED_MODULE_6_rxjs_BehaviorSubject__["BehaviorSubject"](0);
+        this.currentCount = this.cartCount.asObservable();
+        this.geoModel = __WEBPACK_IMPORTED_MODULE_5__models_geoModel__["a" /* GeoModel */];
+    }
+    SharedService.prototype.setAddress = function (address) {
+        this.locationAddress = address;
+    };
+    SharedService.prototype.getAddress = function () {
+        return this.locationAddress;
+    };
+    SharedService.prototype.setGeoAddress = function (latLongRadius) {
+        this.geoModel = latLongRadius;
+    };
+    SharedService.prototype.getGeoAddress = function () {
+        return this.geoModel;
+    };
+    SharedService.prototype.setWhichChemistToGet = function (chemistObject) {
+        this.gettingThisChemist = chemistObject;
+    };
+    SharedService.prototype.getWhichChemistToGet = function () {
+        return this.gettingThisChemist;
+    };
+    SharedService.prototype.getCartCount = function (count) {
+        console.log(count);
+        this.cartCount.next(count);
+    };
+    return SharedService;
+}());
+SharedService = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
+    __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__angular_http__["Http"]])
+], SharedService);
+
+
+
+/***/ }),
 /* 41 */,
 /* 42 */,
 /* 43 */,
 /* 44 */,
-/* 45 */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
+/* 45 */,
 /* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var isArray_1 = __webpack_require__(67);
+var isArray_1 = __webpack_require__(68);
 var isObject_1 = __webpack_require__(97);
 var isFunction_1 = __webpack_require__(96);
 var tryCatch_1 = __webpack_require__(212);
@@ -45478,12 +45479,67 @@ exports.EmptyObservable = EmptyObservable;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChemistService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__serviceUrl__ = __webpack_require__(27);
+
+
+
+
+
+var ChemistService = (function () {
+    function ChemistService(http) {
+        this.http = http;
+        this.serviceUrl = new __WEBPACK_IMPORTED_MODULE_4__serviceUrl__["a" /* ServiceUrl */]();
+    }
+    ChemistService.prototype.getAllChemists = function () {
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["Headers"]();
+        headers.append('Content-Type', 'application/json; charset=UTF-8');
+        return this.http.get(this.serviceUrl.baseUrl + "Chemist/getAllChemists", { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    ChemistService.prototype.getAllCities = function () {
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["Headers"]();
+        headers.append('Content-Type', 'application/json; charset=UTF-8');
+        return this.http.get(this.serviceUrl.baseUrl + "City/getAllCities", { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    ChemistService.prototype.getAllMedicines = function () {
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["Headers"]();
+        headers.append('Content-Type', 'application/json; charset=UTF-8');
+        return this.http.get(this.serviceUrl.baseUrl + "Product/getAllMedicinesForWeb", { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    ChemistService.prototype.getThisChemist = function (id) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["Headers"]();
+        headers.append('Content-Type', 'application/json; charset=UTF-8');
+        return this.http.get(this.serviceUrl.baseUrl + "Chemist/getChemistByChemistId?chemistId=" + id, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    return ChemistService;
+}());
+ChemistService = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
+    __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__angular_http__["Http"]])
+], ChemistService);
+
+
+
+/***/ }),
+/* 49 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddtocartService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__serviceUrl__ = __webpack_require__(27);
 
 
@@ -45502,6 +45558,7 @@ var AddtocartService = (function () {
             .map(function (res) { return res.json(); });
     };
     AddtocartService.prototype.addToBasket = function (LastUsedIp, productId, DosageAndSizesValuesId, Quantity, MeasurementId, SpecialInstructions) {
+        console.log(LastUsedIp, productId, DosageAndSizesValuesId, Quantity, MeasurementId, SpecialInstructions);
         var data;
         data = { LastUsedIp: LastUsedIp, ProductId: productId, DosageAndSizesValuesId: DosageAndSizesValuesId, Quantity: Quantity, MeasurementsId: MeasurementId, SpecialInstructions: SpecialInstructions };
         var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["Headers"]();
@@ -45568,6 +45625,13 @@ var AddtocartService = (function () {
         return this.http.get(this.serviceUrl.baseUrl + "user/getShoppingCartByUserId?userId=" + thisUser, { headers: headers })
             .map(function (res) { return res.json(); });
     };
+    AddtocartService.prototype.getCartCountByIp = function (thisUser) {
+        console.log(thisUser);
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["Headers"]();
+        headers.append('Content-Type', 'application/json; charset=UTF-8');
+        return this.http.get(this.serviceUrl.baseUrl + "User/getShoppingCartByUserIp?userIp=" + thisUser, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
     return AddtocartService;
 }());
 AddtocartService = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
@@ -45578,7 +45642,7 @@ AddtocartService = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45627,7 +45691,7 @@ exports.list = function (element) {
 
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45649,7 +45713,7 @@ exports.PerfectScrollbarConfig = PerfectScrollbarConfig;
 //# sourceMappingURL=perfect-scrollbar.interfaces.js.map
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -45727,11 +45791,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵr", function() { return REQUIRED_VALIDATOR; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_forkJoin__ = __webpack_require__(229);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_forkJoin__ = __webpack_require__(228);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_forkJoin___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_observable_forkJoin__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_observable_fromPromise__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_observable_fromPromise__ = __webpack_require__(110);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_observable_fromPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_observable_fromPromise__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_operator_map__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_operator_map__ = __webpack_require__(77);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__ = __webpack_require__(26);
 
@@ -51836,7 +51900,6 @@ ReactiveFormsModule.ctorParameters = function () { return []; };
 
 
 /***/ }),
-/* 52 */,
 /* 53 */,
 /* 54 */,
 /* 55 */,
@@ -51851,7 +51914,8 @@ ReactiveFormsModule.ctorParameters = function () { return []; };
 /* 64 */,
 /* 65 */,
 /* 66 */,
-/* 67 */
+/* 67 */,
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51860,7 +51924,7 @@ exports.isArray = Array.isArray || (function (x) { return x && typeof x.length =
 //# sourceMappingURL=isArray.js.map
 
 /***/ }),
-/* 68 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51876,7 +51940,7 @@ exports.$$rxSubscriber = exports.rxSubscriber;
 //# sourceMappingURL=rxSubscriber.js.map
 
 /***/ }),
-/* 69 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51908,7 +51972,7 @@ exports.$$observable = exports.observable;
 //# sourceMappingURL=observable.js.map
 
 /***/ }),
-/* 70 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51919,9 +51983,9 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Observable_1 = __webpack_require__(3);
-var ScalarObservable_1 = __webpack_require__(102);
+var ScalarObservable_1 = __webpack_require__(101);
 var EmptyObservable_1 = __webpack_require__(47);
-var isScheduler_1 = __webpack_require__(103);
+var isScheduler_1 = __webpack_require__(102);
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @extends {Ignored}
@@ -52036,13 +52100,13 @@ exports.ArrayObservable = ArrayObservable;
 //# sourceMappingURL=ArrayObservable.js.map
 
 /***/ }),
-/* 71 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var mergeMap_1 = __webpack_require__(72);
-var identity_1 = __webpack_require__(218);
+var mergeMap_1 = __webpack_require__(73);
+var identity_1 = __webpack_require__(217);
 /**
  * Converts a higher-order Observable into a first-order Observable which
  * concurrently delivers all values that are emitted on the inner Observables.
@@ -52095,7 +52159,7 @@ exports.mergeAll = mergeAll;
 //# sourceMappingURL=mergeAll.js.map
 
 /***/ }),
-/* 72 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52105,8 +52169,8 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var subscribeToResult_1 = __webpack_require__(73);
-var OuterSubscriber_1 = __webpack_require__(75);
+var subscribeToResult_1 = __webpack_require__(74);
+var OuterSubscriber_1 = __webpack_require__(76);
 /* tslint:enable:max-line-length */
 /**
  * Projects each source value to an Observable which is merged in the output
@@ -52274,19 +52338,19 @@ exports.MergeMapSubscriber = MergeMapSubscriber;
 //# sourceMappingURL=mergeMap.js.map
 
 /***/ }),
-/* 73 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var root_1 = __webpack_require__(25);
-var isArrayLike_1 = __webpack_require__(104);
-var isPromise_1 = __webpack_require__(105);
+var isArrayLike_1 = __webpack_require__(103);
+var isPromise_1 = __webpack_require__(104);
 var isObject_1 = __webpack_require__(97);
 var Observable_1 = __webpack_require__(3);
-var iterator_1 = __webpack_require__(74);
-var InnerSubscriber_1 = __webpack_require__(217);
-var observable_1 = __webpack_require__(69);
+var iterator_1 = __webpack_require__(75);
+var InnerSubscriber_1 = __webpack_require__(216);
+var observable_1 = __webpack_require__(70);
 function subscribeToResult(outerSubscriber, result, outerValue, outerIndex) {
     var destination = new InnerSubscriber_1.InnerSubscriber(outerSubscriber, outerValue, outerIndex);
     if (destination.closed) {
@@ -52359,7 +52423,7 @@ exports.subscribeToResult = subscribeToResult;
 //# sourceMappingURL=subscribeToResult.js.map
 
 /***/ }),
-/* 74 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52403,7 +52467,7 @@ exports.$$iterator = exports.iterator;
 //# sourceMappingURL=iterator.js.map
 
 /***/ }),
-/* 75 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52439,12 +52503,12 @@ exports.OuterSubscriber = OuterSubscriber;
 //# sourceMappingURL=OuterSubscriber.js.map
 
 /***/ }),
-/* 76 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var map_1 = __webpack_require__(231);
+var map_1 = __webpack_require__(230);
 /**
  * Applies a given `project` function to each value emitted by the source
  * Observable, and emits the resulting values as an Observable.
@@ -52485,7 +52549,7 @@ exports.map = map;
 //# sourceMappingURL=map.js.map
 
 /***/ }),
-/* 77 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52519,7 +52583,70 @@ exports.EmptyError = EmptyError;
 //# sourceMappingURL=EmptyError.js.map
 
 /***/ }),
-/* 78 */
+/* 79 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_fb_comment_embed_fb_comment_embed__ = __webpack_require__(117);
+/* unused harmony reexport FBCommentEmbedComponent */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_fb_comments_fb_comments__ = __webpack_require__(118);
+/* unused harmony reexport FBCommentsComponent */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_fb_follow_fb_follow__ = __webpack_require__(119);
+/* unused harmony reexport FBFollowComponent */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_fb_like_fb_like__ = __webpack_require__(120);
+/* unused harmony reexport FBLikeComponent */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_fb_page_fb_page__ = __webpack_require__(121);
+/* unused harmony reexport FBPageComponent */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_fb_post_fb_post__ = __webpack_require__(122);
+/* unused harmony reexport FBPostComponent */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_fb_quote_fb_quote__ = __webpack_require__(123);
+/* unused harmony reexport FBQuoteComponent */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_fb_save_fb_save__ = __webpack_require__(124);
+/* unused harmony reexport FBSaveComponent */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_fb_send_fb_send__ = __webpack_require__(125);
+/* unused harmony reexport FBSendComponent */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_fb_share_fb_share__ = __webpack_require__(126);
+/* unused harmony reexport FBShareComponent */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_fb_video_fb_video__ = __webpack_require__(127);
+/* unused harmony reexport FBVideoComponent */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__providers_facebook__ = __webpack_require__(128);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_11__providers_facebook__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__facebook_module__ = __webpack_require__(263);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_12__facebook_module__["a"]; });
+// components
+
+
+
+
+
+
+
+
+
+
+
+// providers
+
+// modules
+
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+/* 80 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GeoModel; });
+var GeoModel = (function () {
+    function GeoModel() {
+    }
+    return GeoModel;
+}());
+
+
+
+/***/ }),
+/* 81 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -52576,136 +52703,16 @@ AppState = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 
 /***/ }),
-/* 79 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GeoModel; });
-var GeoModel = (function () {
-    function GeoModel() {
-    }
-    return GeoModel;
-}());
-
-
-
-/***/ }),
-/* 80 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChemistService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__serviceUrl__ = __webpack_require__(27);
-
-
-
-
-
-var ChemistService = (function () {
-    function ChemistService(http) {
-        this.http = http;
-        this.serviceUrl = new __WEBPACK_IMPORTED_MODULE_4__serviceUrl__["a" /* ServiceUrl */]();
-    }
-    ChemistService.prototype.getAllChemists = function () {
-        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["Headers"]();
-        headers.append('Content-Type', 'application/json; charset=UTF-8');
-        return this.http.get(this.serviceUrl.baseUrl + "Chemist/getAllChemists", { headers: headers })
-            .map(function (res) { return res.json(); });
-    };
-    ChemistService.prototype.getAllCities = function () {
-        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["Headers"]();
-        headers.append('Content-Type', 'application/json; charset=UTF-8');
-        return this.http.get(this.serviceUrl.baseUrl + "City/getAllCities", { headers: headers })
-            .map(function (res) { return res.json(); });
-    };
-    ChemistService.prototype.getAllMedicines = function () {
-        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["Headers"]();
-        headers.append('Content-Type', 'application/json; charset=UTF-8');
-        return this.http.get(this.serviceUrl.baseUrl + "Product/getAllMedicinesForWeb", { headers: headers })
-            .map(function (res) { return res.json(); });
-    };
-    return ChemistService;
-}());
-ChemistService = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
-    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
-    __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__angular_http__["Http"]])
-], ChemistService);
-
-
-
-/***/ }),
-/* 81 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_fb_comment_embed_fb_comment_embed__ = __webpack_require__(124);
-/* unused harmony reexport FBCommentEmbedComponent */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_fb_comments_fb_comments__ = __webpack_require__(125);
-/* unused harmony reexport FBCommentsComponent */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_fb_follow_fb_follow__ = __webpack_require__(126);
-/* unused harmony reexport FBFollowComponent */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_fb_like_fb_like__ = __webpack_require__(127);
-/* unused harmony reexport FBLikeComponent */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_fb_page_fb_page__ = __webpack_require__(128);
-/* unused harmony reexport FBPageComponent */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_fb_post_fb_post__ = __webpack_require__(129);
-/* unused harmony reexport FBPostComponent */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_fb_quote_fb_quote__ = __webpack_require__(130);
-/* unused harmony reexport FBQuoteComponent */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_fb_save_fb_save__ = __webpack_require__(131);
-/* unused harmony reexport FBSaveComponent */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_fb_send_fb_send__ = __webpack_require__(132);
-/* unused harmony reexport FBSendComponent */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_fb_share_fb_share__ = __webpack_require__(133);
-/* unused harmony reexport FBShareComponent */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_fb_video_fb_video__ = __webpack_require__(134);
-/* unused harmony reexport FBVideoComponent */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__providers_facebook__ = __webpack_require__(135);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_11__providers_facebook__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__facebook_module__ = __webpack_require__(279);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_12__facebook_module__["a"]; });
-// components
-
-
-
-
-
-
-
-
-
-
-
-// providers
-
-// modules
-
-//# sourceMappingURL=index.js.map
-
-/***/ }),
 /* 82 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__(7)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "@charset \"UTF-8\";\n/* this file will be extracted to main dist folder and is imported in index.html */\n/* This file is for setting global styles  */\n/*VARIABLES\r\n====================================================*/\n/*Range*/\n/*Spacing*/\n/*Colors*/\n/*Sizes*/\n/*Animation*/\n/*Icons*/\n/*Disabled*/\n/*CSS Star Rating Elements\r\n=================================================================*/\n/*HELPER*/\n.center-all {\n  display: flex;\n  align-items: center;\n  justify-content: center; }\n\n/*\r\nStar element\r\n==================================================================*/\n.star {\n  position: relative;\n  width: 20px;\n  height: 20px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  /*\r\n  Fill states\r\n  ==================================================================*/\n  /*\r\n  Colors\r\n  ==================================================================*/\n  /*\r\n  Icon Types\r\n  ==================================================================*/\n  /*\r\n  Star Size\r\n  ===================================================================*/\n  /*\r\nDisabled\r\n=================================================*/\n  /*\r\n  Direction\r\n  =================================================*/ }\n  .star svg, .star i {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    font-style: normal; }\n    .star svg.star-half, .star svg.star-filled, .star i.star-half, .star i.star-filled {\n      opacity: 0; }\n  .star i {\n    top: 1px;\n    display: none; }\n  .star.icon i, .rating.star-icon i {\n    font-size: 25px;\n    line-height: 25px; }\n    .star.icon i.star-empty:before, .rating.star-icon i.star-empty:before {\n      content: \"\\2606\"; }\n    .star.icon i.star-half:before, .rating.star-icon i.star-half:before {\n      content: \"\\2605\"; }\n    .star.icon i.star-filled:before, .rating.star-icon i.star-filled:before {\n      content: \"\\2605\"; }\n  .star.custom-icon i, .rating.star-custom-icon i, .rating.theme-kununu .star-container .star i {\n    font-size: 18px;\n    line-height: 18px; }\n  .star.empty svg.star-half, .rating.hover:hover.value-1.half .star-container .star svg.star-half, .rating.value-0.half .rating.hover.star:hover.value-1:nth-child(1) .star-container .star svg.star-half, .rating.value-1.half .star-container .rating.hover.star:hover.value-1:nth-child(2) .star-container .star svg.star-half, .rating.value-2.half .star-container .rating.hover.star:hover.value-1:nth-child(3) .star-container .star svg.star-half, .rating.value-3.half .star-container .rating.hover.star:hover.value-1:nth-child(4) .star-container .star svg.star-half, .rating.value-4.half .star-container .rating.hover.star:hover.value-1:nth-child(5) .star-container .star svg.star-half, .rating.value-5.half .star-container .rating.hover.star:hover.value-1:nth-child(6) .star-container .star svg.star-half, .rating.hover:hover.hover-1 .star-container .star svg.star-half, .rating.hover:hover.value-2.half .star-container .star svg.star-half, .rating.value-0.half .rating.hover.star:hover.value-2:nth-child(1) .star-container .star svg.star-half, .rating.value-1.half .star-container .rating.hover.star:hover.value-2:nth-child(2) .star-container .star svg.star-half, .rating.value-2.half .star-container .rating.hover.star:hover.value-2:nth-child(3) .star-container .star svg.star-half, .rating.value-3.half .star-container .rating.hover.star:hover.value-2:nth-child(4) .star-container .star svg.star-half, .rating.value-4.half .star-container .rating.hover.star:hover.value-2:nth-child(5) .star-container .star svg.star-half, .rating.value-5.half .star-container .rating.hover.star:hover.value-2:nth-child(6) .star-container .star svg.star-half, .rating.hover:hover.hover-2 .star-container .star svg.star-half, .rating.hover:hover.value-3.half .star-container .star svg.star-half, .rating.value-0.half .rating.hover.star:hover.value-3:nth-child(1) .star-container .star svg.star-half, .rating.value-1.half .star-container .rating.hover.star:hover.value-3:nth-child(2) .star-container .star svg.star-half, .rating.value-2.half .star-container .rating.hover.star:hover.value-3:nth-child(3) .star-container .star svg.star-half, .rating.value-3.half .star-container .rating.hover.star:hover.value-3:nth-child(4) .star-container .star svg.star-half, .rating.value-4.half .star-container .rating.hover.star:hover.value-3:nth-child(5) .star-container .star svg.star-half, .rating.value-5.half .star-container .rating.hover.star:hover.value-3:nth-child(6) .star-container .star svg.star-half, .rating.hover:hover.hover-3 .star-container .star svg.star-half, .rating.hover:hover.value-4.half .star-container .star svg.star-half, .rating.value-0.half .rating.hover.star:hover.value-4:nth-child(1) .star-container .star svg.star-half, .rating.value-1.half .star-container .rating.hover.star:hover.value-4:nth-child(2) .star-container .star svg.star-half, .rating.value-2.half .star-container .rating.hover.star:hover.value-4:nth-child(3) .star-container .star svg.star-half, .rating.value-3.half .star-container .rating.hover.star:hover.value-4:nth-child(4) .star-container .star svg.star-half, .rating.value-4.half .star-container .rating.hover.star:hover.value-4:nth-child(5) .star-container .star svg.star-half, .rating.value-5.half .star-container .rating.hover.star:hover.value-4:nth-child(6) .star-container .star svg.star-half, .rating.hover:hover.hover-4 .star-container .star svg.star-half, .rating.hover:hover.value-5.half .star-container .star svg.star-half, .rating.value-0.half .rating.hover.star:hover.value-5:nth-child(1) .star-container .star svg.star-half, .rating.value-1.half .star-container .rating.hover.star:hover.value-5:nth-child(2) .star-container .star svg.star-half, .rating.value-2.half .star-container .rating.hover.star:hover.value-5:nth-child(3) .star-container .star svg.star-half, .rating.value-3.half .star-container .rating.hover.star:hover.value-5:nth-child(4) .star-container .star svg.star-half, .rating.value-4.half .star-container .rating.hover.star:hover.value-5:nth-child(5) .star-container .star svg.star-half, .rating.value-5.half .star-container .rating.hover.star:hover.value-5:nth-child(6) .star-container .star svg.star-half, .rating.hover:hover.hover-5 .star-container .star svg.star-half, .rating.hover:hover.value-6.half .star-container .star svg.star-half, .rating.value-0.half .rating.hover.star:hover.value-6:nth-child(1) .star-container .star svg.star-half, .rating.value-1.half .star-container .rating.hover.star:hover.value-6:nth-child(2) .star-container .star svg.star-half, .rating.value-2.half .star-container .rating.hover.star:hover.value-6:nth-child(3) .star-container .star svg.star-half, .rating.value-3.half .star-container .rating.hover.star:hover.value-6:nth-child(4) .star-container .star svg.star-half, .rating.value-4.half .star-container .rating.hover.star:hover.value-6:nth-child(5) .star-container .star svg.star-half, .rating.value-5.half .star-container .rating.hover.star:hover.value-6:nth-child(6) .star-container .star svg.star-half, .rating.hover:hover.hover-6 .star-container .star svg.star-half, .star.empty svg.star-filled, .rating.hover:hover.value-1.half .star-container .star svg.star-filled, .rating.value-0.half .rating.hover.star:hover.value-1:nth-child(1) .star-container .star svg.star-filled, .rating.value-1.half .star-container .rating.hover.star:hover.value-1:nth-child(2) .star-container .star svg.star-filled, .rating.value-2.half .star-container .rating.hover.star:hover.value-1:nth-child(3) .star-container .star svg.star-filled, .rating.value-3.half .star-container .rating.hover.star:hover.value-1:nth-child(4) .star-container .star svg.star-filled, .rating.value-4.half .star-container .rating.hover.star:hover.value-1:nth-child(5) .star-container .star svg.star-filled, .rating.value-5.half .star-container .rating.hover.star:hover.value-1:nth-child(6) .star-container .star svg.star-filled, .rating.hover:hover.hover-1 .star-container .star svg.star-filled, .rating.hover:hover.value-2.half .star-container .star svg.star-filled, .rating.value-0.half .rating.hover.star:hover.value-2:nth-child(1) .star-container .star svg.star-filled, .rating.value-1.half .star-container .rating.hover.star:hover.value-2:nth-child(2) .star-container .star svg.star-filled, .rating.value-2.half .star-container .rating.hover.star:hover.value-2:nth-child(3) .star-container .star svg.star-filled, .rating.value-3.half .star-container .rating.hover.star:hover.value-2:nth-child(4) .star-container .star svg.star-filled, .rating.value-4.half .star-container .rating.hover.star:hover.value-2:nth-child(5) .star-container .star svg.star-filled, .rating.value-5.half .star-container .rating.hover.star:hover.value-2:nth-child(6) .star-container .star svg.star-filled, .rating.hover:hover.hover-2 .star-container .star svg.star-filled, .rating.hover:hover.value-3.half .star-container .star svg.star-filled, .rating.value-0.half .rating.hover.star:hover.value-3:nth-child(1) .star-container .star svg.star-filled, .rating.value-1.half .star-container .rating.hover.star:hover.value-3:nth-child(2) .star-container .star svg.star-filled, .rating.value-2.half .star-container .rating.hover.star:hover.value-3:nth-child(3) .star-container .star svg.star-filled, .rating.value-3.half .star-container .rating.hover.star:hover.value-3:nth-child(4) .star-container .star svg.star-filled, .rating.value-4.half .star-container .rating.hover.star:hover.value-3:nth-child(5) .star-container .star svg.star-filled, .rating.value-5.half .star-container .rating.hover.star:hover.value-3:nth-child(6) .star-container .star svg.star-filled, .rating.hover:hover.hover-3 .star-container .star svg.star-filled, .rating.hover:hover.value-4.half .star-container .star svg.star-filled, .rating.value-0.half .rating.hover.star:hover.value-4:nth-child(1) .star-container .star svg.star-filled, .rating.value-1.half .star-container .rating.hover.star:hover.value-4:nth-child(2) .star-container .star svg.star-filled, .rating.value-2.half .star-container .rating.hover.star:hover.value-4:nth-child(3) .star-container .star svg.star-filled, .rating.value-3.half .star-container .rating.hover.star:hover.value-4:nth-child(4) .star-container .star svg.star-filled, .rating.value-4.half .star-container .rating.hover.star:hover.value-4:nth-child(5) .star-container .star svg.star-filled, .rating.value-5.half .star-container .rating.hover.star:hover.value-4:nth-child(6) .star-container .star svg.star-filled, .rating.hover:hover.hover-4 .star-container .star svg.star-filled, .rating.hover:hover.value-5.half .star-container .star svg.star-filled, .rating.value-0.half .rating.hover.star:hover.value-5:nth-child(1) .star-container .star svg.star-filled, .rating.value-1.half .star-container .rating.hover.star:hover.value-5:nth-child(2) .star-container .star svg.star-filled, .rating.value-2.half .star-container .rating.hover.star:hover.value-5:nth-child(3) .star-container .star svg.star-filled, .rating.value-3.half .star-container .rating.hover.star:hover.value-5:nth-child(4) .star-container .star svg.star-filled, .rating.value-4.half .star-container .rating.hover.star:hover.value-5:nth-child(5) .star-container .star svg.star-filled, .rating.value-5.half .star-container .rating.hover.star:hover.value-5:nth-child(6) .star-container .star svg.star-filled, .rating.hover:hover.hover-5 .star-container .star svg.star-filled, .rating.hover:hover.value-6.half .star-container .star svg.star-filled, .rating.value-0.half .rating.hover.star:hover.value-6:nth-child(1) .star-container .star svg.star-filled, .rating.value-1.half .star-container .rating.hover.star:hover.value-6:nth-child(2) .star-container .star svg.star-filled, .rating.value-2.half .star-container .rating.hover.star:hover.value-6:nth-child(3) .star-container .star svg.star-filled, .rating.value-3.half .star-container .rating.hover.star:hover.value-6:nth-child(4) .star-container .star svg.star-filled, .rating.value-4.half .star-container .rating.hover.star:hover.value-6:nth-child(5) .star-container .star svg.star-filled, .rating.value-5.half .star-container .rating.hover.star:hover.value-6:nth-child(6) .star-container .star svg.star-filled, .rating.hover:hover.hover-6 .star-container .star svg.star-filled, .star.empty i.star-half, .rating.hover:hover.value-1.half .star-container .star i.star-half, .rating.value-0.half .rating.hover.star:hover.value-1:nth-child(1) .star-container .star i.star-half, .rating.value-1.half .star-container .rating.hover.star:hover.value-1:nth-child(2) .star-container .star i.star-half, .rating.value-2.half .star-container .rating.hover.star:hover.value-1:nth-child(3) .star-container .star i.star-half, .rating.value-3.half .star-container .rating.hover.star:hover.value-1:nth-child(4) .star-container .star i.star-half, .rating.value-4.half .star-container .rating.hover.star:hover.value-1:nth-child(5) .star-container .star i.star-half, .rating.value-5.half .star-container .rating.hover.star:hover.value-1:nth-child(6) .star-container .star i.star-half, .rating.hover:hover.hover-1 .star-container .star i.star-half, .rating.hover:hover.value-2.half .star-container .star i.star-half, .rating.value-0.half .rating.hover.star:hover.value-2:nth-child(1) .star-container .star i.star-half, .rating.value-1.half .star-container .rating.hover.star:hover.value-2:nth-child(2) .star-container .star i.star-half, .rating.value-2.half .star-container .rating.hover.star:hover.value-2:nth-child(3) .star-container .star i.star-half, .rating.value-3.half .star-container .rating.hover.star:hover.value-2:nth-child(4) .star-container .star i.star-half, .rating.value-4.half .star-container .rating.hover.star:hover.value-2:nth-child(5) .star-container .star i.star-half, .rating.value-5.half .star-container .rating.hover.star:hover.value-2:nth-child(6) .star-container .star i.star-half, .rating.hover:hover.hover-2 .star-container .star i.star-half, .rating.hover:hover.value-3.half .star-container .star i.star-half, .rating.value-0.half .rating.hover.star:hover.value-3:nth-child(1) .star-container .star i.star-half, .rating.value-1.half .star-container .rating.hover.star:hover.value-3:nth-child(2) .star-container .star i.star-half, .rating.value-2.half .star-container .rating.hover.star:hover.value-3:nth-child(3) .star-container .star i.star-half, .rating.value-3.half .star-container .rating.hover.star:hover.value-3:nth-child(4) .star-container .star i.star-half, .rating.value-4.half .star-container .rating.hover.star:hover.value-3:nth-child(5) .star-container .star i.star-half, .rating.value-5.half .star-container .rating.hover.star:hover.value-3:nth-child(6) .star-container .star i.star-half, .rating.hover:hover.hover-3 .star-container .star i.star-half, .rating.hover:hover.value-4.half .star-container .star i.star-half, .rating.value-0.half .rating.hover.star:hover.value-4:nth-child(1) .star-container .star i.star-half, .rating.value-1.half .star-container .rating.hover.star:hover.value-4:nth-child(2) .star-container .star i.star-half, .rating.value-2.half .star-container .rating.hover.star:hover.value-4:nth-child(3) .star-container .star i.star-half, .rating.value-3.half .star-container .rating.hover.star:hover.value-4:nth-child(4) .star-container .star i.star-half, .rating.value-4.half .star-container .rating.hover.star:hover.value-4:nth-child(5) .star-container .star i.star-half, .rating.value-5.half .star-container .rating.hover.star:hover.value-4:nth-child(6) .star-container .star i.star-half, .rating.hover:hover.hover-4 .star-container .star i.star-half, .rating.hover:hover.value-5.half .star-container .star i.star-half, .rating.value-0.half .rating.hover.star:hover.value-5:nth-child(1) .star-container .star i.star-half, .rating.value-1.half .star-container .rating.hover.star:hover.value-5:nth-child(2) .star-container .star i.star-half, .rating.value-2.half .star-container .rating.hover.star:hover.value-5:nth-child(3) .star-container .star i.star-half, .rating.value-3.half .star-container .rating.hover.star:hover.value-5:nth-child(4) .star-container .star i.star-half, .rating.value-4.half .star-container .rating.hover.star:hover.value-5:nth-child(5) .star-container .star i.star-half, .rating.value-5.half .star-container .rating.hover.star:hover.value-5:nth-child(6) .star-container .star i.star-half, .rating.hover:hover.hover-5 .star-container .star i.star-half, .rating.hover:hover.value-6.half .star-container .star i.star-half, .rating.value-0.half .rating.hover.star:hover.value-6:nth-child(1) .star-container .star i.star-half, .rating.value-1.half .star-container .rating.hover.star:hover.value-6:nth-child(2) .star-container .star i.star-half, .rating.value-2.half .star-container .rating.hover.star:hover.value-6:nth-child(3) .star-container .star i.star-half, .rating.value-3.half .star-container .rating.hover.star:hover.value-6:nth-child(4) .star-container .star i.star-half, .rating.value-4.half .star-container .rating.hover.star:hover.value-6:nth-child(5) .star-container .star i.star-half, .rating.value-5.half .star-container .rating.hover.star:hover.value-6:nth-child(6) .star-container .star i.star-half, .rating.hover:hover.hover-6 .star-container .star i.star-half, .star.empty i.star-filled, .rating.hover:hover.value-1.half .star-container .star i.star-filled, .rating.value-0.half .rating.hover.star:hover.value-1:nth-child(1) .star-container .star i.star-filled, .rating.value-1.half .star-container .rating.hover.star:hover.value-1:nth-child(2) .star-container .star i.star-filled, .rating.value-2.half .star-container .rating.hover.star:hover.value-1:nth-child(3) .star-container .star i.star-filled, .rating.value-3.half .star-container .rating.hover.star:hover.value-1:nth-child(4) .star-container .star i.star-filled, .rating.value-4.half .star-container .rating.hover.star:hover.value-1:nth-child(5) .star-container .star i.star-filled, .rating.value-5.half .star-container .rating.hover.star:hover.value-1:nth-child(6) .star-container .star i.star-filled, .rating.hover:hover.hover-1 .star-container .star i.star-filled, .rating.hover:hover.value-2.half .star-container .star i.star-filled, .rating.value-0.half .rating.hover.star:hover.value-2:nth-child(1) .star-container .star i.star-filled, .rating.value-1.half .star-container .rating.hover.star:hover.value-2:nth-child(2) .star-container .star i.star-filled, .rating.value-2.half .star-container .rating.hover.star:hover.value-2:nth-child(3) .star-container .star i.star-filled, .rating.value-3.half .star-container .rating.hover.star:hover.value-2:nth-child(4) .star-container .star i.star-filled, .rating.value-4.half .star-container .rating.hover.star:hover.value-2:nth-child(5) .star-container .star i.star-filled, .rating.value-5.half .star-container .rating.hover.star:hover.value-2:nth-child(6) .star-container .star i.star-filled, .rating.hover:hover.hover-2 .star-container .star i.star-filled, .rating.hover:hover.value-3.half .star-container .star i.star-filled, .rating.value-0.half .rating.hover.star:hover.value-3:nth-child(1) .star-container .star i.star-filled, .rating.value-1.half .star-container .rating.hover.star:hover.value-3:nth-child(2) .star-container .star i.star-filled, .rating.value-2.half .star-container .rating.hover.star:hover.value-3:nth-child(3) .star-container .star i.star-filled, .rating.value-3.half .star-container .rating.hover.star:hover.value-3:nth-child(4) .star-container .star i.star-filled, .rating.value-4.half .star-container .rating.hover.star:hover.value-3:nth-child(5) .star-container .star i.star-filled, .rating.value-5.half .star-container .rating.hover.star:hover.value-3:nth-child(6) .star-container .star i.star-filled, .rating.hover:hover.hover-3 .star-container .star i.star-filled, .rating.hover:hover.value-4.half .star-container .star i.star-filled, .rating.value-0.half .rating.hover.star:hover.value-4:nth-child(1) .star-container .star i.star-filled, .rating.value-1.half .star-container .rating.hover.star:hover.value-4:nth-child(2) .star-container .star i.star-filled, .rating.value-2.half .star-container .rating.hover.star:hover.value-4:nth-child(3) .star-container .star i.star-filled, .rating.value-3.half .star-container .rating.hover.star:hover.value-4:nth-child(4) .star-container .star i.star-filled, .rating.value-4.half .star-container .rating.hover.star:hover.value-4:nth-child(5) .star-container .star i.star-filled, .rating.value-5.half .star-container .rating.hover.star:hover.value-4:nth-child(6) .star-container .star i.star-filled, .rating.hover:hover.hover-4 .star-container .star i.star-filled, .rating.hover:hover.value-5.half .star-container .star i.star-filled, .rating.value-0.half .rating.hover.star:hover.value-5:nth-child(1) .star-container .star i.star-filled, .rating.value-1.half .star-container .rating.hover.star:hover.value-5:nth-child(2) .star-container .star i.star-filled, .rating.value-2.half .star-container .rating.hover.star:hover.value-5:nth-child(3) .star-container .star i.star-filled, .rating.value-3.half .star-container .rating.hover.star:hover.value-5:nth-child(4) .star-container .star i.star-filled, .rating.value-4.half .star-container .rating.hover.star:hover.value-5:nth-child(5) .star-container .star i.star-filled, .rating.value-5.half .star-container .rating.hover.star:hover.value-5:nth-child(6) .star-container .star i.star-filled, .rating.hover:hover.hover-5 .star-container .star i.star-filled, .rating.hover:hover.value-6.half .star-container .star i.star-filled, .rating.value-0.half .rating.hover.star:hover.value-6:nth-child(1) .star-container .star i.star-filled, .rating.value-1.half .star-container .rating.hover.star:hover.value-6:nth-child(2) .star-container .star i.star-filled, .rating.value-2.half .star-container .rating.hover.star:hover.value-6:nth-child(3) .star-container .star i.star-filled, .rating.value-3.half .star-container .rating.hover.star:hover.value-6:nth-child(4) .star-container .star i.star-filled, .rating.value-4.half .star-container .rating.hover.star:hover.value-6:nth-child(5) .star-container .star i.star-filled, .rating.value-5.half .star-container .rating.hover.star:hover.value-6:nth-child(6) .star-container .star i.star-filled, .rating.hover:hover.hover-6 .star-container .star i.star-filled {\n    opacity: 0; }\n  .star.empty svg.star-empty, .rating.hover:hover.value-1.half .star-container .star svg.star-empty, .rating.value-0.half .rating.hover.star:hover.value-1:nth-child(1) .star-container .star svg.star-empty, .rating.value-1.half .star-container .rating.hover.star:hover.value-1:nth-child(2) .star-container .star svg.star-empty, .rating.value-2.half .star-container .rating.hover.star:hover.value-1:nth-child(3) .star-container .star svg.star-empty, .rating.value-3.half .star-container .rating.hover.star:hover.value-1:nth-child(4) .star-container .star svg.star-empty, .rating.value-4.half .star-container .rating.hover.star:hover.value-1:nth-child(5) .star-container .star svg.star-empty, .rating.value-5.half .star-container .rating.hover.star:hover.value-1:nth-child(6) .star-container .star svg.star-empty, .rating.hover:hover.hover-1 .star-container .star svg.star-empty, .rating.hover:hover.value-2.half .star-container .star svg.star-empty, .rating.value-0.half .rating.hover.star:hover.value-2:nth-child(1) .star-container .star svg.star-empty, .rating.value-1.half .star-container .rating.hover.star:hover.value-2:nth-child(2) .star-container .star svg.star-empty, .rating.value-2.half .star-container .rating.hover.star:hover.value-2:nth-child(3) .star-container .star svg.star-empty, .rating.value-3.half .star-container .rating.hover.star:hover.value-2:nth-child(4) .star-container .star svg.star-empty, .rating.value-4.half .star-container .rating.hover.star:hover.value-2:nth-child(5) .star-container .star svg.star-empty, .rating.value-5.half .star-container .rating.hover.star:hover.value-2:nth-child(6) .star-container .star svg.star-empty, .rating.hover:hover.hover-2 .star-container .star svg.star-empty, .rating.hover:hover.value-3.half .star-container .star svg.star-empty, .rating.value-0.half .rating.hover.star:hover.value-3:nth-child(1) .star-container .star svg.star-empty, .rating.value-1.half .star-container .rating.hover.star:hover.value-3:nth-child(2) .star-container .star svg.star-empty, .rating.value-2.half .star-container .rating.hover.star:hover.value-3:nth-child(3) .star-container .star svg.star-empty, .rating.value-3.half .star-container .rating.hover.star:hover.value-3:nth-child(4) .star-container .star svg.star-empty, .rating.value-4.half .star-container .rating.hover.star:hover.value-3:nth-child(5) .star-container .star svg.star-empty, .rating.value-5.half .star-container .rating.hover.star:hover.value-3:nth-child(6) .star-container .star svg.star-empty, .rating.hover:hover.hover-3 .star-container .star svg.star-empty, .rating.hover:hover.value-4.half .star-container .star svg.star-empty, .rating.value-0.half .rating.hover.star:hover.value-4:nth-child(1) .star-container .star svg.star-empty, .rating.value-1.half .star-container .rating.hover.star:hover.value-4:nth-child(2) .star-container .star svg.star-empty, .rating.value-2.half .star-container .rating.hover.star:hover.value-4:nth-child(3) .star-container .star svg.star-empty, .rating.value-3.half .star-container .rating.hover.star:hover.value-4:nth-child(4) .star-container .star svg.star-empty, .rating.value-4.half .star-container .rating.hover.star:hover.value-4:nth-child(5) .star-container .star svg.star-empty, .rating.value-5.half .star-container .rating.hover.star:hover.value-4:nth-child(6) .star-container .star svg.star-empty, .rating.hover:hover.hover-4 .star-container .star svg.star-empty, .rating.hover:hover.value-5.half .star-container .star svg.star-empty, .rating.value-0.half .rating.hover.star:hover.value-5:nth-child(1) .star-container .star svg.star-empty, .rating.value-1.half .star-container .rating.hover.star:hover.value-5:nth-child(2) .star-container .star svg.star-empty, .rating.value-2.half .star-container .rating.hover.star:hover.value-5:nth-child(3) .star-container .star svg.star-empty, .rating.value-3.half .star-container .rating.hover.star:hover.value-5:nth-child(4) .star-container .star svg.star-empty, .rating.value-4.half .star-container .rating.hover.star:hover.value-5:nth-child(5) .star-container .star svg.star-empty, .rating.value-5.half .star-container .rating.hover.star:hover.value-5:nth-child(6) .star-container .star svg.star-empty, .rating.hover:hover.hover-5 .star-container .star svg.star-empty, .rating.hover:hover.value-6.half .star-container .star svg.star-empty, .rating.value-0.half .rating.hover.star:hover.value-6:nth-child(1) .star-container .star svg.star-empty, .rating.value-1.half .star-container .rating.hover.star:hover.value-6:nth-child(2) .star-container .star svg.star-empty, .rating.value-2.half .star-container .rating.hover.star:hover.value-6:nth-child(3) .star-container .star svg.star-empty, .rating.value-3.half .star-container .rating.hover.star:hover.value-6:nth-child(4) .star-container .star svg.star-empty, .rating.value-4.half .star-container .rating.hover.star:hover.value-6:nth-child(5) .star-container .star svg.star-empty, .rating.value-5.half .star-container .rating.hover.star:hover.value-6:nth-child(6) .star-container .star svg.star-empty, .rating.hover:hover.hover-6 .star-container .star svg.star-empty, .star.empty i.star-empty, .rating.hover:hover.value-1.half .star-container .star i.star-empty, .rating.value-0.half .rating.hover.star:hover.value-1:nth-child(1) .star-container .star i.star-empty, .rating.value-1.half .star-container .rating.hover.star:hover.value-1:nth-child(2) .star-container .star i.star-empty, .rating.value-2.half .star-container .rating.hover.star:hover.value-1:nth-child(3) .star-container .star i.star-empty, .rating.value-3.half .star-container .rating.hover.star:hover.value-1:nth-child(4) .star-container .star i.star-empty, .rating.value-4.half .star-container .rating.hover.star:hover.value-1:nth-child(5) .star-container .star i.star-empty, .rating.value-5.half .star-container .rating.hover.star:hover.value-1:nth-child(6) .star-container .star i.star-empty, .rating.hover:hover.hover-1 .star-container .star i.star-empty, .rating.hover:hover.value-2.half .star-container .star i.star-empty, .rating.value-0.half .rating.hover.star:hover.value-2:nth-child(1) .star-container .star i.star-empty, .rating.value-1.half .star-container .rating.hover.star:hover.value-2:nth-child(2) .star-container .star i.star-empty, .rating.value-2.half .star-container .rating.hover.star:hover.value-2:nth-child(3) .star-container .star i.star-empty, .rating.value-3.half .star-container .rating.hover.star:hover.value-2:nth-child(4) .star-container .star i.star-empty, .rating.value-4.half .star-container .rating.hover.star:hover.value-2:nth-child(5) .star-container .star i.star-empty, .rating.value-5.half .star-container .rating.hover.star:hover.value-2:nth-child(6) .star-container .star i.star-empty, .rating.hover:hover.hover-2 .star-container .star i.star-empty, .rating.hover:hover.value-3.half .star-container .star i.star-empty, .rating.value-0.half .rating.hover.star:hover.value-3:nth-child(1) .star-container .star i.star-empty, .rating.value-1.half .star-container .rating.hover.star:hover.value-3:nth-child(2) .star-container .star i.star-empty, .rating.value-2.half .star-container .rating.hover.star:hover.value-3:nth-child(3) .star-container .star i.star-empty, .rating.value-3.half .star-container .rating.hover.star:hover.value-3:nth-child(4) .star-container .star i.star-empty, .rating.value-4.half .star-container .rating.hover.star:hover.value-3:nth-child(5) .star-container .star i.star-empty, .rating.value-5.half .star-container .rating.hover.star:hover.value-3:nth-child(6) .star-container .star i.star-empty, .rating.hover:hover.hover-3 .star-container .star i.star-empty, .rating.hover:hover.value-4.half .star-container .star i.star-empty, .rating.value-0.half .rating.hover.star:hover.value-4:nth-child(1) .star-container .star i.star-empty, .rating.value-1.half .star-container .rating.hover.star:hover.value-4:nth-child(2) .star-container .star i.star-empty, .rating.value-2.half .star-container .rating.hover.star:hover.value-4:nth-child(3) .star-container .star i.star-empty, .rating.value-3.half .star-container .rating.hover.star:hover.value-4:nth-child(4) .star-container .star i.star-empty, .rating.value-4.half .star-container .rating.hover.star:hover.value-4:nth-child(5) .star-container .star i.star-empty, .rating.value-5.half .star-container .rating.hover.star:hover.value-4:nth-child(6) .star-container .star i.star-empty, .rating.hover:hover.hover-4 .star-container .star i.star-empty, .rating.hover:hover.value-5.half .star-container .star i.star-empty, .rating.value-0.half .rating.hover.star:hover.value-5:nth-child(1) .star-container .star i.star-empty, .rating.value-1.half .star-container .rating.hover.star:hover.value-5:nth-child(2) .star-container .star i.star-empty, .rating.value-2.half .star-container .rating.hover.star:hover.value-5:nth-child(3) .star-container .star i.star-empty, .rating.value-3.half .star-container .rating.hover.star:hover.value-5:nth-child(4) .star-container .star i.star-empty, .rating.value-4.half .star-container .rating.hover.star:hover.value-5:nth-child(5) .star-container .star i.star-empty, .rating.value-5.half .star-container .rating.hover.star:hover.value-5:nth-child(6) .star-container .star i.star-empty, .rating.hover:hover.hover-5 .star-container .star i.star-empty, .rating.hover:hover.value-6.half .star-container .star i.star-empty, .rating.value-0.half .rating.hover.star:hover.value-6:nth-child(1) .star-container .star i.star-empty, .rating.value-1.half .star-container .rating.hover.star:hover.value-6:nth-child(2) .star-container .star i.star-empty, .rating.value-2.half .star-container .rating.hover.star:hover.value-6:nth-child(3) .star-container .star i.star-empty, .rating.value-3.half .star-container .rating.hover.star:hover.value-6:nth-child(4) .star-container .star i.star-empty, .rating.value-4.half .star-container .rating.hover.star:hover.value-6:nth-child(5) .star-container .star i.star-empty, .rating.value-5.half .star-container .rating.hover.star:hover.value-6:nth-child(6) .star-container .star i.star-empty, .rating.hover:hover.hover-6 .star-container .star i.star-empty {\n    opacity: 1; }\n  .star.half svg.star-filled, .rating.value-0.half .star:nth-child(1) svg.star-filled, .rating.value-1.half .star-container .star:nth-child(2) svg.star-filled, .rating.value-2.half .star-container .star:nth-child(3) svg.star-filled, .rating.value-3.half .star-container .star:nth-child(4) svg.star-filled, .rating.value-4.half .star-container .star:nth-child(5) svg.star-filled, .rating.value-5.half .star-container .star:nth-child(6) svg.star-filled, .star.half svg.star-empty, .rating.value-0.half .star:nth-child(1) svg.star-empty, .rating.value-1.half .star-container .star:nth-child(2) svg.star-empty, .rating.value-2.half .star-container .star:nth-child(3) svg.star-empty, .rating.value-3.half .star-container .star:nth-child(4) svg.star-empty, .rating.value-4.half .star-container .star:nth-child(5) svg.star-empty, .rating.value-5.half .star-container .star:nth-child(6) svg.star-empty, .star.half i.star-filled, .rating.value-0.half .star:nth-child(1) i.star-filled, .rating.value-1.half .star-container .star:nth-child(2) i.star-filled, .rating.value-2.half .star-container .star:nth-child(3) i.star-filled, .rating.value-3.half .star-container .star:nth-child(4) i.star-filled, .rating.value-4.half .star-container .star:nth-child(5) i.star-filled, .rating.value-5.half .star-container .star:nth-child(6) i.star-filled, .star.half i.star-empty, .rating.value-0.half .star:nth-child(1) i.star-empty, .rating.value-1.half .star-container .star:nth-child(2) i.star-empty, .rating.value-2.half .star-container .star:nth-child(3) i.star-empty, .rating.value-3.half .star-container .star:nth-child(4) i.star-empty, .rating.value-4.half .star-container .star:nth-child(5) i.star-empty, .rating.value-5.half .star-container .star:nth-child(6) i.star-empty {\n    opacity: 0; }\n  .star.half svg.star-half, .rating.value-0.half .star:nth-child(1) svg.star-half, .rating.value-1.half .star-container .star:nth-child(2) svg.star-half, .rating.value-2.half .star-container .star:nth-child(3) svg.star-half, .rating.value-3.half .star-container .star:nth-child(4) svg.star-half, .rating.value-4.half .star-container .star:nth-child(5) svg.star-half, .rating.value-5.half .star-container .star:nth-child(6) svg.star-half, .star.half i.star-half, .rating.value-0.half .star:nth-child(1) i.star-half, .rating.value-1.half .star-container .star:nth-child(2) i.star-half, .rating.value-2.half .star-container .star:nth-child(3) i.star-half, .rating.value-3.half .star-container .star:nth-child(4) i.star-half, .rating.value-4.half .star-container .star:nth-child(5) i.star-half, .rating.value-5.half .star-container .star:nth-child(6) i.star-half {\n    opacity: 1; }\n  .star.filled svg.star-empty, .rating.value-1 .star-container .star:nth-child(-n+1) svg.star-empty, .rating.value-2 .star-container .star:nth-child(-n+2) svg.star-empty, .rating.value-3 .star-container .star:nth-child(-n+3) svg.star-empty, .rating.value-4 .star-container .star:nth-child(-n+4) svg.star-empty, .rating.value-5 .star-container .star:nth-child(-n+5) svg.star-empty, .rating.value-6 .star-container .star:nth-child(-n+6) svg.star-empty, .rating.value-7 .star-container .star:nth-child(-n+7) svg.star-empty, .rating.value-8 .star-container .star:nth-child(-n+8) svg.star-empty, .rating.value-9 .star-container .star:nth-child(-n+9) svg.star-empty, .rating.value-10 .star-container .star:nth-child(-n+10) svg.star-empty, .rating.value-11 .star-container .star:nth-child(-n+11) svg.star-empty, .rating.value-12 .star-container .star:nth-child(-n+12) svg.star-empty, .rating.hover:hover.hover-1 .star-container .star:nth-child(-n+1) svg.star-empty, .rating.hover:hover.hover-2 .star-container .star:nth-child(-n+2) svg.star-empty, .rating.hover:hover.hover-3 .star-container .star:nth-child(-n+3) svg.star-empty, .rating.hover:hover.hover-4 .star-container .star:nth-child(-n+4) svg.star-empty, .rating.hover:hover.hover-5 .star-container .star:nth-child(-n+5) svg.star-empty, .rating.hover:hover.hover-6 .star-container .star:nth-child(-n+6) svg.star-empty, .star.filled svg.star-filled, .rating.value-1 .star-container .star:nth-child(-n+1) svg.star-filled, .rating.value-2 .star-container .star:nth-child(-n+2) svg.star-filled, .rating.value-3 .star-container .star:nth-child(-n+3) svg.star-filled, .rating.value-4 .star-container .star:nth-child(-n+4) svg.star-filled, .rating.value-5 .star-container .star:nth-child(-n+5) svg.star-filled, .rating.value-6 .star-container .star:nth-child(-n+6) svg.star-filled, .rating.value-7 .star-container .star:nth-child(-n+7) svg.star-filled, .rating.value-8 .star-container .star:nth-child(-n+8) svg.star-filled, .rating.value-9 .star-container .star:nth-child(-n+9) svg.star-filled, .rating.value-10 .star-container .star:nth-child(-n+10) svg.star-filled, .rating.value-11 .star-container .star:nth-child(-n+11) svg.star-filled, .rating.value-12 .star-container .star:nth-child(-n+12) svg.star-filled, .rating.hover:hover.hover-1 .star-container .star:nth-child(-n+1) svg.star-filled, .rating.hover:hover.hover-2 .star-container .star:nth-child(-n+2) svg.star-filled, .rating.hover:hover.hover-3 .star-container .star:nth-child(-n+3) svg.star-filled, .rating.hover:hover.hover-4 .star-container .star:nth-child(-n+4) svg.star-filled, .rating.hover:hover.hover-5 .star-container .star:nth-child(-n+5) svg.star-filled, .rating.hover:hover.hover-6 .star-container .star:nth-child(-n+6) svg.star-filled, .star.filled i.star-empty, .rating.value-1 .star-container .star:nth-child(-n+1) i.star-empty, .rating.value-2 .star-container .star:nth-child(-n+2) i.star-empty, .rating.value-3 .star-container .star:nth-child(-n+3) i.star-empty, .rating.value-4 .star-container .star:nth-child(-n+4) i.star-empty, .rating.value-5 .star-container .star:nth-child(-n+5) i.star-empty, .rating.value-6 .star-container .star:nth-child(-n+6) i.star-empty, .rating.value-7 .star-container .star:nth-child(-n+7) i.star-empty, .rating.value-8 .star-container .star:nth-child(-n+8) i.star-empty, .rating.value-9 .star-container .star:nth-child(-n+9) i.star-empty, .rating.value-10 .star-container .star:nth-child(-n+10) i.star-empty, .rating.value-11 .star-container .star:nth-child(-n+11) i.star-empty, .rating.value-12 .star-container .star:nth-child(-n+12) i.star-empty, .rating.hover:hover.hover-1 .star-container .star:nth-child(-n+1) i.star-empty, .rating.hover:hover.hover-2 .star-container .star:nth-child(-n+2) i.star-empty, .rating.hover:hover.hover-3 .star-container .star:nth-child(-n+3) i.star-empty, .rating.hover:hover.hover-4 .star-container .star:nth-child(-n+4) i.star-empty, .rating.hover:hover.hover-5 .star-container .star:nth-child(-n+5) i.star-empty, .rating.hover:hover.hover-6 .star-container .star:nth-child(-n+6) i.star-empty, .star.filled i.star-filled, .rating.value-1 .star-container .star:nth-child(-n+1) i.star-filled, .rating.value-2 .star-container .star:nth-child(-n+2) i.star-filled, .rating.value-3 .star-container .star:nth-child(-n+3) i.star-filled, .rating.value-4 .star-container .star:nth-child(-n+4) i.star-filled, .rating.value-5 .star-container .star:nth-child(-n+5) i.star-filled, .rating.value-6 .star-container .star:nth-child(-n+6) i.star-filled, .rating.value-7 .star-container .star:nth-child(-n+7) i.star-filled, .rating.value-8 .star-container .star:nth-child(-n+8) i.star-filled, .rating.value-9 .star-container .star:nth-child(-n+9) i.star-filled, .rating.value-10 .star-container .star:nth-child(-n+10) i.star-filled, .rating.value-11 .star-container .star:nth-child(-n+11) i.star-filled, .rating.value-12 .star-container .star:nth-child(-n+12) i.star-filled, .rating.hover:hover.hover-1 .star-container .star:nth-child(-n+1) i.star-filled, .rating.hover:hover.hover-2 .star-container .star:nth-child(-n+2) i.star-filled, .rating.hover:hover.hover-3 .star-container .star:nth-child(-n+3) i.star-filled, .rating.hover:hover.hover-4 .star-container .star:nth-child(-n+4) i.star-filled, .rating.hover:hover.hover-5 .star-container .star:nth-child(-n+5) i.star-filled, .rating.hover:hover.hover-6 .star-container .star:nth-child(-n+6) i.star-filled {\n    opacity: 0; }\n  .star.filled svg.star-filled, .rating.value-1 .star-container .star:nth-child(-n+1) svg.star-filled, .rating.value-2 .star-container .star:nth-child(-n+2) svg.star-filled, .rating.value-3 .star-container .star:nth-child(-n+3) svg.star-filled, .rating.value-4 .star-container .star:nth-child(-n+4) svg.star-filled, .rating.value-5 .star-container .star:nth-child(-n+5) svg.star-filled, .rating.value-6 .star-container .star:nth-child(-n+6) svg.star-filled, .rating.value-7 .star-container .star:nth-child(-n+7) svg.star-filled, .rating.value-8 .star-container .star:nth-child(-n+8) svg.star-filled, .rating.value-9 .star-container .star:nth-child(-n+9) svg.star-filled, .rating.value-10 .star-container .star:nth-child(-n+10) svg.star-filled, .rating.value-11 .star-container .star:nth-child(-n+11) svg.star-filled, .rating.value-12 .star-container .star:nth-child(-n+12) svg.star-filled, .rating.hover:hover.hover-1 .star-container .star:nth-child(-n+1) svg.star-filled, .rating.hover:hover.hover-2 .star-container .star:nth-child(-n+2) svg.star-filled, .rating.hover:hover.hover-3 .star-container .star:nth-child(-n+3) svg.star-filled, .rating.hover:hover.hover-4 .star-container .star:nth-child(-n+4) svg.star-filled, .rating.hover:hover.hover-5 .star-container .star:nth-child(-n+5) svg.star-filled, .rating.hover:hover.hover-6 .star-container .star:nth-child(-n+6) svg.star-filled, .star.filled i.star-filled, .rating.value-1 .star-container .star:nth-child(-n+1) i.star-filled, .rating.value-2 .star-container .star:nth-child(-n+2) i.star-filled, .rating.value-3 .star-container .star:nth-child(-n+3) i.star-filled, .rating.value-4 .star-container .star:nth-child(-n+4) i.star-filled, .rating.value-5 .star-container .star:nth-child(-n+5) i.star-filled, .rating.value-6 .star-container .star:nth-child(-n+6) i.star-filled, .rating.value-7 .star-container .star:nth-child(-n+7) i.star-filled, .rating.value-8 .star-container .star:nth-child(-n+8) i.star-filled, .rating.value-9 .star-container .star:nth-child(-n+9) i.star-filled, .rating.value-10 .star-container .star:nth-child(-n+10) i.star-filled, .rating.value-11 .star-container .star:nth-child(-n+11) i.star-filled, .rating.value-12 .star-container .star:nth-child(-n+12) i.star-filled, .rating.hover:hover.hover-1 .star-container .star:nth-child(-n+1) i.star-filled, .rating.hover:hover.hover-2 .star-container .star:nth-child(-n+2) i.star-filled, .rating.hover:hover.hover-3 .star-container .star:nth-child(-n+3) i.star-filled, .rating.hover:hover.hover-4 .star-container .star:nth-child(-n+4) i.star-filled, .rating.hover:hover.hover-5 .star-container .star:nth-child(-n+5) i.star-filled, .rating.hover:hover.hover-6 .star-container .star:nth-child(-n+6) i.star-filled {\n    opacity: 1; }\n  .star.default svg, .star-container .star svg {\n    fill: #999; }\n  .star.default i, .star-container .star i {\n    color: #999; }\n  .star.negative svg, .rating.value-1 .star-container .star svg, .rating.value-2 .star-container .star svg, .rating.hover:hover.hover-1 .star-container .star svg, .rating.hover:hover.hover-2 .star-container .star svg, .rating.value-0.half .star svg, .rating.value-1.half .star-container .rating.value-0.star:nth-child(2) .star svg, .rating.value-2.half .star-container .rating.value-0.star:nth-child(3) .star svg, .rating.value-3.half .star-container .rating.value-0.star:nth-child(4) .star svg, .rating.value-4.half .star-container .rating.value-0.star:nth-child(5) .star svg, .rating.value-5.half .star-container .rating.value-0.star:nth-child(6) .star svg {\n    fill: #f03c56; }\n  .star.negative i, .rating.value-1 .star-container .star i, .rating.value-2 .star-container .star i, .rating.hover:hover.hover-1 .star-container .star i, .rating.hover:hover.hover-2 .star-container .star i, .rating.value-0.half .star i, .rating.value-1.half .star-container .rating.value-0.star:nth-child(2) .star i, .rating.value-2.half .star-container .rating.value-0.star:nth-child(3) .star i, .rating.value-3.half .star-container .rating.value-0.star:nth-child(4) .star i, .rating.value-4.half .star-container .rating.value-0.star:nth-child(5) .star i, .rating.value-5.half .star-container .rating.value-0.star:nth-child(6) .star i {\n    color: #f03c56; }\n  .star.ok svg, .rating.value-3 .star-container .star svg, .rating.hover:hover.hover-3 .star-container .star svg {\n    fill: #ffc058; }\n  .star.ok i, .rating.value-3 .star-container .star i, .rating.hover:hover.hover-3 .star-container .star i {\n    color: #ffc058; }\n  .star.positive svg, .rating.value-4 .star-container .star svg, .rating.value-5 .star-container .star svg, .rating.value-6 .star-container .star svg, .rating.value-7 .star-container .star svg, .rating.value-8 .star-container .star svg, .rating.value-9 .star-container .star svg, .rating.value-10 .star-container .star svg, .rating.value-11 .star-container .star svg, .rating.value-12 .star-container .star svg, .rating.hover:hover.hover-4 .star-container .star svg, .rating.hover:hover.hover-5 .star-container .star svg, .rating.hover:hover.hover-6 .star-container .star svg {\n    fill: #7ed321; }\n  .star.positive i, .rating.value-4 .star-container .star i, .rating.value-5 .star-container .star i, .rating.value-6 .star-container .star i, .rating.value-7 .star-container .star i, .rating.value-8 .star-container .star i, .rating.value-9 .star-container .star i, .rating.value-10 .star-container .star i, .rating.value-11 .star-container .star i, .rating.value-12 .star-container .star i, .rating.hover:hover.hover-4 .star-container .star i, .rating.hover:hover.hover-5 .star-container .star i, .rating.hover:hover.hover-6 .star-container .star i {\n    color: #7ed321; }\n  .star.svg i, .rating.star-svg i {\n    display: none; }\n  .star.svg svg, .rating.star-svg svg {\n    display: flex; }\n  .star.custom-icon svg, .rating.star-custom-icon svg, .rating.theme-kununu .star-container .star svg, .star.icon svg, .rating.star-icon svg {\n    display: none; }\n  .star.custom-icon i, .rating.star-custom-icon i, .rating.theme-kununu .star-container .star i, .star.icon i, .rating.star-icon i {\n    display: flex; }\n  .star.small, .rating.small .star {\n    width: 10px;\n    height: 9, 5px; }\n    .star.small i, .rating.small .star i {\n      font-size: 11px;\n      line-height: 10px; }\n  .star.medium, .rating.medium .star {\n    width: 20px;\n    height: 20px; }\n    .star.medium i, .rating.medium .star i {\n      font-size: 25px;\n      line-height: 25px; }\n  .star.large, .rating.large .star {\n    width: 35px;\n    height: 33.3px; }\n    .star.large i, .rating.large .star i {\n      font-size: 36px;\n      line-height: 35px; }\n  .star.disabled, .rating.disabled .star-container .star {\n    opacity: 0.5; }\n  .star.direction-rtl svg.star-half, .star-container.direction-rtl .star svg.star-half, .rating.direction-rtl .star-container .star svg.star-half, .star.direction-rtl i.star-half, .star-container.direction-rtl .star i.star-half, .rating.direction-rtl .star-container .star i.star-half {\n    transform: scale(-1, 1); }\n  .star.direction-ltr svg.star-half, .star-container.direction-ltr .star svg.star-half, .star.direction-ltr i.star-half, .star-container.direction-ltr .star i.star-half {\n    transform: scale(1, 1); }\n\n/*\r\nLabel Element\r\n===================================================================*/\n.label-value {\n  font-size: 18px;\n  line-height: 18px;\n  /*\r\n  Sizes\r\n  =================================================================*/\n  /*\r\n  Disabled\r\n  =================================================*/ }\n  .label-value.small, .rating.small .label-value {\n    font-size: 9.5px;\n    line-height: 9.5px; }\n  .label-value.medium, .rating.medium .label-value {\n    font-size: 18px;\n    line-height: 25px; }\n  .label-value.large, .rating.large .label-value {\n    font-size: 28px;\n    line-height: 35px; }\n  .label-value.disabled, .rating.disabled .label-value {\n    opacity: 0.5; }\n\n/*\r\nStar Container\r\n==================================================================*/\n.star-container {\n  display: flex;\n  align-items: center;\n  flex: 0 0 auto;\n  justify-content: center;\n  margin-left: 5px;\n  margin-right: 5px;\n  transition: all 0.3s ease;\n  /*\r\n Direction\r\n ===================================================*/\n  /*\r\n  Space\r\n  ======================================================*/ }\n  .star-container + .star {\n    margin-left: 5px; }\n  .star-container .star {\n    transition: all 0.3s ease; }\n    .star-container .star svg, .star-container .star i {\n      transition: all 0.3s ease; }\n  .star-container svg {\n    z-index: 2; }\n  .star-container i {\n    z-index: 1; }\n  .star-container.direction-rtl, .rating.direction-rtl .star-container {\n    direction: rtl; }\n  .star-container.direction-ltr {\n    direction: ltr; }\n  .star-container.space-no, .rating.space-no .star-container {\n    flex: 1 1 auto;\n    justify-content: center; }\n  .star-container.space-between, .rating.space-between .star-container {\n    flex: 1 1 auto;\n    justify-content: space-between; }\n  .star-container.space-around, .rating.space-around .star-container {\n    flex: 1 1 auto;\n    justify-content: space-around; }\n\n/*\r\nRating Component\r\n========================================================================= */\n.rating {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin-bottom: 5px;\n  /*Rating Value\r\n  ====================================================*/\n  /*Hover states\r\n  ====================================================*/\n  /*Half stars\r\n  ====================================================*/\n  /*Label Visible\r\n  ====================================================*/\n  /*Label Position\r\n  ====================================================*/\n  /*\r\n  Direction\r\n  ===================================================*/\n  /* Star Type\r\n  ====================================================*/\n  /* Sizes\r\n  ==========================================================*/\n  /* Space\r\n  ====================================================*/\n  /* Static Color\r\n    ====================================================*/\n  /*Disabled\r\n  ====================================================*/\n  /*AnimationSpeed\r\n ====================================================*/ }\n  .rating.label-hidden .label-value {\n    display: none; }\n  .rating.label-visible {\n    display: flex; }\n  .rating.label-top {\n    flex-direction: column; }\n    .rating.label-top .label-value + .star-container {\n      margin-left: 0;\n      margin-right: 0;\n      margin-top: 5px; }\n  .rating.label-left .label-value {\n    flex: 0 0 auto; }\n    .rating.label-left .label-value + .star-container {\n      margin-left: 5px;\n      margin-right: 0; }\n  .rating.label-right {\n    flex-direction: row-reverse; }\n    .rating.label-right .label-value + .star-container {\n      margin-left: 0;\n      margin-right: 5px; }\n  .rating.label-bottom {\n    flex-direction: column-reverse; }\n    .rating.label-bottom .label-value + .star-container {\n      margin-left: 0;\n      margin-right: 0;\n      margin-bottom: 5px; }\n  .rating.direction-rtl {\n    direction: rtl; }\n  .rating.direction-ltr {\n    direction: ltr; }\n  .rating.color-default .star-container .star svg {\n    fill: #999; }\n  .rating.color-default .star-container .star i {\n    color: #999; }\n  .rating.color-ok .star-container .star svg {\n    fill: #ffc058; }\n  .rating.color-ok .star-container .star i {\n    color: #ffc058; }\n  .rating.color-positive .star-container .star svg {\n    fill: #7ed321; }\n  .rating.color-positive .star-container .star i {\n    color: #7ed321; }\n  .rating.color-negative .star-container .star svg {\n    fill: #f03c56; }\n  .rating.color-negative .star-container .star i {\n    color: #f03c56; }\n  .rating.immediately .star-container {\n    transition: all none; }\n    .rating.immediately .star-container .star {\n      transition: none; }\n      .rating.immediately .star-container .star svg, .rating.immediately .star-container .star i {\n        transition: none; }\n  .rating.noticeable .star-container {\n    transition: all 0.3s ease; }\n    .rating.noticeable .star-container .star {\n      transition: all 0.3s ease; }\n      .rating.noticeable .star-container .star svg, .rating.noticeable .star-container .star i {\n        transition: all 0.3s ease; }\n  .rating.slow .star-container {\n    transition: all 0.8s ease; }\n    .rating.slow .star-container .star {\n      transition: all 0.8s ease; }\n      .rating.slow .star-container .star svg, .rating.slow .star-container .star i {\n        transition: all 0.8s ease; }\n\n/*theme modifiers\r\n====================================================*/\n.rating.theme-kununu {\n  flex-direction: column;\n  width: 78px; }\n  .rating.theme-kununu .label-value,\n  .rating.theme-kununu .star-container {\n    width: 100%; }\n  .rating.theme-kununu .label-value {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    border-radius: 6px 6px 0 0;\n    height: 50px;\n    border: 1px solid #e9ecec;\n    border-bottom: 0px;\n    font-size: 18px;\n    font-weight: bold;\n    color: #2f3940;\n    letter-spacing: -1px;\n    background-color: #f8f8f8; }\n  .rating.theme-kununu .star-container {\n    border-radius: 0 0 6px 6px;\n    padding: 2px 0 4px 0;\n    margin-left: 0px;\n    margin-right: 0px;\n    justify-content: center;\n    background-color: #99c613;\n    border: 1px solid #99c613;\n    border-bottom: 0px; }\n    .rating.theme-kununu .star-container .star {\n      height: 11px;\n      width: 11px; }\n      .rating.theme-kununu .star-container .star i {\n        font-size: 11px;\n        color: #fff;\n        text-align: center; }\n\n.rating.theme-google-places .label-value {\n  color: #e7711b;\n  font-family: arial, sans-serif;\n  font-size: 13px;\n  line-height: 15px; }\n\n.rating.theme-google-places .star-container {\n  width: 65px;\n  margin-left: 2px; }\n  .rating.theme-google-places .star-container .star i {\n    font-size: 17px;\n    color: #e7711b !important; }\n    .rating.theme-google-places .star-container .star i.star-empty {\n      opacity: 1 !important;\n      color: #e1e1e1 !important; }\n      .rating.theme-google-places .star-container .star i.star-empty:before {\n        content: \"\\2605\"; }\n    .rating.theme-google-places .star-container .star i.star-half {\n      width: 7px;\n      overflow: hidden; }\n      .rating.theme-google-places .star-container .star i.star-half:before {\n        content: \"\\2605\"; }\n    .rating.theme-google-places .star-container .star i.star-filled:before {\n      content: \"\\2605\"; }\n\n.rating.theme-rolling-stars .star-container .star {\n  transition: transform 1s;\n  transform: rotate(0deg); }\n\n.rating.theme-rolling-stars.value-1 .star-container .star:nth-child(-n+1) {\n  transition: transform 1s;\n  transform: rotate(360deg); }\n\n.rating.theme-rolling-stars.value-2 .star-container .star:nth-child(-n+2) {\n  transition: transform 1s;\n  transform: rotate(360deg); }\n\n.rating.theme-rolling-stars.value-3 .star-container .star:nth-child(-n+3) {\n  transition: transform 1s;\n  transform: rotate(360deg); }\n\n.rating.theme-rolling-stars.value-4 .star-container .star:nth-child(-n+4) {\n  transition: transform 1s;\n  transform: rotate(360deg); }\n\n.rating.theme-rolling-stars.value-5 .star-container .star:nth-child(-n+5) {\n  transition: transform 1s;\n  transform: rotate(360deg); }\n\n.rating.theme-rolling-stars.value-6 .star-container .star:nth-child(-n+6) {\n  transition: transform 1s;\n  transform: rotate(360deg); }\n\n.rating.theme-rolling-stars.value-0.half .star:nth-child(1), .rating.value-0.half .rating.theme-rolling-stars.value-0.star:nth-child(1) .star:nth-child(1), .rating.value-1.half .star-container .rating.theme-rolling-stars.value-0.star:nth-child(2) .star:nth-child(1), .rating.value-2.half .star-container .rating.theme-rolling-stars.value-0.star:nth-child(3) .star:nth-child(1), .rating.value-3.half .star-container .rating.theme-rolling-stars.value-0.star:nth-child(4) .star:nth-child(1), .rating.value-4.half .star-container .rating.theme-rolling-stars.value-0.star:nth-child(5) .star:nth-child(1), .rating.value-5.half .star-container .rating.theme-rolling-stars.value-0.star:nth-child(6) .star:nth-child(1) {\n  transition: transform 1s;\n  transform: rotate(360deg); }\n\n.rating.theme-rolling-stars.value-1.half .star-container .star:nth-child(2), .rating.value-0.half .rating.theme-rolling-stars.value-1.star:nth-child(1) .star-container .star:nth-child(2), .rating.value-1.half .star-container .rating.theme-rolling-stars.value-1.star:nth-child(2) .star-container .star:nth-child(2), .rating.value-2.half .star-container .rating.theme-rolling-stars.value-1.star:nth-child(3) .star-container .star:nth-child(2), .rating.value-3.half .star-container .rating.theme-rolling-stars.value-1.star:nth-child(4) .star-container .star:nth-child(2), .rating.value-4.half .star-container .rating.theme-rolling-stars.value-1.star:nth-child(5) .star-container .star:nth-child(2), .rating.value-5.half .star-container .rating.theme-rolling-stars.value-1.star:nth-child(6) .star-container .star:nth-child(2) {\n  transition: transform 1s;\n  transform: rotate(360deg); }\n\n.rating.theme-rolling-stars.value-2.half .star-container .star:nth-child(3), .rating.value-0.half .rating.theme-rolling-stars.value-2.star:nth-child(1) .star-container .star:nth-child(3), .rating.value-1.half .star-container .rating.theme-rolling-stars.value-2.star:nth-child(2) .star-container .star:nth-child(3), .rating.value-2.half .star-container .rating.theme-rolling-stars.value-2.star:nth-child(3) .star-container .star:nth-child(3), .rating.value-3.half .star-container .rating.theme-rolling-stars.value-2.star:nth-child(4) .star-container .star:nth-child(3), .rating.value-4.half .star-container .rating.theme-rolling-stars.value-2.star:nth-child(5) .star-container .star:nth-child(3), .rating.value-5.half .star-container .rating.theme-rolling-stars.value-2.star:nth-child(6) .star-container .star:nth-child(3) {\n  transition: transform 1s;\n  transform: rotate(360deg); }\n\n.rating.theme-rolling-stars.value-3.half .star-container .star:nth-child(4), .rating.value-0.half .rating.theme-rolling-stars.value-3.star:nth-child(1) .star-container .star:nth-child(4), .rating.value-1.half .star-container .rating.theme-rolling-stars.value-3.star:nth-child(2) .star-container .star:nth-child(4), .rating.value-2.half .star-container .rating.theme-rolling-stars.value-3.star:nth-child(3) .star-container .star:nth-child(4), .rating.value-3.half .star-container .rating.theme-rolling-stars.value-3.star:nth-child(4) .star-container .star:nth-child(4), .rating.value-4.half .star-container .rating.theme-rolling-stars.value-3.star:nth-child(5) .star-container .star:nth-child(4), .rating.value-5.half .star-container .rating.theme-rolling-stars.value-3.star:nth-child(6) .star-container .star:nth-child(4) {\n  transition: transform 1s;\n  transform: rotate(360deg); }\n\n.rating.theme-rolling-stars.value-4.half .star-container .star:nth-child(5), .rating.value-0.half .rating.theme-rolling-stars.value-4.star:nth-child(1) .star-container .star:nth-child(5), .rating.value-1.half .star-container .rating.theme-rolling-stars.value-4.star:nth-child(2) .star-container .star:nth-child(5), .rating.value-2.half .star-container .rating.theme-rolling-stars.value-4.star:nth-child(3) .star-container .star:nth-child(5), .rating.value-3.half .star-container .rating.theme-rolling-stars.value-4.star:nth-child(4) .star-container .star:nth-child(5), .rating.value-4.half .star-container .rating.theme-rolling-stars.value-4.star:nth-child(5) .star-container .star:nth-child(5), .rating.value-5.half .star-container .rating.theme-rolling-stars.value-4.star:nth-child(6) .star-container .star:nth-child(5) {\n  transition: transform 1s;\n  transform: rotate(360deg); }\n\n.rating.theme-rolling-stars.value-5.half .star-container .star:nth-child(6), .rating.value-0.half .rating.theme-rolling-stars.value-5.star:nth-child(1) .star-container .star:nth-child(6), .rating.value-1.half .star-container .rating.theme-rolling-stars.value-5.star:nth-child(2) .star-container .star:nth-child(6), .rating.value-2.half .star-container .rating.theme-rolling-stars.value-5.star:nth-child(3) .star-container .star:nth-child(6), .rating.value-3.half .star-container .rating.theme-rolling-stars.value-5.star:nth-child(4) .star-container .star:nth-child(6), .rating.value-4.half .star-container .rating.theme-rolling-stars.value-5.star:nth-child(5) .star-container .star:nth-child(6), .rating.value-5.half .star-container .rating.theme-rolling-stars.value-5.star:nth-child(6) .star-container .star:nth-child(6) {\n  transition: transform 1s;\n  transform: rotate(360deg); }\n\nnav {\n  margin-top: 16px; }\n\nnav a {\n  background-color: #00838F;\n  color: white;\n  padding: 8px 16px;\n  margin: 8px;\n  vertical-align: middle;\n  line-height: 1.25;\n  text-align: center;\n  text-decoration: none;\n  border-radius: 4px; }\n", ""]);
-
-// exports
-
+throw new Error("Module build failed: Error: Missing binding C:\\Users\\user\\Desktop\\pharma-web-frontend\\node_modules\\node-sass\\vendor\\win32-x64-57\\binding.node\nNode Sass could not find a binding for your current environment: Windows 64-bit with Node.js 8.x\n\nFound bindings for the following environments:\n  - Windows 64-bit with Node.js 6.x\n\nThis usually happens because your environment has changed since running `npm install`.\nRun `npm rebuild node-sass --force` to build the binding for your current environment.\n    at module.exports (C:\\Users\\user\\Desktop\\pharma-web-frontend\\node_modules\\node-sass\\lib\\binding.js:15:13)\n    at Object.<anonymous> (C:\\Users\\user\\Desktop\\pharma-web-frontend\\node_modules\\node-sass\\lib\\index.js:14:35)\n    at Module._compile (module.js:635:30)\n    at Object.Module._extensions..js (module.js:646:10)\n    at Module.load (module.js:554:32)\n    at tryModuleLoad (module.js:497:12)\n    at Function.Module._load (module.js:489:3)\n    at Module.require (module.js:579:17)\n    at require (internal/module.js:11:18)\n    at Object.<anonymous> (C:\\Users\\user\\Desktop\\pharma-web-frontend\\node_modules\\sass-loader\\lib\\loader.js:3:14)\n    at Module._compile (module.js:635:30)\n    at Object.Module._extensions..js (module.js:646:10)\n    at Module.load (module.js:554:32)\n    at tryModuleLoad (module.js:497:12)\n    at Function.Module._load (module.js:489:3)\n    at Module.require (module.js:579:17)\n    at require (internal/module.js:11:18)\n    at loadLoader (C:\\Users\\user\\Desktop\\pharma-web-frontend\\node_modules\\loader-runner\\lib\\loadLoader.js:13:17)\n    at iteratePitchingLoaders (C:\\Users\\user\\Desktop\\pharma-web-frontend\\node_modules\\loader-runner\\lib\\LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (C:\\Users\\user\\Desktop\\pharma-web-frontend\\node_modules\\loader-runner\\lib\\LoaderRunner.js:165:10)\n    at C:\\Users\\user\\Desktop\\pharma-web-frontend\\node_modules\\loader-runner\\lib\\LoaderRunner.js:173:18\n    at loadLoader (C:\\Users\\user\\Desktop\\pharma-web-frontend\\node_modules\\loader-runner\\lib\\loadLoader.js:36:3)\n    at iteratePitchingLoaders (C:\\Users\\user\\Desktop\\pharma-web-frontend\\node_modules\\loader-runner\\lib\\LoaderRunner.js:169:2)\n    at runLoaders (C:\\Users\\user\\Desktop\\pharma-web-frontend\\node_modules\\loader-runner\\lib\\LoaderRunner.js:362:2)\n    at NormalModule.doBuild (C:\\Users\\user\\Desktop\\pharma-web-frontend\\node_modules\\webpack\\lib\\NormalModule.js:182:3)\n    at NormalModule.build (C:\\Users\\user\\Desktop\\pharma-web-frontend\\node_modules\\webpack\\lib\\NormalModule.js:275:15)\n    at Compilation.buildModule (C:\\Users\\user\\Desktop\\pharma-web-frontend\\node_modules\\webpack\\lib\\Compilation.js:151:10)\n    at factoryCallback (C:\\Users\\user\\Desktop\\pharma-web-frontend\\node_modules\\webpack\\lib\\Compilation.js:344:12)\n    at factory (C:\\Users\\user\\Desktop\\pharma-web-frontend\\node_modules\\webpack\\lib\\NormalModuleFactory.js:241:5)\n    at applyPluginsAsyncWaterfall (C:\\Users\\user\\Desktop\\pharma-web-frontend\\node_modules\\webpack\\lib\\NormalModuleFactory.js:94:13)");
 
 /***/ }),
 /* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(7)(undefined);
+exports = module.exports = __webpack_require__(11)(undefined);
 // imports
 
 
@@ -52812,111 +52819,6 @@ exports.pipeFromArray = pipeFromArray;
 
 "use strict";
 
-var Observable_1 = __webpack_require__(3);
-var ArrayObservable_1 = __webpack_require__(70);
-var mergeAll_1 = __webpack_require__(71);
-var isScheduler_1 = __webpack_require__(103);
-/* tslint:enable:max-line-length */
-function merge() {
-    var observables = [];
-    for (var _i = 0; _i < arguments.length; _i++) {
-        observables[_i - 0] = arguments[_i];
-    }
-    return function (source) { return source.lift.call(mergeStatic.apply(void 0, [source].concat(observables))); };
-}
-exports.merge = merge;
-/* tslint:enable:max-line-length */
-/**
- * Creates an output Observable which concurrently emits all values from every
- * given input Observable.
- *
- * <span class="informal">Flattens multiple Observables together by blending
- * their values into one Observable.</span>
- *
- * <img src="./img/merge.png" width="100%">
- *
- * `merge` subscribes to each given input Observable (as arguments), and simply
- * forwards (without doing any transformation) all the values from all the input
- * Observables to the output Observable. The output Observable only completes
- * once all input Observables have completed. Any error delivered by an input
- * Observable will be immediately emitted on the output Observable.
- *
- * @example <caption>Merge together two Observables: 1s interval and clicks</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var timer = Rx.Observable.interval(1000);
- * var clicksOrTimer = Rx.Observable.merge(clicks, timer);
- * clicksOrTimer.subscribe(x => console.log(x));
- *
- * // Results in the following:
- * // timer will emit ascending values, one every second(1000ms) to console
- * // clicks logs MouseEvents to console everytime the "document" is clicked
- * // Since the two streams are merged you see these happening
- * // as they occur.
- *
- * @example <caption>Merge together 3 Observables, but only 2 run concurrently</caption>
- * var timer1 = Rx.Observable.interval(1000).take(10);
- * var timer2 = Rx.Observable.interval(2000).take(6);
- * var timer3 = Rx.Observable.interval(500).take(10);
- * var concurrent = 2; // the argument
- * var merged = Rx.Observable.merge(timer1, timer2, timer3, concurrent);
- * merged.subscribe(x => console.log(x));
- *
- * // Results in the following:
- * // - First timer1 and timer2 will run concurrently
- * // - timer1 will emit a value every 1000ms for 10 iterations
- * // - timer2 will emit a value every 2000ms for 6 iterations
- * // - after timer1 hits it's max iteration, timer2 will
- * //   continue, and timer3 will start to run concurrently with timer2
- * // - when timer2 hits it's max iteration it terminates, and
- * //   timer3 will continue to emit a value every 500ms until it is complete
- *
- * @see {@link mergeAll}
- * @see {@link mergeMap}
- * @see {@link mergeMapTo}
- * @see {@link mergeScan}
- *
- * @param {...ObservableInput} observables Input Observables to merge together.
- * @param {number} [concurrent=Number.POSITIVE_INFINITY] Maximum number of input
- * Observables being subscribed to concurrently.
- * @param {Scheduler} [scheduler=null] The IScheduler to use for managing
- * concurrency of input Observables.
- * @return {Observable} an Observable that emits items that are the result of
- * every input Observable.
- * @static true
- * @name merge
- * @owner Observable
- */
-function mergeStatic() {
-    var observables = [];
-    for (var _i = 0; _i < arguments.length; _i++) {
-        observables[_i - 0] = arguments[_i];
-    }
-    var concurrent = Number.POSITIVE_INFINITY;
-    var scheduler = null;
-    var last = observables[observables.length - 1];
-    if (isScheduler_1.isScheduler(last)) {
-        scheduler = observables.pop();
-        if (observables.length > 1 && typeof observables[observables.length - 1] === 'number') {
-            concurrent = observables.pop();
-        }
-    }
-    else if (typeof last === 'number') {
-        concurrent = observables.pop();
-    }
-    if (scheduler === null && observables.length === 1 && observables[0] instanceof Observable_1.Observable) {
-        return observables[0];
-    }
-    return mergeAll_1.mergeAll(concurrent)(new ArrayObservable_1.ArrayObservable(observables, scheduler));
-}
-exports.mergeStatic = mergeStatic;
-//# sourceMappingURL=merge.js.map
-
-/***/ }),
-/* 102 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -52976,7 +52878,7 @@ exports.ScalarObservable = ScalarObservable;
 //# sourceMappingURL=ScalarObservable.js.map
 
 /***/ }),
-/* 103 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52988,7 +52890,7 @@ exports.isScheduler = isScheduler;
 //# sourceMappingURL=isScheduler.js.map
 
 /***/ }),
-/* 104 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52997,7 +52899,7 @@ exports.isArrayLike = (function (x) { return x && typeof x.length === 'number'; 
 //# sourceMappingURL=isArrayLike.js.map
 
 /***/ }),
-/* 105 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53009,7 +52911,7 @@ exports.isPromise = isPromise;
 //# sourceMappingURL=isPromise.js.map
 
 /***/ }),
-/* 106 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53042,7 +52944,7 @@ exports.ObjectUnsubscribedError = ObjectUnsubscribedError;
 //# sourceMappingURL=ObjectUnsubscribedError.js.map
 
 /***/ }),
-/* 107 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53133,7 +53035,7 @@ var RefCountSubscriber = (function (_super) {
 //# sourceMappingURL=refCount.js.map
 
 /***/ }),
-/* 108 */
+/* 107 */
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -53146,10 +53048,10 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 108;
+webpackEmptyAsyncContext.id = 107;
 
 /***/ }),
-/* 109 */
+/* 108 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -53199,7 +53101,7 @@ var ENV_PROVIDERS = PROVIDERS.slice();
 
 
 /***/ }),
-/* 110 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53209,23 +53111,23 @@ function __export(m) {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 // Hot Module Replacement
+__export(__webpack_require__(223));
 __export(__webpack_require__(224));
 __export(__webpack_require__(225));
-__export(__webpack_require__(226));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 111 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var PromiseObservable_1 = __webpack_require__(112);
+var PromiseObservable_1 = __webpack_require__(111);
 exports.fromPromise = PromiseObservable_1.PromiseObservable.create;
 //# sourceMappingURL=fromPromise.js.map
 
 /***/ }),
-/* 112 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53352,7 +53254,7 @@ function dispatchError(arg) {
 //# sourceMappingURL=PromiseObservable.js.map
 
 /***/ }),
-/* 113 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53362,8 +53264,8 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var Subject_1 = __webpack_require__(37);
-var ObjectUnsubscribedError_1 = __webpack_require__(106);
+var Subject_1 = __webpack_require__(38);
+var ObjectUnsubscribedError_1 = __webpack_require__(105);
 /**
  * @class BehaviorSubject<T>
  */
@@ -53407,17 +53309,17 @@ exports.BehaviorSubject = BehaviorSubject;
 //# sourceMappingURL=BehaviorSubject.js.map
 
 /***/ }),
-/* 114 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var ArrayObservable_1 = __webpack_require__(70);
+var ArrayObservable_1 = __webpack_require__(71);
 exports.of = ArrayObservable_1.ArrayObservable.of;
 //# sourceMappingURL=of.js.map
 
 /***/ }),
-/* 115 */
+/* 114 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -54759,12 +54661,615 @@ var ɵPRE_STYLE = '!';
 
 
 /***/ }),
+/* 115 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__home_component__ = __webpack_require__(262);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__home_component__["a"]; });
+
+
+
+/***/ }),
 /* 116 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__home_component__ = __webpack_require__(263);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__home_component__["a"]; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HeaderComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_usersModel__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_userService__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_chemistService__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ngx_facebook__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_sharedService__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_addtocartService__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_add_operator_map__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_http__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_jquery__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_jquery__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_timers__ = __webpack_require__(264);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_timers___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_timers__);
+
+
+
+
+
+
+
+
+
+
+
+
+
+var HeaderComponent = (function () {
+    function HeaderComponent(_http, _addToCartService, _sharedService, _userService, router, fb, _chemistService) {
+        var _this = this;
+        this._http = _http;
+        this._addToCartService = _addToCartService;
+        this._sharedService = _sharedService;
+        this._userService = _userService;
+        this.fb = fb;
+        this._chemistService = _chemistService;
+        this.mobileVerificationScreen = false;
+        this.allChemists = [];
+        this.UsernameError = false;
+        this.MobileError = false;
+        this.CanNavigateToCart = false;
+        this.GotCart = [];
+        this.showCheckoutBtn = false;
+        __WEBPACK_IMPORTED_MODULE_11_jquery__["getJSON"]('https://jsonip.com?callback=?', function (data) {
+            this.UserIpAddress = data.ip;
+            //localStorage.setItem("userIp", this.UserIpAddress);
+            localStorage.setItem("userIp", "101.127.50.50");
+        });
+        if (JSON.parse(localStorage.getItem('UserObject')) == undefined || JSON.parse(localStorage.getItem('UserObject')) == null) {
+            this.LoggedInUser = new __WEBPACK_IMPORTED_MODULE_3__models_usersModel__["a" /* UsersModel */]();
+            this.LoggedInUser.Id = localStorage.getItem("userIp");
+            this._addToCartService.getCartCountByIp(this.LoggedInUser.Id).subscribe(function (response) {
+                _this.GotCart = response.data;
+                if (_this.GotCart.length == 0) {
+                    _this.showCheckoutBtn = false;
+                }
+                else {
+                    _this.showCheckoutBtn = true;
+                }
+                _this.CartCount = response.data.length;
+                _this.cartset(_this.CartCount);
+            });
+        }
+        else {
+            this.LoggedInUser = JSON.parse(localStorage.getItem('UserObject'));
+            this.LoggedInUser.UserName = this.LoggedInUser.UserName.charAt(0).toUpperCase() + this.LoggedInUser.UserName.slice(1);
+            this._addToCartService.getCartCount(this.LoggedInUser.Id).subscribe(function (response) {
+                _this.CartCount = response.data.length;
+                _this.cartset(_this.CartCount);
+            });
+            this.ChemistViewing = JSON.parse(localStorage.getItem('chemistDetails'));
+            console.log(this.ChemistViewing);
+            if (this.ChemistViewing == null) {
+                this.CanNavigateToCart = false;
+                /*   this.router.navigate(['/chemist']); */
+            }
+            else {
+                this.CanNavigateToCart = true;
+            }
+        }
+        var initParams = {
+            appId: '130624990977887',
+            xfbml: true,
+            version: 'v2.8'
+        };
+        fb.init(initParams);
+        this.router = router;
+        if (localStorage.getItem("logStatus") == "loggedIn") {
+            this.loggedIn = true;
+        }
+        else {
+            this.loggedIn = false;
+        }
+        console.log(this.loggedIn);
+    }
+    HeaderComponent.prototype.googleInit = function () {
+        __WEBPACK_IMPORTED_MODULE_11_jquery__(".loader").show();
+        __WEBPACK_IMPORTED_MODULE_11_jquery__(".submit-custom").hide();
+        var that = this;
+        gapi.load('auth2', function () {
+            that.auth2 = gapi.auth2.init({
+                apiKey: 'AIzaSyD2Cnux3uF0MVgyOkVERSmTqhw1om6tegU',
+                client_id: '1074486889014-lh35efmr5a74gurtgb3si2obcmdhs6kr.apps.googleusercontent.com',
+                scope: 'profile'
+            });
+            that.attachSignin(document.getElementById('googleSignUpBtn'));
+            that.attachSignin(document.getElementById('googleSignInBtn'));
+        });
+    };
+    HeaderComponent.prototype.getCart = function () {
+        var _this = this;
+        console.log("refreshing header");
+        this._addToCartService.getCartCountByIp(this.LoggedInUser.Id).subscribe(function (response) {
+            _this.GotCart = [];
+            _this.GotCart = response.data;
+            if (_this.GotCart.length == 0) {
+                _this.showCheckoutBtn = false;
+            }
+            else {
+                _this.showCheckoutBtn = true;
+            }
+            _this.CartCount = response.data.length;
+            _this.cartset(_this.CartCount);
+        });
+    };
+    HeaderComponent.prototype.changeView = function () {
+        this.getCart();
+    };
+    HeaderComponent.prototype.verifyMobileNumber = function () {
+        var _this = this;
+        if (this.codeVerification == undefined || this.codeVerification == null) {
+        }
+        else {
+            this._userService.sendCodeForVerification(this.LoggedInUser.Id, this.user.MobileNumber, this.codeVerification).subscribe(function (a) {
+                if (a.code == 200) {
+                    __WEBPACK_IMPORTED_MODULE_11_jquery__("#snackbar").html("Code Verified Successfully!");
+                    _this.showToast();
+                    Object(__WEBPACK_IMPORTED_MODULE_12_timers__["setTimeout"])(function () {
+                        _this.user = new __WEBPACK_IMPORTED_MODULE_3__models_usersModel__["a" /* UsersModel */]();
+                        _this.signUpModal.close();
+                    }, 1500);
+                }
+            });
+        }
+    };
+    HeaderComponent.prototype.getCartCount = function () {
+        var _this = this;
+        this._addToCartService.getCartCount(this.LoggedInUser.Id).subscribe(function (a) {
+            console.log(a);
+            if (a.code == 200) {
+                var number = a.data.length;
+                _this.cartset(number);
+            }
+        });
+    };
+    HeaderComponent.prototype.cartset = function (value) {
+        var _this = this;
+        this._sharedService.getCartCount(value);
+        this._sharedService.currentCount.subscribe(function (a) {
+            _this.CartCount = a;
+        });
+    };
+    HeaderComponent.prototype.navigateToHome = function () {
+        if (this.CanNavigateToCart) {
+            this.router.navigate(['/home']);
+        }
+        else {
+        }
+    };
+    HeaderComponent.prototype.checkoutFromStart = function () {
+        var _this = this;
+        localStorage.setItem("chemistId", parseFloat(this.GotCart[0].ChemistId));
+        this._chemistService.getThisChemist(this.GotCart[0].ChemistId).subscribe(function (a) {
+            localStorage.setItem('chemistDetails', JSON.stringify(a.data));
+            _this.router.navigate(['/home']);
+        });
+    };
+    HeaderComponent.prototype.signUp = function () {
+        var _this = this;
+        var error = false;
+        this.user.UserName = __WEBPACK_IMPORTED_MODULE_11_jquery__["trim"](this.user.UserName);
+        this.user.Email = __WEBPACK_IMPORTED_MODULE_11_jquery__["trim"](this.user.Email);
+        this.user.MobileNumber = __WEBPACK_IMPORTED_MODULE_11_jquery__["trim"](this.user.MobileNumber);
+        this.user.Password = __WEBPACK_IMPORTED_MODULE_11_jquery__["trim"](this.user.Password);
+        this.confrimPass = __WEBPACK_IMPORTED_MODULE_11_jquery__["trim"](this.confrimPass);
+        if (this.user.UserName == "" || this.user.UserName.length == 0) {
+            this.UsernameError = true;
+            error = true;
+        }
+        if (this.user.Email == "" || this.user.Email.length == 0) {
+            this.EmailError = true;
+            error = true;
+        }
+        if (this.user.MobileNumber == undefined) {
+            this.MobileError = true;
+            error = true;
+        }
+        if (this.user.Password == "" || this.user.Password.length == 0) {
+            this.PasswordError = true;
+            error = true;
+        }
+        else if (this.user.Password !== this.confrimPass) {
+            this.PasswordError = true;
+            error = true;
+        }
+        if (error) {
+        }
+        else {
+            __WEBPACK_IMPORTED_MODULE_11_jquery__(".loader").show();
+            __WEBPACK_IMPORTED_MODULE_11_jquery__(".submit-custom").hide();
+            this.user.UserType = 1;
+            this._userService.signUp(this.user).subscribe(function (a) {
+                console.log(a);
+                if (a.code == 200) {
+                    localStorage.setItem("UserId", a.data.Id);
+                    localStorage.setItem('UserObject', JSON.stringify(a.data));
+                    _this.LoggedInUser = JSON.parse(localStorage.getItem('UserObject'));
+                    localStorage.setItem("logStatus", "loggedIn");
+                    _this.LoggedInUser.UserName = _this.LoggedInUser.UserName.charAt(0).toUpperCase() + _this.LoggedInUser.UserName.slice(1);
+                    _this.loggedIn = true;
+                    __WEBPACK_IMPORTED_MODULE_11_jquery__(".loader").hide();
+                    __WEBPACK_IMPORTED_MODULE_11_jquery__(".submit-custom").show();
+                    __WEBPACK_IMPORTED_MODULE_11_jquery__("#snackbar").html(a.message);
+                    _this.showToast();
+                    _this.confrimPass = "";
+                    __WEBPACK_IMPORTED_MODULE_11_jquery__(".hide-on-verification").hide();
+                    _this.mobileVerificationScreen = true;
+                    _this._userService.sendCodeToThisUser(_this.LoggedInUser.Id, _this.user.MobileNumber).subscribe(function (a) {
+                        console.log(a);
+                        __WEBPACK_IMPORTED_MODULE_11_jquery__("#snackbar").html(a.data.UserCode);
+                        _this.showToast();
+                    });
+                    /*        */
+                }
+                else {
+                    __WEBPACK_IMPORTED_MODULE_11_jquery__("#snackbar").html(a.message);
+                    __WEBPACK_IMPORTED_MODULE_11_jquery__(".loader").hide();
+                    __WEBPACK_IMPORTED_MODULE_11_jquery__(".submit-custom").show();
+                    _this.showToast();
+                }
+            });
+        }
+    };
+    HeaderComponent.prototype.signUpWithFacebook = function () {
+        var _this = this;
+        var fbCustomer = new __WEBPACK_IMPORTED_MODULE_3__models_usersModel__["a" /* UsersModel */]();
+        var options = {
+            scope: 'public_profile,email',
+            return_scopes: true,
+            enable_profile_selector: true
+        };
+        this.fb.login(options)
+            .then(function (response) {
+            _this.fb.api('/me?fields=id,email,first_name,last_name,picture')
+                .then(function (profileData) {
+                console.log(profileData);
+                fbCustomer.UserName = profileData.email;
+                fbCustomer.UserType = 2;
+                fbCustomer.Password = profileData.email;
+                _this._userService.signUp(fbCustomer).subscribe(function (a) {
+                    console.log(a);
+                    if (a.code == 200) {
+                        __WEBPACK_IMPORTED_MODULE_11_jquery__("#snackbar").html(a.message);
+                        _this.showToast();
+                        localStorage.setItem("UserId", a.data.Id);
+                        localStorage.setItem('UserObject', JSON.stringify(a.data));
+                        _this.LoggedInUser = JSON.parse(localStorage.getItem('UserObject'));
+                        localStorage.setItem("logStatus", "loggedIn");
+                        _this.LoggedInUser.UserName = _this.LoggedInUser.UserName.charAt(0).toUpperCase() + _this.LoggedInUser.UserName.slice(1);
+                        _this.loggedIn = true;
+                        _this.user = new __WEBPACK_IMPORTED_MODULE_3__models_usersModel__["a" /* UsersModel */]();
+                        var self = _this;
+                        Object(__WEBPACK_IMPORTED_MODULE_12_timers__["setTimeout"])(function () {
+                            self.signUpModal.close();
+                        }, 1000);
+                    }
+                    else {
+                        __WEBPACK_IMPORTED_MODULE_11_jquery__("#snackbar").html(a.message);
+                        _this.showToast();
+                    }
+                });
+            });
+        });
+    };
+    HeaderComponent.prototype.routeToSignUp = function () {
+        this.loginModal.close();
+        this.signUpModal.open();
+    };
+    HeaderComponent.prototype.logOutUser = function () {
+        localStorage.setItem("UserId", "");
+        localStorage.setItem("logStatus", "loggedOut");
+        localStorage.clear();
+        this.loggedIn = false;
+        this.router.navigate(['/']);
+    };
+    HeaderComponent.prototype.login = function () {
+        var _this = this;
+        this.user.UserName = __WEBPACK_IMPORTED_MODULE_11_jquery__["trim"](this.user.UserName);
+        this.user.Password = __WEBPACK_IMPORTED_MODULE_11_jquery__["trim"](this.user.Password);
+        this.EmailError = false;
+        this.PasswordError = false;
+        if (this.user.UserName == "" || this.user.UserName.length == 0) {
+            this.EmailError = true;
+        }
+        if (this.user.Password == "" || this.user.Password.length == 0) {
+            this.PasswordError = true;
+        }
+        if (this.PasswordError || this.EmailError) {
+            console.log("Errors");
+        }
+        else {
+            __WEBPACK_IMPORTED_MODULE_11_jquery__(".loader").show();
+            __WEBPACK_IMPORTED_MODULE_11_jquery__(".submit-custom").hide();
+            this.user.UserType = 1;
+            this._userService.loginUser(this.user.UserName, this.user.Password, this.user.UserType).subscribe(function (a) {
+                if (a.code == 200) {
+                    __WEBPACK_IMPORTED_MODULE_11_jquery__("#snackbar").html(a.message);
+                    __WEBPACK_IMPORTED_MODULE_11_jquery__(".loader").hide();
+                    localStorage.setItem("UserId", a.data.Id);
+                    localStorage.setItem('UserObject', JSON.stringify(a.data));
+                    _this.LoggedInUser = JSON.parse(localStorage.getItem('UserObject'));
+                    localStorage.setItem("logStatus", "loggedIn");
+                    _this.cartset(_this.LoggedInUser.shoppingCarts.length);
+                    _this.loggedIn = true;
+                    _this.showToast();
+                    _this.user = new __WEBPACK_IMPORTED_MODULE_3__models_usersModel__["a" /* UsersModel */]();
+                    var self = _this;
+                    Object(__WEBPACK_IMPORTED_MODULE_12_timers__["setTimeout"])(function () {
+                        self.loginModal.close();
+                        __WEBPACK_IMPORTED_MODULE_11_jquery__(".submit-custom").show();
+                    }, 1000);
+                }
+                else {
+                    __WEBPACK_IMPORTED_MODULE_11_jquery__("#snackbar").html(a.message);
+                    _this.showToast();
+                    __WEBPACK_IMPORTED_MODULE_11_jquery__(".loader").hide();
+                    __WEBPACK_IMPORTED_MODULE_11_jquery__(".submit-custom").show();
+                }
+            });
+        }
+    };
+    HeaderComponent.prototype.signUpOnEnter = function (event) {
+        var _this = this;
+        if (event.keyCode == 13) {
+            var error = false;
+            this.user.UserName = __WEBPACK_IMPORTED_MODULE_11_jquery__["trim"](this.user.UserName);
+            this.user.Email = __WEBPACK_IMPORTED_MODULE_11_jquery__["trim"](this.user.Email);
+            this.user.MobileNumber = __WEBPACK_IMPORTED_MODULE_11_jquery__["trim"](this.user.MobileNumber);
+            this.user.Password = __WEBPACK_IMPORTED_MODULE_11_jquery__["trim"](this.user.Password);
+            this.confrimPass = __WEBPACK_IMPORTED_MODULE_11_jquery__["trim"](this.confrimPass);
+            if (this.user.UserName == "" || this.user.UserName.length == 0) {
+                this.UsernameError = true;
+                error = true;
+            }
+            if (this.user.Email == "" || this.user.Email.length == 0) {
+                this.EmailError = true;
+                error = true;
+            }
+            if (this.user.MobileNumber == undefined) {
+                this.MobileError = true;
+                error = true;
+            }
+            if (this.user.Password == "" || this.user.Password.length == 0) {
+                this.PasswordError = true;
+                error = true;
+            }
+            else if (this.user.Password !== this.confrimPass) {
+                this.PasswordError = true;
+                error = true;
+            }
+            if (error) {
+            }
+            else {
+                __WEBPACK_IMPORTED_MODULE_11_jquery__(".loader").show();
+                __WEBPACK_IMPORTED_MODULE_11_jquery__(".submit-custom").hide();
+                this.user.UserType = 1;
+                this._userService.signUp(this.user).subscribe(function (a) {
+                    console.log(a);
+                    if (a.code == 200) {
+                        localStorage.setItem("UserId", a.data.Id);
+                        localStorage.setItem('UserObject', JSON.stringify(a.data));
+                        _this.LoggedInUser = JSON.parse(localStorage.getItem('UserObject'));
+                        localStorage.setItem("logStatus", "loggedIn");
+                        _this.loggedIn = true;
+                        __WEBPACK_IMPORTED_MODULE_11_jquery__(".loader").hide();
+                        __WEBPACK_IMPORTED_MODULE_11_jquery__(".submit-custom").show();
+                        __WEBPACK_IMPORTED_MODULE_11_jquery__("#snackbar").html(a.message);
+                        _this.showToast();
+                        _this.user = new __WEBPACK_IMPORTED_MODULE_3__models_usersModel__["a" /* UsersModel */]();
+                        _this.confrimPass = "";
+                        _this.signUpModal.close();
+                    }
+                    else {
+                        __WEBPACK_IMPORTED_MODULE_11_jquery__("#snackbar").html(a.message);
+                        __WEBPACK_IMPORTED_MODULE_11_jquery__(".loader").hide();
+                        __WEBPACK_IMPORTED_MODULE_11_jquery__(".submit-custom").show();
+                        _this.showToast();
+                    }
+                });
+            }
+        }
+    };
+    HeaderComponent.prototype.onKey = function (event) {
+        var _this = this;
+        if (event.keyCode == 13) {
+            this.user.UserName = __WEBPACK_IMPORTED_MODULE_11_jquery__["trim"](this.user.UserName);
+            this.user.Password = __WEBPACK_IMPORTED_MODULE_11_jquery__["trim"](this.user.Password);
+            this.EmailError = false;
+            this.PasswordError = false;
+            if (this.user.UserName == "" || this.user.UserName.length == 0) {
+                this.EmailError = true;
+            }
+            if (this.user.Password == "" || this.user.Password.length == 0) {
+                this.PasswordError = true;
+            }
+            if (this.PasswordError || this.EmailError) {
+                console.log("Errors");
+            }
+            else {
+                __WEBPACK_IMPORTED_MODULE_11_jquery__(".loader").show();
+                __WEBPACK_IMPORTED_MODULE_11_jquery__(".submit-custom").hide();
+                this.user.UserType = 1;
+                this._userService.loginUser(this.user.UserName, this.user.Password, this.user.UserType).subscribe(function (a) {
+                    if (a.code == 200) {
+                        __WEBPACK_IMPORTED_MODULE_11_jquery__("#snackbar").html(a.message);
+                        __WEBPACK_IMPORTED_MODULE_11_jquery__(".loader").hide();
+                        localStorage.setItem("UserId", a.data.Id);
+                        localStorage.setItem('UserObject', JSON.stringify(a.data));
+                        _this.LoggedInUser = JSON.parse(localStorage.getItem('UserObject'));
+                        _this.LoggedInUser.UserName = _this.LoggedInUser.UserName.charAt(0).toUpperCase() + _this.LoggedInUser.UserName.slice(1);
+                        localStorage.setItem("logStatus", "loggedIn");
+                        _this.cartset(_this.LoggedInUser.shoppingCarts.length);
+                        _this.loggedIn = true;
+                        _this.showToast();
+                        _this.user = new __WEBPACK_IMPORTED_MODULE_3__models_usersModel__["a" /* UsersModel */]();
+                        var self = _this;
+                        Object(__WEBPACK_IMPORTED_MODULE_12_timers__["setTimeout"])(function () {
+                            self.loginModal.close();
+                            __WEBPACK_IMPORTED_MODULE_11_jquery__(".submit-custom").show();
+                        }, 1000);
+                    }
+                    else {
+                        __WEBPACK_IMPORTED_MODULE_11_jquery__("#snackbar").html(a.message);
+                        _this.showToast();
+                        __WEBPACK_IMPORTED_MODULE_11_jquery__(".loader").hide();
+                        __WEBPACK_IMPORTED_MODULE_11_jquery__(".submit-custom").show();
+                    }
+                });
+            }
+        }
+    };
+    HeaderComponent.prototype.loginWithFacebook = function () {
+        var _this = this;
+        var fbCustomer = new __WEBPACK_IMPORTED_MODULE_3__models_usersModel__["a" /* UsersModel */]();
+        __WEBPACK_IMPORTED_MODULE_11_jquery__(".loader").show();
+        __WEBPACK_IMPORTED_MODULE_11_jquery__(".submit-custom").hide();
+        var options = {
+            scope: 'public_profile,email',
+            return_scopes: true,
+            enable_profile_selector: true
+        };
+        this.fb.login(options)
+            .then(function (response) {
+            _this.fb.api('/me?fields=id,email,first_name,last_name,picture')
+                .then(function (profileData) {
+                console.log(profileData);
+                fbCustomer.UserName = profileData.email;
+                fbCustomer.UserType = 2;
+                fbCustomer.Password = profileData.email;
+                _this._userService.loginUser(fbCustomer.Email, fbCustomer.Password, fbCustomer.UserType).subscribe(function (a) {
+                    console.log(a);
+                    if (a.code == 200) {
+                        __WEBPACK_IMPORTED_MODULE_11_jquery__("#snackbar").html(a.message);
+                        __WEBPACK_IMPORTED_MODULE_11_jquery__(".loader").hide();
+                        localStorage.setItem("UserId", a.data.Id);
+                        localStorage.setItem("logStatus", "loggedIn");
+                        _this.LoggedInUser = JSON.parse(localStorage.getItem('UserObject'));
+                        _this.LoggedInUser.UserName = _this.LoggedInUser.UserName.charAt(0).toUpperCase() + _this.LoggedInUser.UserName.slice(1);
+                        _this.loggedIn = true;
+                        _this.cartset(_this.LoggedInUser.shoppingCarts.length);
+                        _this.showToast();
+                        _this.user = new __WEBPACK_IMPORTED_MODULE_3__models_usersModel__["a" /* UsersModel */]();
+                        var self = _this;
+                        Object(__WEBPACK_IMPORTED_MODULE_12_timers__["setTimeout"])(function () {
+                            __WEBPACK_IMPORTED_MODULE_11_jquery__(".submit-custom").show();
+                            self.loginModal.close();
+                        }, 1000);
+                    }
+                    else {
+                        __WEBPACK_IMPORTED_MODULE_11_jquery__("#snackbar").html(a.message);
+                        _this.showToast();
+                        __WEBPACK_IMPORTED_MODULE_11_jquery__(".loader").hide();
+                        __WEBPACK_IMPORTED_MODULE_11_jquery__(".submit-custom").show();
+                    }
+                });
+            });
+        });
+    };
+    HeaderComponent.prototype.attachSignin = function (element) {
+        var that = this;
+        this.auth2.attachClickHandler(element, {}, function (googleUser) {
+            var _this = this;
+            var profile = googleUser.getBasicProfile();
+            console.log(profile.getEmail());
+            that.user.Email = profile.getEmail();
+            that.user.UserType = 3;
+            that._userService.loginUser(that.user.UserName, that.user.Password, that.user.UserType).subscribe(function (a) {
+                console.log(a);
+                if (a.code == 200) {
+                    __WEBPACK_IMPORTED_MODULE_11_jquery__(".loader").hide();
+                    __WEBPACK_IMPORTED_MODULE_11_jquery__("#snackbar").html(a.message);
+                    localStorage.setItem("UserId", a.data.Id);
+                    localStorage.setItem("logStatus", "loggedIn");
+                    that.LoggedInUser = new __WEBPACK_IMPORTED_MODULE_3__models_usersModel__["a" /* UsersModel */]();
+                    that.LoggedInUser = JSON.parse(localStorage.getItem('UserObject'));
+                    _this.LoggedInUser.UserName = _this.LoggedInUser.UserName.charAt(0).toUpperCase() + _this.LoggedInUser.UserName.slice(1);
+                    that.loggedIn = true;
+                    that.showToast();
+                    var self = that;
+                    Object(__WEBPACK_IMPORTED_MODULE_12_timers__["setTimeout"])(function () {
+                        self.loginModal.close();
+                        __WEBPACK_IMPORTED_MODULE_11_jquery__(".submit-custom").show();
+                    }, 1000);
+                }
+                else {
+                    __WEBPACK_IMPORTED_MODULE_11_jquery__("#snackbar").html(a.message);
+                    that.showToast();
+                    __WEBPACK_IMPORTED_MODULE_11_jquery__(".loader").hide();
+                    __WEBPACK_IMPORTED_MODULE_11_jquery__(".submit-custom").show();
+                }
+            });
+        }, function (error) {
+            console.log(error);
+        });
+    };
+    HeaderComponent.prototype.showToast = function () {
+        // Get the snackbar DIV
+        var x = document.getElementById("snackbar");
+        // Add the "show" class to DIV
+        x.className = "show";
+        // After 3 seconds, remove the show class from DIV
+        Object(__WEBPACK_IMPORTED_MODULE_12_timers__["setTimeout"])(function () { x.className = x.className.replace("show", ""); }, 3000);
+    };
+    HeaderComponent.prototype.hovered = function () {
+        __WEBPACK_IMPORTED_MODULE_11_jquery__(".username").css("color", "white");
+        __WEBPACK_IMPORTED_MODULE_11_jquery__("#profile-pic").attr("src", "/assets/img/user2.png");
+    };
+    HeaderComponent.prototype.hoverOut = function () {
+        __WEBPACK_IMPORTED_MODULE_11_jquery__(".username").css("color", "#1ec26b");
+        __WEBPACK_IMPORTED_MODULE_11_jquery__("#profile-pic").attr("src", "/assets/img/user.png");
+    };
+    HeaderComponent.prototype.openSignUpModal = function () {
+        this.signUpModal["open"]();
+        var that = this;
+        that.googleInit();
+    };
+    HeaderComponent.prototype.openSignInModal = function () {
+        this.loginModal["open"]();
+        var that = this;
+        that.googleInit();
+    };
+    HeaderComponent.prototype.ngAfterViewInit = function () {
+    };
+    HeaderComponent.prototype.ngOnInit = function () {
+        __WEBPACK_IMPORTED_MODULE_11_jquery__('.signedIn #droppingMenu .dropdown').hover(function () {
+            console.log("hoverin");
+        }, function () {
+            console.log("hoverout");
+        });
+        // this.LoggedInUser = new UsersModel();
+        this.user = new __WEBPACK_IMPORTED_MODULE_3__models_usersModel__["a" /* UsersModel */]();
+    };
+    return HeaderComponent;
+}());
+__WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewChild"])('loginModal'),
+    __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:type", Object)
+], HeaderComponent.prototype, "loginModal", void 0);
+__WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewChild"])('signUpModal'),
+    __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:type", Object)
+], HeaderComponent.prototype, "signUpModal", void 0);
+HeaderComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
+        selector: 'app-header',
+        template: __webpack_require__(267),
+        styles: [__webpack_require__(268), __webpack_require__(129)],
+        encapsulation: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewEncapsulation"].None,
+        providers: [__WEBPACK_IMPORTED_MODULE_4__services_userService__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_5__services_chemistService__["a" /* ChemistService */], __WEBPACK_IMPORTED_MODULE_8__services_addtocartService__["a" /* AddtocartService */]]
+    }),
+    __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_10__angular_http__["Http"], __WEBPACK_IMPORTED_MODULE_8__services_addtocartService__["a" /* AddtocartService */], __WEBPACK_IMPORTED_MODULE_7__services_sharedService__["a" /* SharedService */], __WEBPACK_IMPORTED_MODULE_4__services_userService__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_2__angular_router__["Router"], __WEBPACK_IMPORTED_MODULE_6_ngx_facebook__["b" /* FacebookService */], __WEBPACK_IMPORTED_MODULE_5__services_chemistService__["a" /* ChemistService */]])
+], HeaderComponent);
 
 
 
@@ -54773,519 +55278,9 @@ var ɵPRE_STYLE = '!';
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CartModel; });
-var CartModel = (function () {
-    function CartModel() {
-    }
-    return CartModel;
-}());
-
-
-
-/***/ }),
-/* 118 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-function __export(m) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
-var Modal_1 = __webpack_require__(119);
-var RouteModal_1 = __webpack_require__(120);
-var core_1 = __webpack_require__(0);
-var common_1 = __webpack_require__(12);
-__export(__webpack_require__(119));
-__export(__webpack_require__(120));
-var ModalModule = (function () {
-    function ModalModule() {
-    }
-    ModalModule.decorators = [
-        { type: core_1.NgModule, args: [{
-                    imports: [common_1.CommonModule],
-                    declarations: [
-                        Modal_1.Modal,
-                        RouteModal_1.RouteModal,
-                        Modal_1.ModalHeader,
-                        Modal_1.ModalContent,
-                        Modal_1.ModalFooter,
-                    ],
-                    exports: [
-                        Modal_1.Modal,
-                        RouteModal_1.RouteModal,
-                        Modal_1.ModalHeader,
-                        Modal_1.ModalContent,
-                        Modal_1.ModalFooter,
-                    ],
-                },] },
-    ];
-    /** @nocollapse */
-    ModalModule.ctorParameters = [];
-    return ModalModule;
-}());
-exports.ModalModule = ModalModule;
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-/* 119 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var core_1 = __webpack_require__(0);
-var ModalHeader = (function () {
-    function ModalHeader() {
-    }
-    ModalHeader.decorators = [
-        { type: core_1.Component, args: [{
-                    selector: "modal-header",
-                    template: "<ng-content></ng-content>"
-                },] },
-    ];
-    /** @nocollapse */
-    ModalHeader.ctorParameters = [];
-    return ModalHeader;
-}());
-exports.ModalHeader = ModalHeader;
-var ModalContent = (function () {
-    function ModalContent() {
-    }
-    ModalContent.decorators = [
-        { type: core_1.Component, args: [{
-                    selector: "modal-content",
-                    template: "<ng-content></ng-content>"
-                },] },
-    ];
-    /** @nocollapse */
-    ModalContent.ctorParameters = [];
-    return ModalContent;
-}());
-exports.ModalContent = ModalContent;
-var ModalFooter = (function () {
-    function ModalFooter() {
-    }
-    ModalFooter.decorators = [
-        { type: core_1.Component, args: [{
-                    selector: "modal-footer",
-                    template: "<ng-content></ng-content>"
-                },] },
-    ];
-    /** @nocollapse */
-    ModalFooter.ctorParameters = [];
-    return ModalFooter;
-}());
-exports.ModalFooter = ModalFooter;
-var Modal = (function () {
-    // -------------------------------------------------------------------------
-    // Constructor
-    // -------------------------------------------------------------------------
-    function Modal() {
-        this.closeOnEscape = true;
-        this.closeOnOutsideClick = true;
-        this.hideCloseButton = false;
-        // -------------------------------------------------------------------------
-        // Outputs
-        // -------------------------------------------------------------------------
-        this.onOpen = new core_1.EventEmitter(false);
-        this.onClose = new core_1.EventEmitter(false);
-        this.onSubmit = new core_1.EventEmitter(false);
-        // -------------------------------------------------------------------------
-        // Public properties
-        // -------------------------------------------------------------------------
-        this.isOpened = false;
-        this.createBackDrop();
-    }
-    // -------------------------------------------------------------------------
-    // Lifecycle Methods
-    // -------------------------------------------------------------------------
-    Modal.prototype.ngOnDestroy = function () {
-        document.body.className = document.body.className.replace(/modal-open\b/, "");
-        if (this.backdropElement && this.backdropElement.parentNode === document.body)
-            document.body.removeChild(this.backdropElement);
-    };
-    // -------------------------------------------------------------------------
-    // Public Methods
-    // -------------------------------------------------------------------------
-    Modal.prototype.open = function () {
-        var _this = this;
-        var args = [];
-        for (var _i = 0; _i < arguments.length; _i++) {
-            args[_i - 0] = arguments[_i];
-        }
-        if (this.isOpened)
-            return;
-        this.isOpened = true;
-        this.onOpen.emit(args);
-        document.body.appendChild(this.backdropElement);
-        window.setTimeout(function () { return _this.modalRoot.nativeElement.focus(); }, 0);
-        document.body.className += " modal-open";
-    };
-    Modal.prototype.close = function () {
-        var args = [];
-        for (var _i = 0; _i < arguments.length; _i++) {
-            args[_i - 0] = arguments[_i];
-        }
-        if (!this.isOpened)
-            return;
-        this.isOpened = false;
-        this.onClose.emit(args);
-        document.body.removeChild(this.backdropElement);
-        document.body.className = document.body.className.replace(/modal-open\b/, "");
-    };
-    // -------------------------------------------------------------------------
-    // Private Methods
-    // -------------------------------------------------------------------------
-    Modal.prototype.backdropClick = function (event) {
-        if (this.closeOnOutsideClick === true && !this.contentEl.nativeElement.contains(event.target)) {
-            this.close();
-        }
-    };
-    Modal.prototype.preventClosing = function (event) {
-        event.stopPropagation();
-    };
-    Modal.prototype.createBackDrop = function () {
-        this.backdropElement = document.createElement("div");
-        this.backdropElement.classList.add("modal-backdrop");
-        this.backdropElement.classList.add("fade");
-        this.backdropElement.classList.add("in");
-    };
-    Modal.decorators = [
-        { type: core_1.Component, args: [{
-                    selector: "modal",
-                    template: "\n<div class=\"modal\" \n     tabindex=\"-1\"\n     role=\"dialog\"\n     #modalRoot\n     (keydown.esc)=\"closeOnEscape ? close() : 0\"\n     [ngClass]=\"{ in: isOpened, fade: isOpened }\"\n     [ngStyle]=\"{ display: isOpened ? 'block' : 'none' }\"\n     (click)=\"backdropClick($event)\">\n    <div [class]=\"'modal-dialog ' + modalClass\" #modalContent>\n        <div class=\"modal-content\" tabindex=\"0\" *ngIf=\"isOpened\">\n            <div class=\"modal-header\">\n                <button *ngIf=\"!hideCloseButton\" type=\"button\" class=\"close\" data-dismiss=\"modal\" [attr.aria-label]=\"cancelButtonLabel || 'Close'\" (click)=\"close()\"><span aria-hidden=\"true\">&times;</span></button>\n                <h4 class=\"modal-title\" *ngIf=\"title\">{{ title }}</h4>\n                <ng-content select=\"modal-header\"></ng-content>\n            </div>\n            <div class=\"modal-body\">\n                <ng-content select=\"modal-content\"></ng-content>\n            </div>\n            <div class=\"modal-footer\">\n                <ng-content select=\"modal-footer\"></ng-content>\n                <button *ngIf=\"cancelButtonLabel\" type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\" (click)=\"close()\">{{ cancelButtonLabel }}</button>\n                <button *ngIf=\"submitButtonLabel\" type=\"button\" class=\"btn btn-primary\" (click)=\"onSubmit.emit(undefined)\">{{ submitButtonLabel }}</button>\n            </div>\n        </div>\n    </div>\n</div>\n"
-                },] },
-    ];
-    /** @nocollapse */
-    Modal.ctorParameters = [];
-    Modal.propDecorators = {
-        'modalClass': [{ type: core_1.Input },],
-        'closeOnEscape': [{ type: core_1.Input },],
-        'closeOnOutsideClick': [{ type: core_1.Input },],
-        'title': [{ type: core_1.Input },],
-        'hideCloseButton': [{ type: core_1.Input },],
-        'cancelButtonLabel': [{ type: core_1.Input },],
-        'submitButtonLabel': [{ type: core_1.Input },],
-        'onOpen': [{ type: core_1.Output },],
-        'onClose': [{ type: core_1.Output },],
-        'onSubmit': [{ type: core_1.Output },],
-        'contentEl': [{ type: core_1.ViewChild, args: ['modalContent',] },],
-        'modalRoot': [{ type: core_1.ViewChild, args: ["modalRoot",] },],
-    };
-    return Modal;
-}());
-exports.Modal = Modal;
-//# sourceMappingURL=Modal.js.map
-
-/***/ }),
-/* 120 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var core_1 = __webpack_require__(0);
-var router_1 = __webpack_require__(14);
-var RouteModal = (function () {
-    // -------------------------------------------------------------------------
-    // Constructor
-    // -------------------------------------------------------------------------
-    function RouteModal(router, activatedRoute) {
-        this.router = router;
-        this.activatedRoute = activatedRoute;
-        this.closeOnEscape = true;
-        this.closeOnOutsideClick = true;
-        this.hideCloseButton = false;
-        // -------------------------------------------------------------------------
-        // Outputs
-        // -------------------------------------------------------------------------
-        this.onOpen = new core_1.EventEmitter(false);
-        this.onClose = new core_1.EventEmitter(false);
-        this.onSubmit = new core_1.EventEmitter(false);
-        this.isOpened = false;
-        this.createBackDrop();
-    }
-    // -------------------------------------------------------------------------
-    // Lifecycle Methods
-    // -------------------------------------------------------------------------
-    RouteModal.prototype.ngOnInit = function () {
-        this.open();
-    };
-    RouteModal.prototype.ngOnDestroy = function () {
-        document.body.className = document.body.className.replace(/modal-open\b/, "");
-        if (this.backdropElement && this.backdropElement.parentNode === document.body)
-            document.body.removeChild(this.backdropElement);
-    };
-    // -------------------------------------------------------------------------
-    // Public Methods
-    // -------------------------------------------------------------------------
-    RouteModal.prototype.open = function () {
-        var _this = this;
-        var args = [];
-        for (var _i = 0; _i < arguments.length; _i++) {
-            args[_i - 0] = arguments[_i];
-        }
-        if (this.isOpened)
-            return;
-        this.isOpened = true;
-        this.onOpen.emit(args);
-        document.body.appendChild(this.backdropElement);
-        window.setTimeout(function () { return _this.modalRoot.nativeElement.focus(); }, 0);
-        document.body.className += " modal-open";
-    };
-    RouteModal.prototype.close = function () {
-        var args = [];
-        for (var _i = 0; _i < arguments.length; _i++) {
-            args[_i - 0] = arguments[_i];
-        }
-        if (!this.isOpened)
-            return;
-        this.isOpened = false;
-        this.onClose.emit(args);
-        document.body.className = document.body.className.replace(/modal-open\b/, "");
-        if (this.cancelUrl) {
-            var navigationExtras = {};
-            if (this.cancelUrlExtras) {
-                if (this.cancelUrlExtras.relative) {
-                    navigationExtras.relativeTo = this.activatedRoute;
-                }
-                navigationExtras = Object.assign(navigationExtras, this.cancelUrlExtras);
-            }
-            this.router.navigate(this.cancelUrl, navigationExtras);
-        }
-        else {
-            window.history.back();
-        }
-    };
-    // -------------------------------------------------------------------------
-    // Private Methods
-    // -------------------------------------------------------------------------
-    RouteModal.prototype.backdropClick = function (event) {
-        if (this.closeOnOutsideClick === true && !this.contentEl.nativeElement.contains(event.target)) {
-            this.close();
-        }
-    };
-    RouteModal.prototype.preventClosing = function (event) {
-        event.stopPropagation();
-    };
-    RouteModal.prototype.createBackDrop = function () {
-        this.backdropElement = document.createElement("div");
-        this.backdropElement.classList.add("modal-backdrop");
-        this.backdropElement.classList.add("fade");
-        this.backdropElement.classList.add("in");
-    };
-    RouteModal.decorators = [
-        { type: core_1.Component, args: [{
-                    selector: "route-modal",
-                    template: "\n<div class=\"modal route-modal\" \n     tabindex=\"-1\"\n     role=\"dialog\"\n     #modalRoot\n     (keydown.esc)=\"closeOnEscape ? close() : 0\"\n     [ngClass]=\"{ in: isOpened, fade: isOpened }\"\n     [ngStyle]=\"{ display: isOpened ? 'block' : 'none' }\"\n     (click)=\"backdropClick($event)\">\n    <div [class]=\"'modal-dialog ' + modalClass\" #modalContent>\n        <div class=\"modal-content\" tabindex=\"0\" *ngIf=\"isOpened\">\n            <div class=\"modal-header\">\n                <button *ngIf=\"!hideCloseButton\" type=\"button\" class=\"close\" data-dismiss=\"modal\" [attr.aria-label]=\"cancelButtonLabel || 'Close'\" (click)=\"close()\"><span aria-hidden=\"true\">&times;</span></button>\n                <h4 class=\"modal-title\" *ngIf=\"title\">{{ title }}</h4>\n                <ng-content select=\"modal-header\"></ng-content>\n            </div>\n            <div class=\"modal-body\">\n                <ng-content select=\"modal-content\"></ng-content>\n            </div>\n            <div class=\"modal-footer\">\n                <ng-content select=\"modal-footer\"></ng-content>\n                <button *ngIf=\"cancelButtonLabel\" type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\" (click)=\"close()\">{{ cancelButtonLabel }}</button>\n                <button *ngIf=\"submitButtonLabel\" type=\"button\" class=\"btn btn-primary\" (click)=\"onSubmit.emit(undefined)\">{{ submitButtonLabel }}</button>\n            </div>\n        </div>\n    </div>\n</div>\n"
-                },] },
-    ];
-    /** @nocollapse */
-    RouteModal.ctorParameters = [
-        { type: router_1.Router, },
-        { type: router_1.ActivatedRoute, },
-    ];
-    RouteModal.propDecorators = {
-        'cancelUrl': [{ type: core_1.Input },],
-        'cancelUrlExtras': [{ type: core_1.Input },],
-        'modalClass': [{ type: core_1.Input },],
-        'closeOnEscape': [{ type: core_1.Input },],
-        'closeOnOutsideClick': [{ type: core_1.Input },],
-        'title': [{ type: core_1.Input },],
-        'hideCloseButton': [{ type: core_1.Input },],
-        'cancelButtonLabel': [{ type: core_1.Input },],
-        'submitButtonLabel': [{ type: core_1.Input },],
-        'onOpen': [{ type: core_1.Output },],
-        'onClose': [{ type: core_1.Output },],
-        'onSubmit': [{ type: core_1.Output },],
-        'contentEl': [{ type: core_1.ViewChild, args: ['modalContent',] },],
-        'modalRoot': [{ type: core_1.ViewChild, args: ["modalRoot",] },],
-    };
-    return RouteModal;
-}());
-exports.RouteModal = RouteModal;
-//# sourceMappingURL=RouteModal.js.map
-
-/***/ }),
-/* 121 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__about_component__ = __webpack_require__(277);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__about_component__["a"]; });
-
-
-
-/***/ }),
-/* 122 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__no_content_component__ = __webpack_require__(278);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__no_content_component__["a"]; });
-
-
-
-/***/ }),
-/* 123 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_usersModel__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_userService__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_chemistService__ = __webpack_require__(80);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ngx_facebook__ = __webpack_require__(81);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__models_locationModel__ = __webpack_require__(280);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_sharedService__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_mapService__ = __webpack_require__(136);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__models_cotact_Model__ = __webpack_require__(281);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__models_geoModel__ = __webpack_require__(79);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_jquery__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_jquery__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_aos_dist_aos_js__ = __webpack_require__(282);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_aos_dist_aos_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_aos_dist_aos_js__);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-var LoginComponent = (function () {
-    function LoginComponent(mapService, sharedService, _userService, router, fb, _chemistService) {
-        var _this = this;
-        this.mapService = mapService;
-        this.sharedService = sharedService;
-        this._userService = _userService;
-        this.router = router;
-        this.fb = fb;
-        this._chemistService = _chemistService;
-        this.allCitites = [];
-        this.options = {
-            componentRestrictions: { country: 'PAK' }
-        };
-        this._chemistService.getAllCities().subscribe(function (a) {
-            _this.allCitites = a.data;
-        });
-    }
-    LoginComponent.prototype.getCityId = function (elem) {
-        this.myLocation.cityId = elem;
-    };
-    LoginComponent.prototype.getAddress = function (event) {
-        console.log(event);
-        this.myLocation.AreaName = event.name;
-        var radius = 40;
-        this.LatLong.lat = event.geometry.location.lat();
-        this.LatLong.long = event.geometry.location.lng();
-        this.LatLong.radius = radius;
-        localStorage.setItem('userLocationInWords', JSON.stringify(this.myLocation));
-        localStorage.setItem('userLocation', JSON.stringify(this.LatLong));
-        this.sharedService.setGeoAddress(this.LatLong);
-        console.log(this.myLocation);
-        console.log(this.LatLong);
-    };
-    LoginComponent.prototype.showChemistPage = function () {
-        var error;
-        if (this.myLocation.AreaName == undefined) {
-            __WEBPACK_IMPORTED_MODULE_12_jquery__("#snackbar").html("Please select an Area!");
-            this.showToast();
-            error = true;
-        }
-        /*   if( localStorage.getItem("UserId") == null || localStorage.getItem("UserId") == undefined){
-            error = true ;
-            $("#snackbar").html("Pleasae login/signup to proceed!");
-            this.showToast();
-          } */
-        if (error) {
-        }
-        else {
-            console.log(this.myLocation);
-            this.sharedService.setAddress(this.myLocation);
-            this.router.navigate(['/chemist']);
-        }
-    };
-    LoginComponent.prototype.routeToSignUp = function () {
-        this.router.navigate(['/signup']);
-    };
-    LoginComponent.prototype.showToast = function () {
-        // Get the snackbar DIV
-        var x = document.getElementById("snackbar");
-        // Add the "show" class to DIV
-        x.className = "show";
-        // After 3 seconds, remove the show class from DIV
-        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
-    };
-    LoginComponent.prototype.EnterKey = function (event) {
-        if (event.keyCode == 13) {
-            console.log(this.myLocation);
-            this.sharedService.setAddress(this.myLocation);
-            this.router.navigate(['/chemist']);
-        }
-    };
-    LoginComponent.prototype.submitUserQuery = function () {
-        this.UserQuery.contactEmail = __WEBPACK_IMPORTED_MODULE_12_jquery__["trim"](this.UserQuery.contactEmail);
-        this.UserQuery.contactName = __WEBPACK_IMPORTED_MODULE_12_jquery__["trim"](this.UserQuery.contactName);
-        var error = false;
-        __WEBPACK_IMPORTED_MODULE_12_jquery__("#contactEmail,#contactName").removeClass("errors");
-        if (this.UserQuery.contactName == undefined || this.UserQuery.contactName.length == 0) {
-            error = true;
-            __WEBPACK_IMPORTED_MODULE_12_jquery__("#contactName").addClass("errors");
-        }
-        if (this.UserQuery.contactEmail == undefined || this.UserQuery.contactEmail.length == 0) {
-            error = true;
-            __WEBPACK_IMPORTED_MODULE_12_jquery__("#contactEmail").addClass("errors");
-        }
-        if (error) {
-        }
-        else {
-        }
-    };
-    LoginComponent.prototype.ngOnInit = function () {
-        __WEBPACK_IMPORTED_MODULE_13_aos_dist_aos_js__["init"]();
-        __WEBPACK_IMPORTED_MODULE_12_jquery__('.dropdown').on('show.bs.dropdown', function () {
-            __WEBPACK_IMPORTED_MODULE_12_jquery__(this).find('.dropdown-menu').first().stop(true, true).slideDown();
-        });
-        // Add slideUp animation to Bootstrap dropdown when collapsing.
-        __WEBPACK_IMPORTED_MODULE_12_jquery__('.dropdown').on('hide.bs.dropdown', function () {
-            __WEBPACK_IMPORTED_MODULE_12_jquery__(this).find('.dropdown-menu').first().stop(true, true).slideUp();
-        });
-        this.UserQuery = new __WEBPACK_IMPORTED_MODULE_10__models_cotact_Model__["a" /* ContactModel */]();
-        this.LatLong = new __WEBPACK_IMPORTED_MODULE_11__models_geoModel__["a" /* GeoModel */]();
-        this.user = new __WEBPACK_IMPORTED_MODULE_2__models_usersModel__["a" /* UsersModel */]();
-        this.myLocation = new __WEBPACK_IMPORTED_MODULE_7__models_locationModel__["a" /* LocationModel */]();
-    };
-    return LoginComponent;
-}());
-LoginComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
-    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
-        selector: 'app-login',
-        template: __webpack_require__(283),
-        styles: [__webpack_require__(137)],
-        encapsulation: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewEncapsulation"].None,
-        providers: [__WEBPACK_IMPORTED_MODULE_9__services_mapService__["a" /* MapService */], __WEBPACK_IMPORTED_MODULE_3__services_userService__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_5__services_chemistService__["a" /* ChemistService */]]
-    }),
-    __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_9__services_mapService__["a" /* MapService */], __WEBPACK_IMPORTED_MODULE_8__services_sharedService__["a" /* SharedService */], __WEBPACK_IMPORTED_MODULE_3__services_userService__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_4__angular_router__["Router"], __WEBPACK_IMPORTED_MODULE_6_ngx_facebook__["b" /* FacebookService */], __WEBPACK_IMPORTED_MODULE_5__services_chemistService__["a" /* ChemistService */]])
-], LoginComponent);
-
-
-
-/***/ }),
-/* 124 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FBCommentEmbedComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__fbml_component__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__fbml_component__ = __webpack_require__(10);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -55358,13 +55353,13 @@ __decorate([
 //# sourceMappingURL=fb-comment-embed.js.map
 
 /***/ }),
-/* 125 */
+/* 118 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FBCommentsComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__fbml_component__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__fbml_component__ = __webpack_require__(10);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -55461,13 +55456,13 @@ __decorate([
 //# sourceMappingURL=fb-comments.js.map
 
 /***/ }),
-/* 126 */
+/* 119 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FBFollowComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__fbml_component__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__fbml_component__ = __webpack_require__(10);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -55558,13 +55553,13 @@ __decorate([
 //# sourceMappingURL=fb-follow.js.map
 
 /***/ }),
-/* 127 */
+/* 120 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FBLikeComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__fbml_component__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__fbml_component__ = __webpack_require__(10);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -55678,13 +55673,13 @@ __decorate([
 //# sourceMappingURL=fb-like.js.map
 
 /***/ }),
-/* 128 */
+/* 121 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FBPageComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__fbml_component__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__fbml_component__ = __webpack_require__(10);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -55786,13 +55781,13 @@ __decorate([
 //# sourceMappingURL=fb-page.js.map
 
 /***/ }),
-/* 129 */
+/* 122 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FBPostComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__fbml_component__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__fbml_component__ = __webpack_require__(10);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -55865,13 +55860,13 @@ __decorate([
 //# sourceMappingURL=fb-post.js.map
 
 /***/ }),
-/* 130 */
+/* 123 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FBQuoteComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__fbml_component__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__fbml_component__ = __webpack_require__(10);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -55939,13 +55934,13 @@ __decorate([
 //# sourceMappingURL=fb-quote.js.map
 
 /***/ }),
-/* 131 */
+/* 124 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FBSaveComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__fbml_component__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__fbml_component__ = __webpack_require__(10);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -56013,13 +56008,13 @@ __decorate([
 //# sourceMappingURL=fb-save.js.map
 
 /***/ }),
-/* 132 */
+/* 125 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FBSendComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__fbml_component__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__fbml_component__ = __webpack_require__(10);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -56106,13 +56101,13 @@ __decorate([
 //# sourceMappingURL=fb-send.js.map
 
 /***/ }),
-/* 133 */
+/* 126 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FBShareComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__fbml_component__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__fbml_component__ = __webpack_require__(10);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -56189,13 +56184,13 @@ __decorate([
 //# sourceMappingURL=fb-share.js.map
 
 /***/ }),
-/* 134 */
+/* 127 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FBVideoComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__fbml_component__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__fbml_component__ = __webpack_require__(10);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -56464,7 +56459,7 @@ __decorate([
 //# sourceMappingURL=fb-video.js.map
 
 /***/ }),
-/* 135 */
+/* 128 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -56683,7 +56678,549 @@ FacebookService.ctorParameters = function () { return []; };
 //# sourceMappingURL=facebook.js.map
 
 /***/ }),
+/* 129 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+        var result = __webpack_require__(270);
+
+        if (typeof result === "string") {
+            module.exports = result;
+        } else {
+            module.exports = result.toString();
+        }
+    
+
+/***/ }),
+/* 130 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "e8f677903fb48b8b9fd26c3cd43cd5ee.woff2";
+
+/***/ }),
+/* 131 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "ef57ea84ec47993ad099dde800c2e0b7.woff";
+
+/***/ }),
+/* 132 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "a6dc930be12e9629b25f0dce04672df9.ttf";
+
+/***/ }),
+/* 133 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CartModel; });
+var CartModel = (function () {
+    function CartModel() {
+    }
+    return CartModel;
+}());
+
+
+
+/***/ }),
+/* 134 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+var Modal_1 = __webpack_require__(135);
+var RouteModal_1 = __webpack_require__(136);
+var core_1 = __webpack_require__(0);
+var common_1 = __webpack_require__(12);
+__export(__webpack_require__(135));
+__export(__webpack_require__(136));
+var ModalModule = (function () {
+    function ModalModule() {
+    }
+    ModalModule.decorators = [
+        { type: core_1.NgModule, args: [{
+                    imports: [common_1.CommonModule],
+                    declarations: [
+                        Modal_1.Modal,
+                        RouteModal_1.RouteModal,
+                        Modal_1.ModalHeader,
+                        Modal_1.ModalContent,
+                        Modal_1.ModalFooter,
+                    ],
+                    exports: [
+                        Modal_1.Modal,
+                        RouteModal_1.RouteModal,
+                        Modal_1.ModalHeader,
+                        Modal_1.ModalContent,
+                        Modal_1.ModalFooter,
+                    ],
+                },] },
+    ];
+    /** @nocollapse */
+    ModalModule.ctorParameters = [];
+    return ModalModule;
+}());
+exports.ModalModule = ModalModule;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+/* 135 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var core_1 = __webpack_require__(0);
+var ModalHeader = (function () {
+    function ModalHeader() {
+    }
+    ModalHeader.decorators = [
+        { type: core_1.Component, args: [{
+                    selector: "modal-header",
+                    template: "<ng-content></ng-content>"
+                },] },
+    ];
+    /** @nocollapse */
+    ModalHeader.ctorParameters = [];
+    return ModalHeader;
+}());
+exports.ModalHeader = ModalHeader;
+var ModalContent = (function () {
+    function ModalContent() {
+    }
+    ModalContent.decorators = [
+        { type: core_1.Component, args: [{
+                    selector: "modal-content",
+                    template: "<ng-content></ng-content>"
+                },] },
+    ];
+    /** @nocollapse */
+    ModalContent.ctorParameters = [];
+    return ModalContent;
+}());
+exports.ModalContent = ModalContent;
+var ModalFooter = (function () {
+    function ModalFooter() {
+    }
+    ModalFooter.decorators = [
+        { type: core_1.Component, args: [{
+                    selector: "modal-footer",
+                    template: "<ng-content></ng-content>"
+                },] },
+    ];
+    /** @nocollapse */
+    ModalFooter.ctorParameters = [];
+    return ModalFooter;
+}());
+exports.ModalFooter = ModalFooter;
+var Modal = (function () {
+    // -------------------------------------------------------------------------
+    // Constructor
+    // -------------------------------------------------------------------------
+    function Modal() {
+        this.closeOnEscape = true;
+        this.closeOnOutsideClick = true;
+        this.hideCloseButton = false;
+        // -------------------------------------------------------------------------
+        // Outputs
+        // -------------------------------------------------------------------------
+        this.onOpen = new core_1.EventEmitter(false);
+        this.onClose = new core_1.EventEmitter(false);
+        this.onSubmit = new core_1.EventEmitter(false);
+        // -------------------------------------------------------------------------
+        // Public properties
+        // -------------------------------------------------------------------------
+        this.isOpened = false;
+        this.createBackDrop();
+    }
+    // -------------------------------------------------------------------------
+    // Lifecycle Methods
+    // -------------------------------------------------------------------------
+    Modal.prototype.ngOnDestroy = function () {
+        document.body.className = document.body.className.replace(/modal-open\b/, "");
+        if (this.backdropElement && this.backdropElement.parentNode === document.body)
+            document.body.removeChild(this.backdropElement);
+    };
+    // -------------------------------------------------------------------------
+    // Public Methods
+    // -------------------------------------------------------------------------
+    Modal.prototype.open = function () {
+        var _this = this;
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i - 0] = arguments[_i];
+        }
+        if (this.isOpened)
+            return;
+        this.isOpened = true;
+        this.onOpen.emit(args);
+        document.body.appendChild(this.backdropElement);
+        window.setTimeout(function () { return _this.modalRoot.nativeElement.focus(); }, 0);
+        document.body.className += " modal-open";
+    };
+    Modal.prototype.close = function () {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i - 0] = arguments[_i];
+        }
+        if (!this.isOpened)
+            return;
+        this.isOpened = false;
+        this.onClose.emit(args);
+        document.body.removeChild(this.backdropElement);
+        document.body.className = document.body.className.replace(/modal-open\b/, "");
+    };
+    // -------------------------------------------------------------------------
+    // Private Methods
+    // -------------------------------------------------------------------------
+    Modal.prototype.backdropClick = function (event) {
+        if (this.closeOnOutsideClick === true && !this.contentEl.nativeElement.contains(event.target)) {
+            this.close();
+        }
+    };
+    Modal.prototype.preventClosing = function (event) {
+        event.stopPropagation();
+    };
+    Modal.prototype.createBackDrop = function () {
+        this.backdropElement = document.createElement("div");
+        this.backdropElement.classList.add("modal-backdrop");
+        this.backdropElement.classList.add("fade");
+        this.backdropElement.classList.add("in");
+    };
+    Modal.decorators = [
+        { type: core_1.Component, args: [{
+                    selector: "modal",
+                    template: "\n<div class=\"modal\" \n     tabindex=\"-1\"\n     role=\"dialog\"\n     #modalRoot\n     (keydown.esc)=\"closeOnEscape ? close() : 0\"\n     [ngClass]=\"{ in: isOpened, fade: isOpened }\"\n     [ngStyle]=\"{ display: isOpened ? 'block' : 'none' }\"\n     (click)=\"backdropClick($event)\">\n    <div [class]=\"'modal-dialog ' + modalClass\" #modalContent>\n        <div class=\"modal-content\" tabindex=\"0\" *ngIf=\"isOpened\">\n            <div class=\"modal-header\">\n                <button *ngIf=\"!hideCloseButton\" type=\"button\" class=\"close\" data-dismiss=\"modal\" [attr.aria-label]=\"cancelButtonLabel || 'Close'\" (click)=\"close()\"><span aria-hidden=\"true\">&times;</span></button>\n                <h4 class=\"modal-title\" *ngIf=\"title\">{{ title }}</h4>\n                <ng-content select=\"modal-header\"></ng-content>\n            </div>\n            <div class=\"modal-body\">\n                <ng-content select=\"modal-content\"></ng-content>\n            </div>\n            <div class=\"modal-footer\">\n                <ng-content select=\"modal-footer\"></ng-content>\n                <button *ngIf=\"cancelButtonLabel\" type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\" (click)=\"close()\">{{ cancelButtonLabel }}</button>\n                <button *ngIf=\"submitButtonLabel\" type=\"button\" class=\"btn btn-primary\" (click)=\"onSubmit.emit(undefined)\">{{ submitButtonLabel }}</button>\n            </div>\n        </div>\n    </div>\n</div>\n"
+                },] },
+    ];
+    /** @nocollapse */
+    Modal.ctorParameters = [];
+    Modal.propDecorators = {
+        'modalClass': [{ type: core_1.Input },],
+        'closeOnEscape': [{ type: core_1.Input },],
+        'closeOnOutsideClick': [{ type: core_1.Input },],
+        'title': [{ type: core_1.Input },],
+        'hideCloseButton': [{ type: core_1.Input },],
+        'cancelButtonLabel': [{ type: core_1.Input },],
+        'submitButtonLabel': [{ type: core_1.Input },],
+        'onOpen': [{ type: core_1.Output },],
+        'onClose': [{ type: core_1.Output },],
+        'onSubmit': [{ type: core_1.Output },],
+        'contentEl': [{ type: core_1.ViewChild, args: ['modalContent',] },],
+        'modalRoot': [{ type: core_1.ViewChild, args: ["modalRoot",] },],
+    };
+    return Modal;
+}());
+exports.Modal = Modal;
+//# sourceMappingURL=Modal.js.map
+
+/***/ }),
 /* 136 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var core_1 = __webpack_require__(0);
+var router_1 = __webpack_require__(14);
+var RouteModal = (function () {
+    // -------------------------------------------------------------------------
+    // Constructor
+    // -------------------------------------------------------------------------
+    function RouteModal(router, activatedRoute) {
+        this.router = router;
+        this.activatedRoute = activatedRoute;
+        this.closeOnEscape = true;
+        this.closeOnOutsideClick = true;
+        this.hideCloseButton = false;
+        // -------------------------------------------------------------------------
+        // Outputs
+        // -------------------------------------------------------------------------
+        this.onOpen = new core_1.EventEmitter(false);
+        this.onClose = new core_1.EventEmitter(false);
+        this.onSubmit = new core_1.EventEmitter(false);
+        this.isOpened = false;
+        this.createBackDrop();
+    }
+    // -------------------------------------------------------------------------
+    // Lifecycle Methods
+    // -------------------------------------------------------------------------
+    RouteModal.prototype.ngOnInit = function () {
+        this.open();
+    };
+    RouteModal.prototype.ngOnDestroy = function () {
+        document.body.className = document.body.className.replace(/modal-open\b/, "");
+        if (this.backdropElement && this.backdropElement.parentNode === document.body)
+            document.body.removeChild(this.backdropElement);
+    };
+    // -------------------------------------------------------------------------
+    // Public Methods
+    // -------------------------------------------------------------------------
+    RouteModal.prototype.open = function () {
+        var _this = this;
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i - 0] = arguments[_i];
+        }
+        if (this.isOpened)
+            return;
+        this.isOpened = true;
+        this.onOpen.emit(args);
+        document.body.appendChild(this.backdropElement);
+        window.setTimeout(function () { return _this.modalRoot.nativeElement.focus(); }, 0);
+        document.body.className += " modal-open";
+    };
+    RouteModal.prototype.close = function () {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i - 0] = arguments[_i];
+        }
+        if (!this.isOpened)
+            return;
+        this.isOpened = false;
+        this.onClose.emit(args);
+        document.body.className = document.body.className.replace(/modal-open\b/, "");
+        if (this.cancelUrl) {
+            var navigationExtras = {};
+            if (this.cancelUrlExtras) {
+                if (this.cancelUrlExtras.relative) {
+                    navigationExtras.relativeTo = this.activatedRoute;
+                }
+                navigationExtras = Object.assign(navigationExtras, this.cancelUrlExtras);
+            }
+            this.router.navigate(this.cancelUrl, navigationExtras);
+        }
+        else {
+            window.history.back();
+        }
+    };
+    // -------------------------------------------------------------------------
+    // Private Methods
+    // -------------------------------------------------------------------------
+    RouteModal.prototype.backdropClick = function (event) {
+        if (this.closeOnOutsideClick === true && !this.contentEl.nativeElement.contains(event.target)) {
+            this.close();
+        }
+    };
+    RouteModal.prototype.preventClosing = function (event) {
+        event.stopPropagation();
+    };
+    RouteModal.prototype.createBackDrop = function () {
+        this.backdropElement = document.createElement("div");
+        this.backdropElement.classList.add("modal-backdrop");
+        this.backdropElement.classList.add("fade");
+        this.backdropElement.classList.add("in");
+    };
+    RouteModal.decorators = [
+        { type: core_1.Component, args: [{
+                    selector: "route-modal",
+                    template: "\n<div class=\"modal route-modal\" \n     tabindex=\"-1\"\n     role=\"dialog\"\n     #modalRoot\n     (keydown.esc)=\"closeOnEscape ? close() : 0\"\n     [ngClass]=\"{ in: isOpened, fade: isOpened }\"\n     [ngStyle]=\"{ display: isOpened ? 'block' : 'none' }\"\n     (click)=\"backdropClick($event)\">\n    <div [class]=\"'modal-dialog ' + modalClass\" #modalContent>\n        <div class=\"modal-content\" tabindex=\"0\" *ngIf=\"isOpened\">\n            <div class=\"modal-header\">\n                <button *ngIf=\"!hideCloseButton\" type=\"button\" class=\"close\" data-dismiss=\"modal\" [attr.aria-label]=\"cancelButtonLabel || 'Close'\" (click)=\"close()\"><span aria-hidden=\"true\">&times;</span></button>\n                <h4 class=\"modal-title\" *ngIf=\"title\">{{ title }}</h4>\n                <ng-content select=\"modal-header\"></ng-content>\n            </div>\n            <div class=\"modal-body\">\n                <ng-content select=\"modal-content\"></ng-content>\n            </div>\n            <div class=\"modal-footer\">\n                <ng-content select=\"modal-footer\"></ng-content>\n                <button *ngIf=\"cancelButtonLabel\" type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\" (click)=\"close()\">{{ cancelButtonLabel }}</button>\n                <button *ngIf=\"submitButtonLabel\" type=\"button\" class=\"btn btn-primary\" (click)=\"onSubmit.emit(undefined)\">{{ submitButtonLabel }}</button>\n            </div>\n        </div>\n    </div>\n</div>\n"
+                },] },
+    ];
+    /** @nocollapse */
+    RouteModal.ctorParameters = [
+        { type: router_1.Router, },
+        { type: router_1.ActivatedRoute, },
+    ];
+    RouteModal.propDecorators = {
+        'cancelUrl': [{ type: core_1.Input },],
+        'cancelUrlExtras': [{ type: core_1.Input },],
+        'modalClass': [{ type: core_1.Input },],
+        'closeOnEscape': [{ type: core_1.Input },],
+        'closeOnOutsideClick': [{ type: core_1.Input },],
+        'title': [{ type: core_1.Input },],
+        'hideCloseButton': [{ type: core_1.Input },],
+        'cancelButtonLabel': [{ type: core_1.Input },],
+        'submitButtonLabel': [{ type: core_1.Input },],
+        'onOpen': [{ type: core_1.Output },],
+        'onClose': [{ type: core_1.Output },],
+        'onSubmit': [{ type: core_1.Output },],
+        'contentEl': [{ type: core_1.ViewChild, args: ['modalContent',] },],
+        'modalRoot': [{ type: core_1.ViewChild, args: ["modalRoot",] },],
+    };
+    return RouteModal;
+}());
+exports.RouteModal = RouteModal;
+//# sourceMappingURL=RouteModal.js.map
+
+/***/ }),
+/* 137 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__about_component__ = __webpack_require__(296);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__about_component__["a"]; });
+
+
+
+/***/ }),
+/* 138 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__no_content_component__ = __webpack_require__(297);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__no_content_component__["a"]; });
+
+
+
+/***/ }),
+/* 139 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_usersModel__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_userService__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_chemistService__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ngx_facebook__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__models_locationModel__ = __webpack_require__(298);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_sharedService__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_mapService__ = __webpack_require__(140);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__models_cotact_Model__ = __webpack_require__(299);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__models_geoModel__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_jquery__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_jquery__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_aos_dist_aos_js__ = __webpack_require__(300);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_aos_dist_aos_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_aos_dist_aos_js__);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var LoginComponent = (function () {
+    function LoginComponent(mapService, sharedService, _userService, router, fb, _chemistService) {
+        var _this = this;
+        this.mapService = mapService;
+        this.sharedService = sharedService;
+        this._userService = _userService;
+        this.router = router;
+        this.fb = fb;
+        this._chemistService = _chemistService;
+        this.allCitites = [];
+        this.options = {
+            componentRestrictions: { country: 'PAK' }
+        };
+        this._chemistService.getAllCities().subscribe(function (a) {
+            _this.allCitites = a.data;
+        });
+    }
+    LoginComponent.prototype.getCityId = function (elem) {
+        this.myLocation.cityId = elem;
+    };
+    LoginComponent.prototype.getAddress = function (event) {
+        console.log(event);
+        this.myLocation.AreaName = event.name;
+        var radius = 40;
+        this.LatLong.lat = event.geometry.location.lat();
+        this.LatLong.long = event.geometry.location.lng();
+        this.LatLong.radius = radius;
+        localStorage.setItem('userLocationInWords', JSON.stringify(this.myLocation));
+        localStorage.setItem('userLocation', JSON.stringify(this.LatLong));
+        this.sharedService.setGeoAddress(this.LatLong);
+        console.log(this.myLocation);
+        console.log(this.LatLong);
+    };
+    LoginComponent.prototype.showChemistPage = function () {
+        var error;
+        if (this.myLocation.AreaName == undefined) {
+            __WEBPACK_IMPORTED_MODULE_12_jquery__("#snackbar").html("Please select an Area!");
+            this.showToast();
+            error = true;
+        }
+        /*   if( localStorage.getItem("UserId") == null || localStorage.getItem("UserId") == undefined){
+            error = true ;
+            $("#snackbar").html("Pleasae login/signup to proceed!");
+            this.showToast();
+          } */
+        if (error) {
+        }
+        else {
+            console.log(this.myLocation);
+            this.sharedService.setAddress(this.myLocation);
+            this.router.navigate(['/chemist']);
+        }
+    };
+    LoginComponent.prototype.routeToSignUp = function () {
+        this.router.navigate(['/signup']);
+    };
+    LoginComponent.prototype.showToast = function () {
+        // Get the snackbar DIV
+        var x = document.getElementById("snackbar");
+        // Add the "show" class to DIV
+        x.className = "show";
+        // After 3 seconds, remove the show class from DIV
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+    };
+    LoginComponent.prototype.EnterKey = function (event) {
+        if (event.keyCode == 13) {
+            console.log(this.myLocation);
+            this.sharedService.setAddress(this.myLocation);
+            this.router.navigate(['/chemist']);
+        }
+    };
+    LoginComponent.prototype.submitUserQuery = function () {
+        this.UserQuery.contactEmail = __WEBPACK_IMPORTED_MODULE_12_jquery__["trim"](this.UserQuery.contactEmail);
+        this.UserQuery.contactName = __WEBPACK_IMPORTED_MODULE_12_jquery__["trim"](this.UserQuery.contactName);
+        var error = false;
+        __WEBPACK_IMPORTED_MODULE_12_jquery__("#contactEmail,#contactName").removeClass("errors");
+        if (this.UserQuery.contactName == undefined || this.UserQuery.contactName.length == 0) {
+            error = true;
+            __WEBPACK_IMPORTED_MODULE_12_jquery__("#contactName").addClass("errors");
+        }
+        if (this.UserQuery.contactEmail == undefined || this.UserQuery.contactEmail.length == 0) {
+            error = true;
+            __WEBPACK_IMPORTED_MODULE_12_jquery__("#contactEmail").addClass("errors");
+        }
+        if (error) {
+        }
+        else {
+        }
+    };
+    LoginComponent.prototype.ngOnInit = function () {
+        __WEBPACK_IMPORTED_MODULE_13_aos_dist_aos_js__["init"]();
+        __WEBPACK_IMPORTED_MODULE_12_jquery__('.dropdown').on('show.bs.dropdown', function () {
+            __WEBPACK_IMPORTED_MODULE_12_jquery__(this).find('.dropdown-menu').first().stop(true, true).slideDown();
+        });
+        // Add slideUp animation to Bootstrap dropdown when collapsing.
+        __WEBPACK_IMPORTED_MODULE_12_jquery__('.dropdown').on('hide.bs.dropdown', function () {
+            __WEBPACK_IMPORTED_MODULE_12_jquery__(this).find('.dropdown-menu').first().stop(true, true).slideUp();
+        });
+        this.UserQuery = new __WEBPACK_IMPORTED_MODULE_10__models_cotact_Model__["a" /* ContactModel */]();
+        this.LatLong = new __WEBPACK_IMPORTED_MODULE_11__models_geoModel__["a" /* GeoModel */]();
+        this.user = new __WEBPACK_IMPORTED_MODULE_2__models_usersModel__["a" /* UsersModel */]();
+        this.myLocation = new __WEBPACK_IMPORTED_MODULE_7__models_locationModel__["a" /* LocationModel */]();
+    };
+    return LoginComponent;
+}());
+LoginComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
+        selector: 'app-login',
+        template: __webpack_require__(301),
+        styles: [__webpack_require__(129)],
+        encapsulation: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewEncapsulation"].None,
+        providers: [__WEBPACK_IMPORTED_MODULE_9__services_mapService__["a" /* MapService */], __WEBPACK_IMPORTED_MODULE_3__services_userService__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_5__services_chemistService__["a" /* ChemistService */]]
+    }),
+    __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_9__services_mapService__["a" /* MapService */], __WEBPACK_IMPORTED_MODULE_8__services_sharedService__["a" /* SharedService */], __WEBPACK_IMPORTED_MODULE_3__services_userService__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_4__angular_router__["Router"], __WEBPACK_IMPORTED_MODULE_6_ngx_facebook__["b" /* FacebookService */], __WEBPACK_IMPORTED_MODULE_5__services_chemistService__["a" /* ChemistService */]])
+], LoginComponent);
+
+
+
+/***/ }),
+/* 140 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -56692,7 +57229,7 @@ FacebookService.ctorParameters = function () { return []; };
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__serviceUrl__ = __webpack_require__(27);
 
 
@@ -56722,38 +57259,6 @@ MapService = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 
 /***/ }),
-/* 137 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-        var result = __webpack_require__(284);
-
-        if (typeof result === "string") {
-            module.exports = result;
-        } else {
-            module.exports = result.toString();
-        }
-    
-
-/***/ }),
-/* 138 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "e8f677903fb48b8b9fd26c3cd43cd5ee.woff2";
-
-/***/ }),
-/* 139 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "ef57ea84ec47993ad099dde800c2e0b7.woff";
-
-/***/ }),
-/* 140 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "a6dc930be12e9629b25f0dce04672df9.ttf";
-
-/***/ }),
 /* 141 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -56762,16 +57267,16 @@ module.exports = __webpack_require__.p + "a6dc930be12e9629b25f0dce04672df9.ttf";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_chemistService__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_chemistService__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_sharedService__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_mapService__ = __webpack_require__(136);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__models_geoModel__ = __webpack_require__(79);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_jquery__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_sharedService__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_mapService__ = __webpack_require__(140);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__models_geoModel__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_jquery__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_jquery__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__models_cartModel__ = __webpack_require__(117);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_addtocartService__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__models_usersModel__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__models_cartModel__ = __webpack_require__(133);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_addtocartService__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__models_usersModel__ = __webpack_require__(29);
 
 
 
@@ -56808,15 +57313,42 @@ var ChemistComponent = (function () {
         var user = JSON.parse(localStorage.getItem('userInformation'));
         this.geoAddress = this.sharedService.getGeoAddress();
         this.ThisUser = JSON.parse(localStorage.getItem('UserObject'));
+        /// Code coming from header //
+        /*    if (JSON.parse(localStorage.getItem('UserObject')) == undefined || JSON.parse(localStorage.getItem('UserObject')) == null) {
+             
+             this.ThisUser = new UsersModel();
+             this.ThisUser.UserId = localStorage.getItem("userIp");
+       
+             this._addtocart.getCartCountByIp(this.ThisUser.UserId).subscribe(response => {
+               console.log(response);
+               this.CartCount = response.data.length;
+               this.cartset(this.CartCount);
+               //this.ChemistViewing = JSON.parse(localStorage.getItem('chemistDetails'));
+             })
+           } else {
+             this.ThisUser  = JSON.parse(localStorage.getItem('UserObject'));
+             this.EnteredAddress.UserId = this.ThisUser.Id;
+             this.ThisUser.UserName = this.ThisUser.UserName.charAt(0).toUpperCase() + this.ThisUser.UserName.slice(1);
+             this._addtocart.getCartCount(this.ThisUser.Id).subscribe(response => {
+               this.CartCount = response.data.length;
+               this.cartset(this.CartCount);
+             })
+       
+       
+       
+       
+             
+           } */
+        ///code coming from header //
         if (this.ThisUser == null) {
             this.ThisUser = new __WEBPACK_IMPORTED_MODULE_11__models_usersModel__["a" /* UsersModel */]();
-            console.log(localStorage.getItem("userIp"));
             this.ThisUser.UserId = localStorage.getItem("userIp");
         }
         else {
             this.EnteredAddress.UserId = this.ThisUser.Id;
         }
         var userLocation = JSON.parse(localStorage.getItem('userLocation'));
+        this.ChemistViewing = JSON.parse(localStorage.getItem('chemistDetails'));
         var userLocationInWords = JSON.parse(localStorage.getItem('userLocationInWords'));
         this.EnteredAddress = userLocationInWords;
         this.router = router;
@@ -56829,7 +57361,6 @@ var ChemistComponent = (function () {
         }
         this.location = location;
         this.mapService.getNearestAddresses(this.geoAddress).subscribe(function (a) {
-            console.log(a);
             if (a.code == 200) {
                 _this.allChemists = a.data;
                 _this.searchedChemists = a.data;
@@ -56844,7 +57375,6 @@ var ChemistComponent = (function () {
         this._chemistService.getAllMedicines().subscribe(function (a) {
             if (a.code == 200) {
                 _this.allMedicines = a.data;
-                console.log(_this.allMedicines);
                 for (var i = 0; i < a.data.length; i++) {
                     if (_this.allMedicines[i].ProfileURL == null) {
                         _this.allMedicines[i].ProfileURL = "assets/img/slices.png";
@@ -56862,7 +57392,6 @@ var ChemistComponent = (function () {
         __WEBPACK_IMPORTED_MODULE_8_jquery__(".textarea-div").toggle("slideInDown");
     };
     ChemistComponent.prototype.openDetailModalInChemist = function (medicine) {
-        console.log(medicine);
         this.singleMedicine = medicine;
         this.ifDataPopulated = true;
         this.detailModalInChemist["open"]();
@@ -56919,7 +57448,6 @@ var ChemistComponent = (function () {
         this.singleMedicine.TotalPrice = tempPrice;
     };
     ChemistComponent.prototype.getDosageName = function (event) {
-        console.log(event);
         this.singleCartItem.DosageName = event;
         var filtered_array = [];
         filtered_array = this.singleMedicine.WebDosageAndValuesDTOList.filter(function (dosage) {
@@ -56943,16 +57471,13 @@ var ChemistComponent = (function () {
             var value_exists = this.measurementValue.find(function (x) { return x == filtered_array[i].MeasurementName; });
             if (!value_exists) {
                 this.measurementValue.push(filtered_array[i].MeasurementName);
-                console.log(this.measurementValue);
             }
         }
     };
     ChemistComponent.prototype.getMeasurement = function (event) {
         var _this = this;
         this.singleCartItem.MeausurementName = event;
-        console.log(this.singleCartItem.MeausurementName);
         var obj = this.finalPriceArray.find(function (x) { return x.DosageName == _this.singleCartItem.DosageName && x.DosageValue == _this.singleCartItem.DosageValue && x.MeasurementName == _this.singleCartItem.MeausurementName; });
-        console.log(obj);
         this.singleCartItem.Price = obj.Price;
         this.singleMedicine.TotalPrice = obj.Price;
         this.singleCartItem.DosageAndSizesValuesId = obj.Id;
@@ -56960,14 +57485,12 @@ var ChemistComponent = (function () {
         this.singleMedicine.OriginalPrice = obj.Price;
     };
     ChemistComponent.prototype.getDistanceFromLatLonInKm = function (lat1, lon1, lat2, lon2) {
-        console.log(lat1, lon1, lat2, lon2);
         var R = 6371; // Radius of the earth in km
         var dLat = this.deg2rad(lat2 - lat1); // deg2rad below
         var dLon = this.deg2rad(lon2 - lon1);
         var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
             Math.cos(this.deg2rad(lat1)) * Math.cos(this.deg2rad(lat2)) *
                 Math.sin(dLon / 2) * Math.sin(dLon / 2);
-        console.log(a);
         var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
         var d = R * c;
         return d;
@@ -57036,54 +57559,23 @@ var ChemistComponent = (function () {
             
             
                   } */
-            __WEBPACK_IMPORTED_MODULE_8_jquery__["getJSON"]('https://jsonip.com?callback=?', function (data) {
-                console.log(data);
-                this.UserIpAddress = data.ip;
-                localStorage.setItem("userIp", this.UserIpAddress);
-            });
+            /* $.getJSON('https://jsonip.com?callback=?', function (data) {
+              console.log(data);
+              this.UserIpAddress = data.ip;
+              localStorage.setItem("userIp", this.UserIpAddress);
+      
+      
+            }); */
             if (this.ThisUser.Id == undefined) {
                 this.ThisUser.Id = localStorage.getItem("userIp");
             }
-            console.log(this.ThisUser.Id, this.singleMedicine.Id, this.singleCartItem.DosageAndSizesValuesId, parseFloat(this.singleCartItem.Quantity), this.singleCartItem.MeasurementId, this.SpecialInstructions);
-            this._addtocart.addToBasket(this.ThisUser.Id, this.singleCartItem.ProductId, this.singleCartItem.DosageAndSizesValuesId, parseFloat(this.singleCartItem.Quantity), this.singleCartItem.MeasurementId, this.SpecialInstructions).subscribe(function (a) {
+            this._addtocart.addToBasket(this.ThisUser.Id, this.singleMedicine.Id, this.singleCartItem.DosageAndSizesValuesId, parseFloat(this.singleCartItem.Quantity), this.singleCartItem.MeasurementId, this.SpecialInstructions).subscribe(function (a) {
                 console.log(a);
                 if (a.code == 200) {
                     _this.SpecialInstructions = undefined;
                     setTimeout(function () {
                         _this.detailModalInChemist.close();
                     }, 1000);
-                    var cart = __WEBPACK_IMPORTED_MODULE_8_jquery__('.border-left');
-                    var imgtodrag = __WEBPACK_IMPORTED_MODULE_8_jquery__("#image" + _this.singleCartItem.ProductId).find("img").eq(0);
-                    if (imgtodrag) {
-                        var imgclone = imgtodrag.clone()
-                            .offset({
-                            top: imgtodrag.offset().top,
-                            left: imgtodrag.offset().left
-                        })
-                            .css({
-                            'opacity': '0.5',
-                            'position': 'absolute',
-                            'height': '150px',
-                            'width': '150px',
-                            'z-index': '100'
-                        })
-                            .appendTo(__WEBPACK_IMPORTED_MODULE_8_jquery__('body'))
-                            .animate({
-                            'top': cart.offset().top + 10,
-                            'left': cart.offset().left + 10,
-                            'width': 75,
-                            'height': 75
-                        }, 1000);
-                        setTimeout(function () {
-                            cart.addClass("Bounce");
-                        }, 1500);
-                        imgclone.animate({
-                            'width': 0,
-                            'height': 0
-                        }, function () {
-                            __WEBPACK_IMPORTED_MODULE_8_jquery__(this).detach();
-                        });
-                    }
                     _this.getCartCount();
                 }
                 else if (a.code == 900) {
@@ -57098,45 +57590,30 @@ var ChemistComponent = (function () {
     };
     ChemistComponent.prototype.getCartCount = function () {
         var _this = this;
-        this._addtocart.getCartCount(this.ThisUser.UserId).subscribe(function (a) {
-            console.log(a);
-            if (a.code == 200) {
-                var number = a.data.length;
+        this.ThisUser = JSON.parse(localStorage.getItem('UserObject'));
+        if (this.ThisUser == null) {
+            this.ThisUser = new __WEBPACK_IMPORTED_MODULE_11__models_usersModel__["a" /* UsersModel */]();
+            this.ThisUser.UserId = localStorage.getItem("userIp");
+            this._addtocart.getCartCountByIp(this.ThisUser.UserId).subscribe(function (response) {
+                console.log(response);
+                var number = response.data.length;
                 _this.cartset(number);
-                /*   this.cart = a.data; */
-                /* console.log(this.cart.length);
-                if (this.cart.length == 0) {
-                  this.cartHasItems = false;
-                } else {
-                  this.cartHasItems = true;
-                } */
-                /*     this.SubTotal = 0;
-            
-            
-            
-                    for (var i = 0; i < this.cart.length; i++) {
-            
-                      this.SubTotal = +this.SubTotal + +this.cart[i].Total;
-                      this.FinalTotal = this.SubTotal;
-                      this.FinalTotal = parseFloat(this.FinalTotal.toFixed(2));
-            
-                    }
-            
-            
-            
-            
-                    this.SubTotal = 0;
-                    for (var i = 0; i < this.cart.length; i++) {
-                      this.SubTotal = this.cart[i].Total + this.SubTotal;
-                    } */
-            }
-        });
+            });
+        }
+        else {
+            this.EnteredAddress.UserId = this.ThisUser.Id;
+            this._addtocart.getCartCount(this.ThisUser.UserId).subscribe(function (a) {
+                if (a.code == 200) {
+                    var number = a.data.length;
+                    _this.cartset(number);
+                }
+            });
+        }
     };
     ChemistComponent.prototype.cartset = function (value) {
-        this._sharedService.getCartCount(value);
+        this.sharedService.getCartCount(value);
     };
     ChemistComponent.prototype.getDetailForThisChemist = function (chemists) {
-        console.log(chemists);
         localStorage.setItem("chemistId", chemists.ChemistId);
         localStorage.setItem('chemistDetails', JSON.stringify(chemists));
         this.router.navigate(['/home']);
@@ -57185,8 +57662,8 @@ __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 ChemistComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
         selector: 'app-chemist',
-        template: __webpack_require__(297),
-        styles: [__webpack_require__(298)],
+        template: __webpack_require__(302),
+        styles: [__webpack_require__(303)],
         encapsulation: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewEncapsulation"].None,
         providers: [__WEBPACK_IMPORTED_MODULE_6__services_mapService__["a" /* MapService */], __WEBPACK_IMPORTED_MODULE_3__services_chemistService__["a" /* ChemistService */], __WEBPACK_IMPORTED_MODULE_10__services_addtocartService__["a" /* AddtocartService */], __WEBPACK_IMPORTED_MODULE_4__angular_common__["Location"], { provide: __WEBPACK_IMPORTED_MODULE_4__angular_common__["LocationStrategy"], useClass: __WEBPACK_IMPORTED_MODULE_4__angular_common__["PathLocationStrategy"] }]
     }),
@@ -57203,12 +57680,12 @@ ChemistComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OrdersComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_usersModel__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_usersModel__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_userService__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_OrdersService__ = __webpack_require__(300);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_addtocartService__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_jquery__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_OrdersService__ = __webpack_require__(305);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_addtocartService__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_jquery__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_jquery__);
 
 
@@ -57332,8 +57809,8 @@ __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 OrdersComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
         selector: 'app-orders',
-        template: __webpack_require__(301),
-        styles: [__webpack_require__(302)],
+        template: __webpack_require__(306),
+        styles: [__webpack_require__(307)],
         providers: [__WEBPACK_IMPORTED_MODULE_3__services_userService__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_5__services_OrdersService__["a" /* OrdersService */], , __WEBPACK_IMPORTED_MODULE_6__services_addtocartService__["a" /* AddtocartService */]],
         encapsulation: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewEncapsulation"].None
     }),
@@ -57350,10 +57827,10 @@ OrdersComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfileComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_usersModel__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_usersModel__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_userService__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_jquery__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_jquery__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_jquery__);
 
 
@@ -57467,8 +57944,8 @@ __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 ProfileComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
         selector: 'app-profile',
-        template: __webpack_require__(304),
-        styles: [__webpack_require__(305)],
+        template: __webpack_require__(309),
+        styles: [__webpack_require__(310)],
         providers: [__WEBPACK_IMPORTED_MODULE_3__services_userService__["a" /* UserService */]],
         encapsulation: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewEncapsulation"].None
     }),
@@ -57524,7 +58001,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(327);
+var	fixUrls = __webpack_require__(328);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -59334,7 +59811,7 @@ exports.ImageUploadComponent = ImageUploadComponent;
 "use strict";
 
 var core_1 = __webpack_require__(0);
-var http_1 = __webpack_require__(8);
+var http_1 = __webpack_require__(7);
 var ImageService = (function () {
     function ImageService(http) {
         this.http = http;
@@ -59377,7 +59854,7 @@ exports.ImageService = ImageService;
 
 var Ps = __webpack_require__(150);
 var core_1 = __webpack_require__(0);
-var perfect_scrollbar_interfaces_1 = __webpack_require__(50);
+var perfect_scrollbar_interfaces_1 = __webpack_require__(51);
 var PerfectScrollbarComponent = (function () {
     function PerfectScrollbarComponent(elementRef, defaults, zone) {
         this.elementRef = elementRef;
@@ -59497,7 +59974,7 @@ exports.PerfectScrollbarComponent = PerfectScrollbarComponent;
 "use strict";
 
 
-module.exports = __webpack_require__(340);
+module.exports = __webpack_require__(341);
 
 
 /***/ }),
@@ -59508,7 +59985,7 @@ module.exports = __webpack_require__(340);
 
 var Ps = __webpack_require__(150);
 var core_1 = __webpack_require__(0);
-var perfect_scrollbar_interfaces_1 = __webpack_require__(50);
+var perfect_scrollbar_interfaces_1 = __webpack_require__(51);
 var PerfectScrollbarDirective = (function () {
     function PerfectScrollbarDirective(elementRef, defaults, zone) {
         this.elementRef = elementRef;
@@ -59688,10 +60165,10 @@ exports.PerfectScrollbarDirective = PerfectScrollbarDirective;
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* WEBPACK VAR INJECTION */(function(module) {/* harmony export (immutable) */ __webpack_exports__["main"] = main;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(209);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_environment__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angularclass_hmr__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_environment__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angularclass_hmr__ = __webpack_require__(109);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angularclass_hmr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__angularclass_hmr__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app__ = __webpack_require__(227);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app__ = __webpack_require__(226);
 /**
  * Angular bootstrapping
  */
@@ -87854,7 +88331,7 @@ function _mergeArrays(parts) {
 "use strict";
 
 var Subscriber_1 = __webpack_require__(6);
-var rxSubscriber_1 = __webpack_require__(68);
+var rxSubscriber_1 = __webpack_require__(69);
 var Observer_1 = __webpack_require__(99);
 function toSubscriber(nextOrObserver, error, complete) {
     if (nextOrObserver) {
@@ -87946,19 +88423,10 @@ exports.noop = noop;
 
 "use strict";
 
-var merge_1 = __webpack_require__(216);
-exports.merge = merge_1.mergeStatic;
-//# sourceMappingURL=merge.js.map
-
-/***/ }),
-/* 216 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var merge_1 = __webpack_require__(101);
-var merge_2 = __webpack_require__(101);
-exports.mergeStatic = merge_2.mergeStatic;
+var Observable_1 = __webpack_require__(3);
+var ArrayObservable_1 = __webpack_require__(71);
+var isScheduler_1 = __webpack_require__(102);
+var mergeAll_1 = __webpack_require__(72);
 /* tslint:enable:max-line-length */
 /**
  * Creates an output Observable which concurrently emits all values from every
@@ -87969,41 +88437,55 @@ exports.mergeStatic = merge_2.mergeStatic;
  *
  * <img src="./img/merge.png" width="100%">
  *
- * `merge` subscribes to each given input Observable (either the source or an
- * Observable given as argument), and simply forwards (without doing any
- * transformation) all the values from all the input Observables to the output
- * Observable. The output Observable only completes once all input Observables
- * have completed. Any error delivered by an input Observable will be immediately
- * emitted on the output Observable.
+ * `merge` subscribes to each given input Observable (as arguments), and simply
+ * forwards (without doing any transformation) all the values from all the input
+ * Observables to the output Observable. The output Observable only completes
+ * once all input Observables have completed. Any error delivered by an input
+ * Observable will be immediately emitted on the output Observable.
  *
  * @example <caption>Merge together two Observables: 1s interval and clicks</caption>
  * var clicks = Rx.Observable.fromEvent(document, 'click');
  * var timer = Rx.Observable.interval(1000);
- * var clicksOrTimer = clicks.merge(timer);
+ * var clicksOrTimer = Rx.Observable.merge(clicks, timer);
  * clicksOrTimer.subscribe(x => console.log(x));
+ *
+ * // Results in the following:
+ * // timer will emit ascending values, one every second(1000ms) to console
+ * // clicks logs MouseEvents to console everytime the "document" is clicked
+ * // Since the two streams are merged you see these happening
+ * // as they occur.
  *
  * @example <caption>Merge together 3 Observables, but only 2 run concurrently</caption>
  * var timer1 = Rx.Observable.interval(1000).take(10);
  * var timer2 = Rx.Observable.interval(2000).take(6);
  * var timer3 = Rx.Observable.interval(500).take(10);
  * var concurrent = 2; // the argument
- * var merged = timer1.merge(timer2, timer3, concurrent);
+ * var merged = Rx.Observable.merge(timer1, timer2, timer3, concurrent);
  * merged.subscribe(x => console.log(x));
+ *
+ * // Results in the following:
+ * // - First timer1 and timer2 will run concurrently
+ * // - timer1 will emit a value every 1000ms for 10 iterations
+ * // - timer2 will emit a value every 2000ms for 6 iterations
+ * // - after timer1 hits it's max iteration, timer2 will
+ * //   continue, and timer3 will start to run concurrently with timer2
+ * // - when timer2 hits it's max iteration it terminates, and
+ * //   timer3 will continue to emit a value every 500ms until it is complete
  *
  * @see {@link mergeAll}
  * @see {@link mergeMap}
  * @see {@link mergeMapTo}
  * @see {@link mergeScan}
  *
- * @param {ObservableInput} other An input Observable to merge with the source
- * Observable. More than one input Observables may be given as argument.
+ * @param {...ObservableInput} observables Input Observables to merge together.
  * @param {number} [concurrent=Number.POSITIVE_INFINITY] Maximum number of input
  * Observables being subscribed to concurrently.
  * @param {Scheduler} [scheduler=null] The IScheduler to use for managing
  * concurrency of input Observables.
- * @return {Observable} An Observable that emits items that are the result of
+ * @return {Observable} an Observable that emits items that are the result of
  * every input Observable.
- * @method merge
+ * @static true
+ * @name merge
  * @owner Observable
  */
 function merge() {
@@ -88011,13 +88493,28 @@ function merge() {
     for (var _i = 0; _i < arguments.length; _i++) {
         observables[_i - 0] = arguments[_i];
     }
-    return merge_1.merge.apply(void 0, observables)(this);
+    var concurrent = Number.POSITIVE_INFINITY;
+    var scheduler = null;
+    var last = observables[observables.length - 1];
+    if (isScheduler_1.isScheduler(last)) {
+        scheduler = observables.pop();
+        if (observables.length > 1 && typeof observables[observables.length - 1] === 'number') {
+            concurrent = observables.pop();
+        }
+    }
+    else if (typeof last === 'number') {
+        concurrent = observables.pop();
+    }
+    if (scheduler === null && observables.length === 1 && observables[0] instanceof Observable_1.Observable) {
+        return observables[0];
+    }
+    return mergeAll_1.mergeAll(concurrent)(new ArrayObservable_1.ArrayObservable(observables, scheduler));
 }
 exports.merge = merge;
 //# sourceMappingURL=merge.js.map
 
 /***/ }),
-/* 217 */
+/* 216 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -88059,7 +88556,7 @@ exports.InnerSubscriber = InnerSubscriber;
 //# sourceMappingURL=InnerSubscriber.js.map
 
 /***/ }),
-/* 218 */
+/* 217 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -88071,12 +88568,12 @@ exports.identity = identity;
 //# sourceMappingURL=identity.js.map
 
 /***/ }),
-/* 219 */
+/* 218 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var share_1 = __webpack_require__(220);
+var share_1 = __webpack_require__(219);
 /**
  * Returns a new Observable that multicasts (shares) the original Observable. As long as there is at least one
  * Subscriber this Observable will be subscribed and emitting data. When all subscribers have unsubscribed it will
@@ -88101,14 +88598,14 @@ exports.share = share;
 //# sourceMappingURL=share.js.map
 
 /***/ }),
-/* 220 */
+/* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var multicast_1 = __webpack_require__(221);
-var refCount_1 = __webpack_require__(107);
-var Subject_1 = __webpack_require__(37);
+var multicast_1 = __webpack_require__(220);
+var refCount_1 = __webpack_require__(106);
+var Subject_1 = __webpack_require__(38);
 function shareSubjectFactory() {
     return new Subject_1.Subject();
 }
@@ -88132,12 +88629,12 @@ exports.share = share;
 //# sourceMappingURL=share.js.map
 
 /***/ }),
-/* 221 */
+/* 220 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var ConnectableObservable_1 = __webpack_require__(222);
+var ConnectableObservable_1 = __webpack_require__(221);
 /* tslint:enable:max-line-length */
 /**
  * Returns an Observable that emits the results of invoking a specified selector on items
@@ -88197,7 +88694,7 @@ exports.MulticastOperator = MulticastOperator;
 //# sourceMappingURL=multicast.js.map
 
 /***/ }),
-/* 222 */
+/* 221 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -88207,11 +88704,11 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var Subject_1 = __webpack_require__(37);
+var Subject_1 = __webpack_require__(38);
 var Observable_1 = __webpack_require__(3);
 var Subscriber_1 = __webpack_require__(6);
 var Subscription_1 = __webpack_require__(46);
-var refCount_1 = __webpack_require__(107);
+var refCount_1 = __webpack_require__(106);
 /**
  * @class ConnectableObservable<T>
  */
@@ -88373,7 +88870,7 @@ var RefCountSubscriber = (function (_super) {
 //# sourceMappingURL=ConnectableObservable.js.map
 
 /***/ }),
-/* 223 */
+/* 222 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -88419,7 +88916,7 @@ exports.SubjectSubscription = SubjectSubscription;
 //# sourceMappingURL=SubjectSubscription.js.map
 
 /***/ }),
-/* 224 */
+/* 223 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -88518,7 +89015,7 @@ exports.createInputTransfer = createInputTransfer;
 //# sourceMappingURL=helpers.js.map
 
 /***/ }),
-/* 225 */
+/* 224 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -88677,7 +89174,7 @@ exports.__createInputTransfer = __createInputTransfer;
 //# sourceMappingURL=experimental.js.map
 
 /***/ }),
-/* 226 */
+/* 225 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -88731,11 +89228,11 @@ exports.hmrModule = hmrModule;
 //# sourceMappingURL=hmr.js.map
 
 /***/ }),
-/* 227 */
+/* 226 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_module__ = __webpack_require__(228);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_module__ = __webpack_require__(227);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__app_module__["a"]; });
 /**
  * App
@@ -88744,49 +89241,49 @@ exports.hmrModule = hmrModule;
 
 
 /***/ }),
-/* 228 */
+/* 227 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angularclass_hmr__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angularclass_hmr__ = __webpack_require__(109);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angularclass_hmr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__angularclass_hmr__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_router__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_platform_browser_animations__ = __webpack_require__(260);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__environment__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_routes__ = __webpack_require__(262);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_component__ = __webpack_require__(307);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__app_resolver__ = __webpack_require__(313);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__app_service__ = __webpack_require__(78);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_ng2_modal__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_platform_browser_animations__ = __webpack_require__(259);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__environment__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_routes__ = __webpack_require__(261);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_component__ = __webpack_require__(312);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__app_resolver__ = __webpack_require__(318);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__app_service__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_ng2_modal__ = __webpack_require__(134);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_ng2_modal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_ng2_modal__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__home__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__about__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__no_content__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__home_x_large__ = __webpack_require__(315);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__header_header_component__ = __webpack_require__(317);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__login_login_component__ = __webpack_require__(123);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__footer_footer_component__ = __webpack_require__(321);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__home__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__about__ = __webpack_require__(137);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__no_content__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__home_x_large__ = __webpack_require__(320);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__header_header_component__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__login_login_component__ = __webpack_require__(139);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__footer_footer_component__ = __webpack_require__(322);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__chemist_chemist_component__ = __webpack_require__(141);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_ngx_facebook__ = __webpack_require__(81);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_angular_star_rating__ = __webpack_require__(325);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__styles_styles_scss__ = __webpack_require__(326);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_ngx_facebook__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_angular_star_rating__ = __webpack_require__(326);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__styles_styles_scss__ = __webpack_require__(327);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__styles_styles_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_24__styles_styles_scss__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__styles_headings_css__ = __webpack_require__(328);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__styles_headings_css__ = __webpack_require__(329);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__styles_headings_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_25__styles_headings_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__services_sharedService__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27_ng2_google_place_autocomplete__ = __webpack_require__(329);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__services_sharedService__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27_ng2_google_place_autocomplete__ = __webpack_require__(330);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__orders_orders_component__ = __webpack_require__(142);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__profile_profile_component__ = __webpack_require__(143);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__ngui_tab__ = __webpack_require__(333);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__ngui_tab__ = __webpack_require__(334);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__ngui_tab___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_30__ngui_tab__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31_angular2_image_upload__ = __webpack_require__(335);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32_angular2_perfect_scrollbar__ = __webpack_require__(338);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31_angular2_image_upload__ = __webpack_require__(336);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32_angular2_perfect_scrollbar__ = __webpack_require__(339);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_32_angular2_perfect_scrollbar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_32_angular2_perfect_scrollbar__);
 
 
@@ -88946,17 +89443,17 @@ AppModule = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 
 /***/ }),
-/* 229 */
+/* 228 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var ForkJoinObservable_1 = __webpack_require__(230);
+var ForkJoinObservable_1 = __webpack_require__(229);
 exports.forkJoin = ForkJoinObservable_1.ForkJoinObservable.create;
 //# sourceMappingURL=forkJoin.js.map
 
 /***/ }),
-/* 230 */
+/* 229 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -88968,9 +89465,9 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var Observable_1 = __webpack_require__(3);
 var EmptyObservable_1 = __webpack_require__(47);
-var isArray_1 = __webpack_require__(67);
-var subscribeToResult_1 = __webpack_require__(73);
-var OuterSubscriber_1 = __webpack_require__(75);
+var isArray_1 = __webpack_require__(68);
+var subscribeToResult_1 = __webpack_require__(74);
+var OuterSubscriber_1 = __webpack_require__(76);
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @extends {Ignored}
@@ -89164,7 +89661,7 @@ var ForkJoinSubscriber = (function (_super) {
 //# sourceMappingURL=ForkJoinObservable.js.map
 
 /***/ }),
-/* 231 */
+/* 230 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -89259,17 +89756,17 @@ var MapSubscriber = (function (_super) {
 //# sourceMappingURL=map.js.map
 
 /***/ }),
-/* 232 */
+/* 231 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var FromObservable_1 = __webpack_require__(233);
+var FromObservable_1 = __webpack_require__(232);
 exports.from = FromObservable_1.FromObservable.create;
 //# sourceMappingURL=from.js.map
 
 /***/ }),
-/* 233 */
+/* 232 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -89279,17 +89776,17 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var isArray_1 = __webpack_require__(67);
-var isArrayLike_1 = __webpack_require__(104);
-var isPromise_1 = __webpack_require__(105);
-var PromiseObservable_1 = __webpack_require__(112);
-var IteratorObservable_1 = __webpack_require__(234);
-var ArrayObservable_1 = __webpack_require__(70);
-var ArrayLikeObservable_1 = __webpack_require__(235);
-var iterator_1 = __webpack_require__(74);
+var isArray_1 = __webpack_require__(68);
+var isArrayLike_1 = __webpack_require__(103);
+var isPromise_1 = __webpack_require__(104);
+var PromiseObservable_1 = __webpack_require__(111);
+var IteratorObservable_1 = __webpack_require__(233);
+var ArrayObservable_1 = __webpack_require__(71);
+var ArrayLikeObservable_1 = __webpack_require__(234);
+var iterator_1 = __webpack_require__(75);
 var Observable_1 = __webpack_require__(3);
-var observeOn_1 = __webpack_require__(236);
-var observable_1 = __webpack_require__(69);
+var observeOn_1 = __webpack_require__(235);
+var observable_1 = __webpack_require__(70);
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @extends {Ignored}
@@ -89397,7 +89894,7 @@ exports.FromObservable = FromObservable;
 //# sourceMappingURL=FromObservable.js.map
 
 /***/ }),
-/* 234 */
+/* 233 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -89409,7 +89906,7 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var root_1 = __webpack_require__(25);
 var Observable_1 = __webpack_require__(3);
-var iterator_1 = __webpack_require__(74);
+var iterator_1 = __webpack_require__(75);
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @extends {Ignored}
@@ -89566,7 +90063,7 @@ function sign(value) {
 //# sourceMappingURL=IteratorObservable.js.map
 
 /***/ }),
-/* 235 */
+/* 234 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -89577,7 +90074,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Observable_1 = __webpack_require__(3);
-var ScalarObservable_1 = __webpack_require__(102);
+var ScalarObservable_1 = __webpack_require__(101);
 var EmptyObservable_1 = __webpack_require__(47);
 /**
  * We need this JSDoc comment for affecting ESDoc.
@@ -89642,7 +90139,7 @@ exports.ArrayLikeObservable = ArrayLikeObservable;
 //# sourceMappingURL=ArrayLikeObservable.js.map
 
 /***/ }),
-/* 236 */
+/* 235 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -89653,7 +90150,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Subscriber_1 = __webpack_require__(6);
-var Notification_1 = __webpack_require__(237);
+var Notification_1 = __webpack_require__(236);
 /**
  *
  * Re-emits all notifications from source Observable with specified scheduler.
@@ -89763,7 +90260,7 @@ exports.ObserveOnMessage = ObserveOnMessage;
 //# sourceMappingURL=observeOn.js.map
 
 /***/ }),
-/* 237 */
+/* 236 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -89896,12 +90393,12 @@ exports.Notification = Notification;
 //# sourceMappingURL=Notification.js.map
 
 /***/ }),
-/* 238 */
+/* 237 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var concatMap_1 = __webpack_require__(239);
+var concatMap_1 = __webpack_require__(238);
 /* tslint:enable:max-line-length */
 /**
  * Projects each source value to an Observable which is merged in the output
@@ -89969,12 +90466,12 @@ exports.concatMap = concatMap;
 //# sourceMappingURL=concatMap.js.map
 
 /***/ }),
-/* 239 */
+/* 238 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var mergeMap_1 = __webpack_require__(72);
+var mergeMap_1 = __webpack_require__(73);
 /* tslint:enable:max-line-length */
 /**
  * Projects each source value to an Observable which is merged in the output
@@ -90042,12 +90539,12 @@ exports.concatMap = concatMap;
 //# sourceMappingURL=concatMap.js.map
 
 /***/ }),
-/* 240 */
+/* 239 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var every_1 = __webpack_require__(241);
+var every_1 = __webpack_require__(240);
 /**
  * Returns an Observable that emits whether or not every item of the source satisfies the condition specified.
  *
@@ -90069,7 +90566,7 @@ exports.every = every;
 //# sourceMappingURL=every.js.map
 
 /***/ }),
-/* 241 */
+/* 240 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -90149,12 +90646,12 @@ var EverySubscriber = (function (_super) {
 //# sourceMappingURL=every.js.map
 
 /***/ }),
-/* 242 */
+/* 241 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var first_1 = __webpack_require__(243);
+var first_1 = __webpack_require__(242);
 /**
  * Emits only the first value (or the first value that meets some condition)
  * emitted by the source Observable.
@@ -90211,7 +90708,7 @@ exports.first = first;
 //# sourceMappingURL=first.js.map
 
 /***/ }),
-/* 243 */
+/* 242 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -90222,7 +90719,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Subscriber_1 = __webpack_require__(6);
-var EmptyError_1 = __webpack_require__(77);
+var EmptyError_1 = __webpack_require__(78);
 /**
  * Emits only the first value (or the first value that meets some condition)
  * emitted by the source Observable.
@@ -90369,12 +90866,12 @@ var FirstSubscriber = (function (_super) {
 //# sourceMappingURL=first.js.map
 
 /***/ }),
-/* 244 */
+/* 243 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var last_1 = __webpack_require__(245);
+var last_1 = __webpack_require__(244);
 /* tslint:enable:max-line-length */
 /**
  * Returns an Observable that emits only the last item emitted by the source Observable.
@@ -90400,7 +90897,7 @@ exports.last = last;
 //# sourceMappingURL=last.js.map
 
 /***/ }),
-/* 245 */
+/* 244 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -90411,7 +90908,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Subscriber_1 = __webpack_require__(6);
-var EmptyError_1 = __webpack_require__(77);
+var EmptyError_1 = __webpack_require__(78);
 /* tslint:enable:max-line-length */
 /**
  * Returns an Observable that emits only the last item emitted by the source Observable.
@@ -90525,12 +91022,12 @@ var LastSubscriber = (function (_super) {
 //# sourceMappingURL=last.js.map
 
 /***/ }),
-/* 246 */
+/* 245 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var mergeMap_1 = __webpack_require__(72);
+var mergeMap_1 = __webpack_require__(73);
 /* tslint:enable:max-line-length */
 /**
  * Projects each source value to an Observable which is merged in the output
@@ -90598,12 +91095,12 @@ exports.mergeMap = mergeMap;
 //# sourceMappingURL=mergeMap.js.map
 
 /***/ }),
-/* 247 */
+/* 246 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var reduce_1 = __webpack_require__(248);
+var reduce_1 = __webpack_require__(247);
 /* tslint:enable:max-line-length */
 /**
  * Applies an accumulator function over the source Observable, and returns the
@@ -90664,14 +91161,14 @@ exports.reduce = reduce;
 //# sourceMappingURL=reduce.js.map
 
 /***/ }),
-/* 248 */
+/* 247 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var scan_1 = __webpack_require__(249);
-var takeLast_1 = __webpack_require__(250);
-var defaultIfEmpty_1 = __webpack_require__(252);
+var scan_1 = __webpack_require__(248);
+var takeLast_1 = __webpack_require__(249);
+var defaultIfEmpty_1 = __webpack_require__(251);
 var pipe_1 = __webpack_require__(100);
 /* tslint:enable:max-line-length */
 /**
@@ -90739,7 +91236,7 @@ exports.reduce = reduce;
 //# sourceMappingURL=reduce.js.map
 
 /***/ }),
-/* 249 */
+/* 248 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -90866,7 +91363,7 @@ var ScanSubscriber = (function (_super) {
 //# sourceMappingURL=scan.js.map
 
 /***/ }),
-/* 250 */
+/* 249 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -90877,7 +91374,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Subscriber_1 = __webpack_require__(6);
-var ArgumentOutOfRangeError_1 = __webpack_require__(251);
+var ArgumentOutOfRangeError_1 = __webpack_require__(250);
 var EmptyObservable_1 = __webpack_require__(47);
 /**
  * Emits only the last `count` values emitted by the source Observable.
@@ -90981,7 +91478,7 @@ var TakeLastSubscriber = (function (_super) {
 //# sourceMappingURL=takeLast.js.map
 
 /***/ }),
-/* 251 */
+/* 250 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -91015,7 +91512,7 @@ exports.ArgumentOutOfRangeError = ArgumentOutOfRangeError;
 //# sourceMappingURL=ArgumentOutOfRangeError.js.map
 
 /***/ }),
-/* 252 */
+/* 251 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -91098,12 +91595,12 @@ var DefaultIfEmptySubscriber = (function (_super) {
 //# sourceMappingURL=defaultIfEmpty.js.map
 
 /***/ }),
-/* 253 */
+/* 252 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var catchError_1 = __webpack_require__(254);
+var catchError_1 = __webpack_require__(253);
 /**
  * Catches errors on the observable to be handled by returning a new observable or throwing an error.
  *
@@ -91170,7 +91667,7 @@ exports._catch = _catch;
 //# sourceMappingURL=catch.js.map
 
 /***/ }),
-/* 254 */
+/* 253 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -91180,8 +91677,8 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var OuterSubscriber_1 = __webpack_require__(75);
-var subscribeToResult_1 = __webpack_require__(73);
+var OuterSubscriber_1 = __webpack_require__(76);
+var subscribeToResult_1 = __webpack_require__(74);
 /**
  * Catches errors on the observable to be handled by returning a new observable or throwing an error.
  *
@@ -91292,12 +91789,12 @@ var CatchSubscriber = (function (_super) {
 //# sourceMappingURL=catchError.js.map
 
 /***/ }),
-/* 255 */
+/* 254 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var concatAll_1 = __webpack_require__(256);
+var concatAll_1 = __webpack_require__(255);
 /* tslint:enable:max-line-length */
 /**
  * Converts a higher-order Observable into a first-order Observable by
@@ -91354,12 +91851,12 @@ exports.concatAll = concatAll;
 //# sourceMappingURL=concatAll.js.map
 
 /***/ }),
-/* 256 */
+/* 255 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var mergeAll_1 = __webpack_require__(71);
+var mergeAll_1 = __webpack_require__(72);
 /**
  * Converts a higher-order Observable into a first-order Observable by
  * concatenating the inner Observables in order.
@@ -91415,12 +91912,12 @@ exports.concatAll = concatAll;
 //# sourceMappingURL=concatAll.js.map
 
 /***/ }),
-/* 257 */
+/* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var mergeAll_1 = __webpack_require__(71);
+var mergeAll_1 = __webpack_require__(72);
 /**
  * Converts a higher-order Observable into a first-order Observable which
  * concurrently delivers all values that are emitted on the inner Observables.
@@ -91473,12 +91970,12 @@ exports.mergeAll = mergeAll;
 //# sourceMappingURL=mergeAll.js.map
 
 /***/ }),
-/* 258 */
+/* 257 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var filter_1 = __webpack_require__(259);
+var filter_1 = __webpack_require__(258);
 /* tslint:enable:max-line-length */
 /**
  * Filter items emitted by the source Observable by only emitting those that
@@ -91526,7 +92023,7 @@ exports.filter = filter;
 //# sourceMappingURL=filter.js.map
 
 /***/ }),
-/* 259 */
+/* 258 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -91626,7 +92123,7 @@ var FilterSubscriber = (function (_super) {
 //# sourceMappingURL=filter.js.map
 
 /***/ }),
-/* 260 */
+/* 259 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -91646,8 +92143,8 @@ var FilterSubscriber = (function (_super) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_animations__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_animations_browser__ = __webpack_require__(261);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_animations__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_animations_browser__ = __webpack_require__(260);
 
 /**
  * @license Angular v4.4.6
@@ -92392,7 +92889,7 @@ NoopAnimationsModule.ctorParameters = function () { return []; };
 
 
 /***/ }),
-/* 261 */
+/* 260 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -92407,7 +92904,7 @@ NoopAnimationsModule.ctorParameters = function () { return []; };
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return supportsWebAnimations; });
 /* unused harmony export ɵWebAnimationsPlayer */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_animations__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_animations__ = __webpack_require__(114);
 
 /**
  * @license Angular v4.4.6
@@ -97322,15 +97819,15 @@ function supportsWebAnimations() {
 
 
 /***/ }),
-/* 262 */
+/* 261 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ROUTES; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__home__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__about__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__no_content__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__login_login_component__ = __webpack_require__(123);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__home__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__about__ = __webpack_require__(137);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__no_content__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__login_login_component__ = __webpack_require__(139);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__chemist_chemist_component__ = __webpack_require__(141);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__orders_orders_component__ = __webpack_require__(142);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__profile_profile_component__ = __webpack_require__(143);
@@ -97348,36 +97845,40 @@ var ROUTES = [
     { path: 'orders', component: __WEBPACK_IMPORTED_MODULE_5__orders_orders_component__["a" /* OrdersComponent */] },
     { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_6__profile_profile_component__["a" /* ProfileComponent */] },
     { path: 'about', component: __WEBPACK_IMPORTED_MODULE_1__about__["a" /* AboutComponent */] },
-    { path: 'detail', loadChildren: function() { return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 356))  .then( function(module) { return module['DetailModule']; } ); } },
-    { path: 'barrel', loadChildren: function() { return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 357))  .then( function(module) { return module['BarrelModule']; } ); } },
+    { path: 'detail', loadChildren: function() { return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 357))  .then( function(module) { return module['DetailModule']; } ); } },
+    { path: 'barrel', loadChildren: function() { return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 358))  .then( function(module) { return module['BarrelModule']; } ); } },
     { path: '**', component: __WEBPACK_IMPORTED_MODULE_2__no_content__["a" /* NoContentComponent */] },
 ];
 
 
 /***/ }),
-/* 263 */
+/* 262 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_service__ = __webpack_require__(78);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__title__ = __webpack_require__(264);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_productsService__ = __webpack_require__(266);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__models_medicinesModel__ = __webpack_require__(267);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__models_cartModel__ = __webpack_require__(117);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_sharedService__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_jquery__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_jquery__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_addtocartService__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_userService__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__models_AddressModel__ = __webpack_require__(268);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_ng2_modal__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_ng2_modal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_ng2_modal__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__models_update_Model__ = __webpack_require__(269);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__models_usersModel__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_chemistService__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__header_header_component__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_service__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__title__ = __webpack_require__(283);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_productsService__ = __webpack_require__(285);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__models_medicinesModel__ = __webpack_require__(286);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__models_cartModel__ = __webpack_require__(133);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_sharedService__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_jquery__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_jquery__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_addtocartService__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_userService__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__models_AddressModel__ = __webpack_require__(287);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_ng2_modal__ = __webpack_require__(134);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_ng2_modal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15_ng2_modal__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__models_update_Model__ = __webpack_require__(288);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__models_usersModel__ = __webpack_require__(29);
+
+
 
 
 
@@ -97395,9 +97896,10 @@ var ROUTES = [
 
 
 var HomeComponent = (function () {
-    function HomeComponent(appState, _addtocart, renderer, title, router, userService, _productService, _sharedService) {
+    function HomeComponent(appState, headerComponent, _addtocart, renderer, title, router, userService, _productService, _sharedService) {
         var _this = this;
         this.appState = appState;
+        this.headerComponent = headerComponent;
         this._addtocart = _addtocart;
         this.renderer = renderer;
         this.title = title;
@@ -97406,6 +97908,8 @@ var HomeComponent = (function () {
         this._productService = _productService;
         this._sharedService = _sharedService;
         this.localState = { value: '' };
+        /* @ViewChild(HeaderComponent) headerComponentTarget; */
+        this.AddedToBasket = new __WEBPACK_IMPORTED_MODULE_3__angular_core__["EventEmitter"]();
         this.allMedicines = [];
         this.SearchedMedicines = [];
         this.ifDataPopulated = false;
@@ -97428,19 +97932,14 @@ var HomeComponent = (function () {
         this.selectedTimeSlotId = undefined;
         this.cartHasItems = false;
         this.UsersAddresses = [];
-        __WEBPACK_IMPORTED_MODULE_9_jquery__["getJSON"]('https://jsonip.com?callback=?', function (data) {
-            console.log(data);
-            this.UserIpAddress = data.ip;
-            localStorage.setItem("userIp", this.UserIpAddress);
-        });
         this.chemistId = localStorage.getItem("chemistId");
-        this.EnteredAddress = new __WEBPACK_IMPORTED_MODULE_12__models_AddressModel__["a" /* AddressModel */]();
+        this.EnteredAddress = new __WEBPACK_IMPORTED_MODULE_14__models_AddressModel__["a" /* AddressModel */]();
         this.ChemistViewing = JSON.parse(localStorage.getItem('chemistDetails'));
+        console.log(this.ChemistViewing);
         this.ThisUser = JSON.parse(localStorage.getItem('UserObject'));
         console.log(this.ThisUser);
         if (this.ThisUser == null) {
-            this.ThisUser = new __WEBPACK_IMPORTED_MODULE_15__models_usersModel__["a" /* UsersModel */]();
-            console.log(localStorage.getItem("userIp"));
+            this.ThisUser = new __WEBPACK_IMPORTED_MODULE_17__models_usersModel__["a" /* UsersModel */]();
             this.ThisUser.UserId = localStorage.getItem("userIp");
         }
         else {
@@ -97475,7 +97974,7 @@ var HomeComponent = (function () {
     };
     HomeComponent.prototype.selectThisAddress = function (event, Id) {
         this.AddressId = Id;
-        __WEBPACK_IMPORTED_MODULE_9_jquery__(".listed-addresses").removeClass("activeAddress");
+        __WEBPACK_IMPORTED_MODULE_11_jquery__(".listed-addresses").removeClass("activeAddress");
         this.renderer.setElementClass(event.target, "activeAddress", true);
         console.log(this.AddressId);
     };
@@ -97486,7 +97985,7 @@ var HomeComponent = (function () {
             _this.UsersAddresses = a.data;
             _this.oldAddressEnabled = true;
             if (a.data.length == 0) {
-                __WEBPACK_IMPORTED_MODULE_9_jquery__("#snackbar").html("No saved addresses found for this user!");
+                __WEBPACK_IMPORTED_MODULE_11_jquery__("#snackbar").html("No saved addresses found for this user!");
                 _this.ShowToast();
                 _this.oldAddressEnabled = false;
             }
@@ -97500,11 +97999,11 @@ var HomeComponent = (function () {
     };
     HomeComponent.prototype.showTimeSlots = function () {
         var _this = this;
-        __WEBPACK_IMPORTED_MODULE_9_jquery__(".FetchingTimeSlots").show();
-        __WEBPACK_IMPORTED_MODULE_9_jquery__(".time-slots").slideDown();
+        __WEBPACK_IMPORTED_MODULE_11_jquery__(".FetchingTimeSlots").show();
+        __WEBPACK_IMPORTED_MODULE_11_jquery__(".time-slots").slideDown();
         this._addtocart.getTimeSlots().subscribe(function (a) {
             _this.timeSlots = a.data;
-            __WEBPACK_IMPORTED_MODULE_9_jquery__(".FetchingTimeSlots").hide();
+            __WEBPACK_IMPORTED_MODULE_11_jquery__(".FetchingTimeSlots").hide();
             _this.laterOrSoon = 0;
         });
         this.laterOrSoon = 200;
@@ -97517,24 +98016,30 @@ var HomeComponent = (function () {
     };
     HomeComponent.prototype.placeOrder = function () {
         var _this = this;
-        __WEBPACK_IMPORTED_MODULE_9_jquery__(".place-now").hide();
-        __WEBPACK_IMPORTED_MODULE_9_jquery__(".Orderloader").show();
-        if (this.CashOnDevliery) {
-            this._addtocart.placeOrder(this.ThisUser.Id, this.AddressId, this.laterOrSoon, this.selectedTimeSlotId, this.OrderPlacemenAppId).subscribe(function (a) {
-                console.log(a);
-                if (a.code == 200) {
-                    __WEBPACK_IMPORTED_MODULE_9_jquery__(".place-now").show();
-                    __WEBPACK_IMPORTED_MODULE_9_jquery__(".Orderloader").hide();
-                    _this.orderPlaced.open();
-                    _this.globalUnset;
-                    _this.cartset(0);
-                }
-            });
+        if (this.ThisUser == null) {
+            __WEBPACK_IMPORTED_MODULE_11_jquery__("#snackbar").html("Please Sign In/Sign up to place your order!");
+            this.ShowToast();
         }
         else {
-            __WEBPACK_IMPORTED_MODULE_9_jquery__(".Orderloader").hide();
-            __WEBPACK_IMPORTED_MODULE_9_jquery__(".place-now").show();
-            __WEBPACK_IMPORTED_MODULE_9_jquery__("#snackbar").html("Please select a payment method");
+            __WEBPACK_IMPORTED_MODULE_11_jquery__(".place-now").hide();
+            __WEBPACK_IMPORTED_MODULE_11_jquery__(".Orderloader").show();
+            if (this.CashOnDevliery) {
+                this._addtocart.placeOrder(this.ThisUser.Id, this.AddressId, this.laterOrSoon, this.selectedTimeSlotId, this.OrderPlacemenAppId).subscribe(function (a) {
+                    console.log(a);
+                    if (a.code == 200) {
+                        __WEBPACK_IMPORTED_MODULE_11_jquery__(".place-now").show();
+                        __WEBPACK_IMPORTED_MODULE_11_jquery__(".Orderloader").hide();
+                        _this.orderPlaced.open();
+                        _this.globalUnset;
+                        _this.cartset(0);
+                    }
+                });
+            }
+            else {
+                __WEBPACK_IMPORTED_MODULE_11_jquery__(".Orderloader").hide();
+                __WEBPACK_IMPORTED_MODULE_11_jquery__(".place-now").show();
+                __WEBPACK_IMPORTED_MODULE_11_jquery__("#snackbar").html("Please select a payment method");
+            }
         }
     };
     HomeComponent.prototype.searchThisMedicine = function (e) {
@@ -97547,11 +98052,11 @@ var HomeComponent = (function () {
     };
     HomeComponent.prototype.AsSoonAsPossibleSelected = function () {
         this.selectedTimeSlotId = undefined;
-        __WEBPACK_IMPORTED_MODULE_9_jquery__(".time-slots").slideUp();
+        __WEBPACK_IMPORTED_MODULE_11_jquery__(".time-slots").slideUp();
         this.laterOrSoon = 100;
     };
     HomeComponent.prototype.selectThisSlot = function (event, timeSlotId) {
-        __WEBPACK_IMPORTED_MODULE_9_jquery__(".time-slot").removeClass("selected");
+        __WEBPACK_IMPORTED_MODULE_11_jquery__(".time-slot").removeClass("selected");
         this.renderer.setElementClass(event.target, "selected", true);
         this.selectedTimeSlotId = timeSlotId;
     };
@@ -97559,67 +98064,67 @@ var HomeComponent = (function () {
         this.unsetValues();
     };
     HomeComponent.prototype.showTextArea = function () {
-        __WEBPACK_IMPORTED_MODULE_9_jquery__('.thisone').toggleClass("fa-chevron-up fa-chevron-down");
-        __WEBPACK_IMPORTED_MODULE_9_jquery__(".textarea-div").toggleClass("slideInDown");
+        __WEBPACK_IMPORTED_MODULE_11_jquery__('.thisone').toggleClass("fa-chevron-up fa-chevron-down");
+        __WEBPACK_IMPORTED_MODULE_11_jquery__(".textarea-div").toggleClass("slideInDown");
     };
     HomeComponent.prototype.showTextArea3 = function () {
-        __WEBPACK_IMPORTED_MODULE_9_jquery__('.thisone3').toggleClass("fa-chevron-up fa-chevron-down");
-        __WEBPACK_IMPORTED_MODULE_9_jquery__(".textarea-div3").toggleClass("slideInDown");
+        __WEBPACK_IMPORTED_MODULE_11_jquery__('.thisone3').toggleClass("fa-chevron-up fa-chevron-down");
+        __WEBPACK_IMPORTED_MODULE_11_jquery__(".textarea-div3").toggleClass("slideInDown");
     };
     HomeComponent.prototype.showTextArea4 = function () {
-        __WEBPACK_IMPORTED_MODULE_9_jquery__('.thisone4').toggleClass("fa-chevron-up fa-chevron-down");
-        __WEBPACK_IMPORTED_MODULE_9_jquery__(".textarea-div4").toggleClass("slideInDown");
+        __WEBPACK_IMPORTED_MODULE_11_jquery__('.thisone4').toggleClass("fa-chevron-up fa-chevron-down");
+        __WEBPACK_IMPORTED_MODULE_11_jquery__(".textarea-div4").toggleClass("slideInDown");
     };
     HomeComponent.prototype.saveThisAddress = function () {
         var _this = this;
-        this.EnteredAddress.City = __WEBPACK_IMPORTED_MODULE_9_jquery__["trim"](this.EnteredAddress.City);
-        this.EnteredAddress.Area = __WEBPACK_IMPORTED_MODULE_9_jquery__["trim"](this.EnteredAddress.Area);
-        this.EnteredAddress.AddressDetail = __WEBPACK_IMPORTED_MODULE_9_jquery__["trim"](this.EnteredAddress.AddressDetail);
+        this.EnteredAddress.City = __WEBPACK_IMPORTED_MODULE_11_jquery__["trim"](this.EnteredAddress.City);
+        this.EnteredAddress.Area = __WEBPACK_IMPORTED_MODULE_11_jquery__["trim"](this.EnteredAddress.Area);
+        this.EnteredAddress.AddressDetail = __WEBPACK_IMPORTED_MODULE_11_jquery__["trim"](this.EnteredAddress.AddressDetail);
         var error = false;
-        __WEBPACK_IMPORTED_MODULE_9_jquery__(".address-field").removeClass("errors");
+        __WEBPACK_IMPORTED_MODULE_11_jquery__(".address-field").removeClass("errors");
         if (this.EnteredAddress.City == undefined || this.EnteredAddress.City.length == 0) {
             error = true;
-            __WEBPACK_IMPORTED_MODULE_9_jquery__("#EnteredAddressCity").addClass("errors");
+            __WEBPACK_IMPORTED_MODULE_11_jquery__("#EnteredAddressCity").addClass("errors");
         }
         if (this.EnteredAddress.Area == undefined || this.EnteredAddress.Area.length == 0) {
             error = true;
-            __WEBPACK_IMPORTED_MODULE_9_jquery__("#EnteredAddressArea").addClass("errors");
+            __WEBPACK_IMPORTED_MODULE_11_jquery__("#EnteredAddressArea").addClass("errors");
         }
         if (this.EnteredAddress.AddressDetail == undefined || this.EnteredAddress.AddressDetail.length == 0) {
             error = true;
-            __WEBPACK_IMPORTED_MODULE_9_jquery__("#EnteredAddressDetail").addClass("errors");
+            __WEBPACK_IMPORTED_MODULE_11_jquery__("#EnteredAddressDetail").addClass("errors");
         }
         if (error) {
         }
         else {
-            __WEBPACK_IMPORTED_MODULE_9_jquery__(".saveAddressBtn").hide();
-            __WEBPACK_IMPORTED_MODULE_9_jquery__(".loader").show();
+            __WEBPACK_IMPORTED_MODULE_11_jquery__(".saveAddressBtn").hide();
+            __WEBPACK_IMPORTED_MODULE_11_jquery__(".loader").show();
             this.userService.addUserAddress(this.EnteredAddress).subscribe(function (a) {
                 console.log(a);
                 if (a.code == 200) {
-                    __WEBPACK_IMPORTED_MODULE_9_jquery__("#snackbar").html(a.message);
+                    __WEBPACK_IMPORTED_MODULE_11_jquery__("#snackbar").html(a.message);
                     _this.AddressId = a.data.Id;
                     _this.addressSet = true;
-                    _this.EnteredAddress = new __WEBPACK_IMPORTED_MODULE_12__models_AddressModel__["a" /* AddressModel */]();
+                    _this.EnteredAddress = new __WEBPACK_IMPORTED_MODULE_14__models_AddressModel__["a" /* AddressModel */]();
                     if (_this.ThisUser == null) {
                     }
                     else {
                         _this.EnteredAddress.UserId = _this.ThisUser.Id;
                     }
                     _this.NewAddressEnteredAndSelected = a.data;
-                    __WEBPACK_IMPORTED_MODULE_9_jquery__(".saveAddressBtn").show();
-                    __WEBPACK_IMPORTED_MODULE_9_jquery__(".loader").hide();
+                    __WEBPACK_IMPORTED_MODULE_11_jquery__(".saveAddressBtn").show();
+                    __WEBPACK_IMPORTED_MODULE_11_jquery__(".loader").hide();
                 }
                 else {
-                    __WEBPACK_IMPORTED_MODULE_9_jquery__("#snackbar").html("Errors");
-                    __WEBPACK_IMPORTED_MODULE_9_jquery__(".saveAddressBtn").show();
-                    __WEBPACK_IMPORTED_MODULE_9_jquery__(".loader").hide();
+                    __WEBPACK_IMPORTED_MODULE_11_jquery__("#snackbar").html("Errors");
+                    __WEBPACK_IMPORTED_MODULE_11_jquery__(".saveAddressBtn").show();
+                    __WEBPACK_IMPORTED_MODULE_11_jquery__(".loader").hide();
                 }
             });
         }
     };
     HomeComponent.prototype.showMessageArea = function () {
-        __WEBPACK_IMPORTED_MODULE_9_jquery__(".textarea-div2").toggleClass("slideInDown");
+        __WEBPACK_IMPORTED_MODULE_11_jquery__(".textarea-div2").toggleClass("slideInDown");
     };
     HomeComponent.prototype.addToCart = function () {
         var _this = this;
@@ -97627,70 +98132,30 @@ var HomeComponent = (function () {
         this.singleCartItem.ChemistName = this.singleMedicine.ChemistName;
         this.singleCartItem.ChemistAddress = this.singleMedicine.ChemistAddress;
         this.singleCartItem.Name = this.singleMedicine.Name;
-        this.singleCartItem.Quantity = __WEBPACK_IMPORTED_MODULE_9_jquery__("#num_val").val();
-        __WEBPACK_IMPORTED_MODULE_9_jquery__("#Measurements").removeClass("errors");
+        this.singleCartItem.Quantity = __WEBPACK_IMPORTED_MODULE_11_jquery__("#num_val").val();
+        __WEBPACK_IMPORTED_MODULE_11_jquery__("#Measurements").removeClass("errors");
         this.singleCartItem.Price = this.singleMedicine.OriginalPrice;
         this.singleCartItem.TotalPrice = this.singleCartItem.Price * this.singleCartItem.Quantity;
         var error = false;
         if (this.singleCartItem.MeasurementId == undefined) {
             error = true;
-            __WEBPACK_IMPORTED_MODULE_9_jquery__("#Measurements").addClass("errors");
+            __WEBPACK_IMPORTED_MODULE_11_jquery__("#Measurements").addClass("errors");
         }
         if (error) {
         }
         else {
-            /*       if (this.cart.length == 0) {
-            
-                    this.cart.push(this.singleCartItem);
-            
-            
-                  } else {
-                    var count = 0;
-            
-                    for (var k = 0; k < this.cart.length; k++) {
-            
-                      if ((this.cart[k].ProductId == this.singleCartItem.ProductId) && (this.cart[k].DosageAndSizesValuesId == this.singleCartItem.DosageAndSizesValuesId) && (this.cart[k].Name == this.singleCartItem.Name)) {
-            
-                        count++;
-            
-                        this.cart[k].Quantity = parseFloat(this.cart[k].Quantity) + parseFloat(this.singleCartItem.Quantity);
-            
-            
-                        var productPrice;
-                        console.log(this.cart[k].Quantity);
-                        productPrice = parseFloat(this.singleCartItem.Price) * this.cart[k].Quantity; // Changed this line inserted parseFloat here
-            
-                        this.cart[k].TotalPrice = productPrice;
-            
-                        break;
-            
-                      }
-            
-                    }
-            
-            
-            
-                    if (count == 0) {
-            
-                      this.cart.push(this.singleCartItem);
-            
-            
-                    }
-            
-            
-            
-            
-            
-                  } */
-            this._addtocart.addToBasket("192.168.1.1", this.singleCartItem.ProductId, this.singleCartItem.DosageAndSizesValuesId, parseFloat(this.singleCartItem.Quantity), this.singleCartItem.MeasurementId, this.SpecialInstructions).subscribe(function (a) {
+            if (this.ThisUser.Id == undefined) {
+                this.ThisUser.Id = localStorage.getItem("userIp");
+            }
+            this._addtocart.addToBasket(this.ThisUser.Id, this.singleCartItem.ProductId, this.singleCartItem.DosageAndSizesValuesId, parseFloat(this.singleCartItem.Quantity), this.singleCartItem.MeasurementId, this.SpecialInstructions).subscribe(function (a) {
                 console.log(a);
                 if (a.code == 200) {
                     _this.SpecialInstructions = undefined;
                     setTimeout(function () {
                         _this.detailModal.close();
                     }, 1000);
-                    var cart = __WEBPACK_IMPORTED_MODULE_9_jquery__('.border-left');
-                    var imgtodrag = __WEBPACK_IMPORTED_MODULE_9_jquery__("#image" + _this.singleCartItem.ProductId).find("img").eq(0);
+                    var cart = __WEBPACK_IMPORTED_MODULE_11_jquery__('.border-left');
+                    var imgtodrag = __WEBPACK_IMPORTED_MODULE_11_jquery__("#image" + _this.singleCartItem.ProductId).find("img").eq(0);
                     if (imgtodrag) {
                         var imgclone = imgtodrag.clone()
                             .offset({
@@ -97704,7 +98169,7 @@ var HomeComponent = (function () {
                             'width': '150px',
                             'z-index': '100'
                         })
-                            .appendTo(__WEBPACK_IMPORTED_MODULE_9_jquery__('body'))
+                            .appendTo(__WEBPACK_IMPORTED_MODULE_11_jquery__('body'))
                             .animate({
                             'top': cart.offset().top + 10,
                             'left': cart.offset().left + 10,
@@ -97718,13 +98183,13 @@ var HomeComponent = (function () {
                             'width': 0,
                             'height': 0
                         }, function () {
-                            __WEBPACK_IMPORTED_MODULE_9_jquery__(this).detach();
+                            __WEBPACK_IMPORTED_MODULE_11_jquery__(this).detach();
                         });
                     }
                     _this.getCartCount();
                 }
                 else if (a.code == 900) {
-                    __WEBPACK_IMPORTED_MODULE_9_jquery__("#snackbar").html("You cannot add items to an existing cart from another chemist!");
+                    __WEBPACK_IMPORTED_MODULE_11_jquery__("#snackbar").html("You cannot add items to an existing cart from another chemist!");
                     _this.ShowToast();
                 }
             });
@@ -97739,50 +98204,83 @@ var HomeComponent = (function () {
             for (var i = 0; i < this.cart.length; i++) {
                 this.SubTotal = this.cart[i].TotalPrice + this.SubTotal;
             }
-            __WEBPACK_IMPORTED_MODULE_9_jquery__('#dosageName option,#dosageValue option,#Measurements option').prop('selected', function () {
+            __WEBPACK_IMPORTED_MODULE_11_jquery__('#dosageName option,#dosageValue option,#Measurements option').prop('selected', function () {
                 return this.defaultSelected;
             });
-            __WEBPACK_IMPORTED_MODULE_9_jquery__("#proceedToReview").addClass("nextBtn");
+            __WEBPACK_IMPORTED_MODULE_11_jquery__("#proceedToReview").addClass("nextBtn");
             this.cartHasItems = true;
         }
     };
     HomeComponent.prototype.CashOnDelivery = function () {
-        __WEBPACK_IMPORTED_MODULE_9_jquery__(".pay-now-details").hide();
+        __WEBPACK_IMPORTED_MODULE_11_jquery__(".pay-now-details").hide();
         this.CashOnDevliery = true;
         this.CreditCardPayment = false;
     };
     HomeComponent.prototype.showCreditCard = function () {
-        __WEBPACK_IMPORTED_MODULE_9_jquery__(".pay-now-details").show();
+        __WEBPACK_IMPORTED_MODULE_11_jquery__(".pay-now-details").show();
         this.CashOnDevliery = false;
         this.CreditCardPayment = true;
     };
     HomeComponent.prototype.getCartCount = function () {
         var _this = this;
-        this._addtocart.getCartCount(this.ThisUser.UserId).subscribe(function (a) {
-            console.log(a);
-            if (a.code == 200) {
-                var number = a.data.length;
-                _this.cartset(number);
-                _this.cart = a.data;
-                console.log(_this.cart.length);
-                if (_this.cart.length == 0) {
-                    _this.cartHasItems = false;
+        this.ThisUser = JSON.parse(localStorage.getItem('UserObject'));
+        if (this.ThisUser == null) {
+            this.ThisUser = new __WEBPACK_IMPORTED_MODULE_17__models_usersModel__["a" /* UsersModel */]();
+            this.ThisUser.UserId = localStorage.getItem("userIp");
+            console.log(this.ThisUser.UserId);
+            this._addtocart.getCartCountByIp(this.ThisUser.UserId).subscribe(function (a) {
+                if (a.code == 200) {
+                    var number = a.data.length;
+                    _this.cartset(number);
+                    _this.cart = a.data;
+                    console.log(_this.cart.length);
+                    if (_this.cart.length == 0) {
+                        _this.cartHasItems = false;
+                    }
+                    else {
+                        _this.cartHasItems = true;
+                    }
+                    _this.SubTotal = 0;
+                    for (var i = 0; i < _this.cart.length; i++) {
+                        _this.SubTotal = +_this.SubTotal + +_this.cart[i].Total;
+                        _this.FinalTotal = _this.SubTotal;
+                        _this.FinalTotal = parseFloat(_this.FinalTotal.toFixed(2));
+                    }
+                    _this.SubTotal = 0;
+                    for (var i = 0; i < _this.cart.length; i++) {
+                        _this.SubTotal = _this.cart[i].Total + _this.SubTotal;
+                    }
                 }
-                else {
-                    _this.cartHasItems = true;
+            });
+            this.headerComponent.changeView();
+        }
+        else {
+            this.EnteredAddress.UserId = this.ThisUser.Id;
+            this._addtocart.getCartCount(this.ThisUser.UserId).subscribe(function (a) {
+                if (a.code == 200) {
+                    var number = a.data.length;
+                    _this.cartset(number);
+                    _this.cart = a.data;
+                    console.log(_this.cart.length);
+                    if (_this.cart.length == 0) {
+                        _this.cartHasItems = false;
+                    }
+                    else {
+                        _this.cartHasItems = true;
+                    }
+                    _this.SubTotal = 0;
+                    for (var i = 0; i < _this.cart.length; i++) {
+                        _this.SubTotal = +_this.SubTotal + +_this.cart[i].Total;
+                        _this.FinalTotal = _this.SubTotal;
+                        _this.FinalTotal = parseFloat(_this.FinalTotal.toFixed(2));
+                    }
+                    _this.SubTotal = 0;
+                    for (var i = 0; i < _this.cart.length; i++) {
+                        _this.SubTotal = _this.cart[i].Total + _this.SubTotal;
+                    }
                 }
-                _this.SubTotal = 0;
-                for (var i = 0; i < _this.cart.length; i++) {
-                    _this.SubTotal = +_this.SubTotal + +_this.cart[i].Total;
-                    _this.FinalTotal = _this.SubTotal;
-                    _this.FinalTotal = parseFloat(_this.FinalTotal.toFixed(2));
-                }
-                _this.SubTotal = 0;
-                for (var i = 0; i < _this.cart.length; i++) {
-                    _this.SubTotal = _this.cart[i].Total + _this.SubTotal;
-                }
-            }
-        });
+            });
+        }
     };
     HomeComponent.prototype.cartset = function (value) {
         this._sharedService.getCartCount(value);
@@ -97796,9 +98294,10 @@ var HomeComponent = (function () {
                 var obj = _this.cart.find(function (x) { return x.ProductId == thisRow.ProductId; });
                 var index = _this.cart.findIndex(function (x) { return x.ProductId == thisRow.ProductId; });
                 _this.cart.splice(index, 1);
+                console.log(_this.cart, "length", _this.cart.length);
                 if (_this.cart.length == 0) {
-                    __WEBPACK_IMPORTED_MODULE_9_jquery__("#step2").prop("disabled", true);
-                    __WEBPACK_IMPORTED_MODULE_9_jquery__("#overlay2").show();
+                    __WEBPACK_IMPORTED_MODULE_11_jquery__("#step2").prop("disabled", true);
+                    __WEBPACK_IMPORTED_MODULE_11_jquery__("#overlay2").show();
                     _this.step1.nativeElement.click();
                 }
                 _this.cartset(_this.cart.length);
@@ -97811,7 +98310,7 @@ var HomeComponent = (function () {
                     _this.SubTotal = 0;
                     _this.FinalTotal = 0;
                     for (var i = 0; i < _this.cart.length; i++) {
-                        _this.SubTotal = _this.SubTotal + _this.cart[i].TotalPrice;
+                        _this.SubTotal = _this.SubTotal + _this.cart[i].Total;
                         _this.SubTotal = parseFloat(_this.SubTotal.toFixed(2));
                         _this.FinalTotal = _this.SubTotal;
                         _this.FinalTotal = parseFloat(_this.FinalTotal.toFixed(2));
@@ -97822,29 +98321,29 @@ var HomeComponent = (function () {
     };
     HomeComponent.prototype.UppingReview = function (object) {
         console.log(object);
-        var fieldName = __WEBPACK_IMPORTED_MODULE_9_jquery__(".qtyplus").attr("field");
+        var fieldName = __WEBPACK_IMPORTED_MODULE_11_jquery__(".qtyplus").attr("field");
         // Get its current value
-        var currentVal = parseInt(__WEBPACK_IMPORTED_MODULE_9_jquery__('#num_val_' + object.Id).val());
+        var currentVal = parseInt(__WEBPACK_IMPORTED_MODULE_11_jquery__('#num_val_' + object.Id).val());
         // If is not undefined
         if (!isNaN(currentVal)) {
             // Increment only if value is < 20
             if (currentVal) {
-                __WEBPACK_IMPORTED_MODULE_9_jquery__('#num_val_' + object.Id).val(currentVal + 1);
-                __WEBPACK_IMPORTED_MODULE_9_jquery__('.qtyminus').val("-").removeAttr('style');
+                __WEBPACK_IMPORTED_MODULE_11_jquery__('#num_val_' + object.Id).val(currentVal + 1);
+                __WEBPACK_IMPORTED_MODULE_11_jquery__('.qtyminus').val("-").removeAttr('style');
             }
             else {
-                __WEBPACK_IMPORTED_MODULE_9_jquery__('.qtyplus').val("+").css('color', '#aaa');
-                __WEBPACK_IMPORTED_MODULE_9_jquery__('.qtyplus').val("+").css('cursor', 'not-allowed');
+                __WEBPACK_IMPORTED_MODULE_11_jquery__('.qtyplus').val("+").css('color', '#aaa');
+                __WEBPACK_IMPORTED_MODULE_11_jquery__('.qtyplus').val("+").css('cursor', 'not-allowed');
             }
         }
         else {
             // Otherwise put a 0 there
-            __WEBPACK_IMPORTED_MODULE_9_jquery__('#num_val_' + object.Id).val(1);
+            __WEBPACK_IMPORTED_MODULE_11_jquery__('#num_val_' + object.Id).val(1);
         }
         var tempPrice = 0;
-        tempPrice = object.Price * __WEBPACK_IMPORTED_MODULE_9_jquery__("#num_val_" + object.Id).val();
+        tempPrice = object.Price * __WEBPACK_IMPORTED_MODULE_11_jquery__("#num_val_" + object.Id).val();
         object.Total = tempPrice;
-        object.Quantity = __WEBPACK_IMPORTED_MODULE_9_jquery__("#num_val_" + object.Id).val();
+        object.Quantity = __WEBPACK_IMPORTED_MODULE_11_jquery__("#num_val_" + object.Id).val();
         this.SubTotal = 0;
         for (var i = 0; i < this.cart.length; i++) {
             this.SubTotal = +this.SubTotal + +this.cart[i].Total;
@@ -97853,25 +98352,25 @@ var HomeComponent = (function () {
         }
     };
     HomeComponent.prototype.DowningReview = function (object) {
-        var fieldName = __WEBPACK_IMPORTED_MODULE_9_jquery__(".qtyminus").attr('field');
+        var fieldName = __WEBPACK_IMPORTED_MODULE_11_jquery__(".qtyminus").attr('field');
         // Get its current value
-        var currentVal = parseInt(__WEBPACK_IMPORTED_MODULE_9_jquery__('#num_val_' + object.Id).val());
+        var currentVal = parseInt(__WEBPACK_IMPORTED_MODULE_11_jquery__('#num_val_' + object.Id).val());
         // If it isn't undefined or its greater than 0
         if (!isNaN(currentVal) && currentVal > 1) {
             // Decrement one only if value is > 1
-            __WEBPACK_IMPORTED_MODULE_9_jquery__('#num_val_' + object.Id).val(currentVal - 1);
-            __WEBPACK_IMPORTED_MODULE_9_jquery__('.qtyplus').val("+").removeAttr('style');
+            __WEBPACK_IMPORTED_MODULE_11_jquery__('#num_val_' + object.Id).val(currentVal - 1);
+            __WEBPACK_IMPORTED_MODULE_11_jquery__('.qtyplus').val("+").removeAttr('style');
         }
         else {
             // Otherwise put a 0 there
-            __WEBPACK_IMPORTED_MODULE_9_jquery__('#num_val_' + object.Id).val(1);
-            __WEBPACK_IMPORTED_MODULE_9_jquery__('.qtyminus').val("-").css('color', '#aaa');
-            __WEBPACK_IMPORTED_MODULE_9_jquery__('.qtyminus').val("-").css('cursor', 'not-allowed');
+            __WEBPACK_IMPORTED_MODULE_11_jquery__('#num_val_' + object.Id).val(1);
+            __WEBPACK_IMPORTED_MODULE_11_jquery__('.qtyminus').val("-").css('color', '#aaa');
+            __WEBPACK_IMPORTED_MODULE_11_jquery__('.qtyminus').val("-").css('cursor', 'not-allowed');
         }
         var tempPrice = 0;
-        tempPrice = object.Price * __WEBPACK_IMPORTED_MODULE_9_jquery__("#num_val_" + object.Id).val();
+        tempPrice = object.Price * __WEBPACK_IMPORTED_MODULE_11_jquery__("#num_val_" + object.Id).val();
         object.Total = tempPrice;
-        object.Quantity = __WEBPACK_IMPORTED_MODULE_9_jquery__("#num_val_" + object.Id).val();
+        object.Quantity = __WEBPACK_IMPORTED_MODULE_11_jquery__("#num_val_" + object.Id).val();
         this.SubTotal = 0;
         for (var i = 0; i < this.cart.length; i++) {
             this.SubTotal = +this.SubTotal + +this.cart[i].Total;
@@ -97881,77 +98380,77 @@ var HomeComponent = (function () {
         }
     };
     HomeComponent.prototype.Upping = function () {
-        var fieldName = __WEBPACK_IMPORTED_MODULE_9_jquery__(".qtyplus").attr("field");
+        var fieldName = __WEBPACK_IMPORTED_MODULE_11_jquery__(".qtyplus").attr("field");
         // Get its current value
-        var currentVal = parseInt(__WEBPACK_IMPORTED_MODULE_9_jquery__('#num_val').val());
+        var currentVal = parseInt(__WEBPACK_IMPORTED_MODULE_11_jquery__('#num_val').val());
         // If is not undefined
         if (!isNaN(currentVal)) {
             // Increment only if value is < 20
             if (currentVal) {
-                __WEBPACK_IMPORTED_MODULE_9_jquery__('#num_val').val(currentVal + 1);
-                __WEBPACK_IMPORTED_MODULE_9_jquery__('.qtyminus').val("-").removeAttr('style');
+                __WEBPACK_IMPORTED_MODULE_11_jquery__('#num_val').val(currentVal + 1);
+                __WEBPACK_IMPORTED_MODULE_11_jquery__('.qtyminus').val("-").removeAttr('style');
             }
             else {
-                __WEBPACK_IMPORTED_MODULE_9_jquery__('.qtyplus').val("+").css('color', '#aaa');
-                __WEBPACK_IMPORTED_MODULE_9_jquery__('.qtyplus').val("+").css('cursor', 'not-allowed');
+                __WEBPACK_IMPORTED_MODULE_11_jquery__('.qtyplus').val("+").css('color', '#aaa');
+                __WEBPACK_IMPORTED_MODULE_11_jquery__('.qtyplus').val("+").css('cursor', 'not-allowed');
             }
         }
         else {
             // Otherwise put a 0 there
-            __WEBPACK_IMPORTED_MODULE_9_jquery__('#num_val').val(1);
+            __WEBPACK_IMPORTED_MODULE_11_jquery__('#num_val').val(1);
         }
         if (this.singleMedicine.OriginalPrice != undefined) {
             var tempPrice = 0;
-            tempPrice = this.singleMedicine.OriginalPrice * __WEBPACK_IMPORTED_MODULE_9_jquery__("#num_val").val();
+            tempPrice = this.singleMedicine.OriginalPrice * __WEBPACK_IMPORTED_MODULE_11_jquery__("#num_val").val();
         }
         this.singleMedicine.TotalPrice = tempPrice;
     };
     HomeComponent.prototype.Downing = function () {
-        var fieldName = __WEBPACK_IMPORTED_MODULE_9_jquery__(".qtyminus").attr('field');
+        var fieldName = __WEBPACK_IMPORTED_MODULE_11_jquery__(".qtyminus").attr('field');
         // Get its current value
-        var currentVal = parseInt(__WEBPACK_IMPORTED_MODULE_9_jquery__('#num_val').val());
+        var currentVal = parseInt(__WEBPACK_IMPORTED_MODULE_11_jquery__('#num_val').val());
         // If it isn't undefined or its greater than 0
         if (!isNaN(currentVal) && currentVal > 1) {
             // Decrement one only if value is > 1
-            __WEBPACK_IMPORTED_MODULE_9_jquery__('#num_val').val(currentVal - 1);
-            __WEBPACK_IMPORTED_MODULE_9_jquery__('.qtyplus').val("+").removeAttr('style');
+            __WEBPACK_IMPORTED_MODULE_11_jquery__('#num_val').val(currentVal - 1);
+            __WEBPACK_IMPORTED_MODULE_11_jquery__('.qtyplus').val("+").removeAttr('style');
         }
         else {
             // Otherwise put a 0 there
-            __WEBPACK_IMPORTED_MODULE_9_jquery__('#num_val').val(1);
-            __WEBPACK_IMPORTED_MODULE_9_jquery__('.qtyminus').val("-").css('color', '#aaa');
-            __WEBPACK_IMPORTED_MODULE_9_jquery__('.qtyminus').val("-").css('cursor', 'not-allowed');
+            __WEBPACK_IMPORTED_MODULE_11_jquery__('#num_val').val(1);
+            __WEBPACK_IMPORTED_MODULE_11_jquery__('.qtyminus').val("-").css('color', '#aaa');
+            __WEBPACK_IMPORTED_MODULE_11_jquery__('.qtyminus').val("-").css('cursor', 'not-allowed');
         }
         if (this.singleMedicine.OriginalPrice != undefined) {
             var tempPrice = 0;
-            tempPrice = this.singleMedicine.OriginalPrice * __WEBPACK_IMPORTED_MODULE_9_jquery__("#num_val").val();
+            tempPrice = this.singleMedicine.OriginalPrice * __WEBPACK_IMPORTED_MODULE_11_jquery__("#num_val").val();
         }
         this.singleMedicine.TotalPrice = tempPrice;
     };
     HomeComponent.prototype.showPayingNowForm = function () {
-        __WEBPACK_IMPORTED_MODULE_9_jquery__("#payingNow").prop("checked", true);
+        __WEBPACK_IMPORTED_MODULE_11_jquery__("#payingNow").prop("checked", true);
         this.CashOnDevliery = false;
         this.CreditCardPayment = true;
     };
     HomeComponent.prototype.showNewAddressForm = function () {
-        __WEBPACK_IMPORTED_MODULE_9_jquery__("#cashOnDelivery").prop("checked", false);
-        __WEBPACK_IMPORTED_MODULE_9_jquery__("#newDeliveryCheck").prop("checked", true);
+        __WEBPACK_IMPORTED_MODULE_11_jquery__("#cashOnDelivery").prop("checked", false);
+        __WEBPACK_IMPORTED_MODULE_11_jquery__("#newDeliveryCheck").prop("checked", true);
     };
     HomeComponent.prototype.showOnDeliveryForm = function () {
-        __WEBPACK_IMPORTED_MODULE_9_jquery__("#newDeliveryCheck").prop("checked", false);
-        __WEBPACK_IMPORTED_MODULE_9_jquery__("#cashOnDelivery").prop("checked", true);
+        __WEBPACK_IMPORTED_MODULE_11_jquery__("#newDeliveryCheck").prop("checked", false);
+        __WEBPACK_IMPORTED_MODULE_11_jquery__("#cashOnDelivery").prop("checked", true);
         this.CashOnDevliery = true;
         this.CreditCardPayment = false;
     };
     HomeComponent.prototype.showPlus = function (event) {
-        __WEBPACK_IMPORTED_MODULE_9_jquery__(".plus-sign").removeClass("fadeInDown");
+        __WEBPACK_IMPORTED_MODULE_11_jquery__(".plus-sign").removeClass("fadeInDown");
         var elem = event.target.id;
-        __WEBPACK_IMPORTED_MODULE_9_jquery__("#" + elem).find(".plus-sign").css("display", "block").addClass("fadeInDown");
+        __WEBPACK_IMPORTED_MODULE_11_jquery__("#" + elem).find(".plus-sign").css("display", "block").addClass("fadeInDown");
     };
     HomeComponent.prototype.hidePlus = function (event) {
         var elem = event.target.id;
-        __WEBPACK_IMPORTED_MODULE_9_jquery__(".plus-sign").removeClass("fadeInDown");
-        __WEBPACK_IMPORTED_MODULE_9_jquery__("#" + elem).find(".plus-sign").css("display", "none");
+        __WEBPACK_IMPORTED_MODULE_11_jquery__(".plus-sign").removeClass("fadeInDown");
+        __WEBPACK_IMPORTED_MODULE_11_jquery__("#" + elem).find(".plus-sign").css("display", "none");
     };
     HomeComponent.prototype.getDosageName = function (event) {
         this.singleCartItem.DosageName = event;
@@ -97984,8 +98483,8 @@ var HomeComponent = (function () {
     HomeComponent.prototype.showProductsForThisCateogry = function (elem) {
         var _this = this;
         console.log(elem);
-        __WEBPACK_IMPORTED_MODULE_9_jquery__(".tabs-list").removeClass("active");
-        __WEBPACK_IMPORTED_MODULE_9_jquery__("#list_" + elem).addClass("active");
+        __WEBPACK_IMPORTED_MODULE_11_jquery__(".tabs-list").removeClass("active");
+        __WEBPACK_IMPORTED_MODULE_11_jquery__("#list_" + elem).addClass("active");
         this._productService.showProductsForThisCategory(elem).subscribe(function (a) {
             _this.SearchedMedicines = a.data;
             _this.allMedicines = a.data;
@@ -98014,19 +98513,19 @@ var HomeComponent = (function () {
     };
     HomeComponent.prototype.takeMeToReviewPage = function () {
         if (this.cart.length == 0) {
-            __WEBPACK_IMPORTED_MODULE_9_jquery__("#snackbar").html("There are no items in the cart!");
+            __WEBPACK_IMPORTED_MODULE_11_jquery__("#snackbar").html("There are no items in the cart!");
             this.ShowToast();
         }
         else {
             this.step2.nativeElement.click();
-            __WEBPACK_IMPORTED_MODULE_9_jquery__("#step2").removeAttr("disabled");
-            __WEBPACK_IMPORTED_MODULE_9_jquery__("#overlay2").hide();
+            __WEBPACK_IMPORTED_MODULE_11_jquery__("#step2").removeAttr("disabled");
+            __WEBPACK_IMPORTED_MODULE_11_jquery__("#overlay2").hide();
         }
     };
     HomeComponent.prototype.takeMeToStep3 = function () {
         this.step3.nativeElement.click();
         for (var i = 0; i < this.cart.length; i++) {
-            this.oneUpdatedRow = new __WEBPACK_IMPORTED_MODULE_14__models_update_Model__["a" /* UpdateModel */]();
+            this.oneUpdatedRow = new __WEBPACK_IMPORTED_MODULE_16__models_update_Model__["a" /* UpdateModel */]();
             this.oneUpdatedRow.ShoppingCartId = this.cart[i].Id;
             this.oneUpdatedRow.Quantity = this.cart[i].Quantity;
             this.ListOfChangedCart.push(this.oneUpdatedRow);
@@ -98034,16 +98533,16 @@ var HomeComponent = (function () {
         this._addtocart.updateCart(this.ThisUser.Id, this.ListOfChangedCart).subscribe(function (a) {
             console.log(a);
         });
-        __WEBPACK_IMPORTED_MODULE_9_jquery__("#step3").removeAttr("disabled");
-        __WEBPACK_IMPORTED_MODULE_9_jquery__("#overlay3").hide();
+        __WEBPACK_IMPORTED_MODULE_11_jquery__("#step3").removeAttr("disabled");
+        __WEBPACK_IMPORTED_MODULE_11_jquery__("#overlay3").hide();
     };
     HomeComponent.prototype.unsetValues = function () {
-        this.singleMedicine = new __WEBPACK_IMPORTED_MODULE_6__models_medicinesModel__["a" /* MedicinesModel */]();
-        this.singleCartItem = new __WEBPACK_IMPORTED_MODULE_7__models_cartModel__["a" /* CartModel */]();
+        this.singleMedicine = new __WEBPACK_IMPORTED_MODULE_8__models_medicinesModel__["a" /* MedicinesModel */]();
+        this.singleCartItem = new __WEBPACK_IMPORTED_MODULE_9__models_cartModel__["a" /* CartModel */]();
         this.dosageValue = [];
         this.measurementValue = [];
-        __WEBPACK_IMPORTED_MODULE_9_jquery__('#num_val').val(1);
-        __WEBPACK_IMPORTED_MODULE_9_jquery__('#dosageName option,#dosageValue option,#Measurements option').prop('selected', function () {
+        __WEBPACK_IMPORTED_MODULE_11_jquery__('#num_val').val(1);
+        __WEBPACK_IMPORTED_MODULE_11_jquery__('#dosageName option,#dosageValue option,#Measurements option').prop('selected', function () {
             return this.defaultSelected;
         });
     };
@@ -98051,9 +98550,9 @@ var HomeComponent = (function () {
         this.SubTotal = 0;
         this.FinalTotal = 0;
         this.cart = [];
-        this.singleCartItem = new __WEBPACK_IMPORTED_MODULE_7__models_cartModel__["a" /* CartModel */]();
+        this.singleCartItem = new __WEBPACK_IMPORTED_MODULE_9__models_cartModel__["a" /* CartModel */]();
         this.AddressId = 0;
-        __WEBPACK_IMPORTED_MODULE_9_jquery__("#overlay2,#overlay3").show();
+        __WEBPACK_IMPORTED_MODULE_11_jquery__("#overlay2,#overlay3").show();
     };
     HomeComponent.prototype.ShowToast = function () {
         // Get the snackbar DIV
@@ -98065,29 +98564,29 @@ var HomeComponent = (function () {
     };
     HomeComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.singleCartItem = new __WEBPACK_IMPORTED_MODULE_7__models_cartModel__["a" /* CartModel */]();
+        this.singleCartItem = new __WEBPACK_IMPORTED_MODULE_9__models_cartModel__["a" /* CartModel */]();
         this._sharedService.currentCount.subscribe(function (a) {
             _this.CartCount = a;
         });
-        __WEBPACK_IMPORTED_MODULE_9_jquery__('.products-list li').hover(function () {
-            __WEBPACK_IMPORTED_MODULE_9_jquery__(this).find(".plus-sign").css("display", "block").addClass("fadeInDown");
+        __WEBPACK_IMPORTED_MODULE_11_jquery__('.products-list li').hover(function () {
+            __WEBPACK_IMPORTED_MODULE_11_jquery__(this).find(".plus-sign").css("display", "block").addClass("fadeInDown");
         }, function () {
-            __WEBPACK_IMPORTED_MODULE_9_jquery__(this).find(".plus-sign").css("display", "none");
+            __WEBPACK_IMPORTED_MODULE_11_jquery__(this).find(".plus-sign").css("display", "none");
         });
-        __WEBPACK_IMPORTED_MODULE_9_jquery__('.dropdown-el').click(function (e) {
+        __WEBPACK_IMPORTED_MODULE_11_jquery__('.dropdown-el').click(function (e) {
             e.preventDefault();
             e.stopPropagation();
-            __WEBPACK_IMPORTED_MODULE_9_jquery__(this).toggleClass('expanded');
-            __WEBPACK_IMPORTED_MODULE_9_jquery__('#' + __WEBPACK_IMPORTED_MODULE_9_jquery__(e.target).attr('for')).prop('checked', true);
+            __WEBPACK_IMPORTED_MODULE_11_jquery__(this).toggleClass('expanded');
+            __WEBPACK_IMPORTED_MODULE_11_jquery__('#' + __WEBPACK_IMPORTED_MODULE_11_jquery__(e.target).attr('for')).prop('checked', true);
         });
-        __WEBPACK_IMPORTED_MODULE_9_jquery__(document).click(function () {
-            __WEBPACK_IMPORTED_MODULE_9_jquery__('.dropdown-el').removeClass('expanded');
+        __WEBPACK_IMPORTED_MODULE_11_jquery__(document).click(function () {
+            __WEBPACK_IMPORTED_MODULE_11_jquery__('.dropdown-el').removeClass('expanded');
         });
-        var navListItems = __WEBPACK_IMPORTED_MODULE_9_jquery__('div.setup-panel div a'), allWells = __WEBPACK_IMPORTED_MODULE_9_jquery__('.setup-content'), allNextBtn = __WEBPACK_IMPORTED_MODULE_9_jquery__('.nextBtn');
+        var navListItems = __WEBPACK_IMPORTED_MODULE_11_jquery__('div.setup-panel div a'), allWells = __WEBPACK_IMPORTED_MODULE_11_jquery__('.setup-content'), allNextBtn = __WEBPACK_IMPORTED_MODULE_11_jquery__('.nextBtn');
         allWells.hide();
         navListItems.click(function (e) {
             e.preventDefault();
-            var $target = __WEBPACK_IMPORTED_MODULE_9_jquery__(__WEBPACK_IMPORTED_MODULE_9_jquery__(this).attr('href')), $item = __WEBPACK_IMPORTED_MODULE_9_jquery__(this);
+            var $target = __WEBPACK_IMPORTED_MODULE_11_jquery__(__WEBPACK_IMPORTED_MODULE_11_jquery__(this).attr('href')), $item = __WEBPACK_IMPORTED_MODULE_11_jquery__(this);
             if (!$item.hasClass('disabled')) {
                 navListItems.removeClass('btn-primary').addClass('btn-default');
                 $item.addClass('btn-primary');
@@ -98099,18 +98598,18 @@ var HomeComponent = (function () {
             }
         });
         allNextBtn.click(function () {
-            var curStep = __WEBPACK_IMPORTED_MODULE_9_jquery__(this).closest(".setup-content"), curStepBtn = curStep.attr("id"), nextStepWizard = __WEBPACK_IMPORTED_MODULE_9_jquery__('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"), curInputs = curStep.find("input[type='text'],input[type='url']"), isValid = true;
+            var curStep = __WEBPACK_IMPORTED_MODULE_11_jquery__(this).closest(".setup-content"), curStepBtn = curStep.attr("id"), nextStepWizard = __WEBPACK_IMPORTED_MODULE_11_jquery__('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"), curInputs = curStep.find("input[type='text'],input[type='url']"), isValid = true;
             for (var i = 0; i < curInputs.length; i++) {
                 if (!curInputs[i].validity.valid) {
                     isValid = false;
                     alert();
-                    __WEBPACK_IMPORTED_MODULE_9_jquery__(curInputs[i]).closest(".form-group").addClass("has-error");
+                    __WEBPACK_IMPORTED_MODULE_11_jquery__(curInputs[i]).closest(".form-group").addClass("has-error");
                 }
             }
             if (isValid)
                 nextStepWizard.removeAttr('disabled').trigger('click');
         });
-        __WEBPACK_IMPORTED_MODULE_9_jquery__('div.setup-panel div a.btn-primary').trigger('click');
+        __WEBPACK_IMPORTED_MODULE_11_jquery__('div.setup-panel div a.btn-primary').trigger('click');
     };
     HomeComponent.prototype.submitState = function (value) {
         console.log('submitState', value);
@@ -98120,386 +98619,79 @@ var HomeComponent = (function () {
     return HomeComponent;
 }());
 __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
-    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewChild"])('detailModal'),
-    __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:type", __WEBPACK_IMPORTED_MODULE_1__angular_core__["ElementRef"])
+    Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["ViewChild"])('detailModal'),
+    __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:type", __WEBPACK_IMPORTED_MODULE_3__angular_core__["ElementRef"])
 ], HomeComponent.prototype, "detailModal", void 0);
 __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
-    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewChild"])("orderPlaced"),
-    __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:type", __WEBPACK_IMPORTED_MODULE_13_ng2_modal__["ModalModule"])
+    Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["ViewChild"])("orderPlaced"),
+    __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:type", __WEBPACK_IMPORTED_MODULE_15_ng2_modal__["ModalModule"])
 ], HomeComponent.prototype, "orderPlaced", void 0);
 __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
-    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewChild"])('step1'),
-    __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:type", __WEBPACK_IMPORTED_MODULE_1__angular_core__["ElementRef"])
+    Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["ViewChild"])('step1'),
+    __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:type", __WEBPACK_IMPORTED_MODULE_3__angular_core__["ElementRef"])
 ], HomeComponent.prototype, "step1", void 0);
 __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
-    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewChild"])('step2'),
-    __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:type", __WEBPACK_IMPORTED_MODULE_1__angular_core__["ElementRef"])
+    Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["ViewChild"])('step2'),
+    __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:type", __WEBPACK_IMPORTED_MODULE_3__angular_core__["ElementRef"])
 ], HomeComponent.prototype, "step2", void 0);
 __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
-    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewChild"])('step3'),
-    __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:type", __WEBPACK_IMPORTED_MODULE_1__angular_core__["ElementRef"])
+    Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["ViewChild"])('step3'),
+    __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:type", __WEBPACK_IMPORTED_MODULE_3__angular_core__["ElementRef"])
 ], HomeComponent.prototype, "step3", void 0);
+__WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
+    Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Output"])(),
+    __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:type", Object)
+], HomeComponent.prototype, "AddedToBasket", void 0);
 HomeComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
-    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
+    Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Component"])({
         selector: 'home',
         providers: [
-            __WEBPACK_IMPORTED_MODULE_4__title__["a" /* Title */],
-            __WEBPACK_IMPORTED_MODULE_5__services_productsService__["a" /* ProductsService */],
-            __WEBPACK_IMPORTED_MODULE_10__services_addtocartService__["a" /* AddtocartService */],
-            __WEBPACK_IMPORTED_MODULE_11__services_userService__["a" /* UserService */]
+            __WEBPACK_IMPORTED_MODULE_6__title__["a" /* Title */],
+            __WEBPACK_IMPORTED_MODULE_7__services_productsService__["a" /* ProductsService */],
+            __WEBPACK_IMPORTED_MODULE_12__services_addtocartService__["a" /* AddtocartService */],
+            __WEBPACK_IMPORTED_MODULE_13__services_userService__["a" /* UserService */],
+            __WEBPACK_IMPORTED_MODULE_2__header_header_component__["a" /* HeaderComponent */],
+            __WEBPACK_IMPORTED_MODULE_1__services_chemistService__["a" /* ChemistService */]
         ],
-        styles: [__webpack_require__(270), __webpack_require__(272), __webpack_require__(274)],
+        styles: [__webpack_require__(289), __webpack_require__(291), __webpack_require__(293)],
         /**
          * Every Angular template is first compiled by the browser before Angular runs it's compiler.
          */
-        template: __webpack_require__(276)
+        template: __webpack_require__(295)
     }),
-    __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__app_service__["a" /* AppState */],
-        __WEBPACK_IMPORTED_MODULE_10__services_addtocartService__["a" /* AddtocartService */],
-        __WEBPACK_IMPORTED_MODULE_1__angular_core__["Renderer"],
-        __WEBPACK_IMPORTED_MODULE_4__title__["a" /* Title */],
-        __WEBPACK_IMPORTED_MODULE_2__angular_router__["Router"],
-        __WEBPACK_IMPORTED_MODULE_11__services_userService__["a" /* UserService */],
-        __WEBPACK_IMPORTED_MODULE_5__services_productsService__["a" /* ProductsService */],
-        __WEBPACK_IMPORTED_MODULE_8__services_sharedService__["a" /* SharedService */]])
+    __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_5__app_service__["a" /* AppState */],
+        __WEBPACK_IMPORTED_MODULE_2__header_header_component__["a" /* HeaderComponent */],
+        __WEBPACK_IMPORTED_MODULE_12__services_addtocartService__["a" /* AddtocartService */],
+        __WEBPACK_IMPORTED_MODULE_3__angular_core__["Renderer"],
+        __WEBPACK_IMPORTED_MODULE_6__title__["a" /* Title */],
+        __WEBPACK_IMPORTED_MODULE_4__angular_router__["Router"],
+        __WEBPACK_IMPORTED_MODULE_13__services_userService__["a" /* UserService */],
+        __WEBPACK_IMPORTED_MODULE_7__services_productsService__["a" /* ProductsService */],
+        __WEBPACK_IMPORTED_MODULE_10__services_sharedService__["a" /* SharedService */]])
 ], HomeComponent);
 
 
 
 /***/ }),
-/* 264 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__title_service__ = __webpack_require__(265);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__title_service__["a"]; });
-
-
-
-/***/ }),
-/* 265 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Title; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(8);
-
-
-
-var Title = (function () {
-    function Title(http) {
-        this.http = http;
-        this.value = 'Angular 2';
-    }
-    Title.prototype.getData = function () {
-        console.log('Title#getData(): Get Data');
-        /**
-         * return this.http.get('/assets/data.json')
-         * .map(res => res.json());
-         */
-        return {
-            value: 'AngularClass'
-        };
-    };
-    return Title;
-}());
-Title = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
-    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
-    __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_http__["Http"]])
-], Title);
-
-
-
-/***/ }),
-/* 266 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductsService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__serviceUrl__ = __webpack_require__(27);
-
-
-
-
-
-var ProductsService = (function () {
-    function ProductsService(http) {
-        this.http = http;
-        this.serviceUrl = new __WEBPACK_IMPORTED_MODULE_4__serviceUrl__["a" /* ServiceUrl */]();
-    }
-    ProductsService.prototype.getProductsByChemistId = function (chemistId) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["Headers"]();
-        headers.append('Content-Type', 'application/json; charset=UTF-8');
-        return this.http.get(this.serviceUrl.baseUrl + "Chemist/getAllProductsByChemistId?ChemistId=" + chemistId + "&ProductType=" + 100, { headers: headers })
-            .map(function (res) { return res.json(); });
-    };
-    ProductsService.prototype.getMedicineCategoriesByChemist = function (chemistId) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["Headers"]();
-        headers.append('Content-Type', 'application/json; charset=UTF-8');
-        return this.http.get(this.serviceUrl.baseUrl + "Chemist/getCategoriesByChemistId?chemistId=" + chemistId, { headers: headers })
-            .map(function (res) { return res.json(); });
-    };
-    ProductsService.prototype.showProductsForThisCategory = function (elem) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["Headers"]();
-        headers.append('Content-Type', 'application/json; charset=UTF-8');
-        return this.http.get(this.serviceUrl.baseUrl + "product/getAllProductsByCategoryId?categoryId=" + elem, { headers: headers })
-            .map(function (res) { return res.json(); });
-    };
-    return ProductsService;
-}());
-ProductsService = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
-    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
-    __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__angular_http__["Http"]])
-], ProductsService);
-
-
-
-/***/ }),
-/* 267 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MedicinesModel; });
-var MedicinesModel = (function () {
-    function MedicinesModel() {
-    }
-    return MedicinesModel;
-}());
-
-
-
-/***/ }),
-/* 268 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddressModel; });
-var AddressModel = (function () {
-    function AddressModel() {
-    }
-    return AddressModel;
-}());
-
-
-
-/***/ }),
-/* 269 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UpdateModel; });
-var UpdateModel = (function () {
-    function UpdateModel() {
-    }
-    return UpdateModel;
-}());
-
-
-
-/***/ }),
-/* 270 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-        var result = __webpack_require__(271);
-
-        if (typeof result === "string") {
-            module.exports = result;
-        } else {
-            module.exports = result.toString();
-        }
-    
-
-/***/ }),
-/* 271 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(7)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "body {\r\n    margin-top:40px;\r\n\r\n}\r\np{\r\n    margin-bottom:0;\r\n}\r\n\r\n\r\n.modal-content{\r\n    border-radius:0 !important;\r\n}\r\n\r\n.stepwizard-step p {\r\n    margin-top: 10px;\r\n    color:#b9b9b8;\r\n}\r\n.stepwizard-row {\r\n    display: table-row;\r\n}\r\n.stepwizard {\r\n    display: table;\r\n    width: 30%;\r\n    margin: 30px auto;\r\n    position: relative;\r\n}\r\n#accordion3 .panel-heading{\r\n    height:auto !important;\r\n}\r\n.stepwizard-step button[disabled] {\r\n    opacity: 1 !important;\r\n    filter: alpha(opacity=100) !important;\r\n}\r\n.stepwizard-row:before {\r\n    top: 14px;\r\n    bottom: 0;\r\n    left: 77px;\r\n    position: absolute;\r\n    content: \" \";\r\n    width: 54%;\r\n    height: 1px;\r\n    background-color: #ccc;\r\n    z-order: 0;\r\n\r\n}\r\n.stepwizard-step {\r\n    display: table-cell;\r\n    text-align: center;\r\n    position: relative;\r\n}\r\n.btn-circle {\r\n    width: 28px;\r\n    height: 28px;\r\n    text-align: center;\r\n    padding: 2px 0;\r\n    font-size: 16px;\r\n    line-height: 1.428571429;\r\n    border-radius: 15px;\r\n    opacity: 1;\r\n}\r\n\r\n.btn-primary{\r\n    background: #1ec26b;\r\n    border:none;\r\n}\r\n\r\n.col-left{\r\n    position: relative;\r\n    float:left;\r\n    width:58%;\r\n    box-shadow: 0px 3px 10px 0px #ecebe7;\r\n    background: #fdfcfa;\r\n}\r\n\r\n.col-left .row,.col-right .row{\r\n    margin-left:0;\r\n    margin-right:0;\r\n}\r\n.col-right{\r\n    position: relative;\r\n    float:left;\r\n    box-shadow: 0px 3px 10px 0px #ecebe7;\r\n    background: #fdfcfa;\r\n    width:38%;\r\n    margin-left:2%;\r\n}\r\n\r\n.holder-box{\r\n    padding:16px;\r\n}\r\n\r\n.left-image-side{\r\n    width:90px;\r\n    position: relative;\r\n    float:left;\r\n    margin-top: 5px;\r\n}\r\n\r\n.right-name{\r\n    position: relative;\r\n    float:left;\r\n}\r\n\r\n.opening-hours{\r\n    color:#656565;\r\n    font-weight:400;\r\n    font-size:14px;\r\n}\r\n.chemist-name{\r\n    color:#656565;\r\n    font-weight:500;\r\n    font-size:20px;\r\n}\r\n\r\n.rating > span:hover:before {\r\n    content: \"\\2605\";\r\n    position: absolute;\r\n    font-size: 16px;\r\n }\r\n\r\n .rating {\r\n    unicode-bidi: bidi-override;\r\n  }\r\n  .rating > span:hover:before,\r\n  .rating > span:hover ~ span:before {\r\n     content: \"\\2605\";\r\n     position: absolute;\r\n  }\r\n  .rating > span {\r\n    display: inline-block;\r\n    position: relative;\r\n    width: 1.1em;\r\n    font-size: 16px;\r\n  }\r\n  .rating > span:hover:before,\r\n  .rating > span:hover ~ span:before {\r\n     content: \"\\2605\";\r\n     position: absolute;\r\n     font-size: 16px;\r\n  }\r\n\r\n  .chemist-ratings{\r\n      margin-top:10px;\r\n  } \r\n\r\n  .saperator{\r\n      margin-top:20px;\r\n      margin-bottom:10px;\r\n      border-bottom: 1px solid #aeaeae;\r\n  }\r\n\r\n  .one-row .name span{\r\n      color:#b4b4b4;\r\n      font-size:13px;\r\n      font-weight: 500;\r\n  }\r\n\r\n  .one-row .name .med-name{\r\n    font-weight: 500;\r\n    font-size:15px;\r\n    color:#656565;\r\n\r\n  }\r\n\r\n  .one-row .del{\r\n\r\n\r\n    position: relative;\r\n    float: left;\r\n    cursor: pointer;\r\n    width: 25px;\r\n    border-radius: 50%;\r\n    margin-top: 15px;\r\n    width: 17px;\r\n    height: 19px;\r\n    margin-right: 10px;\r\n    box-shadow: none;\r\n    transition: box-shadow 0.3s ease-in-out;\r\n\r\n  }\r\n\r\n  .one-row .del:hover{\r\n    box-shadow: 0px 4px 2px #42424233;\r\n  }\r\n  .one-row .name{\r\n    position: relative;\r\n    float:left;\r\n    padding-top: 0.5px;\r\n    width:40%;\r\n    padding-top: 15px;\r\n  }\r\n  .one-row .quantity{\r\n    position: relative;\r\n    float:left;\r\n    margin-top:5px;\r\n  }\r\n\r\n  .one-row .subtotal{\r\n    position: relative;\r\n    float: left;\r\n    width: 41%;\r\n    text-align: right;\r\n    padding-top: 15px;\r\n  }\r\n  .one-row .subtotal p{\r\n      font-size:14px;\r\n      color:#656565;\r\n  }\r\n\r\n  .quantity input {\r\n      width: 80px;\r\n      height: 45px;\r\n      line-height: 1.65;\r\n      float: left;\r\n      display: block;\r\n      padding: 0;\r\n      margin: 0;\r\n      padding-left: 20px;\r\n      border: 1px solid #9b9b9b;\r\n      font-size: 16px;\r\n      font-weight: 400;\r\n      border-radius: 5px;   \r\n      margin-bottom: 4px; \r\n      background: none;\r\n      color:#656565;\r\n  }\r\n  \r\n  .quantity input:focus {\r\n      outline: 0;\r\n  }\r\n  \r\n  .quantity-nav {\r\n      float: left;\r\n      position: relative;\r\n      height: 44px;\r\n  }\r\n  \r\n  .quantity-button {\r\n      position: relative;\r\n      cursor: pointer;\r\n      border: 1px solid #9b9b9b !important;\r\n      width: 20px;\r\n      text-align: center;\r\n      color: #9b9b9b;\r\n      font-size: 13px;\r\n      font-family: \"Trebuchet MS\", Helvetica, sans-serif !important;\r\n      line-height: 1.7;\r\n      -webkit-transform: translateX(-100%);\r\n      transform: translateX(-100%);\r\n      -webkit-user-select: none;\r\n      -moz-user-select: none;\r\n      -ms-user-select: none;\r\n      -o-user-select: none;\r\n      user-select: none;\r\n      background: #edebe7;\r\n      width: 30px;\r\n      border: 0;\r\n      color: #fff;\r\n      font-size: 23px;\r\n      line-height: 23px;\r\n      border-radius:0 5px 0 0\r\n  \r\n  }\r\n  \r\n  .quantity-button.quantity-up {\r\n      position: absolute;\r\n      height: 53%;\r\n      top: 0;\r\n  }\r\n  \r\n  .quantity-button.quantity-down {\r\n      position: absolute;\r\n      bottom: -1px;\r\n      height: 50%;\r\n       border-radius:0 0 5px 0;\r\n  }\r\n  .footer-row p{\r\n      color:#656565;\r\n      font-size: 14px;\r\n  }\r\n  .footer-row{\r\n    padding:10px;\r\n    margin-top:20px;\r\n  }\r\n  .no-margin-top{\r\n      margin-top:0;\r\n  }\r\n\r\n  .subtotal-row{\r\n       background: #ededed;\r\n       padding:10px;\r\n       border-radius: 6px;\r\n       margin-top:20px;\r\n  }\r\n  .subtotal-heading{\r\n      width:56%;\r\n      position: relative;\r\n      float:left;\r\n      text-align: right;\r\n  }\r\n  .time-slots{\r\n      padding-left:0;\r\n      margin:0;\r\n      margin-top: 15px;\r\n  }\r\n\r\n  .time-slot{\r\n    background: transparent;\r\n    border: 1px solid #aeaeae;\r\n    padding: 5px;\r\n    width: 150px;\r\n\r\n  }\r\n  .selected{\r\n    background:#1ec26b;\r\n    color:white;\r\n    font-size:14px;\r\n  }\r\n  .time-slots li{\r\n    width: 50%;\r\n    display: inline-block;\r\n    list-style-type: none;\r\n    text-align: center;\r\n    margin: 0;\r\n    margin-bottom: 15px;\r\n  }\r\n  .subtotal-value{\r\n    width:44%;\r\n    position: relative;\r\n    float:left;\r\n    text-align: right;\r\n    font-size:15px;\r\n}\r\n\r\n.voucher-row h3{\r\n    color:#656565;\r\n    font-size:20px;\r\n    font-weight: 500;\r\n    margin-bottom:20px;\r\n}\r\n.voucher-form{\r\n    position: relative;\r\n    width: 70%;\r\n    height: 34px;\r\n}\r\n.inputBtn{\r\n    width:30%;\r\n    position: absolute;\r\n    left:65%;\r\n    top:0;\r\n    height: 34px;\r\n\r\n}\r\n.inputBtn button{\r\n    border-top-right-radius: 50px;\r\n    border-bottom-right-radius: 50px;\r\n    height: 34px;\r\n    width: 100%;\r\n    border: 1px solid #9b9b9b;\r\n    color:#3ad72a;\r\n    background: #ededed;\r\n    outline: none;\r\n    font-weight: bold;\r\n}\r\n.errors{\r\n    border:1px solid red;\r\n}\r\n.save-address{\r\n    font-size:16px;\r\n    font-weight: 500;\r\n    color:white;\r\n    background: #1ec26b;\r\n    text-transform: uppercase;\r\n    border-radius: 4px;\r\n    height: 40px;\r\n    width: 150px;\r\n    border:none;\r\n    margin-top: 5px;\r\n}\r\n.EnteredAddress li{\r\n   list-style-type:none;    margin: 15px 0;\r\n   width: 50%;\r\n   display: inline-block;\r\n}\r\n.EnteredAddress li button{\r\n    background: none;\r\n    border: 1px solid #ddd;\r\n    padding: 5px;\r\n}\r\n\r\n.activeAddress{\r\n    background:#1ec26b !important;\r\n    color:white;\r\n    font-size:14px;\r\n}\r\n.inputField input{\r\n    width:100%;\r\n    border-radius: 50px;\r\n    outline:none;\r\n    padding-left:15px;\r\n    border:1px solid #9b9b9b;\r\n    height: 34px;\r\n}\r\n.inputField{\r\n    width:70%;\r\n    position: relative;\r\n    float:left;\r\n    left:0;\r\n    border-top-right-radius: 50%;\r\n    border-bottom-right-radius: 50%;\r\n    height: 34px;\r\n}\r\n\r\n.font20{\r\n    font-size:20px;\r\n}\r\n\r\n.delivery-text{\r\n    font-size:14px; \r\n    color:#656565;\r\n    display: block;\r\n    padding-left: 28px;\r\n    color:#656565;\r\n}\r\n\r\n.col-right h3{\r\n    font-size:22px;\r\n    margin-top: 10px;\r\n    margin-bottom: 25px;\r\n\r\n\r\n}\r\n.italic-text{\r\n    font-style: italic;\r\n    font-size:12px;\r\n    word-spacing: 1px;\r\n    color:#656565;\r\n}\r\n.message-text img{\r\n    width:16px;\r\n}\r\n.message-text p{\r\n    font-size:14px;\r\n    word-spacing: 2px;\r\n    color:#1ec26b;\r\n    text-decoration: underline;\r\n    font-weight: 600;\r\n    cursor: pointer;\r\n}   \r\n\r\n.alignCenter{\r\n    text-align: center;\r\n}\r\n.checkout-btn{\r\n    background: #00b276;\r\n    color: white;\r\n    border-radius: 57px;\r\n    width: 100%;\r\n    border: none;\r\n    font-weight: 700;\r\n    height: 45px;\r\n    margin-top: 20px;\r\n    font-size:16px;\r\n    width:100%;\r\n}\r\n\r\n.inner-wrapper{\r\n    box-shadow: 0px 3px 10px 0px #ecebe7;\r\n    background: #fdfcfa;\r\n}\r\n.left-pane{\r\n    position: relative;\r\n    float: left;\r\n    width: 69%;\r\n    margin-right: 1.6%;\r\n    \r\n}\r\n\r\n.right-pane{\r\n    position: relative;\r\n    float:left;\r\n    margin-top: 20px;\r\n    width: 28%;\r\n    \r\n}\r\n\r\n.right-pane .body,.right-pane .footer{\r\n    padding-left:20px;\r\n    padding-right:20px;\r\n}\r\n.right-pane .time-pane,.right-pane .cart{\r\n    box-shadow: 0px 3px 10px 0px #ecebe7;\r\n    background: #fdfcfa;\r\n}\r\n\r\n.left-pane h3,.right-pane h3{\r\n    font-size:20px;\r\n    color:#656565;\r\n    padding-top:22px;\r\n    margin-bottom:22px;\r\n    padding-left:20px;\r\n    \r\n}\r\n\r\n.lefty-side,.righty-side{\r\n    position: relative;\r\n    float:left;\r\n}\r\n.left-pane .body{\r\n    padding: 30px 20px;\r\n}\r\n.righty-side{\r\n    width:60%;\r\n}\r\n.lefty-side{\r\n    width: 140px;\r\n}\r\n.rightyVal{\r\n    margin-bottom:15px;\r\n    margin-top:0;\r\n    font-weight: 300;\r\n    font-size:15px;\r\n    color:#656565;\r\n    height:20px;\r\n}\r\n\r\n.green{\r\n    cursor: pointer;\r\n    color:#1ec26b;\r\n    text-decoration: underline;\r\n}\r\n\r\n.leftyVa{\r\n    margin-bottom:15px;\r\n    margin-top:0;\r\n    font-weight: 700;\r\n    font-size:15px;\r\n    color:#656565;\r\n}\r\n\r\n.left-pane .header,.right-pane .header{\r\n    border-bottom:1px solid #aeaeae;\r\n\r\n}\r\n\r\n.left-pane .panel{\r\n    background:#fefefd;\r\n    border:1px solid #d5d5d4;\r\n}\r\n.oldAddress{\r\n    height: 55px;\r\n    line-height: 55px;\r\n    padding-left: 15px;\r\n    border-bottom: 1px solid transparent;\r\n    background:#fefefd;\r\n    border-radius: 5px;\r\n    border:1px solid #d5d5d4;\r\n    margin-bottom:5px;\r\n}\r\n\r\n.Orderloader{\r\n    display:none;\r\n    text-align: center;\r\n    margin:50px;\r\n}\r\n.pay-now-details{\r\n    background:#f9f9f8;\r\n    padding:30px 0 30px 30px;\r\n    border:1px solid #d5d5d4;\r\n    display:none;\r\n    border-radius: 5px;\r\n    margin-bottom:15px;\r\n     \r\n}\r\n\r\n.pay-now-details .form-group .form-control{\r\n    height:32px;\r\n    width:50%;\r\n    outline:none;\r\n    padding-left:10px;\r\n    display: inline-block;\r\n    border-radius: 0 !important;\r\n    margin-right: 15px;\r\n    border:1px solid #aeaeae;\r\n}\r\n.required{\r\n    font-size:14px;\r\n    font-weight: 300;\r\n    font-style:italic;\r\n}\r\n\r\n.requiredRed{\r\n    margin-right:6px;\r\n    color:#ff3b3b;\r\n}\r\n.normalText{\r\n    font-size:17px;\r\n    margin-top:20px;\r\n    font-weight: 700;\r\n}\r\n\r\n.address-field{\r\n    height:32px;\r\n    border:1px solid #aeaeae;\r\n    background:#ffffff;\r\n    width: 50%;\r\n    margin-right:25px;\r\n    margin-top:10px;\r\n    padding-left:15px;\r\n}\r\n.location-box{\r\n    margin-top:25px;\r\n}\r\n.location-text{\r\n     font-size: 14px;\r\n     font-weight: 300;\r\n    margin-top:10px;\r\n    margin-bottom:30px;\r\n}\r\n\r\n#accordion2 .panel-body{\r\n    padding:30px;\r\n}\r\n\r\n.optional{\r\n    font-size:14px;\r\n    font-weight: 500;\r\n    color:#656565;\r\n}\r\n#accordion2 .message-text img{\r\n    margin-right: 5px;\r\n   \r\n}\r\n#accordion2 .message-text{\r\n    padding-left: 15px;\r\n    margin-bottom:25px;\r\n}\r\n.inner-wrapper .message-text p{\r\n    display: inline-block;\r\n}\r\n\r\n.pay-now-details h3{\r\n    font-size:25px;\r\n    font-weight: bold;\r\n    color:#656565;\r\n    margin-top:25px;\r\n    margin-bottom:25px;\r\n}\r\n\r\n.custom-dropdown:checked + label:before,\r\n.custom-dropdown:not(:checked) + label:before {\r\n    content: '';\r\n    position: absolute;\r\n    display:none;\r\n    left: 0;\r\n    top: 0;\r\n    width: 20px;\r\n    height: 20px;\r\n    border: 1px solid #b6b6b6;\r\n    border-radius: 100%;\r\n    background: #fff;\r\n    color:#aeaeae;\r\n}\r\n\r\n.custom-dropdown:checked + label:after,\r\n.custom-dropdown:not(:checked) + label:after {\r\n    display: none;\r\n    content: '';\r\n    width: 12px;\r\n    height: 12px;\r\n    background: #1ec26b;\r\n    position: absolute;\r\n    top: 4px;\r\n    left: 4px;\r\n    border-radius: 100%;\r\n    -webkit-transition: all 0.2s ease;\r\n    transition: all 0.2s ease;\r\n    color:#676767;\r\n}\r\n\r\n.bottom-text{\r\n    margin-top:75px;\r\n}\r\n\r\n.bottom-text1{\r\n    font-size:14px;\r\n    font-weight: 300;\r\n    color:#656565;\r\n    \r\n}\r\n\r\n.bottom-text2{\r\n    font-size:14px;\r\n    font-weight: 300;\r\n    color:#656565;\r\n    margin-top:40px;\r\n}\r\n\r\n.left-equal{\r\n    position: relative;\r\n    float:left;\r\n    width:50%;\r\n    text-align:left;\r\n    font-size:20px;\r\n    font-weight: 700;\r\n    margin-bottom:40px;\r\n}\r\n\r\n.right-equal{\r\n    position: relative;\r\n    float:left;\r\n    width:50%;\r\n    text-align:right;\r\n    font-size:20px;\r\n    font-weight: 700;\r\n    margin-bottom:40px;\r\n}\r\n\r\n.special{\r\n    min-height: 250px;\r\n    margin-top: 15px;\r\n    padding-top:35px;\r\n}\r\n.place-now{\r\n    width:100%;\r\n    border:none;\r\n    height:58px;\r\n    line-height: 58px;\r\n    border-radius: 5px;\r\n    background: #1ec26b;\r\n    color:white;\r\n    font-size:22px;\r\n    font-weight: 700;\r\n    margin-top:10px;\r\n\r\n}\r\n\r\n.right-estimate{\r\n    font-size:12px;\r\n    font-weight: 700;\r\n    color:#656565;\r\n    padding: 30px 10px;\r\n}\r\n.big{\r\n    font-size:38px;\r\n    font-weight: 500;\r\n    color:#656565;\r\n    padding: 2px 10px;\r\n    height: 42px;\r\n}\r\n.small{\r\n    font-size:12px;\r\n    font-weight: 500;\r\n}\r\n.time{\r\n    width: 65px;\r\n    text-align: center;\r\n    float: right;\r\n    margin-top: 15px;\r\n}\r\n\r\n.item{\r\n    position: relative;\r\n    float:left;\r\n    width:70%;\r\n}\r\n\r\n.price{\r\n    position: relative;\r\n    float:left;\r\n    width:30%;\r\n}\r\n\r\n.item-detail{\r\n    display: inline-block;\r\n    padding-right: 4px;\r\n\r\n}\r\n.one-row{\r\n    margin-top:10px;\r\n    margin-bottom:10px;\r\n}\r\n\r\n.price{\r\n    text-align: right;\r\n}\r\n\r\n.item .optional{\r\n    color:#aeaeae;\r\n    font-size:12px;\r\n}\r\n.footer .one-row{\r\n    margin-bottom:15px;\r\n}\r\n\r\n.footer .one-row .item{\r\n    width:50%;\r\n    position: relative;\r\n    float:left;\r\n    text-align: left;\r\n}\r\n.footer .one-row .price{\r\n    width:50%;\r\n    position: relative;\r\n    float:left;\r\n    text-align: right;\r\n}\r\n.more-margin{\r\n    margin-top:20px;\r\n}\r\n.cart .body{\r\n /*    border-top:1px solid #cecdcc;\r\n    border-bottom:1px solid #cecdcc; */\r\n}\r\n\r\n.bigText{\r\n    font-size:28px;\r\n    font-weight: 300;\r\n}\r\n\r\n.opening-hours{\r\n    color:#50cb84;\r\n    font-weight:500;\r\n    font-size:12px;\r\n    margin-top: -4px;\r\n    \r\n}\r\n\r\n.headging-with-rating{\r\n    display:inline-block;\r\n    text-transform: capitalize;\r\n    font-size:23px;\r\n    color:#656565;\r\n    font-weight: 500;\r\n    word-wrap: break-word;\r\n    width: 100px;\r\n}\r\n#step-1{\r\n    min-height: 450px;\r\n}\r\n#step-1 .chemist-ratings{\r\n    display:inline-block;\r\n    margin-left: 10px;\r\n}\r\n\r\n#step-1 .star{\r\n    height: 18px;\r\n}\r\n\r\n#step-1 .inner-wrapper{\r\n    padding: 30px 20px;\r\n}\r\n.right-search .voucher-form{\r\n    position: relative;\r\n    width: 100%;\r\n    height: 42px;\r\n    margin: 5px auto;\r\n}\r\n.right-search .inputBtn{\r\n    width:30%;\r\n    position: absolute;\r\n    left:70%;\r\n    top:0;\r\n    height: 42px;\r\n\r\n}\r\n.right-search .inputBtn button{\r\n    border-top-right-radius: 50px;\r\n    border-bottom-right-radius: 50px;\r\n    height: 42px;\r\n    width: 85%;\r\n    border: 1px solid #1ec26b;\r\n    color:#fff;\r\n    background: #1ec26b;\r\n    outline: none;\r\n    font-weight: 500;\r\n    font-size:18px;\r\n}\r\n.right-search .inputField input{\r\n    width:100%;\r\n    border-radius: 50px;\r\n    outline:none;\r\n    border:1px solid #1ec26b;\r\n    height: 42px;\r\n    padding-left: 40px;\r\n    color:#aeaeae;\r\n    font-size:18px;\r\n}\r\n.right-search .inputField{\r\n    width:80%;\r\n    position: relative;\r\n    float:left;\r\n    left:0;\r\n    border-top-right-radius: 50%;\r\n    border-bottom-right-radius: 50%;\r\n    height: 42px;\r\n}\r\n\r\n.left-chemist,.right-search{\r\n    position: relative;\r\n    float: left;\r\n    \r\n}\r\n\r\n.left-chemist{\r\n    width:45%;\r\n}\r\n\r\n.right-search{\r\n    width:55%;\r\n}\r\n\r\n.tabs{\r\n    padding: 8px !important;\r\n    padding-bottom: 0px !important;\r\n}\r\n.tabs div{\r\n    border:none;\r\n    border-radius:0;\r\n    padding-bottom:0;\r\n}\r\n.tabs .selected p{\r\n    font-weight: 700;\r\n    font-size:18px;\r\n    color:#656565;\r\n    padding-bottom:10px;\r\n    border-bottom:2px solid #1ec26b;\r\n}\r\n\r\n#step-1 .right-pane{\r\n    margin-top:0 !important;\r\n}\r\n.tabs div p{\r\n    font-weight: 300;\r\n    font-size:18px;\r\n    color:#656565;\r\n    padding-bottom:10px;\r\n}\r\n.tabs .selected{\r\n   \r\n    background:transparent;\r\n}\r\n.tab-contents{\r\n    border:none;\r\n}\r\n.product-image{\r\n    height: 216px;\r\n    border-bottom: 1px solid #bababa;\r\n}\r\n.product-image img{\r\n    max-width: 100%;\r\n    height: auto;\r\n    \r\n}\r\n.products-list{\r\n    padding-left:0;\r\n}\r\n\r\n.products-list li{\r\n    display: inline-block;\r\n    float: left;\r\n    list-style-type: none;\r\n    width: 29%;\r\n    margin-right: 30px;\r\n    margin-top:30px;\r\n    box-shadow: 0px 3px 10px 0px #c7c6c3;\r\n    transition: box-shadow 0.3s ease-in-out;\r\n    position: relative;\r\n}\r\n.products-list li:hover{\r\n    box-shadow: none;\r\n}\r\n.plus-sign{\r\n    cursor:pointer;\r\n    position: absolute;\r\n    bottom: -12px;\r\n    right: -12px;\r\n    text-align:center;\r\n    width:60px;\r\n    height:60px;\r\n    border-radius: 60px;\r\n    background:#1ec26b;\r\n    display:none;\r\n    box-shadow: 0px 3px 10px 0px #d9cdc8;\r\n}\r\n.plus-sign img{\r\n    padding-top: 13px;\r\n}\r\n.product-wrapper{\r\n    background:white;\r\n    border-radius:0;\r\n    padding:10px;\r\n    cursor:pointer;\r\n}\r\n\r\n.product-detail{\r\n    margin-top:10px;\r\n}\r\n.product-detail h2{\r\n    font-size:15px;\r\n    font-weight: 500;\r\n    color:#000000;\r\n    margin:0;\r\n    margin-bottom:15px;\r\n}\r\n.product-detail p{\r\n    font-size:14px;\r\n    font-weight: 300;\r\n    color:#000000;\r\n    margin:0;\r\n\r\n}\r\n\r\n/deep/ .orderPlaced .modal-content{\r\n    border-radius: 0 !important;\r\n}\r\n/deep/ .orderPlaced button.close{\r\n    position: absolute;\r\n    width: 38px;\r\n    height: 38px;\r\n    background: #1ec26b;\r\n    color: white;\r\n    border-radius: 38px;\r\n    opacity: 1;\r\n    z-index: 2;\r\n    right: 23px;\r\n    top: -21px;\r\n    box-shadow:0px 3px 10px 0px #d0d0d0;\r\n}\r\n/deep/ .detailModalClass .modal-content{\r\n    border-radius: 0 !important;\r\n}\r\n/deep/ .detailModalClass button.close:hover{\r\n    box-shadow:0px 3px 10px 0px #d0d0d0;\r\n}\r\n/deep/ .detailModalClass button.close{\r\n    position: absolute;\r\n    width: 38px;\r\n    height: 38px;\r\n    background: #1ec26b;\r\n    color: white;\r\n    border-radius: 38px;\r\n    opacity: 1;\r\n    z-index: 2;\r\n    right: 23px;\r\n    top: -21px;\r\n    box-shadow: none;\r\n    transition: box-shadow 0.3s ease-in-out;\r\n}\r\n.my-header{\r\n    margin-top: 60px;\r\n    text-align: center;\r\n    background-color: #1ec26b;\r\n    margin: 0;\r\n    padding: 30px 0;\r\n}\r\n\r\n.my-header-2{\r\n    margin:40px;\r\n    text-align: center;\r\n}\r\n\r\n.my-header-2 h1{\r\n    color: #1ec26b;\r\n}\r\n.circle{\r\n    width: 200px;\r\n    height: 200px;\r\n    border-radius: 300px;\r\n    background: white;\r\n    text-align: center;\r\n    margin: 0 auto;padding: 40px 0;\r\n    box-shadow: 0 8px 8px rgba(255,255,255,.24), 0 0 8px rgba(255,255,255,.12), 0 6px 18px rgba(255,255,255,.12);\r\n    transform: translate3d(0,-2px,0);\r\n}\r\n.closeThanks{\r\n    position: absolute;\r\n    border: none;\r\n    width: 50px;\r\n    background: #ddd;\r\n    height: 50px;\r\n    color: #1ec26b;\r\n    font-size: 26px;\r\n    right: 18px;\r\n    border-radius: 50px;\r\n    top: -28px;\r\n    box-shadow:none;\r\n    transition: box-shadow 0.3s ease-in-out;\r\n}\r\n.closeThanks:hover{\r\n    transform: scale(1.2); box-shadow: 0 5px 15px rgba(0,0,0,0.3);\r\n}\r\n.view-orders{\r\n    border:2px solid #ddd;\r\n    background:transparent;\r\n    color:#ddd;\r\n    font-size:16px;\r\n    padding:10px 20px;\r\n    margin-top:30px;\r\n    cursor:pointer;\r\n}\r\n/deep/ .orderPlaced .modal-body{\r\n    padding:0 !important;\r\n}\r\n/deep/ .orderPlaced .modal-footer, /deep/ .orderPlaced .modal-header{\r\n    display:none;\r\n}\r\n/deep/ .detailModalClass .modal-footer{\r\n    display:none;\r\n}\r\n/deep/ .detailModalClass .modal-header,/deep/ .orderPlaced .modal-footer{\r\n    padding:0;\r\n}\r\n/deep/ .detailModalClass .modal-body{\r\n    padding:40px;\r\n}\r\n\r\n.cart-button{\r\n    margin-top: 32px;\r\n    color: white;\r\n    background: #1ec26b;\r\n    width: 300px;\r\n    border-radius: 5px;\r\n    height: 58px;\r\n    font-size: 22px;\r\n    font-weight: 500;\r\n    margin: 20px auto;\r\n    border: none;\r\n    margin-bottom: 0;\r\n}\r\n .modal-name,.modal-quantity{\r\n\r\n    position: relative;\r\n    float:left;\r\n    width:50%;\r\n}\r\n.alingCenter{\r\n    text-align: center;\r\n\r\n}\r\n.image-box img{\r\n    width:70px;\r\n    margin: 0 auto;\r\n}\r\n.image-box{\r\n    text-align: center;\r\n    width:80px;\r\n    margin: 0 auto;\r\n}\r\n.modal-quantity{\r\n    text-align: right;\r\n}\r\n\r\n.modal-name p{\r\n    font-size:20px;\r\n    font-weight: 500;\r\n    color:black;\r\n\r\n}\r\n\r\n.modal-quantity i{\r\n    color:#1ec26b;\r\n    font-size: 18px;\r\n    margin-left:10px;\r\n}\r\n\r\n.center-align{\r\n    text-align: center;\r\n}\r\n\r\n.textarea-div,.textarea-div2,.textarea-div3,.textarea-div4{\r\n    display:none;\r\n}\r\n\r\n#overlay2,#overlay3{\r\n    background: transparent;\r\n    position: absolute;\r\n    width: 100%;\r\n    height: 100%;\r\n    z-index: 2;\r\n\r\n}\r\n.textarea-div textarea,.textarea-div2 textarea,.textarea-div3 textarea, .textarea-div4 textarea{\r\n    background: #eeeeee;\r\n    border-radius: 0;\r\n    border:1px solid #9b9b9b;\r\n    margin-top:20px;\r\n    width:100%;\r\n    height:100px;\r\n    padding-left:15px;\r\n}\r\n\r\n.thisone3,.thisone4{\r\n    font-size: 12px;\r\n    margin-right: 5px;\r\n}\r\n.slideInDown{\r\n    display:block !important;\r\n}\r\n\r\n/* quantity */\r\n\r\n\r\n.modal-quantity #prod-quantity-cart{\r\n    position: relative;\r\n    height: 66px;\r\n    text-align: right;\r\n    width: 234px;\r\n    margin-left: 0;\r\n    float: right;\r\n}\r\n\r\n#prod-quantity-cart .qtyplus{\r\n  \r\n    text-align: left;\r\n    color:#1ec26b;\r\n    font-weight: bold;\r\n    font-size: 24px;\r\n    width: 35px;\r\n    position: absolute;\r\n    left: 212px;\r\n    cursor: pointer;\r\n    border:none;\r\n    background:transparent;\r\n    width: 35px;\r\n    outline:none;\r\n}\r\n\r\n#prod-quantity-cart #num_val{\r\n    width: 110px;\r\n    position: absolute;\r\n    left:100px;\r\n    text-align: center;\r\n    font-size:25px;\r\n    font-weight: 500;\r\n    color:#656565;\r\n    border:none;\r\n}\r\n\r\n#prod-quantity-cart .qtyminus{\r\n    position: absolute;\r\n    left:62px;\r\n    width: 35px;\r\n    border:none;\r\n    background:transparent;\r\n    cursor:pointer;\r\n    text-align: right;\r\n    color:#1ec26b;\r\n    font-weight: bold;\r\n    font-size: 24px;\r\n    outline:none;\r\n}\r\n\r\n.dosage{\r\n    width:130px;\r\n    padding: 10px;\r\n}\r\n.clear{\r\n    clear:both;\r\n    float:none;\r\n}\r\n/* qunatity */\r\n\r\n/* Tabs */\r\n\r\n/***\r\nBootstrap Line Tabs by @keenthemes\r\nA component of Metronic Theme - #1 Selling Bootstrap 3 Admin Theme in Themeforest: http://j.mp/metronictheme\r\nLicensed under MIT\r\n***/\r\n\r\n/* Tabs panel */\r\n.tabbable-panel {\r\n    border:none;\r\n  }\r\n\r\n  .nav-tabs{\r\n      background:#fdfcfa;\r\n      height: 56px;\r\n      border-top:1px solid #a0a0a0 !important;\r\n  }\r\n  \r\n  /* Default mode */\r\n  .tabbable-line > .nav-tabs {\r\n    border: none;\r\n    margin: 0px;\r\n  }\r\n\r\n  .tabbable-line > .nav-tabs > li:after{\r\n    display:block;\r\n    content: '';\r\n    padding-bottom: 15px;\r\n    border-bottom: solid 2px #1ec26b;  \r\n    transform: scaleX(0);  \r\n    transition: transform 250ms ease-in-out;\r\n  }\r\n  \r\n  .tabbable-line > .nav-tabs > li:hover:after { transform: scaleX(1); }\r\n\r\n  .tabbable-line > .nav-tabs > li {\r\n    margin-right: 2px;\r\n    margin:0;\r\n    padding: 15px 0px;\r\n    margin: 0px 15px;\r\n  }\r\n  .tabbable-line > .nav-tabs > li > a {\r\n    border: 0;\r\n    margin-right: 0;\r\n    color: #737373;\r\n    text-transform: capitalize;\r\n  }\r\n  .tabbable-line > .nav-tabs > li > a > i {\r\n    color: #a6a6a6;\r\n  }\r\n/*   .tabbable-line > .nav-tabs > li.open, .tabbable-line > .nav-tabs > li:hover {\r\n    border-bottom: 2px solid #1ec26b;\r\n  } */\r\n  .tabbable-line > .nav-tabs > li.open > a, .tabbable-line > .nav-tabs > li:hover > a {\r\n    border: 0;\r\n    background: none !important;\r\n    color: #333333;\r\n  }\r\n  .tabbable-line > .nav-tabs > li.open > a > i, .tabbable-line > .nav-tabs > li:hover > a > i {\r\n    color: #a6a6a6;\r\n  }\r\n  .tabbable-line > .nav-tabs > li.open .dropdown-menu, .tabbable-line > .nav-tabs > li:hover .dropdown-menu {\r\n    margin-top: 0px;\r\n  }\r\n  .tabbable-line > .nav-tabs > li.active {\r\n    border-bottom: 2px solid #1ec26b;\r\n    position: relative;\r\n    padding-bottom: 0;\r\n  }\r\n  .tabbable-line > .nav-tabs > li.active > a {\r\n    border: 0;\r\n    background: transparent;\r\n    color: #333333;\r\n  }\r\n  .tabbable-line > .nav-tabs > li.active > a > i {\r\n    color: #404040;\r\n  }\r\n  .tabbable-line > .tab-content {\r\n    margin-top: -3px;\r\n    background-color: #faf9f5;\r\n    border: 0;\r\n    padding: 5px 0;\r\n  }\r\n  .nav>li>a {\r\n    position: relative;\r\n    display: block;\r\n    padding: 0 !important;\r\n}\r\n\r\n  .tab-content>.active{\r\n    background-color: #faf9f5;\r\n  }\r\n  .portlet .tabbable-line > .tab-content {\r\n    padding-bottom: 0;\r\n  }\r\n  \r\n  /* Below tabs mode */\r\n  \r\n  .tabbable-line.tabs-below > .nav-tabs > li {\r\n    border-top: 4px solid transparent;\r\n  }\r\n  .tabbable-line.tabs-below > .nav-tabs > li > a {\r\n    margin-top: 0;\r\n  }\r\n  .tabbable-line.tabs-below > .nav-tabs > li:hover {\r\n    border-bottom: 0;\r\n    border-top: 2px solid #1ec26b;\r\n  }\r\n  .tabbable-line.tabs-below > .nav-tabs > li.active {\r\n    margin-bottom: -2px;\r\n    border-bottom: 0;\r\n    border-top: 2px solid #1ec26b;\r\n  }\r\n  .tabbable-line.tabs-below > .tab-content {\r\n    margin-top: -10px;\r\n    border-top: 0;\r\n    border-bottom: 1px solid #eee;\r\n    padding-bottom: 15px;\r\n  }\r\n  .nav-tabs>li>a{\r\n      border-radius: 0 !important;\r\n  }\r\n\r\n  .addressesPane{\r\n    padding: 20px;\r\n    margin-bottom: 15px;\r\n    background: white;\r\n    border-radius: 4px;\r\n    border: 1px solid #ccc;\r\n  }\r\n  .addressesPane .row{\r\n      margin:0 !important;\r\n  }\r\n/* Tabs */\r\n\r\n\r\n/* My Button */\r\n\r\n.ajax-button{\r\n    position:relative;\r\n    display:inline-block;\r\n    height:40px;\r\n    left:50px;\r\n    top:50%;\r\n    margin-left:-50px;\r\n    text-align:center;\r\n  }\r\n  .submit{\r\n    -webkit-appearance: none;\r\n    -moz-appearance: none;\r\n    appearance: none;\r\n    height:40px;\r\n    background-color:transparent;\r\n    border:none;\r\n    border-radius:0;\r\n    color:#FFFFFF;\r\n    font-size:17px;\r\n    cursor:pointer !important;\r\n    outline:none;\r\n  }\r\n  \r\n \r\n  .loading{\r\n    font-size:0;\r\n    width:30px;\r\n    height:30px;\r\n    margin-top:5px;\r\n    border-radius:15px;\r\n    padding:0;\r\n    border:3px solid #FFFFFF;\r\n    border-bottom:3px solid rgba(255,255,255,0.0);\r\n    border-left:3px solid rgba(255,255,255,0.0);\r\n    background-color:transparent !important;\r\n    animation-name: rotateAnimation;\r\n    -webkit-animation-name: wk-rotateAnimation;\r\n    animation-duration: 1s;\r\n    -webkit-animation-duration: 1s;\r\n    animation-delay: 0.2s;\r\n    -webkit-animation-delay: 0.2s;\r\n    animation-iteration-count: infinite;\r\n    -webkit-animation-iteration-count: infinite;\r\n  }\r\n  \r\n  @keyframes rotateAnimation {\r\n      0%   {transform: rotate(0deg);}\r\n      100% {transform: rotate(360deg);}\r\n  }\r\n  @-webkit-keyframes wk-rotateAnimation {\r\n      0%   {-webkit-transform: rotate(0deg);}\r\n      100% {-webkit-transform: rotate(360deg);}\r\n  }\r\n  \r\n  .fa{\r\n    color:#ffffff;\r\n    font-size:18px !important;\r\n    position:absolute;\r\n    left:50%;\r\n    top:50%;\r\n    margin-left:-9px;\r\n    margin-top:-9px;\r\n    -webkit-transform:scaleX(0) !important;\r\n    transform:scaleX(0) !important;\r\n  }\r\n  \r\n  .finish{\r\n    -webkit-transform:scaleX(1) !important;\r\n    transform:scaleX(1) !important;\r\n  }\r\n  .hide-loading{\r\n    opacity:0;\r\n    -webkit-transform: rotate(0deg) !important;\r\n    transform: rotate(0deg) !important;\r\n    -webkit-transform:scale(0) !important;\r\n    transform:scale(0) !important;\r\n  }\r\n@media only screen and (max-width: 1200px) and (min-width: 992px){\r\n    .products-list li{\r\n        width: 32%;\r\n        margin-right:7px;\r\n    }\r\n    .one-row .subtotal{\r\n        width:29%;\r\n    }\r\n}\r\n\r\n@media only screen and (max-width: 992px) and (min-width: 768px){\r\n    .stepwizard-row:before{\r\n        left: 50px;\r\n    }\r\n    .left-chemist{\r\n        width:35%\r\n    }\r\n    .right-search{\r\n        width:65%;\r\n    }\r\n\r\n    #step-1 .chemist-ratings{\r\n        margin-left: -4px;\r\n        margin-bottom: 15px;\r\n    }\r\n\r\n    .products-list   li{\r\n        width:43%;\r\n    }\r\n    .one-row .subtotal{\r\n        width:29%;\r\n    }\r\n}\r\n\r\n@media only screen and (max-width: 768px) and (min-width:460px) {\r\n    .left-pane,.right-pane{\r\n        width:100%;\r\n    }\r\n    .products-list   li{\r\n        width:28%;\r\n    }\r\n    .product-image{\r\n        height:155px;\r\n    }\r\n}\r\n@media only screen and (max-width: 768px) {\r\n    .col-left,.col-right{\r\n        width:100%;\r\n    }\r\n    .one-row .subtotal{\r\n        width:40%;\r\n    }\r\n\r\n    .stepwizard-row:before{\r\n        left: 72px;\r\n        width:70%;\r\n    }\r\n\r\n    .stepwizard{\r\n        width:100%;\r\n    }\r\n\r\n\r\n    .col-right{\r\n        margin-left:0;\r\n        margin-top:20px;\r\n    }\r\n    \r\n    \r\n}\r\n\r\n@media only screen and (max-width: 640px){\r\n    .left-pane,.right-pane{\r\n        width:100%;\r\n        margin-left:0;\r\n        margin-top:15px;\r\n    }\r\n\r\n    .voucher-form{\r\n        width:100%;\r\n    }\r\n    .left-chemist{\r\n        width: 100%;\r\n        text-align: center;\r\n        margin-bottom: 15px;\r\n    }\r\n    .right-search {\r\n        width: 100%;\r\n    }\r\n\r\n    .products-list li{\r\n        width: 100%;\r\n        margin-right: 0;\r\n    }\r\n\r\n    .product-image{\r\n        height:270px;\r\n    }\r\n    .product-detail h2{\r\n        text-align:center;\r\n    }\r\n\r\n    .modal-name,.modal-quantity{\r\n        width: 100%;\r\n        margin-bottom:15px;\r\n    }\r\n    .cart-button{\r\n        width:100%;\r\n    }\r\n\r\n    /deep/ .detailModalClass .modal-body{\r\n        padding:15px;\r\n    }\r\n    .right-name{\r\n        width:65%;\r\n    }\r\n    .stepwizard-row:before{\r\n        left:50px;\r\n    }\r\n    .lefty-side {\r\n        width: 70px;\r\n    }\r\n    .address-field{\r\n        width:100%;\r\n    }\r\n    .dosage{\r\n        margin-bottom:6px;\r\n    }\r\n}", ""]);
-
-// exports
-
-
-/***/ }),
-/* 272 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-        var result = __webpack_require__(273);
-
-        if (typeof result === "string") {
-            module.exports = result;
-        } else {
-            module.exports = result.toString();
-        }
-    
-
-/***/ }),
-/* 273 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(7)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n\n.dropdown-el {\n  min-width: 110px;\n  position: relative;\n  display: inline-block;\n  margin-right: 1em;\n  min-height: 30px;\n  max-height: 30px;\n  overflow: hidden;\n  top: .5em;\n  cursor: pointer;\n  text-align: left;\n  white-space: nowrap;\n  color: #656565;\n  outline: none;\n  border: .06em solid transparent;\n  background-color: #fff;\n  transition: 0.3s all ease-in-out;\n  \n}\n.dropdown-el input {\n  display: none;\n}\n.dropdown-el label {\n  border-top: .06em solid #d9d9d9;\n  display: block;\n  height: 2em;\n  line-height: 2em;\n  padding-left: 1em;\n  padding-right: 3em;\n  cursor: pointer;\n  position: relative;\n  transition: 0.3s color ease-in-out;\n}\n.dropdown-el label:nth-child(2) {\n  margin-top: 2em;\n  border-top: .06em solid #d9d9d9;\n}\n.dropdown-el input:checked + label {\n  display: block;\n  border-top: none;\n  position: absolute;\n  top: 0;\n}\n.dropdown-el input:checked + label:nth-child(2) {\n  margin-top: 0;\n  position: relative;\n}\n.dropdown-el::after {\n  content: \"\";\n  position: absolute;\n  right: 0.8em;\n  top: 0.9em;\n  border: 0.3em solid #aeaeae;\n  border-color: #aeaeae transparent transparent transparent;\n  transition: .4s all ease-in-out;\n}\n.dropdown-el.expanded {\n  border: 0.06em solid #aeaeae;\n  background: #fff;\n\n  padding: 0;\n  box-shadow: rgba(0, 0, 0, 0.1) 3px 3px 5px 0px;\n  max-height: 15em;\n}\n.dropdown-el.expanded label {\n  border-top: .06em solid #d9d9d9;\n}\n.dropdown-el.expanded label:hover {\n  color: #3694d7;\n}\n.dropdown-el.expanded input:checked + label {\n  color: #3694d7;\n}\n.dropdown-el.expanded::after {\n  transform: rotate(-180deg);\n  top: .55em;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 274 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-        var result = __webpack_require__(275);
-
-        if (typeof result === "string") {
-            module.exports = result;
-        } else {
-            module.exports = result.toString();
-        }
-    
-
-/***/ }),
-/* 275 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(7)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, ".styled-checkbox {\n  position: absolute;\n  opacity: 0; }\n  .styled-checkbox + label {\n    position: relative;\n    cursor: pointer;\n    padding: 0;\n    font-size: 17px; }\n  .styled-checkbox + label:before {\n    content: '';\n    margin-right: 10px;\n    display: inline-block;\n    vertical-align: text-top;\n    width: 20px;\n    height: 20px;\n    background: white; }\n  .styled-checkbox:hover + label:before {\n    background: #1ec26b; }\n  .styled-checkbox:focus + label:before {\n    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12); }\n  .styled-checkbox:checked + label:before {\n    background: #1ec26b; }\n  .styled-checkbox:disabled + label {\n    color: #b8b8b8;\n    cursor: auto; }\n  .styled-checkbox:disabled + label:before {\n    box-shadow: none;\n    background: #ddd; }\n  .styled-checkbox:checked + label:after {\n    content: '';\n    position: absolute;\n    left: 5px;\n    top: 9px;\n    background: white;\n    width: 2px;\n    height: 2px;\n    box-shadow: 2px 0 0 white,\r 4px 0 0 white,\r 4px -2px 0 white,\r 4px -4px 0 white,\r 4px -6px 0 white,\r 4px -8px 0 white;\n    transform: rotate(45deg); }\n\nhtml {\n  background: lightgray; }\n\nbody {\n  font-family: 'Source Sans Pro', sans-serif; }\n\n.unstyled {\n  margin: 0;\n  padding: 0;\n  list-style-type: none; }\n\nli {\n  margin: 20px 0; }\n\n.centered {\n  width: 300px;\n  margin: auto; }\n\n.title {\n  text-align: center;\n  color: #4571ec; }\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 276 */
-/***/ (function(module, exports) {
-
-module.exports = "<div id=\"snackbar\"></div>\r\n\r\n<modal #orderPlaced modalClass=\"modal-lg modal-sm animated fadeInDownBig orderPlaced\" [hideCloseButton]=\"true\" [closeOnEscape]=\"true\"\r\n    [closeOnOutsideClick]=\"true\" (onClose)=\"navigateToOriginal()\">\r\n\r\n\r\n\r\n    <modal-content>\r\n        <button class=\"closeThanks\" (click)=\"orderPlaced.close()\" data-dismiss=\"modal\" type=\"button\" aria-label=\"Close\">\r\n            <span aria-hidden=\"true\">×</span>\r\n        </button>\r\n\r\n        <div class=\"my-header\">\r\n            <div class=\"circle\">\r\n                <img class=\"amiated jackInTheBox\" src=\"/assets/img/like.png\" width=\"100px\">\r\n            </div>\r\n        </div>\r\n        <div class=\"my-header-2\">\r\n            <h1>Thank you! Your order was placed successfully!</h1>\r\n            <button class=\"view-orders\" (click)=\"navigatoToOrders()\">View Orders</button>\r\n        </div>\r\n    </modal-content>\r\n\r\n\r\n</modal>\r\n\r\n<modal #detailModal id=\"detailModal\" [closeOnEscape]=\"false\" [closeOnOutsideClick]=\"false\" modalClass=\"modal-lg modal-md detailModalClass animated bounceInDown\"\r\n    (onSubmit)=\"actionOnSubmit()\" (onClose)=\"actionOnClose()\">\r\n\r\n    <modal-content *ngIf=\"ifDataPopulated\">\r\n\r\n        <div class=\"full-row clearfix\">\r\n\r\n\r\n            <div class=\"modal-name\">\r\n\r\n                <p>{{singleMedicine.Name}}</p>\r\n                <p style=\"    margin-bottom: 20px;\">Rs. {{singleMedicine.TotalPrice}}</p>\r\n                <!-- <span>Reckitt Beckiser Ltd.</span> -->\r\n                <span>{{singleMedicine.ChemistCategoryName}}</span>\r\n\r\n            </div>\r\n\r\n            <div class=\"modal-quantity\">\r\n\r\n\r\n                <div class=\"\" id=\"prod-quantity-cart\">\r\n\r\n                    <button class=\"qtyminus\" field='quantity' (click)=\"Downing()\">-</button>\r\n\r\n                    <input type=\"number\" id=\"num_val\" min=\"1\" max=\"100\" class='qty' step=\"1\" value=\"1\" readonly>\r\n\r\n                    <button class=\"qtyplus \" field='quantity' (click)=\"Upping()\">+</button>\r\n\r\n                </div>\r\n\r\n                <div class='clear'></div>\r\n                <div class=\"selects\">\r\n                    <select class=\"dosage\" id=\"dosageName\" (change)=\"getDosageName($event.target.value)\">\r\n                        <option selected disabled>Select Dosage</option>\r\n                        <option *ngFor=\"let dosageArray of singleMedicine.WebDosageAndValuesDTOList\" value=\"{{dosageArray.DosageName}}\">{{dosageArray.DosageName}}</option>\r\n                    </select>\r\n\r\n                    <select class=\"dosage\" id=\"dosageValue\" (change)=\"getDosageValue($event.target.value)\">\r\n                        <option selected disabled>Select Value</option>\r\n                        <option *ngFor=\"let dosageArray of dosageValue\" value=\"{{dosageArray}}\">{{dosageArray}}</option>\r\n                    </select>\r\n\r\n                    <select class=\"dosage\" id=\"Measurements\" (change)=\"getMeasurement($event.target.value)\">\r\n                        <option selected disabled>Select Measurement</option>\r\n                        <option *ngFor=\"let measurement of measurementValue\" value=\"{{measurement}}\">{{measurement}}</option>\r\n                    </select>\r\n                </div>\r\n\r\n            </div>\r\n\r\n        </div>\r\n\r\n        <hr class=\"saperator\">\r\n\r\n\r\n        <div class=\"full-row clearfix\" (click)=\"showTextArea()\">\r\n\r\n\r\n            <div class=\"modal-name\">\r\n\r\n                <p>SPECIAL INSTRUCTIONS</p>\r\n\r\n            </div>\r\n\r\n            <div class=\"modal-quantity\">\r\n\r\n\r\n                <span class=\"optional\">(Optional)</span>\r\n                <i class=\"thisone fa fa-chevron-up\"></i>\r\n\r\n            </div>\r\n\r\n        </div>\r\n\r\n\r\n\r\n        <div class=\"textarea-div animated\">\r\n            <textarea placeholder=\"Write any instructions here ...\" name=\"SpecialInstructions\" [(ngModel)]=\"SpecialInstructions\"></textarea>\r\n        </div>\r\n\r\n\r\n        <div class=\"full-row clearfix center-align\">\r\n            <button class=\"cart-button\" (click)=\"addToCart()\">Add to Cart</button>\r\n        </div>\r\n\r\n    </modal-content>\r\n\r\n</modal>\r\n\r\n<div class=\"container\" style=\"margin-top:20px;margin-bottom:20px;\">\r\n\r\n    <div class=\"stepwizard\">\r\n        <div class=\"stepwizard-row setup-panel\">\r\n            <div class=\"stepwizard-step\">\r\n                <div id=\"overlay\"></div>\r\n                <a #step1 href=\"#step-1\" type=\"button\" id=\"step1\" class=\"btn btn-primary btn-circle\">1</a>\r\n                <p>Your Details</p>\r\n            </div>\r\n            <div class=\"stepwizard-step\">\r\n                <div id=\"overlay2\"></div>\r\n                <a #step2 href=\"#step-2\" type=\"button\" id=\"step2\" class=\"btn btn-default btn-circle\" disabled=\"disabled\">2</a>\r\n                <p>Review Order</p>\r\n            </div>\r\n            <div class=\"stepwizard-step\">\r\n                <div id=\"overlay3\"></div>\r\n                <a #step3 href=\"#step-3\" type=\"button\" id=\"step3\" class=\"btn btn-default btn-circle\" disabled=\"disabled\">3</a>\r\n                <p>Place Order</p>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n\r\n    <div class=\"row setup-content\" id=\"step-1\">\r\n\r\n        <div class=\"col-md-12\">\r\n\r\n\r\n            <div class=\"left-pane\">\r\n\r\n                <div class=\"inner-wrapper clearfix\">\r\n\r\n\r\n                    <div class=\"upper-holder clearfix\">\r\n                        <!-- Upper Holder -->\r\n\r\n                        <div class=\"left-chemist clearfix\">\r\n                            <p class=\"headging-with-rating\">{{ChemistViewing.Chemist.PharmacyName}}</p>\r\n                            <div class=\"chemist-ratings\">\r\n                                <star-rating-comp [starType]=\"'icon'\" [disabled]=\"true\" [rating]=\"ChemistViewing.Chemist.ChemistRating\"></star-rating-comp>\r\n\r\n                            </div>\r\n                            <p class=\"opening-hours\">{{ChemistViewing.DistanceFromUs}} KM</p>\r\n                        </div>\r\n                        <div class=\"right-search clearfix\">\r\n\r\n\r\n                            <div class='voucher-form clearfix'>\r\n                                <img src=\"/assets/img/search.png\" class=\"search-icon\">\r\n                                <div class=\"inputField\">\r\n                                    <input type=\"text\" (keyup)=\"searchThisMedicine(e)\" name=\"searchMedicineQuery\" [(ngModel)]=\"searchMedicineQuery\" placeholder=\"Search Medicines\"\r\n                                        name=\"searchChemistQuery\" (keyup)=\"searchThisMedicine(this)\" [(ngModel)]=\"searchChemistQuery\">\r\n                                </div>\r\n                                <div class=\"inputBtn\">\r\n                                    <button>Search</button>\r\n                                </div>\r\n\r\n                            </div>\r\n                        </div>\r\n\r\n                    </div>\r\n                    <!-- Upper Holder -->\r\n                </div>\r\n\r\n\r\n                <div class=\"tabbable-panel\">\r\n                    <div class=\"tabbable-line\">\r\n                        <ul class=\"nav nav-tabs\">\r\n                            <li *ngFor=\"let categories of ChemistCategories;let i=index\" (click)=\"showProductsForThisCateogry(categories.Id)\" id=\"list_{{categories.Id}}\"\r\n                                class=\"tabs-list\" [ngClass]=\"{'active': i==0}\">\r\n                                <a style=\"cursor:pointer;\" data-target=\"#tab_1\" data-toggle=\"tab\">\r\n                                    {{categories.CategoryName}} </a>\r\n                            </li>\r\n                        </ul>\r\n                        <div class=\"tab-content\">\r\n                            <div class=\"tab-pane animated active\" id=\"tab_1\">\r\n\r\n\r\n                                <ul class=\"products-list\">\r\n\r\n                                    <li (mouseenter)=\"showPlus($event)\" (click)=\"getDetailsOfProduct(medicine)\" id=\"medicine{{medicine.Id}}\" (mouseleave)=\"hidePlus($event)\"\r\n                                        *ngFor=\"let medicine of SearchedMedicines;let i=index\" class=\"single-product animated zoomIn\">\r\n\r\n                                        <div class=\"product-wrapper\">\r\n\r\n                                            <div class=\"product-image\" id=\"image{{medicine.Id}}\">\r\n                                                <img src=\"{{medicine.PictureURL}}\">\r\n                                            </div>\r\n\r\n                                            <div class=\"product-detail\">\r\n                                                <h2>{{medicine.Name}}</h2>\r\n                                            </div>\r\n\r\n\r\n                                        </div>\r\n\r\n                                        <div class=\"plus-sign animated\">\r\n                                            <img src=\"/assets/img/add.png\">\r\n                                        </div>\r\n\r\n                                    </li>\r\n\r\n                                </ul>\r\n\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n            </div>\r\n\r\n\r\n            <div class=\"right-pane\">\r\n\r\n\r\n                <div class=\"time-pane\">\r\n\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6 col-sm-6 col-xs-6\" style=\"text-align:left\">\r\n                            <p class='right-estimate'>Estimated Delivery Time</p>\r\n                        </div>\r\n                        <div class=\"col-md-6 col-sm-6 col-xs-6\" style=\"text-align: right\">\r\n                            <div class=\"time\">\r\n                                <p class=\"big\">{{estimatedDeliveryTime}}</p>\r\n                                <p class=\"small\">mins</p>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n\r\n\r\n                </div>\r\n\r\n\r\n\r\n\r\n                <div class=\"cart animated\">\r\n\r\n                    <div class=\"header\">\r\n                        <h3>Your Order</h3>\r\n                    </div>\r\n                    <div class=\"body clearfix\">\r\n\r\n\r\n                        <div class=\"one-row clearfix my-animation\" *ngFor=\"let onerow of cart\">\r\n                            <div class=\"item \">\r\n                                <P class=\"item-detail\">{{onerow?.Quantity}}x\r\n                                    <span style=\"color:#1ec26b;font-weight:bold;font-size:16px\">{{onerow?.Name}}</span>\r\n                                </P>\r\n                                <span class=\"optional\">{{onerow?.ChemistCategoryName}}</span>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail\">Rs. {{onerow?.Total}}</P>\r\n                            </div>\r\n                        </div>\r\n\r\n                    </div>\r\n                    <div class='footer clearfix'>\r\n\r\n                        <div class=\"one-row clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\">Subtotal</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail\">Rs. {{SubTotal}}</P>\r\n                            </div>\r\n                        </div>\r\n\r\n                        <div class=\"one-row clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\">Delivery Fee</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail\">Rs. 0</P>\r\n                            </div>\r\n                        </div>\r\n\r\n\r\n                        <div class=\"one-row more-margin clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\" style=\"padding-top:10px;\">Total</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail bigText\">Rs. {{FinalTotal}}</P>\r\n                            </div>\r\n                        </div>\r\n\r\n                        <div class=\"alignCenter row\" style=\"width: 100%;margin: 15px auto;\">\r\n\r\n                            <ng-container *ngIf=\"cartHasItems\">\r\n                                <button (click)=\"takeMeToReviewPage()\" id=\"proceedToReview\" class=\"checkout-btn nextBtn\">Proceed</button>\r\n                            </ng-container>\r\n\r\n                        </div>\r\n\r\n                    </div>\r\n                </div>\r\n\r\n            </div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n        </div>\r\n\r\n    </div>\r\n    <div class=\"row setup-content\" id=\"step-2\">\r\n        <div class=\"col-md-12 cleafix\">\r\n\r\n            <div class=\"col-left clearfix\">\r\n\r\n                <div class=\"holder-box clearfix\">\r\n                    <!-- wrapper -->\r\n\r\n                    <div class='header clearfix'>\r\n                        <div class=\"left-image-side clearfix\">\r\n                            <img src=\"assets/img/dw.png\" width=\"75px\">\r\n                        </div>\r\n                        <div class='right-name clearfix'>\r\n                            <p class=\"chemist-name\">{{ChemistViewing.UserName}}</p>\r\n                            <p class=\"opening-hours\">{{ChemistViewing.DistanceFromUs}} KM</p>\r\n\r\n                            <div class=\"chemist-ratings\">\r\n\r\n                                <star-rating-comp [starType]=\"'icon'\" [disabled]=\"true\" [rating]=\"ChemistViewing.Chemist.ChemistRating\"></star-rating-comp>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n\r\n                    <hr class=\"saperator\">\r\n\r\n\r\n                    <div class=\"table-details\">\r\n\r\n                        <div class=\"one-row clearfix \" *ngFor=\"let onerow of cart\">\r\n                            <div class=\"del\" (click)=\"deletethisRow(onerow)\">\r\n                                <img src=\"assets/img/del.png\">\r\n                            </div>\r\n                            <div class=\"name\">\r\n                                <span class=\"med-name\">{{onerow.Name}}</span>\r\n                                <span>({{onerow.ChemistCategoryName}}) {{onerow.DosageValue}}{{onerow.DosageName}} {{onerow.MeausurementName}}</span>\r\n                            </div>\r\n                            <div class=\"quantity\">\r\n                                <div class=\"quantity\" id=\"prod-quantity\">\r\n                                    <input type=\"number\" id=\"num_val_{{onerow.Id}}\" min=\"1\" max=\"10\" class='qty' step=\"1\" value=\"{{onerow.Quantity}}\" readonly>\r\n                                    <div class=\"quantity-nav\">\r\n                                        <div class=\"quantity-button quantity-up qtyplus \" field='quantity' (click)=\"UppingReview(onerow)\">+</div>\r\n                                        <div class=\"quantity-button quantity-down qtyminus\" field='quantity' (click)=\"DowningReview(onerow)\">-</div>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"subtotal\">\r\n                                <p>Rs. {{onerow.Total}}</p>\r\n                            </div>\r\n\r\n                        </div>\r\n\r\n                        <div class=\"row  subtotal-row clearfix\">\r\n                            <div class=\"subtotal-heading\">\r\n                                <p>Subtotal</p>\r\n                            </div>\r\n                            <div class=\"subtotal-value\">\r\n                                Rs. {{SubTotal}}\r\n                            </div>\r\n\r\n                        </div>\r\n\r\n\r\n                        <div class=\"row voucher-row clearfix\">\r\n                            <h3>Enter your voucher code here</h3>\r\n\r\n                            <div class='voucher-form clearfix'>\r\n                                <div class=\"inputField\">\r\n                                    <input type=\"text\">\r\n                                </div>\r\n                                <div class=\"inputBtn\">\r\n                                    <button>Submit</button>\r\n                                </div>\r\n                            </div>\r\n\r\n                        </div>\r\n\r\n                        <hr class=\"saperator\">\r\n\r\n\r\n                        <div class=\"row footer-row clearfix\">\r\n                            <div class=\"subtotal-heading\">\r\n                                <p>Delivery Fee</p>\r\n                            </div>\r\n                            <div class=\"subtotal-value\">\r\n                                0\r\n                            </div>\r\n\r\n                        </div>\r\n\r\n                        <div class=\"row  footer-row no-margin-top clearfix\">\r\n                            <div class=\"subtotal-heading\">\r\n                                <p>Total</p>\r\n                            </div>\r\n                            <div class=\"subtotal-value font20\">\r\n                                Rs. {{FinalTotal}}\r\n                            </div>\r\n\r\n                        </div>\r\n\r\n\r\n\r\n                    </div>\r\n\r\n                </div>\r\n                <!-- wrapper -->\r\n\r\n            </div>\r\n\r\n            <div class=\"col-right clearfix\">\r\n\r\n                <div class=\"holder-box clearfix\">\r\n\r\n                    <h3>Order Information</h3>\r\n\r\n\r\n\r\n                    <div class=\"check1\">\r\n                        <p>\r\n                            <input type=\"radio\" id=\"test2\" (change)=\"AsSoonAsPossibleSelected()\" name=\"radio-group\" checked>\r\n                            <label for=\"test2\" class='delivery-text'>Deliver Now</label>\r\n                            <span class='delivery-text'>Estimated Delivery Time : {{estimatedDeliveryTime}} min</span>\r\n                        </p>\r\n\r\n                        <p>\r\n                            <input type=\"radio\" id=\"test3\" (change)=\"showTimeSlots()\" name=\"radio-group\">\r\n                            <label for=\"test3\" class='delivery-text'>Deliver Later</label>\r\n                        </p>\r\n\r\n                        <div class=\"FetchingTimeSlots\">\r\n                            <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->\r\n                            <svg width=\"50\" height=\"30\" viewBox=\"0 0 120 30\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"#1ec26b\">\r\n                                <circle cx=\"15\" cy=\"15\" r=\"15\">\r\n                                    <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                    <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                </circle>\r\n                                <circle cx=\"60\" cy=\"15\" r=\"9\" fill-opacity=\"0.3\">\r\n                                    <animate attributeName=\"r\" from=\"9\" to=\"9\" begin=\"0s\" dur=\"0.8s\" values=\"9;15;9\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                    <animate attributeName=\"fill-opacity\" from=\"0.5\" to=\"0.5\" begin=\"0s\" dur=\"0.8s\" values=\".5;1;.5\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                </circle>\r\n                                <circle cx=\"105\" cy=\"15\" r=\"15\">\r\n                                    <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                    <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                </circle>\r\n                            </svg>\r\n\r\n                        </div>\r\n\r\n                        <ng-container>\r\n\r\n                            <ul class=\"time-slots\">\r\n                                <li *ngFor=\"let timeSlot of timeSlots\" class=\"\">\r\n                                    <button class=\"time-slot\" (click)=\"selectThisSlot($event,timeSlot.Id)\">{{timeSlot.StartingTime}} - {{timeSlot.EndingTime}}</button>\r\n                                </li>\r\n                            </ul>\r\n\r\n                        </ng-container>\r\n\r\n                    </div>\r\n\r\n                    <hr class=\"saperator\">\r\n\r\n                    <div class='italic-text row'>\r\n                        <p>(if you want to add any comment e.g. about delivery instructions, this is the right place)</p>\r\n                    </div>\r\n\r\n\r\n                    <div class='message-text row'>\r\n                        <p style=\"cursor:pointer;\" (click)=\"showMessageArea()\">\r\n                            <img src=\"assets/img/play-arrow.png\"> Add a message to your order\r\n\r\n                        </p>\r\n\r\n\r\n\r\n                        <div class=\"textarea-div2 animated\">\r\n                            <textarea placeholder=\"Write any instructions here ...\"></textarea>\r\n                        </div>\r\n\r\n\r\n\r\n                    </div>\r\n\r\n                    <div class=\"alignCenter row\" >\r\n                        <ng-container *ngIf=\"cartHasItems\">\r\n                            <button (click)=\"takeMeToStep3()\" class=\"checkout-btn nextBtn\">Checkout</button>\r\n                        </ng-container>\r\n                    </div>\r\n\r\n                </div>\r\n\r\n\r\n            </div>\r\n\r\n\r\n        </div>\r\n    </div>\r\n    <div class=\"row setup-content\" id=\"step-3\">\r\n\r\n        <div class=\"col-md-12\">\r\n\r\n\r\n            <div class=\"left-pane\">\r\n                <div class=\"inner-wrapper\">\r\n                    <div class=\"header\">\r\n                        <h3>My Contact Details</h3>\r\n                    </div>\r\n                    <div class=\"body clearfix\">\r\n                        <div class=\"lefty-side clearfix\">\r\n                            <p class=\"leftyVa\">Full Name</p>\r\n                            <p class=\"leftyVa\">Email</p>\r\n                            <p class=\"leftyVa\">Mobile</p>\r\n                        </div>\r\n\r\n                        <ng-container *ngIf=\"!IsGuestUser\">\r\n                            <div class=\"righty-side col-md-6 clearfix\">\r\n                                <p class=\"rightyVal\">{{ThisUser.UserName}}</p>\r\n                                <p class=\"rightyVal\">{{ThisUser.Email}}</p>\r\n                                <p class=\"rightyVal\"></p>\r\n                                <a class=\"rightyVal green\" (click)=\"logOut()\">Not {{ThisUser.UserName}}? Logout </a>\r\n                            </div>\r\n                        </ng-container>\r\n\r\n                        \r\n                    </div>\r\n                </div>\r\n\r\n                <div class=\"inner-wrapper\">\r\n                    <div class=\"header\">\r\n                        <h3>Your delivery address</h3>\r\n                    </div>\r\n                    <div class=\"body clearfix\">\r\n\r\n\r\n                        <p class=\"oldAddress\">\r\n\r\n                            <input type=\"radio\" id=\"newDeliveryCheck\" (change)=\"createNewAddress()\" name=\"radio-group\" value=\"NewAddress\">\r\n                            <label for=\"newDeliveryCheck\" class='delivery-text'>Create new delivery address</label>\r\n\r\n\r\n                        </p>\r\n                        <ng-container *ngIf=\"newAddressEnabled\">\r\n                            <div class=\"addressesPane\">\r\n                                <span class=\"requiredRed\">*</span>\r\n                                <span class=\"required\">Required Fields</span>\r\n\r\n                                <p>\r\n                                    <span class=\"requiredRed\">*</span>\r\n                                    <span class=\"normalText\">Address</span>\r\n                                </p>\r\n\r\n                                <div class=\"form-group\">\r\n                                    <input type=\"text\" class=\"address-field\" placeholder=\"Enter your address delivery addresss\" id=\"EnteredAddressDetail\" name=\"EnteredAddress.AddressDetail\" [(ngModel)]=\"EnteredAddress.AddressDetail\">\r\n                                  <!--   <span class=\"required\">Enter your address delivery address</span> -->\r\n                                </div>\r\n                                \r\n                                \r\n                                \r\n                                <div class=\"form-group\">\r\n                                \r\n                                    <input type=\"text\" class=\"address-field\" placeholder=\"Enter your area delivery address\" id=\"EnteredAddressArea\" name=\"EnteredAddress.Area\" [(ngModel)]=\"EnteredAddress.Area\">\r\n                                    <!-- <span class=\"required\">Enter your area delivery address</span> -->\r\n                                </div>\r\n                                \r\n                                \r\n                                <div class=\"form-group\">\r\n                                \r\n                                    <input type=\"text\" placeholder=\"Enter your city for delivery address\" class=\"address-field\" id=\"EnteredAddressCity\" name=\"EnteredAddress.City\" [(ngModel)]=\"EnteredAddress.City\">\r\n                                    <!-- <span class=\"required\">Enter your city for delivery address</span> -->\r\n                                </div>\r\n\r\n                                \r\n\r\n                                <div class=\"loader\">\r\n                                    <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->\r\n                                    <svg width=\"50\" height=\"30\" viewBox=\"0 0 120 30\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"#1ec26b\">\r\n                                        <circle cx=\"15\" cy=\"15\" r=\"15\">\r\n                                            <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                            />\r\n                                            <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                            />\r\n                                        </circle>\r\n                                        <circle cx=\"60\" cy=\"15\" r=\"9\" fill-opacity=\"0.3\">\r\n                                            <animate attributeName=\"r\" from=\"9\" to=\"9\" begin=\"0s\" dur=\"0.8s\" values=\"9;15;9\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                            />\r\n                                            <animate attributeName=\"fill-opacity\" from=\"0.5\" to=\"0.5\" begin=\"0s\" dur=\"0.8s\" values=\".5;1;.5\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                            />\r\n                                        </circle>\r\n                                        <circle cx=\"105\" cy=\"15\" r=\"15\">\r\n                                            <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                            />\r\n                                            <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                            />\r\n                                        </circle>\r\n                                    </svg>\r\n\r\n                                </div>\r\n\r\n                                <div class=\"form-group\" id=\"saveAddressBtn\">\r\n                                    <button class=\"save-address\" (click)=\"saveThisAddress()\">Save Address</button>\r\n                                </div>\r\n\r\n                                <div class=\"location-box\">\r\n                                    <p>\r\n                                        <span class=\"normalText\">Your Location</span>\r\n                                    </p>\r\n                                    <ng-container *ngIf=\"addressSet\">\r\n\r\n\r\n                                        <p class=\"location-text\">{{NewAddressEnteredAndSelected.City}},{{NewAddressEnteredAndSelected.Area}},{{NewAddressEnteredAndSelected.AddressDetail}}</p>\r\n\r\n\r\n                                    </ng-container>\r\n                                </div>\r\n\r\n                                <div class='message-text row' (click)=\"showTextArea3()\">\r\n                                    <p>\r\n                                        <i class=\"thisone3 fa fa-chevron-right\"></i> Delivery Instructions</p>\r\n                                    <span class=\"optional\">(Optional)</span>\r\n\r\n\r\n                                    <div class=\"textarea-div3 animated\">\r\n                                        <textarea [(ngModel)]=\"EnteredAddress.DeliveryInstructions\" name=\"EnteredAddress.DeliveryInstructions\" placeholder=\"Write any instructions here ...\"></textarea>\r\n                                    </div>\r\n\r\n                                </div>\r\n\r\n                                <div class='message-text row' (click)=\"showTextArea4()\">\r\n                                    <p>\r\n                                        <i class=\"thisone4 fa fa-chevron-right\"></i> Additional Information</p>\r\n                                    <span class=\"optional\">(Optional)</span>\r\n                                    <div class=\"textarea-div4 animated\">\r\n                                        <textarea placeholder=\"Write any instructions here ...\"></textarea>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </ng-container>\r\n                        <p class=\"oldAddress\">\r\n\r\n                            <input type=\"radio\" id=\"oldDeliveryCheck\" (change)=\"oldAddress()\" name=\"radio-group\" value=\"oldAddress\">\r\n                            <label for=\"oldDeliveryCheck\" class='delivery-text'>Use saved delivery address</label>\r\n\r\n                        </p>\r\n\r\n                        <ng-container *ngIf=\"oldAddressEnabled\">\r\n                            <ul class=\"EnteredAddress\">\r\n                                <li class=\"listed-addresses\" *ngFor=\"let EnteredAddress of UsersAddresses\">\r\n                                    <button class=\"\" (click)=\"selectThisAddress($event,EnteredAddress.Id)\">{{EnteredAddress.City}},{{EnteredAddress.Area}},{{EnteredAddress.AddressDetail}}</button>\r\n                                </li>\r\n                            </ul>\r\n                        </ng-container>\r\n\r\n                    </div>\r\n                </div>\r\n\r\n\r\n\r\n\r\n                <div class=\"inner-wrapper\">\r\n                    <div class=\"header\">\r\n                        <h3>Choose how to pay</h3>\r\n                    </div>\r\n                    <div class=\"body clearfix\">\r\n\r\n\r\n                        <div class=\"credit-card-payment\">\r\n                            <p class=\"oldAddress\">\r\n                                <input type=\"radio\" id=\"payingNow\" (change)=\"showCreditCard()\" name=\"radio-group\" value=\"payingNow\">\r\n                                <label for=\"payingNow\" class='delivery-text'>Credit Card</label>\r\n                            </p>\r\n                        \r\n\r\n                            <div class=\"pay-now-details animated zoomIn\">\r\n\r\n                                <h3>Please provide your credit card details</h3>\r\n\r\n                                <div class=\"form-group\">\r\n\r\n                                    <label for=\"cardName\">\r\n                                        <span class=\"requiredRed\">*</span> Name on card</label>\r\n                                    <br/>\r\n                                    <input type=\"text\" class=\"form-control\" id=\"cardName\">\r\n                                    <span class=\"required\">As it appears on your credit card</span>\r\n\r\n                                </div>\r\n\r\n                                <div class=\"form-group\">\r\n\r\n                                    <label for=\"cardNumber\">\r\n                                        <span class=\"requiredRed\">*</span> Card Number</label>\r\n                                    <br/>\r\n                                    <input type=\"text\" class=\"form-control\" id=\"cardNumber\">\r\n                                    <span class=\"required\">16 digits in front of your credit card. No spaces</span>\r\n\r\n                                </div>\r\n\r\n\r\n                                <div class=\"form-group\">\r\n                                    <label for=\"cardNumber\">\r\n                                        <span class=\"requiredRed\">*</span> Expiration Date</label>\r\n                                    <br/>\r\n                                    <div class=\"col-md-6 col-sm-6\">\r\n                                        <span class=\"dropdown-el\">\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"January\" checked=\"checked\" id=\"sort-relevance\">\r\n                                            <label for=\"sort-relevance\">January</label>\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"February\" id=\"sort-best\">\r\n                                            <label for=\"sort-best\">February</label>\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"March\" id=\"sort-low\">\r\n                                            <label for=\"sort-low\">March</label>\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"April\" id=\"sort-high\">\r\n                                            <label for=\"sort-high\">April</label>\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"May\" id=\"sort-brand\">\r\n                                            <label for=\"sort-brand\">May</label>\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"June\" id=\"sort-name\">\r\n                                            <label for=\"sort-name\">June</label>\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"July\" id=\"sort-name\">\r\n                                            <label for=\"sort-name\">July</label>\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"August\" id=\"sort-name\">\r\n                                            <label for=\"sort-name\">August</label>\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"September\" id=\"sort-name\">\r\n                                            <label for=\"sort-name\">September</label>\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"October\" id=\"sort-name\">\r\n                                            <label for=\"sort-name\">October</label>\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"November\" id=\"sort-name\">\r\n                                            <label for=\"sort-name\">November</label>\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"December\" id=\"sort-name\">\r\n                                            <label for=\"sort-name\">December</label>\r\n                                        </span>\r\n                                    </div>\r\n\r\n                                    <div class=\"col-md-6 col-sm-6\">\r\n                                        <span class=\"dropdown-el\">\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2016\" checked=\"checked\" id=\"sort-relevance\">\r\n                                            <label for=\"sort-relevance\">2016</label>\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2017\" id=\"sort-best\">\r\n                                            <label for=\"sort-best\">2017</label>\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2018\" id=\"sort-low\">\r\n                                            <label for=\"sort-low\">2018</label>\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2019\" id=\"sort-high\">\r\n                                            <label for=\"sort-high\">2019</label>\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2020\" id=\"sort-brand\">\r\n                                            <label for=\"sort-brand\">2020</label>\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2021\" id=\"sort-name\">\r\n                                            <label for=\"sort-name\">2021</label>\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2022\" id=\"sort-name\">\r\n                                            <label for=\"sort-name\">2022</label>\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2023\" id=\"sort-name\">\r\n                                            <label for=\"sort-name\">2023</label>\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2024\" id=\"sort-name\">\r\n                                            <label for=\"sort-name\">2024</label>\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2025\" id=\"sort-name\">\r\n                                            <label for=\"sort-name\">2025</label>\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2026\" id=\"sort-name\">\r\n                                            <label for=\"sort-name\">2026</label>\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2027\" id=\"sort-name\">\r\n                                            <label for=\"sort-name\">2027</label>\r\n                                        </span>\r\n                                    </div>\r\n\r\n                                </div>\r\n\r\n\r\n                                <div class=\"form-group\" style=\"    margin-top: 47px;\">\r\n\r\n                                    <label for=\"cardNumber\">\r\n                                        <span class=\"requiredRed\">*</span> Security Code</label>\r\n                                    <br/>\r\n                                    <input type=\"text\" class=\"form-control\" id=\"cardNumber\">\r\n                                    <span class=\"required\">CVV or CVV2. 3 Digits on the back. Amex 4, on the front</span>\r\n\r\n                                </div>\r\n\r\n                                <p>\r\n                                    <input class=\"styled-checkbox\" id=\"styled-checkbox-1\" type=\"checkbox\" value=\"value1\">\r\n                                    <label for=\"styled-checkbox-1\">Save my credit card details for future orders on the secure payment provider site.\r\n                                    </label>\r\n                                </p>\r\n\r\n\r\n                                <div class='bottom-text'>\r\n                                    <p class='bottom-text1'>After proceeding, you might be redirected to you card issuer page to verify this transaction</p>\r\n                                    <p class='bottom-text2'>Pay with master card or visa. You will be redirected to the second page of ouy patment\r\n                                        partner. Transaction would be proceeded abroad.</p>\r\n                                </div>\r\n\r\n                            </div>\r\n                        </div>\r\n\r\n                        <div class=\"cash-on-delivery\">\r\n                          <p class=\"oldAddress\">\r\n                                    <input type=\"radio\" id=\"cashOnDelivery\" (change)=\"CashOnDelivery()\" name=\"radio-group\" value=\"cashOnDelivery\">\r\n                                    <label for=\"cashOnDelivery\" class='delivery-text'>Cash on Delivery</label>\r\n                                </p>\r\n\r\n                        </div>\r\n                    \r\n\r\n\r\n\r\n                    </div>\r\n                </div>\r\n\r\n\r\n                <div class=\"inner-wrapper cleafix special\">\r\n\r\n                    <div class=\"col-md-6 cleafix\">\r\n\r\n                    </div>\r\n\r\n                    <div class=\"col-md-6 cleafix\">\r\n\r\n                        <div class=\"left-equal cleafix\">\r\n                            Total\r\n                        </div>\r\n                        <div class=\"right-equal cleafix\">\r\n                            Rs. {{FinalTotal}}\r\n                        </div>\r\n\r\n\r\n                        <p>By clicking this button, you agree with our\r\n                            <a>terms and conditions</a>\r\n                        </p>\r\n\r\n\r\n                        <div class=\"Orderloader\">\r\n                            <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->\r\n                            <svg width=\"50\" height=\"30\" viewBox=\"0 0 120 30\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"#1ec26b\">\r\n                                <circle cx=\"15\" cy=\"15\" r=\"15\">\r\n                                    <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                    <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                </circle>\r\n                                <circle cx=\"60\" cy=\"15\" r=\"9\" fill-opacity=\"0.3\">\r\n                                    <animate attributeName=\"r\" from=\"9\" to=\"9\" begin=\"0s\" dur=\"0.8s\" values=\"9;15;9\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                    <animate attributeName=\"fill-opacity\" from=\"0.5\" to=\"0.5\" begin=\"0s\" dur=\"0.8s\" values=\".5;1;.5\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                </circle>\r\n                                <circle cx=\"105\" cy=\"15\" r=\"15\">\r\n                                    <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                    <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                </circle>\r\n                            </svg>\r\n\r\n                        </div>\r\n\r\n                        <button class=\"place-now\" (click)=\"placeOrder()\">Place order now</button>\r\n                    </div>\r\n\r\n                </div>\r\n\r\n\r\n\r\n\r\n            </div>\r\n\r\n\r\n            <div class=\"right-pane\">\r\n\r\n\r\n                <div class=\"time-pane\">\r\n\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6 col-sm-6 col-xs-6\" style=\"text-align:left\">\r\n                            <p class='right-estimate'>Estimated Delivery Time</p>\r\n                        </div>\r\n                        <div class=\"col-md-6 col-sm-6 col-xs-6\" style=\"text-align: right\">\r\n                            <div class=\"time\">\r\n                                <p class=\"big\">{{estimatedDeliveryTime}}</p>\r\n                                <p class=\"small\">mins</p>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n\r\n\r\n                </div>\r\n\r\n\r\n\r\n\r\n                <div class=\"cart\">\r\n\r\n                    <div class=\"header\">\r\n                        <h3>Your Order</h3>\r\n                    </div>\r\n                    <div class=\"body clearfix\">\r\n\r\n                        <div class=\"one-row clearfix\" *ngFor=\"let onerow of cart\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\">{{onerow?.Quantity}}x\r\n                                    <span style=\"color:#1ec26b;font-weight:bold;font-size:16px\">{{onerow?.Name}}</span>\r\n                                </P>\r\n                                <span class=\"optional\">{{onerow?.ChemistCategoryName}}</span>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail\">Rs. {{onerow?.Total}}</P>\r\n                            </div>\r\n                        </div>\r\n\r\n                    </div>\r\n                    <div class='footer clearfix'>\r\n\r\n                        <div class=\"one-row clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\">Subtotal</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail\">Rs. {{SubTotal}}</P>\r\n                            </div>\r\n                        </div>\r\n\r\n                        <div class=\"one-row clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\">Delivery Fee</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail\">Rs. 0</P>\r\n                            </div>\r\n                        </div>\r\n\r\n\r\n                        <div class=\"one-row more-margin clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\" style=\"padding-top:10px;\">Total</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail bigText\">Rs. {{FinalTotal}}</P>\r\n                            </div>\r\n                        </div>\r\n\r\n                    </div>\r\n                </div>\r\n\r\n            </div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n        </div>\r\n\r\n    </div>\r\n\r\n\r\n</div>"
-
-/***/ }),
-/* 277 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AboutComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(14);
-
-
-
-var AboutComponent = (function () {
-    function AboutComponent(route) {
-        this.route = route;
-    }
-    AboutComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.route
-            .data
-            .subscribe(function (data) {
-            /**
-             * Your resolved data from route.
-             */
-            _this.localState = data.yourData;
-        });
-        console.log('hello `About` component');
-        /**
-         * static data that is bundled
-         * var mockData = require('assets/mock-data/mock-data.json');
-         * console.log('mockData', mockData);
-         * if you're working with mock data you can also use http.get('assets/mock-data/mock-data.json')
-         */
-        this.asyncDataWithWebpack();
-    };
-    AboutComponent.prototype.asyncDataWithWebpack = function () {
-        var _this = this;
-        /**
-         * you can also async load mock data with 'es6-promise-loader'
-         * you would do this if you don't want the mock-data bundled
-         * remember that 'es6-promise-loader' is a promise
-         */
-        setTimeout(function () {
-            __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 355))
-                .then(function (json) {
-                console.log('async mockData', json);
-                _this.localState = json;
-            });
-        });
-    };
-    return AboutComponent;
-}());
-AboutComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
-    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
-        selector: 'about',
-        styles: ["\n  "],
-        template: "\n    <h1>About</h1>\n    <div>\n      For hot module reloading run\n      <pre>npm run start:hmr</pre>\n    </div>\n    <div>\n      <h3>\n        patrick@AngularClass.com\n      </h3>\n    </div>\n    <pre>this.localState = {{ localState | json }}</pre>\n  "
-    }),
-    __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_router__["ActivatedRoute"]])
-], AboutComponent);
-
-
-
-/***/ }),
-/* 278 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NoContentComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-
-
-var NoContentComponent = (function () {
-    function NoContentComponent() {
-    }
-    return NoContentComponent;
-}());
-NoContentComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
-    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
-        selector: 'no-content',
-        template: "\n    <div>\n      <h1>404: page missing</h1>\n    </div>\n  "
-    })
-], NoContentComponent);
-
-
-
-/***/ }),
-/* 279 */
+/* 263 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* unused harmony export getComponents */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FacebookModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_facebook__ = __webpack_require__(135);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_fb_comment_embed_fb_comment_embed__ = __webpack_require__(124);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_fb_comments_fb_comments__ = __webpack_require__(125);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_fb_follow_fb_follow__ = __webpack_require__(126);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_fb_like_fb_like__ = __webpack_require__(127);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_fb_page_fb_page__ = __webpack_require__(128);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_fb_post_fb_post__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_fb_quote_fb_quote__ = __webpack_require__(130);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_fb_save_fb_save__ = __webpack_require__(131);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_fb_send_fb_send__ = __webpack_require__(132);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_fb_share_fb_share__ = __webpack_require__(133);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_fb_video_fb_video__ = __webpack_require__(134);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_facebook__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_fb_comment_embed_fb_comment_embed__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_fb_comments_fb_comments__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_fb_follow_fb_follow__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_fb_like_fb_like__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_fb_page_fb_page__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_fb_post_fb_post__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_fb_quote_fb_quote__ = __webpack_require__(123);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_fb_save_fb_save__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_fb_send_fb_send__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_fb_share_fb_share__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_fb_video_fb_video__ = __webpack_require__(127);
 
 
 
@@ -98576,7 +98768,875 @@ FacebookModule.ctorParameters = function () { return []; };
 //# sourceMappingURL=facebook.module.js.map
 
 /***/ }),
+/* 264 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var apply = Function.prototype.apply;
+
+// DOM APIs, for completeness
+
+exports.setTimeout = function() {
+  return new Timeout(apply.call(setTimeout, window, arguments), clearTimeout);
+};
+exports.setInterval = function() {
+  return new Timeout(apply.call(setInterval, window, arguments), clearInterval);
+};
+exports.clearTimeout =
+exports.clearInterval = function(timeout) {
+  if (timeout) {
+    timeout.close();
+  }
+};
+
+function Timeout(id, clearFn) {
+  this._id = id;
+  this._clearFn = clearFn;
+}
+Timeout.prototype.unref = Timeout.prototype.ref = function() {};
+Timeout.prototype.close = function() {
+  this._clearFn.call(window, this._id);
+};
+
+// Does not start the time, just sets up the members needed.
+exports.enroll = function(item, msecs) {
+  clearTimeout(item._idleTimeoutId);
+  item._idleTimeout = msecs;
+};
+
+exports.unenroll = function(item) {
+  clearTimeout(item._idleTimeoutId);
+  item._idleTimeout = -1;
+};
+
+exports._unrefActive = exports.active = function(item) {
+  clearTimeout(item._idleTimeoutId);
+
+  var msecs = item._idleTimeout;
+  if (msecs >= 0) {
+    item._idleTimeoutId = setTimeout(function onTimeout() {
+      if (item._onTimeout)
+        item._onTimeout();
+    }, msecs);
+  }
+};
+
+// setimmediate attaches itself to the global object
+__webpack_require__(265);
+exports.setImmediate = setImmediate;
+exports.clearImmediate = clearImmediate;
+
+
+/***/ }),
+/* 265 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
+    "use strict";
+
+    if (global.setImmediate) {
+        return;
+    }
+
+    var nextHandle = 1; // Spec says greater than zero
+    var tasksByHandle = {};
+    var currentlyRunningATask = false;
+    var doc = global.document;
+    var registerImmediate;
+
+    function setImmediate(callback) {
+      // Callback can either be a function or a string
+      if (typeof callback !== "function") {
+        callback = new Function("" + callback);
+      }
+      // Copy function arguments
+      var args = new Array(arguments.length - 1);
+      for (var i = 0; i < args.length; i++) {
+          args[i] = arguments[i + 1];
+      }
+      // Store and register the task
+      var task = { callback: callback, args: args };
+      tasksByHandle[nextHandle] = task;
+      registerImmediate(nextHandle);
+      return nextHandle++;
+    }
+
+    function clearImmediate(handle) {
+        delete tasksByHandle[handle];
+    }
+
+    function run(task) {
+        var callback = task.callback;
+        var args = task.args;
+        switch (args.length) {
+        case 0:
+            callback();
+            break;
+        case 1:
+            callback(args[0]);
+            break;
+        case 2:
+            callback(args[0], args[1]);
+            break;
+        case 3:
+            callback(args[0], args[1], args[2]);
+            break;
+        default:
+            callback.apply(undefined, args);
+            break;
+        }
+    }
+
+    function runIfPresent(handle) {
+        // From the spec: "Wait until any invocations of this algorithm started before this one have completed."
+        // So if we're currently running a task, we'll need to delay this invocation.
+        if (currentlyRunningATask) {
+            // Delay by doing a setTimeout. setImmediate was tried instead, but in Firefox 7 it generated a
+            // "too much recursion" error.
+            setTimeout(runIfPresent, 0, handle);
+        } else {
+            var task = tasksByHandle[handle];
+            if (task) {
+                currentlyRunningATask = true;
+                try {
+                    run(task);
+                } finally {
+                    clearImmediate(handle);
+                    currentlyRunningATask = false;
+                }
+            }
+        }
+    }
+
+    function installNextTickImplementation() {
+        registerImmediate = function(handle) {
+            process.nextTick(function () { runIfPresent(handle); });
+        };
+    }
+
+    function canUsePostMessage() {
+        // The test against `importScripts` prevents this implementation from being installed inside a web worker,
+        // where `global.postMessage` means something completely different and can't be used for this purpose.
+        if (global.postMessage && !global.importScripts) {
+            var postMessageIsAsynchronous = true;
+            var oldOnMessage = global.onmessage;
+            global.onmessage = function() {
+                postMessageIsAsynchronous = false;
+            };
+            global.postMessage("", "*");
+            global.onmessage = oldOnMessage;
+            return postMessageIsAsynchronous;
+        }
+    }
+
+    function installPostMessageImplementation() {
+        // Installs an event handler on `global` for the `message` event: see
+        // * https://developer.mozilla.org/en/DOM/window.postMessage
+        // * http://www.whatwg.org/specs/web-apps/current-work/multipage/comms.html#crossDocumentMessages
+
+        var messagePrefix = "setImmediate$" + Math.random() + "$";
+        var onGlobalMessage = function(event) {
+            if (event.source === global &&
+                typeof event.data === "string" &&
+                event.data.indexOf(messagePrefix) === 0) {
+                runIfPresent(+event.data.slice(messagePrefix.length));
+            }
+        };
+
+        if (global.addEventListener) {
+            global.addEventListener("message", onGlobalMessage, false);
+        } else {
+            global.attachEvent("onmessage", onGlobalMessage);
+        }
+
+        registerImmediate = function(handle) {
+            global.postMessage(messagePrefix + handle, "*");
+        };
+    }
+
+    function installMessageChannelImplementation() {
+        var channel = new MessageChannel();
+        channel.port1.onmessage = function(event) {
+            var handle = event.data;
+            runIfPresent(handle);
+        };
+
+        registerImmediate = function(handle) {
+            channel.port2.postMessage(handle);
+        };
+    }
+
+    function installReadyStateChangeImplementation() {
+        var html = doc.documentElement;
+        registerImmediate = function(handle) {
+            // Create a <script> element; its readystatechange event will be fired asynchronously once it is inserted
+            // into the document. Do so, thus queuing up the task. Remember to clean up once it's been called.
+            var script = doc.createElement("script");
+            script.onreadystatechange = function () {
+                runIfPresent(handle);
+                script.onreadystatechange = null;
+                html.removeChild(script);
+                script = null;
+            };
+            html.appendChild(script);
+        };
+    }
+
+    function installSetTimeoutImplementation() {
+        registerImmediate = function(handle) {
+            setTimeout(runIfPresent, 0, handle);
+        };
+    }
+
+    // If supported, we should attach to the prototype of global, since that is where setTimeout et al. live.
+    var attachTo = Object.getPrototypeOf && Object.getPrototypeOf(global);
+    attachTo = attachTo && attachTo.setTimeout ? attachTo : global;
+
+    // Don't get fooled by e.g. browserify environments.
+    if ({}.toString.call(global.process) === "[object process]") {
+        // For Node.js before 0.9
+        installNextTickImplementation();
+
+    } else if (canUsePostMessage()) {
+        // For non-IE10 modern browsers
+        installPostMessageImplementation();
+
+    } else if (global.MessageChannel) {
+        // For web workers, where supported
+        installMessageChannelImplementation();
+
+    } else if (doc && "onreadystatechange" in doc.createElement("script")) {
+        // For IE 6–8
+        installReadyStateChangeImplementation();
+
+    } else {
+        // For older browsers
+        installSetTimeoutImplementation();
+    }
+
+    attachTo.setImmediate = setImmediate;
+    attachTo.clearImmediate = clearImmediate;
+}(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(37), __webpack_require__(266)))
+
+/***/ }),
+/* 266 */
+/***/ (function(module, exports) {
+
+// shim for using process in browser
+var process = module.exports = {};
+
+// cached from whatever global is present so that test runners that stub it
+// don't break things.  But we need to wrap it in a try catch in case it is
+// wrapped in strict mode code which doesn't define any globals.  It's inside a
+// function because try/catches deoptimize in certain engines.
+
+var cachedSetTimeout;
+var cachedClearTimeout;
+
+function defaultSetTimout() {
+    throw new Error('setTimeout has not been defined');
+}
+function defaultClearTimeout () {
+    throw new Error('clearTimeout has not been defined');
+}
+(function () {
+    try {
+        if (typeof setTimeout === 'function') {
+            cachedSetTimeout = setTimeout;
+        } else {
+            cachedSetTimeout = defaultSetTimout;
+        }
+    } catch (e) {
+        cachedSetTimeout = defaultSetTimout;
+    }
+    try {
+        if (typeof clearTimeout === 'function') {
+            cachedClearTimeout = clearTimeout;
+        } else {
+            cachedClearTimeout = defaultClearTimeout;
+        }
+    } catch (e) {
+        cachedClearTimeout = defaultClearTimeout;
+    }
+} ())
+function runTimeout(fun) {
+    if (cachedSetTimeout === setTimeout) {
+        //normal enviroments in sane situations
+        return setTimeout(fun, 0);
+    }
+    // if setTimeout wasn't available but was latter defined
+    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
+        cachedSetTimeout = setTimeout;
+        return setTimeout(fun, 0);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedSetTimeout(fun, 0);
+    } catch(e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
+            return cachedSetTimeout.call(null, fun, 0);
+        } catch(e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
+            return cachedSetTimeout.call(this, fun, 0);
+        }
+    }
+
+
+}
+function runClearTimeout(marker) {
+    if (cachedClearTimeout === clearTimeout) {
+        //normal enviroments in sane situations
+        return clearTimeout(marker);
+    }
+    // if clearTimeout wasn't available but was latter defined
+    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
+        cachedClearTimeout = clearTimeout;
+        return clearTimeout(marker);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedClearTimeout(marker);
+    } catch (e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
+            return cachedClearTimeout.call(null, marker);
+        } catch (e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
+            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
+            return cachedClearTimeout.call(this, marker);
+        }
+    }
+
+
+
+}
+var queue = [];
+var draining = false;
+var currentQueue;
+var queueIndex = -1;
+
+function cleanUpNextTick() {
+    if (!draining || !currentQueue) {
+        return;
+    }
+    draining = false;
+    if (currentQueue.length) {
+        queue = currentQueue.concat(queue);
+    } else {
+        queueIndex = -1;
+    }
+    if (queue.length) {
+        drainQueue();
+    }
+}
+
+function drainQueue() {
+    if (draining) {
+        return;
+    }
+    var timeout = runTimeout(cleanUpNextTick);
+    draining = true;
+
+    var len = queue.length;
+    while(len) {
+        currentQueue = queue;
+        queue = [];
+        while (++queueIndex < len) {
+            if (currentQueue) {
+                currentQueue[queueIndex].run();
+            }
+        }
+        queueIndex = -1;
+        len = queue.length;
+    }
+    currentQueue = null;
+    draining = false;
+    runClearTimeout(timeout);
+}
+
+process.nextTick = function (fun) {
+    var args = new Array(arguments.length - 1);
+    if (arguments.length > 1) {
+        for (var i = 1; i < arguments.length; i++) {
+            args[i - 1] = arguments[i];
+        }
+    }
+    queue.push(new Item(fun, args));
+    if (queue.length === 1 && !draining) {
+        runTimeout(drainQueue);
+    }
+};
+
+// v8 likes predictible objects
+function Item(fun, array) {
+    this.fun = fun;
+    this.array = array;
+}
+Item.prototype.run = function () {
+    this.fun.apply(null, this.array);
+};
+process.title = 'browser';
+process.browser = true;
+process.env = {};
+process.argv = [];
+process.version = ''; // empty string to avoid regexp issues
+process.versions = {};
+
+function noop() {}
+
+process.on = noop;
+process.addListener = noop;
+process.once = noop;
+process.off = noop;
+process.removeListener = noop;
+process.removeAllListeners = noop;
+process.emit = noop;
+process.prependListener = noop;
+process.prependOnceListener = noop;
+
+process.listeners = function (name) { return [] }
+
+process.binding = function (name) {
+    throw new Error('process.binding is not supported');
+};
+
+process.cwd = function () { return '/' };
+process.chdir = function (dir) {
+    throw new Error('process.chdir is not supported');
+};
+process.umask = function() { return 0; };
+
+
+/***/ }),
+/* 267 */
+/***/ (function(module, exports) {
+
+module.exports = "<nav class=\"navbar navbar-default\" style=\"margin:0;\">\r\n  <div class=\"container\">\r\n    <div class=\"navbar-header\">\r\n      <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#myNavbar\">\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n      </button>\r\n      <a class=\"navbar-brand\" href=\"#\">\r\n        <img src=\"assets/img/greenlogo.gif\">\r\n      </a>\r\n    </div>\r\n    <div class=\"collapse navbar-collapse\" id=\"myNavbar\">\r\n      <ng-container *ngIf=\"loggedIn==false\">\r\n        <ul class=\"nav navbar-nav navbar-right\">\r\n          <li class=\"cart-inside\" (click)=\"navigateToHome()\">\r\n\r\n            <div class=\"dropdown dropdown2\">\r\n              <button class=\"dropbtn\" style=\"padding:0;\">\r\n                <img src=\"/assets/img/cart.png\" style=\"width: 25px;\">\r\n                <div class=\"cart-count special-cart-items\">{{CartCount}}</div>\r\n              </button>\r\n              <div class=\"dropdown-content content2 animated fadeInDown\">\r\n                <div class=\"pointy\">\r\n\r\n                </div>\r\n                <div class=\"row\">\r\n                  <div class=\"table-responsive\">\r\n                    <table class=\"table\">\r\n                      <thead>\r\n                       \r\n                            <tr>\r\n                                <th>Name</th>\r\n                                <th>Chemist</th>\r\n                                <th>Total</th>\r\n                              </tr>\r\n                       \r\n                      </thead>\r\n                      <tbody>\r\n                      <tr *ngFor=\"let cartitem of GotCart\">\r\n                        <td>{{cartitem.Name}}</td>\r\n                        <td>{{cartitem.ChemistName}}</td>\r\n                        <td>{{cartitem.Total}}</td>\r\n                      </tr>\r\n                      </tbody>\r\n                    </table>\r\n                  </div>\r\n\r\n                </div>\r\n\r\n\r\n                <div class=\"checkout-2\" *ngIf=\"showCheckoutBtn\">\r\n                  <button (click)=\"checkoutFromStart()\" class=\"chk-btn\">Checkout</button>\r\n                </div>\r\n              </div>\r\n            </div>\r\n\r\n\r\n          </li>\r\n        </ul>\r\n        <ul class=\"nav navbar-nav navbar-right header-right cart-inside-ul\">\r\n          <li>\r\n            <a href=\"#\" (click)=\"openSignUpModal()\">sign up</a>\r\n          </li>\r\n          <li class=\"border-left\">\r\n            <a (click)=\"openSignInModal()\">login</a>\r\n          </li>\r\n\r\n        </ul>\r\n\r\n\r\n\r\n      </ng-container>\r\n\r\n      <ng-container *ngIf=\"loggedIn==true\">\r\n\r\n        <ul class=\"nav navbar-nav navbar-right signedIn\">\r\n          <li style=\"margin-right: 20px;\" id=\"droppingMenu\" (mouseenter)=\"hovered()\" (mouseleave)=\"hoverOut()\">\r\n\r\n            <div class=\"dropdown initial\">\r\n              <button class=\"dropbtn\">\r\n                <div class=\"left-photo\">\r\n                  <img src=\"/assets/img/user.png\" id=\"profile-pic\" style=\"width:25px;\">\r\n                </div>\r\n                <div class=\"right-name\">\r\n                  <p class='username'>{{LoggedInUser.UserName}}</p>\r\n                </div>\r\n              </button>\r\n              <div class=\"dropdown-content\">\r\n                <a href=\"#/orders\">My Orders</a>\r\n                <a href=\"#/profile\">Profile</a>\r\n                <a href=\"#\" (click)=\"logOutUser()\">Logout</a>\r\n              </div>\r\n            </div>\r\n\r\n\r\n\r\n          </li>\r\n          <li class=\"border-left\" style=\"padding-left: 10px;margin-top: 18px;\" (click)=\"navigateToHome()\">\r\n            <img src=\"/assets/img/cart.png\" style=\"width: 25px;\">\r\n            <div class=\"cart-count\">{{CartCount}}</div>\r\n          </li>\r\n        </ul>\r\n\r\n      </ng-container>\r\n\r\n\r\n    </div>\r\n  </div>\r\n</nav>\r\n<div id=\"snackbar\"></div>\r\n\r\n<modal #loginModal [closeOnEscape]=\"false\" [closeOnOutsideClick]=\"false\" modalClass=\"modal-lg modal-md  animated bounceInDown signUpModal\"\r\n  (onSubmit)=\"actionOnSubmit()\">\r\n  <modal-content>\r\n\r\n    <!--   <div class=\"signButton\">\r\n      <button class='SignUpLogin' (click)=\"routeToSignUp()\">Sign Up</button>\r\n    </div> -->\r\n\r\n    <div class=\"closeButton\" (click)=\"loginModal.close()\">\r\n      <img src=\"/assets/img/cancel.png\" width=\"15px\">\r\n    </div>\r\n\r\n    <div class='login-container'>\r\n\r\n      <div class='login clearfix'>\r\n\r\n        <div class='left-side'>\r\n\r\n          <div class=\"centered\">\r\n            <h2 class='logIN white'>Log In</h2>\r\n            <p class=\"white small-text\">Login to Continue</p>\r\n          </div>\r\n          <div class=\"image-logo\">\r\n            <div class=\"left-image\">\r\n              <img src=\"assets/img/1.gif\">\r\n            </div>\r\n            <div class=\"right-text\">\r\n              <p>Pharma Aid</p>\r\n            </div>\r\n\r\n          </div>\r\n\r\n        </div>\r\n\r\n        <div class='right-side'>\r\n          <div class=\"myForms\">\r\n            <div class=\"form-group\">\r\n              <label for=\"email\">Email</label>\r\n              <input type=\"text\" class=\"form-control\" [ngClass]=\"{'errors': EmailError}\" name=\"user.UserName\" [(ngModel)]=\"user.UserName\">\r\n            </div>\r\n\r\n            <div class=\"form-group\">\r\n              <label for=\"email\">password</label>\r\n              <input type=\"password\" (keydown)=\"onKey($event)\" class=\"form-control\" [ngClass]=\"{'errors': PasswordError}\" name=\"user.Password\"\r\n                [(ngModel)]=\"user.Password\">\r\n            </div>\r\n          </div>\r\n\r\n          <div class=\"loader\">\r\n            <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->\r\n            <svg width=\"50\" height=\"30\" viewBox=\"0 0 120 30\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"#1ec26b\">\r\n              <circle cx=\"15\" cy=\"15\" r=\"15\">\r\n                <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                />\r\n                <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                />\r\n              </circle>\r\n              <circle cx=\"60\" cy=\"15\" r=\"9\" fill-opacity=\"0.3\">\r\n                <animate attributeName=\"r\" from=\"9\" to=\"9\" begin=\"0s\" dur=\"0.8s\" values=\"9;15;9\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                />\r\n                <animate attributeName=\"fill-opacity\" from=\"0.5\" to=\"0.5\" begin=\"0s\" dur=\"0.8s\" values=\".5;1;.5\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                />\r\n              </circle>\r\n              <circle cx=\"105\" cy=\"15\" r=\"15\">\r\n                <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                />\r\n                <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                />\r\n              </circle>\r\n            </svg>\r\n\r\n          </div>\r\n\r\n          <div class=\"form-group\" style=\"text-align:center;margin-top:60px;\">\r\n            <button class=\"submit-custom\" (click)=\"login()\">Login</button>\r\n          </div>\r\n\r\n\r\n          <div class=\"row clearfix\">\r\n            <div class='col-md-4 col-sm-4  no-left'>\r\n              <hr>\r\n            </div>\r\n            <div class='col-md-4 col-sm-4 no-padding text-centered'>\r\n              <p class=\"loginWith\">Login With</p>\r\n            </div>\r\n            <div class='col-md-4 col-sm-4 no-right'>\r\n              <hr>\r\n            </div>\r\n          </div>\r\n\r\n\r\n          <div class=\"row clearfix facebook-gmail\">\r\n\r\n            <div class=\"half-left\">\r\n              <a class=\"pointers\" (click)=\"loginWithFacebook()\">\r\n                <div class='holder'>\r\n                  <i class='fa fa-facebook'></i>\r\n                </div>\r\n              </a>\r\n            </div>\r\n            <div class=\"half-right\">\r\n              <a id=\"googleSignInBtn\">\r\n                <div class='holder'>\r\n                  <img src=\"assets/img/plus.png\" style=\"width:23px;padding-left:2px\">\r\n                </div>\r\n              </a>\r\n            </div>\r\n\r\n          </div>\r\n\r\n\r\n        </div>\r\n\r\n      </div>\r\n\r\n    </div>\r\n  </modal-content>\r\n\r\n</modal>\r\n\r\n\r\n<modal #signUpModal [closeOnEscape]=\"false\" [closeOnOutsideClick]=\"false\" modalClass=\"modal-lg modal-md  animated bounceInDown signUpModal\"\r\n  (onSubmit)=\"actionOnSubmit()\">\r\n  <modal-content>\r\n\r\n    <!-- <div class=\"signButton\">\r\n    <button class='SignUpLogin' (click)=\"routeToLogin()\">Login</button>\r\n  </div> -->\r\n\r\n    <div class=\"closeButton\" (click)=\"signUpModal.close()\">\r\n      <img src=\"/assets/img/cancel.png\" width=\"15px\">\r\n    </div>\r\n\r\n\r\n\r\n\r\n\r\n    <div class='login-container'>\r\n\r\n      <div class='login clearfix'>\r\n\r\n        <div class='left-side'>\r\n\r\n          <div class=\"centered\">\r\n            <h2 class='logIN white'>Sign Up</h2>\r\n            <p class=\"white small-text\">Sign up now to enjoy faster and better experience</p>\r\n          </div>\r\n          <div class=\"image-logo\">\r\n            <div class=\"left-image\">\r\n              <img src=\"assets/img/1.gif\">\r\n            </div>\r\n            <div class=\"right-text\">\r\n              <p>Pharma Aid</p>\r\n            </div>\r\n\r\n          </div>\r\n\r\n        </div>\r\n\r\n\r\n        <div class='right-side'>\r\n\r\n          <!--   -->\r\n          <div *ngIf=\"mobileVerificationScreen\" class=\"animated slideInDownBig\">\r\n\r\n            <h1>Verify your mobile number</h1>\r\n            <small>Enter the 4 digit code that we have sent you via email to continue</small>\r\n\r\n            <div class=\"align-center\">\r\n              <input type=\"text\" name='codeVerification' [(ngModel)]=\"codeVerification\" class='code-Input' placeholder=\"code here ...\">\r\n            </div>\r\n\r\n\r\n            <div class=\"verify-button\">\r\n              <button class=\"verification\" (click)='verifyMobileNumber()'>Verify</button>\r\n            </div>\r\n\r\n          </div>\r\n\r\n          <div class=\"hide-on-verification\">\r\n\r\n            <div class=\"myForms\">\r\n\r\n              <div class=\"form-group\">\r\n                <label for=\"email\">username</label>\r\n                <input type=\"text\" class=\"form-control\" [ngClass]=\"{'errors': UsernameError}\" name=\"user.UserName\" [(ngModel)]=\"user.UserName\">\r\n              </div>\r\n\r\n              <div class=\"form-group\">\r\n                <label for=\"email\">Email</label>\r\n                <input type=\"text\" class=\"form-control\" [ngClass]=\"{'errors': EmailError}\" name=\"user.Email\" [(ngModel)]=\"user.Email\">\r\n              </div>\r\n\r\n              <div class=\"form-group\">\r\n                <label for=\"email\">mobile number</label>\r\n                <input type=\"number\" class=\"form-control\" [ngClass]=\"{'errors': MobileError}\" name=\"user.MobileNumber\" [(ngModel)]=\"user.MobileNumber\">\r\n              </div>\r\n\r\n              <div class=\"form-group\">\r\n                <label for=\"email\">password</label>\r\n                <input type=\"password\" class=\"form-control\" [ngClass]=\"{'errors': PasswordError}\" name=\"user.Password\" [(ngModel)]=\"user.Password\">\r\n              </div>\r\n\r\n              <div class=\"form-group\">\r\n                <label for=\"email\">confirm password</label>\r\n                <input type=\"password\" class=\"form-control\" (keydown)=\"signUpOnEnter($event)\" [ngClass]=\"{'errors': PasswordError}\" name=\"confrimPass\"\r\n                  [(ngModel)]=\"confrimPass\">\r\n              </div>\r\n            </div>\r\n\r\n            <div class=\"loader\">\r\n              <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->\r\n              <svg width=\"50\" height=\"30\" viewBox=\"0 0 120 30\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"#1ec26b\">\r\n                <circle cx=\"15\" cy=\"15\" r=\"15\">\r\n                  <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                  />\r\n                  <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                  />\r\n                </circle>\r\n                <circle cx=\"60\" cy=\"15\" r=\"9\" fill-opacity=\"0.3\">\r\n                  <animate attributeName=\"r\" from=\"9\" to=\"9\" begin=\"0s\" dur=\"0.8s\" values=\"9;15;9\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                  />\r\n                  <animate attributeName=\"fill-opacity\" from=\"0.5\" to=\"0.5\" begin=\"0s\" dur=\"0.8s\" values=\".5;1;.5\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                  />\r\n                </circle>\r\n                <circle cx=\"105\" cy=\"15\" r=\"15\">\r\n                  <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                  />\r\n                  <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                  />\r\n                </circle>\r\n              </svg>\r\n\r\n            </div>\r\n\r\n            <div class=\"form-group\" style=\"text-align:center;margin-top:60px;\">\r\n              <button class=\"submit-custom\" (click)=\"signUp()\">Sign Up</button>\r\n            </div>\r\n\r\n\r\n            <div class=\"row clearfix\">\r\n              <div class='col-md-4 col-sm-4  no-left'>\r\n                <hr>\r\n              </div>\r\n              <div class='col-md-4 col-sm-4 no-padding text-centered'>\r\n                <p class=\"loginWith\">Sign up With</p>\r\n              </div>\r\n              <div class='col-md-4 col-sm-4 no-right'>\r\n                <hr>\r\n              </div>\r\n            </div>\r\n\r\n\r\n            <div class=\"row clearfix facebook-gmail\">\r\n\r\n              <div class=\"half-left\">\r\n                <a (click)=\"signUpWithFacebook()\">\r\n                  <div class='holder'>\r\n                    <i class='fa fa-facebook'></i>\r\n                  </div>\r\n                </a>\r\n              </div>\r\n              <div class=\"half-right\">\r\n                <a id=\"googleSignUpBtn\">\r\n                  <div class='holder'>\r\n                    <img src=\"assets/img/plus.png\" style=\"width:23px;padding-left:2px\">\r\n                  </div>\r\n                </a>\r\n              </div>\r\n              <!-- <div class=\"g-signin2\" data-onsuccess=\"onSignIn\"></div> -->\r\n            </div>\r\n\r\n          </div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n        </div>\r\n\r\n      </div>\r\n\r\n    </div>\r\n  </modal-content>\r\n\r\n</modal>"
+
+/***/ }),
+/* 268 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+        var result = __webpack_require__(269);
+
+        if (typeof result === "string") {
+            module.exports = result;
+        } else {
+            module.exports = result.toString();
+        }
+    
+
+/***/ }),
+/* 269 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(11)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, ".dropbtn {\r\n    background-color: #4CAF50;\r\n    color: white;\r\n    padding: 16px;\r\n    font-size: 16px;\r\n    border: none;\r\n    cursor: pointer;\r\n}\r\n\r\n.dropdown {\r\n    position: relative;\r\n    display: inline-block;\r\n}\r\n\r\n.dropdown-content {\r\n    display: none;\r\n    position: absolute;\r\n    background-color: #f9f9f9;\r\n    min-width: 160px;\r\n    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);\r\n    z-index: 1;\r\n}\r\n\r\n.dropdown-content a {\r\n    color: black;\r\n    padding: 12px 16px;\r\n    text-decoration: none;\r\n    display: block;\r\n}\r\n\r\n.dropdown-content a:hover {background-color: #f1f1f1}\r\n\r\n.dropdown:hover .dropdown-content {\r\n    display: block;\r\n}\r\n\r\n.dropdown:hover .dropbtn {\r\n    background-color: #3e8e41;\r\n}\r\n\r\n/* Dropdown */\r\n.header-right li a{\r\n    text-transform: uppercase;\r\n    font-size:15px;\r\n    color:#656565;\r\n    padding-top: 6px;\r\n    padding-bottom: 6px;\r\n    margin-top: 4px;\r\n    font-weight: bold;\r\n    cursor: pointer;\r\n}\r\n.signedIn{\r\n    height: 60px;\r\n}\r\n.left-photo{\r\n    margin-right: 5px;\r\n}\r\n.right-name,.left-photo{\r\n    position: relative;\r\n    float:left;\r\n}\r\n\r\n.cart-inside{\r\n    padding:6px;\r\n}\r\n\r\n.cart-inside .dropbtn{\r\n    padding: 0;\r\n    height: 40px;\r\n    margin-left: 20px;\r\n}\r\n.username{\r\n    padding-top: 1px;\r\n    text-transform: capitalize;\r\n    font-size:18px;\r\n    font-weight: 500;\r\n    color:#1ec26b;\r\n\r\n}\r\n\r\n.code-Input{\r\n    width:100%;\r\n    border:none;\r\n    border-bottom:1px solid #1ec26b;\r\n    border-radius: 0;\r\n}\r\n.verify-button{\r\n    width:250px;\r\n    height:50px;\r\n    margin:25px auto;\r\n}\r\n\r\n.verification{\r\n    background: #1ec26b;\r\n    border: none;\r\n    color: white;\r\n    text-transform: uppercase;\r\n    font-size: 16px;\r\n    width: 100%;\r\n    height: 50px;\r\n}\r\n.align-center{\r\n    text-align: center;\r\n    margin:65px;\r\n}\r\n.cart-count{\r\n    position: absolute;\r\n    top: -6px;\r\n    right: -10px;\r\n    background: #1ec26b;\r\n    border-radius: 50%;\r\n    color: white;\r\n    padding: 4px;\r\n    width: 20px;\r\n    font-size: 10px;\r\n    height: 20px;\r\n    text-align: center;\r\n}\r\n.header-right li{\r\n    border:none;\r\n}\r\n\r\nnav a{\r\nbackground:none !important;\r\n}\r\n\r\n.navbar-brand{\r\n\r\n    margin-top: 0;\r\n    padding-top: 10px;\r\n\r\n}\r\n.navbar-brand img{\r\n\r\n    width:150px;    \r\n    \r\n}\r\n\r\n.navbar-default{\r\n    background: white;\r\n    box-shadow: 0px 2px 8px 0px #ecebe7;\r\n}\r\n.cart-inside-ul{\r\n    width: 202px;\r\n}\r\n\r\n.dropdown2{\r\n    position: relative;\r\n    display: inline-block;\r\n}\r\n\r\n.dropdown2:hover .dropbtn{\r\n    background:transparent;\r\n}\r\n.special-cart-items{\r\n    position: absolute;\r\n    top: 1px;\r\n    right: -12px;\r\n    background: #1ec26b;\r\n    border-radius: 50%;\r\n    color: white;\r\n    padding: 4px;\r\n    width: 20px;\r\n    font-size: 10px;\r\n    height: 20px;\r\n    text-align: center;\r\n}\r\n.header-right{\r\n    margin-top: 8px;\r\n    border-radius:10px;\r\n    height: 40px;\r\n    min-width: 202px;\r\n    border:1px solid #3ad72a;\r\n    overflow: hidden;\r\n}\r\n\r\n.border-left{\r\n    border-left:1px solid #3ad72a !important;\r\n    cursor: pointer;\r\n}\r\n\r\n\r\n.closeButton:hover { transform: scale(1.3); box-shadow: 0 5px 15px rgba(0,0,0,0.3);}\r\n\r\n.navbar-default{\r\n    border-radius: 0 !important;\r\n}\r\n\r\n.closeButton{\r\n    position: absolute;\r\n    right:25px;\r\n    top:25px;\r\n    z-index: 1;transition: all .2s ease-in-out;\r\n    cursor: pointer;\r\n    box-shadow:none;\r\n    transition: box-shadow 0.3s ease-in-out;\r\n  \r\n}\r\n\r\n\r\n.dropbtn {\r\n    background-color: transparent;\r\n    color: white;\r\n    cursor: pointer;\r\n    border: none;    height: 60px;\r\n    padding-top: 12px;\r\n    padding-left: 15px;\r\n    padding-right: 15px;\r\n}\r\n\r\n/* The container <div> - needed to position the dropdown content */\r\n.dropdown {\r\n    position: relative;\r\n    display: inline-block;\r\n}\r\n\r\n/* Dropdown Content (Hidden by Default) */\r\n.dropdown-content {\r\n    display: none;\r\n    position: absolute;\r\n    background-color: #1ec26b;\r\n    min-width: 160px;\r\n    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);\r\n    z-index: 1;\r\n}\r\n\r\n/* Links inside the dropdown */\r\n.dropdown-content a {\r\n    color: black;\r\n    padding: 12px 16px;\r\n    text-decoration: none;\r\n    display: block;\r\n    text-align: left;\r\n    color:white;\r\n    font-size:15px;\r\n    font-weight: 500;\r\n    border-bottom:1px solid #66b88d;\r\n}\r\n\r\n/* Change color of dropdown links on hover */\r\n.dropdown-content a:hover {background-color: #f1f1f1}\r\n\r\n/* Show the dropdown menu on hover */\r\n.dropdown:hover .dropdown-content {\r\n    display: block;\r\n    top:60px;\r\n    \r\n}\r\n\r\n.pointy{\r\n    \r\n    position: absolute;\r\n    top: -5px;\r\n    right: 38px;width: 0; \r\n  height: 0; \r\n  border-left: 5px solid transparent;\r\n  border-right: 5px solid transparent;\r\n  border-bottom: 5px solid #1ec26b;\r\n}\r\n\r\n.content2{\r\n    width:auto;\r\n    padding:15px;\r\n}\r\n\r\n.dropdown2:hover .content2{\r\n    display: block;\r\n    top: 40px !important;\r\n    width: 300px;\r\n    right: -30px;\r\n    padding: 20px;\r\n}\r\n\r\n.content2 .table>thead>tr>th,.content2 .table>tbody>tr>td{\r\n    color:white;\r\n}\r\n\r\n\r\n.chk-btn{\r\n       margin: 0 auto;\r\n    background: none;\r\n    color: white;\r\n    font-weight: 600;\r\n    text-transform: capitalize;\r\n    font-size: 14px;\r\n    border: 2px solid white;\r\n    padding: 10px 35px;\r\n    height: 40px;\r\n    width: 100%;\r\n}\r\n/* Change the background color of the dropdown button when the dropdown content is shown */\r\n.initial:hover .dropbtn {\r\n    background-color: #1ec26b;\r\n    color:white;\r\n}\r\n\r\n@media only screen and (max-width: 640px){\r\n    .banner-bottom{\r\n        height:auto;\r\n    }\r\n    .header-right{\r\n        border:none;\r\n        height:auto;\r\n    }\r\n    \r\n    .cart-inside-ul{\r\n        width:100%;\r\n        margin: 0;\r\n    }\r\n\r\n    .cart-inside{\r\n        text-align: center;\r\n    }\r\n\r\n    .cart-inside .dropbtn{\r\n        margin-left:0;\r\n    }\r\n}", ""]);
+
+// exports
+
+
+/***/ }),
+/* 270 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(11)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "@font-face {\r\n    font-family: 'museo_sans500';\r\n    src: url(" + __webpack_require__(271) + ") format('woff2'),\r\n         url(" + __webpack_require__(272) + ") format('woff'),\r\n         url(" + __webpack_require__(273) + ")  format('truetype');\r\n    font-weight: normal;\r\n    font-style: normal;\r\n\r\n}\r\n\r\n\r\n@font-face {\r\n    font-family: 'museo_sans300';\r\n    src: url(" + __webpack_require__(130) + ") format('woff2'),\r\n         url(" + __webpack_require__(131) + ") format('woff'),\r\n         url(" + __webpack_require__(132) + ")  format('truetype');;\r\n    font-weight: normal;\r\n    font-style: normal;\r\n\r\n}\r\n\r\n    @font-face {\r\n        font-family: 'noto_sansbold';\r\n        src: url(" + __webpack_require__(274) + ") format('woff2'),\r\n             url(" + __webpack_require__(275) + ") format('woff'),\r\n             url(" + __webpack_require__(276) + ") format('truetype');\r\n        font-weight: normal;\r\n        font-style: normal;\r\n    \r\n    }\r\n    \r\n    \r\n    \r\n    \r\n    @font-face {\r\n        font-family: 'noto_sansbold_italic';\r\n        src: url(" + __webpack_require__(277) + ") format('woff2'),\r\n             url(" + __webpack_require__(278) + ") format('woff');\r\n        font-weight: normal;\r\n        font-style: normal;\r\n    \r\n    }\r\n    \r\n    \r\n    \r\n    \r\n    @font-face {\r\n        font-family: 'noto_sansitalic';\r\n        src: url(" + __webpack_require__(279) + ") format('woff2'),\r\n             url(" + __webpack_require__(280) + ") format('woff');\r\n        font-weight: normal;\r\n        font-style: normal;\r\n    \r\n    }\r\n    \r\n    \r\n    \r\n    \r\n    @font-face {\r\n        font-family: 'noto_sansregular';\r\n        src: url(" + __webpack_require__(281) + ") format('woff2'),\r\n             url(" + __webpack_require__(282) + ") format('woff');\r\n        font-weight: normal;\r\n        font-style: normal;\r\n    \r\n    }\r\n  \r\n\r\n  body,p,input,label,button{\r\n    font-family: 'museo_sans300';\r\n  }\r\n  \r\n  hr{\r\n      border-bottom:1px solid #575757;\r\n  }\r\n\r\n\r\n.modal.in .signUpModal .modal-content{\r\n    border-radius: 0;\r\n\r\n}\r\n.modal.in .signUpModal{\r\n    position: relative;\r\n}\r\n.left-image{\r\n    position: relative;\r\n    float:left;\r\n    width: 40px;\r\n}\r\n.left-image img{\r\n    width:30px;\r\n}\r\n.image-logo{\r\n    width: 260px;\r\n    margin: 0 auto;\r\n}\r\n.right-text p{\r\n    font-size:32px;\r\n    font-weight: bold;\r\n    text-transform: uppercase;\r\n    color:white;\r\n    font-family: 'noto_sansbold';\r\n}\r\n.login{\r\n    display: flex;\r\n}\r\n.modal.in .signUpModal .modal-content .modal-header,.modal.in .signUpModal .modal-content .modal-footer{\r\n    border-bottom: none;\r\n    display:none;\r\n}\r\n\r\n.modal.in .signUpModal .modal-content .modal-footer{\r\n    border-top:none;\r\n}\r\n\r\n.modal.in .signUpModal .modal-content .modal-body{\r\n    padding:0;\r\n}\r\n.left-side{\r\n    width:40%;\r\n    background: rgba(0,230,68,0.64);\r\n    background: -moz-linear-gradient(45deg, rgba(0,230,68,0.64) 0%, rgba(0,230,68,1) 23%, rgba(0,230,68,1) 35%, rgba(0,188,68,1) 86%);\r\n    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(0,230,68,0.64)), color-stop(23%, rgba(0,230,68,1)), color-stop(35%, rgba(0,230,68,1)), color-stop(86%, rgba(0,188,68,1)));\r\n    background: -webkit-linear-gradient(45deg, rgba(0,230,68,0.64) 0%, rgba(0,230,68,1) 23%, rgba(0,230,68,1) 35%, rgba(0,188,68,1) 86%);\r\n    background: -o-linear-gradient(45deg, rgba(0,230,68,0.64) 0%, rgba(0,230,68,1) 23%, rgba(0,230,68,1) 35%, rgba(0,188,68,1) 86%);\r\n    background: -ms-linear-gradient(45deg, rgba(0,230,68,0.64) 0%, rgba(0,230,68,1) 23%, rgba(0,230,68,1) 35%, rgba(0,188,68,1) 86%);\r\n    background: linear-gradient(45deg, rgba(0,230,68,0.64) 0%, rgba(0,230,68,1) 23%, rgba(0,230,68,1) 35%, rgba(0,188,68,1) 86%);\r\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00e644', endColorstr='#00bc44', GradientType=1 );\r\n    position: relative;\r\n    float:left;\r\n    \r\n    padding-bottom: 15px;\r\n    min-height: 550px;\r\n}\r\n\r\n.centered{\r\n    padding: 84px 80px;\r\n}\r\n\r\n.right-side{\r\n    width:60%;\r\n    position: relative;\r\n    float:left;\r\n    padding: 100px 80px;\r\n    padding-bottom: 15px;\r\n}\r\n\r\n.myForms .form-group label{\r\n    color:black;\r\n    font-weight:400;\r\n    font-size:11px;\r\n    text-transform: uppercase;\r\n    margin-bottom:0;\r\n}\r\n\r\n.myForms .form-group input{\r\n    border:none;\r\n    padding-top:0;\r\n    border-bottom-width: 1px;\r\n    border-bottom-style: solid;\r\n    border-bottom-color:#ccc;\r\n    border-radius: 0;\r\n    -webkit-transition: border-bottom-color 0.9s;\r\n    transition:border-bottom-color 0.9s;\r\n    box-shadow: none;\r\n    padding-left:0;\r\n    \r\n}\r\n\r\n\r\n.pointers{\r\n    cursor:pointer;\r\n   \r\n\r\n}\r\n.myForms .form-group input:focus{\r\n    border-bottom-color:green;\r\n}\r\n\r\n.signButton{\r\n    position: absolute;\r\n    right:50px;\r\n    top:25px;\r\n    z-index: 1;\r\n}\r\n\r\n.closeButton{\r\n    position: absolute;\r\n    right:25px;\r\n    top:25px;\r\n    z-index: 1;\r\n}\r\n\r\n\r\n.submit-custom{\r\n    background: none;\r\n    border:none;\r\n    padding:8px 40px;\r\n    color:white;\r\n    background:#3ad72a;\r\n}\r\n.no-right{\r\n    padding-right:20px;\r\n}\r\n.no-left{\r\n    padding-left:20px;\r\n}\r\n.no-padding{\r\n    padding-left:0;\r\n    padding-right:0;\r\n}\r\n.text-centered{\r\n    text-align: center;\r\n}\r\n\r\n.loginWith{\r\n    padding-top:10px;\r\n    font-size:11px;\r\n    font-weight: 400;\r\n    color:#575757;\r\n    font-weight: bold;\r\n}\r\n#googleSignInBtn{\r\n    background: none;\r\n    border:none;\r\n    outline:none;\r\n    width: 55px;\r\n}\r\n.logIN{\r\n    font-size:40px;\r\n}\r\n.white{\r\n    color:white;\r\n}\r\n\r\n.small-text{\r\n    margin-top: 120px;\r\n}\r\n.half-left,.half-right{\r\n    position: relative;\r\n    float:left;\r\n}\r\n.holder i{\r\n    font-size:22px;\r\n    color:white;\r\n}\r\n.holder{\r\n    box-shadow: 0 5px 15px rgba(0,0,0,0.3);\r\n    width:40px;\r\n    height: 40px;\r\n    border-radius: 50%;\r\n    background: #575757;\r\n    text-align: center;\r\n    padding-top: 10px;\r\n    margin-right: 25px; \r\n    box-shadow: 0 1px 2px rgba(0,0,0,0.15);\r\n    transition: box-shadow 0.3s ease-in-out;\r\n\r\n}\r\n\r\n.holder:hover{\r\n    box-shadow: 0 5px 15px rgba(0,0,0,0.3);\r\n\r\n}\r\n.facebook-gmail{\r\n    width: 130px;\r\n    margin: 20px auto;\r\n}\r\n\r\n.errors{\r\n    border-bottom:1px solid red !important;\r\n}\r\n\r\n.SignUpLogin{\r\n    border:none;\r\n    background:none;\r\n    color:#3ad72a;;\r\n    font-size:13px;\r\n    font-weight: bold;\r\n\r\n}\r\n/* The snackbar - position it at the bottom and in the middle of the screen */\r\n#snackbar {\r\n    color:white;\r\n    text-transform: capitalize;\r\n    visibility: hidden; /* Hidden by default. Visible on click */\r\n    min-width: 250px; /* Set a default minimum width */\r\n    margin-left: -125px; /* Divide value of min-width by 2 */\r\n    background-color: #1ec26b; /* Black background color */\r\n    color: #fff; /* White text color */\r\n    text-align: center; /* Centered text */\r\n    border-radius: 2px; /* Rounded borders */\r\n    padding: 16px; /* Padding */\r\n    position: fixed; /* Sit on top of the screen */\r\n    z-index: 1052; /* Add a z-index if needed */\r\n    left: 50%; /* Center the snackbar */\r\n    bottom: 30px; /* 30px from the bottom */\r\n}\r\n\r\n/* Show the snackbar when clicking on a button (class added with JavaScript) */\r\n#snackbar.show {\r\n    visibility: visible; /* Show the snackbar */\r\n\r\n/* Add animation: Take 0.5 seconds to fade in and out the snackbar. \r\nHowever, delay the fade out process for 2.5 seconds */\r\n    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;\r\n    animation: fadein 0.5s, fadeout 0.5s 2.5s;\r\n}\r\n\r\n/* Animations to fade the snackbar in and out */\r\n@-webkit-keyframes fadein {\r\n    from {bottom: 0; opacity: 0;} \r\n    to {bottom: 30px; opacity: 1;}\r\n}\r\n\r\n@keyframes fadein {\r\n    from {bottom: 0; opacity: 0;}\r\n    to {bottom: 30px; opacity: 1;}\r\n}\r\n\r\n@-webkit-keyframes fadeout {\r\n    from {bottom: 30px; opacity: 1;} \r\n    to {bottom: 0; opacity: 0;}\r\n}\r\n\r\n@keyframes fadeout {\r\n    from {bottom: 30px; opacity: 1;}\r\n    to {bottom: 0; opacity: 0;}\r\n}\r\n\r\n.header-top{\r\n    \r\n\r\n    height: 578px;\r\n    background:url('/assets/img/home.gif');\r\n    background-repeat:no-repeat;\r\n    background-size:cover;\r\n    background-position:center;\r\n    background-attachment: fixed;\r\n}\r\n\r\n.header-top h1{\r\n    font-size:50px;\r\n    color:#656565;\r\n    text-align: center;\r\n    padding-top: 200px;\r\n    margin:0;\r\n}\r\n\r\n.middle-area{\r\n    width:58%;\r\n}\r\n.left-city,.middle-area,.right-button{\r\n  position: relative;;\r\n  float:left;\r\n}\r\n\r\n.search-box {\r\n    max-width: 890px;\r\n    margin:100px auto;\r\n    margin-bottom:0;\r\n}\r\n.wrap {\r\n    overflow: hidden; \r\n    height: 50px;    \r\n    position: relative;\r\n    display: block;\r\n    height:46px;\r\n    width:200px;\r\n    border:1px solid #1ec26b;\r\n    border-radius: 4px;\r\n    background: transparent;\r\n    outline: none;\r\n    border-radius: 0;\r\n    border-top-left-radius:5px;\r\n    border-bottom-left-radius: 5px;\r\n    border-right:none;\r\n}\r\n\r\nselect.dropdown{       \r\n    height:46px;\r\n    outline: none;\r\n    background: transparent;\r\n    width:294px;\r\n    padding: 10px;\r\n    border: 0;\r\n    font-weight: 500;\r\n    padding-left:20px;\r\n    color:#656565;\r\n    font-size: 20px;       \r\n    padding-top:8px;\r\n   -webkit-appearance: none;\r\n    -moz-appearance: none;\r\n    appearance: none;\r\n}\r\nlabel.wrap:after {\r\n/*     content:\"\\f13a \"; */\r\n    content: url('/assets/img/dropdown.png');\r\n    font-family: FontAwesome;\r\n    color: #000;\r\n    position: absolute; \r\n    outline: none;\r\n    right: 15px;\r\n    top: 5px;\r\n    z-index: 1;\r\n    width: 10%;\r\n    height: 100%;  \r\n    pointer-events: none;    \r\n}\r\n\r\n.area-input{\r\n    width:100%;\r\n    border:1px solid #1ec26b;\r\n    border-radius: 0;\r\n    height:46px;\r\n    background:transparent;\r\n    padding-left:20px;\r\n    font-size: 20px;\r\n    font-weight: 300;\r\n    outline:none;\r\n\r\n}\r\n\r\n.header-btn{\r\n    height:46px;\r\n    width: 170px;\r\n    border:none;\r\n    background:#1ec26b;\r\n    color:white;\r\n    font-size:20px;\r\n    font-weight: 500;\r\n    border-top-right-radius:5px;\r\n    border-bottom-right-radius: 5px;\r\n}\r\n\r\n\r\n.area-input::-webkit-input-placeholder {\r\n    /* WebKit, Blink, Edge */\r\n    font-style: italic;\r\n    color:#aeaeae;\r\n}\r\n.area-input:-moz-placeholder {\r\n    /* Mozilla Firefox 4 to 18 */\r\n    font-style: italic;\r\n    color:#aeaeae;\r\n}\r\n.area-input::-moz-placeholder {\r\n    /* Mozilla Firefox 19+ */\r\n    font-style: italic;\r\n    color:#aeaeae;\r\n}\r\n.area-input:-ms-input-placeholder {\r\n    /* Internet Explorer 10-11 */\r\n    font-style: italic;\r\n    color:#aeaeae;\r\n}\r\n\r\n.container-login{\r\n    min-height:260px;\r\n}\r\n.on-go{\r\n    width:100%;\r\n}\r\n\r\n.on-go h1{\r\n    font-weight: 500;\r\n    font-size:45px;\r\n    color:#605f5b;\r\n    margin-top:160px;\r\n}\r\n\r\n.app-banner{\r\n    width:100%;\r\n    background: #1ec26b;\r\n    min-height: 410px;\r\n}\r\n\r\n.app-banner h3{\r\n    font-size:30px;\r\n    font-weight: 300;\r\n    color:white;\r\n    margin-bottom:30px;\r\n    margin-top:90px;\r\n}\r\n\r\n.app-banner p{\r\n    font-size:15px;\r\n    color:white;\r\n    font-weight: 300;\r\n    margin:0;\r\n}\r\n\r\n.app-buttons{\r\n    margin-top:90px;\r\n    position: relative;\r\n    float:left;\r\n    width:40%;\r\n}\r\n.mockup{\r\n    position: relative;\r\n    float:left;\r\n    width:60%;\r\n    margin-top: -380px;    \r\n}\r\n.left-png{\r\n    position: relative;\r\n    float:left;\r\n    width:50px;\r\n    padding-top: 6px;\r\n    padding-left: 6px;\r\n}\r\n.right-texty{   \r\n    position: relative;\r\n    float:left;\r\n    height: 55px;\r\n}\r\n\r\n.right-texty .small{\r\n    font-weight: 300;\r\n    font-size:14px;\r\n    height: 16px;\r\n}\r\n.right-texty .large{\r\n    font-weight: 300;\r\n    font-size: 26px;\r\n    text-align: center;\r\n    margin-top: -6px;\r\n}\r\n.apps{\r\n    padding-top: 4px;\r\n    position: relative;\r\n    display: inline-block;\r\n    width: 190px;\r\n    height:54px;\r\n    border:1px solid white;\r\n}\r\n\r\n.contact-form h1{\r\n    font-size:45px;\r\n    font-weight: 500;\r\n    color:#656565;\r\n    text-align: center;\r\n    margin-top:80px;\r\n    margin-bottom:80px;\r\n}\r\n.actual-form{\r\n    width: 78%;\r\n    margin: 0 auto;\r\n    height: 225px;\r\n}\r\n.left-fields,.right-fields{\r\n    position: relative;\r\n    float:left;\r\n    width:48%;\r\n   margin: 0.7%;\r\n}\r\n\r\n.left-fields textarea,.right-fields input{\r\n    width:100%;\r\n    background: #faf9f5;\r\n    border:1px solid #9ca5a5;\r\n    height:65px;\r\n    padding-left:15px;\r\n    border-radius:4px;\r\n    margin:0;\r\n}\r\n.left-fields textarea{\r\n    height: 225px;\r\n    padding: 15px;\r\n    color:#656565;\r\n}\r\n\r\n.left-fields textarea::-webkit-input-placeholder {\r\n    /* WebKit, Blink, Edge */\r\n   font-style: italic;\r\n}\r\n.left-fields textarea:-moz-placeholder {\r\n    /* Mozilla Firefox 4 to 18 */\r\n    font-style: italic;\r\n}\r\n.left-fields textarea::-moz-placeholder {\r\n    /* Mozilla Firefox 19+ */\r\n    font-style: italic;\r\n}\r\n.left-fields textarea:-ms-input-placeholder {\r\n    /* Internet Explorer 10-11 */\r\n    font-style: italic;\r\n}\r\n\r\n\r\n.right-fields .form-group button{\r\n    width:100%;\r\n    color:#656565;\r\n    background: #1ec26b;\r\n    border:none;\r\n    font-size:20px;\r\n    font-weight: 500;\r\n    color:white;\r\n    height:65px;\r\n    padding-left:15px;\r\n    border-radius:4px;\r\n    margin:0;\r\n}\r\n.right-fields .form-group{\r\n    margin-bottom:15px;\r\n}\r\n.right-fields input{\r\n    \r\n}\r\n\r\n@media only screen and (max-width: 1200px) and (min-width: 992px){\r\n    .mockup img{\r\n        width: 400px;\r\n    }\r\n    .mockup{\r\n        margin-top: -165px;\r\n        width: 30%;\r\n    }\r\n    .app-buttons{\r\n        width:46%;\r\n    }\r\n}\r\n@media only screen and (max-width: 992px) and (min-width: 768px){\r\n    .mockup img{\r\n        width:400px;\r\n        \r\n    }\r\n\r\n    .app-buttons{\r\n        width:58%;\r\n    }\r\n\r\n    .mockup{\r\n        width:30%;\r\n        margin-top: -230px;\r\n    }\r\n    .left-side {\r\n        padding: 81px 25px;\r\n        min-height: 620px;\r\n    }\r\n    .actual-form{\r\n        width:100%;\r\n    }\r\n   \r\n}\r\n\r\n@media only screen and (max-width: 768px) and (min-width: 640px){\r\n    .left-side {\r\n        min-height: 620px;\r\n    }\r\n     .site-footer{\r\n        width:auto;\r\n    }\r\n    .mockup{\r\n        text-align: center;\r\n    }\r\n\r\n  \r\n    .mockup img{\r\n       width:290px;\r\n    }\r\n    .right-texty .small{\r\n        font-size:9px;\r\n    }\r\n    .left-city, .middle-area, .right-button,.header-btn{\r\n        width:33%;\r\n    }\r\n   \r\n    .right-texty{\r\n        padding-top: 7px;\r\n    }\r\n    .right-texty .large{\r\n        font-size:16px;\r\n    }\r\n    .apps{\r\n        width: 46%;\r\n    }\r\n    \r\n}\r\n\r\n@media only screen and (max-width: 640px){\r\n    .container-login{\r\n        padding-left:30px;\r\n    }\r\n    .site-footer{\r\n        width:auto;\r\n    }\r\n    .left-city, .middle-area, .right-button{\r\n        width:100%;\r\n        text-align: center;\r\n    }\r\n    .on-go h1{\r\n        margin-top:100px;\r\n    }\r\n    .search-box{\r\n        width:90%;\r\n    }\r\n    .middle-area{\r\n        margin-bottom: 5px;\r\n    }\r\n    .wrap select{\r\n        border: 1px solid #1ec26b;\r\n        width: 100%;\r\n    }\r\n    .wrap{\r\n        width:100%;\r\n        border:none;\r\n    }\r\n    .area-input,.header-btn{\r\n        width:100% !important;\r\n        border-radius: 0;\r\n    }\r\n    .header-top h1{\r\n        padding-top:100px;\r\n    }\r\n    .left-side {\r\n        display:none;\r\n    }\r\n    .mockup,.app-buttons{\r\n        width:100%;\r\n    }\r\n    .mockup{\r\n        text-align: center;\r\n        margin-top:50px;\r\n        margin-bottom: 50px;\r\n    }\r\n    .app-buttons{\r\n        text-align:center;\r\n    }\r\n    .app-banner p,.app-banner h3{\r\n        text-align: center;\r\n        width: 100% !important;\r\n    }\r\n    .right-texty .small{\r\n        font-size:10px;\r\n    }\r\n    .left-fields, .right-fields{\r\n        width:100%;\r\n    }\r\n    .right-texty{\r\n        padding-top:6px;\r\n    }\r\n    .right-texty .large{\r\n        font-size: 18px;\r\n    }\r\n    .mockup img{\r\n        width:280px;\r\n    }\r\n    .apps{\r\n        width:48%;\r\n        margin:0 !important;\r\n    }\r\n    .right-side{\r\n        width:100%;\r\n    }\r\n    \r\n}", ""]);
+
+// exports
+
+
+/***/ }),
+/* 271 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "a9f0a07c53376631c4972b97256f8aa9.woff2";
+
+/***/ }),
+/* 272 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "71078611971e57bcda566cb2079d51d6.woff";
+
+/***/ }),
+/* 273 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "02d0b31043e7164c1de50d8bb164454f.ttf";
+
+/***/ }),
+/* 274 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "ecbe12267d57197f1ad12172cb24477a.woff2";
+
+/***/ }),
+/* 275 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "28d3fbe2819fd3a47734681ed8defc43.woff";
+
+/***/ }),
+/* 276 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "0c3f21e5aa1cf9c51d361ef9b48b3638.ttf";
+
+/***/ }),
+/* 277 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "f66566bb696dcc64f0d955d4c47468fc.woff2";
+
+/***/ }),
+/* 278 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "a21d66e104c8ef2e8c9fa26e8081b74e.woff";
+
+/***/ }),
+/* 279 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "0ab0dbda418a1c064e9d3627c59786b5.woff2";
+
+/***/ }),
 /* 280 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "ccfa0e1f1ab36a8085086dc4aceeba9d.woff";
+
+/***/ }),
+/* 281 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "c43ecf75f22cdbcb65a9b7087ab2bd58.woff2";
+
+/***/ }),
+/* 282 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "25464a6048b4e6087643ca4c18979c79.woff";
+
+/***/ }),
+/* 283 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__title_service__ = __webpack_require__(284);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__title_service__["a"]; });
+
+
+
+/***/ }),
+/* 284 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Title; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(7);
+
+
+
+var Title = (function () {
+    function Title(http) {
+        this.http = http;
+        this.value = 'Angular 2';
+    }
+    Title.prototype.getData = function () {
+        console.log('Title#getData(): Get Data');
+        /**
+         * return this.http.get('/assets/data.json')
+         * .map(res => res.json());
+         */
+        return {
+            value: 'AngularClass'
+        };
+    };
+    return Title;
+}());
+Title = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
+    __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_http__["Http"]])
+], Title);
+
+
+
+/***/ }),
+/* 285 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductsService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__serviceUrl__ = __webpack_require__(27);
+
+
+
+
+
+var ProductsService = (function () {
+    function ProductsService(http) {
+        this.http = http;
+        this.serviceUrl = new __WEBPACK_IMPORTED_MODULE_4__serviceUrl__["a" /* ServiceUrl */]();
+    }
+    ProductsService.prototype.getProductsByChemistId = function (chemistId) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["Headers"]();
+        headers.append('Content-Type', 'application/json; charset=UTF-8');
+        return this.http.get(this.serviceUrl.baseUrl + "Chemist/getAllProductsByChemistId?ChemistId=" + chemistId + "&ProductType=" + 100, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    ProductsService.prototype.getMedicineCategoriesByChemist = function (chemistId) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["Headers"]();
+        headers.append('Content-Type', 'application/json; charset=UTF-8');
+        return this.http.get(this.serviceUrl.baseUrl + "Chemist/getCategoriesByChemistId?chemistId=" + chemistId, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    ProductsService.prototype.showProductsForThisCategory = function (elem) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["Headers"]();
+        headers.append('Content-Type', 'application/json; charset=UTF-8');
+        return this.http.get(this.serviceUrl.baseUrl + "product/getAllProductsByCategoryId?categoryId=" + elem, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    return ProductsService;
+}());
+ProductsService = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
+    __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__angular_http__["Http"]])
+], ProductsService);
+
+
+
+/***/ }),
+/* 286 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MedicinesModel; });
+var MedicinesModel = (function () {
+    function MedicinesModel() {
+    }
+    return MedicinesModel;
+}());
+
+
+
+/***/ }),
+/* 287 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddressModel; });
+var AddressModel = (function () {
+    function AddressModel() {
+    }
+    return AddressModel;
+}());
+
+
+
+/***/ }),
+/* 288 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UpdateModel; });
+var UpdateModel = (function () {
+    function UpdateModel() {
+    }
+    return UpdateModel;
+}());
+
+
+
+/***/ }),
+/* 289 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+        var result = __webpack_require__(290);
+
+        if (typeof result === "string") {
+            module.exports = result;
+        } else {
+            module.exports = result.toString();
+        }
+    
+
+/***/ }),
+/* 290 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(11)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "body {\r\n    margin-top:40px;\r\n\r\n}\r\np{\r\n    margin-bottom:0;\r\n}\r\n\r\n\r\n.modal-content{\r\n    border-radius:0 !important;\r\n}\r\n\r\n.stepwizard-step p {\r\n    margin-top: 10px;\r\n    color:#b9b9b8;\r\n}\r\n.stepwizard-row {\r\n    display: table-row;\r\n}\r\n.stepwizard {\r\n    display: table;\r\n    width: 30%;\r\n    margin: 30px auto;\r\n    position: relative;\r\n}\r\n#accordion3 .panel-heading{\r\n    height:auto !important;\r\n}\r\n.stepwizard-step button[disabled] {\r\n    opacity: 1 !important;\r\n    filter: alpha(opacity=100) !important;\r\n}\r\n.stepwizard-row:before {\r\n    top: 14px;\r\n    bottom: 0;\r\n    left: 77px;\r\n    position: absolute;\r\n    content: \" \";\r\n    width: 54%;\r\n    height: 1px;\r\n    background-color: #ccc;\r\n    z-order: 0;\r\n\r\n}\r\n.stepwizard-step {\r\n    display: table-cell;\r\n    text-align: center;\r\n    position: relative;\r\n}\r\n.btn-circle {\r\n    width: 28px;\r\n    height: 28px;\r\n    text-align: center;\r\n    padding: 2px 0;\r\n    font-size: 16px;\r\n    line-height: 1.428571429;\r\n    border-radius: 15px;\r\n    opacity: 1;\r\n}\r\n\r\n.btn-primary{\r\n    background: #1ec26b;\r\n    border:none;\r\n}\r\n\r\n.col-left{\r\n    position: relative;\r\n    float:left;\r\n    width:58%;\r\n    box-shadow: 0px 3px 10px 0px #ecebe7;\r\n    background: #fdfcfa;\r\n}\r\n\r\n.col-left .row,.col-right .row{\r\n    margin-left:0;\r\n    margin-right:0;\r\n}\r\n.col-right{\r\n    position: relative;\r\n    float:left;\r\n    box-shadow: 0px 3px 10px 0px #ecebe7;\r\n    background: #fdfcfa;\r\n    width:38%;\r\n    margin-left:2%;\r\n}\r\n\r\n.holder-box{\r\n    padding:16px;\r\n}\r\n\r\n.left-image-side{\r\n    width:90px;\r\n    position: relative;\r\n    float:left;\r\n    margin-top: 5px;\r\n}\r\n\r\n.right-name{\r\n    position: relative;\r\n    float:left;\r\n}\r\n\r\n.opening-hours{\r\n    color:#656565;\r\n    font-weight:400;\r\n    font-size:14px;\r\n}\r\n.chemist-name{\r\n    color:#656565;\r\n    font-weight:500;\r\n    font-size:20px;\r\n}\r\n\r\n.rating > span:hover:before {\r\n    content: \"\\2605\";\r\n    position: absolute;\r\n    font-size: 16px;\r\n }\r\n\r\n .rating {\r\n    unicode-bidi: bidi-override;\r\n  }\r\n  .rating > span:hover:before,\r\n  .rating > span:hover ~ span:before {\r\n     content: \"\\2605\";\r\n     position: absolute;\r\n  }\r\n  .rating > span {\r\n    display: inline-block;\r\n    position: relative;\r\n    width: 1.1em;\r\n    font-size: 16px;\r\n  }\r\n  .rating > span:hover:before,\r\n  .rating > span:hover ~ span:before {\r\n     content: \"\\2605\";\r\n     position: absolute;\r\n     font-size: 16px;\r\n  }\r\n\r\n  .chemist-ratings{\r\n      margin-top:10px;\r\n  } \r\n\r\n  .saperator{\r\n      margin-top:20px;\r\n      margin-bottom:10px;\r\n      border-bottom: 1px solid #aeaeae;\r\n  }\r\n\r\n  .one-row .name span{\r\n      color:#b4b4b4;\r\n      font-size:13px;\r\n      font-weight: 500;\r\n  }\r\n\r\n  .one-row .name .med-name{\r\n    font-weight: 500;\r\n    font-size:15px;\r\n    color:#656565;\r\n\r\n  }\r\n\r\n  .one-row .del{\r\n\r\n\r\n    position: relative;\r\n    float: left;\r\n    cursor: pointer;\r\n    width: 25px;\r\n    border-radius: 50%;\r\n    margin-top: 15px;\r\n    width: 17px;\r\n    height: 19px;\r\n    margin-right: 10px;\r\n    box-shadow: none;\r\n    transition: box-shadow 0.3s ease-in-out;\r\n\r\n  }\r\n\r\n  .one-row .del:hover{\r\n    box-shadow: 0px 4px 2px #42424233;\r\n  }\r\n  .one-row .name{\r\n    position: relative;\r\n    float:left;\r\n    padding-top: 0.5px;\r\n    width:40%;\r\n    padding-top: 15px;\r\n  }\r\n  .one-row .quantity{\r\n    position: relative;\r\n    float:left;\r\n    margin-top:5px;\r\n  }\r\n\r\n  .one-row .subtotal{\r\n    position: relative;\r\n    float: left;\r\n    width: 41%;\r\n    text-align: right;\r\n    padding-top: 15px;\r\n  }\r\n  .one-row .subtotal p{\r\n      font-size:14px;\r\n      color:#656565;\r\n  }\r\n\r\n  .quantity input {\r\n      width: 80px;\r\n      height: 45px;\r\n      line-height: 1.65;\r\n      float: left;\r\n      display: block;\r\n      padding: 0;\r\n      margin: 0;\r\n      padding-left: 20px;\r\n      border: 1px solid #9b9b9b;\r\n      font-size: 16px;\r\n      font-weight: 400;\r\n      border-radius: 5px;   \r\n      margin-bottom: 4px; \r\n      background: none;\r\n      color:#656565;\r\n  }\r\n  \r\n  .quantity input:focus {\r\n      outline: 0;\r\n  }\r\n  \r\n  .quantity-nav {\r\n      float: left;\r\n      position: relative;\r\n      height: 44px;\r\n  }\r\n  \r\n  .quantity-button {\r\n      position: relative;\r\n      cursor: pointer;\r\n      border: 1px solid #9b9b9b !important;\r\n      width: 20px;\r\n      text-align: center;\r\n      color: #9b9b9b;\r\n      font-size: 13px;\r\n      font-family: \"Trebuchet MS\", Helvetica, sans-serif !important;\r\n      line-height: 1.7;\r\n      -webkit-transform: translateX(-100%);\r\n      transform: translateX(-100%);\r\n      -webkit-user-select: none;\r\n      -moz-user-select: none;\r\n      -ms-user-select: none;\r\n      -o-user-select: none;\r\n      user-select: none;\r\n      background: #edebe7;\r\n      width: 30px;\r\n      border: 0;\r\n      color: #fff;\r\n      font-size: 23px;\r\n      line-height: 23px;\r\n      border-radius:0 5px 0 0\r\n  \r\n  }\r\n  \r\n  .quantity-button.quantity-up {\r\n      position: absolute;\r\n      height: 53%;\r\n      top: 0;\r\n  }\r\n  \r\n  .quantity-button.quantity-down {\r\n      position: absolute;\r\n      bottom: -1px;\r\n      height: 50%;\r\n       border-radius:0 0 5px 0;\r\n  }\r\n  .footer-row p{\r\n      color:#656565;\r\n      font-size: 14px;\r\n  }\r\n  .footer-row{\r\n    padding:10px;\r\n    margin-top:20px;\r\n  }\r\n  .no-margin-top{\r\n      margin-top:0;\r\n  }\r\n\r\n  .subtotal-row{\r\n       background: #ededed;\r\n       padding:10px;\r\n       border-radius: 6px;\r\n       margin-top:20px;\r\n  }\r\n  .subtotal-heading{\r\n      width:56%;\r\n      position: relative;\r\n      float:left;\r\n      text-align: right;\r\n  }\r\n  .time-slots{\r\n      padding-left:0;\r\n      margin:0;\r\n      margin-top: 15px;\r\n  }\r\n\r\n  .time-slot{\r\n    background: transparent;\r\n    border: 1px solid #aeaeae;\r\n    padding: 5px;\r\n    width: 150px;\r\n\r\n  }\r\n  .selected{\r\n    background:#1ec26b;\r\n    color:white;\r\n    font-size:14px;\r\n  }\r\n  .time-slots li{\r\n    width: 50%;\r\n    display: inline-block;\r\n    list-style-type: none;\r\n    text-align: center;\r\n    margin: 0;\r\n    margin-bottom: 15px;\r\n  }\r\n  .subtotal-value{\r\n    width:44%;\r\n    position: relative;\r\n    float:left;\r\n    text-align: right;\r\n    font-size:15px;\r\n}\r\n\r\n.voucher-row h3{\r\n    color:#656565;\r\n    font-size:20px;\r\n    font-weight: 500;\r\n    margin-bottom:20px;\r\n}\r\n.voucher-form{\r\n    position: relative;\r\n    width: 70%;\r\n    height: 34px;\r\n}\r\n.inputBtn{\r\n    width:30%;\r\n    position: absolute;\r\n    left:65%;\r\n    top:0;\r\n    height: 34px;\r\n\r\n}\r\n.inputBtn button{\r\n    border-top-right-radius: 50px;\r\n    border-bottom-right-radius: 50px;\r\n    height: 34px;\r\n    width: 100%;\r\n    border: 1px solid #9b9b9b;\r\n    color:#3ad72a;\r\n    background: #ededed;\r\n    outline: none;\r\n    font-weight: bold;\r\n}\r\n.errors{\r\n    border:1px solid red;\r\n}\r\n.save-address{\r\n    font-size:16px;\r\n    font-weight: 500;\r\n    color:white;\r\n    background: #1ec26b;\r\n    text-transform: uppercase;\r\n    border-radius: 4px;\r\n    height: 40px;\r\n    width: 150px;\r\n    border:none;\r\n    margin-top: 5px;\r\n}\r\n.EnteredAddress li{\r\n   list-style-type:none;    margin: 15px 0;\r\n   width: 50%;\r\n   display: inline-block;\r\n}\r\n.EnteredAddress li button{\r\n    background: none;\r\n    border: 1px solid #ddd;\r\n    padding: 5px;\r\n}\r\n\r\n.activeAddress{\r\n    background:#1ec26b !important;\r\n    color:white;\r\n    font-size:14px;\r\n}\r\n.inputField input{\r\n    width:100%;\r\n    border-radius: 50px;\r\n    outline:none;\r\n    padding-left:15px;\r\n    border:1px solid #9b9b9b;\r\n    height: 34px;\r\n}\r\n.inputField{\r\n    width:70%;\r\n    position: relative;\r\n    float:left;\r\n    left:0;\r\n    border-top-right-radius: 50%;\r\n    border-bottom-right-radius: 50%;\r\n    height: 34px;\r\n}\r\n\r\n.font20{\r\n    font-size:20px;\r\n}\r\n\r\n.delivery-text{\r\n    font-size:14px; \r\n    color:#656565;\r\n    display: block;\r\n    padding-left: 28px;\r\n    color:#656565;\r\n}\r\n\r\n.col-right h3{\r\n    font-size:22px;\r\n    margin-top: 10px;\r\n    margin-bottom: 25px;\r\n\r\n\r\n}\r\n.italic-text{\r\n    font-style: italic;\r\n    font-size:12px;\r\n    word-spacing: 1px;\r\n    color:#656565;\r\n}\r\n.message-text img{\r\n    width:16px;\r\n}\r\n.message-text p{\r\n    font-size:14px;\r\n    word-spacing: 2px;\r\n    color:#1ec26b;\r\n    text-decoration: underline;\r\n    font-weight: 600;\r\n    cursor: pointer;\r\n}   \r\n\r\n.alignCenter{\r\n    text-align: center;\r\n}\r\n.checkout-btn{\r\n    background: #00b276;\r\n    color: white;\r\n    border-radius: 57px;\r\n    width: 100%;\r\n    border: none;\r\n    font-weight: 700;\r\n    height: 45px;\r\n    margin-top: 20px;\r\n    font-size:16px;\r\n    width:100%;\r\n}\r\n\r\n.inner-wrapper{\r\n    box-shadow: 0px 3px 10px 0px #ecebe7;\r\n    background: #fdfcfa;\r\n}\r\n.left-pane{\r\n    position: relative;\r\n    float: left;\r\n    width: 69%;\r\n    margin-right: 1.6%;\r\n    \r\n}\r\n\r\n.right-pane{\r\n    position: relative;\r\n    float:left;\r\n    margin-top: 20px;\r\n    width: 28%;\r\n    \r\n}\r\n\r\n.right-pane .body,.right-pane .footer{\r\n    padding-left:20px;\r\n    padding-right:20px;\r\n}\r\n.right-pane .time-pane,.right-pane .cart{\r\n    box-shadow: 0px 3px 10px 0px #ecebe7;\r\n    background: #fdfcfa;\r\n}\r\n\r\n.left-pane h3,.right-pane h3{\r\n    font-size:20px;\r\n    color:#656565;\r\n    padding-top:22px;\r\n    margin-bottom:22px;\r\n    padding-left:20px;\r\n    \r\n}\r\n\r\n.lefty-side,.righty-side{\r\n    position: relative;\r\n    float:left;\r\n}\r\n.left-pane .body{\r\n    padding: 30px 20px;\r\n}\r\n.righty-side{\r\n    width:60%;\r\n}\r\n.lefty-side{\r\n    width: 140px;\r\n}\r\n.rightyVal{\r\n    margin-bottom:15px;\r\n    margin-top:0;\r\n    font-weight: 300;\r\n    font-size:15px;\r\n    color:#656565;\r\n    height:20px;\r\n}\r\n\r\n.green{\r\n    cursor: pointer;\r\n    color:#1ec26b;\r\n    text-decoration: underline;\r\n}\r\n\r\n.leftyVa{\r\n    margin-bottom:15px;\r\n    margin-top:0;\r\n    font-weight: 700;\r\n    font-size:15px;\r\n    color:#656565;\r\n}\r\n\r\n.left-pane .header,.right-pane .header{\r\n    border-bottom:1px solid #aeaeae;\r\n\r\n}\r\n\r\n.left-pane .panel{\r\n    background:#fefefd;\r\n    border:1px solid #d5d5d4;\r\n}\r\n.oldAddress{\r\n    height: 55px;\r\n    line-height: 55px;\r\n    padding-left: 15px;\r\n    border-bottom: 1px solid transparent;\r\n    background:#fefefd;\r\n    border-radius: 5px;\r\n    border:1px solid #d5d5d4;\r\n    margin-bottom:5px;\r\n}\r\n\r\n.Orderloader{\r\n    display:none;\r\n    text-align: center;\r\n    margin:50px;\r\n}\r\n.pay-now-details{\r\n    background:#f9f9f8;\r\n    padding:30px 0 30px 30px;\r\n    border:1px solid #d5d5d4;\r\n    display:none;\r\n    border-radius: 5px;\r\n    margin-bottom:15px;\r\n     \r\n}\r\n\r\n.pay-now-details .form-group .form-control{\r\n    height:32px;\r\n    width:50%;\r\n    outline:none;\r\n    padding-left:10px;\r\n    display: inline-block;\r\n    border-radius: 0 !important;\r\n    margin-right: 15px;\r\n    border:1px solid #aeaeae;\r\n}\r\n.required{\r\n    font-size:14px;\r\n    font-weight: 300;\r\n    font-style:italic;\r\n}\r\n\r\n.requiredRed{\r\n    margin-right:6px;\r\n    color:#ff3b3b;\r\n}\r\n.normalText{\r\n    font-size:17px;\r\n    margin-top:20px;\r\n    font-weight: 700;\r\n}\r\n\r\n.address-field{\r\n    height:32px;\r\n    border:1px solid #aeaeae;\r\n    background:#ffffff;\r\n    width: 50%;\r\n    margin-right:25px;\r\n    margin-top:10px;\r\n    padding-left:15px;\r\n}\r\n.location-box{\r\n    margin-top:25px;\r\n}\r\n.location-text{\r\n     font-size: 14px;\r\n     font-weight: 300;\r\n    margin-top:10px;\r\n    margin-bottom:30px;\r\n}\r\n\r\n#accordion2 .panel-body{\r\n    padding:30px;\r\n}\r\n\r\n.optional{\r\n    font-size:14px;\r\n    font-weight: 500;\r\n    color:#656565;\r\n}\r\n#accordion2 .message-text img{\r\n    margin-right: 5px;\r\n   \r\n}\r\n#accordion2 .message-text{\r\n    padding-left: 15px;\r\n    margin-bottom:25px;\r\n}\r\n.inner-wrapper .message-text p{\r\n    display: inline-block;\r\n}\r\n\r\n.pay-now-details h3{\r\n    font-size:25px;\r\n    font-weight: bold;\r\n    color:#656565;\r\n    margin-top:25px;\r\n    margin-bottom:25px;\r\n}\r\n\r\n.custom-dropdown:checked + label:before,\r\n.custom-dropdown:not(:checked) + label:before {\r\n    content: '';\r\n    position: absolute;\r\n    display:none;\r\n    left: 0;\r\n    top: 0;\r\n    width: 20px;\r\n    height: 20px;\r\n    border: 1px solid #b6b6b6;\r\n    border-radius: 100%;\r\n    background: #fff;\r\n    color:#aeaeae;\r\n}\r\n\r\n.custom-dropdown:checked + label:after,\r\n.custom-dropdown:not(:checked) + label:after {\r\n    display: none;\r\n    content: '';\r\n    width: 12px;\r\n    height: 12px;\r\n    background: #1ec26b;\r\n    position: absolute;\r\n    top: 4px;\r\n    left: 4px;\r\n    border-radius: 100%;\r\n    -webkit-transition: all 0.2s ease;\r\n    transition: all 0.2s ease;\r\n    color:#676767;\r\n}\r\n\r\n.bottom-text{\r\n    margin-top:75px;\r\n}\r\n\r\n.bottom-text1{\r\n    font-size:14px;\r\n    font-weight: 300;\r\n    color:#656565;\r\n    \r\n}\r\n\r\n.bottom-text2{\r\n    font-size:14px;\r\n    font-weight: 300;\r\n    color:#656565;\r\n    margin-top:40px;\r\n}\r\n\r\n.left-equal{\r\n    position: relative;\r\n    float:left;\r\n    width:50%;\r\n    text-align:left;\r\n    font-size:20px;\r\n    font-weight: 700;\r\n    margin-bottom:40px;\r\n}\r\n\r\n.right-equal{\r\n    position: relative;\r\n    float:left;\r\n    width:50%;\r\n    text-align:right;\r\n    font-size:20px;\r\n    font-weight: 700;\r\n    margin-bottom:40px;\r\n}\r\n\r\n.special{\r\n    min-height: 250px;\r\n    margin-top: 15px;\r\n    padding-top:35px;\r\n}\r\n.place-now{\r\n    width:100%;\r\n    border:none;\r\n    height:58px;\r\n    line-height: 58px;\r\n    border-radius: 5px;\r\n    background: #1ec26b;\r\n    color:white;\r\n    font-size:22px;\r\n    font-weight: 700;\r\n    margin-top:10px;\r\n\r\n}\r\n\r\n.right-estimate{\r\n    font-size:12px;\r\n    font-weight: 700;\r\n    color:#656565;\r\n    padding: 30px 10px;\r\n}\r\n.big{\r\n    font-size:38px;\r\n    font-weight: 500;\r\n    color:#656565;\r\n    padding: 2px 10px;\r\n    height: 42px;\r\n}\r\n.small{\r\n    font-size:12px;\r\n    font-weight: 500;\r\n}\r\n.time{\r\n    width: 65px;\r\n    text-align: center;\r\n    float: right;\r\n    margin-top: 15px;\r\n}\r\n\r\n.item{\r\n    position: relative;\r\n    float:left;\r\n    width:70%;\r\n}\r\n\r\n.price{\r\n    position: relative;\r\n    float:left;\r\n    width:30%;\r\n}\r\n\r\n.item-detail{\r\n    display: inline-block;\r\n    padding-right: 4px;\r\n\r\n}\r\n.one-row{\r\n    margin-top:10px;\r\n    margin-bottom:10px;\r\n}\r\n\r\n.price{\r\n    text-align: right;\r\n}\r\n\r\n.item .optional{\r\n    color:#aeaeae;\r\n    font-size:12px;\r\n}\r\n.footer .one-row{\r\n    margin-bottom:15px;\r\n}\r\n\r\n.footer .one-row .item{\r\n    width:50%;\r\n    position: relative;\r\n    float:left;\r\n    text-align: left;\r\n}\r\n.footer .one-row .price{\r\n    width:50%;\r\n    position: relative;\r\n    float:left;\r\n    text-align: right;\r\n}\r\n.more-margin{\r\n    margin-top:20px;\r\n}\r\n.cart .body{\r\n /*    border-top:1px solid #cecdcc;\r\n    border-bottom:1px solid #cecdcc; */\r\n}\r\n\r\n.bigText{\r\n    font-size:28px;\r\n    font-weight: 300;\r\n}\r\n\r\n.opening-hours{\r\n    color:#50cb84;\r\n    font-weight:500;\r\n    font-size:12px;\r\n    margin-top: -4px;\r\n    \r\n}\r\n\r\n.headging-with-rating{\r\n    display:inline-block;\r\n    text-transform: capitalize;\r\n    font-size:23px;\r\n    color:#656565;\r\n    font-weight: 500;\r\n    word-wrap: break-word;\r\n    width: 100px;\r\n}\r\n#step-1{\r\n    min-height: 450px;\r\n}\r\n#step-1 .chemist-ratings{\r\n    display:inline-block;\r\n    margin-left: 10px;\r\n}\r\n\r\n#step-1 .star{\r\n    height: 18px;\r\n}\r\n\r\n#step-1 .inner-wrapper{\r\n    padding: 30px 20px;\r\n}\r\n.right-search .voucher-form{\r\n    position: relative;\r\n    width: 100%;\r\n    height: 42px;\r\n    margin: 5px auto;\r\n}\r\n.right-search .inputBtn{\r\n    width:30%;\r\n    position: absolute;\r\n    left:70%;\r\n    top:0;\r\n    height: 42px;\r\n\r\n}\r\n.right-search .inputBtn button{\r\n    border-top-right-radius: 50px;\r\n    border-bottom-right-radius: 50px;\r\n    height: 42px;\r\n    width: 85%;\r\n    border: 1px solid #1ec26b;\r\n    color:#fff;\r\n    background: #1ec26b;\r\n    outline: none;\r\n    font-weight: 500;\r\n    font-size:18px;\r\n}\r\n.right-search .inputField input{\r\n    width:100%;\r\n    border-radius: 50px;\r\n    outline:none;\r\n    border:1px solid #1ec26b;\r\n    height: 42px;\r\n    padding-left: 40px;\r\n    color:#aeaeae;\r\n    font-size:18px;\r\n}\r\n.right-search .inputField{\r\n    width:80%;\r\n    position: relative;\r\n    float:left;\r\n    left:0;\r\n    border-top-right-radius: 50%;\r\n    border-bottom-right-radius: 50%;\r\n    height: 42px;\r\n}\r\n\r\n.left-chemist,.right-search{\r\n    position: relative;\r\n    float: left;\r\n    \r\n}\r\n\r\n.left-chemist{\r\n    width:45%;\r\n}\r\n\r\n.right-search{\r\n    width:55%;\r\n}\r\n\r\n.tabs{\r\n    padding: 8px !important;\r\n    padding-bottom: 0px !important;\r\n}\r\n.tabs div{\r\n    border:none;\r\n    border-radius:0;\r\n    padding-bottom:0;\r\n}\r\n.tabs .selected p{\r\n    font-weight: 700;\r\n    font-size:18px;\r\n    color:#656565;\r\n    padding-bottom:10px;\r\n    border-bottom:2px solid #1ec26b;\r\n}\r\n\r\n#step-1 .right-pane{\r\n    margin-top:0 !important;\r\n}\r\n.tabs div p{\r\n    font-weight: 300;\r\n    font-size:18px;\r\n    color:#656565;\r\n    padding-bottom:10px;\r\n}\r\n.tabs .selected{\r\n   \r\n    background:transparent;\r\n}\r\n.tab-contents{\r\n    border:none;\r\n}\r\n.product-image{\r\n    height: 216px;\r\n    border-bottom: 1px solid #bababa;\r\n}\r\n.product-image img{\r\n    max-width: 100%;\r\n    height: auto;\r\n    \r\n}\r\n.products-list{\r\n    padding-left:0;\r\n}\r\n\r\n.products-list li{\r\n    display: inline-block;\r\n    float: left;\r\n    list-style-type: none;\r\n    width: 29%;\r\n    margin-right: 30px;\r\n    margin-top:30px;\r\n    box-shadow: 0px 3px 10px 0px #c7c6c3;\r\n    transition: box-shadow 0.3s ease-in-out;\r\n    position: relative;\r\n}\r\n.products-list li:hover{\r\n    box-shadow: none;\r\n}\r\n.plus-sign{\r\n    cursor:pointer;\r\n    position: absolute;\r\n    bottom: -12px;\r\n    right: -12px;\r\n    text-align:center;\r\n    width:60px;\r\n    height:60px;\r\n    border-radius: 60px;\r\n    background:#1ec26b;\r\n    display:none;\r\n    box-shadow: 0px 3px 10px 0px #d9cdc8;\r\n}\r\n.plus-sign img{\r\n    padding-top: 13px;\r\n}\r\n.product-wrapper{\r\n    background:white;\r\n    border-radius:0;\r\n    padding:10px;\r\n    cursor:pointer;\r\n}\r\n\r\n.product-detail{\r\n    margin-top:10px;\r\n}\r\n.product-detail h2{\r\n    font-size:15px;\r\n    font-weight: 500;\r\n    color:#000000;\r\n    margin:0;\r\n    margin-bottom:15px;\r\n}\r\n.product-detail p{\r\n    font-size:14px;\r\n    font-weight: 300;\r\n    color:#000000;\r\n    margin:0;\r\n\r\n}\r\n\r\n/deep/ .orderPlaced .modal-content{\r\n    border-radius: 0 !important;\r\n}\r\n/deep/ .orderPlaced button.close{\r\n    position: absolute;\r\n    width: 38px;\r\n    height: 38px;\r\n    background: #1ec26b;\r\n    color: white;\r\n    border-radius: 38px;\r\n    opacity: 1;\r\n    z-index: 2;\r\n    right: 23px;\r\n    top: -21px;\r\n    box-shadow:0px 3px 10px 0px #d0d0d0;\r\n}\r\n/deep/ .detailModalClass .modal-content{\r\n    border-radius: 0 !important;\r\n}\r\n/deep/ .detailModalClass button.close:hover{\r\n    box-shadow:0px 3px 10px 0px #d0d0d0;\r\n}\r\n/deep/ .detailModalClass button.close{\r\n    position: absolute;\r\n    width: 38px;\r\n    height: 38px;\r\n    background: #1ec26b;\r\n    color: white;\r\n    border-radius: 38px;\r\n    opacity: 1;\r\n    z-index: 2;\r\n    right: 23px;\r\n    top: -21px;\r\n    box-shadow: none;\r\n    transition: box-shadow 0.3s ease-in-out;\r\n}\r\n.my-header{\r\n    margin-top: 60px;\r\n    text-align: center;\r\n    background-color: #1ec26b;\r\n    margin: 0;\r\n    padding: 30px 0;\r\n}\r\n\r\n.my-header-2{\r\n    margin:40px;\r\n    text-align: center;\r\n}\r\n\r\n.my-header-2 h1{\r\n    color: #1ec26b;\r\n}\r\n.circle{\r\n    width: 200px;\r\n    height: 200px;\r\n    border-radius: 300px;\r\n    background: white;\r\n    text-align: center;\r\n    margin: 0 auto;padding: 40px 0;\r\n    box-shadow: 0 8px 8px rgba(255,255,255,.24), 0 0 8px rgba(255,255,255,.12), 0 6px 18px rgba(255,255,255,.12);\r\n    transform: translate3d(0,-2px,0);\r\n}\r\n.closeThanks{\r\n    position: absolute;\r\n    border: none;\r\n    width: 50px;\r\n    background: #ddd;\r\n    height: 50px;\r\n    color: #1ec26b;\r\n    font-size: 26px;\r\n    right: 18px;\r\n    border-radius: 50px;\r\n    top: -28px;\r\n    box-shadow:none;\r\n    transition: box-shadow 0.3s ease-in-out;\r\n}\r\n.closeThanks:hover{\r\n    transform: scale(1.2); box-shadow: 0 5px 15px rgba(0,0,0,0.3);\r\n}\r\n.view-orders{\r\n    border:2px solid #ddd;\r\n    background:transparent;\r\n    color:#ddd;\r\n    font-size:16px;\r\n    padding:10px 20px;\r\n    margin-top:30px;\r\n    cursor:pointer;\r\n}\r\n/deep/ .orderPlaced .modal-body{\r\n    padding:0 !important;\r\n}\r\n/deep/ .orderPlaced .modal-footer, /deep/ .orderPlaced .modal-header{\r\n    display:none;\r\n}\r\n/deep/ .detailModalClass .modal-footer{\r\n    display:none;\r\n}\r\n/deep/ .detailModalClass .modal-header,/deep/ .orderPlaced .modal-footer{\r\n    padding:0;\r\n}\r\n/deep/ .detailModalClass .modal-body{\r\n    padding:40px;\r\n}\r\n\r\n.cart-button{\r\n    margin-top: 32px;\r\n    color: white;\r\n    background: #1ec26b;\r\n    width: 300px;\r\n    border-radius: 5px;\r\n    height: 58px;\r\n    font-size: 22px;\r\n    font-weight: 500;\r\n    margin: 20px auto;\r\n    border: none;\r\n    margin-bottom: 0;\r\n}\r\n .modal-name,.modal-quantity{\r\n\r\n    position: relative;\r\n    float:left;\r\n    width:50%;\r\n}\r\n.alingCenter{\r\n    text-align: center;\r\n\r\n}\r\n.image-box img{\r\n    width:70px;\r\n    margin: 0 auto;\r\n}\r\n.image-box{\r\n    text-align: center;\r\n    width:80px;\r\n    margin: 0 auto;\r\n}\r\n.modal-quantity{\r\n    text-align: right;\r\n}\r\n\r\n.modal-name p{\r\n    font-size:20px;\r\n    font-weight: 500;\r\n    color:black;\r\n\r\n}\r\n\r\n.modal-quantity i{\r\n    color:#1ec26b;\r\n    font-size: 18px;\r\n    margin-left:10px;\r\n}\r\n\r\n.center-align{\r\n    text-align: center;\r\n}\r\n\r\n.textarea-div,.textarea-div2,.textarea-div3,.textarea-div4{\r\n    display:none;\r\n}\r\n\r\n#overlay2,#overlay3{\r\n    background: transparent;\r\n    position: absolute;\r\n    width: 100%;\r\n    height: 100%;\r\n    z-index: 2;\r\n\r\n}\r\n.textarea-div textarea,.textarea-div2 textarea,.textarea-div3 textarea, .textarea-div4 textarea{\r\n    background: #eeeeee;\r\n    border-radius: 0;\r\n    border:1px solid #9b9b9b;\r\n    margin-top:20px;\r\n    width:100%;\r\n    height:100px;\r\n    padding-left:15px;\r\n}\r\n\r\n.thisone3,.thisone4{\r\n    font-size: 12px;\r\n    margin-right: 5px;\r\n}\r\n.slideInDown{\r\n    display:block !important;\r\n}\r\n\r\n/* quantity */\r\n\r\n\r\n.modal-quantity #prod-quantity-cart{\r\n    position: relative;\r\n    height: 66px;\r\n    text-align: right;\r\n    width: 234px;\r\n    margin-left: 0;\r\n    float: right;\r\n}\r\n\r\n#prod-quantity-cart .qtyplus{\r\n  \r\n    text-align: left;\r\n    color:#1ec26b;\r\n    font-weight: bold;\r\n    font-size: 24px;\r\n    width: 35px;\r\n    position: absolute;\r\n    left: 212px;\r\n    cursor: pointer;\r\n    border:none;\r\n    background:transparent;\r\n    width: 35px;\r\n    outline:none;\r\n}\r\n\r\n#prod-quantity-cart #num_val{\r\n    width: 110px;\r\n    position: absolute;\r\n    left:100px;\r\n    text-align: center;\r\n    font-size:25px;\r\n    font-weight: 500;\r\n    color:#656565;\r\n    border:none;\r\n}\r\n\r\n#prod-quantity-cart .qtyminus{\r\n    position: absolute;\r\n    left:62px;\r\n    width: 35px;\r\n    border:none;\r\n    background:transparent;\r\n    cursor:pointer;\r\n    text-align: right;\r\n    color:#1ec26b;\r\n    font-weight: bold;\r\n    font-size: 24px;\r\n    outline:none;\r\n}\r\n\r\n.dosage{\r\n    width:130px;\r\n    padding: 10px;\r\n}\r\n.clear{\r\n    clear:both;\r\n    float:none;\r\n}\r\n/* qunatity */\r\n\r\n/* Tabs */\r\n\r\n/***\r\nBootstrap Line Tabs by @keenthemes\r\nA component of Metronic Theme - #1 Selling Bootstrap 3 Admin Theme in Themeforest: http://j.mp/metronictheme\r\nLicensed under MIT\r\n***/\r\n\r\n/* Tabs panel */\r\n.tabbable-panel {\r\n    border:none;\r\n  }\r\n\r\n  .nav-tabs{\r\n      background:#fdfcfa;\r\n      height: 56px;\r\n      border-top:1px solid #a0a0a0 !important;\r\n  }\r\n  \r\n  /* Default mode */\r\n  .tabbable-line > .nav-tabs {\r\n    border: none;\r\n    margin: 0px;\r\n  }\r\n\r\n  .tabbable-line > .nav-tabs > li:after{\r\n    display:block;\r\n    content: '';\r\n    padding-bottom: 15px;\r\n    border-bottom: solid 2px #1ec26b;  \r\n    transform: scaleX(0);  \r\n    transition: transform 250ms ease-in-out;\r\n  }\r\n  \r\n  .tabbable-line > .nav-tabs > li:hover:after { transform: scaleX(1); }\r\n\r\n  .tabbable-line > .nav-tabs > li {\r\n    margin-right: 2px;\r\n    margin:0;\r\n    padding: 15px 0px;\r\n    margin: 0px 15px;\r\n  }\r\n  .tabbable-line > .nav-tabs > li > a {\r\n    border: 0;\r\n    margin-right: 0;\r\n    color: #737373;\r\n    text-transform: capitalize;\r\n  }\r\n  .tabbable-line > .nav-tabs > li > a > i {\r\n    color: #a6a6a6;\r\n  }\r\n/*   .tabbable-line > .nav-tabs > li.open, .tabbable-line > .nav-tabs > li:hover {\r\n    border-bottom: 2px solid #1ec26b;\r\n  } */\r\n  .tabbable-line > .nav-tabs > li.open > a, .tabbable-line > .nav-tabs > li:hover > a {\r\n    border: 0;\r\n    background: none !important;\r\n    color: #333333;\r\n  }\r\n  .tabbable-line > .nav-tabs > li.open > a > i, .tabbable-line > .nav-tabs > li:hover > a > i {\r\n    color: #a6a6a6;\r\n  }\r\n  .tabbable-line > .nav-tabs > li.open .dropdown-menu, .tabbable-line > .nav-tabs > li:hover .dropdown-menu {\r\n    margin-top: 0px;\r\n  }\r\n  .tabbable-line > .nav-tabs > li.active {\r\n    border-bottom: 2px solid #1ec26b;\r\n    position: relative;\r\n    padding-bottom: 0;\r\n  }\r\n  .tabbable-line > .nav-tabs > li.active > a {\r\n    border: 0;\r\n    background: transparent;\r\n    color: #333333;\r\n  }\r\n  .tabbable-line > .nav-tabs > li.active > a > i {\r\n    color: #404040;\r\n  }\r\n  .tabbable-line > .tab-content {\r\n    margin-top: -3px;\r\n    background-color: #faf9f5;\r\n    border: 0;\r\n    padding: 5px 0;\r\n  }\r\n  .nav>li>a {\r\n    position: relative;\r\n    display: block;\r\n    padding: 0 !important;\r\n}\r\n\r\n  .tab-content>.active{\r\n    background-color: #faf9f5;\r\n  }\r\n  .portlet .tabbable-line > .tab-content {\r\n    padding-bottom: 0;\r\n  }\r\n  \r\n  /* Below tabs mode */\r\n  \r\n  .tabbable-line.tabs-below > .nav-tabs > li {\r\n    border-top: 4px solid transparent;\r\n  }\r\n  .tabbable-line.tabs-below > .nav-tabs > li > a {\r\n    margin-top: 0;\r\n  }\r\n  .tabbable-line.tabs-below > .nav-tabs > li:hover {\r\n    border-bottom: 0;\r\n    border-top: 2px solid #1ec26b;\r\n  }\r\n  .tabbable-line.tabs-below > .nav-tabs > li.active {\r\n    margin-bottom: -2px;\r\n    border-bottom: 0;\r\n    border-top: 2px solid #1ec26b;\r\n  }\r\n  .tabbable-line.tabs-below > .tab-content {\r\n    margin-top: -10px;\r\n    border-top: 0;\r\n    border-bottom: 1px solid #eee;\r\n    padding-bottom: 15px;\r\n  }\r\n  .nav-tabs>li>a{\r\n      border-radius: 0 !important;\r\n  }\r\n\r\n  .addressesPane{\r\n    padding: 20px;\r\n    margin-bottom: 15px;\r\n    background: white;\r\n    border-radius: 4px;\r\n    border: 1px solid #ccc;\r\n  }\r\n  .addressesPane .row{\r\n      margin:0 !important;\r\n  }\r\n/* Tabs */\r\n\r\n\r\n/* My Button */\r\n\r\n.ajax-button{\r\n    position:relative;\r\n    display:inline-block;\r\n    height:40px;\r\n    left:50px;\r\n    top:50%;\r\n    margin-left:-50px;\r\n    text-align:center;\r\n  }\r\n  .submit{\r\n    -webkit-appearance: none;\r\n    -moz-appearance: none;\r\n    appearance: none;\r\n    height:40px;\r\n    background-color:transparent;\r\n    border:none;\r\n    border-radius:0;\r\n    color:#FFFFFF;\r\n    font-size:17px;\r\n    cursor:pointer !important;\r\n    outline:none;\r\n  }\r\n  \r\n \r\n  .loading{\r\n    font-size:0;\r\n    width:30px;\r\n    height:30px;\r\n    margin-top:5px;\r\n    border-radius:15px;\r\n    padding:0;\r\n    border:3px solid #FFFFFF;\r\n    border-bottom:3px solid rgba(255,255,255,0.0);\r\n    border-left:3px solid rgba(255,255,255,0.0);\r\n    background-color:transparent !important;\r\n    animation-name: rotateAnimation;\r\n    -webkit-animation-name: wk-rotateAnimation;\r\n    animation-duration: 1s;\r\n    -webkit-animation-duration: 1s;\r\n    animation-delay: 0.2s;\r\n    -webkit-animation-delay: 0.2s;\r\n    animation-iteration-count: infinite;\r\n    -webkit-animation-iteration-count: infinite;\r\n  }\r\n  \r\n  @keyframes rotateAnimation {\r\n      0%   {transform: rotate(0deg);}\r\n      100% {transform: rotate(360deg);}\r\n  }\r\n  @-webkit-keyframes wk-rotateAnimation {\r\n      0%   {-webkit-transform: rotate(0deg);}\r\n      100% {-webkit-transform: rotate(360deg);}\r\n  }\r\n  \r\n  .fa{\r\n    color:#ffffff;\r\n    font-size:18px !important;\r\n    position:absolute;\r\n    left:50%;\r\n    top:50%;\r\n    margin-left:-9px;\r\n    margin-top:-9px;\r\n    -webkit-transform:scaleX(0) !important;\r\n    transform:scaleX(0) !important;\r\n  }\r\n  \r\n  .finish{\r\n    -webkit-transform:scaleX(1) !important;\r\n    transform:scaleX(1) !important;\r\n  }\r\n  .hide-loading{\r\n    opacity:0;\r\n    -webkit-transform: rotate(0deg) !important;\r\n    transform: rotate(0deg) !important;\r\n    -webkit-transform:scale(0) !important;\r\n    transform:scale(0) !important;\r\n  }\r\n@media only screen and (max-width: 1200px) and (min-width: 992px){\r\n    .products-list li{\r\n        width: 32%;\r\n        margin-right:7px;\r\n    }\r\n    .one-row .subtotal{\r\n        width:29%;\r\n    }\r\n}\r\n\r\n@media only screen and (max-width: 992px) and (min-width: 768px){\r\n    .stepwizard-row:before{\r\n        left: 50px;\r\n    }\r\n    .left-chemist{\r\n        width:35%\r\n    }\r\n    .right-search{\r\n        width:65%;\r\n    }\r\n\r\n    #step-1 .chemist-ratings{\r\n        margin-left: -4px;\r\n        margin-bottom: 15px;\r\n    }\r\n\r\n    .products-list   li{\r\n        width:43%;\r\n    }\r\n    .one-row .subtotal{\r\n        width:29%;\r\n    }\r\n}\r\n\r\n@media only screen and (max-width: 768px) and (min-width:460px) {\r\n    .left-pane,.right-pane{\r\n        width:100%;\r\n    }\r\n    .products-list   li{\r\n        width:28%;\r\n    }\r\n    .product-image{\r\n        height:155px;\r\n    }\r\n}\r\n@media only screen and (max-width: 768px) {\r\n    .col-left,.col-right{\r\n        width:100%;\r\n    }\r\n    .one-row .subtotal{\r\n        width:40%;\r\n    }\r\n\r\n    .stepwizard-row:before{\r\n        left: 72px;\r\n        width:70%;\r\n    }\r\n\r\n    .stepwizard{\r\n        width:100%;\r\n    }\r\n\r\n\r\n    .col-right{\r\n        margin-left:0;\r\n        margin-top:20px;\r\n    }\r\n    \r\n    \r\n}\r\n\r\n@media only screen and (max-width: 640px){\r\n    .left-pane,.right-pane{\r\n        width:100%;\r\n        margin-left:0;\r\n        margin-top:15px;\r\n    }\r\n\r\n    .voucher-form{\r\n        width:100%;\r\n    }\r\n    .left-chemist{\r\n        width: 100%;\r\n        text-align: center;\r\n        margin-bottom: 15px;\r\n    }\r\n    .right-search {\r\n        width: 100%;\r\n    }\r\n\r\n    .products-list li{\r\n        width: 100%;\r\n        margin-right: 0;\r\n    }\r\n\r\n    .product-image{\r\n        height:270px;\r\n    }\r\n    .product-detail h2{\r\n        text-align:center;\r\n    }\r\n\r\n    .modal-name,.modal-quantity{\r\n        width: 100%;\r\n        margin-bottom:15px;\r\n    }\r\n    .cart-button{\r\n        width:100%;\r\n    }\r\n\r\n    /deep/ .detailModalClass .modal-body{\r\n        padding:15px;\r\n    }\r\n    .right-name{\r\n        width:65%;\r\n    }\r\n    .stepwizard-row:before{\r\n        left:50px;\r\n    }\r\n    .lefty-side {\r\n        width: 70px;\r\n    }\r\n    .address-field{\r\n        width:100%;\r\n    }\r\n    .dosage{\r\n        margin-bottom:6px;\r\n    }\r\n}", ""]);
+
+// exports
+
+
+/***/ }),
+/* 291 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+        var result = __webpack_require__(292);
+
+        if (typeof result === "string") {
+            module.exports = result;
+        } else {
+            module.exports = result.toString();
+        }
+    
+
+/***/ }),
+/* 292 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(11)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\r\n\r\n.dropdown-el {\r\n  min-width: 110px;\r\n  position: relative;\r\n  display: inline-block;\r\n  margin-right: 1em;\r\n  min-height: 30px;\r\n  max-height: 30px;\r\n  overflow: hidden;\r\n  top: .5em;\r\n  cursor: pointer;\r\n  text-align: left;\r\n  white-space: nowrap;\r\n  color: #656565;\r\n  outline: none;\r\n  border: .06em solid transparent;\r\n  background-color: #fff;\r\n  transition: 0.3s all ease-in-out;\r\n  \r\n}\r\n.dropdown-el input {\r\n  display: none;\r\n}\r\n.dropdown-el label {\r\n  border-top: .06em solid #d9d9d9;\r\n  display: block;\r\n  height: 2em;\r\n  line-height: 2em;\r\n  padding-left: 1em;\r\n  padding-right: 3em;\r\n  cursor: pointer;\r\n  position: relative;\r\n  transition: 0.3s color ease-in-out;\r\n}\r\n.dropdown-el label:nth-child(2) {\r\n  margin-top: 2em;\r\n  border-top: .06em solid #d9d9d9;\r\n}\r\n.dropdown-el input:checked + label {\r\n  display: block;\r\n  border-top: none;\r\n  position: absolute;\r\n  top: 0;\r\n}\r\n.dropdown-el input:checked + label:nth-child(2) {\r\n  margin-top: 0;\r\n  position: relative;\r\n}\r\n.dropdown-el::after {\r\n  content: \"\";\r\n  position: absolute;\r\n  right: 0.8em;\r\n  top: 0.9em;\r\n  border: 0.3em solid #aeaeae;\r\n  border-color: #aeaeae transparent transparent transparent;\r\n  transition: .4s all ease-in-out;\r\n}\r\n.dropdown-el.expanded {\r\n  border: 0.06em solid #aeaeae;\r\n  background: #fff;\r\n\r\n  padding: 0;\r\n  box-shadow: rgba(0, 0, 0, 0.1) 3px 3px 5px 0px;\r\n  max-height: 15em;\r\n}\r\n.dropdown-el.expanded label {\r\n  border-top: .06em solid #d9d9d9;\r\n}\r\n.dropdown-el.expanded label:hover {\r\n  color: #3694d7;\r\n}\r\n.dropdown-el.expanded input:checked + label {\r\n  color: #3694d7;\r\n}\r\n.dropdown-el.expanded::after {\r\n  transform: rotate(-180deg);\r\n  top: .55em;\r\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 293 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+        var result = __webpack_require__(294);
+
+        if (typeof result === "string") {
+            module.exports = result;
+        } else {
+            module.exports = result.toString();
+        }
+    
+
+/***/ }),
+/* 294 */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed: Error: Missing binding C:\\Users\\user\\Desktop\\pharma-web-frontend\\node_modules\\node-sass\\vendor\\win32-x64-57\\binding.node\nNode Sass could not find a binding for your current environment: Windows 64-bit with Node.js 8.x\n\nFound bindings for the following environments:\n  - Windows 64-bit with Node.js 6.x\n\nThis usually happens because your environment has changed since running `npm install`.\nRun `npm rebuild node-sass --force` to build the binding for your current environment.\n    at module.exports (C:\\Users\\user\\Desktop\\pharma-web-frontend\\node_modules\\node-sass\\lib\\binding.js:15:13)\n    at Object.<anonymous> (C:\\Users\\user\\Desktop\\pharma-web-frontend\\node_modules\\node-sass\\lib\\index.js:14:35)\n    at Module._compile (module.js:635:30)\n    at Object.Module._extensions..js (module.js:646:10)\n    at Module.load (module.js:554:32)\n    at tryModuleLoad (module.js:497:12)\n    at Function.Module._load (module.js:489:3)\n    at Module.require (module.js:579:17)\n    at require (internal/module.js:11:18)\n    at Object.<anonymous> (C:\\Users\\user\\Desktop\\pharma-web-frontend\\node_modules\\sass-loader\\lib\\loader.js:3:14)\n    at Module._compile (module.js:635:30)\n    at Object.Module._extensions..js (module.js:646:10)\n    at Module.load (module.js:554:32)\n    at tryModuleLoad (module.js:497:12)\n    at Function.Module._load (module.js:489:3)\n    at Module.require (module.js:579:17)\n    at require (internal/module.js:11:18)\n    at loadLoader (C:\\Users\\user\\Desktop\\pharma-web-frontend\\node_modules\\loader-runner\\lib\\loadLoader.js:13:17)\n    at iteratePitchingLoaders (C:\\Users\\user\\Desktop\\pharma-web-frontend\\node_modules\\loader-runner\\lib\\LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (C:\\Users\\user\\Desktop\\pharma-web-frontend\\node_modules\\loader-runner\\lib\\LoaderRunner.js:165:10)\n    at C:\\Users\\user\\Desktop\\pharma-web-frontend\\node_modules\\loader-runner\\lib\\LoaderRunner.js:173:18\n    at loadLoader (C:\\Users\\user\\Desktop\\pharma-web-frontend\\node_modules\\loader-runner\\lib\\loadLoader.js:36:3)\n    at iteratePitchingLoaders (C:\\Users\\user\\Desktop\\pharma-web-frontend\\node_modules\\loader-runner\\lib\\LoaderRunner.js:169:2)\n    at runLoaders (C:\\Users\\user\\Desktop\\pharma-web-frontend\\node_modules\\loader-runner\\lib\\LoaderRunner.js:362:2)\n    at NormalModule.doBuild (C:\\Users\\user\\Desktop\\pharma-web-frontend\\node_modules\\webpack\\lib\\NormalModule.js:182:3)\n    at NormalModule.build (C:\\Users\\user\\Desktop\\pharma-web-frontend\\node_modules\\webpack\\lib\\NormalModule.js:275:15)\n    at Compilation.buildModule (C:\\Users\\user\\Desktop\\pharma-web-frontend\\node_modules\\webpack\\lib\\Compilation.js:151:10)\n    at factoryCallback (C:\\Users\\user\\Desktop\\pharma-web-frontend\\node_modules\\webpack\\lib\\Compilation.js:344:12)\n    at factory (C:\\Users\\user\\Desktop\\pharma-web-frontend\\node_modules\\webpack\\lib\\NormalModuleFactory.js:241:5)\n    at applyPluginsAsyncWaterfall (C:\\Users\\user\\Desktop\\pharma-web-frontend\\node_modules\\webpack\\lib\\NormalModuleFactory.js:94:13)");
+
+/***/ }),
+/* 295 */
+/***/ (function(module, exports) {
+
+module.exports = "<div id=\"snackbar\"></div>\r\n\r\n<modal #orderPlaced modalClass=\"modal-lg modal-sm animated fadeInDownBig orderPlaced\" [hideCloseButton]=\"true\" [closeOnEscape]=\"true\"\r\n    [closeOnOutsideClick]=\"true\" (onClose)=\"navigateToOriginal()\">\r\n\r\n\r\n\r\n    <modal-content>\r\n        <button class=\"closeThanks\" (click)=\"orderPlaced.close()\" data-dismiss=\"modal\" type=\"button\" aria-label=\"Close\">\r\n            <span aria-hidden=\"true\">×</span>\r\n        </button>\r\n\r\n        <div class=\"my-header\">\r\n            <div class=\"circle\">\r\n                <img class=\"amiated jackInTheBox\" src=\"/assets/img/like.png\" width=\"100px\">\r\n            </div>\r\n        </div>\r\n        <div class=\"my-header-2\">\r\n            <h1>Thank you! Your order was placed successfully!</h1>\r\n            <button class=\"view-orders\" (click)=\"navigatoToOrders()\">View Orders</button>\r\n        </div>\r\n    </modal-content>\r\n\r\n\r\n</modal>\r\n\r\n<modal #detailModal id=\"detailModal\" [closeOnEscape]=\"false\" [closeOnOutsideClick]=\"false\" modalClass=\"modal-lg modal-md detailModalClass animated bounceInDown\"\r\n    (onSubmit)=\"actionOnSubmit()\" (onClose)=\"actionOnClose()\">\r\n\r\n    <modal-content *ngIf=\"ifDataPopulated\">\r\n\r\n        <div class=\"full-row clearfix\">\r\n\r\n\r\n            <div class=\"modal-name\">\r\n\r\n                <p>{{singleMedicine.Name}}</p>\r\n                <p style=\"    margin-bottom: 20px;\">Rs. {{singleMedicine.TotalPrice}}</p>\r\n                <!-- <span>Reckitt Beckiser Ltd.</span> -->\r\n                <span>{{singleMedicine.ChemistCategoryName}}</span>\r\n\r\n            </div>\r\n\r\n            <div class=\"modal-quantity\">\r\n\r\n\r\n                <div class=\"\" id=\"prod-quantity-cart\">\r\n\r\n                    <button class=\"qtyminus\" field='quantity' (click)=\"Downing()\">-</button>\r\n\r\n                    <input type=\"number\" id=\"num_val\" min=\"1\" max=\"100\" class='qty' step=\"1\" value=\"1\" readonly>\r\n\r\n                    <button class=\"qtyplus \" field='quantity' (click)=\"Upping()\">+</button>\r\n\r\n                </div>\r\n\r\n                <div class='clear'></div>\r\n                <div class=\"selects\">\r\n                    <select class=\"dosage\" id=\"dosageName\" (change)=\"getDosageName($event.target.value)\">\r\n                        <option selected disabled>Select Dosage</option>\r\n                        <option *ngFor=\"let dosageArray of singleMedicine.WebDosageAndValuesDTOList\" value=\"{{dosageArray.DosageName}}\">{{dosageArray.DosageName}}</option>\r\n                    </select>\r\n\r\n                    <select class=\"dosage\" id=\"dosageValue\" (change)=\"getDosageValue($event.target.value)\">\r\n                        <option selected disabled>Select Value</option>\r\n                        <option *ngFor=\"let dosageArray of dosageValue\" value=\"{{dosageArray}}\">{{dosageArray}}</option>\r\n                    </select>\r\n\r\n                    <select class=\"dosage\" id=\"Measurements\" (change)=\"getMeasurement($event.target.value)\">\r\n                        <option selected disabled>Select Measurement</option>\r\n                        <option *ngFor=\"let measurement of measurementValue\" value=\"{{measurement}}\">{{measurement}}</option>\r\n                    </select>\r\n                </div>\r\n\r\n            </div>\r\n\r\n        </div>\r\n\r\n        <hr class=\"saperator\">\r\n\r\n\r\n        <div class=\"full-row clearfix\" (click)=\"showTextArea()\">\r\n\r\n\r\n            <div class=\"modal-name\">\r\n\r\n                <p>SPECIAL INSTRUCTIONS</p>\r\n\r\n            </div>\r\n\r\n            <div class=\"modal-quantity\">\r\n\r\n\r\n                <span class=\"optional\">(Optional)</span>\r\n                <i class=\"thisone fa fa-chevron-up\"></i>\r\n\r\n            </div>\r\n\r\n        </div>\r\n\r\n\r\n\r\n        <div class=\"textarea-div animated\">\r\n            <textarea placeholder=\"Write any instructions here ...\" name=\"SpecialInstructions\" [(ngModel)]=\"SpecialInstructions\"></textarea>\r\n        </div>\r\n\r\n\r\n        <div class=\"full-row clearfix center-align\">\r\n            <button class=\"cart-button\" (click)=\"addToCart()\">Add to Cart</button>\r\n        </div>\r\n\r\n    </modal-content>\r\n\r\n</modal>\r\n\r\n<div class=\"container\" style=\"margin-top:20px;margin-bottom:20px;\">\r\n\r\n    <div class=\"stepwizard\">\r\n        <div class=\"stepwizard-row setup-panel\">\r\n            <div class=\"stepwizard-step\">\r\n                <div id=\"overlay\"></div>\r\n                <a #step1 href=\"#step-1\" type=\"button\" id=\"step1\" class=\"btn btn-primary btn-circle\">1</a>\r\n                <p>Your Details</p>\r\n            </div>\r\n            <div class=\"stepwizard-step\">\r\n                <div id=\"overlay2\"></div>\r\n                <a #step2 href=\"#step-2\" type=\"button\" id=\"step2\" class=\"btn btn-default btn-circle\" disabled=\"disabled\">2</a>\r\n                <p>Review Order</p>\r\n            </div>\r\n            <div class=\"stepwizard-step\">\r\n                <div id=\"overlay3\"></div>\r\n                <a #step3 href=\"#step-3\" type=\"button\" id=\"step3\" class=\"btn btn-default btn-circle\" disabled=\"disabled\">3</a>\r\n                <p>Place Order</p>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n\r\n    <div class=\"row setup-content\" id=\"step-1\">\r\n\r\n        <div class=\"col-md-12\">\r\n\r\n\r\n            <div class=\"left-pane\">\r\n\r\n                <div class=\"inner-wrapper clearfix\">\r\n\r\n\r\n                    <div class=\"upper-holder clearfix\">\r\n                        <!-- Upper Holder -->\r\n\r\n                        <div class=\"left-chemist clearfix\">\r\n                            <p class=\"headging-with-rating\">{{ChemistViewing.Chemist.PharmacyName}}</p>\r\n                            <div class=\"chemist-ratings\">\r\n                                <star-rating-comp [starType]=\"'icon'\" [disabled]=\"true\" [rating]=\"ChemistViewing.Chemist.ChemistRating\"></star-rating-comp>\r\n\r\n                            </div>\r\n                            <p class=\"opening-hours\">{{ChemistViewing.DistanceFromUs}} KM</p>\r\n                        </div>\r\n                        <div class=\"right-search clearfix\">\r\n\r\n\r\n                            <div class='voucher-form clearfix'>\r\n                                <img src=\"/assets/img/search.png\" class=\"search-icon\">\r\n                                <div class=\"inputField\">\r\n                                    <input type=\"text\" (keyup)=\"searchThisMedicine(e)\" name=\"searchMedicineQuery\" [(ngModel)]=\"searchMedicineQuery\" placeholder=\"Search Medicines\"\r\n                                        name=\"searchChemistQuery\" (keyup)=\"searchThisMedicine(this)\" [(ngModel)]=\"searchChemistQuery\">\r\n                                </div>\r\n                                <div class=\"inputBtn\">\r\n                                    <button>Search</button>\r\n                                </div>\r\n\r\n                            </div>\r\n                        </div>\r\n\r\n                    </div>\r\n                    <!-- Upper Holder -->\r\n                </div>\r\n\r\n\r\n                <div class=\"tabbable-panel\">\r\n                    <div class=\"tabbable-line\">\r\n                        <ul class=\"nav nav-tabs\">\r\n                            <li *ngFor=\"let categories of ChemistCategories;let i=index\" (click)=\"showProductsForThisCateogry(categories.Id)\" id=\"list_{{categories.Id}}\"\r\n                                class=\"tabs-list\" [ngClass]=\"{'active': i==0}\">\r\n                                <a style=\"cursor:pointer;\" data-target=\"#tab_1\" data-toggle=\"tab\">\r\n                                    {{categories.CategoryName}} </a>\r\n                            </li>\r\n                        </ul>\r\n                        <div class=\"tab-content\">\r\n                            <div class=\"tab-pane animated active\" id=\"tab_1\">\r\n\r\n\r\n                                <ul class=\"products-list\">\r\n\r\n                                    <li (mouseenter)=\"showPlus($event)\" (click)=\"getDetailsOfProduct(medicine)\" id=\"medicine{{medicine.Id}}\" (mouseleave)=\"hidePlus($event)\"\r\n                                        *ngFor=\"let medicine of SearchedMedicines;let i=index\" class=\"single-product animated zoomIn\">\r\n\r\n                                        <div class=\"product-wrapper\">\r\n\r\n                                            <div class=\"product-image\" id=\"image{{medicine.Id}}\">\r\n                                                <img src=\"{{medicine.PictureURL}}\">\r\n                                            </div>\r\n\r\n                                            <div class=\"product-detail\">\r\n                                                <h2>{{medicine.Name}}</h2>\r\n                                            </div>\r\n\r\n\r\n                                        </div>\r\n\r\n                                        <div class=\"plus-sign animated\">\r\n                                            <img src=\"/assets/img/add.png\">\r\n                                        </div>\r\n\r\n                                    </li>\r\n\r\n                                </ul>\r\n\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n            </div>\r\n\r\n\r\n            <div class=\"right-pane\">\r\n\r\n\r\n                <div class=\"time-pane\">\r\n\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6 col-sm-6 col-xs-6\" style=\"text-align:left\">\r\n                            <p class='right-estimate'>Estimated Delivery Time</p>\r\n                        </div>\r\n                        <div class=\"col-md-6 col-sm-6 col-xs-6\" style=\"text-align: right\">\r\n                            <div class=\"time\">\r\n                                <p class=\"big\">{{estimatedDeliveryTime}}</p>\r\n                                <p class=\"small\">mins</p>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n\r\n\r\n                </div>\r\n\r\n\r\n\r\n\r\n                <div class=\"cart animated\">\r\n\r\n                    <div class=\"header\">\r\n                        <h3>Your Order</h3>\r\n                    </div>\r\n                    <div class=\"body clearfix\">\r\n\r\n\r\n                        <div class=\"one-row clearfix my-animation\" *ngFor=\"let onerow of cart\">\r\n                            <div class=\"item \">\r\n                                <P class=\"item-detail\">{{onerow?.Quantity}}x\r\n                                    <span style=\"color:#1ec26b;font-weight:bold;font-size:16px\">{{onerow?.Name}}</span>\r\n                                </P>\r\n                                <span class=\"optional\">{{onerow?.ChemistCategoryName}}</span>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail\">Rs. {{onerow?.Total}}</P>\r\n                            </div>\r\n                        </div>\r\n\r\n                    </div>\r\n                    <div class='footer clearfix'>\r\n\r\n                        <div class=\"one-row clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\">Subtotal</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail\">Rs. {{SubTotal}}</P>\r\n                            </div>\r\n                        </div>\r\n\r\n                        <div class=\"one-row clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\">Delivery Fee</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail\">Rs. 0</P>\r\n                            </div>\r\n                        </div>\r\n\r\n\r\n                        <div class=\"one-row more-margin clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\" style=\"padding-top:10px;\">Total</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail bigText\">Rs. {{FinalTotal}}</P>\r\n                            </div>\r\n                        </div>\r\n\r\n                        <div class=\"alignCenter row\" style=\"width: 100%;margin: 15px auto;\">\r\n\r\n                            <ng-container *ngIf=\"cartHasItems\">\r\n                                <button (click)=\"takeMeToReviewPage()\" id=\"proceedToReview\" class=\"checkout-btn nextBtn\">Proceed</button>\r\n                            </ng-container>\r\n\r\n                        </div>\r\n\r\n                    </div>\r\n                </div>\r\n\r\n            </div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n        </div>\r\n\r\n    </div>\r\n    <div class=\"row setup-content\" id=\"step-2\">\r\n        <div class=\"col-md-12 cleafix\">\r\n\r\n            <div class=\"col-left clearfix\">\r\n\r\n                <div class=\"holder-box clearfix\">\r\n                    <!-- wrapper -->\r\n\r\n                    <div class='header clearfix'>\r\n                        <div class=\"left-image-side clearfix\">\r\n                            <img src=\"assets/img/dw.png\" width=\"75px\">\r\n                        </div>\r\n                        <div class='right-name clearfix'>\r\n                            <p class=\"chemist-name\">{{ChemistViewing.UserName}}</p>\r\n                            <p class=\"opening-hours\">{{ChemistViewing.DistanceFromUs}} KM</p>\r\n\r\n                            <div class=\"chemist-ratings\">\r\n\r\n                                <star-rating-comp [starType]=\"'icon'\" [disabled]=\"true\" [rating]=\"ChemistViewing.Chemist.ChemistRating\"></star-rating-comp>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n\r\n                    <hr class=\"saperator\">\r\n\r\n\r\n                    <div class=\"table-details\">\r\n\r\n                        <div class=\"one-row clearfix \" *ngFor=\"let onerow of cart\">\r\n                            <div class=\"del\" (click)=\"deletethisRow(onerow)\">\r\n                                <img src=\"assets/img/del.png\">\r\n                            </div>\r\n                            <div class=\"name\">\r\n                                <span class=\"med-name\">{{onerow.Name}}</span>\r\n                                <span>({{onerow.ChemistCategoryName}}) {{onerow.DosageValue}}{{onerow.DosageName}} {{onerow.MeausurementName}}</span>\r\n                            </div>\r\n                            <div class=\"quantity\">\r\n                                <div class=\"quantity\" id=\"prod-quantity\">\r\n                                    <input type=\"number\" id=\"num_val_{{onerow.Id}}\" min=\"1\" max=\"10\" class='qty' step=\"1\" value=\"{{onerow.Quantity}}\" readonly>\r\n                                    <div class=\"quantity-nav\">\r\n                                        <div class=\"quantity-button quantity-up qtyplus \" field='quantity' (click)=\"UppingReview(onerow)\">+</div>\r\n                                        <div class=\"quantity-button quantity-down qtyminus\" field='quantity' (click)=\"DowningReview(onerow)\">-</div>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"subtotal\">\r\n                                <p>Rs. {{onerow.Total}}</p>\r\n                            </div>\r\n\r\n                        </div>\r\n\r\n                        <div class=\"row  subtotal-row clearfix\">\r\n                            <div class=\"subtotal-heading\">\r\n                                <p>Subtotal</p>\r\n                            </div>\r\n                            <div class=\"subtotal-value\">\r\n                                Rs. {{SubTotal}}\r\n                            </div>\r\n\r\n                        </div>\r\n\r\n\r\n                        <div class=\"row voucher-row clearfix\">\r\n                            <h3>Enter your voucher code here</h3>\r\n\r\n                            <div class='voucher-form clearfix'>\r\n                                <div class=\"inputField\">\r\n                                    <input type=\"text\">\r\n                                </div>\r\n                                <div class=\"inputBtn\">\r\n                                    <button>Submit</button>\r\n                                </div>\r\n                            </div>\r\n\r\n                        </div>\r\n\r\n                        <hr class=\"saperator\">\r\n\r\n\r\n                        <div class=\"row footer-row clearfix\">\r\n                            <div class=\"subtotal-heading\">\r\n                                <p>Delivery Fee</p>\r\n                            </div>\r\n                            <div class=\"subtotal-value\">\r\n                                0\r\n                            </div>\r\n\r\n                        </div>\r\n\r\n                        <div class=\"row  footer-row no-margin-top clearfix\">\r\n                            <div class=\"subtotal-heading\">\r\n                                <p>Total</p>\r\n                            </div>\r\n                            <div class=\"subtotal-value font20\">\r\n                                Rs. {{FinalTotal}}\r\n                            </div>\r\n\r\n                        </div>\r\n\r\n\r\n\r\n                    </div>\r\n\r\n                </div>\r\n                <!-- wrapper -->\r\n\r\n            </div>\r\n\r\n            <div class=\"col-right clearfix\">\r\n\r\n                <div class=\"holder-box clearfix\">\r\n\r\n                    <h3>Order Information</h3>\r\n\r\n\r\n\r\n                    <div class=\"check1\">\r\n                        <p>\r\n                            <input type=\"radio\" id=\"test2\" (change)=\"AsSoonAsPossibleSelected()\" name=\"radio-group\" checked>\r\n                            <label for=\"test2\" class='delivery-text'>Deliver Now</label>\r\n                            <span class='delivery-text'>Estimated Delivery Time : {{estimatedDeliveryTime}} min</span>\r\n                        </p>\r\n\r\n                        <p>\r\n                            <input type=\"radio\" id=\"test3\" (change)=\"showTimeSlots()\" name=\"radio-group\">\r\n                            <label for=\"test3\" class='delivery-text'>Deliver Later</label>\r\n                        </p>\r\n\r\n                        <div class=\"FetchingTimeSlots\">\r\n                            <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->\r\n                            <svg width=\"50\" height=\"30\" viewBox=\"0 0 120 30\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"#1ec26b\">\r\n                                <circle cx=\"15\" cy=\"15\" r=\"15\">\r\n                                    <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                    <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                </circle>\r\n                                <circle cx=\"60\" cy=\"15\" r=\"9\" fill-opacity=\"0.3\">\r\n                                    <animate attributeName=\"r\" from=\"9\" to=\"9\" begin=\"0s\" dur=\"0.8s\" values=\"9;15;9\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                    <animate attributeName=\"fill-opacity\" from=\"0.5\" to=\"0.5\" begin=\"0s\" dur=\"0.8s\" values=\".5;1;.5\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                </circle>\r\n                                <circle cx=\"105\" cy=\"15\" r=\"15\">\r\n                                    <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                    <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                </circle>\r\n                            </svg>\r\n\r\n                        </div>\r\n\r\n                        <ng-container>\r\n\r\n                            <ul class=\"time-slots\">\r\n                                <li *ngFor=\"let timeSlot of timeSlots\" class=\"\">\r\n                                    <button class=\"time-slot\" (click)=\"selectThisSlot($event,timeSlot.Id)\">{{timeSlot.StartingTime}} - {{timeSlot.EndingTime}}</button>\r\n                                </li>\r\n                            </ul>\r\n\r\n                        </ng-container>\r\n\r\n                    </div>\r\n\r\n                    <hr class=\"saperator\">\r\n\r\n                    <div class='italic-text row'>\r\n                        <p>(if you want to add any comment e.g. about delivery instructions, this is the right place)</p>\r\n                    </div>\r\n\r\n\r\n                    <div class='message-text row'>\r\n                        <p style=\"cursor:pointer;\" (click)=\"showMessageArea()\">\r\n                            <img src=\"assets/img/play-arrow.png\"> Add a message to your order\r\n\r\n                        </p>\r\n\r\n\r\n\r\n                        <div class=\"textarea-div2 animated\">\r\n                            <textarea placeholder=\"Write any instructions here ...\"></textarea>\r\n                        </div>\r\n\r\n\r\n\r\n                    </div>\r\n\r\n                    <div class=\"alignCenter row\" >\r\n\r\n                            <ng-container *ngIf=\"!ThisUser\">\r\n                                    <button (click)=\"takeMeToStep3()\" class=\"checkout-btn nextBtn\">Checkout</button>\r\n                            </ng-container>\r\n                            <ng-container *ngIf=\"ThisUser\">\r\n                                    <p>Sign In/Sign Up to proceed to checkout!</p>\r\n                            </ng-container>\r\n                   \r\n                    </div>\r\n\r\n                </div>\r\n\r\n\r\n            </div>\r\n\r\n\r\n        </div>\r\n    </div>\r\n    <div class=\"row setup-content\" id=\"step-3\">\r\n\r\n        <div class=\"col-md-12\">\r\n\r\n\r\n            <div class=\"left-pane\">\r\n                <div class=\"inner-wrapper\">\r\n                    <div class=\"header\">\r\n                        <h3>My Contact Details</h3>\r\n                    </div>\r\n                    <div class=\"body clearfix\">\r\n                        <div class=\"lefty-side clearfix\">\r\n                            <p class=\"leftyVa\">Full Name</p>\r\n                            <p class=\"leftyVa\">Email</p>\r\n                            <p class=\"leftyVa\">Mobile</p>\r\n                        </div>\r\n\r\n                        <ng-container *ngIf=\"!IsGuestUser\">\r\n                            <div class=\"righty-side col-md-6 clearfix\">\r\n                                <p class=\"rightyVal\">{{ThisUser.UserName}}</p>\r\n                                <p class=\"rightyVal\" *ngIf=\"ThisUser\">No name provided</p>\r\n                                <p class=\"rightyVal\">{{ThisUser.Email}}</p>\r\n                                <p class=\"rightyVal\" *ngIf=\"ThisUser\">No email provided</p>\r\n                                <p class=\"rightyVal\"></p>\r\n                                <a class=\"rightyVal green\" *ngIf=\"!ThisUser\" (click)=\"logOut()\">Not {{ThisUser.UserName}}? Logout </a>\r\n                                <a class=\"rightyVal green\" *ngIf=\"ThisUser\" (click)=\"logOut()\"></a>\r\n                            </div>\r\n                        </ng-container>\r\n\r\n                        \r\n                    </div>\r\n                </div>\r\n\r\n                <div class=\"inner-wrapper\">\r\n                    <div class=\"header\">\r\n                        <h3>Your delivery address</h3>\r\n                    </div>\r\n                    <div class=\"body clearfix\">\r\n\r\n\r\n                        <p class=\"oldAddress\">\r\n\r\n                            <input type=\"radio\" id=\"newDeliveryCheck\" (change)=\"createNewAddress()\" name=\"radio-group\" value=\"NewAddress\">\r\n                            <label for=\"newDeliveryCheck\" class='delivery-text'>Create new delivery address</label>\r\n\r\n\r\n                        </p>\r\n                        <ng-container *ngIf=\"newAddressEnabled\">\r\n                            <div class=\"addressesPane\">\r\n                                <span class=\"requiredRed\">*</span>\r\n                                <span class=\"required\">Required Fields</span>\r\n\r\n                                <p>\r\n                                    <span class=\"requiredRed\">*</span>\r\n                                    <span class=\"normalText\">Address</span>\r\n                                </p>\r\n\r\n                                <div class=\"form-group\">\r\n                                    <input type=\"text\" class=\"address-field\" placeholder=\"Enter your address delivery addresss\" id=\"EnteredAddressDetail\" name=\"EnteredAddress.AddressDetail\" [(ngModel)]=\"EnteredAddress.AddressDetail\">\r\n                                  <!--   <span class=\"required\">Enter your address delivery address</span> -->\r\n                                </div>\r\n                                \r\n                                \r\n                                \r\n                                <div class=\"form-group\">\r\n                                \r\n                                    <input type=\"text\" class=\"address-field\" placeholder=\"Enter your area delivery address\" id=\"EnteredAddressArea\" name=\"EnteredAddress.Area\" [(ngModel)]=\"EnteredAddress.Area\">\r\n                                    <!-- <span class=\"required\">Enter your area delivery address</span> -->\r\n                                </div>\r\n                                \r\n                                \r\n                                <div class=\"form-group\">\r\n                                \r\n                                    <input type=\"text\" placeholder=\"Enter your city for delivery address\" class=\"address-field\" id=\"EnteredAddressCity\" name=\"EnteredAddress.City\" [(ngModel)]=\"EnteredAddress.City\">\r\n                                    <!-- <span class=\"required\">Enter your city for delivery address</span> -->\r\n                                </div>\r\n\r\n                                \r\n\r\n                                <div class=\"loader\">\r\n                                    <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->\r\n                                    <svg width=\"50\" height=\"30\" viewBox=\"0 0 120 30\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"#1ec26b\">\r\n                                        <circle cx=\"15\" cy=\"15\" r=\"15\">\r\n                                            <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                            />\r\n                                            <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                            />\r\n                                        </circle>\r\n                                        <circle cx=\"60\" cy=\"15\" r=\"9\" fill-opacity=\"0.3\">\r\n                                            <animate attributeName=\"r\" from=\"9\" to=\"9\" begin=\"0s\" dur=\"0.8s\" values=\"9;15;9\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                            />\r\n                                            <animate attributeName=\"fill-opacity\" from=\"0.5\" to=\"0.5\" begin=\"0s\" dur=\"0.8s\" values=\".5;1;.5\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                            />\r\n                                        </circle>\r\n                                        <circle cx=\"105\" cy=\"15\" r=\"15\">\r\n                                            <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                            />\r\n                                            <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                            />\r\n                                        </circle>\r\n                                    </svg>\r\n\r\n                                </div>\r\n\r\n                                <div class=\"form-group\" id=\"saveAddressBtn\">\r\n                                    <button class=\"save-address\" (click)=\"saveThisAddress()\">Save Address</button>\r\n                                </div>\r\n\r\n                                <div class=\"location-box\">\r\n                                    <p>\r\n                                        <span class=\"normalText\">Your Location</span>\r\n                                    </p>\r\n                                    <ng-container *ngIf=\"addressSet\">\r\n\r\n\r\n                                        <p class=\"location-text\">{{NewAddressEnteredAndSelected.City}},{{NewAddressEnteredAndSelected.Area}},{{NewAddressEnteredAndSelected.AddressDetail}}</p>\r\n\r\n\r\n                                    </ng-container>\r\n                                </div>\r\n\r\n                                <div class='message-text row' (click)=\"showTextArea3()\">\r\n                                    <p>\r\n                                        <i class=\"thisone3 fa fa-chevron-right\"></i> Delivery Instructions</p>\r\n                                    <span class=\"optional\">(Optional)</span>\r\n\r\n\r\n                                    <div class=\"textarea-div3 animated\">\r\n                                        <textarea [(ngModel)]=\"EnteredAddress.DeliveryInstructions\" name=\"EnteredAddress.DeliveryInstructions\" placeholder=\"Write any instructions here ...\"></textarea>\r\n                                    </div>\r\n\r\n                                </div>\r\n\r\n                                <div class='message-text row' (click)=\"showTextArea4()\">\r\n                                    <p>\r\n                                        <i class=\"thisone4 fa fa-chevron-right\"></i> Additional Information</p>\r\n                                    <span class=\"optional\">(Optional)</span>\r\n                                    <div class=\"textarea-div4 animated\">\r\n                                        <textarea placeholder=\"Write any instructions here ...\"></textarea>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </ng-container>\r\n                        <p class=\"oldAddress\">\r\n\r\n                            <input type=\"radio\" id=\"oldDeliveryCheck\" (change)=\"oldAddress()\" name=\"radio-group\" value=\"oldAddress\">\r\n                            <label for=\"oldDeliveryCheck\" class='delivery-text'>Use saved delivery address</label>\r\n\r\n                        </p>\r\n\r\n                        <ng-container *ngIf=\"oldAddressEnabled\">\r\n                            <ul class=\"EnteredAddress\">\r\n                                <li class=\"listed-addresses\" *ngFor=\"let EnteredAddress of UsersAddresses\">\r\n                                    <button class=\"\" (click)=\"selectThisAddress($event,EnteredAddress.Id)\">{{EnteredAddress.City}},{{EnteredAddress.Area}},{{EnteredAddress.AddressDetail}}</button>\r\n                                </li>\r\n                            </ul>\r\n                        </ng-container>\r\n\r\n                    </div>\r\n                </div>\r\n\r\n\r\n\r\n\r\n                <div class=\"inner-wrapper\">\r\n                    <div class=\"header\">\r\n                        <h3>Choose how to pay</h3>\r\n                    </div>\r\n                    <div class=\"body clearfix\">\r\n\r\n\r\n                        <div class=\"credit-card-payment\">\r\n                            <p class=\"oldAddress\">\r\n                                <input type=\"radio\" id=\"payingNow\" (change)=\"showCreditCard()\" name=\"radio-group\" value=\"payingNow\">\r\n                                <label for=\"payingNow\" class='delivery-text'>Credit Card</label>\r\n                            </p>\r\n                        \r\n\r\n                            <div class=\"pay-now-details animated zoomIn\">\r\n\r\n                                <h3>Please provide your credit card details</h3>\r\n\r\n                                <div class=\"form-group\">\r\n\r\n                                    <label for=\"cardName\">\r\n                                        <span class=\"requiredRed\">*</span> Name on card</label>\r\n                                    <br/>\r\n                                    <input type=\"text\" class=\"form-control\" id=\"cardName\">\r\n                                    <span class=\"required\">As it appears on your credit card</span>\r\n\r\n                                </div>\r\n\r\n                                <div class=\"form-group\">\r\n\r\n                                    <label for=\"cardNumber\">\r\n                                        <span class=\"requiredRed\">*</span> Card Number</label>\r\n                                    <br/>\r\n                                    <input type=\"text\" class=\"form-control\" id=\"cardNumber\">\r\n                                    <span class=\"required\">16 digits in front of your credit card. No spaces</span>\r\n\r\n                                </div>\r\n\r\n\r\n                                <div class=\"form-group\">\r\n                                    <label for=\"cardNumber\">\r\n                                        <span class=\"requiredRed\">*</span> Expiration Date</label>\r\n                                    <br/>\r\n                                    <div class=\"col-md-6 col-sm-6\">\r\n                                        <span class=\"dropdown-el\">\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"January\" checked=\"checked\" id=\"sort-relevance\">\r\n                                            <label for=\"sort-relevance\">January</label>\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"February\" id=\"sort-best\">\r\n                                            <label for=\"sort-best\">February</label>\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"March\" id=\"sort-low\">\r\n                                            <label for=\"sort-low\">March</label>\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"April\" id=\"sort-high\">\r\n                                            <label for=\"sort-high\">April</label>\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"May\" id=\"sort-brand\">\r\n                                            <label for=\"sort-brand\">May</label>\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"June\" id=\"sort-name\">\r\n                                            <label for=\"sort-name\">June</label>\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"July\" id=\"sort-name\">\r\n                                            <label for=\"sort-name\">July</label>\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"August\" id=\"sort-name\">\r\n                                            <label for=\"sort-name\">August</label>\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"September\" id=\"sort-name\">\r\n                                            <label for=\"sort-name\">September</label>\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"October\" id=\"sort-name\">\r\n                                            <label for=\"sort-name\">October</label>\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"November\" id=\"sort-name\">\r\n                                            <label for=\"sort-name\">November</label>\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"December\" id=\"sort-name\">\r\n                                            <label for=\"sort-name\">December</label>\r\n                                        </span>\r\n                                    </div>\r\n\r\n                                    <div class=\"col-md-6 col-sm-6\">\r\n                                        <span class=\"dropdown-el\">\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2016\" checked=\"checked\" id=\"sort-relevance\">\r\n                                            <label for=\"sort-relevance\">2016</label>\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2017\" id=\"sort-best\">\r\n                                            <label for=\"sort-best\">2017</label>\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2018\" id=\"sort-low\">\r\n                                            <label for=\"sort-low\">2018</label>\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2019\" id=\"sort-high\">\r\n                                            <label for=\"sort-high\">2019</label>\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2020\" id=\"sort-brand\">\r\n                                            <label for=\"sort-brand\">2020</label>\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2021\" id=\"sort-name\">\r\n                                            <label for=\"sort-name\">2021</label>\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2022\" id=\"sort-name\">\r\n                                            <label for=\"sort-name\">2022</label>\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2023\" id=\"sort-name\">\r\n                                            <label for=\"sort-name\">2023</label>\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2024\" id=\"sort-name\">\r\n                                            <label for=\"sort-name\">2024</label>\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2025\" id=\"sort-name\">\r\n                                            <label for=\"sort-name\">2025</label>\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2026\" id=\"sort-name\">\r\n                                            <label for=\"sort-name\">2026</label>\r\n                                            <input class=\"custom-dropdown\" type=\"radio\" name=\"sortType\" value=\"2027\" id=\"sort-name\">\r\n                                            <label for=\"sort-name\">2027</label>\r\n                                        </span>\r\n                                    </div>\r\n\r\n                                </div>\r\n\r\n\r\n                                <div class=\"form-group\" style=\"    margin-top: 47px;\">\r\n\r\n                                    <label for=\"cardNumber\">\r\n                                        <span class=\"requiredRed\">*</span> Security Code</label>\r\n                                    <br/>\r\n                                    <input type=\"text\" class=\"form-control\" id=\"cardNumber\">\r\n                                    <span class=\"required\">CVV or CVV2. 3 Digits on the back. Amex 4, on the front</span>\r\n\r\n                                </div>\r\n\r\n                                <p>\r\n                                    <input class=\"styled-checkbox\" id=\"styled-checkbox-1\" type=\"checkbox\" value=\"value1\">\r\n                                    <label for=\"styled-checkbox-1\">Save my credit card details for future orders on the secure payment provider site.\r\n                                    </label>\r\n                                </p>\r\n\r\n\r\n                                <div class='bottom-text'>\r\n                                    <p class='bottom-text1'>After proceeding, you might be redirected to you card issuer page to verify this transaction</p>\r\n                                    <p class='bottom-text2'>Pay with master card or visa. You will be redirected to the second page of ouy patment\r\n                                        partner. Transaction would be proceeded abroad.</p>\r\n                                </div>\r\n\r\n                            </div>\r\n                        </div>\r\n\r\n                        <div class=\"cash-on-delivery\">\r\n                          <p class=\"oldAddress\">\r\n                                    <input type=\"radio\" id=\"cashOnDelivery\" (change)=\"CashOnDelivery()\" name=\"radio-group\" value=\"cashOnDelivery\">\r\n                                    <label for=\"cashOnDelivery\" class='delivery-text'>Cash on Delivery</label>\r\n                                </p>\r\n\r\n                        </div>\r\n                    \r\n\r\n\r\n\r\n                    </div>\r\n                </div>\r\n\r\n\r\n                <div class=\"inner-wrapper cleafix special\">\r\n\r\n                    <div class=\"col-md-6 cleafix\">\r\n\r\n                    </div>\r\n\r\n                    <div class=\"col-md-6 cleafix\">\r\n\r\n                        <div class=\"left-equal cleafix\">\r\n                            Total\r\n                        </div>\r\n                        <div class=\"right-equal cleafix\">\r\n                            Rs. {{FinalTotal}}\r\n                        </div>\r\n\r\n\r\n                        <p>By clicking this button, you agree with our\r\n                            <a>terms and conditions</a>\r\n                        </p>\r\n\r\n\r\n                        <div class=\"Orderloader\">\r\n                            <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->\r\n                            <svg width=\"50\" height=\"30\" viewBox=\"0 0 120 30\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"#1ec26b\">\r\n                                <circle cx=\"15\" cy=\"15\" r=\"15\">\r\n                                    <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                    <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                </circle>\r\n                                <circle cx=\"60\" cy=\"15\" r=\"9\" fill-opacity=\"0.3\">\r\n                                    <animate attributeName=\"r\" from=\"9\" to=\"9\" begin=\"0s\" dur=\"0.8s\" values=\"9;15;9\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                    <animate attributeName=\"fill-opacity\" from=\"0.5\" to=\"0.5\" begin=\"0s\" dur=\"0.8s\" values=\".5;1;.5\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                </circle>\r\n                                <circle cx=\"105\" cy=\"15\" r=\"15\">\r\n                                    <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                    <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                                    />\r\n                                </circle>\r\n                            </svg>\r\n\r\n                        </div>\r\n\r\n                        <button class=\"place-now\" (click)=\"placeOrder()\">Place order now</button>\r\n                    </div>\r\n\r\n                </div>\r\n\r\n\r\n\r\n\r\n            </div>\r\n\r\n\r\n            <div class=\"right-pane\">\r\n\r\n\r\n                <div class=\"time-pane\">\r\n\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6 col-sm-6 col-xs-6\" style=\"text-align:left\">\r\n                            <p class='right-estimate'>Estimated Delivery Time</p>\r\n                        </div>\r\n                        <div class=\"col-md-6 col-sm-6 col-xs-6\" style=\"text-align: right\">\r\n                            <div class=\"time\">\r\n                                <p class=\"big\">{{estimatedDeliveryTime}}</p>\r\n                                <p class=\"small\">mins</p>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n\r\n\r\n                </div>\r\n\r\n\r\n\r\n\r\n                <div class=\"cart\">\r\n\r\n                    <div class=\"header\">\r\n                        <h3>Your Order</h3>\r\n                    </div>\r\n                    <div class=\"body clearfix\">\r\n\r\n                        <div class=\"one-row clearfix\" *ngFor=\"let onerow of cart\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\">{{onerow?.Quantity}}x\r\n                                    <span style=\"color:#1ec26b;font-weight:bold;font-size:16px\">{{onerow?.Name}}</span>\r\n                                </P>\r\n                                <span class=\"optional\">{{onerow?.ChemistCategoryName}}</span>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail\">Rs. {{onerow?.Total}}</P>\r\n                            </div>\r\n                        </div>\r\n\r\n                    </div>\r\n                    <div class='footer clearfix'>\r\n\r\n                        <div class=\"one-row clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\">Subtotal</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail\">Rs. {{SubTotal}}</P>\r\n                            </div>\r\n                        </div>\r\n\r\n                        <div class=\"one-row clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\">Delivery Fee</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail\">Rs. 0</P>\r\n                            </div>\r\n                        </div>\r\n\r\n\r\n                        <div class=\"one-row more-margin clearfix\">\r\n                            <div class=\"item\">\r\n                                <P class=\"item-detail\" style=\"padding-top:10px;\">Total</P>\r\n                            </div>\r\n                            <div class=\"price\">\r\n                                <P class=\"item-detail bigText\">Rs. {{FinalTotal}}</P>\r\n                            </div>\r\n                        </div>\r\n\r\n                    </div>\r\n                </div>\r\n\r\n            </div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n        </div>\r\n\r\n    </div>\r\n\r\n\r\n</div>"
+
+/***/ }),
+/* 296 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AboutComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(14);
+
+
+
+var AboutComponent = (function () {
+    function AboutComponent(route) {
+        this.route = route;
+    }
+    AboutComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.route
+            .data
+            .subscribe(function (data) {
+            /**
+             * Your resolved data from route.
+             */
+            _this.localState = data.yourData;
+        });
+        console.log('hello `About` component');
+        /**
+         * static data that is bundled
+         * var mockData = require('assets/mock-data/mock-data.json');
+         * console.log('mockData', mockData);
+         * if you're working with mock data you can also use http.get('assets/mock-data/mock-data.json')
+         */
+        this.asyncDataWithWebpack();
+    };
+    AboutComponent.prototype.asyncDataWithWebpack = function () {
+        var _this = this;
+        /**
+         * you can also async load mock data with 'es6-promise-loader'
+         * you would do this if you don't want the mock-data bundled
+         * remember that 'es6-promise-loader' is a promise
+         */
+        setTimeout(function () {
+            __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 356))
+                .then(function (json) {
+                console.log('async mockData', json);
+                _this.localState = json;
+            });
+        });
+    };
+    return AboutComponent;
+}());
+AboutComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
+        selector: 'about',
+        styles: ["\n  "],
+        template: "\n    <h1>About</h1>\n    <div>\n      For hot module reloading run\n      <pre>npm run start:hmr</pre>\n    </div>\n    <div>\n      <h3>\n        patrick@AngularClass.com\n      </h3>\n    </div>\n    <pre>this.localState = {{ localState | json }}</pre>\n  "
+    }),
+    __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_router__["ActivatedRoute"]])
+], AboutComponent);
+
+
+
+/***/ }),
+/* 297 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NoContentComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+
+
+var NoContentComponent = (function () {
+    function NoContentComponent() {
+    }
+    return NoContentComponent;
+}());
+NoContentComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
+        selector: 'no-content',
+        template: "\n    <div>\n      <h1>404: page missing</h1>\n    </div>\n  "
+    })
+], NoContentComponent);
+
+
+
+/***/ }),
+/* 298 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -98590,7 +99650,7 @@ var LocationModel = (function () {
 
 
 /***/ }),
-/* 281 */
+/* 299 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -98604,116 +99664,30 @@ var ContactModel = (function () {
 
 
 /***/ }),
-/* 282 */
+/* 300 */
 /***/ (function(module, exports, __webpack_require__) {
 
 !function(e,t){ true?module.exports=t():"function"==typeof define&&define.amd?define([],t):"object"==typeof exports?exports.AOS=t():e.AOS=t()}(this,function(){return function(e){function t(o){if(n[o])return n[o].exports;var i=n[o]={exports:{},id:o,loaded:!1};return e[o].call(i.exports,i,i.exports,t),i.loaded=!0,i.exports}var n={};return t.m=e,t.c=n,t.p="dist/",t(0)}([function(e,t,n){"use strict";function o(e){return e&&e.__esModule?e:{default:e}}var i=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var o in n)Object.prototype.hasOwnProperty.call(n,o)&&(e[o]=n[o])}return e},r=n(1),a=(o(r),n(6)),u=o(a),c=n(7),f=o(c),s=n(8),d=o(s),l=n(9),p=o(l),m=n(10),b=o(m),v=n(11),y=o(v),g=n(14),h=o(g),w=[],k=!1,x=document.all&&!window.atob,j={offset:120,delay:0,easing:"ease",duration:400,disable:!1,once:!1,startEvent:"DOMContentLoaded"},O=function(){var e=arguments.length>0&&void 0!==arguments[0]&&arguments[0];if(e&&(k=!0),k)return w=(0,y.default)(w,j),(0,b.default)(w,j.once),w},S=function(){w=(0,h.default)(),O()},_=function(){w.forEach(function(e,t){e.node.removeAttribute("data-aos"),e.node.removeAttribute("data-aos-easing"),e.node.removeAttribute("data-aos-duration"),e.node.removeAttribute("data-aos-delay")})},E=function(e){return e===!0||"mobile"===e&&p.default.mobile()||"phone"===e&&p.default.phone()||"tablet"===e&&p.default.tablet()||"function"==typeof e&&e()===!0},z=function(e){return j=i(j,e),w=(0,h.default)(),E(j.disable)||x?_():(document.querySelector("body").setAttribute("data-aos-easing",j.easing),document.querySelector("body").setAttribute("data-aos-duration",j.duration),document.querySelector("body").setAttribute("data-aos-delay",j.delay),"DOMContentLoaded"===j.startEvent&&["complete","interactive"].indexOf(document.readyState)>-1?O(!0):"load"===j.startEvent?window.addEventListener(j.startEvent,function(){O(!0)}):document.addEventListener(j.startEvent,function(){O(!0)}),window.addEventListener("resize",(0,f.default)(O,50,!0)),window.addEventListener("orientationchange",(0,f.default)(O,50,!0)),window.addEventListener("scroll",(0,u.default)(function(){(0,b.default)(w,j.once)},99)),document.addEventListener("DOMNodeRemoved",function(e){var t=e.target;t&&1===t.nodeType&&t.hasAttribute&&t.hasAttribute("data-aos")&&(0,f.default)(S,50,!0)}),(0,d.default)("[data-aos]",S),w)};e.exports={init:z,refresh:O,refreshHard:S}},function(e,t){},,,,,function(e,t){(function(t){"use strict";function n(e,t,n){function o(t){var n=b,o=v;return b=v=void 0,k=t,g=e.apply(o,n)}function r(e){return k=e,h=setTimeout(s,t),S?o(e):g}function a(e){var n=e-w,o=e-k,i=t-n;return _?j(i,y-o):i}function c(e){var n=e-w,o=e-k;return void 0===w||n>=t||n<0||_&&o>=y}function s(){var e=O();return c(e)?d(e):void(h=setTimeout(s,a(e)))}function d(e){return h=void 0,E&&b?o(e):(b=v=void 0,g)}function l(){void 0!==h&&clearTimeout(h),k=0,b=w=v=h=void 0}function p(){return void 0===h?g:d(O())}function m(){var e=O(),n=c(e);if(b=arguments,v=this,w=e,n){if(void 0===h)return r(w);if(_)return h=setTimeout(s,t),o(w)}return void 0===h&&(h=setTimeout(s,t)),g}var b,v,y,g,h,w,k=0,S=!1,_=!1,E=!0;if("function"!=typeof e)throw new TypeError(f);return t=u(t)||0,i(n)&&(S=!!n.leading,_="maxWait"in n,y=_?x(u(n.maxWait)||0,t):y,E="trailing"in n?!!n.trailing:E),m.cancel=l,m.flush=p,m}function o(e,t,o){var r=!0,a=!0;if("function"!=typeof e)throw new TypeError(f);return i(o)&&(r="leading"in o?!!o.leading:r,a="trailing"in o?!!o.trailing:a),n(e,t,{leading:r,maxWait:t,trailing:a})}function i(e){var t="undefined"==typeof e?"undefined":c(e);return!!e&&("object"==t||"function"==t)}function r(e){return!!e&&"object"==("undefined"==typeof e?"undefined":c(e))}function a(e){return"symbol"==("undefined"==typeof e?"undefined":c(e))||r(e)&&k.call(e)==d}function u(e){if("number"==typeof e)return e;if(a(e))return s;if(i(e)){var t="function"==typeof e.valueOf?e.valueOf():e;e=i(t)?t+"":t}if("string"!=typeof e)return 0===e?e:+e;e=e.replace(l,"");var n=m.test(e);return n||b.test(e)?v(e.slice(2),n?2:8):p.test(e)?s:+e}var c="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},f="Expected a function",s=NaN,d="[object Symbol]",l=/^\s+|\s+$/g,p=/^[-+]0x[0-9a-f]+$/i,m=/^0b[01]+$/i,b=/^0o[0-7]+$/i,v=parseInt,y="object"==("undefined"==typeof t?"undefined":c(t))&&t&&t.Object===Object&&t,g="object"==("undefined"==typeof self?"undefined":c(self))&&self&&self.Object===Object&&self,h=y||g||Function("return this")(),w=Object.prototype,k=w.toString,x=Math.max,j=Math.min,O=function(){return h.Date.now()};e.exports=o}).call(t,function(){return this}())},function(e,t){(function(t){"use strict";function n(e,t,n){function i(t){var n=b,o=v;return b=v=void 0,O=t,g=e.apply(o,n)}function r(e){return O=e,h=setTimeout(s,t),S?i(e):g}function u(e){var n=e-w,o=e-O,i=t-n;return _?x(i,y-o):i}function f(e){var n=e-w,o=e-O;return void 0===w||n>=t||n<0||_&&o>=y}function s(){var e=j();return f(e)?d(e):void(h=setTimeout(s,u(e)))}function d(e){return h=void 0,E&&b?i(e):(b=v=void 0,g)}function l(){void 0!==h&&clearTimeout(h),O=0,b=w=v=h=void 0}function p(){return void 0===h?g:d(j())}function m(){var e=j(),n=f(e);if(b=arguments,v=this,w=e,n){if(void 0===h)return r(w);if(_)return h=setTimeout(s,t),i(w)}return void 0===h&&(h=setTimeout(s,t)),g}var b,v,y,g,h,w,O=0,S=!1,_=!1,E=!0;if("function"!=typeof e)throw new TypeError(c);return t=a(t)||0,o(n)&&(S=!!n.leading,_="maxWait"in n,y=_?k(a(n.maxWait)||0,t):y,E="trailing"in n?!!n.trailing:E),m.cancel=l,m.flush=p,m}function o(e){var t="undefined"==typeof e?"undefined":u(e);return!!e&&("object"==t||"function"==t)}function i(e){return!!e&&"object"==("undefined"==typeof e?"undefined":u(e))}function r(e){return"symbol"==("undefined"==typeof e?"undefined":u(e))||i(e)&&w.call(e)==s}function a(e){if("number"==typeof e)return e;if(r(e))return f;if(o(e)){var t="function"==typeof e.valueOf?e.valueOf():e;e=o(t)?t+"":t}if("string"!=typeof e)return 0===e?e:+e;e=e.replace(d,"");var n=p.test(e);return n||m.test(e)?b(e.slice(2),n?2:8):l.test(e)?f:+e}var u="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},c="Expected a function",f=NaN,s="[object Symbol]",d=/^\s+|\s+$/g,l=/^[-+]0x[0-9a-f]+$/i,p=/^0b[01]+$/i,m=/^0o[0-7]+$/i,b=parseInt,v="object"==("undefined"==typeof t?"undefined":u(t))&&t&&t.Object===Object&&t,y="object"==("undefined"==typeof self?"undefined":u(self))&&self&&self.Object===Object&&self,g=v||y||Function("return this")(),h=Object.prototype,w=h.toString,k=Math.max,x=Math.min,j=function(){return g.Date.now()};e.exports=n}).call(t,function(){return this}())},function(e,t){"use strict";function n(e,t){a.push({selector:e,fn:t}),!u&&r&&(u=new r(o),u.observe(i.documentElement,{childList:!0,subtree:!0,removedNodes:!0})),o()}function o(){for(var e,t,n=0,o=a.length;n<o;n++){e=a[n],t=i.querySelectorAll(e.selector);for(var r,u=0,c=t.length;u<c;u++)r=t[u],r.ready||(r.ready=!0,e.fn.call(r,r))}}Object.defineProperty(t,"__esModule",{value:!0});var i=window.document,r=window.MutationObserver||window.WebKitMutationObserver,a=[],u=void 0;t.default=n},function(e,t){"use strict";function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function o(){return navigator.userAgent||navigator.vendor||window.opera||""}Object.defineProperty(t,"__esModule",{value:!0});var i=function(){function e(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,n,o){return n&&e(t.prototype,n),o&&e(t,o),t}}(),r=/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i,a=/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i,u=/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino|android|ipad|playbook|silk/i,c=/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i,f=function(){function e(){n(this,e)}return i(e,[{key:"phone",value:function(){var e=o();return!(!r.test(e)&&!a.test(e.substr(0,4)))}},{key:"mobile",value:function(){var e=o();return!(!u.test(e)&&!c.test(e.substr(0,4)))}},{key:"tablet",value:function(){return this.mobile()&&!this.phone()}}]),e}();t.default=new f},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n=function(e,t,n){var o=e.node.getAttribute("data-aos-once");t>e.position?e.node.classList.add("aos-animate"):"undefined"!=typeof o&&("false"===o||!n&&"true"!==o)&&e.node.classList.remove("aos-animate")},o=function(e,t){var o=window.pageYOffset,i=window.innerHeight;e.forEach(function(e,r){n(e,i+o,t)})};t.default=o},function(e,t,n){"use strict";function o(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var i=n(12),r=o(i),a=function(e,t){return e.forEach(function(e,n){e.node.classList.add("aos-init"),e.position=(0,r.default)(e.node,t.offset)}),e};t.default=a},function(e,t,n){"use strict";function o(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var i=n(13),r=o(i),a=function(e,t){var n=0,o=0,i=window.innerHeight,a={offset:e.getAttribute("data-aos-offset"),anchor:e.getAttribute("data-aos-anchor"),anchorPlacement:e.getAttribute("data-aos-anchor-placement")};switch(a.offset&&!isNaN(a.offset)&&(o=parseInt(a.offset)),a.anchor&&document.querySelectorAll(a.anchor)&&(e=document.querySelectorAll(a.anchor)[0]),n=(0,r.default)(e).top,a.anchorPlacement){case"top-bottom":break;case"center-bottom":n+=e.offsetHeight/2;break;case"bottom-bottom":n+=e.offsetHeight;break;case"top-center":n+=i/2;break;case"bottom-center":n+=i/2+e.offsetHeight;break;case"center-center":n+=i/2+e.offsetHeight/2;break;case"top-top":n+=i;break;case"bottom-top":n+=e.offsetHeight+i;break;case"center-top":n+=e.offsetHeight/2+i}return a.anchorPlacement||a.offset||isNaN(t)||(o=t),n+o};t.default=a},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n=function(e){for(var t=0,n=0;e&&!isNaN(e.offsetLeft)&&!isNaN(e.offsetTop);)t+=e.offsetLeft-("BODY"!=e.tagName?e.scrollLeft:0),n+=e.offsetTop-("BODY"!=e.tagName?e.scrollTop:0),e=e.offsetParent;return{top:n,left:t}};t.default=n},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n=function(e){e=e||document.querySelectorAll("[data-aos]");var t=[];return[].forEach.call(e,function(e,n){t.push({node:e})}),t};t.default=n}])});
 //# sourceMappingURL=aos.js.map
 
 /***/ }),
-/* 283 */
+/* 301 */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"snackbar\"></div>\n\n\n\n<div class=\"header-top\">\n\n  <h1>Get Medicine Supplies from your Home!</h1>\n  <div class=\"search-box clearfix\">\n     <div class=\"left-city\">\n      <label class=\"wrap\">\n        <select class=\"dropdown\" (change)=\"getCityId($event.target.value)\">\n          <option disabled selected value> City </option>\n          <option *ngFor=\"let cities of allCitites\" value=\"{{cities.Id}}\">{{cities.Name}}</option>\n        </select>\n      </label>\n    </div> \n    <div class=\"middle-area\">\n      <input class=\"area-input\" type=\"text\" [(ngModel)]=\"address\" (keydown)=\"EnterKey($event)\" placeholder=\"Enter an area\" [options]='options' (setAddress)=\"getAddress($event)\"\n        (street_number)='street_number=$event' (street)='street=$event' (city)='myLocation.cityId = $event' (state)='state=$event' (district)='district=$event'\n        (country)='Pakistan' (postal_code)='postal_code=$event' (lat)='lat=$event' (lng)='lng=$event' (adr_address)='adr_address=$event'\n        (name)='name=$event' (place_id)='place_id=$event' (types)='types=$event' (url)='url=$event' (utc_offset)='utc_offset=$event'\n        (vicinity)='vicinity=$event' (photos)='photos=$event' (airport)='airport=$event' (CountryCodes)='CountryCodes=$event'\n        id=\"autocomplete\" ng2-google-place-autocomplete/>\n      <!--    <input type=\"text\"   name=\"myLocation.AreaName\" [(ngModel)]=\"myLocation.AreaName\"> -->\n    </div>\n    <div class=\"right-btn\">\n      <button class=\"header-btn\" (click)=\"showChemistPage()\">Let's Start</button>\n    </div>\n  </div>\n\n</div>\n\n\n<div class=\"container container-login\">\n\n\n  <div class=\"on-go\">\n    <h1>Order Medicine on the go</h1>\n  </div>\n\n\n</div>\n\n<div class=\"app-banner\">\n  <div class='container'>\n    <h3>Download the App</h3>\n    <p style=\"width:40%\">Get the app right in your pocket and order the medicine on the go from anywhere you want</p>\n\n\n    <div class=\"app-banner-inner\" data-aos=\"fade-right\">\n\n      <div class=\"app-buttons clearfix\">\n\n        <div class=\"apps clearfix\">\n          <div class=\"left-png clearfix\">\n            <img src=\"assets/img/apple.png\">\n          </div>\n          <div class=\"right-texty clearfix\">\n            <p class='small'>Download on the</p>\n            <p class='large'>App Store</p>\n          </div>\n        </div>\n\n\n        <div class=\"apps clearfix\" style=\"margin-left: 18px;\">\n          <div class=\"left-png clearfix\">\n            <img src=\"assets/img/appstore.png\">\n          </div>\n          <div class=\"right-texty clearfix\">\n            <p class='small'>Download on the</p>\n            <p class='large'>App Store</p>\n          </div>\n        </div>\n\n      </div>\n\n      <div class=\"mockup\" data-aos=\"fade-left\">\n        <img src=\"assets/img/mockup.png\">\n      </div>\n\n    </div>\n\n  </div>\n</div>\n\n\n<div class=\"container contact-form-row\">\n\n  <div class=\"contact-form\">\n    <h1>Get in Touch</h1>\n  </div>\n\n\n  <div class=\"actual-form clearfix\">\n    <div class=\"left-fields\" data-aos=\"zoom-in\">\n      <textarea placeholder=\"Your message ... \" name=\"UserQuery.contactMessage\" [(ngModel)]=\"UserQuery.contactMessage\"></textarea>\n    </div>\n    <div class=\"right-fields\" data-aos=\"zoom-in-up\">\n      <div class=\"form-group\">\n        <input type=\"text\" placeholder=\"Enter name\" id=\"contactName\" name=\"UserQuery.contactName\" [(ngModel)]=\"UserQuery.contactName\">\n      </div>\n      <div class=\"form-group\">\n        <input type=\"text\" placeholder=\"Enter email\"  id=\"contactEmail\" name=\"UserQuery.contactEmail\" [(ngModel)]=\"UserQuery.contactEmai\">\n      </div>\n      <div class=\"form-group\">\n        <button class=\"sendBtn\" (click)=\"submitUserQuery()\">Send</button>\n      </div>\n    </div>\n  </div>\n\n\n</div>"
+module.exports = "<div id=\"snackbar\"></div>\r\n\r\n\r\n\r\n<div class=\"header-top\">\r\n\r\n  <h1>Get Medicine Supplies from your Home!</h1>\r\n  <div class=\"search-box clearfix\">\r\n     <div class=\"left-city\">\r\n      <label class=\"wrap\">\r\n        <select class=\"dropdown\" (change)=\"getCityId($event.target.value)\">\r\n          <option disabled selected value> City </option>\r\n          <option *ngFor=\"let cities of allCitites\" value=\"{{cities.Id}}\">{{cities.Name}}</option>\r\n        </select>\r\n      </label>\r\n    </div> \r\n    <div class=\"middle-area\">\r\n      <input class=\"area-input\" type=\"text\" [(ngModel)]=\"address\" (keydown)=\"EnterKey($event)\" placeholder=\"Enter an area\" [options]='options' (setAddress)=\"getAddress($event)\"\r\n        (street_number)='street_number=$event' (street)='street=$event' (city)='myLocation.cityId = $event' (state)='state=$event' (district)='district=$event'\r\n        (country)='Pakistan' (postal_code)='postal_code=$event' (lat)='lat=$event' (lng)='lng=$event' (adr_address)='adr_address=$event'\r\n        (name)='name=$event' (place_id)='place_id=$event' (types)='types=$event' (url)='url=$event' (utc_offset)='utc_offset=$event'\r\n        (vicinity)='vicinity=$event' (photos)='photos=$event' (airport)='airport=$event' (CountryCodes)='CountryCodes=$event'\r\n        id=\"autocomplete\" ng2-google-place-autocomplete/>\r\n      <!--    <input type=\"text\"   name=\"myLocation.AreaName\" [(ngModel)]=\"myLocation.AreaName\"> -->\r\n    </div>\r\n    <div class=\"right-btn\">\r\n      <button class=\"header-btn\" (click)=\"showChemistPage()\">Let's Start</button>\r\n    </div>\r\n  </div>\r\n\r\n</div>\r\n\r\n\r\n<div class=\"container container-login\">\r\n\r\n\r\n  <div class=\"on-go\">\r\n    <h1>Order Medicine on the go</h1>\r\n  </div>\r\n\r\n\r\n</div>\r\n\r\n<div class=\"app-banner\">\r\n  <div class='container'>\r\n    <h3>Download the App</h3>\r\n    <p style=\"width:40%\">Get the app right in your pocket and order the medicine on the go from anywhere you want</p>\r\n\r\n\r\n    <div class=\"app-banner-inner\" data-aos=\"fade-right\">\r\n\r\n      <div class=\"app-buttons clearfix\">\r\n\r\n        <div class=\"apps clearfix\">\r\n          <div class=\"left-png clearfix\">\r\n            <img src=\"assets/img/apple.png\">\r\n          </div>\r\n          <div class=\"right-texty clearfix\">\r\n            <p class='small'>Download on the</p>\r\n            <p class='large'>App Store</p>\r\n          </div>\r\n        </div>\r\n\r\n\r\n        <div class=\"apps clearfix\" style=\"margin-left: 18px;\">\r\n          <div class=\"left-png clearfix\">\r\n            <img src=\"assets/img/appstore.png\">\r\n          </div>\r\n          <div class=\"right-texty clearfix\">\r\n            <p class='small'>Download on the</p>\r\n            <p class='large'>App Store</p>\r\n          </div>\r\n        </div>\r\n\r\n      </div>\r\n\r\n      <div class=\"mockup\" data-aos=\"fade-left\">\r\n        <img src=\"assets/img/mockup.png\">\r\n      </div>\r\n\r\n    </div>\r\n\r\n  </div>\r\n</div>\r\n\r\n\r\n<div class=\"container contact-form-row\">\r\n\r\n  <div class=\"contact-form\">\r\n    <h1>Get in Touch</h1>\r\n  </div>\r\n\r\n\r\n  <div class=\"actual-form clearfix\">\r\n    <div class=\"left-fields\" data-aos=\"zoom-in\">\r\n      <textarea placeholder=\"Your message ... \" name=\"UserQuery.contactMessage\" [(ngModel)]=\"UserQuery.contactMessage\"></textarea>\r\n    </div>\r\n    <div class=\"right-fields\" data-aos=\"zoom-in-up\">\r\n      <div class=\"form-group\">\r\n        <input type=\"text\" placeholder=\"Enter name\" id=\"contactName\" name=\"UserQuery.contactName\" [(ngModel)]=\"UserQuery.contactName\">\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <input type=\"text\" placeholder=\"Enter email\"  id=\"contactEmail\" name=\"UserQuery.contactEmail\" [(ngModel)]=\"UserQuery.contactEmai\">\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <button class=\"sendBtn\" (click)=\"submitUserQuery()\">Send</button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n\r\n</div>"
 
 /***/ }),
-/* 284 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(7)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "@font-face {\r\n    font-family: 'museo_sans500';\r\n    src: url(" + __webpack_require__(285) + ") format('woff2'),\r\n         url(" + __webpack_require__(286) + ") format('woff'),\r\n         url(" + __webpack_require__(287) + ")  format('truetype');\r\n    font-weight: normal;\r\n    font-style: normal;\r\n\r\n}\r\n\r\n\r\n@font-face {\r\n    font-family: 'museo_sans300';\r\n    src: url(" + __webpack_require__(138) + ") format('woff2'),\r\n         url(" + __webpack_require__(139) + ") format('woff'),\r\n         url(" + __webpack_require__(140) + ")  format('truetype');;\r\n    font-weight: normal;\r\n    font-style: normal;\r\n\r\n}\r\n\r\n    @font-face {\r\n        font-family: 'noto_sansbold';\r\n        src: url(" + __webpack_require__(288) + ") format('woff2'),\r\n             url(" + __webpack_require__(289) + ") format('woff'),\r\n             url(" + __webpack_require__(290) + ") format('truetype');\r\n        font-weight: normal;\r\n        font-style: normal;\r\n    \r\n    }\r\n    \r\n    \r\n    \r\n    \r\n    @font-face {\r\n        font-family: 'noto_sansbold_italic';\r\n        src: url(" + __webpack_require__(291) + ") format('woff2'),\r\n             url(" + __webpack_require__(292) + ") format('woff');\r\n        font-weight: normal;\r\n        font-style: normal;\r\n    \r\n    }\r\n    \r\n    \r\n    \r\n    \r\n    @font-face {\r\n        font-family: 'noto_sansitalic';\r\n        src: url(" + __webpack_require__(293) + ") format('woff2'),\r\n             url(" + __webpack_require__(294) + ") format('woff');\r\n        font-weight: normal;\r\n        font-style: normal;\r\n    \r\n    }\r\n    \r\n    \r\n    \r\n    \r\n    @font-face {\r\n        font-family: 'noto_sansregular';\r\n        src: url(" + __webpack_require__(295) + ") format('woff2'),\r\n             url(" + __webpack_require__(296) + ") format('woff');\r\n        font-weight: normal;\r\n        font-style: normal;\r\n    \r\n    }\r\n  \r\n\r\n  body,p,input,label,button{\r\n    font-family: 'museo_sans300';\r\n  }\r\n  \r\n  hr{\r\n      border-bottom:1px solid #575757;\r\n  }\r\n\r\n/* body,p,input,label{\r\n    font-family: 'myriadRegular';\r\n} */\r\n.modal.in .signUpModal .modal-content{\r\n    border-radius: 0;\r\n\r\n}\r\n.modal.in .signUpModal{\r\n    position: relative;\r\n}\r\n.left-image{\r\n    position: relative;\r\n    float:left;\r\n    width: 40px;\r\n}\r\n.left-image img{\r\n    width:30px;\r\n}\r\n.image-logo{\r\n    width: 260px;\r\n    margin: 0 auto;\r\n}\r\n.right-text p{\r\n    font-size:32px;\r\n    font-weight: bold;\r\n    text-transform: uppercase;\r\n    color:white;\r\n    font-family: 'noto_sansbold';\r\n}\r\n.login{\r\n    display: flex;\r\n}\r\n.modal.in .signUpModal .modal-content .modal-header,.modal.in .signUpModal .modal-content .modal-footer{\r\n    border-bottom: none;\r\n    display:none;\r\n}\r\n\r\n.modal.in .signUpModal .modal-content .modal-footer{\r\n    border-top:none;\r\n}\r\n\r\n.modal.in .signUpModal .modal-content .modal-body{\r\n    padding:0;\r\n}\r\n.left-side{\r\n    width:40%;\r\n    background: rgba(0,230,68,0.64);\r\n    background: -moz-linear-gradient(45deg, rgba(0,230,68,0.64) 0%, rgba(0,230,68,1) 23%, rgba(0,230,68,1) 35%, rgba(0,188,68,1) 86%);\r\n    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(0,230,68,0.64)), color-stop(23%, rgba(0,230,68,1)), color-stop(35%, rgba(0,230,68,1)), color-stop(86%, rgba(0,188,68,1)));\r\n    background: -webkit-linear-gradient(45deg, rgba(0,230,68,0.64) 0%, rgba(0,230,68,1) 23%, rgba(0,230,68,1) 35%, rgba(0,188,68,1) 86%);\r\n    background: -o-linear-gradient(45deg, rgba(0,230,68,0.64) 0%, rgba(0,230,68,1) 23%, rgba(0,230,68,1) 35%, rgba(0,188,68,1) 86%);\r\n    background: -ms-linear-gradient(45deg, rgba(0,230,68,0.64) 0%, rgba(0,230,68,1) 23%, rgba(0,230,68,1) 35%, rgba(0,188,68,1) 86%);\r\n    background: linear-gradient(45deg, rgba(0,230,68,0.64) 0%, rgba(0,230,68,1) 23%, rgba(0,230,68,1) 35%, rgba(0,188,68,1) 86%);\r\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00e644', endColorstr='#00bc44', GradientType=1 );\r\n    position: relative;\r\n    float:left;\r\n    \r\n    padding-bottom: 15px;\r\n    min-height: 550px;\r\n}\r\n\r\n.centered{\r\n    padding: 84px 80px;\r\n}\r\n\r\n.right-side{\r\n    width:60%;\r\n    position: relative;\r\n    float:left;\r\n    padding: 100px 80px;\r\n    padding-bottom: 15px;\r\n}\r\n\r\n.myForms .form-group label{\r\n    color:black;\r\n    font-weight:400;\r\n    font-size:11px;\r\n    text-transform: uppercase;\r\n    margin-bottom:0;\r\n}\r\n\r\n.myForms .form-group input{\r\n    border:none;\r\n    padding-top:0;\r\n    border-bottom-width: 1px;\r\n    border-bottom-style: solid;\r\n    border-bottom-color:#ccc;\r\n    border-radius: 0;\r\n    -webkit-transition: border-bottom-color 0.9s;\r\n    transition:border-bottom-color 0.9s;\r\n    box-shadow: none;\r\n    padding-left:0;\r\n    \r\n}\r\n\r\n\r\n.pointers{\r\n    cursor:pointer;\r\n   \r\n\r\n}\r\n.myForms .form-group input:focus{\r\n    border-bottom-color:green;\r\n}\r\n\r\n.signButton{\r\n    position: absolute;\r\n    right:50px;\r\n    top:25px;\r\n    z-index: 1;\r\n}\r\n\r\n.closeButton{\r\n    position: absolute;\r\n    right:25px;\r\n    top:25px;\r\n    z-index: 1;\r\n}\r\n\r\n\r\n.submit-custom{\r\n    background: none;\r\n    border:none;\r\n    padding:8px 40px;\r\n    color:white;\r\n    background:#3ad72a;\r\n}\r\n.no-right{\r\n    padding-right:20px;\r\n}\r\n.no-left{\r\n    padding-left:20px;\r\n}\r\n.no-padding{\r\n    padding-left:0;\r\n    padding-right:0;\r\n}\r\n.text-centered{\r\n    text-align: center;\r\n}\r\n\r\n.loginWith{\r\n    padding-top:10px;\r\n    font-size:11px;\r\n    font-weight: 400;\r\n    color:#575757;\r\n    font-weight: bold;\r\n}\r\n#googleSignInBtn{\r\n    background: none;\r\n    border:none;\r\n    outline:none;\r\n    width: 55px;\r\n}\r\n.logIN{\r\n    font-size:40px;\r\n}\r\n.white{\r\n    color:white;\r\n}\r\n\r\n.small-text{\r\n    margin-top: 120px;\r\n}\r\n.half-left,.half-right{\r\n    position: relative;\r\n    float:left;\r\n}\r\n.holder i{\r\n    font-size:22px;\r\n    color:white;\r\n}\r\n.holder{\r\n    box-shadow: 0 5px 15px rgba(0,0,0,0.3);\r\n    width:40px;\r\n    height: 40px;\r\n    border-radius: 50%;\r\n    background: #575757;\r\n    text-align: center;\r\n    padding-top: 10px;\r\n    margin-right: 25px; \r\n    box-shadow: 0 1px 2px rgba(0,0,0,0.15);\r\n    transition: box-shadow 0.3s ease-in-out;\r\n\r\n}\r\n\r\n.holder:hover{\r\n    box-shadow: 0 5px 15px rgba(0,0,0,0.3);\r\n\r\n}\r\n.facebook-gmail{\r\n    width: 130px;\r\n    margin: 20px auto;\r\n}\r\n\r\n.errors{\r\n    border-bottom:1px solid red !important;\r\n}\r\n\r\n.SignUpLogin{\r\n    border:none;\r\n    background:none;\r\n    color:#3ad72a;;\r\n    font-size:13px;\r\n    font-weight: bold;\r\n\r\n}\r\n/* The snackbar - position it at the bottom and in the middle of the screen */\r\n#snackbar {\r\n    color:white;\r\n    text-transform: capitalize;\r\n    visibility: hidden; /* Hidden by default. Visible on click */\r\n    min-width: 250px; /* Set a default minimum width */\r\n    margin-left: -125px; /* Divide value of min-width by 2 */\r\n    background-color: #1ec26b; /* Black background color */\r\n    color: #fff; /* White text color */\r\n    text-align: center; /* Centered text */\r\n    border-radius: 2px; /* Rounded borders */\r\n    padding: 16px; /* Padding */\r\n    position: fixed; /* Sit on top of the screen */\r\n    z-index: 1052; /* Add a z-index if needed */\r\n    left: 50%; /* Center the snackbar */\r\n    bottom: 30px; /* 30px from the bottom */\r\n}\r\n\r\n/* Show the snackbar when clicking on a button (class added with JavaScript) */\r\n#snackbar.show {\r\n    visibility: visible; /* Show the snackbar */\r\n\r\n/* Add animation: Take 0.5 seconds to fade in and out the snackbar. \r\nHowever, delay the fade out process for 2.5 seconds */\r\n    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;\r\n    animation: fadein 0.5s, fadeout 0.5s 2.5s;\r\n}\r\n\r\n/* Animations to fade the snackbar in and out */\r\n@-webkit-keyframes fadein {\r\n    from {bottom: 0; opacity: 0;} \r\n    to {bottom: 30px; opacity: 1;}\r\n}\r\n\r\n@keyframes fadein {\r\n    from {bottom: 0; opacity: 0;}\r\n    to {bottom: 30px; opacity: 1;}\r\n}\r\n\r\n@-webkit-keyframes fadeout {\r\n    from {bottom: 30px; opacity: 1;} \r\n    to {bottom: 0; opacity: 0;}\r\n}\r\n\r\n@keyframes fadeout {\r\n    from {bottom: 30px; opacity: 1;}\r\n    to {bottom: 0; opacity: 0;}\r\n}\r\n\r\n.header-top{\r\n    \r\n\r\n    height: 578px;\r\n    background:url('/assets/img/home.gif');\r\n    background-repeat:no-repeat;\r\n    background-size:cover;\r\n    background-position:center;\r\n    background-attachment: fixed;\r\n}\r\n\r\n.header-top h1{\r\n    font-size:50px;\r\n    color:#656565;\r\n    text-align: center;\r\n    padding-top: 200px;\r\n    margin:0;\r\n}\r\n\r\n.middle-area{\r\n    width:58%;\r\n}\r\n.left-city,.middle-area,.right-button{\r\n  position: relative;;\r\n  float:left;\r\n}\r\n\r\n.search-box {\r\n    max-width: 890px;\r\n    margin:100px auto;\r\n    margin-bottom:0;\r\n}\r\n.wrap {\r\n    overflow: hidden; \r\n    height: 50px;    \r\n    position: relative;\r\n    display: block;\r\n    height:46px;\r\n    width:200px;\r\n    border:1px solid #1ec26b;\r\n    border-radius: 4px;\r\n    background: transparent;\r\n    outline: none;\r\n    border-radius: 0;\r\n    border-top-left-radius:5px;\r\n    border-bottom-left-radius: 5px;\r\n    border-right:none;\r\n}\r\n\r\nselect.dropdown{       \r\n    height:46px;\r\n    outline: none;\r\n    background: transparent;\r\n    width:294px;\r\n    padding: 10px;\r\n    border: 0;\r\n    font-weight: 500;\r\n    padding-left:20px;\r\n    color:#656565;\r\n    font-size: 20px;       \r\n    padding-top:8px;\r\n   -webkit-appearance: none;\r\n    -moz-appearance: none;\r\n    appearance: none;\r\n}\r\nlabel.wrap:after {\r\n/*     content:\"\\f13a \"; */\r\n    content: url('/assets/img/dropdown.png');\r\n    font-family: FontAwesome;\r\n    color: #000;\r\n    position: absolute; \r\n    outline: none;\r\n    right: 15px;\r\n    top: 5px;\r\n    z-index: 1;\r\n    width: 10%;\r\n    height: 100%;  \r\n    pointer-events: none;    \r\n}\r\n\r\n.area-input{\r\n    width:100%;\r\n    border:1px solid #1ec26b;\r\n    border-radius: 0;\r\n    height:46px;\r\n    background:transparent;\r\n    padding-left:20px;\r\n    font-size: 20px;\r\n    font-weight: 300;\r\n    outline:none;\r\n\r\n}\r\n\r\n.header-btn{\r\n    height:46px;\r\n    width: 170px;\r\n    border:none;\r\n    background:#1ec26b;\r\n    color:white;\r\n    font-size:20px;\r\n    font-weight: 500;\r\n    border-top-right-radius:5px;\r\n    border-bottom-right-radius: 5px;\r\n}\r\n\r\n\r\n.area-input::-webkit-input-placeholder {\r\n    /* WebKit, Blink, Edge */\r\n    font-style: italic;\r\n    color:#aeaeae;\r\n}\r\n.area-input:-moz-placeholder {\r\n    /* Mozilla Firefox 4 to 18 */\r\n    font-style: italic;\r\n    color:#aeaeae;\r\n}\r\n.area-input::-moz-placeholder {\r\n    /* Mozilla Firefox 19+ */\r\n    font-style: italic;\r\n    color:#aeaeae;\r\n}\r\n.area-input:-ms-input-placeholder {\r\n    /* Internet Explorer 10-11 */\r\n    font-style: italic;\r\n    color:#aeaeae;\r\n}\r\n\r\n.container-login{\r\n    min-height:260px;\r\n}\r\n.on-go{\r\n    width:100%;\r\n}\r\n\r\n.on-go h1{\r\n    font-weight: 500;\r\n    font-size:45px;\r\n    color:#605f5b;\r\n    margin-top:160px;\r\n}\r\n\r\n.app-banner{\r\n    width:100%;\r\n    background: #1ec26b;\r\n    min-height: 410px;\r\n}\r\n\r\n.app-banner h3{\r\n    font-size:30px;\r\n    font-weight: 300;\r\n    color:white;\r\n    margin-bottom:30px;\r\n    margin-top:90px;\r\n}\r\n\r\n.app-banner p{\r\n    font-size:15px;\r\n    color:white;\r\n    font-weight: 300;\r\n    margin:0;\r\n}\r\n\r\n.app-buttons{\r\n    margin-top:90px;\r\n    position: relative;\r\n    float:left;\r\n    width:40%;\r\n}\r\n.mockup{\r\n    position: relative;\r\n    float:left;\r\n    width:60%;\r\n    margin-top: -380px;    \r\n}\r\n.left-png{\r\n    position: relative;\r\n    float:left;\r\n    width:50px;\r\n    padding-top: 6px;\r\n    padding-left: 6px;\r\n}\r\n.right-texty{   \r\n    position: relative;\r\n    float:left;\r\n    height: 55px;\r\n}\r\n\r\n.right-texty .small{\r\n    font-weight: 300;\r\n    font-size:14px;\r\n    height: 16px;\r\n}\r\n.right-texty .large{\r\n    font-weight: 300;\r\n    font-size: 26px;\r\n    text-align: center;\r\n    margin-top: -6px;\r\n}\r\n.apps{\r\n    padding-top: 4px;\r\n    position: relative;\r\n    display: inline-block;\r\n    width: 190px;\r\n    height:54px;\r\n    border:1px solid white;\r\n}\r\n\r\n.contact-form h1{\r\n    font-size:45px;\r\n    font-weight: 500;\r\n    color:#656565;\r\n    text-align: center;\r\n    margin-top:80px;\r\n    margin-bottom:80px;\r\n}\r\n.actual-form{\r\n    width: 78%;\r\n    margin: 0 auto;\r\n    height: 225px;\r\n}\r\n.left-fields,.right-fields{\r\n    position: relative;\r\n    float:left;\r\n    width:48%;\r\n   margin: 0.7%;\r\n}\r\n\r\n.left-fields textarea,.right-fields input{\r\n    width:100%;\r\n    background: #faf9f5;\r\n    border:1px solid #9ca5a5;\r\n    height:65px;\r\n    padding-left:15px;\r\n    border-radius:4px;\r\n    margin:0;\r\n}\r\n.left-fields textarea{\r\n    height: 225px;\r\n    padding: 15px;\r\n    color:#656565;\r\n}\r\n\r\n.left-fields textarea::-webkit-input-placeholder {\r\n    /* WebKit, Blink, Edge */\r\n   font-style: italic;\r\n}\r\n.left-fields textarea:-moz-placeholder {\r\n    /* Mozilla Firefox 4 to 18 */\r\n    font-style: italic;\r\n}\r\n.left-fields textarea::-moz-placeholder {\r\n    /* Mozilla Firefox 19+ */\r\n    font-style: italic;\r\n}\r\n.left-fields textarea:-ms-input-placeholder {\r\n    /* Internet Explorer 10-11 */\r\n    font-style: italic;\r\n}\r\n\r\n\r\n.right-fields .form-group button{\r\n    width:100%;\r\n    color:#656565;\r\n    background: #1ec26b;\r\n    border:none;\r\n    font-size:20px;\r\n    font-weight: 500;\r\n    color:white;\r\n    height:65px;\r\n    padding-left:15px;\r\n    border-radius:4px;\r\n    margin:0;\r\n}\r\n.right-fields .form-group{\r\n    margin-bottom:15px;\r\n}\r\n.right-fields input{\r\n    \r\n}\r\n\r\n@media only screen and (max-width: 1200px) and (min-width: 992px){\r\n    .mockup img{\r\n        width: 400px;\r\n    }\r\n    .mockup{\r\n        margin-top: -165px;\r\n        width: 30%;\r\n    }\r\n    .app-buttons{\r\n        width:46%;\r\n    }\r\n}\r\n@media only screen and (max-width: 992px) and (min-width: 768px){\r\n    .mockup img{\r\n        width:400px;\r\n        \r\n    }\r\n\r\n    .app-buttons{\r\n        width:58%;\r\n    }\r\n\r\n    .mockup{\r\n        width:30%;\r\n        margin-top: -230px;\r\n    }\r\n    .left-side {\r\n        padding: 81px 25px;\r\n        min-height: 620px;\r\n    }\r\n    .actual-form{\r\n        width:100%;\r\n    }\r\n   \r\n}\r\n\r\n@media only screen and (max-width: 768px) and (min-width: 640px){\r\n    .left-side {\r\n        min-height: 620px;\r\n    }\r\n     .site-footer{\r\n        width:auto;\r\n    }\r\n    .mockup{\r\n        text-align: center;\r\n    }\r\n\r\n  \r\n    .mockup img{\r\n       width:290px;\r\n    }\r\n    .right-texty .small{\r\n        font-size:9px;\r\n    }\r\n    .left-city, .middle-area, .right-button,.header-btn{\r\n        width:33%;\r\n    }\r\n   \r\n    .right-texty{\r\n        padding-top: 7px;\r\n    }\r\n    .right-texty .large{\r\n        font-size:16px;\r\n    }\r\n    .apps{\r\n        width: 46%;\r\n    }\r\n    \r\n}\r\n\r\n@media only screen and (max-width: 640px){\r\n    .container-login{\r\n        padding-left:30px;\r\n    }\r\n    .site-footer{\r\n        width:auto;\r\n    }\r\n    .left-city, .middle-area, .right-button{\r\n        width:100%;\r\n        text-align: center;\r\n    }\r\n    .on-go h1{\r\n        margin-top:100px;\r\n    }\r\n    .search-box{\r\n        width:90%;\r\n    }\r\n    .middle-area{\r\n        margin-bottom: 5px;\r\n    }\r\n    .wrap select{\r\n        border: 1px solid #1ec26b;\r\n        width: 100%;\r\n    }\r\n    .wrap{\r\n        width:100%;\r\n        border:none;\r\n    }\r\n    .area-input,.header-btn{\r\n        width:100% !important;\r\n        border-radius: 0;\r\n    }\r\n    .header-top h1{\r\n        padding-top:100px;\r\n    }\r\n    .left-side {\r\n        display:none;\r\n    }\r\n    .mockup,.app-buttons{\r\n        width:100%;\r\n    }\r\n    .mockup{\r\n        text-align: center;\r\n        margin-top:50px;\r\n        margin-bottom: 50px;\r\n    }\r\n    .app-buttons{\r\n        text-align:center;\r\n    }\r\n    .app-banner p,.app-banner h3{\r\n        text-align: center;\r\n        width: 100% !important;\r\n    }\r\n    .right-texty .small{\r\n        font-size:10px;\r\n    }\r\n    .left-fields, .right-fields{\r\n        width:100%;\r\n    }\r\n    .right-texty{\r\n        padding-top:6px;\r\n    }\r\n    .right-texty .large{\r\n        font-size: 18px;\r\n    }\r\n    .mockup img{\r\n        width:280px;\r\n    }\r\n    .apps{\r\n        width:48%;\r\n        margin:0 !important;\r\n    }\r\n    .right-side{\r\n        width:100%;\r\n    }\r\n    \r\n}", ""]);
-
-// exports
-
-
-/***/ }),
-/* 285 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "a9f0a07c53376631c4972b97256f8aa9.woff2";
-
-/***/ }),
-/* 286 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "71078611971e57bcda566cb2079d51d6.woff";
-
-/***/ }),
-/* 287 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "02d0b31043e7164c1de50d8bb164454f.ttf";
-
-/***/ }),
-/* 288 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "ecbe12267d57197f1ad12172cb24477a.woff2";
-
-/***/ }),
-/* 289 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "28d3fbe2819fd3a47734681ed8defc43.woff";
-
-/***/ }),
-/* 290 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "0c3f21e5aa1cf9c51d361ef9b48b3638.ttf";
-
-/***/ }),
-/* 291 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "f66566bb696dcc64f0d955d4c47468fc.woff2";
-
-/***/ }),
-/* 292 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "a21d66e104c8ef2e8c9fa26e8081b74e.woff";
-
-/***/ }),
-/* 293 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "0ab0dbda418a1c064e9d3627c59786b5.woff2";
-
-/***/ }),
-/* 294 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "ccfa0e1f1ab36a8085086dc4aceeba9d.woff";
-
-/***/ }),
-/* 295 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "c43ecf75f22cdbcb65a9b7087ab2bd58.woff2";
-
-/***/ }),
-/* 296 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "25464a6048b4e6087643ca4c18979c79.woff";
-
-/***/ }),
-/* 297 */
+/* 302 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"banner\">\n\n    <div class=\"banner-bottom\">\n            <div class=\"location-left\">\n                    \n                                <p *ngIf=\"!addressCheck\">\n                                    <img src=\"assets/img/placeholder.png\"> Bolton Plaza</p>\n                                <div *ngIf=\"addressCheck\">\n                                    <div class=\"location-icon\">\n                                    <img src=\"assets/img/placeholder.png\" style=\"margin-top: -7px;\">\n                                    </div>\n                                    <div class=\"location-name\" style=\"padding-top:2px\">\n                                            {{EnteredAddress.AreaName}}\n                                    </div>\n                                </div>\n                            </div>\n        <div class=\"change-location\">\n            <button class=\"change\" (click)=\"redirectToHome()\">Change Location</button>\n        </div>\n\n    </div>\n\n</div>\n<div id=\"#snackbar\"></div>\n<div class=\"container med-container\">\n\n    <div class=\"row breadcrumbs\">\n\n\n        <a href=\"\">Home</a>\n        <img src=\"/assets/img/right.png\" width=\"10px\">\n        <a href=\"\">Chemist</a>\n\n\n    </div>\n\n\n\n    <div class=\"row breadcrumbs\">\n\n\n        <div class='voucher-form clearfix'>\n            <img src=\"/assets/img/search.png\" class=\"search-icon\">\n            <div class=\"inputField\">\n                <input type=\"text\" placeholder=\"Enter Chemist Name\" name=\"searchChemistQuery\" (keyup)=\"searchThisMedicine(this)\" [(ngModel)]=\"searchChemistQuery\">\n            </div>\n            <div class=\"inputBtn\">\n                <button>Search</button>\n            </div>\n\n        </div>\n\n\n    </div>\n\n    <div class=\"row\">\n        <div class=\"search-check\">\n            <p class=\"italic-search\">Search by </p>\n            <p>\n                <input type=\"radio\" id=\"chemistCheck\" name=\"radio-group\" (change)=\"showChemistsData()\" value=\"Chemists\" checked>\n                <label for=\"chemistCheck\" class='delivery-text'>Chemists</label>\n            </p>\n            <p>\n                <input type=\"radio\" id=\"medicineCheck\" name=\"radio-group\" (change)=\"showMedicinesData()\" value=\"Medicine\">\n                <label for=\"medicineCheck\" class='delivery-text'>Medicine</label>\n            </p>\n        </div>\n    </div>\n\n\n\n\n    <div class=\"filter-row row clearfix\">\n        <!-- Filter Row -->\n\n        <div class=\"filter-icons-left\">\n\n            <div class=\"inner\">\n                <h2 class=\"filter-heading\">\n                    <img class=\"level\" src='assets/img/levels.png' width=\"20px\">Filter Results </h2>\n            </div>\n            <ul class='filter-options'>\n                <li>Free Devliery</li>\n                <li>Fast Devliery</li>\n                <li>High Rating</li>\n                <li>Low Rating</li>\n            </ul>\n\n            <div class=\"quick-filters\">\n\n\n                <h3>Quick Filters</h3>\n                <ul class=\"quick-filters-list\">\n                    <li>Panadol</li>\n                    <li>Flagyl</li>\n                    <li>Disprin</li>\n                </ul>\n            </div>\n\n        </div>\n\n        <div class=\"filtered-list-right\">\n\n            <perfect-scrollbar class=\"container\" [config]=\"config\">\n                <!-- Accordions -->\n\n                <ng-container *ngIf=\"showChemists\">\n                    <div class=\"panel-group\" id=\"accordion\" role=\"tablist\" aria-multiselectable=\"true\">\n                        <ng-container *ngFor=\"let chemists of searchedChemists\">\n                            <div class=\"panel panel-custom\">\n                                <div class=\"panel-heading\" role=\"tab\" id=\"headingOne\" (click)=\"getDetailForThisChemist(chemists)\">\n                                    <h4 class=\"panel-title\">\n                                        <a class=\"panel-head\" data-parent=\"#accordion\" >\n\n                                            <div class='header clearfix'>\n                                                <div class=\"left-image-side clearfix\">\n                                                    <img src=\"{{chemists.ProfileURL}}\" width=\"75px\" height=\"72px\">\n                                                </div>\n                                                <div class='right-name clearfix'>\n                                                    <p class=\"chemist-name\">{{chemists.Chemist.PharmacyName}}</p>\n                                                    <p class=\"opening-hours\">{{chemists.DistanceFromUs}} KM</p>\n\n                                                    <div class=\"chemist-ratings\">\n                                                        <star-rating-comp [starType]=\"'icon'\" [disabled]=\"true\" [rating]=\"chemists.ChemistRatings\"></star-rating-comp>\n\n                                                    </div>\n                                                </div>\n                                            </div>\n                                            <div class=\"chevron\">\n                                                <i class='fa fa-chevron-right'></i>\n                                            </div>\n\n                                        </a>\n                                    </h4>\n                                </div>\n                                \n                            </div>\n                        </ng-container>\n                    </div>\n                </ng-container>\n\n\n                <!-- Accordions -->\n\n\n                <ng-container *ngIf=\"showMedicines\">\n\n                    <div class=\"panel-group\" id=\"accordionMedicine\" role=\"tablist\" aria-multiselectable=\"true\">\n                        <ng-container *ngFor=\"let chemists of allMedicines\">\n                            <div class=\"panel panel-custom animated slideInDown\">\n                                <div class=\"panel-heading\" role=\"tab\" id=\"headingOne\">\n                                    <h4 class=\"panel-title\">\n                                        <a class=\"panel-head\" data-toggle=\"collapse\" (click)=\"openDetailModalInChemist(chemists)\" data-parent=\"#accordion\" href=\"#collapse{{chemists.Id}}\" aria-expanded=\"true\"\n                                            aria-controls=\"collapseOne\">\n\n                                            <div class='header clearfix'>\n                                                <div class=\"left-image-side clearfix\">\n                                                    <img src=\"{{chemists.ProfileURL}}\" >\n                                                </div>\n                                                <div class='right-name clearfix'>\n                                                    <p class=\"chemist-name\">{{chemists.Name}}</p>\n                                                    <p class=\"opening-hours\">{{chemists.ChemistName}}</p>\n                                                    <p class=\"opening-hours\">{{chemists.ChemistCategoryName}}</p>\n                                                </div>\n                                            </div>\n                                            <div class=\"chevron\">\n                                                <i class='fa fa-chevron-right'></i>\n                                            </div>\n\n                                        </a>\n                                    </h4>\n                                </div>\n                               \n                            </div>\n                        </ng-container>\n                    </div>\n\n                </ng-container>\n            </perfect-scrollbar>\n        </div>\n\n\n\n\n    </div>\n    <!-- Filter Row -->\n\n\n\n</div>\n\n\n\n\n\n<modal #detailModalInChemist id=\"detailModalInChemist\" [closeOnEscape]=\"false\" [closeOnOutsideClick]=\"false\" modalClass=\"modal-lg modal-md detailModalInChemistClass animated bounceInDown\"\n(onSubmit)=\"actionOnSubmit()\" (onClose)=\"CloseDetailModalInChemists()\">\n\n\n\n\n<modal-content *ngIf=\"ifDataPopulated\">\n        <button class=\"CloseDetailModalInChemistPage\" (click)=\"detailModalInChemist.close()\">X</button>\n\n    <div class=\"full-row clearfix\">\n\n\n        <div class=\"modal-name\">\n\n            <p>{{singleMedicine.Name}}</p>\n            <p style=\"    margin-bottom: 20px;\">Rs. {{singleMedicine.TotalPrice}}</p>\n            <!-- <span>Reckitt Beckiser Ltd.</span> -->\n            <span>{{singleMedicine.ChemistCategoryName}}</span>\n\n        </div>\n\n        <div class=\"modal-quantity\">\n\n\n            <div class=\"\" id=\"prod-quantity-cart\">\n\n                <button class=\"qtyminus\" field='quantity' (click)=\"Downing()\">-</button>\n\n                <input type=\"number\" id=\"num_val\" min=\"1\" max=\"100\" class='qty' step=\"1\" value=\"1\" readonly>\n\n                <button class=\"qtyplus \" field='quantity' (click)=\"Upping()\">+</button>\n\n            </div>\n\n            <div class='clear'></div>\n            <div class=\"selects\">\n                <select class=\"dosage\" id=\"dosageName\" (change)=\"getDosageName($event.target.value)\">\n                    <option selected disabled>Select Dosage</option>\n                    <option *ngFor=\"let dosageArray of singleMedicine.WebDosageAndValuesDTOList\" value=\"{{dosageArray.DosageName}}\">{{dosageArray.DosageName}}</option>\n                </select>\n\n                <select class=\"dosage\" id=\"dosageValue\" (change)=\"getDosageValue($event.target.value)\">\n                    <option selected disabled>Select Value</option>\n                    <option *ngFor=\"let dosageArray of dosageValue\" value=\"{{dosageArray}}\">{{dosageArray}}</option>\n                </select>\n\n                <select class=\"dosage\" id=\"Measurements\" (change)=\"getMeasurement($event.target.value)\">\n                    <option selected disabled>Select Measurement</option>\n                    <option *ngFor=\"let measurement of measurementValue\" value=\"{{measurement}}\">{{measurement}}</option>\n                </select>\n            </div>\n\n        </div>\n\n    </div>\n\n    <hr class=\"saperator\">\n\n\n    <div class=\"full-row clearfix\" (click)=\"showTextArea()\">\n\n\n        <div class=\"modal-name\">\n\n            <p>SPECIAL INSTRUCTIONS</p>\n\n        </div>\n\n        <div class=\"modal-quantity\">\n\n\n            <span class=\"optional\">(Optional)</span>\n            <i class=\"thisone fa fa-chevron-up\"></i>\n\n        </div>\n\n    </div>\n\n\n\n    <div class=\"textarea-div\">\n        <textarea placeholder=\"Write any instructions here ...\" name=\"SpecialInstructions\" [(ngModel)]=\"SpecialInstructions\"></textarea>\n    </div>\n\n\n    <div class=\"full-row clearfix center-align\">\n        <button class=\"cart-button\" (click)=\"addToCart()\">Add to Cart</button>\n    </div>\n\n</modal-content>\n\n</modal>\n"
+module.exports = "<div class=\"banner\">\r\n\r\n    <div class=\"banner-bottom\">\r\n            <div class=\"location-left\">\r\n                    \r\n                                <p *ngIf=\"!addressCheck\">\r\n                                    <img src=\"assets/img/placeholder.png\"> Bolton Plaza</p>\r\n                                <div *ngIf=\"addressCheck\">\r\n                                    <div class=\"location-icon\">\r\n                                    <img src=\"assets/img/placeholder.png\" style=\"margin-top: -7px;\">\r\n                                    </div>\r\n                                    <div class=\"location-name\" style=\"padding-top:2px\">\r\n                                            {{EnteredAddress.AreaName}}\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n        <div class=\"change-location\">\r\n            <button class=\"change\" (click)=\"redirectToHome()\">Change Location</button>\r\n        </div>\r\n\r\n    </div>\r\n\r\n</div>\r\n<div id=\"#snackbar\"></div>\r\n<div class=\"container med-container\">\r\n\r\n    <div class=\"row breadcrumbs\">\r\n\r\n\r\n        <a href=\"\">Home</a>\r\n        <img src=\"/assets/img/right.png\" width=\"10px\">\r\n        <a href=\"\">Chemist</a>\r\n\r\n\r\n    </div>\r\n\r\n\r\n\r\n    <div class=\"row breadcrumbs\">\r\n\r\n\r\n        <div class='voucher-form clearfix'>\r\n            <img src=\"/assets/img/search.png\" class=\"search-icon\">\r\n            <div class=\"inputField\">\r\n                <input type=\"text\" placeholder=\"Enter Chemist Name\" name=\"searchChemistQuery\" (keyup)=\"searchThisMedicine(this)\" [(ngModel)]=\"searchChemistQuery\">\r\n            </div>\r\n            <div class=\"inputBtn\">\r\n                <button>Search</button>\r\n            </div>\r\n\r\n        </div>\r\n\r\n\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n        <div class=\"search-check\">\r\n            <p class=\"italic-search\">Search by </p>\r\n            <p>\r\n                <input type=\"radio\" id=\"chemistCheck\" name=\"radio-group\" (change)=\"showChemistsData()\" value=\"Chemists\" checked>\r\n                <label for=\"chemistCheck\" class='delivery-text'>Chemists</label>\r\n            </p>\r\n            <p>\r\n                <input type=\"radio\" id=\"medicineCheck\" name=\"radio-group\" (change)=\"showMedicinesData()\" value=\"Medicine\">\r\n                <label for=\"medicineCheck\" class='delivery-text'>Medicine</label>\r\n            </p>\r\n        </div>\r\n    </div>\r\n\r\n\r\n\r\n\r\n    <div class=\"filter-row row clearfix\">\r\n        <!-- Filter Row -->\r\n\r\n        <div class=\"filter-icons-left\">\r\n\r\n            <div class=\"inner\">\r\n                <h2 class=\"filter-heading\">\r\n                    <img class=\"level\" src='assets/img/levels.png' width=\"20px\">Filter Results </h2>\r\n            </div>\r\n            <ul class='filter-options'>\r\n                <li>Free Devliery</li>\r\n                <li>Fast Devliery</li>\r\n                <li>High Rating</li>\r\n                <li>Low Rating</li>\r\n            </ul>\r\n\r\n            <div class=\"quick-filters\">\r\n\r\n\r\n                <h3>Quick Filters</h3>\r\n                <ul class=\"quick-filters-list\">\r\n                    <li>Panadol</li>\r\n                    <li>Flagyl</li>\r\n                    <li>Disprin</li>\r\n                </ul>\r\n            </div>\r\n\r\n        </div>\r\n\r\n        <div class=\"filtered-list-right\">\r\n\r\n            <perfect-scrollbar class=\"container\" [config]=\"config\">\r\n                <!-- Accordions -->\r\n\r\n                <ng-container *ngIf=\"showChemists\">\r\n                    <div class=\"panel-group\" id=\"accordion\" role=\"tablist\" aria-multiselectable=\"true\">\r\n                        <ng-container *ngFor=\"let chemists of searchedChemists\">\r\n                            <div class=\"panel panel-custom\">\r\n                                <div class=\"panel-heading\" role=\"tab\" id=\"headingOne\" (click)=\"getDetailForThisChemist(chemists)\">\r\n                                    <h4 class=\"panel-title\">\r\n                                        <a class=\"panel-head\" data-parent=\"#accordion\" >\r\n\r\n                                            <div class='header clearfix'>\r\n                                                <div class=\"left-image-side clearfix\">\r\n                                                    <img src=\"{{chemists.ProfileURL}}\" width=\"75px\" height=\"72px\">\r\n                                                </div>\r\n                                                <div class='right-name clearfix'>\r\n                                                    <p class=\"chemist-name\">{{chemists.Chemist.PharmacyName}}</p>\r\n                                                    <p class=\"opening-hours\">{{chemists.DistanceFromUs}} KM</p>\r\n\r\n                                                    <div class=\"chemist-ratings\">\r\n                                                        <star-rating-comp [starType]=\"'icon'\" [disabled]=\"true\" [rating]=\"chemists.ChemistRatings\"></star-rating-comp>\r\n\r\n                                                    </div>\r\n                                                </div>\r\n                                            </div>\r\n                                            <div class=\"chevron\">\r\n                                                <i class='fa fa-chevron-right'></i>\r\n                                            </div>\r\n\r\n                                        </a>\r\n                                    </h4>\r\n                                </div>\r\n                                \r\n                            </div>\r\n                        </ng-container>\r\n                    </div>\r\n                </ng-container>\r\n\r\n\r\n                <!-- Accordions -->\r\n\r\n\r\n                <ng-container *ngIf=\"showMedicines\">\r\n\r\n                    <div class=\"panel-group\" id=\"accordionMedicine\" role=\"tablist\" aria-multiselectable=\"true\">\r\n                        <ng-container *ngFor=\"let chemists of allMedicines\">\r\n                            <div class=\"panel panel-custom animated slideInDown\">\r\n                                <div class=\"panel-heading\" role=\"tab\" id=\"headingOne\">\r\n                                    <h4 class=\"panel-title\">\r\n                                        <a class=\"panel-head\" data-toggle=\"collapse\" (click)=\"openDetailModalInChemist(chemists)\" data-parent=\"#accordion\" href=\"#collapse{{chemists.Id}}\" aria-expanded=\"true\"\r\n                                            aria-controls=\"collapseOne\">\r\n\r\n                                            <div class='header clearfix'>\r\n                                                <div class=\"left-image-side clearfix\">\r\n                                                    <img src=\"{{chemists.ProfileURL}}\" >\r\n                                                </div>\r\n                                                <div class='right-name clearfix'>\r\n                                                    <p class=\"chemist-name\">{{chemists.Name}}</p>\r\n                                                    <p class=\"opening-hours\">{{chemists.ChemistName}}</p>\r\n                                                    <p class=\"opening-hours\">{{chemists.ChemistCategoryName}}</p>\r\n                                                </div>\r\n                                            </div>\r\n                                            <div class=\"chevron\">\r\n                                                <i class='fa fa-chevron-right'></i>\r\n                                            </div>\r\n\r\n                                        </a>\r\n                                    </h4>\r\n                                </div>\r\n                               \r\n                            </div>\r\n                        </ng-container>\r\n                    </div>\r\n\r\n                </ng-container>\r\n            </perfect-scrollbar>\r\n        </div>\r\n\r\n\r\n\r\n\r\n    </div>\r\n    <!-- Filter Row -->\r\n\r\n\r\n\r\n</div>\r\n\r\n\r\n\r\n\r\n\r\n<modal #detailModalInChemist id=\"detailModalInChemist\" [closeOnEscape]=\"false\" [closeOnOutsideClick]=\"false\" modalClass=\"modal-lg modal-md detailModalInChemistClass animated bounceInDown\"\r\n(onSubmit)=\"actionOnSubmit()\" (onClose)=\"CloseDetailModalInChemists()\">\r\n\r\n\r\n\r\n\r\n<modal-content *ngIf=\"ifDataPopulated\">\r\n        <button class=\"CloseDetailModalInChemistPage\" (click)=\"detailModalInChemist.close()\">X</button>\r\n\r\n    <div class=\"full-row clearfix\">\r\n\r\n\r\n        <div class=\"modal-name\">\r\n\r\n            <p>{{singleMedicine.Name}}</p>\r\n            <p style=\"    margin-bottom: 20px;\">Rs. {{singleMedicine.TotalPrice}}</p>\r\n            <!-- <span>Reckitt Beckiser Ltd.</span> -->\r\n            <span>{{singleMedicine.ChemistCategoryName}}</span>\r\n\r\n        </div>\r\n\r\n        <div class=\"modal-quantity\">\r\n\r\n\r\n            <div class=\"\" id=\"prod-quantity-cart\">\r\n\r\n                <button class=\"qtyminus\" field='quantity' (click)=\"Downing()\">-</button>\r\n\r\n                <input type=\"number\" id=\"num_val\" min=\"1\" max=\"100\" class='qty' step=\"1\" value=\"1\" readonly>\r\n\r\n                <button class=\"qtyplus \" field='quantity' (click)=\"Upping()\">+</button>\r\n\r\n            </div>\r\n\r\n            <div class='clear'></div>\r\n            <div class=\"selects\">\r\n                <select class=\"dosage\" id=\"dosageName\" (change)=\"getDosageName($event.target.value)\">\r\n                    <option selected disabled>Select Dosage</option>\r\n                    <option *ngFor=\"let dosageArray of singleMedicine.WebDosageAndValuesDTOList\" value=\"{{dosageArray.DosageName}}\">{{dosageArray.DosageName}}</option>\r\n                </select>\r\n\r\n                <select class=\"dosage\" id=\"dosageValue\" (change)=\"getDosageValue($event.target.value)\">\r\n                    <option selected disabled>Select Value</option>\r\n                    <option *ngFor=\"let dosageArray of dosageValue\" value=\"{{dosageArray}}\">{{dosageArray}}</option>\r\n                </select>\r\n\r\n                <select class=\"dosage\" id=\"Measurements\" (change)=\"getMeasurement($event.target.value)\">\r\n                    <option selected disabled>Select Measurement</option>\r\n                    <option *ngFor=\"let measurement of measurementValue\" value=\"{{measurement}}\">{{measurement}}</option>\r\n                </select>\r\n            </div>\r\n\r\n        </div>\r\n\r\n    </div>\r\n\r\n    <hr class=\"saperator\">\r\n\r\n\r\n    <div class=\"full-row clearfix\" (click)=\"showTextArea()\">\r\n\r\n\r\n        <div class=\"modal-name\">\r\n\r\n            <p>SPECIAL INSTRUCTIONS</p>\r\n\r\n        </div>\r\n\r\n        <div class=\"modal-quantity\">\r\n\r\n\r\n            <span class=\"optional\">(Optional)</span>\r\n            <i class=\"thisone fa fa-chevron-up\"></i>\r\n\r\n        </div>\r\n\r\n    </div>\r\n\r\n\r\n\r\n    <div class=\"textarea-div\">\r\n        <textarea placeholder=\"Write any instructions here ...\" name=\"SpecialInstructions\" [(ngModel)]=\"SpecialInstructions\"></textarea>\r\n    </div>\r\n\r\n\r\n    <div class=\"full-row clearfix center-align\">\r\n        <button class=\"cart-button\" (click)=\"addToCart()\">Add to Cart</button>\r\n    </div>\r\n\r\n</modal-content>\r\n\r\n</modal>\r\n"
 
 /***/ }),
-/* 298 */
+/* 303 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__(299);
+        var result = __webpack_require__(304);
 
         if (typeof result === "string") {
             module.exports = result;
@@ -98723,10 +99697,10 @@ module.exports = "<div class=\"banner\">\n\n    <div class=\"banner-bottom\">\n 
     
 
 /***/ }),
-/* 299 */
+/* 304 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(7)(undefined);
+exports = module.exports = __webpack_require__(11)(undefined);
 // imports
 
 
@@ -98737,7 +99711,7 @@ exports.push([module.i, "\r\n.banner{\r\n    width:100%;\r\n    position: relati
 
 
 /***/ }),
-/* 300 */
+/* 305 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -98746,7 +99720,7 @@ exports.push([module.i, "\r\n.banner{\r\n    width:100%;\r\n    position: relati
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__serviceUrl__ = __webpack_require__(27);
 
 
@@ -98783,17 +99757,17 @@ OrdersService = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 
 /***/ }),
-/* 301 */
+/* 306 */
 /***/ (function(module, exports) {
 
-module.exports = "\n\n<div id=\"snackbar\">Some text some message..</div>\n\n<div class=\"orders-screen\" >\n\n  <h2 class='my-orders-heading'>My orders</h2>\n\n  <hr class=\"saperator-orders\">\n\n  <div class=\"scheduled-orders\">\n\n    <div class=\"row clearfix\">\n\n      <div class=\"left-aligned-heading\">\n        <h3>Scheduled orders</h3>\n      </div>\n\n      <div class=\"right-aligned-lin\">\n        <hr class=\"saperator-orders\">\n      </div>\n\n\n    </div>\n\n    <div class=\"innner row one-order\" *ngFor=\"let laterOrder of laterOrders\">\n\n      <div class=\"col-md-9 col-sm-9 col-lg-9 left-row-detail\">\n          <p *ngFor=\"let products of laterOrder.ReturnOrderItemDTOList\">{{products.Quantity}}x {{products.ProductName}} {{products.DosageSize}}{{products.DosageSymbol}} </p>\n          <p>{{laterOrder.ChemistName}} - {{laterOrder.CreatedOnUTC}} - Total : Rs. {{laterOrder.OrderTotal}}/-</p>\n      </div>\n\n      <div class=\"col-md-3 col-sm-3 col-lg-3 right-time\">\n        <p class=\"huge-green\">{{laterOrder.StartingTime}} - {{laterOrder.EndingTime}}</p>\n        <p style=\"text-align: center\">Delivery Time</p>\n      </div>\n\n    </div>\n\n\n\n  </div>\n\n  <div class=\"past-orders\">\n\n    <div class=\"row clearfix\">\n\n      <div class=\"left-aligned-heading\">\n        <h3>Past orders</h3>\n      </div>\n\n      <div class=\"right-aligned-lin\">\n        <hr class=\"saperator-orders\">\n      </div>\n\n\n    </div>\n\n\n    <div class=\"innner row one-order\" *ngFor=\"let order of doneOrders\">\n        \n      <div class=\"col-md-9 col-sm-9 col-lg-9 left-row-detail\">\n          \n        <p *ngFor=\"let products of order.ReturnOrderItemDTOList\">{{products.Quantity}}x {{products.ProductName}} {{products.DosageSize}}{{products.DosageSymbol}} </p>\n        <p>{{order.ChemistName}} - {{order.CreatedOnUTC}} - Total : Rs. {{order.OrderTotal}}/-</p>\n      </div>\n\n      <div class=\"col-md-3 col-sm-3 col-lg-3 right-time\">\n        <button class=\"re-order\" (click)=\"Reorder(order)\">Reorder</button>\n      </div>\n     \n      <div class=\"col-md-12\">      <hr class=\"saperator-order-line\"> </div>\n\n\n    </div>\n\n\n  </div>\n\n</div>\n\n\n<modal  #reorderModal\ncancelButtonLabel=\"cancel\"\nsubmitButtonLabel=\"submit\"\nmodalClass=\"modal-lg modal-sm animated slideInDownBig\"\n(onSubmit)=\"actionOnSubmit()\">\n\n<modal-content>\n   \n\n  <div class=\"check1\">\n    <p>\n        <input type=\"radio\" id=\"test2\" (change)=\"soonReorder()\" name=\"radio-group\">\n        <label for=\"test2\" class='delivery-text'>As soon as possible</label>\n        <span class='delivery-text'>Estimated Delivery Time : {{estimatedDeliveryTime}} min</span>\n    </p>\n\n    <p>\n        <input type=\"radio\" id=\"test3\" (change)=\"showTimeSlotsForReorder()\" name=\"radio-group\">\n        <label for=\"test3\" class='delivery-text'>Later</label>\n    </p>\n\n    \n\n    <ng-container>\n\n        <ul class=\"time-slots\">\n            <li *ngFor=\"let timeSlot of timeSlots\" class=\"\">\n                <button class=\"time-slot\" (click)=\"selectThisSlot($event,timeSlot.Id)\">{{timeSlot.StartingTime}} - {{timeSlot.EndingTime}}</button>\n            </li>\n        </ul>\n\n    </ng-container>\n\n</div>\n\n\n\n<div class=\"row\" style=\"text-align:center\">\n\n    <div class=\"ordersLoader\">\n        <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->\n        <svg width=\"50\" height=\"30\" viewBox=\"0 0 120 30\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"#1ec26b\">\n            <circle cx=\"15\" cy=\"15\" r=\"15\">\n                <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n            </circle>\n            <circle cx=\"60\" cy=\"15\" r=\"9\" fill-opacity=\"0.3\">\n                <animate attributeName=\"r\" from=\"9\" to=\"9\" begin=\"0s\" dur=\"0.8s\" values=\"9;15;9\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"0.5\" to=\"0.5\" begin=\"0s\" dur=\"0.8s\" values=\".5;1;.5\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n            </circle>\n            <circle cx=\"105\" cy=\"15\" r=\"15\">\n                <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n            </circle>\n        </svg>\n\n    </div>\n\n  <button class=\"re-order\" id=\"order-again\" (click)=\"ReorderAgain()\">Place Order</button>\n</div>\n\n\n</modal-content>\n\n\n</modal>\n"
+module.exports = "\r\n\r\n<div id=\"snackbar\">Some text some message..</div>\r\n\r\n<div class=\"orders-screen\" >\r\n\r\n  <h2 class='my-orders-heading'>My orders</h2>\r\n\r\n  <hr class=\"saperator-orders\">\r\n\r\n  <div class=\"scheduled-orders\">\r\n\r\n    <div class=\"row clearfix\">\r\n\r\n      <div class=\"left-aligned-heading\">\r\n        <h3>Scheduled orders</h3>\r\n      </div>\r\n\r\n      <div class=\"right-aligned-lin\">\r\n        <hr class=\"saperator-orders\">\r\n      </div>\r\n\r\n\r\n    </div>\r\n\r\n    <div class=\"innner row one-order\" *ngFor=\"let laterOrder of laterOrders\">\r\n\r\n      <div class=\"col-md-9 col-sm-9 col-lg-9 left-row-detail\">\r\n          <p *ngFor=\"let products of laterOrder.ReturnOrderItemDTOList\">{{products.Quantity}}x {{products.ProductName}} {{products.DosageSize}}{{products.DosageSymbol}} </p>\r\n          <p>{{laterOrder.ChemistName}} - {{laterOrder.CreatedOnUTC}} - Total : Rs. {{laterOrder.OrderTotal}}/-</p>\r\n      </div>\r\n\r\n      <div class=\"col-md-3 col-sm-3 col-lg-3 right-time\">\r\n        <p class=\"huge-green\">{{laterOrder.StartingTime}} - {{laterOrder.EndingTime}}</p>\r\n        <p style=\"text-align: center\">Delivery Time</p>\r\n      </div>\r\n\r\n    </div>\r\n\r\n\r\n\r\n  </div>\r\n\r\n  <div class=\"past-orders\">\r\n\r\n    <div class=\"row clearfix\">\r\n\r\n      <div class=\"left-aligned-heading\">\r\n        <h3>Past orders</h3>\r\n      </div>\r\n\r\n      <div class=\"right-aligned-lin\">\r\n        <hr class=\"saperator-orders\">\r\n      </div>\r\n\r\n\r\n    </div>\r\n\r\n\r\n    <div class=\"innner row one-order\" *ngFor=\"let order of doneOrders\">\r\n        \r\n      <div class=\"col-md-9 col-sm-9 col-lg-9 left-row-detail\">\r\n          \r\n        <p *ngFor=\"let products of order.ReturnOrderItemDTOList\">{{products.Quantity}}x {{products.ProductName}} {{products.DosageSize}}{{products.DosageSymbol}} </p>\r\n        <p>{{order.ChemistName}} - {{order.CreatedOnUTC}} - Total : Rs. {{order.OrderTotal}}/-</p>\r\n      </div>\r\n\r\n      <div class=\"col-md-3 col-sm-3 col-lg-3 right-time\">\r\n        <button class=\"re-order\" (click)=\"Reorder(order)\">Reorder</button>\r\n      </div>\r\n     \r\n      <div class=\"col-md-12\">      <hr class=\"saperator-order-line\"> </div>\r\n\r\n\r\n    </div>\r\n\r\n\r\n  </div>\r\n\r\n</div>\r\n\r\n\r\n<modal  #reorderModal\r\ncancelButtonLabel=\"cancel\"\r\nsubmitButtonLabel=\"submit\"\r\nmodalClass=\"modal-lg modal-sm animated slideInDownBig\"\r\n(onSubmit)=\"actionOnSubmit()\">\r\n\r\n<modal-content>\r\n   \r\n\r\n  <div class=\"check1\">\r\n    <p>\r\n        <input type=\"radio\" id=\"test2\" (change)=\"soonReorder()\" name=\"radio-group\">\r\n        <label for=\"test2\" class='delivery-text'>As soon as possible</label>\r\n        <span class='delivery-text'>Estimated Delivery Time : {{estimatedDeliveryTime}} min</span>\r\n    </p>\r\n\r\n    <p>\r\n        <input type=\"radio\" id=\"test3\" (change)=\"showTimeSlotsForReorder()\" name=\"radio-group\">\r\n        <label for=\"test3\" class='delivery-text'>Later</label>\r\n    </p>\r\n\r\n    \r\n\r\n    <ng-container>\r\n\r\n        <ul class=\"time-slots\">\r\n            <li *ngFor=\"let timeSlot of timeSlots\" class=\"\">\r\n                <button class=\"time-slot\" (click)=\"selectThisSlot($event,timeSlot.Id)\">{{timeSlot.StartingTime}} - {{timeSlot.EndingTime}}</button>\r\n            </li>\r\n        </ul>\r\n\r\n    </ng-container>\r\n\r\n</div>\r\n\r\n\r\n\r\n<div class=\"row\" style=\"text-align:center\">\r\n\r\n    <div class=\"ordersLoader\">\r\n        <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->\r\n        <svg width=\"50\" height=\"30\" viewBox=\"0 0 120 30\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"#1ec26b\">\r\n            <circle cx=\"15\" cy=\"15\" r=\"15\">\r\n                <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                />\r\n                <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                />\r\n            </circle>\r\n            <circle cx=\"60\" cy=\"15\" r=\"9\" fill-opacity=\"0.3\">\r\n                <animate attributeName=\"r\" from=\"9\" to=\"9\" begin=\"0s\" dur=\"0.8s\" values=\"9;15;9\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                />\r\n                <animate attributeName=\"fill-opacity\" from=\"0.5\" to=\"0.5\" begin=\"0s\" dur=\"0.8s\" values=\".5;1;.5\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                />\r\n            </circle>\r\n            <circle cx=\"105\" cy=\"15\" r=\"15\">\r\n                <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                />\r\n                <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\r\n                />\r\n            </circle>\r\n        </svg>\r\n\r\n    </div>\r\n\r\n  <button class=\"re-order\" id=\"order-again\" (click)=\"ReorderAgain()\">Place Order</button>\r\n</div>\r\n\r\n\r\n</modal-content>\r\n\r\n\r\n</modal>\r\n"
 
 /***/ }),
-/* 302 */
+/* 307 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__(303);
+        var result = __webpack_require__(308);
 
         if (typeof result === "string") {
             module.exports = result;
@@ -98803,10 +99777,10 @@ module.exports = "\n\n<div id=\"snackbar\">Some text some message..</div>\n\n<di
     
 
 /***/ }),
-/* 303 */
+/* 308 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(7)(undefined);
+exports = module.exports = __webpack_require__(11)(undefined);
 // imports
 
 
@@ -98817,17 +99791,17 @@ exports.push([module.i, ".my-orders-heading{\r\n    font-size:20px;\r\n    font-
 
 
 /***/ }),
-/* 304 */
+/* 309 */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"snackbar\"></div>\n<div class=\"orders-screen\">\n\n  <h2 class='my-orders-heading'>Profile</h2>\n\n  <hr class=\"saperator-orders\">\n\n\n  <div class=\"form-profile\">\n\n      <div class=\"form-group\" style=\"padding:12px\">\n          <label style=\"    width: 170px;\">Change Display Picture</label>\n\n         \n          <form id=\"form1\" runat=\"server\"  (click)=\"changeImage()\">\n            <input type='file'(change)=\"changeimage($event)\" id=\"imgInp\"  style=\"visibility:hidden;\"/>\n            <img  src=\"{{ThisUser.ProfileURL}}\" style=\"\" id=\"blah\"  src=\"#\" alt=\"your image\" />\n      \n          </form> \n  </div>\n    <div class=\"form-group\">\n      <label>Email</label>\n      <input type=\"text\" class=\"form-control input-lg\" name=\"ThisUser.Email\" [(ngModel)]=\"ThisUser.Email\"/>\n    </div>\n\n    <div class=\"row\">\n\n      <div class=\"col-md-6 col-sm-6 col-lg-6\">\n\n        <div class=\"form-group\">\n          <label>Full name</label>\n          <input type=\"text\" class=\"form-control input-lg\" name=\"ThisUser.FullName\" [(ngModel)]=\"ThisUser.FullName\"/>\n        </div>\n\n      </div>\n\n      <div class=\"col-md-6 col-sm-6 col-lg-6\">\n\n        <div class=\"form-group\">\n          <label>Username</label>\n          <input type=\"text\" class=\"form-control input-lg\" name=\"ThisUser.UserName\" [(ngModel)]=\"ThisUser.UserName\" />\n        </div>\n\n      </div>\n\n    </div>\n\n    <div class=\"row\">\n\n      <div class=\"col-md-6 col-sm-6 col-lg-6\">\n\n        <div class=\"form-group\">\n          <label style=\"width: 114px;\">Mobile Number</label>\n          <input type=\"text\" class=\"form-control input-lg\" name=\"ThisUser.MobileNumber\" [(ngModel)]=\"ThisUser.MobileNumber\" />\n        </div>\n\n      </div>\n\n\n\n\n\n\n    </div>\n\n    <div class=\"row\">\n\n      <div class=\"col-md-offset-6 col-lg-offset-6 col-sm-offset-6 col-md-6 col-sm-6 col-lg-6\" style=\"text-align: right;\">\n\n        <button class=\"save-btn\" (click)=\"updateWithoutPassword()\">Save</button>\n      </div>\n\n    </div>\n\n  </div>\n\n  \n  <h2 class='my-orders-heading'>Password</h2>\n  \n    <hr class=\"saperator-orders\">\n\n\n    <div class=\"password-change\">\n        <div class=\"form-group\">\n          <input type=\"password\" class=\"password-fields\" placeholder=\"Current Password\" name=\"currentPass\" [(ngModel)]=\"currentPass\" >\n        </div>\n        <div class=\"form-group\">\n            <input type=\"password\" class=\"password-fields\" placeholder=\"New Password\" name=\"newPass\" [(ngModel)]=\"newPass\">\n        </div>\n        <div class=\"row\">\n            \n                  <div class=\"col-md-offset-6 col-lg-offset-6 col-sm-offset-6 col-md-6 col-sm-6 col-lg-6\" style=\"text-align: right;\">\n            \n                    <button class=\"save-btn\" (click)=\"updatePasswords()\">Save</button>\n                  </div>\n            \n        </div>\n    </div>\n\n\n</div>"
+module.exports = "<div id=\"snackbar\"></div>\r\n<div class=\"orders-screen\">\r\n\r\n  <h2 class='my-orders-heading'>Profile</h2>\r\n\r\n  <hr class=\"saperator-orders\">\r\n\r\n\r\n  <div class=\"form-profile\">\r\n\r\n      <div class=\"form-group\" style=\"padding:12px\">\r\n          <label style=\"    width: 170px;\">Change Display Picture</label>\r\n\r\n         \r\n          <form id=\"form1\" runat=\"server\"  (click)=\"changeImage()\">\r\n            <input type='file'(change)=\"changeimage($event)\" id=\"imgInp\"  style=\"visibility:hidden;\"/>\r\n            <img  src=\"{{ThisUser.ProfileURL}}\" style=\"\" id=\"blah\"  src=\"#\" alt=\"your image\" />\r\n      \r\n          </form> \r\n  </div>\r\n    <div class=\"form-group\">\r\n      <label>Email</label>\r\n      <input type=\"text\" class=\"form-control input-lg\" name=\"ThisUser.Email\" [(ngModel)]=\"ThisUser.Email\"/>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n\r\n      <div class=\"col-md-6 col-sm-6 col-lg-6\">\r\n\r\n        <div class=\"form-group\">\r\n          <label>Full name</label>\r\n          <input type=\"text\" class=\"form-control input-lg\" name=\"ThisUser.FullName\" [(ngModel)]=\"ThisUser.FullName\"/>\r\n        </div>\r\n\r\n      </div>\r\n\r\n      <div class=\"col-md-6 col-sm-6 col-lg-6\">\r\n\r\n        <div class=\"form-group\">\r\n          <label>Username</label>\r\n          <input type=\"text\" class=\"form-control input-lg\" name=\"ThisUser.UserName\" [(ngModel)]=\"ThisUser.UserName\" />\r\n        </div>\r\n\r\n      </div>\r\n\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n\r\n      <div class=\"col-md-6 col-sm-6 col-lg-6\">\r\n\r\n        <div class=\"form-group\">\r\n          <label style=\"width: 114px;\">Mobile Number</label>\r\n          <input type=\"text\" class=\"form-control input-lg\" name=\"ThisUser.MobileNumber\" [(ngModel)]=\"ThisUser.MobileNumber\" />\r\n        </div>\r\n\r\n      </div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n\r\n      <div class=\"col-md-offset-6 col-lg-offset-6 col-sm-offset-6 col-md-6 col-sm-6 col-lg-6\" style=\"text-align: right;\">\r\n\r\n        <button class=\"save-btn\" (click)=\"updateWithoutPassword()\">Save</button>\r\n      </div>\r\n\r\n    </div>\r\n\r\n  </div>\r\n\r\n  \r\n  <h2 class='my-orders-heading'>Password</h2>\r\n  \r\n    <hr class=\"saperator-orders\">\r\n\r\n\r\n    <div class=\"password-change\">\r\n        <div class=\"form-group\">\r\n          <input type=\"password\" class=\"password-fields\" placeholder=\"Current Password\" name=\"currentPass\" [(ngModel)]=\"currentPass\" >\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <input type=\"password\" class=\"password-fields\" placeholder=\"New Password\" name=\"newPass\" [(ngModel)]=\"newPass\">\r\n        </div>\r\n        <div class=\"row\">\r\n            \r\n                  <div class=\"col-md-offset-6 col-lg-offset-6 col-sm-offset-6 col-md-6 col-sm-6 col-lg-6\" style=\"text-align: right;\">\r\n            \r\n                    <button class=\"save-btn\" (click)=\"updatePasswords()\">Save</button>\r\n                  </div>\r\n            \r\n        </div>\r\n    </div>\r\n\r\n\r\n</div>"
 
 /***/ }),
-/* 305 */
+/* 310 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__(306);
+        var result = __webpack_require__(311);
 
         if (typeof result === "string") {
             module.exports = result;
@@ -98837,10 +99811,10 @@ module.exports = "<div id=\"snackbar\"></div>\n<div class=\"orders-screen\">\n\n
     
 
 /***/ }),
-/* 306 */
+/* 311 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(7)(undefined);
+exports = module.exports = __webpack_require__(11)(undefined);
 // imports
 
 
@@ -98851,14 +99825,14 @@ exports.push([module.i, ".my-orders-heading{\r\n    font-size:20px;\r\n    font-
 
 
 /***/ }),
-/* 307 */
+/* 312 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_service__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_service__ = __webpack_require__(81);
 
 /**
  * Angular 2 decorators and services
@@ -98886,8 +99860,8 @@ AppComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
         selector: 'app',
         encapsulation: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewEncapsulation"].None,
-        styles: [__webpack_require__(308), __webpack_require__(310)],
-        template: __webpack_require__(312)
+        styles: [__webpack_require__(313), __webpack_require__(315)],
+        template: __webpack_require__(317)
     }),
     __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__app_service__["a" /* AppState */]])
 ], AppComponent);
@@ -98895,11 +99869,11 @@ AppComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 
 /***/ }),
-/* 308 */
+/* 313 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__(309);
+        var result = __webpack_require__(314);
 
         if (typeof result === "string") {
             module.exports = result;
@@ -98909,25 +99883,25 @@ AppComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
     
 
 /***/ }),
-/* 309 */
+/* 314 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(7)(undefined);
+exports = module.exports = __webpack_require__(11)(undefined);
 // imports
 
 
 // module
-exports.push([module.i, "@font-face {\r\n    font-family: 'museo_sans300';\r\n    src: url(" + __webpack_require__(138) + ") format('woff2'),\r\n         url(" + __webpack_require__(139) + ") format('woff'),\r\n         url(" + __webpack_require__(140) + ")  format('truetype');;\r\n    font-weight: normal;\r\n    font-style: normal;\r\n\r\n}\r\n\r\n   \r\n\r\nbody,p,input,label{\r\n    font-family: 'museo_sans300';\r\n}\r\n\r\nbody{\r\n  background:#faf9f5\r\n}\r\n.panel-heading{\r\n padding-bottom:5px !important;\r\n}\r\n[type=\"radio\"]:checked,\r\n[type=\"radio\"]:not(:checked) {\r\n    position: absolute;\r\n    left: -9999px;\r\n}\r\n[type=\"radio\"]:checked + label,\r\n[type=\"radio\"]:not(:checked) + label\r\n{\r\n    position: relative;\r\n    padding-left: 28px;\r\n    cursor: pointer;\r\n    line-height: 20px;\r\n    display: inline-block;\r\n\r\n}\r\n[type=\"radio\"]:checked + label:before,\r\n[type=\"radio\"]:not(:checked) + label:before {\r\n    content: '';\r\n    position: absolute;\r\n    left: 0;\r\n    top: 0;\r\n    width: 20px;\r\n    height: 20px;\r\n    border: 1px solid #b6b6b6;\r\n    border-radius: 100%;\r\n    background: #fff;\r\n    color:#aeaeae;\r\n}\r\n[type=\"radio\"]:checked + label:after,\r\n[type=\"radio\"]:not(:checked) + label:after {\r\n    content: '';\r\n    width: 12px;\r\n    height: 12px;\r\n    background: #1ec26b;\r\n    position: absolute;\r\n    top: 4px;\r\n    left: 4px;\r\n    border-radius: 100%;\r\n    -webkit-transition: all 0.2s ease;\r\n    transition: all 0.2s ease;\r\n    color:#676767;\r\n}\r\n[type=\"radio\"]:not(:checked) + label:after {\r\n    opacity: 0;\r\n    -webkit-transform: scale(0);\r\n    transform: scale(0);\r\n}\r\n[type=\"radio\"]:checked + label:after {\r\n    opacity: 1;\r\n    -webkit-transform: scale(1);\r\n    transform: scale(1);\r\n}\r\n\r\n.half-left a{\r\n    cursor:pointer;\r\n}\r\n\r\n.rating.color-positive .star-container .star i{\r\n    color:#5ca1f6 !important;\r\n}\r\n\r\n.search-icon{\r\n    position: absolute;\r\n    top: 11px;\r\n    z-index: 1;\r\n    width: 22px;\r\n    left: 12px;\r\n}\r\n\r\n\r\n\r\n/* animation */\r\n\r\n.loading {\r\n    opacity: 0;\r\n    transition: opacity .8s ease-in-out;\r\n    position: fixed;\r\n    height: 100%;\r\n    width: 100%;\r\n    top: 0;\r\n    left: 0;\r\n    background: #000;\r\n    z-index: -1;\r\n}\r\n/* .loading screen is visible when app is not bootstraped yet, .my-app is empty */\r\napp:empty + .loading {\r\n    opacity: 1;\r\n    z-index: 100;\r\n}\r\n\r\n\r\n.loader,.FetchingTimeSlots{\r\n    display:none;\r\n    text-align: center;\r\n    margin:50px;\r\n}\r\n\r\n@keyframes MyAnimation {\r\n    0% {\r\n      padding-left: 100px;\r\n    }\r\n    100% {\r\n      padding-left: 0px;\r\n    } \r\n  }\r\n  \r\n  .my-animation {\r\n    animation: MyAnimation 1s;\r\n  }\r\n\r\n\r\n\r\n\r\n", ""]);
+exports.push([module.i, "@font-face {\r\n    font-family: 'museo_sans300';\r\n    src: url(" + __webpack_require__(130) + ") format('woff2'),\r\n         url(" + __webpack_require__(131) + ") format('woff'),\r\n         url(" + __webpack_require__(132) + ")  format('truetype');;\r\n    font-weight: normal;\r\n    font-style: normal;\r\n\r\n}\r\n\r\n   \r\n\r\nbody,p,input,label{\r\n    font-family: 'museo_sans300';\r\n}\r\n\r\nbody{\r\n  background:#faf9f5\r\n}\r\n.panel-heading{\r\n padding-bottom:5px !important;\r\n}\r\n[type=\"radio\"]:checked,\r\n[type=\"radio\"]:not(:checked) {\r\n    position: absolute;\r\n    left: -9999px;\r\n}\r\n[type=\"radio\"]:checked + label,\r\n[type=\"radio\"]:not(:checked) + label\r\n{\r\n    position: relative;\r\n    padding-left: 28px;\r\n    cursor: pointer;\r\n    line-height: 20px;\r\n    display: inline-block;\r\n\r\n}\r\n[type=\"radio\"]:checked + label:before,\r\n[type=\"radio\"]:not(:checked) + label:before {\r\n    content: '';\r\n    position: absolute;\r\n    left: 0;\r\n    top: 0;\r\n    width: 20px;\r\n    height: 20px;\r\n    border: 1px solid #b6b6b6;\r\n    border-radius: 100%;\r\n    background: #fff;\r\n    color:#aeaeae;\r\n}\r\n[type=\"radio\"]:checked + label:after,\r\n[type=\"radio\"]:not(:checked) + label:after {\r\n    content: '';\r\n    width: 12px;\r\n    height: 12px;\r\n    background: #1ec26b;\r\n    position: absolute;\r\n    top: 4px;\r\n    left: 4px;\r\n    border-radius: 100%;\r\n    -webkit-transition: all 0.2s ease;\r\n    transition: all 0.2s ease;\r\n    color:#676767;\r\n}\r\n[type=\"radio\"]:not(:checked) + label:after {\r\n    opacity: 0;\r\n    -webkit-transform: scale(0);\r\n    transform: scale(0);\r\n}\r\n[type=\"radio\"]:checked + label:after {\r\n    opacity: 1;\r\n    -webkit-transform: scale(1);\r\n    transform: scale(1);\r\n}\r\n\r\n.half-left a{\r\n    cursor:pointer;\r\n}\r\n\r\n.rating.color-positive .star-container .star i{\r\n    color:#5ca1f6 !important;\r\n}\r\n\r\n.search-icon{\r\n    position: absolute;\r\n    top: 11px;\r\n    z-index: 1;\r\n    width: 22px;\r\n    left: 12px;\r\n}\r\n\r\n\r\n\r\n/* animation */\r\n\r\n.loading {\r\n    opacity: 0;\r\n    transition: opacity .8s ease-in-out;\r\n    position: fixed;\r\n    height: 100%;\r\n    width: 100%;\r\n    top: 0;\r\n    left: 0;\r\n    background: #000;\r\n    z-index: -1;\r\n}\r\n/* .loading screen is visible when app is not bootstraped yet, .my-app is empty */\r\napp:empty + .loading {\r\n    opacity: 1;\r\n    z-index: 100;\r\n}\r\n\r\n\r\n.loader,.FetchingTimeSlots{\r\n    display:none;\r\n    text-align: center;\r\n    margin:50px;\r\n}\r\n\r\n@keyframes MyAnimation {\r\n    0% {\r\n      padding-left: 100px;\r\n    }\r\n    100% {\r\n      padding-left: 0px;\r\n    } \r\n  }\r\n  \r\n  .my-animation {\r\n    animation: MyAnimation 1s;\r\n  }\r\n\r\n\r\n\r\n\r\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 310 */
+/* 315 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__(311);
+        var result = __webpack_require__(316);
 
         if (typeof result === "string") {
             module.exports = result;
@@ -98937,27 +99911,27 @@ exports.push([module.i, "@font-face {\r\n    font-family: 'museo_sans300';\r\n  
     
 
 /***/ }),
-/* 311 */
+/* 316 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(7)(undefined);
+exports = module.exports = __webpack_require__(11)(undefined);
 // imports
 
 
 // module
-exports.push([module.i, "@charset \"UTF-8\";\n\n/*!\n * animate.css -http://daneden.me/animate\n * Version - 3.5.2\n * Licensed under the MIT license - http://opensource.org/licenses/MIT\n *\n * Copyright (c) 2017 Daniel Eden\n */\n\n.animated {\n  animation-duration: 1s;\n  animation-fill-mode: both;\n}\n\n.animated.infinite {\n  animation-iteration-count: infinite;\n}\n\n.animated.hinge {\n  animation-duration: 2s;\n}\n\n.animated.flipOutX,\n.animated.flipOutY,\n.animated.bounceIn,\n.animated.bounceOut {\n  animation-duration: .75s;\n}\n\n@keyframes bounce {\n  from, 20%, 53%, 80%, to {\n    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);\n    transform: translate3d(0,0,0);\n  }\n\n  40%, 43% {\n    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);\n    transform: translate3d(0, -30px, 0);\n  }\n\n  70% {\n    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);\n    transform: translate3d(0, -15px, 0);\n  }\n\n  90% {\n    transform: translate3d(0,-4px,0);\n  }\n}\n\n.bounce {\n  animation-name: bounce;\n  transform-origin: center bottom;\n}\n\n@keyframes flash {\n  from, 50%, to {\n    opacity: 1;\n  }\n\n  25%, 75% {\n    opacity: 0;\n  }\n}\n\n.flash {\n  animation-name: flash;\n}\n\n/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */\n\n@keyframes pulse {\n  from {\n    transform: scale3d(1, 1, 1);\n  }\n\n  50% {\n    transform: scale3d(1.05, 1.05, 1.05);\n  }\n\n  to {\n    transform: scale3d(1, 1, 1);\n  }\n}\n\n.pulse {\n  animation-name: pulse;\n}\n\n@keyframes rubberBand {\n  from {\n    transform: scale3d(1, 1, 1);\n  }\n\n  30% {\n    transform: scale3d(1.25, 0.75, 1);\n  }\n\n  40% {\n    transform: scale3d(0.75, 1.25, 1);\n  }\n\n  50% {\n    transform: scale3d(1.15, 0.85, 1);\n  }\n\n  65% {\n    transform: scale3d(.95, 1.05, 1);\n  }\n\n  75% {\n    transform: scale3d(1.05, .95, 1);\n  }\n\n  to {\n    transform: scale3d(1, 1, 1);\n  }\n}\n\n.rubberBand {\n  animation-name: rubberBand;\n}\n\n@keyframes shake {\n  from, to {\n    transform: translate3d(0, 0, 0);\n  }\n\n  10%, 30%, 50%, 70%, 90% {\n    transform: translate3d(-10px, 0, 0);\n  }\n\n  20%, 40%, 60%, 80% {\n    transform: translate3d(10px, 0, 0);\n  }\n}\n\n.shake {\n  animation-name: shake;\n}\n\n@keyframes headShake {\n  0% {\n    transform: translateX(0);\n  }\n\n  6.5% {\n    transform: translateX(-6px) rotateY(-9deg);\n  }\n\n  18.5% {\n    transform: translateX(5px) rotateY(7deg);\n  }\n\n  31.5% {\n    transform: translateX(-3px) rotateY(-5deg);\n  }\n\n  43.5% {\n    transform: translateX(2px) rotateY(3deg);\n  }\n\n  50% {\n    transform: translateX(0);\n  }\n}\n\n.headShake {\n  animation-timing-function: ease-in-out;\n  animation-name: headShake;\n}\n\n@keyframes swing {\n  20% {\n    transform: rotate3d(0, 0, 1, 15deg);\n  }\n\n  40% {\n    transform: rotate3d(0, 0, 1, -10deg);\n  }\n\n  60% {\n    transform: rotate3d(0, 0, 1, 5deg);\n  }\n\n  80% {\n    transform: rotate3d(0, 0, 1, -5deg);\n  }\n\n  to {\n    transform: rotate3d(0, 0, 1, 0deg);\n  }\n}\n\n.swing {\n  transform-origin: top center;\n  animation-name: swing;\n}\n\n@keyframes tada {\n  from {\n    transform: scale3d(1, 1, 1);\n  }\n\n  10%, 20% {\n    transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);\n  }\n\n  30%, 50%, 70%, 90% {\n    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);\n  }\n\n  40%, 60%, 80% {\n    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);\n  }\n\n  to {\n    transform: scale3d(1, 1, 1);\n  }\n}\n\n.tada {\n  animation-name: tada;\n}\n\n/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */\n\n@keyframes wobble {\n  from {\n    transform: none;\n  }\n\n  15% {\n    transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);\n  }\n\n  30% {\n    transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);\n  }\n\n  45% {\n    transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);\n  }\n\n  60% {\n    transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);\n  }\n\n  75% {\n    transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);\n  }\n\n  to {\n    transform: none;\n  }\n}\n\n.wobble {\n  animation-name: wobble;\n}\n\n@keyframes jello {\n  from, 11.1%, to {\n    transform: none;\n  }\n\n  22.2% {\n    transform: skewX(-12.5deg) skewY(-12.5deg);\n  }\n\n  33.3% {\n    transform: skewX(6.25deg) skewY(6.25deg);\n  }\n\n  44.4% {\n    transform: skewX(-3.125deg) skewY(-3.125deg);\n  }\n\n  55.5% {\n    transform: skewX(1.5625deg) skewY(1.5625deg);\n  }\n\n  66.6% {\n    transform: skewX(-0.78125deg) skewY(-0.78125deg);\n  }\n\n  77.7% {\n    transform: skewX(0.390625deg) skewY(0.390625deg);\n  }\n\n  88.8% {\n    transform: skewX(-0.1953125deg) skewY(-0.1953125deg);\n  }\n}\n\n.jello {\n  animation-name: jello;\n  transform-origin: center;\n}\n\n@keyframes bounceIn {\n  from, 20%, 40%, 60%, 80%, to {\n    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);\n  }\n\n  0% {\n    opacity: 0;\n    transform: scale3d(.3, .3, .3);\n  }\n\n  20% {\n    transform: scale3d(1.1, 1.1, 1.1);\n  }\n\n  40% {\n    transform: scale3d(.9, .9, .9);\n  }\n\n  60% {\n    opacity: 1;\n    transform: scale3d(1.03, 1.03, 1.03);\n  }\n\n  80% {\n    transform: scale3d(.97, .97, .97);\n  }\n\n  to {\n    opacity: 1;\n    transform: scale3d(1, 1, 1);\n  }\n}\n\n.bounceIn {\n  animation-name: bounceIn;\n}\n\n@keyframes bounceInDown {\n  from, 60%, 75%, 90%, to {\n    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);\n  }\n\n  0% {\n    opacity: 0;\n    transform: translate3d(0, -3000px, 0);\n  }\n\n  60% {\n    opacity: 1;\n    transform: translate3d(0, 25px, 0);\n  }\n\n  75% {\n    transform: translate3d(0, -10px, 0);\n  }\n\n  90% {\n    transform: translate3d(0, 5px, 0);\n  }\n\n  to {\n    transform: none;\n  }\n}\n\n.bounceInDown {\n  animation-name: bounceInDown;\n}\n\n@keyframes bounceInLeft {\n  from, 60%, 75%, 90%, to {\n    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);\n  }\n\n  0% {\n    opacity: 0;\n    transform: translate3d(-3000px, 0, 0);\n  }\n\n  60% {\n    opacity: 1;\n    transform: translate3d(25px, 0, 0);\n  }\n\n  75% {\n    transform: translate3d(-10px, 0, 0);\n  }\n\n  90% {\n    transform: translate3d(5px, 0, 0);\n  }\n\n  to {\n    transform: none;\n  }\n}\n\n.bounceInLeft {\n  animation-name: bounceInLeft;\n}\n\n@keyframes bounceInRight {\n  from, 60%, 75%, 90%, to {\n    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);\n  }\n\n  from {\n    opacity: 0;\n    transform: translate3d(3000px, 0, 0);\n  }\n\n  60% {\n    opacity: 1;\n    transform: translate3d(-25px, 0, 0);\n  }\n\n  75% {\n    transform: translate3d(10px, 0, 0);\n  }\n\n  90% {\n    transform: translate3d(-5px, 0, 0);\n  }\n\n  to {\n    transform: none;\n  }\n}\n\n.bounceInRight {\n  animation-name: bounceInRight;\n}\n\n@keyframes bounceInUp {\n  from, 60%, 75%, 90%, to {\n    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);\n  }\n\n  from {\n    opacity: 0;\n    transform: translate3d(0, 3000px, 0);\n  }\n\n  60% {\n    opacity: 1;\n    transform: translate3d(0, -20px, 0);\n  }\n\n  75% {\n    transform: translate3d(0, 10px, 0);\n  }\n\n  90% {\n    transform: translate3d(0, -5px, 0);\n  }\n\n  to {\n    transform: translate3d(0, 0, 0);\n  }\n}\n\n.bounceInUp {\n  animation-name: bounceInUp;\n}\n\n@keyframes bounceOut {\n  20% {\n    transform: scale3d(.9, .9, .9);\n  }\n\n  50%, 55% {\n    opacity: 1;\n    transform: scale3d(1.1, 1.1, 1.1);\n  }\n\n  to {\n    opacity: 0;\n    transform: scale3d(.3, .3, .3);\n  }\n}\n\n.bounceOut {\n  animation-name: bounceOut;\n}\n\n@keyframes bounceOutDown {\n  20% {\n    transform: translate3d(0, 10px, 0);\n  }\n\n  40%, 45% {\n    opacity: 1;\n    transform: translate3d(0, -20px, 0);\n  }\n\n  to {\n    opacity: 0;\n    transform: translate3d(0, 2000px, 0);\n  }\n}\n\n.bounceOutDown {\n  animation-name: bounceOutDown;\n}\n\n@keyframes bounceOutLeft {\n  20% {\n    opacity: 1;\n    transform: translate3d(20px, 0, 0);\n  }\n\n  to {\n    opacity: 0;\n    transform: translate3d(-2000px, 0, 0);\n  }\n}\n\n.bounceOutLeft {\n  animation-name: bounceOutLeft;\n}\n\n@keyframes bounceOutRight {\n  20% {\n    opacity: 1;\n    transform: translate3d(-20px, 0, 0);\n  }\n\n  to {\n    opacity: 0;\n    transform: translate3d(2000px, 0, 0);\n  }\n}\n\n.bounceOutRight {\n  animation-name: bounceOutRight;\n}\n\n@keyframes bounceOutUp {\n  20% {\n    transform: translate3d(0, -10px, 0);\n  }\n\n  40%, 45% {\n    opacity: 1;\n    transform: translate3d(0, 20px, 0);\n  }\n\n  to {\n    opacity: 0;\n    transform: translate3d(0, -2000px, 0);\n  }\n}\n\n.bounceOutUp {\n  animation-name: bounceOutUp;\n}\n\n@keyframes fadeIn {\n  from {\n    opacity: 0;\n  }\n\n  to {\n    opacity: 1;\n  }\n}\n\n.fadeIn {\n  animation-name: fadeIn;\n}\n\n@keyframes fadeInDown {\n  from {\n    opacity: 0;\n    transform: translate3d(0, -100%, 0);\n  }\n\n  to {\n    opacity: 1;\n    transform: none;\n  }\n}\n\n.fadeInDown {\n  animation-name: fadeInDown;\n}\n\n@keyframes fadeInDownBig {\n  from {\n    opacity: 0;\n    transform: translate3d(0, -2000px, 0);\n  }\n\n  to {\n    opacity: 1;\n    transform: none;\n  }\n}\n\n.fadeInDownBig {\n  animation-name: fadeInDownBig;\n}\n\n@keyframes fadeInLeft {\n  from {\n    opacity: 0;\n    transform: translate3d(-100%, 0, 0);\n  }\n\n  to {\n    opacity: 1;\n    transform: none;\n  }\n}\n\n.fadeInLeft {\n  animation-name: fadeInLeft;\n}\n\n@keyframes fadeInLeftBig {\n  from {\n    opacity: 0;\n    transform: translate3d(-2000px, 0, 0);\n  }\n\n  to {\n    opacity: 1;\n    transform: none;\n  }\n}\n\n.fadeInLeftBig {\n  animation-name: fadeInLeftBig;\n}\n\n@keyframes fadeInRight {\n  from {\n    opacity: 0;\n    transform: translate3d(100%, 0, 0);\n  }\n\n  to {\n    opacity: 1;\n    transform: none;\n  }\n}\n\n.fadeInRight {\n  animation-name: fadeInRight;\n}\n\n@keyframes fadeInRightBig {\n  from {\n    opacity: 0;\n    transform: translate3d(2000px, 0, 0);\n  }\n\n  to {\n    opacity: 1;\n    transform: none;\n  }\n}\n\n.fadeInRightBig {\n  animation-name: fadeInRightBig;\n}\n\n@keyframes fadeInUp {\n  from {\n    opacity: 0;\n    transform: translate3d(0, 100%, 0);\n  }\n\n  to {\n    opacity: 1;\n    transform: none;\n  }\n}\n\n.fadeInUp {\n  animation-name: fadeInUp;\n}\n\n@keyframes fadeInUpBig {\n  from {\n    opacity: 0;\n    transform: translate3d(0, 2000px, 0);\n  }\n\n  to {\n    opacity: 1;\n    transform: none;\n  }\n}\n\n.fadeInUpBig {\n  animation-name: fadeInUpBig;\n}\n\n@keyframes fadeOut {\n  from {\n    opacity: 1;\n  }\n\n  to {\n    opacity: 0;\n  }\n}\n\n.fadeOut {\n  animation-name: fadeOut;\n}\n\n@keyframes fadeOutDown {\n  from {\n    opacity: 1;\n  }\n\n  to {\n    opacity: 0;\n    transform: translate3d(0, 100%, 0);\n  }\n}\n\n.fadeOutDown {\n  animation-name: fadeOutDown;\n}\n\n@keyframes fadeOutDownBig {\n  from {\n    opacity: 1;\n  }\n\n  to {\n    opacity: 0;\n    transform: translate3d(0, 2000px, 0);\n  }\n}\n\n.fadeOutDownBig {\n  animation-name: fadeOutDownBig;\n}\n\n@keyframes fadeOutLeft {\n  from {\n    opacity: 1;\n  }\n\n  to {\n    opacity: 0;\n    transform: translate3d(-100%, 0, 0);\n  }\n}\n\n.fadeOutLeft {\n  animation-name: fadeOutLeft;\n}\n\n@keyframes fadeOutLeftBig {\n  from {\n    opacity: 1;\n  }\n\n  to {\n    opacity: 0;\n    transform: translate3d(-2000px, 0, 0);\n  }\n}\n\n.fadeOutLeftBig {\n  animation-name: fadeOutLeftBig;\n}\n\n@keyframes fadeOutRight {\n  from {\n    opacity: 1;\n  }\n\n  to {\n    opacity: 0;\n    transform: translate3d(100%, 0, 0);\n  }\n}\n\n.fadeOutRight {\n  animation-name: fadeOutRight;\n}\n\n@keyframes fadeOutRightBig {\n  from {\n    opacity: 1;\n  }\n\n  to {\n    opacity: 0;\n    transform: translate3d(2000px, 0, 0);\n  }\n}\n\n.fadeOutRightBig {\n  animation-name: fadeOutRightBig;\n}\n\n@keyframes fadeOutUp {\n  from {\n    opacity: 1;\n  }\n\n  to {\n    opacity: 0;\n    transform: translate3d(0, -100%, 0);\n  }\n}\n\n.fadeOutUp {\n  animation-name: fadeOutUp;\n}\n\n@keyframes fadeOutUpBig {\n  from {\n    opacity: 1;\n  }\n\n  to {\n    opacity: 0;\n    transform: translate3d(0, -2000px, 0);\n  }\n}\n\n.fadeOutUpBig {\n  animation-name: fadeOutUpBig;\n}\n\n@keyframes flip {\n  from {\n    transform: perspective(400px) rotate3d(0, 1, 0, -360deg);\n    animation-timing-function: ease-out;\n  }\n\n  40% {\n    transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -190deg);\n    animation-timing-function: ease-out;\n  }\n\n  50% {\n    transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -170deg);\n    animation-timing-function: ease-in;\n  }\n\n  80% {\n    transform: perspective(400px) scale3d(.95, .95, .95);\n    animation-timing-function: ease-in;\n  }\n\n  to {\n    transform: perspective(400px);\n    animation-timing-function: ease-in;\n  }\n}\n\n.animated.flip {\n  -webkit-backface-visibility: visible;\n  backface-visibility: visible;\n  animation-name: flip;\n}\n\n@keyframes flipInX {\n  from {\n    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);\n    animation-timing-function: ease-in;\n    opacity: 0;\n  }\n\n  40% {\n    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);\n    animation-timing-function: ease-in;\n  }\n\n  60% {\n    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);\n    opacity: 1;\n  }\n\n  80% {\n    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);\n  }\n\n  to {\n    transform: perspective(400px);\n  }\n}\n\n.flipInX {\n  -webkit-backface-visibility: visible !important;\n  backface-visibility: visible !important;\n  animation-name: flipInX;\n}\n\n@keyframes flipInY {\n  from {\n    transform: perspective(400px) rotate3d(0, 1, 0, 90deg);\n    animation-timing-function: ease-in;\n    opacity: 0;\n  }\n\n  40% {\n    transform: perspective(400px) rotate3d(0, 1, 0, -20deg);\n    animation-timing-function: ease-in;\n  }\n\n  60% {\n    transform: perspective(400px) rotate3d(0, 1, 0, 10deg);\n    opacity: 1;\n  }\n\n  80% {\n    transform: perspective(400px) rotate3d(0, 1, 0, -5deg);\n  }\n\n  to {\n    transform: perspective(400px);\n  }\n}\n\n.flipInY {\n  -webkit-backface-visibility: visible !important;\n  backface-visibility: visible !important;\n  animation-name: flipInY;\n}\n\n@keyframes flipOutX {\n  from {\n    transform: perspective(400px);\n  }\n\n  30% {\n    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);\n    opacity: 1;\n  }\n\n  to {\n    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);\n    opacity: 0;\n  }\n}\n\n.flipOutX {\n  animation-name: flipOutX;\n  -webkit-backface-visibility: visible !important;\n  backface-visibility: visible !important;\n}\n\n@keyframes flipOutY {\n  from {\n    transform: perspective(400px);\n  }\n\n  30% {\n    transform: perspective(400px) rotate3d(0, 1, 0, -15deg);\n    opacity: 1;\n  }\n\n  to {\n    transform: perspective(400px) rotate3d(0, 1, 0, 90deg);\n    opacity: 0;\n  }\n}\n\n.flipOutY {\n  -webkit-backface-visibility: visible !important;\n  backface-visibility: visible !important;\n  animation-name: flipOutY;\n}\n\n@keyframes lightSpeedIn {\n  from {\n    transform: translate3d(100%, 0, 0) skewX(-30deg);\n    opacity: 0;\n  }\n\n  60% {\n    transform: skewX(20deg);\n    opacity: 1;\n  }\n\n  80% {\n    transform: skewX(-5deg);\n    opacity: 1;\n  }\n\n  to {\n    transform: none;\n    opacity: 1;\n  }\n}\n\n.lightSpeedIn {\n  animation-name: lightSpeedIn;\n  animation-timing-function: ease-out;\n}\n\n@keyframes lightSpeedOut {\n  from {\n    opacity: 1;\n  }\n\n  to {\n    transform: translate3d(100%, 0, 0) skewX(30deg);\n    opacity: 0;\n  }\n}\n\n.lightSpeedOut {\n  animation-name: lightSpeedOut;\n  animation-timing-function: ease-in;\n}\n\n@keyframes rotateIn {\n  from {\n    transform-origin: center;\n    transform: rotate3d(0, 0, 1, -200deg);\n    opacity: 0;\n  }\n\n  to {\n    transform-origin: center;\n    transform: none;\n    opacity: 1;\n  }\n}\n\n.rotateIn {\n  animation-name: rotateIn;\n}\n\n@keyframes rotateInDownLeft {\n  from {\n    transform-origin: left bottom;\n    transform: rotate3d(0, 0, 1, -45deg);\n    opacity: 0;\n  }\n\n  to {\n    transform-origin: left bottom;\n    transform: none;\n    opacity: 1;\n  }\n}\n\n.rotateInDownLeft {\n  animation-name: rotateInDownLeft;\n}\n\n@keyframes rotateInDownRight {\n  from {\n    transform-origin: right bottom;\n    transform: rotate3d(0, 0, 1, 45deg);\n    opacity: 0;\n  }\n\n  to {\n    transform-origin: right bottom;\n    transform: none;\n    opacity: 1;\n  }\n}\n\n.rotateInDownRight {\n  animation-name: rotateInDownRight;\n}\n\n@keyframes rotateInUpLeft {\n  from {\n    transform-origin: left bottom;\n    transform: rotate3d(0, 0, 1, 45deg);\n    opacity: 0;\n  }\n\n  to {\n    transform-origin: left bottom;\n    transform: none;\n    opacity: 1;\n  }\n}\n\n.rotateInUpLeft {\n  animation-name: rotateInUpLeft;\n}\n\n@keyframes rotateInUpRight {\n  from {\n    transform-origin: right bottom;\n    transform: rotate3d(0, 0, 1, -90deg);\n    opacity: 0;\n  }\n\n  to {\n    transform-origin: right bottom;\n    transform: none;\n    opacity: 1;\n  }\n}\n\n.rotateInUpRight {\n  animation-name: rotateInUpRight;\n}\n\n@keyframes rotateOut {\n  from {\n    transform-origin: center;\n    opacity: 1;\n  }\n\n  to {\n    transform-origin: center;\n    transform: rotate3d(0, 0, 1, 200deg);\n    opacity: 0;\n  }\n}\n\n.rotateOut {\n  animation-name: rotateOut;\n}\n\n@keyframes rotateOutDownLeft {\n  from {\n    transform-origin: left bottom;\n    opacity: 1;\n  }\n\n  to {\n    transform-origin: left bottom;\n    transform: rotate3d(0, 0, 1, 45deg);\n    opacity: 0;\n  }\n}\n\n.rotateOutDownLeft {\n  animation-name: rotateOutDownLeft;\n}\n\n@keyframes rotateOutDownRight {\n  from {\n    transform-origin: right bottom;\n    opacity: 1;\n  }\n\n  to {\n    transform-origin: right bottom;\n    transform: rotate3d(0, 0, 1, -45deg);\n    opacity: 0;\n  }\n}\n\n.rotateOutDownRight {\n  animation-name: rotateOutDownRight;\n}\n\n@keyframes rotateOutUpLeft {\n  from {\n    transform-origin: left bottom;\n    opacity: 1;\n  }\n\n  to {\n    transform-origin: left bottom;\n    transform: rotate3d(0, 0, 1, -45deg);\n    opacity: 0;\n  }\n}\n\n.rotateOutUpLeft {\n  animation-name: rotateOutUpLeft;\n}\n\n@keyframes rotateOutUpRight {\n  from {\n    transform-origin: right bottom;\n    opacity: 1;\n  }\n\n  to {\n    transform-origin: right bottom;\n    transform: rotate3d(0, 0, 1, 90deg);\n    opacity: 0;\n  }\n}\n\n.rotateOutUpRight {\n  animation-name: rotateOutUpRight;\n}\n\n@keyframes hinge {\n  0% {\n    transform-origin: top left;\n    animation-timing-function: ease-in-out;\n  }\n\n  20%, 60% {\n    transform: rotate3d(0, 0, 1, 80deg);\n    transform-origin: top left;\n    animation-timing-function: ease-in-out;\n  }\n\n  40%, 80% {\n    transform: rotate3d(0, 0, 1, 60deg);\n    transform-origin: top left;\n    animation-timing-function: ease-in-out;\n    opacity: 1;\n  }\n\n  to {\n    transform: translate3d(0, 700px, 0);\n    opacity: 0;\n  }\n}\n\n.hinge {\n  animation-name: hinge;\n}\n\n@keyframes jackInTheBox {\n  from {\n    opacity: 0;\n    transform: scale(0.1) rotate(30deg);\n    transform-origin: center bottom;\n  }\n\n  50% {\n    transform: rotate(-10deg);\n  }\n\n  70% {\n    transform: rotate(3deg);\n  }\n\n  to {\n    opacity: 1;\n    transform: scale(1);\n  }\n}\n\n.jackInTheBox {\n  animation-name: jackInTheBox;\n}\n\n/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */\n\n@keyframes rollIn {\n  from {\n    opacity: 0;\n    transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);\n  }\n\n  to {\n    opacity: 1;\n    transform: none;\n  }\n}\n\n.rollIn {\n  animation-name: rollIn;\n}\n\n/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */\n\n@keyframes rollOut {\n  from {\n    opacity: 1;\n  }\n\n  to {\n    opacity: 0;\n    transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);\n  }\n}\n\n.rollOut {\n  animation-name: rollOut;\n}\n\n@keyframes zoomIn {\n  from {\n    opacity: 0;\n    transform: scale3d(.3, .3, .3);\n  }\n\n  50% {\n    opacity: 1;\n  }\n}\n\n.zoomIn {\n  animation-name: zoomIn;\n}\n\n@keyframes zoomInDown {\n  from {\n    opacity: 0;\n    transform: scale3d(.1, .1, .1) translate3d(0, -1000px, 0);\n    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);\n  }\n\n  60% {\n    opacity: 1;\n    transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0);\n    animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);\n  }\n}\n\n.zoomInDown {\n  animation-name: zoomInDown;\n}\n\n@keyframes zoomInLeft {\n  from {\n    opacity: 0;\n    transform: scale3d(.1, .1, .1) translate3d(-1000px, 0, 0);\n    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);\n  }\n\n  60% {\n    opacity: 1;\n    transform: scale3d(.475, .475, .475) translate3d(10px, 0, 0);\n    animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);\n  }\n}\n\n.zoomInLeft {\n  animation-name: zoomInLeft;\n}\n\n@keyframes zoomInRight {\n  from {\n    opacity: 0;\n    transform: scale3d(.1, .1, .1) translate3d(1000px, 0, 0);\n    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);\n  }\n\n  60% {\n    opacity: 1;\n    transform: scale3d(.475, .475, .475) translate3d(-10px, 0, 0);\n    animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);\n  }\n}\n\n.zoomInRight {\n  animation-name: zoomInRight;\n}\n\n@keyframes zoomInUp {\n  from {\n    opacity: 0;\n    transform: scale3d(.1, .1, .1) translate3d(0, 1000px, 0);\n    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);\n  }\n\n  60% {\n    opacity: 1;\n    transform: scale3d(.475, .475, .475) translate3d(0, -60px, 0);\n    animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);\n  }\n}\n\n.zoomInUp {\n  animation-name: zoomInUp;\n}\n\n@keyframes zoomOut {\n  from {\n    opacity: 1;\n  }\n\n  50% {\n    opacity: 0;\n    transform: scale3d(.3, .3, .3);\n  }\n\n  to {\n    opacity: 0;\n  }\n}\n\n.zoomOut {\n  animation-name: zoomOut;\n}\n\n@keyframes zoomOutDown {\n  40% {\n    opacity: 1;\n    transform: scale3d(.475, .475, .475) translate3d(0, -60px, 0);\n    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);\n  }\n\n  to {\n    opacity: 0;\n    transform: scale3d(.1, .1, .1) translate3d(0, 2000px, 0);\n    transform-origin: center bottom;\n    animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);\n  }\n}\n\n.zoomOutDown {\n  animation-name: zoomOutDown;\n}\n\n@keyframes zoomOutLeft {\n  40% {\n    opacity: 1;\n    transform: scale3d(.475, .475, .475) translate3d(42px, 0, 0);\n  }\n\n  to {\n    opacity: 0;\n    transform: scale(.1) translate3d(-2000px, 0, 0);\n    transform-origin: left center;\n  }\n}\n\n.zoomOutLeft {\n  animation-name: zoomOutLeft;\n}\n\n@keyframes zoomOutRight {\n  40% {\n    opacity: 1;\n    transform: scale3d(.475, .475, .475) translate3d(-42px, 0, 0);\n  }\n\n  to {\n    opacity: 0;\n    transform: scale(.1) translate3d(2000px, 0, 0);\n    transform-origin: right center;\n  }\n}\n\n.zoomOutRight {\n  animation-name: zoomOutRight;\n}\n\n@keyframes zoomOutUp {\n  40% {\n    opacity: 1;\n    transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0);\n    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);\n  }\n\n  to {\n    opacity: 0;\n    transform: scale3d(.1, .1, .1) translate3d(0, -2000px, 0);\n    transform-origin: center bottom;\n    animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);\n  }\n}\n\n.zoomOutUp {\n  animation-name: zoomOutUp;\n}\n\n@keyframes slideInDown {\n  from {\n    transform: translate3d(0, -100%, 0);\n    visibility: visible;\n  }\n\n  to {\n    transform: translate3d(0, 0, 0);\n  }\n}\n\n.slideInDown {\n  animation-name: slideInDown;\n}\n\n@keyframes slideInLeft {\n  from {\n    transform: translate3d(-100%, 0, 0);\n    visibility: visible;\n  }\n\n  to {\n    transform: translate3d(0, 0, 0);\n  }\n}\n\n.slideInLeft {\n  animation-name: slideInLeft;\n}\n\n@keyframes slideInRight {\n  from {\n    transform: translate3d(100%, 0, 0);\n    visibility: visible;\n  }\n\n  to {\n    transform: translate3d(0, 0, 0);\n  }\n}\n\n.slideInRight {\n  animation-name: slideInRight;\n}\n\n@keyframes slideInUp {\n  from {\n    transform: translate3d(0, 100%, 0);\n    visibility: visible;\n  }\n\n  to {\n    transform: translate3d(0, 0, 0);\n  }\n}\n\n.slideInUp {\n  animation-name: slideInUp;\n}\n\n@keyframes slideOutDown {\n  from {\n    transform: translate3d(0, 0, 0);\n  }\n\n  to {\n    visibility: hidden;\n    transform: translate3d(0, 100%, 0);\n  }\n}\n\n.slideOutDown {\n  animation-name: slideOutDown;\n}\n\n@keyframes slideOutLeft {\n  from {\n    transform: translate3d(0, 0, 0);\n  }\n\n  to {\n    visibility: hidden;\n    transform: translate3d(-100%, 0, 0);\n  }\n}\n\n.slideOutLeft {\n  animation-name: slideOutLeft;\n}\n\n@keyframes slideOutRight {\n  from {\n    transform: translate3d(0, 0, 0);\n  }\n\n  to {\n    visibility: hidden;\n    transform: translate3d(100%, 0, 0);\n  }\n}\n\n.slideOutRight {\n  animation-name: slideOutRight;\n}\n\n@keyframes slideOutUp {\n  from {\n    transform: translate3d(0, 0, 0);\n  }\n\n  to {\n    visibility: hidden;\n    transform: translate3d(0, -100%, 0);\n  }\n}\n\n.slideOutUp {\n  animation-name: slideOutUp;\n}\n", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\r\n\r\n/*!\r\n * animate.css -http://daneden.me/animate\r\n * Version - 3.5.2\r\n * Licensed under the MIT license - http://opensource.org/licenses/MIT\r\n *\r\n * Copyright (c) 2017 Daniel Eden\r\n */\r\n\r\n.animated {\r\n  animation-duration: 1s;\r\n  animation-fill-mode: both;\r\n}\r\n\r\n.animated.infinite {\r\n  animation-iteration-count: infinite;\r\n}\r\n\r\n.animated.hinge {\r\n  animation-duration: 2s;\r\n}\r\n\r\n.animated.flipOutX,\r\n.animated.flipOutY,\r\n.animated.bounceIn,\r\n.animated.bounceOut {\r\n  animation-duration: .75s;\r\n}\r\n\r\n@keyframes bounce {\r\n  from, 20%, 53%, 80%, to {\r\n    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);\r\n    transform: translate3d(0,0,0);\r\n  }\r\n\r\n  40%, 43% {\r\n    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);\r\n    transform: translate3d(0, -30px, 0);\r\n  }\r\n\r\n  70% {\r\n    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);\r\n    transform: translate3d(0, -15px, 0);\r\n  }\r\n\r\n  90% {\r\n    transform: translate3d(0,-4px,0);\r\n  }\r\n}\r\n\r\n.bounce {\r\n  animation-name: bounce;\r\n  transform-origin: center bottom;\r\n}\r\n\r\n@keyframes flash {\r\n  from, 50%, to {\r\n    opacity: 1;\r\n  }\r\n\r\n  25%, 75% {\r\n    opacity: 0;\r\n  }\r\n}\r\n\r\n.flash {\r\n  animation-name: flash;\r\n}\r\n\r\n/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */\r\n\r\n@keyframes pulse {\r\n  from {\r\n    transform: scale3d(1, 1, 1);\r\n  }\r\n\r\n  50% {\r\n    transform: scale3d(1.05, 1.05, 1.05);\r\n  }\r\n\r\n  to {\r\n    transform: scale3d(1, 1, 1);\r\n  }\r\n}\r\n\r\n.pulse {\r\n  animation-name: pulse;\r\n}\r\n\r\n@keyframes rubberBand {\r\n  from {\r\n    transform: scale3d(1, 1, 1);\r\n  }\r\n\r\n  30% {\r\n    transform: scale3d(1.25, 0.75, 1);\r\n  }\r\n\r\n  40% {\r\n    transform: scale3d(0.75, 1.25, 1);\r\n  }\r\n\r\n  50% {\r\n    transform: scale3d(1.15, 0.85, 1);\r\n  }\r\n\r\n  65% {\r\n    transform: scale3d(.95, 1.05, 1);\r\n  }\r\n\r\n  75% {\r\n    transform: scale3d(1.05, .95, 1);\r\n  }\r\n\r\n  to {\r\n    transform: scale3d(1, 1, 1);\r\n  }\r\n}\r\n\r\n.rubberBand {\r\n  animation-name: rubberBand;\r\n}\r\n\r\n@keyframes shake {\r\n  from, to {\r\n    transform: translate3d(0, 0, 0);\r\n  }\r\n\r\n  10%, 30%, 50%, 70%, 90% {\r\n    transform: translate3d(-10px, 0, 0);\r\n  }\r\n\r\n  20%, 40%, 60%, 80% {\r\n    transform: translate3d(10px, 0, 0);\r\n  }\r\n}\r\n\r\n.shake {\r\n  animation-name: shake;\r\n}\r\n\r\n@keyframes headShake {\r\n  0% {\r\n    transform: translateX(0);\r\n  }\r\n\r\n  6.5% {\r\n    transform: translateX(-6px) rotateY(-9deg);\r\n  }\r\n\r\n  18.5% {\r\n    transform: translateX(5px) rotateY(7deg);\r\n  }\r\n\r\n  31.5% {\r\n    transform: translateX(-3px) rotateY(-5deg);\r\n  }\r\n\r\n  43.5% {\r\n    transform: translateX(2px) rotateY(3deg);\r\n  }\r\n\r\n  50% {\r\n    transform: translateX(0);\r\n  }\r\n}\r\n\r\n.headShake {\r\n  animation-timing-function: ease-in-out;\r\n  animation-name: headShake;\r\n}\r\n\r\n@keyframes swing {\r\n  20% {\r\n    transform: rotate3d(0, 0, 1, 15deg);\r\n  }\r\n\r\n  40% {\r\n    transform: rotate3d(0, 0, 1, -10deg);\r\n  }\r\n\r\n  60% {\r\n    transform: rotate3d(0, 0, 1, 5deg);\r\n  }\r\n\r\n  80% {\r\n    transform: rotate3d(0, 0, 1, -5deg);\r\n  }\r\n\r\n  to {\r\n    transform: rotate3d(0, 0, 1, 0deg);\r\n  }\r\n}\r\n\r\n.swing {\r\n  transform-origin: top center;\r\n  animation-name: swing;\r\n}\r\n\r\n@keyframes tada {\r\n  from {\r\n    transform: scale3d(1, 1, 1);\r\n  }\r\n\r\n  10%, 20% {\r\n    transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);\r\n  }\r\n\r\n  30%, 50%, 70%, 90% {\r\n    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);\r\n  }\r\n\r\n  40%, 60%, 80% {\r\n    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);\r\n  }\r\n\r\n  to {\r\n    transform: scale3d(1, 1, 1);\r\n  }\r\n}\r\n\r\n.tada {\r\n  animation-name: tada;\r\n}\r\n\r\n/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */\r\n\r\n@keyframes wobble {\r\n  from {\r\n    transform: none;\r\n  }\r\n\r\n  15% {\r\n    transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);\r\n  }\r\n\r\n  30% {\r\n    transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);\r\n  }\r\n\r\n  45% {\r\n    transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);\r\n  }\r\n\r\n  60% {\r\n    transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);\r\n  }\r\n\r\n  75% {\r\n    transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);\r\n  }\r\n\r\n  to {\r\n    transform: none;\r\n  }\r\n}\r\n\r\n.wobble {\r\n  animation-name: wobble;\r\n}\r\n\r\n@keyframes jello {\r\n  from, 11.1%, to {\r\n    transform: none;\r\n  }\r\n\r\n  22.2% {\r\n    transform: skewX(-12.5deg) skewY(-12.5deg);\r\n  }\r\n\r\n  33.3% {\r\n    transform: skewX(6.25deg) skewY(6.25deg);\r\n  }\r\n\r\n  44.4% {\r\n    transform: skewX(-3.125deg) skewY(-3.125deg);\r\n  }\r\n\r\n  55.5% {\r\n    transform: skewX(1.5625deg) skewY(1.5625deg);\r\n  }\r\n\r\n  66.6% {\r\n    transform: skewX(-0.78125deg) skewY(-0.78125deg);\r\n  }\r\n\r\n  77.7% {\r\n    transform: skewX(0.390625deg) skewY(0.390625deg);\r\n  }\r\n\r\n  88.8% {\r\n    transform: skewX(-0.1953125deg) skewY(-0.1953125deg);\r\n  }\r\n}\r\n\r\n.jello {\r\n  animation-name: jello;\r\n  transform-origin: center;\r\n}\r\n\r\n@keyframes bounceIn {\r\n  from, 20%, 40%, 60%, 80%, to {\r\n    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);\r\n  }\r\n\r\n  0% {\r\n    opacity: 0;\r\n    transform: scale3d(.3, .3, .3);\r\n  }\r\n\r\n  20% {\r\n    transform: scale3d(1.1, 1.1, 1.1);\r\n  }\r\n\r\n  40% {\r\n    transform: scale3d(.9, .9, .9);\r\n  }\r\n\r\n  60% {\r\n    opacity: 1;\r\n    transform: scale3d(1.03, 1.03, 1.03);\r\n  }\r\n\r\n  80% {\r\n    transform: scale3d(.97, .97, .97);\r\n  }\r\n\r\n  to {\r\n    opacity: 1;\r\n    transform: scale3d(1, 1, 1);\r\n  }\r\n}\r\n\r\n.bounceIn {\r\n  animation-name: bounceIn;\r\n}\r\n\r\n@keyframes bounceInDown {\r\n  from, 60%, 75%, 90%, to {\r\n    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);\r\n  }\r\n\r\n  0% {\r\n    opacity: 0;\r\n    transform: translate3d(0, -3000px, 0);\r\n  }\r\n\r\n  60% {\r\n    opacity: 1;\r\n    transform: translate3d(0, 25px, 0);\r\n  }\r\n\r\n  75% {\r\n    transform: translate3d(0, -10px, 0);\r\n  }\r\n\r\n  90% {\r\n    transform: translate3d(0, 5px, 0);\r\n  }\r\n\r\n  to {\r\n    transform: none;\r\n  }\r\n}\r\n\r\n.bounceInDown {\r\n  animation-name: bounceInDown;\r\n}\r\n\r\n@keyframes bounceInLeft {\r\n  from, 60%, 75%, 90%, to {\r\n    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);\r\n  }\r\n\r\n  0% {\r\n    opacity: 0;\r\n    transform: translate3d(-3000px, 0, 0);\r\n  }\r\n\r\n  60% {\r\n    opacity: 1;\r\n    transform: translate3d(25px, 0, 0);\r\n  }\r\n\r\n  75% {\r\n    transform: translate3d(-10px, 0, 0);\r\n  }\r\n\r\n  90% {\r\n    transform: translate3d(5px, 0, 0);\r\n  }\r\n\r\n  to {\r\n    transform: none;\r\n  }\r\n}\r\n\r\n.bounceInLeft {\r\n  animation-name: bounceInLeft;\r\n}\r\n\r\n@keyframes bounceInRight {\r\n  from, 60%, 75%, 90%, to {\r\n    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);\r\n  }\r\n\r\n  from {\r\n    opacity: 0;\r\n    transform: translate3d(3000px, 0, 0);\r\n  }\r\n\r\n  60% {\r\n    opacity: 1;\r\n    transform: translate3d(-25px, 0, 0);\r\n  }\r\n\r\n  75% {\r\n    transform: translate3d(10px, 0, 0);\r\n  }\r\n\r\n  90% {\r\n    transform: translate3d(-5px, 0, 0);\r\n  }\r\n\r\n  to {\r\n    transform: none;\r\n  }\r\n}\r\n\r\n.bounceInRight {\r\n  animation-name: bounceInRight;\r\n}\r\n\r\n@keyframes bounceInUp {\r\n  from, 60%, 75%, 90%, to {\r\n    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);\r\n  }\r\n\r\n  from {\r\n    opacity: 0;\r\n    transform: translate3d(0, 3000px, 0);\r\n  }\r\n\r\n  60% {\r\n    opacity: 1;\r\n    transform: translate3d(0, -20px, 0);\r\n  }\r\n\r\n  75% {\r\n    transform: translate3d(0, 10px, 0);\r\n  }\r\n\r\n  90% {\r\n    transform: translate3d(0, -5px, 0);\r\n  }\r\n\r\n  to {\r\n    transform: translate3d(0, 0, 0);\r\n  }\r\n}\r\n\r\n.bounceInUp {\r\n  animation-name: bounceInUp;\r\n}\r\n\r\n@keyframes bounceOut {\r\n  20% {\r\n    transform: scale3d(.9, .9, .9);\r\n  }\r\n\r\n  50%, 55% {\r\n    opacity: 1;\r\n    transform: scale3d(1.1, 1.1, 1.1);\r\n  }\r\n\r\n  to {\r\n    opacity: 0;\r\n    transform: scale3d(.3, .3, .3);\r\n  }\r\n}\r\n\r\n.bounceOut {\r\n  animation-name: bounceOut;\r\n}\r\n\r\n@keyframes bounceOutDown {\r\n  20% {\r\n    transform: translate3d(0, 10px, 0);\r\n  }\r\n\r\n  40%, 45% {\r\n    opacity: 1;\r\n    transform: translate3d(0, -20px, 0);\r\n  }\r\n\r\n  to {\r\n    opacity: 0;\r\n    transform: translate3d(0, 2000px, 0);\r\n  }\r\n}\r\n\r\n.bounceOutDown {\r\n  animation-name: bounceOutDown;\r\n}\r\n\r\n@keyframes bounceOutLeft {\r\n  20% {\r\n    opacity: 1;\r\n    transform: translate3d(20px, 0, 0);\r\n  }\r\n\r\n  to {\r\n    opacity: 0;\r\n    transform: translate3d(-2000px, 0, 0);\r\n  }\r\n}\r\n\r\n.bounceOutLeft {\r\n  animation-name: bounceOutLeft;\r\n}\r\n\r\n@keyframes bounceOutRight {\r\n  20% {\r\n    opacity: 1;\r\n    transform: translate3d(-20px, 0, 0);\r\n  }\r\n\r\n  to {\r\n    opacity: 0;\r\n    transform: translate3d(2000px, 0, 0);\r\n  }\r\n}\r\n\r\n.bounceOutRight {\r\n  animation-name: bounceOutRight;\r\n}\r\n\r\n@keyframes bounceOutUp {\r\n  20% {\r\n    transform: translate3d(0, -10px, 0);\r\n  }\r\n\r\n  40%, 45% {\r\n    opacity: 1;\r\n    transform: translate3d(0, 20px, 0);\r\n  }\r\n\r\n  to {\r\n    opacity: 0;\r\n    transform: translate3d(0, -2000px, 0);\r\n  }\r\n}\r\n\r\n.bounceOutUp {\r\n  animation-name: bounceOutUp;\r\n}\r\n\r\n@keyframes fadeIn {\r\n  from {\r\n    opacity: 0;\r\n  }\r\n\r\n  to {\r\n    opacity: 1;\r\n  }\r\n}\r\n\r\n.fadeIn {\r\n  animation-name: fadeIn;\r\n}\r\n\r\n@keyframes fadeInDown {\r\n  from {\r\n    opacity: 0;\r\n    transform: translate3d(0, -100%, 0);\r\n  }\r\n\r\n  to {\r\n    opacity: 1;\r\n    transform: none;\r\n  }\r\n}\r\n\r\n.fadeInDown {\r\n  animation-name: fadeInDown;\r\n}\r\n\r\n@keyframes fadeInDownBig {\r\n  from {\r\n    opacity: 0;\r\n    transform: translate3d(0, -2000px, 0);\r\n  }\r\n\r\n  to {\r\n    opacity: 1;\r\n    transform: none;\r\n  }\r\n}\r\n\r\n.fadeInDownBig {\r\n  animation-name: fadeInDownBig;\r\n}\r\n\r\n@keyframes fadeInLeft {\r\n  from {\r\n    opacity: 0;\r\n    transform: translate3d(-100%, 0, 0);\r\n  }\r\n\r\n  to {\r\n    opacity: 1;\r\n    transform: none;\r\n  }\r\n}\r\n\r\n.fadeInLeft {\r\n  animation-name: fadeInLeft;\r\n}\r\n\r\n@keyframes fadeInLeftBig {\r\n  from {\r\n    opacity: 0;\r\n    transform: translate3d(-2000px, 0, 0);\r\n  }\r\n\r\n  to {\r\n    opacity: 1;\r\n    transform: none;\r\n  }\r\n}\r\n\r\n.fadeInLeftBig {\r\n  animation-name: fadeInLeftBig;\r\n}\r\n\r\n@keyframes fadeInRight {\r\n  from {\r\n    opacity: 0;\r\n    transform: translate3d(100%, 0, 0);\r\n  }\r\n\r\n  to {\r\n    opacity: 1;\r\n    transform: none;\r\n  }\r\n}\r\n\r\n.fadeInRight {\r\n  animation-name: fadeInRight;\r\n}\r\n\r\n@keyframes fadeInRightBig {\r\n  from {\r\n    opacity: 0;\r\n    transform: translate3d(2000px, 0, 0);\r\n  }\r\n\r\n  to {\r\n    opacity: 1;\r\n    transform: none;\r\n  }\r\n}\r\n\r\n.fadeInRightBig {\r\n  animation-name: fadeInRightBig;\r\n}\r\n\r\n@keyframes fadeInUp {\r\n  from {\r\n    opacity: 0;\r\n    transform: translate3d(0, 100%, 0);\r\n  }\r\n\r\n  to {\r\n    opacity: 1;\r\n    transform: none;\r\n  }\r\n}\r\n\r\n.fadeInUp {\r\n  animation-name: fadeInUp;\r\n}\r\n\r\n@keyframes fadeInUpBig {\r\n  from {\r\n    opacity: 0;\r\n    transform: translate3d(0, 2000px, 0);\r\n  }\r\n\r\n  to {\r\n    opacity: 1;\r\n    transform: none;\r\n  }\r\n}\r\n\r\n.fadeInUpBig {\r\n  animation-name: fadeInUpBig;\r\n}\r\n\r\n@keyframes fadeOut {\r\n  from {\r\n    opacity: 1;\r\n  }\r\n\r\n  to {\r\n    opacity: 0;\r\n  }\r\n}\r\n\r\n.fadeOut {\r\n  animation-name: fadeOut;\r\n}\r\n\r\n@keyframes fadeOutDown {\r\n  from {\r\n    opacity: 1;\r\n  }\r\n\r\n  to {\r\n    opacity: 0;\r\n    transform: translate3d(0, 100%, 0);\r\n  }\r\n}\r\n\r\n.fadeOutDown {\r\n  animation-name: fadeOutDown;\r\n}\r\n\r\n@keyframes fadeOutDownBig {\r\n  from {\r\n    opacity: 1;\r\n  }\r\n\r\n  to {\r\n    opacity: 0;\r\n    transform: translate3d(0, 2000px, 0);\r\n  }\r\n}\r\n\r\n.fadeOutDownBig {\r\n  animation-name: fadeOutDownBig;\r\n}\r\n\r\n@keyframes fadeOutLeft {\r\n  from {\r\n    opacity: 1;\r\n  }\r\n\r\n  to {\r\n    opacity: 0;\r\n    transform: translate3d(-100%, 0, 0);\r\n  }\r\n}\r\n\r\n.fadeOutLeft {\r\n  animation-name: fadeOutLeft;\r\n}\r\n\r\n@keyframes fadeOutLeftBig {\r\n  from {\r\n    opacity: 1;\r\n  }\r\n\r\n  to {\r\n    opacity: 0;\r\n    transform: translate3d(-2000px, 0, 0);\r\n  }\r\n}\r\n\r\n.fadeOutLeftBig {\r\n  animation-name: fadeOutLeftBig;\r\n}\r\n\r\n@keyframes fadeOutRight {\r\n  from {\r\n    opacity: 1;\r\n  }\r\n\r\n  to {\r\n    opacity: 0;\r\n    transform: translate3d(100%, 0, 0);\r\n  }\r\n}\r\n\r\n.fadeOutRight {\r\n  animation-name: fadeOutRight;\r\n}\r\n\r\n@keyframes fadeOutRightBig {\r\n  from {\r\n    opacity: 1;\r\n  }\r\n\r\n  to {\r\n    opacity: 0;\r\n    transform: translate3d(2000px, 0, 0);\r\n  }\r\n}\r\n\r\n.fadeOutRightBig {\r\n  animation-name: fadeOutRightBig;\r\n}\r\n\r\n@keyframes fadeOutUp {\r\n  from {\r\n    opacity: 1;\r\n  }\r\n\r\n  to {\r\n    opacity: 0;\r\n    transform: translate3d(0, -100%, 0);\r\n  }\r\n}\r\n\r\n.fadeOutUp {\r\n  animation-name: fadeOutUp;\r\n}\r\n\r\n@keyframes fadeOutUpBig {\r\n  from {\r\n    opacity: 1;\r\n  }\r\n\r\n  to {\r\n    opacity: 0;\r\n    transform: translate3d(0, -2000px, 0);\r\n  }\r\n}\r\n\r\n.fadeOutUpBig {\r\n  animation-name: fadeOutUpBig;\r\n}\r\n\r\n@keyframes flip {\r\n  from {\r\n    transform: perspective(400px) rotate3d(0, 1, 0, -360deg);\r\n    animation-timing-function: ease-out;\r\n  }\r\n\r\n  40% {\r\n    transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -190deg);\r\n    animation-timing-function: ease-out;\r\n  }\r\n\r\n  50% {\r\n    transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -170deg);\r\n    animation-timing-function: ease-in;\r\n  }\r\n\r\n  80% {\r\n    transform: perspective(400px) scale3d(.95, .95, .95);\r\n    animation-timing-function: ease-in;\r\n  }\r\n\r\n  to {\r\n    transform: perspective(400px);\r\n    animation-timing-function: ease-in;\r\n  }\r\n}\r\n\r\n.animated.flip {\r\n  -webkit-backface-visibility: visible;\r\n  backface-visibility: visible;\r\n  animation-name: flip;\r\n}\r\n\r\n@keyframes flipInX {\r\n  from {\r\n    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);\r\n    animation-timing-function: ease-in;\r\n    opacity: 0;\r\n  }\r\n\r\n  40% {\r\n    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);\r\n    animation-timing-function: ease-in;\r\n  }\r\n\r\n  60% {\r\n    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);\r\n    opacity: 1;\r\n  }\r\n\r\n  80% {\r\n    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);\r\n  }\r\n\r\n  to {\r\n    transform: perspective(400px);\r\n  }\r\n}\r\n\r\n.flipInX {\r\n  -webkit-backface-visibility: visible !important;\r\n  backface-visibility: visible !important;\r\n  animation-name: flipInX;\r\n}\r\n\r\n@keyframes flipInY {\r\n  from {\r\n    transform: perspective(400px) rotate3d(0, 1, 0, 90deg);\r\n    animation-timing-function: ease-in;\r\n    opacity: 0;\r\n  }\r\n\r\n  40% {\r\n    transform: perspective(400px) rotate3d(0, 1, 0, -20deg);\r\n    animation-timing-function: ease-in;\r\n  }\r\n\r\n  60% {\r\n    transform: perspective(400px) rotate3d(0, 1, 0, 10deg);\r\n    opacity: 1;\r\n  }\r\n\r\n  80% {\r\n    transform: perspective(400px) rotate3d(0, 1, 0, -5deg);\r\n  }\r\n\r\n  to {\r\n    transform: perspective(400px);\r\n  }\r\n}\r\n\r\n.flipInY {\r\n  -webkit-backface-visibility: visible !important;\r\n  backface-visibility: visible !important;\r\n  animation-name: flipInY;\r\n}\r\n\r\n@keyframes flipOutX {\r\n  from {\r\n    transform: perspective(400px);\r\n  }\r\n\r\n  30% {\r\n    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);\r\n    opacity: 1;\r\n  }\r\n\r\n  to {\r\n    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);\r\n    opacity: 0;\r\n  }\r\n}\r\n\r\n.flipOutX {\r\n  animation-name: flipOutX;\r\n  -webkit-backface-visibility: visible !important;\r\n  backface-visibility: visible !important;\r\n}\r\n\r\n@keyframes flipOutY {\r\n  from {\r\n    transform: perspective(400px);\r\n  }\r\n\r\n  30% {\r\n    transform: perspective(400px) rotate3d(0, 1, 0, -15deg);\r\n    opacity: 1;\r\n  }\r\n\r\n  to {\r\n    transform: perspective(400px) rotate3d(0, 1, 0, 90deg);\r\n    opacity: 0;\r\n  }\r\n}\r\n\r\n.flipOutY {\r\n  -webkit-backface-visibility: visible !important;\r\n  backface-visibility: visible !important;\r\n  animation-name: flipOutY;\r\n}\r\n\r\n@keyframes lightSpeedIn {\r\n  from {\r\n    transform: translate3d(100%, 0, 0) skewX(-30deg);\r\n    opacity: 0;\r\n  }\r\n\r\n  60% {\r\n    transform: skewX(20deg);\r\n    opacity: 1;\r\n  }\r\n\r\n  80% {\r\n    transform: skewX(-5deg);\r\n    opacity: 1;\r\n  }\r\n\r\n  to {\r\n    transform: none;\r\n    opacity: 1;\r\n  }\r\n}\r\n\r\n.lightSpeedIn {\r\n  animation-name: lightSpeedIn;\r\n  animation-timing-function: ease-out;\r\n}\r\n\r\n@keyframes lightSpeedOut {\r\n  from {\r\n    opacity: 1;\r\n  }\r\n\r\n  to {\r\n    transform: translate3d(100%, 0, 0) skewX(30deg);\r\n    opacity: 0;\r\n  }\r\n}\r\n\r\n.lightSpeedOut {\r\n  animation-name: lightSpeedOut;\r\n  animation-timing-function: ease-in;\r\n}\r\n\r\n@keyframes rotateIn {\r\n  from {\r\n    transform-origin: center;\r\n    transform: rotate3d(0, 0, 1, -200deg);\r\n    opacity: 0;\r\n  }\r\n\r\n  to {\r\n    transform-origin: center;\r\n    transform: none;\r\n    opacity: 1;\r\n  }\r\n}\r\n\r\n.rotateIn {\r\n  animation-name: rotateIn;\r\n}\r\n\r\n@keyframes rotateInDownLeft {\r\n  from {\r\n    transform-origin: left bottom;\r\n    transform: rotate3d(0, 0, 1, -45deg);\r\n    opacity: 0;\r\n  }\r\n\r\n  to {\r\n    transform-origin: left bottom;\r\n    transform: none;\r\n    opacity: 1;\r\n  }\r\n}\r\n\r\n.rotateInDownLeft {\r\n  animation-name: rotateInDownLeft;\r\n}\r\n\r\n@keyframes rotateInDownRight {\r\n  from {\r\n    transform-origin: right bottom;\r\n    transform: rotate3d(0, 0, 1, 45deg);\r\n    opacity: 0;\r\n  }\r\n\r\n  to {\r\n    transform-origin: right bottom;\r\n    transform: none;\r\n    opacity: 1;\r\n  }\r\n}\r\n\r\n.rotateInDownRight {\r\n  animation-name: rotateInDownRight;\r\n}\r\n\r\n@keyframes rotateInUpLeft {\r\n  from {\r\n    transform-origin: left bottom;\r\n    transform: rotate3d(0, 0, 1, 45deg);\r\n    opacity: 0;\r\n  }\r\n\r\n  to {\r\n    transform-origin: left bottom;\r\n    transform: none;\r\n    opacity: 1;\r\n  }\r\n}\r\n\r\n.rotateInUpLeft {\r\n  animation-name: rotateInUpLeft;\r\n}\r\n\r\n@keyframes rotateInUpRight {\r\n  from {\r\n    transform-origin: right bottom;\r\n    transform: rotate3d(0, 0, 1, -90deg);\r\n    opacity: 0;\r\n  }\r\n\r\n  to {\r\n    transform-origin: right bottom;\r\n    transform: none;\r\n    opacity: 1;\r\n  }\r\n}\r\n\r\n.rotateInUpRight {\r\n  animation-name: rotateInUpRight;\r\n}\r\n\r\n@keyframes rotateOut {\r\n  from {\r\n    transform-origin: center;\r\n    opacity: 1;\r\n  }\r\n\r\n  to {\r\n    transform-origin: center;\r\n    transform: rotate3d(0, 0, 1, 200deg);\r\n    opacity: 0;\r\n  }\r\n}\r\n\r\n.rotateOut {\r\n  animation-name: rotateOut;\r\n}\r\n\r\n@keyframes rotateOutDownLeft {\r\n  from {\r\n    transform-origin: left bottom;\r\n    opacity: 1;\r\n  }\r\n\r\n  to {\r\n    transform-origin: left bottom;\r\n    transform: rotate3d(0, 0, 1, 45deg);\r\n    opacity: 0;\r\n  }\r\n}\r\n\r\n.rotateOutDownLeft {\r\n  animation-name: rotateOutDownLeft;\r\n}\r\n\r\n@keyframes rotateOutDownRight {\r\n  from {\r\n    transform-origin: right bottom;\r\n    opacity: 1;\r\n  }\r\n\r\n  to {\r\n    transform-origin: right bottom;\r\n    transform: rotate3d(0, 0, 1, -45deg);\r\n    opacity: 0;\r\n  }\r\n}\r\n\r\n.rotateOutDownRight {\r\n  animation-name: rotateOutDownRight;\r\n}\r\n\r\n@keyframes rotateOutUpLeft {\r\n  from {\r\n    transform-origin: left bottom;\r\n    opacity: 1;\r\n  }\r\n\r\n  to {\r\n    transform-origin: left bottom;\r\n    transform: rotate3d(0, 0, 1, -45deg);\r\n    opacity: 0;\r\n  }\r\n}\r\n\r\n.rotateOutUpLeft {\r\n  animation-name: rotateOutUpLeft;\r\n}\r\n\r\n@keyframes rotateOutUpRight {\r\n  from {\r\n    transform-origin: right bottom;\r\n    opacity: 1;\r\n  }\r\n\r\n  to {\r\n    transform-origin: right bottom;\r\n    transform: rotate3d(0, 0, 1, 90deg);\r\n    opacity: 0;\r\n  }\r\n}\r\n\r\n.rotateOutUpRight {\r\n  animation-name: rotateOutUpRight;\r\n}\r\n\r\n@keyframes hinge {\r\n  0% {\r\n    transform-origin: top left;\r\n    animation-timing-function: ease-in-out;\r\n  }\r\n\r\n  20%, 60% {\r\n    transform: rotate3d(0, 0, 1, 80deg);\r\n    transform-origin: top left;\r\n    animation-timing-function: ease-in-out;\r\n  }\r\n\r\n  40%, 80% {\r\n    transform: rotate3d(0, 0, 1, 60deg);\r\n    transform-origin: top left;\r\n    animation-timing-function: ease-in-out;\r\n    opacity: 1;\r\n  }\r\n\r\n  to {\r\n    transform: translate3d(0, 700px, 0);\r\n    opacity: 0;\r\n  }\r\n}\r\n\r\n.hinge {\r\n  animation-name: hinge;\r\n}\r\n\r\n@keyframes jackInTheBox {\r\n  from {\r\n    opacity: 0;\r\n    transform: scale(0.1) rotate(30deg);\r\n    transform-origin: center bottom;\r\n  }\r\n\r\n  50% {\r\n    transform: rotate(-10deg);\r\n  }\r\n\r\n  70% {\r\n    transform: rotate(3deg);\r\n  }\r\n\r\n  to {\r\n    opacity: 1;\r\n    transform: scale(1);\r\n  }\r\n}\r\n\r\n.jackInTheBox {\r\n  animation-name: jackInTheBox;\r\n}\r\n\r\n/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */\r\n\r\n@keyframes rollIn {\r\n  from {\r\n    opacity: 0;\r\n    transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);\r\n  }\r\n\r\n  to {\r\n    opacity: 1;\r\n    transform: none;\r\n  }\r\n}\r\n\r\n.rollIn {\r\n  animation-name: rollIn;\r\n}\r\n\r\n/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */\r\n\r\n@keyframes rollOut {\r\n  from {\r\n    opacity: 1;\r\n  }\r\n\r\n  to {\r\n    opacity: 0;\r\n    transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);\r\n  }\r\n}\r\n\r\n.rollOut {\r\n  animation-name: rollOut;\r\n}\r\n\r\n@keyframes zoomIn {\r\n  from {\r\n    opacity: 0;\r\n    transform: scale3d(.3, .3, .3);\r\n  }\r\n\r\n  50% {\r\n    opacity: 1;\r\n  }\r\n}\r\n\r\n.zoomIn {\r\n  animation-name: zoomIn;\r\n}\r\n\r\n@keyframes zoomInDown {\r\n  from {\r\n    opacity: 0;\r\n    transform: scale3d(.1, .1, .1) translate3d(0, -1000px, 0);\r\n    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);\r\n  }\r\n\r\n  60% {\r\n    opacity: 1;\r\n    transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0);\r\n    animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);\r\n  }\r\n}\r\n\r\n.zoomInDown {\r\n  animation-name: zoomInDown;\r\n}\r\n\r\n@keyframes zoomInLeft {\r\n  from {\r\n    opacity: 0;\r\n    transform: scale3d(.1, .1, .1) translate3d(-1000px, 0, 0);\r\n    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);\r\n  }\r\n\r\n  60% {\r\n    opacity: 1;\r\n    transform: scale3d(.475, .475, .475) translate3d(10px, 0, 0);\r\n    animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);\r\n  }\r\n}\r\n\r\n.zoomInLeft {\r\n  animation-name: zoomInLeft;\r\n}\r\n\r\n@keyframes zoomInRight {\r\n  from {\r\n    opacity: 0;\r\n    transform: scale3d(.1, .1, .1) translate3d(1000px, 0, 0);\r\n    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);\r\n  }\r\n\r\n  60% {\r\n    opacity: 1;\r\n    transform: scale3d(.475, .475, .475) translate3d(-10px, 0, 0);\r\n    animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);\r\n  }\r\n}\r\n\r\n.zoomInRight {\r\n  animation-name: zoomInRight;\r\n}\r\n\r\n@keyframes zoomInUp {\r\n  from {\r\n    opacity: 0;\r\n    transform: scale3d(.1, .1, .1) translate3d(0, 1000px, 0);\r\n    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);\r\n  }\r\n\r\n  60% {\r\n    opacity: 1;\r\n    transform: scale3d(.475, .475, .475) translate3d(0, -60px, 0);\r\n    animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);\r\n  }\r\n}\r\n\r\n.zoomInUp {\r\n  animation-name: zoomInUp;\r\n}\r\n\r\n@keyframes zoomOut {\r\n  from {\r\n    opacity: 1;\r\n  }\r\n\r\n  50% {\r\n    opacity: 0;\r\n    transform: scale3d(.3, .3, .3);\r\n  }\r\n\r\n  to {\r\n    opacity: 0;\r\n  }\r\n}\r\n\r\n.zoomOut {\r\n  animation-name: zoomOut;\r\n}\r\n\r\n@keyframes zoomOutDown {\r\n  40% {\r\n    opacity: 1;\r\n    transform: scale3d(.475, .475, .475) translate3d(0, -60px, 0);\r\n    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);\r\n  }\r\n\r\n  to {\r\n    opacity: 0;\r\n    transform: scale3d(.1, .1, .1) translate3d(0, 2000px, 0);\r\n    transform-origin: center bottom;\r\n    animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);\r\n  }\r\n}\r\n\r\n.zoomOutDown {\r\n  animation-name: zoomOutDown;\r\n}\r\n\r\n@keyframes zoomOutLeft {\r\n  40% {\r\n    opacity: 1;\r\n    transform: scale3d(.475, .475, .475) translate3d(42px, 0, 0);\r\n  }\r\n\r\n  to {\r\n    opacity: 0;\r\n    transform: scale(.1) translate3d(-2000px, 0, 0);\r\n    transform-origin: left center;\r\n  }\r\n}\r\n\r\n.zoomOutLeft {\r\n  animation-name: zoomOutLeft;\r\n}\r\n\r\n@keyframes zoomOutRight {\r\n  40% {\r\n    opacity: 1;\r\n    transform: scale3d(.475, .475, .475) translate3d(-42px, 0, 0);\r\n  }\r\n\r\n  to {\r\n    opacity: 0;\r\n    transform: scale(.1) translate3d(2000px, 0, 0);\r\n    transform-origin: right center;\r\n  }\r\n}\r\n\r\n.zoomOutRight {\r\n  animation-name: zoomOutRight;\r\n}\r\n\r\n@keyframes zoomOutUp {\r\n  40% {\r\n    opacity: 1;\r\n    transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0);\r\n    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);\r\n  }\r\n\r\n  to {\r\n    opacity: 0;\r\n    transform: scale3d(.1, .1, .1) translate3d(0, -2000px, 0);\r\n    transform-origin: center bottom;\r\n    animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);\r\n  }\r\n}\r\n\r\n.zoomOutUp {\r\n  animation-name: zoomOutUp;\r\n}\r\n\r\n@keyframes slideInDown {\r\n  from {\r\n    transform: translate3d(0, -100%, 0);\r\n    visibility: visible;\r\n  }\r\n\r\n  to {\r\n    transform: translate3d(0, 0, 0);\r\n  }\r\n}\r\n\r\n.slideInDown {\r\n  animation-name: slideInDown;\r\n}\r\n\r\n@keyframes slideInLeft {\r\n  from {\r\n    transform: translate3d(-100%, 0, 0);\r\n    visibility: visible;\r\n  }\r\n\r\n  to {\r\n    transform: translate3d(0, 0, 0);\r\n  }\r\n}\r\n\r\n.slideInLeft {\r\n  animation-name: slideInLeft;\r\n}\r\n\r\n@keyframes slideInRight {\r\n  from {\r\n    transform: translate3d(100%, 0, 0);\r\n    visibility: visible;\r\n  }\r\n\r\n  to {\r\n    transform: translate3d(0, 0, 0);\r\n  }\r\n}\r\n\r\n.slideInRight {\r\n  animation-name: slideInRight;\r\n}\r\n\r\n@keyframes slideInUp {\r\n  from {\r\n    transform: translate3d(0, 100%, 0);\r\n    visibility: visible;\r\n  }\r\n\r\n  to {\r\n    transform: translate3d(0, 0, 0);\r\n  }\r\n}\r\n\r\n.slideInUp {\r\n  animation-name: slideInUp;\r\n}\r\n\r\n@keyframes slideOutDown {\r\n  from {\r\n    transform: translate3d(0, 0, 0);\r\n  }\r\n\r\n  to {\r\n    visibility: hidden;\r\n    transform: translate3d(0, 100%, 0);\r\n  }\r\n}\r\n\r\n.slideOutDown {\r\n  animation-name: slideOutDown;\r\n}\r\n\r\n@keyframes slideOutLeft {\r\n  from {\r\n    transform: translate3d(0, 0, 0);\r\n  }\r\n\r\n  to {\r\n    visibility: hidden;\r\n    transform: translate3d(-100%, 0, 0);\r\n  }\r\n}\r\n\r\n.slideOutLeft {\r\n  animation-name: slideOutLeft;\r\n}\r\n\r\n@keyframes slideOutRight {\r\n  from {\r\n    transform: translate3d(0, 0, 0);\r\n  }\r\n\r\n  to {\r\n    visibility: hidden;\r\n    transform: translate3d(100%, 0, 0);\r\n  }\r\n}\r\n\r\n.slideOutRight {\r\n  animation-name: slideOutRight;\r\n}\r\n\r\n@keyframes slideOutUp {\r\n  from {\r\n    transform: translate3d(0, 0, 0);\r\n  }\r\n\r\n  to {\r\n    visibility: hidden;\r\n    transform: translate3d(0, -100%, 0);\r\n  }\r\n}\r\n\r\n.slideOutUp {\r\n  animation-name: slideOutUp;\r\n}\r\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 312 */
+/* 317 */
 /***/ (function(module, exports) {
 
 module.exports = "<!-- <nav>\r\n    <a [routerLink]=\" ['./'] \"\r\n      routerLinkActive=\"active\" [routerLinkActiveOptions]= \"{exact: true}\">\r\n      Index\r\n    </a>\r\n    <a [routerLink]=\" ['./home'] \"\r\n      routerLinkActive=\"active\" [routerLinkActiveOptions]= \"{exact: true}\">\r\n      Home\r\n    </a>\r\n    <a [routerLink]=\" ['./detail'] \"\r\n      routerLinkActive=\"active\" [routerLinkActiveOptions]= \"{exact: true}\">\r\n      Detail\r\n    </a>\r\n    <a [routerLink]=\" ['./barrel'] \"\r\n      routerLinkActive=\"active\" [routerLinkActiveOptions]= \"{exact: true}\">\r\n      Barrel\r\n    </a>\r\n    <a [routerLink]=\" ['./about'] \"\r\n      routerLinkActive=\"active\" [routerLinkActiveOptions]= \"{exact: true}\">\r\n      About\r\n    </a>\r\n  </nav> -->\r\n  <app-header></app-header>\r\n\r\n  <main>\r\n    <router-outlet></router-outlet>\r\n  </main>\r\n\r\n\r\n\r\n <app-footer></app-footer>"
 
 /***/ }),
-/* 313 */
+/* 318 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -98967,7 +99941,7 @@ module.exports = "<!-- <nav>\r\n    <a [routerLink]=\" ['./'] \"\r\n      router
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_of__ = __webpack_require__(314);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_of__ = __webpack_require__(319);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_of___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_of__);
 
 
@@ -98994,28 +99968,28 @@ var APP_RESOLVER_PROVIDERS = [
 
 
 /***/ }),
-/* 314 */
+/* 319 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var Observable_1 = __webpack_require__(3);
-var of_1 = __webpack_require__(114);
+var of_1 = __webpack_require__(113);
 Observable_1.Observable.of = of_1.of;
 //# sourceMappingURL=of.js.map
 
 /***/ }),
-/* 315 */
+/* 320 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__x_large_directive__ = __webpack_require__(316);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__x_large_directive__ = __webpack_require__(321);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__x_large_directive__["a"]; });
 
 
 
 /***/ }),
-/* 316 */
+/* 321 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -99054,593 +100028,7 @@ XLargeDirective = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 
 /***/ }),
-/* 317 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HeaderComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_usersModel__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_userService__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_chemistService__ = __webpack_require__(80);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ngx_facebook__ = __webpack_require__(81);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_sharedService__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_addtocartService__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_add_operator_map__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_http__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_jquery__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_jquery__);
-
-
-
-
-
-
-
-
-
-
-
-
-var HeaderComponent = (function () {
-    function HeaderComponent(_http, _addToCartService, _sharedService, _userService, router, fb, _chemistService) {
-        var _this = this;
-        this._http = _http;
-        this._addToCartService = _addToCartService;
-        this._sharedService = _sharedService;
-        this._userService = _userService;
-        this.fb = fb;
-        this._chemistService = _chemistService;
-        this.mobileVerificationScreen = false;
-        this.UsernameError = false;
-        this.MobileError = false;
-        this.CanNavigateToCart = false;
-        __WEBPACK_IMPORTED_MODULE_11_jquery__["getJSON"]('https://jsonip.com?callback=?', function (data) {
-            console.log(data);
-            this.UserIpAddress = data.ip;
-        });
-        if (JSON.parse(localStorage.getItem('UserObject')) == undefined || JSON.parse(localStorage.getItem('UserObject')) == null) {
-            this.LoggedInUser = new __WEBPACK_IMPORTED_MODULE_3__models_usersModel__["a" /* UsersModel */]();
-        }
-        else {
-            this.LoggedInUser = JSON.parse(localStorage.getItem('UserObject'));
-            this.LoggedInUser.UserName = this.LoggedInUser.UserName.charAt(0).toUpperCase() + this.LoggedInUser.UserName.slice(1);
-            this._addToCartService.getCartCount(this.LoggedInUser.Id).subscribe(function (response) {
-                _this.CartCount = response.data.length;
-                _this.cartset(_this.CartCount);
-            });
-            this.ChemistViewing = JSON.parse(localStorage.getItem('chemistDetails'));
-            console.log(this.ChemistViewing);
-            if (this.ChemistViewing == null) {
-                this.CanNavigateToCart = false;
-            }
-            else {
-                this.CanNavigateToCart = true;
-            }
-        }
-        var initParams = {
-            appId: '130624990977887',
-            xfbml: true,
-            version: 'v2.8'
-        };
-        fb.init(initParams);
-        this.router = router;
-        if (localStorage.getItem("logStatus") == "loggedIn") {
-            this.loggedIn = true;
-        }
-        else {
-            this.loggedIn = false;
-        }
-        console.log(this.loggedIn);
-    }
-    HeaderComponent.prototype.verifyMobileNumber = function () {
-        var _this = this;
-        if (this.codeVerification == undefined || this.codeVerification == null) {
-        }
-        else {
-            this._userService.sendCodeForVerification(this.LoggedInUser.Id, this.user.MobileNumber, this.codeVerification).subscribe(function (a) {
-                if (a.code == 200) {
-                    __WEBPACK_IMPORTED_MODULE_11_jquery__("#snackbar").html("Code Verified Successfully!");
-                    _this.showToast();
-                    setTimeout(function () {
-                        _this.user = new __WEBPACK_IMPORTED_MODULE_3__models_usersModel__["a" /* UsersModel */]();
-                        _this.signUpModal.close();
-                    }, 1500);
-                }
-            });
-        }
-    };
-    HeaderComponent.prototype.getCartCount = function () {
-        var _this = this;
-        this._addToCartService.getCartCount(this.LoggedInUser.Id).subscribe(function (a) {
-            console.log(a);
-            if (a.code == 200) {
-                var number = a.data.length;
-                _this.cartset(number);
-            }
-        });
-    };
-    HeaderComponent.prototype.cartset = function (value) {
-        var _this = this;
-        this._sharedService.getCartCount(value);
-        this._sharedService.currentCount.subscribe(function (a) {
-            _this.CartCount = a;
-        });
-    };
-    HeaderComponent.prototype.navigateToHome = function () {
-        if (this.CanNavigateToCart) {
-            this.router.navigate(['/home']);
-        }
-        else {
-        }
-    };
-    HeaderComponent.prototype.signUp = function () {
-        var _this = this;
-        var error = false;
-        this.user.UserName = __WEBPACK_IMPORTED_MODULE_11_jquery__["trim"](this.user.UserName);
-        this.user.Email = __WEBPACK_IMPORTED_MODULE_11_jquery__["trim"](this.user.Email);
-        this.user.MobileNumber = __WEBPACK_IMPORTED_MODULE_11_jquery__["trim"](this.user.MobileNumber);
-        this.user.Password = __WEBPACK_IMPORTED_MODULE_11_jquery__["trim"](this.user.Password);
-        this.confrimPass = __WEBPACK_IMPORTED_MODULE_11_jquery__["trim"](this.confrimPass);
-        if (this.user.UserName == "" || this.user.UserName.length == 0) {
-            this.UsernameError = true;
-            error = true;
-        }
-        if (this.user.Email == "" || this.user.Email.length == 0) {
-            this.EmailError = true;
-            error = true;
-        }
-        if (this.user.MobileNumber == undefined) {
-            this.MobileError = true;
-            error = true;
-        }
-        if (this.user.Password == "" || this.user.Password.length == 0) {
-            this.PasswordError = true;
-            error = true;
-        }
-        else if (this.user.Password !== this.confrimPass) {
-            this.PasswordError = true;
-            error = true;
-        }
-        if (error) {
-        }
-        else {
-            __WEBPACK_IMPORTED_MODULE_11_jquery__(".loader").show();
-            __WEBPACK_IMPORTED_MODULE_11_jquery__(".submit-custom").hide();
-            this.user.UserType = 1;
-            this._userService.signUp(this.user).subscribe(function (a) {
-                console.log(a);
-                if (a.code == 200) {
-                    localStorage.setItem("UserId", a.data.Id);
-                    localStorage.setItem('UserObject', JSON.stringify(a.data));
-                    _this.LoggedInUser = JSON.parse(localStorage.getItem('UserObject'));
-                    localStorage.setItem("logStatus", "loggedIn");
-                    _this.LoggedInUser.UserName = _this.LoggedInUser.UserName.charAt(0).toUpperCase() + _this.LoggedInUser.UserName.slice(1);
-                    _this.loggedIn = true;
-                    __WEBPACK_IMPORTED_MODULE_11_jquery__(".loader").hide();
-                    __WEBPACK_IMPORTED_MODULE_11_jquery__(".submit-custom").show();
-                    __WEBPACK_IMPORTED_MODULE_11_jquery__("#snackbar").html(a.message);
-                    _this.showToast();
-                    _this.confrimPass = "";
-                    __WEBPACK_IMPORTED_MODULE_11_jquery__(".hide-on-verification").hide();
-                    _this.mobileVerificationScreen = true;
-                    _this._userService.sendCodeToThisUser(_this.LoggedInUser.Id, _this.user.MobileNumber).subscribe(function (a) {
-                        console.log(a);
-                        __WEBPACK_IMPORTED_MODULE_11_jquery__("#snackbar").html(a.data.UserCode);
-                        _this.showToast();
-                    });
-                    /*        */
-                }
-                else {
-                    __WEBPACK_IMPORTED_MODULE_11_jquery__("#snackbar").html(a.message);
-                    __WEBPACK_IMPORTED_MODULE_11_jquery__(".loader").hide();
-                    __WEBPACK_IMPORTED_MODULE_11_jquery__(".submit-custom").show();
-                    _this.showToast();
-                }
-            });
-        }
-    };
-    HeaderComponent.prototype.signUpWithFacebook = function () {
-        var _this = this;
-        var fbCustomer = new __WEBPACK_IMPORTED_MODULE_3__models_usersModel__["a" /* UsersModel */]();
-        var options = {
-            scope: 'public_profile,email',
-            return_scopes: true,
-            enable_profile_selector: true
-        };
-        this.fb.login(options)
-            .then(function (response) {
-            _this.fb.api('/me?fields=id,email,first_name,last_name,picture')
-                .then(function (profileData) {
-                console.log(profileData);
-                fbCustomer.UserName = profileData.email;
-                fbCustomer.UserType = 2;
-                fbCustomer.Password = profileData.email;
-                _this._userService.signUp(fbCustomer).subscribe(function (a) {
-                    console.log(a);
-                    if (a.code == 200) {
-                        __WEBPACK_IMPORTED_MODULE_11_jquery__("#snackbar").html(a.message);
-                        _this.showToast();
-                        localStorage.setItem("UserId", a.data.Id);
-                        localStorage.setItem('UserObject', JSON.stringify(a.data));
-                        _this.LoggedInUser = JSON.parse(localStorage.getItem('UserObject'));
-                        localStorage.setItem("logStatus", "loggedIn");
-                        _this.LoggedInUser.UserName = _this.LoggedInUser.UserName.charAt(0).toUpperCase() + _this.LoggedInUser.UserName.slice(1);
-                        _this.loggedIn = true;
-                        _this.user = new __WEBPACK_IMPORTED_MODULE_3__models_usersModel__["a" /* UsersModel */]();
-                        var self = _this;
-                        setTimeout(function () {
-                            self.signUpModal.close();
-                        }, 1000);
-                    }
-                    else {
-                        __WEBPACK_IMPORTED_MODULE_11_jquery__("#snackbar").html(a.message);
-                        _this.showToast();
-                    }
-                });
-            });
-        });
-    };
-    HeaderComponent.prototype.routeToSignUp = function () {
-        this.loginModal.close();
-        this.signUpModal.open();
-    };
-    HeaderComponent.prototype.logOutUser = function () {
-        localStorage.setItem("UserId", "");
-        localStorage.setItem("logStatus", "loggedOut");
-        localStorage.clear();
-        this.loggedIn = false;
-        this.router.navigate(['/']);
-    };
-    HeaderComponent.prototype.login = function () {
-        var _this = this;
-        this.user.UserName = __WEBPACK_IMPORTED_MODULE_11_jquery__["trim"](this.user.UserName);
-        this.user.Password = __WEBPACK_IMPORTED_MODULE_11_jquery__["trim"](this.user.Password);
-        this.EmailError = false;
-        this.PasswordError = false;
-        if (this.user.UserName == "" || this.user.UserName.length == 0) {
-            this.EmailError = true;
-        }
-        if (this.user.Password == "" || this.user.Password.length == 0) {
-            this.PasswordError = true;
-        }
-        if (this.PasswordError || this.EmailError) {
-            console.log("Errors");
-        }
-        else {
-            __WEBPACK_IMPORTED_MODULE_11_jquery__(".loader").show();
-            __WEBPACK_IMPORTED_MODULE_11_jquery__(".submit-custom").hide();
-            this.user.UserType = 1;
-            this._userService.loginUser(this.user.UserName, this.user.Password, this.user.UserType).subscribe(function (a) {
-                if (a.code == 200) {
-                    __WEBPACK_IMPORTED_MODULE_11_jquery__("#snackbar").html(a.message);
-                    __WEBPACK_IMPORTED_MODULE_11_jquery__(".loader").hide();
-                    localStorage.setItem("UserId", a.data.Id);
-                    localStorage.setItem('UserObject', JSON.stringify(a.data));
-                    _this.LoggedInUser = JSON.parse(localStorage.getItem('UserObject'));
-                    localStorage.setItem("logStatus", "loggedIn");
-                    _this.cartset(_this.LoggedInUser.shoppingCarts.length);
-                    _this.loggedIn = true;
-                    _this.showToast();
-                    _this.user = new __WEBPACK_IMPORTED_MODULE_3__models_usersModel__["a" /* UsersModel */]();
-                    var self = _this;
-                    setTimeout(function () {
-                        self.loginModal.close();
-                        __WEBPACK_IMPORTED_MODULE_11_jquery__(".submit-custom").show();
-                    }, 1000);
-                }
-                else {
-                    __WEBPACK_IMPORTED_MODULE_11_jquery__("#snackbar").html(a.message);
-                    _this.showToast();
-                    __WEBPACK_IMPORTED_MODULE_11_jquery__(".loader").hide();
-                    __WEBPACK_IMPORTED_MODULE_11_jquery__(".submit-custom").show();
-                }
-            });
-        }
-    };
-    HeaderComponent.prototype.signUpOnEnter = function (event) {
-        var _this = this;
-        if (event.keyCode == 13) {
-            var error = false;
-            this.user.UserName = __WEBPACK_IMPORTED_MODULE_11_jquery__["trim"](this.user.UserName);
-            this.user.Email = __WEBPACK_IMPORTED_MODULE_11_jquery__["trim"](this.user.Email);
-            this.user.MobileNumber = __WEBPACK_IMPORTED_MODULE_11_jquery__["trim"](this.user.MobileNumber);
-            this.user.Password = __WEBPACK_IMPORTED_MODULE_11_jquery__["trim"](this.user.Password);
-            this.confrimPass = __WEBPACK_IMPORTED_MODULE_11_jquery__["trim"](this.confrimPass);
-            if (this.user.UserName == "" || this.user.UserName.length == 0) {
-                this.UsernameError = true;
-                error = true;
-            }
-            if (this.user.Email == "" || this.user.Email.length == 0) {
-                this.EmailError = true;
-                error = true;
-            }
-            if (this.user.MobileNumber == undefined) {
-                this.MobileError = true;
-                error = true;
-            }
-            if (this.user.Password == "" || this.user.Password.length == 0) {
-                this.PasswordError = true;
-                error = true;
-            }
-            else if (this.user.Password !== this.confrimPass) {
-                this.PasswordError = true;
-                error = true;
-            }
-            if (error) {
-            }
-            else {
-                __WEBPACK_IMPORTED_MODULE_11_jquery__(".loader").show();
-                __WEBPACK_IMPORTED_MODULE_11_jquery__(".submit-custom").hide();
-                this.user.UserType = 1;
-                this._userService.signUp(this.user).subscribe(function (a) {
-                    console.log(a);
-                    if (a.code == 200) {
-                        localStorage.setItem("UserId", a.data.Id);
-                        localStorage.setItem('UserObject', JSON.stringify(a.data));
-                        _this.LoggedInUser = JSON.parse(localStorage.getItem('UserObject'));
-                        localStorage.setItem("logStatus", "loggedIn");
-                        _this.loggedIn = true;
-                        __WEBPACK_IMPORTED_MODULE_11_jquery__(".loader").hide();
-                        __WEBPACK_IMPORTED_MODULE_11_jquery__(".submit-custom").show();
-                        __WEBPACK_IMPORTED_MODULE_11_jquery__("#snackbar").html(a.message);
-                        _this.showToast();
-                        _this.user = new __WEBPACK_IMPORTED_MODULE_3__models_usersModel__["a" /* UsersModel */]();
-                        _this.confrimPass = "";
-                        _this.signUpModal.close();
-                    }
-                    else {
-                        __WEBPACK_IMPORTED_MODULE_11_jquery__("#snackbar").html(a.message);
-                        __WEBPACK_IMPORTED_MODULE_11_jquery__(".loader").hide();
-                        __WEBPACK_IMPORTED_MODULE_11_jquery__(".submit-custom").show();
-                        _this.showToast();
-                    }
-                });
-            }
-        }
-    };
-    HeaderComponent.prototype.onKey = function (event) {
-        var _this = this;
-        if (event.keyCode == 13) {
-            this.user.UserName = __WEBPACK_IMPORTED_MODULE_11_jquery__["trim"](this.user.UserName);
-            this.user.Password = __WEBPACK_IMPORTED_MODULE_11_jquery__["trim"](this.user.Password);
-            this.EmailError = false;
-            this.PasswordError = false;
-            if (this.user.UserName == "" || this.user.UserName.length == 0) {
-                this.EmailError = true;
-            }
-            if (this.user.Password == "" || this.user.Password.length == 0) {
-                this.PasswordError = true;
-            }
-            if (this.PasswordError || this.EmailError) {
-                console.log("Errors");
-            }
-            else {
-                __WEBPACK_IMPORTED_MODULE_11_jquery__(".loader").show();
-                __WEBPACK_IMPORTED_MODULE_11_jquery__(".submit-custom").hide();
-                this.user.UserType = 1;
-                this._userService.loginUser(this.user.UserName, this.user.Password, this.user.UserType).subscribe(function (a) {
-                    if (a.code == 200) {
-                        __WEBPACK_IMPORTED_MODULE_11_jquery__("#snackbar").html(a.message);
-                        __WEBPACK_IMPORTED_MODULE_11_jquery__(".loader").hide();
-                        localStorage.setItem("UserId", a.data.Id);
-                        localStorage.setItem('UserObject', JSON.stringify(a.data));
-                        _this.LoggedInUser = JSON.parse(localStorage.getItem('UserObject'));
-                        _this.LoggedInUser.UserName = _this.LoggedInUser.UserName.charAt(0).toUpperCase() + _this.LoggedInUser.UserName.slice(1);
-                        localStorage.setItem("logStatus", "loggedIn");
-                        _this.cartset(_this.LoggedInUser.shoppingCarts.length);
-                        _this.loggedIn = true;
-                        _this.showToast();
-                        _this.user = new __WEBPACK_IMPORTED_MODULE_3__models_usersModel__["a" /* UsersModel */]();
-                        var self = _this;
-                        setTimeout(function () {
-                            self.loginModal.close();
-                            __WEBPACK_IMPORTED_MODULE_11_jquery__(".submit-custom").show();
-                        }, 1000);
-                    }
-                    else {
-                        __WEBPACK_IMPORTED_MODULE_11_jquery__("#snackbar").html(a.message);
-                        _this.showToast();
-                        __WEBPACK_IMPORTED_MODULE_11_jquery__(".loader").hide();
-                        __WEBPACK_IMPORTED_MODULE_11_jquery__(".submit-custom").show();
-                    }
-                });
-            }
-        }
-    };
-    HeaderComponent.prototype.loginWithFacebook = function () {
-        var _this = this;
-        var fbCustomer = new __WEBPACK_IMPORTED_MODULE_3__models_usersModel__["a" /* UsersModel */]();
-        __WEBPACK_IMPORTED_MODULE_11_jquery__(".loader").show();
-        __WEBPACK_IMPORTED_MODULE_11_jquery__(".submit-custom").hide();
-        var options = {
-            scope: 'public_profile,email',
-            return_scopes: true,
-            enable_profile_selector: true
-        };
-        this.fb.login(options)
-            .then(function (response) {
-            _this.fb.api('/me?fields=id,email,first_name,last_name,picture')
-                .then(function (profileData) {
-                console.log(profileData);
-                fbCustomer.UserName = profileData.email;
-                fbCustomer.UserType = 2;
-                fbCustomer.Password = profileData.email;
-                _this._userService.loginUser(fbCustomer.Email, fbCustomer.Password, fbCustomer.UserType).subscribe(function (a) {
-                    console.log(a);
-                    if (a.code == 200) {
-                        __WEBPACK_IMPORTED_MODULE_11_jquery__("#snackbar").html(a.message);
-                        __WEBPACK_IMPORTED_MODULE_11_jquery__(".loader").hide();
-                        localStorage.setItem("UserId", a.data.Id);
-                        localStorage.setItem("logStatus", "loggedIn");
-                        _this.LoggedInUser = JSON.parse(localStorage.getItem('UserObject'));
-                        _this.LoggedInUser.UserName = _this.LoggedInUser.UserName.charAt(0).toUpperCase() + _this.LoggedInUser.UserName.slice(1);
-                        _this.loggedIn = true;
-                        _this.cartset(_this.LoggedInUser.shoppingCarts.length);
-                        _this.showToast();
-                        _this.user = new __WEBPACK_IMPORTED_MODULE_3__models_usersModel__["a" /* UsersModel */]();
-                        var self = _this;
-                        setTimeout(function () {
-                            __WEBPACK_IMPORTED_MODULE_11_jquery__(".submit-custom").show();
-                            self.loginModal.close();
-                        }, 1000);
-                    }
-                    else {
-                        __WEBPACK_IMPORTED_MODULE_11_jquery__("#snackbar").html(a.message);
-                        _this.showToast();
-                        __WEBPACK_IMPORTED_MODULE_11_jquery__(".loader").hide();
-                        __WEBPACK_IMPORTED_MODULE_11_jquery__(".submit-custom").show();
-                    }
-                });
-            });
-        });
-    };
-    HeaderComponent.prototype.googleInit = function () {
-        __WEBPACK_IMPORTED_MODULE_11_jquery__(".loader").show();
-        __WEBPACK_IMPORTED_MODULE_11_jquery__(".submit-custom").hide();
-        var that = this;
-        gapi.load('auth2', function () {
-            that.auth2 = gapi.auth2.init({
-                apiKey: 'AIzaSyD2Cnux3uF0MVgyOkVERSmTqhw1om6tegU',
-                client_id: '1074486889014-lh35efmr5a74gurtgb3si2obcmdhs6kr.apps.googleusercontent.com',
-                scope: 'profile'
-            });
-            that.attachSignin(document.getElementById('googleSignInBtn'));
-        });
-    };
-    HeaderComponent.prototype.attachSignin = function (element) {
-        var that = this;
-        this.auth2.attachClickHandler(element, {}, function (googleUser) {
-            var _this = this;
-            var profile = googleUser.getBasicProfile();
-            console.log(profile.getEmail());
-            that.user.Email = profile.getEmail();
-            that.user.UserType = 3;
-            that._userService.loginUser(that.user.UserName, that.user.Password, that.user.UserType).subscribe(function (a) {
-                console.log(a);
-                if (a.code == 200) {
-                    __WEBPACK_IMPORTED_MODULE_11_jquery__(".loader").hide();
-                    __WEBPACK_IMPORTED_MODULE_11_jquery__("#snackbar").html(a.message);
-                    localStorage.setItem("UserId", a.data.Id);
-                    localStorage.setItem("logStatus", "loggedIn");
-                    that.LoggedInUser = new __WEBPACK_IMPORTED_MODULE_3__models_usersModel__["a" /* UsersModel */]();
-                    that.LoggedInUser = JSON.parse(localStorage.getItem('UserObject'));
-                    _this.LoggedInUser.UserName = _this.LoggedInUser.UserName.charAt(0).toUpperCase() + _this.LoggedInUser.UserName.slice(1);
-                    that.loggedIn = true;
-                    that.showToast();
-                    var self = that;
-                    setTimeout(function () {
-                        self.loginModal.close();
-                        __WEBPACK_IMPORTED_MODULE_11_jquery__(".submit-custom").show();
-                    }, 1000);
-                }
-                else {
-                    __WEBPACK_IMPORTED_MODULE_11_jquery__("#snackbar").html(a.message);
-                    that.showToast();
-                    __WEBPACK_IMPORTED_MODULE_11_jquery__(".loader").hide();
-                    __WEBPACK_IMPORTED_MODULE_11_jquery__(".submit-custom").show();
-                }
-            });
-        }, function (error) {
-            console.log(error);
-        });
-    };
-    HeaderComponent.prototype.showToast = function () {
-        // Get the snackbar DIV
-        var x = document.getElementById("snackbar");
-        // Add the "show" class to DIV
-        x.className = "show";
-        // After 3 seconds, remove the show class from DIV
-        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
-    };
-    HeaderComponent.prototype.hovered = function () {
-        __WEBPACK_IMPORTED_MODULE_11_jquery__(".username").css("color", "white");
-        __WEBPACK_IMPORTED_MODULE_11_jquery__("#profile-pic").attr("src", "/assets/img/user2.png");
-    };
-    HeaderComponent.prototype.hoverOut = function () {
-        __WEBPACK_IMPORTED_MODULE_11_jquery__(".username").css("color", "#1ec26b");
-        __WEBPACK_IMPORTED_MODULE_11_jquery__("#profile-pic").attr("src", "/assets/img/user.png");
-    };
-    HeaderComponent.prototype.openSignUpModal = function () {
-        this.signUpModal["open"]();
-    };
-    HeaderComponent.prototype.ngAfterViewInit = function () {
-        var self = this;
-        /* setTimeout(function () {
-          self.googleInit();
-        }, 4000); */
-    };
-    HeaderComponent.prototype.ngOnInit = function () {
-        __WEBPACK_IMPORTED_MODULE_11_jquery__('.signedIn #droppingMenu .dropdown').hover(function () {
-            console.log("hoverin");
-        }, function () {
-            console.log("hoverout");
-        });
-        // this.LoggedInUser = new UsersModel();
-        this.user = new __WEBPACK_IMPORTED_MODULE_3__models_usersModel__["a" /* UsersModel */]();
-    };
-    return HeaderComponent;
-}());
-__WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
-    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewChild"])('loginModal'),
-    __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:type", Object)
-], HeaderComponent.prototype, "loginModal", void 0);
-__WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
-    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewChild"])('signUpModal'),
-    __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:type", Object)
-], HeaderComponent.prototype, "signUpModal", void 0);
-HeaderComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
-    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
-        selector: 'app-header',
-        template: __webpack_require__(318),
-        styles: [__webpack_require__(319), __webpack_require__(137)],
-        encapsulation: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewEncapsulation"].None,
-        providers: [__WEBPACK_IMPORTED_MODULE_4__services_userService__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_5__services_chemistService__["a" /* ChemistService */], __WEBPACK_IMPORTED_MODULE_8__services_addtocartService__["a" /* AddtocartService */]]
-    }),
-    __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_10__angular_http__["Http"], __WEBPACK_IMPORTED_MODULE_8__services_addtocartService__["a" /* AddtocartService */], __WEBPACK_IMPORTED_MODULE_7__services_sharedService__["a" /* SharedService */], __WEBPACK_IMPORTED_MODULE_4__services_userService__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_2__angular_router__["Router"], __WEBPACK_IMPORTED_MODULE_6_ngx_facebook__["b" /* FacebookService */], __WEBPACK_IMPORTED_MODULE_5__services_chemistService__["a" /* ChemistService */]])
-], HeaderComponent);
-
-
-
-/***/ }),
-/* 318 */
-/***/ (function(module, exports) {
-
-module.exports = "<nav class=\"navbar navbar-default\" style=\"margin:0;\">\n  <div class=\"container\">\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#myNavbar\">\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n      </button>\n      <a class=\"navbar-brand\" href=\"#\">\n        <img src=\"assets/img/greenlogo.gif\">\n      </a>\n    </div>\n    <div class=\"collapse navbar-collapse\" id=\"myNavbar\">\n      <ng-container *ngIf=\"loggedIn==false\">\n\n        <ul class=\"nav navbar-nav navbar-right header-right cart-inside-ul\">\n          <li>\n            <a href=\"#\" (click)=\"signUpModal.open()\">sign up</a>\n          </li>\n          <li class=\"border-left\">\n            <a (click)='loginModal.open()'>login</a>\n          </li>\n          <li class=\"border-left cart-inside\" (click)=\"navigateToHome()\">\n              <img src=\"/assets/img/cart.png\" style=\"width: 25px;\">\n              <div class=\"cart-count special-cart-items\">{{CartCount}}</div>\n          </li>\n        </ul>\n\n      </ng-container>\n\n      <ng-container *ngIf=\"loggedIn==true\">\n\n        <ul class=\"nav navbar-nav navbar-right signedIn\">\n          <li style=\"margin-right: 20px;\" id=\"droppingMenu\" (mouseenter)=\"hovered()\" (mouseleave)=\"hoverOut()\">\n\n              <div class=\"dropdown\">\n                  <button class=\"dropbtn\" > <div class=\"left-photo\">\n                      <img src=\"/assets/img/user.png\" id=\"profile-pic\" style=\"width:25px;\">\n                  </div>\n                  <div class=\"right-name\">\n                      <p class='username'>{{LoggedInUser.UserName}}</p>\n                  </div></button>\n                  <div class=\"dropdown-content\">\n                    <a href=\"#/orders\">My Orders</a>\n                    <a href=\"#/profile\">Profile</a>\n                    <a href=\"#\" (click)=\"logOutUser()\">Logout</a>\n                  </div>\n                </div>\n                \n           \n            \n          </li >\n          <li class=\"border-left\" style=\"padding-left: 10px;margin-top: 18px;\" (click)=\"navigateToHome()\">\n              <img src=\"/assets/img/cart.png\" style=\"width: 25px;\">\n              <div class=\"cart-count\">{{CartCount}}</div>\n          </li>\n        </ul>\n\n      </ng-container>\n\n     \n    </div>\n  </div>\n</nav>\n<div id=\"snackbar\"></div>\n\n<modal #loginModal  [closeOnEscape]=\"false\" [closeOnOutsideClick]=\"false\" modalClass=\"modal-lg modal-md  animated bounceInDown signUpModal\" (onSubmit)=\"actionOnSubmit()\">\n  <modal-content>\n\n  <!--   <div class=\"signButton\">\n      <button class='SignUpLogin' (click)=\"routeToSignUp()\">Sign Up</button>\n    </div> -->\n\n    <div class=\"closeButton\" (click)=\"loginModal.close()\">\n      <img src=\"/assets/img/cancel.png\" width=\"15px\">\n    </div>\n\n    <div class='login-container'>\n\n      <div class='login clearfix'>\n\n        <div class='left-side'>\n\n          <div class=\"centered\">\n            <h2 class='logIN white'>Log In</h2>\n            <p class=\"white small-text\">Login to Continue</p>\n          </div>\n          <div class=\"image-logo\">\n            <div class=\"left-image\">\n              <img src=\"assets/img/1.gif\">\n            </div>\n            <div class=\"right-text\">\n              <p>Pharma Aid</p>\n            </div>\n\n          </div>\n\n        </div>\n\n        <div class='right-side'>\n          <div class=\"myForms\">\n            <div class=\"form-group\">\n              <label for=\"email\">Email</label>\n              <input type=\"text\" class=\"form-control\" [ngClass]=\"{'errors': EmailError}\" name=\"user.UserName\" [(ngModel)]=\"user.UserName\">\n            </div>\n\n            <div class=\"form-group\">\n              <label for=\"email\">password</label>\n              <input type=\"password\" (keydown)=\"onKey($event)\" class=\"form-control\" [ngClass]=\"{'errors': PasswordError}\" name=\"user.Password\" [(ngModel)]=\"user.Password\">\n            </div>\n          </div>\n\n          <div class=\"loader\">\n            <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->\n            <svg width=\"50\" height=\"30\" viewBox=\"0 0 120 30\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"#1ec26b\">\n              <circle cx=\"15\" cy=\"15\" r=\"15\">\n                <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n              <circle cx=\"60\" cy=\"15\" r=\"9\" fill-opacity=\"0.3\">\n                <animate attributeName=\"r\" from=\"9\" to=\"9\" begin=\"0s\" dur=\"0.8s\" values=\"9;15;9\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"0.5\" to=\"0.5\" begin=\"0s\" dur=\"0.8s\" values=\".5;1;.5\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n              <circle cx=\"105\" cy=\"15\" r=\"15\">\n                <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n                <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                />\n              </circle>\n            </svg>\n\n          </div>\n\n          <div class=\"form-group\" style=\"text-align:center;margin-top:60px;\">\n            <button class=\"submit-custom\" (click)=\"login()\">Login</button>\n          </div>\n\n\n          <div class=\"row clearfix\">\n            <div class='col-md-4 col-sm-4  no-left'>\n              <hr>\n            </div>\n            <div class='col-md-4 col-sm-4 no-padding text-centered'>\n              <p class=\"loginWith\">Login With</p>\n            </div>\n            <div class='col-md-4 col-sm-4 no-right'>\n              <hr>\n            </div>\n          </div>\n\n\n          <div class=\"row clearfix facebook-gmail\">\n\n            <div class=\"half-left\">\n              <a class=\"pointers\" (click)=\"loginWithFacebook()\">\n                <div class='holder'>\n                  <i class='fa fa-facebook'></i>\n                </div>\n              </a>\n            </div>\n            <div class=\"half-right\">\n              <button id=\"googleSignInBtn\" (click)=\"googleInit()\">\n                <div class='holder'>\n                  <img src=\"assets/img/plus.png\" style=\"width:23px;padding-left:2px\">\n                </div>\n              </button>\n            </div>\n\n          </div>\n\n\n        </div>\n\n      </div>\n\n    </div>\n  </modal-content>\n\n</modal>\n\n\n<modal #signUpModal\n[closeOnEscape]=\"false\"\n[closeOnOutsideClick]=\"false\"\nmodalClass=\"modal-lg modal-md  animated bounceInDown signUpModal\"\n(onSubmit)=\"actionOnSubmit()\">\n<modal-content>\n\n  <!-- <div class=\"signButton\">\n    <button class='SignUpLogin' (click)=\"routeToLogin()\">Login</button>\n  </div> -->\n\n  <div class=\"closeButton\" (click)=\"signUpModal.close()\">\n    <img src=\"/assets/img/cancel.png\" width=\"15px\">\n  </div>\n\n\n\n\n\n<div class='login-container'>\n  \n     <div class='login clearfix'>\n  \n        <div class='left-side'>\n            \n            <div class=\"centered\">\n            <h2 class='logIN white'>Sign Up</h2>\n            <p class=\"white small-text\">Sign up now to enjoy faster and better experience</p>\n           </div>\n            <div class=\"image-logo\">\n             <div class=\"left-image\">\n              <img src=\"assets/img/1.gif\">\n             </div>\n             <div class=\"right-text\">\n              <p>Pharma Aid</p>\n            </div>\n   \n           </div>\n   \n         </div>\n        \n          \n      <div class='right-side'>\n\n        <!--   -->\n        <div *ngIf=\"mobileVerificationScreen\" class=\"animated slideInDownBig\">\n            \n                              <h1>Verify your mobile number</h1>\n                              <small>Enter the 4 digit code that we have sent you via email to continue</small>\n            \n                              <div class=\"align-center\">\n                                <input type=\"text\" name='codeVerification' [(ngModel)]=\"codeVerification\" class='code-Input' placeholder=\"code here ...\">\n                              </div>\n            \n            \n                              <div class=\"verify-button\">\n                                <button class=\"verification\" (click)='verifyMobileNumber()'>Verify</button>\n                              </div>\n            \n                      </div>\n\n        <div class=\"hide-on-verification\">\n\n            <div class=\"myForms\">\n                \n                              <div class=\"form-group\">\n                                  <label for=\"email\">username</label>\n                                  <input type=\"text\" class=\"form-control\" [ngClass]=\"{'errors': UsernameError}\" name=\"user.UserName\" [(ngModel)]=\"user.UserName\">\n                                </div>\n                \n                            <div class=\"form-group\">\n                              <label for=\"email\">Email</label>\n                              <input type=\"text\" class=\"form-control\" [ngClass]=\"{'errors': EmailError}\" name=\"user.Email\" [(ngModel)]=\"user.Email\">\n                            </div>\n                \n                            <div class=\"form-group\">\n                                <label for=\"email\">mobile number</label>\n                                <input type=\"number\" class=\"form-control\" [ngClass]=\"{'errors': MobileError}\" name=\"user.MobileNumber\" [(ngModel)]=\"user.MobileNumber\">\n                            </div>\n                \n                            <div class=\"form-group\">\n                              <label for=\"email\">password</label>\n                              <input type=\"password\" class=\"form-control\"  [ngClass]=\"{'errors': PasswordError}\" name=\"user.Password\" [(ngModel)]=\"user.Password\">\n                            </div>\n                \n                            <div class=\"form-group\">\n                                <label for=\"email\">confirm password</label>\n                                <input type=\"password\" class=\"form-control\"  (keydown)=\"signUpOnEnter($event)\" [ngClass]=\"{'errors': PasswordError}\" name=\"confrimPass\" [(ngModel)]=\"confrimPass\">\n                              </div>\n          </div>\n\n          <div class=\"loader\">\n              <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->\n              <svg width=\"50\" height=\"30\" viewBox=\"0 0 120 30\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"#1ec26b\">\n                <circle cx=\"15\" cy=\"15\" r=\"15\">\n                  <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                  />\n                  <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                  />\n                </circle>\n                <circle cx=\"60\" cy=\"15\" r=\"9\" fill-opacity=\"0.3\">\n                  <animate attributeName=\"r\" from=\"9\" to=\"9\" begin=\"0s\" dur=\"0.8s\" values=\"9;15;9\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                  />\n                  <animate attributeName=\"fill-opacity\" from=\"0.5\" to=\"0.5\" begin=\"0s\" dur=\"0.8s\" values=\".5;1;.5\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                  />\n                </circle>\n                <circle cx=\"105\" cy=\"15\" r=\"15\">\n                  <animate attributeName=\"r\" from=\"15\" to=\"15\" begin=\"0s\" dur=\"0.8s\" values=\"15;9;15\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                  />\n                  <animate attributeName=\"fill-opacity\" from=\"1\" to=\"1\" begin=\"0s\" dur=\"0.8s\" values=\"1;.5;1\" calcMode=\"linear\" repeatCount=\"indefinite\"\n                  />\n                </circle>\n              </svg>\n  \n            </div>\n\n            <div class=\"form-group\" style=\"text-align:center;margin-top:60px;\">\n                <button class=\"submit-custom\" (click)=\"signUp()\">Sign Up</button>\n            </div>\n\n\n          <div class=\"row clearfix\">\n              <div class='col-md-4 col-sm-4  no-left'>\n                <hr>\n              </div>\n              <div class='col-md-4 col-sm-4 no-padding text-centered'>\n                <p class=\"loginWith\">Sign up With</p>\n              </div>\n              <div class='col-md-4 col-sm-4 no-right'>\n                <hr>\n              </div>\n            </div>\n  \n  \n            <div class=\"row clearfix facebook-gmail\">\n  \n                <div class=\"half-left\">\n                    <a (click)=\"signUpWithFacebook()\"><div class='holder'><i class='fa fa-facebook'></i></div></a>\n                </div>\n                <div class=\"half-right\">\n                    <a (click)=\"googleInit()\"><div class='holder'><img src=\"assets/img/plus.png\" style=\"width:23px;padding-left:2px\"></div></a>\n                </div>\n                <!-- <div class=\"g-signin2\" data-onsuccess=\"onSignIn\"></div> -->\n            </div>\n\n        </div>\n          \n\n\n          \n          \n          \n\n\n\n\n      </div>\n\n     </div>\n  \n  </div>\n</modal-content>\n\n</modal>"
-
-/***/ }),
-/* 319 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-        var result = __webpack_require__(320);
-
-        if (typeof result === "string") {
-            module.exports = result;
-        } else {
-            module.exports = result.toString();
-        }
-    
-
-/***/ }),
-/* 320 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(7)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\r\n.header-right li a{\r\n    text-transform: uppercase;\r\n    font-size:15px;\r\n    color:#656565;\r\n    padding-top: 6px;\r\n    padding-bottom: 6px;\r\n    margin-top: 4px;\r\n    font-weight: bold;\r\n    cursor: pointer;\r\n}\r\n.signedIn{\r\n    height: 60px;\r\n}\r\n.left-photo{\r\n    margin-right: 5px;\r\n}\r\n.right-name,.left-photo{\r\n    position: relative;\r\n    float:left;\r\n}\r\n\r\n.cart-inside{\r\n    padding:6px;\r\n}\r\n.username{\r\n    padding-top: 1px;\r\n    text-transform: capitalize;\r\n    font-size:18px;\r\n    font-weight: 500;\r\n    color:#1ec26b;\r\n\r\n}\r\n\r\n.code-Input{\r\n    width:100%;\r\n    border:none;\r\n    border-bottom:1px solid #1ec26b;\r\n    border-radius: 0;\r\n}\r\n.verify-button{\r\n    width:250px;\r\n    height:50px;\r\n    margin:25px auto;\r\n}\r\n\r\n.verification{\r\n    background: #1ec26b;\r\n    border: none;\r\n    color: white;\r\n    text-transform: uppercase;\r\n    font-size: 16px;\r\n    width: 100%;\r\n    height: 50px;\r\n}\r\n.align-center{\r\n    text-align: center;\r\n    margin:65px;\r\n}\r\n.cart-count{\r\n    position: absolute;\r\n    top: -6px;\r\n    right: -10px;\r\n    background: #1ec26b;\r\n    border-radius: 50%;\r\n    color: white;\r\n    padding: 4px;\r\n    width: 20px;\r\n    font-size: 10px;\r\n    height: 20px;\r\n    text-align: center;\r\n}\r\n.header-right li{\r\n    border:none;\r\n}\r\n\r\nnav a{\r\nbackground:none !important;\r\n}\r\n\r\n.navbar-brand{\r\n\r\n    margin-top: 0;\r\n    padding-top: 10px;\r\n\r\n}\r\n.navbar-brand img{\r\n\r\n    width:150px;    \r\n    \r\n}\r\n\r\n.navbar-default{\r\n    background: white;\r\n    box-shadow: 0px 2px 8px 0px #ecebe7;\r\n}\r\n.cart-inside-ul{\r\n    width: 250px;\r\n}\r\n\r\n.special-cart-items{\r\n    position: absolute;\r\n    top: 1px;\r\n    right: -4px;\r\n    background: #1ec26b;\r\n    border-radius: 50%;\r\n    color: white;\r\n    padding: 4px;\r\n    width: 20px;\r\n    font-size: 10px;\r\n    height: 20px;\r\n    text-align: center;\r\n}\r\n.header-right{\r\n    margin-top: 8px;\r\n    border-radius:10px;\r\n    height: 40px;\r\n    min-width: 190px;\r\n    border:1px solid #3ad72a;\r\n    overflow: hidden;\r\n}\r\n\r\n.border-left{\r\n    border-left:1px solid #3ad72a !important;\r\n    cursor: pointer;\r\n}\r\n\r\n\r\n.closeButton:hover { transform: scale(1.3); box-shadow: 0 5px 15px rgba(0,0,0,0.3);}\r\n\r\n.navbar-default{\r\n    border-radius: 0 !important;\r\n}\r\n\r\n.closeButton{\r\n    position: absolute;\r\n    right:25px;\r\n    top:25px;\r\n    z-index: 1;transition: all .2s ease-in-out;\r\n    cursor: pointer;\r\n    box-shadow:none;\r\n    transition: box-shadow 0.3s ease-in-out;\r\n  \r\n}\r\n\r\n\r\n.dropbtn {\r\n    background-color: transparent;\r\n    color: white;\r\n    cursor: pointer;\r\n    border: none;    height: 60px;\r\n    padding-top: 12px;\r\n    padding-left: 15px;\r\n    padding-right: 15px;\r\n}\r\n\r\n/* The container <div> - needed to position the dropdown content */\r\n.dropdown {\r\n    position: relative;\r\n    display: inline-block;\r\n}\r\n\r\n/* Dropdown Content (Hidden by Default) */\r\n.dropdown-content {\r\n    display: none;\r\n    position: absolute;\r\n    background-color: #1ec26b;\r\n    min-width: 160px;\r\n    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);\r\n    z-index: 1;\r\n}\r\n\r\n/* Links inside the dropdown */\r\n.dropdown-content a {\r\n    color: black;\r\n    padding: 12px 16px;\r\n    text-decoration: none;\r\n    display: block;\r\n    text-align: left;\r\n    color:white;\r\n    font-size:15px;\r\n    font-weight: 500;\r\n    border-bottom:1px solid #66b88d;\r\n}\r\n\r\n/* Change color of dropdown links on hover */\r\n.dropdown-content a:hover {background-color: #f1f1f1}\r\n\r\n/* Show the dropdown menu on hover */\r\n.dropdown:hover .dropdown-content {\r\n    display: block;\r\n    top:60px;\r\n    \r\n}\r\n\r\n/* Change the background color of the dropdown button when the dropdown content is shown */\r\n.dropdown:hover .dropbtn {\r\n    background-color: #1ec26b;\r\n    color:white;\r\n}\r\n\r\n@media only screen and (max-width: 640px){\r\n    .header-right{\r\n        border:none;\r\n        height:auto;\r\n    }\r\n    \r\n}", ""]);
-
-// exports
-
-
-/***/ }),
-/* 321 */
+/* 322 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -99659,8 +100047,8 @@ var FooterComponent = (function () {
 FooterComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
         selector: 'app-footer',
-        template: __webpack_require__(322),
-        styles: [__webpack_require__(323)],
+        template: __webpack_require__(323),
+        styles: [__webpack_require__(324)],
         encapsulation: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewEncapsulation"].None
     }),
     __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:paramtypes", [])
@@ -99669,17 +100057,17 @@ FooterComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 
 /***/ }),
-/* 322 */
+/* 323 */
 /***/ (function(module, exports) {
 
-module.exports = "<footer class=\"site-footer\">\n    <ul class=\"footer-links\">\n\n      <li><a href=\"\">Terms & Conditions</a></li>\n      <li><a href=\"\">Privacy Policy</a></li>\n      <li><a href=\"\">&copy; Copyright 2017, Pharmaaid is a registered trademark</a></li>\n      <li><a href=\"\">Pharmaaid Pakistan</a></li>\n\n    </ul> \n</footer>"
+module.exports = "<footer class=\"site-footer\">\r\n    <ul class=\"footer-links\">\r\n\r\n      <li><a href=\"\">Terms & Conditions</a></li>\r\n      <li><a href=\"\">Privacy Policy</a></li>\r\n      <li><a href=\"\">&copy; Copyright 2017, Pharmaaid is a registered trademark</a></li>\r\n      <li><a href=\"\">Pharmaaid Pakistan</a></li>\r\n\r\n    </ul> \r\n</footer>"
 
 /***/ }),
-/* 323 */
+/* 324 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__(324);
+        var result = __webpack_require__(325);
 
         if (typeof result === "string") {
             module.exports = result;
@@ -99689,10 +100077,10 @@ module.exports = "<footer class=\"site-footer\">\n    <ul class=\"footer-links\"
     
 
 /***/ }),
-/* 324 */
+/* 325 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(7)(undefined);
+exports = module.exports = __webpack_require__(11)(undefined);
 // imports
 
 
@@ -99703,7 +100091,7 @@ exports.push([module.i, ".site-footer{\r\n    position: absolute;\r\n    width:1
 
 
 /***/ }),
-/* 325 */
+/* 326 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -99712,7 +100100,7 @@ exports.push([module.i, ".site-footer{\r\n    position: absolute;\r\n    width:1
 /* unused harmony export StarRatingConfig */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(52);
 
 
 
@@ -100610,7 +100998,7 @@ StarRatingModule.ctorParameters = function () { return []; };
 
 
 /***/ }),
-/* 326 */
+/* 327 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
@@ -100641,7 +101029,7 @@ if(true) {
 }
 
 /***/ }),
-/* 327 */
+/* 328 */
 /***/ (function(module, exports) {
 
 
@@ -100736,7 +101124,7 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 328 */
+/* 329 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
@@ -100767,27 +101155,12 @@ if(true) {
 }
 
 /***/ }),
-/* 329 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_index__ = __webpack_require__(330);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["a"]; });
-/**
- * @module
- * @description
- * Entry point for all public APIs of the async local storage package.
- */
-
-
-
-/***/ }),
 /* 330 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_ng2_google_place_module__ = __webpack_require__(331);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__app_ng2_google_place_module__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_index__ = __webpack_require__(331);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["a"]; });
 /**
  * @module
  * @description
@@ -100801,11 +101174,26 @@ if(true) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_ng2_google_place_module__ = __webpack_require__(332);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__app_ng2_google_place_module__["a"]; });
+/**
+ * @module
+ * @description
+ * Entry point for all public APIs of the async local storage package.
+ */
+
+
+
+/***/ }),
+/* 332 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GooglePlaceModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ng2_google_place_directive__ = __webpack_require__(332);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ng2_google_place_directive__ = __webpack_require__(333);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ng2_google_place_service__ = __webpack_require__(145);
 
 
@@ -100829,7 +101217,7 @@ GooglePlaceModule = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 
 /***/ }),
-/* 332 */
+/* 333 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -101035,19 +101423,19 @@ GooglePlaceDirective = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]
 
 
 /***/ }),
-/* 333 */
+/* 334 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var tab_component_1 = __webpack_require__(146);
 exports.NguiTabComponent = tab_component_1.NguiTabComponent;
-var tab_module_1 = __webpack_require__(334);
+var tab_module_1 = __webpack_require__(335);
 exports.NguiTabModule = tab_module_1.NguiTabModule;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 334 */
+/* 335 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -101062,7 +101450,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__(0);
-var forms_1 = __webpack_require__(51);
+var forms_1 = __webpack_require__(52);
 var common_1 = __webpack_require__(12);
 var tab_component_1 = __webpack_require__(146);
 exports.NguiTabComponent = tab_component_1.NguiTabComponent;
@@ -101083,11 +101471,11 @@ exports.NguiTabModule = NguiTabModule;
 //# sourceMappingURL=tab.module.js.map
 
 /***/ }),
-/* 335 */
+/* 336 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lib_image_upload_module__ = __webpack_require__(336);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lib_image_upload_module__ = __webpack_require__(337);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lib_image_upload_module___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__lib_image_upload_module__);
 /* harmony reexport (binding) */ if(__webpack_require__.o(__WEBPACK_IMPORTED_MODULE_0__lib_image_upload_module__, "ImageUploadModule")) __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__lib_image_upload_module__["ImageUploadModule"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__lib_image_upload_image_upload_component__ = __webpack_require__(147);
@@ -101099,15 +101487,15 @@ exports.NguiTabModule = NguiTabModule;
 
 
 /***/ }),
-/* 336 */
+/* 337 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var common_1 = __webpack_require__(12);
 var core_1 = __webpack_require__(0);
-var http_1 = __webpack_require__(8);
-var file_drop_directive_1 = __webpack_require__(337);
+var http_1 = __webpack_require__(7);
+var file_drop_directive_1 = __webpack_require__(338);
 var image_upload_component_1 = __webpack_require__(147);
 var image_service_1 = __webpack_require__(148);
 var ImageUploadModule = (function () {
@@ -101133,7 +101521,7 @@ exports.ImageUploadModule = ImageUploadModule;
 
 
 /***/ }),
-/* 337 */
+/* 338 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -101220,7 +101608,7 @@ exports.FileDropDirective = FileDropDirective;
 
 
 /***/ }),
-/* 338 */
+/* 339 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -101228,11 +101616,11 @@ exports.FileDropDirective = FileDropDirective;
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
-__export(__webpack_require__(339));
+__export(__webpack_require__(340));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 339 */
+/* 340 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -101242,20 +101630,20 @@ function __export(m) {
 }
 __export(__webpack_require__(149));
 __export(__webpack_require__(151));
-__export(__webpack_require__(50));
-__export(__webpack_require__(354));
+__export(__webpack_require__(51));
+__export(__webpack_require__(355));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 340 */
+/* 341 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var destroy = __webpack_require__(341);
-var initialize = __webpack_require__(345);
-var update = __webpack_require__(353);
+var destroy = __webpack_require__(342);
+var initialize = __webpack_require__(346);
+var update = __webpack_require__(354);
 
 module.exports = {
   initialize: initialize,
@@ -101265,7 +101653,7 @@ module.exports = {
 
 
 /***/ }),
-/* 341 */
+/* 342 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -101273,7 +101661,7 @@ module.exports = {
 
 var _ = __webpack_require__(18);
 var dom = __webpack_require__(28);
-var instances = __webpack_require__(9);
+var instances = __webpack_require__(8);
 
 module.exports = function (element) {
   var i = instances.get(element);
@@ -101294,7 +101682,7 @@ module.exports = function (element) {
 
 
 /***/ }),
-/* 342 */
+/* 343 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -101317,7 +101705,7 @@ module.exports = {
 
 
 /***/ }),
-/* 343 */
+/* 344 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -101395,7 +101783,7 @@ module.exports = EventManager;
 
 
 /***/ }),
-/* 344 */
+/* 345 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -101415,27 +101803,27 @@ module.exports = (function () {
 
 
 /***/ }),
-/* 345 */
+/* 346 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var _ = __webpack_require__(18);
-var cls = __webpack_require__(49);
-var instances = __webpack_require__(9);
+var cls = __webpack_require__(50);
+var instances = __webpack_require__(8);
 var updateGeometry = __webpack_require__(19);
 
 // Handlers
 var handlers = {
-  'click-rail': __webpack_require__(346),
-  'drag-scrollbar': __webpack_require__(347),
-  'keyboard': __webpack_require__(348),
-  'wheel': __webpack_require__(349),
-  'touch': __webpack_require__(350),
-  'selection': __webpack_require__(351)
+  'click-rail': __webpack_require__(347),
+  'drag-scrollbar': __webpack_require__(348),
+  'keyboard': __webpack_require__(349),
+  'wheel': __webpack_require__(350),
+  'touch': __webpack_require__(351),
+  'selection': __webpack_require__(352)
 };
-var nativeScrollHandler = __webpack_require__(352);
+var nativeScrollHandler = __webpack_require__(353);
 
 module.exports = function (element, userSettings) {
   userSettings = typeof userSettings === 'object' ? userSettings : {};
@@ -101459,13 +101847,13 @@ module.exports = function (element, userSettings) {
 
 
 /***/ }),
-/* 346 */
+/* 347 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var instances = __webpack_require__(9);
+var instances = __webpack_require__(8);
 var updateGeometry = __webpack_require__(19);
 var updateScroll = __webpack_require__(22);
 
@@ -101505,7 +101893,7 @@ module.exports = function (element) {
 
 
 /***/ }),
-/* 347 */
+/* 348 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -101513,7 +101901,7 @@ module.exports = function (element) {
 
 var _ = __webpack_require__(18);
 var dom = __webpack_require__(28);
-var instances = __webpack_require__(9);
+var instances = __webpack_require__(8);
 var updateGeometry = __webpack_require__(19);
 var updateScroll = __webpack_require__(22);
 
@@ -101615,7 +102003,7 @@ module.exports = function (element) {
 
 
 /***/ }),
-/* 348 */
+/* 349 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -101623,7 +102011,7 @@ module.exports = function (element) {
 
 var _ = __webpack_require__(18);
 var dom = __webpack_require__(28);
-var instances = __webpack_require__(9);
+var instances = __webpack_require__(8);
 var updateGeometry = __webpack_require__(19);
 var updateScroll = __webpack_require__(22);
 
@@ -101776,13 +102164,13 @@ module.exports = function (element) {
 
 
 /***/ }),
-/* 349 */
+/* 350 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var instances = __webpack_require__(9);
+var instances = __webpack_require__(8);
 var updateGeometry = __webpack_require__(19);
 var updateScroll = __webpack_require__(22);
 
@@ -101924,14 +102312,14 @@ module.exports = function (element) {
 
 
 /***/ }),
-/* 350 */
+/* 351 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var _ = __webpack_require__(18);
-var instances = __webpack_require__(9);
+var instances = __webpack_require__(8);
 var updateGeometry = __webpack_require__(19);
 var updateScroll = __webpack_require__(22);
 
@@ -102110,14 +102498,14 @@ module.exports = function (element) {
 
 
 /***/ }),
-/* 351 */
+/* 352 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var _ = __webpack_require__(18);
-var instances = __webpack_require__(9);
+var instances = __webpack_require__(8);
 var updateGeometry = __webpack_require__(19);
 var updateScroll = __webpack_require__(22);
 
@@ -102232,13 +102620,13 @@ module.exports = function (element) {
 
 
 /***/ }),
-/* 352 */
+/* 353 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var instances = __webpack_require__(9);
+var instances = __webpack_require__(8);
 var updateGeometry = __webpack_require__(19);
 
 function bindNativeScrollHandler(element, i) {
@@ -102254,7 +102642,7 @@ module.exports = function (element) {
 
 
 /***/ }),
-/* 353 */
+/* 354 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -102262,7 +102650,7 @@ module.exports = function (element) {
 
 var _ = __webpack_require__(18);
 var dom = __webpack_require__(28);
-var instances = __webpack_require__(9);
+var instances = __webpack_require__(8);
 var updateGeometry = __webpack_require__(19);
 var updateScroll = __webpack_require__(22);
 
@@ -102298,7 +102686,7 @@ module.exports = function (element) {
 
 
 /***/ }),
-/* 354 */
+/* 355 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -102307,7 +102695,7 @@ var common_1 = __webpack_require__(12);
 var core_1 = __webpack_require__(0);
 var perfect_scrollbar_component_1 = __webpack_require__(149);
 var perfect_scrollbar_directive_1 = __webpack_require__(151);
-var perfect_scrollbar_interfaces_1 = __webpack_require__(50);
+var perfect_scrollbar_interfaces_1 = __webpack_require__(51);
 exports.PERFECT_SCROLLBAR_GUARD = new core_1.OpaqueToken('PERFECT_SCROLLBAR_GUARD');
 exports.PERFECT_SCROLLBAR_CONFIG = new core_1.OpaqueToken('PERFECT_SCROLLBAR_CONFIG');
 var PerfectScrollbarModule = (function () {
