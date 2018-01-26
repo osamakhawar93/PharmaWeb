@@ -3,8 +3,8 @@ var ac_polyfills =
 /******/ 	function hotDisposeChunk(chunkId) {
 /******/ 		delete installedChunks[chunkId];
 /******/ 	}
-/******/ 	var parentHotUpdateCallback = window["webpackHotUpdateac__name_"];
-/******/ 	window["webpackHotUpdateac__name_"] = 
+/******/ 	var parentHotUpdateCallback = this["webpackHotUpdateac__name_"];
+/******/ 	this["webpackHotUpdateac__name_"] = 
 /******/ 	function webpackHotUpdateCallback(chunkId, moreModules) { // eslint-disable-line no-unused-vars
 /******/ 		hotAddUpdateChunk(chunkId, moreModules);
 /******/ 		if(parentHotUpdateCallback) parentHotUpdateCallback(chunkId, moreModules);
@@ -62,7 +62,7 @@ var ac_polyfills =
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "0a0a43eee8b266dd0443"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "592e67caa52a7ea4cba1"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -723,7 +723,7 @@ var ac_polyfills =
 /******/ 	__webpack_require__.h = function() { return hotCurrentHash; };
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return hotCreateRequire(153)(__webpack_require__.s = 153);
+/******/ 	return hotCreateRequire(154)(__webpack_require__.s = 154);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -861,10 +861,10 @@ $exports.store = store;
 /* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Map = __webpack_require__(179);
+var Map = __webpack_require__(180);
 var $export = __webpack_require__(4);
 var shared = __webpack_require__(60)('metadata');
-var store = shared.store || (shared.store = new (__webpack_require__(190))());
+var store = shared.store || (shared.store = new (__webpack_require__(191))());
 
 var getOrCreateMetadataMap = function (target, targetKey, create) {
   var targetMetadata = store.get(target);
@@ -979,7 +979,7 @@ module.exports = Object.getPrototypeOf || function (O) {
 /* 31 */
 /***/ (function(module, exports) {
 
-var core = module.exports = { version: '2.5.3' };
+var core = module.exports = { version: '2.5.1' };
 if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 
 
@@ -1163,11 +1163,11 @@ module.exports = function (key) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var ctx = __webpack_require__(33);
-var call = __webpack_require__(180);
-var isArrayIter = __webpack_require__(181);
+var call = __webpack_require__(181);
+var isArrayIter = __webpack_require__(182);
 var anObject = __webpack_require__(2);
 var toLength = __webpack_require__(58);
-var getIterFn = __webpack_require__(182);
+var getIterFn = __webpack_require__(183);
 var BREAK = {};
 var RETURN = {};
 var exports = module.exports = function (iterable, entries, fn, that, ITERATOR) {
@@ -1279,7 +1279,7 @@ module.exports = function (it, S) {
 
 // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
 var anObject = __webpack_require__(2);
-var dPs = __webpack_require__(157);
+var dPs = __webpack_require__(158);
 var enumBugKeys = __webpack_require__(61);
 var IE_PROTO = __webpack_require__(59)('IE_PROTO');
 var Empty = function () { /* empty */ };
@@ -1294,7 +1294,7 @@ var createDict = function () {
   var gt = '>';
   var iframeDocument;
   iframe.style.display = 'none';
-  __webpack_require__(160).appendChild(iframe);
+  __webpack_require__(161).appendChild(iframe);
   iframe.src = 'javascript:'; // eslint-disable-line no-script-url
   // createDict = iframe.contentWindow.Object;
   // html.removeChild(iframe);
@@ -1468,9 +1468,9 @@ var forOf = __webpack_require__(44);
 var anInstance = __webpack_require__(65);
 var isObject = __webpack_require__(5);
 var fails = __webpack_require__(15);
-var $iterDetect = __webpack_require__(188);
+var $iterDetect = __webpack_require__(189);
 var setToStringTag = __webpack_require__(62);
-var inheritIfRequired = __webpack_require__(189);
+var inheritIfRequired = __webpack_require__(190);
 
 module.exports = function (NAME, wrapper, methods, common, IS_MAP, IS_WEAK) {
   var Base = global[NAME];
@@ -1604,7 +1604,7 @@ module.exports = Object.keys || function keys(O) {
 
 var has = __webpack_require__(13);
 var toIObject = __webpack_require__(55);
-var arrayIndexOf = __webpack_require__(158)(false);
+var arrayIndexOf = __webpack_require__(159)(false);
 var IE_PROTO = __webpack_require__(59)('IE_PROTO');
 
 module.exports = function (object, names) {
@@ -1721,9 +1721,9 @@ var redefineAll = __webpack_require__(64);
 var ctx = __webpack_require__(33);
 var anInstance = __webpack_require__(65);
 var forOf = __webpack_require__(44);
-var $iterDefine = __webpack_require__(184);
-var step = __webpack_require__(186);
-var setSpecies = __webpack_require__(187);
+var $iterDefine = __webpack_require__(185);
+var step = __webpack_require__(187);
+var setSpecies = __webpack_require__(188);
 var DESCRIPTORS = __webpack_require__(23);
 var fastKey = __webpack_require__(45).fastKey;
 var validate = __webpack_require__(36);
@@ -1875,7 +1875,7 @@ var ctx = __webpack_require__(33);
 var IObject = __webpack_require__(56);
 var toObject = __webpack_require__(63);
 var toLength = __webpack_require__(58);
-var asc = __webpack_require__(191);
+var asc = __webpack_require__(192);
 module.exports = function (TYPE, $create) {
   var IS_MAP = TYPE == 1;
   var IS_FILTER = TYPE == 2;
@@ -1966,16 +1966,17 @@ module.exports = function (TYPE, $create) {
 /* 150 */,
 /* 151 */,
 /* 152 */,
-/* 153 */
+/* 153 */,
+/* 154 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_core_js_es6_reflect__ = __webpack_require__(154);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_core_js_es6_reflect__ = __webpack_require__(155);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_core_js_es6_reflect___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_core_js_es6_reflect__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_js_es7_reflect__ = __webpack_require__(177);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_js_es7_reflect__ = __webpack_require__(178);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_js_es7_reflect___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_core_js_es7_reflect__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_zone_js_dist_zone__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_zone_js_dist_zone__ = __webpack_require__(207);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_zone_js_dist_zone___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_zone_js_dist_zone__);
 /**
  * This file includes polyfills needed by Angular and is loaded before the app.
@@ -2046,17 +2047,16 @@ else {
     // Development
     Error.stackTraceLimit = Infinity;
     /* tslint:disable no-var-requires */
-    __webpack_require__(207);
+    __webpack_require__(208);
 }
 
 
 /***/ }),
-/* 154 */
+/* 155 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(155);
 __webpack_require__(156);
-__webpack_require__(163);
+__webpack_require__(157);
 __webpack_require__(164);
 __webpack_require__(165);
 __webpack_require__(166);
@@ -2065,14 +2065,15 @@ __webpack_require__(168);
 __webpack_require__(169);
 __webpack_require__(170);
 __webpack_require__(171);
-__webpack_require__(174);
+__webpack_require__(172);
 __webpack_require__(175);
 __webpack_require__(176);
+__webpack_require__(177);
 module.exports = __webpack_require__(31).Reflect;
 
 
 /***/ }),
-/* 155 */
+/* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.1 Reflect.apply(target, thisArgument, argumentsList)
@@ -2094,7 +2095,7 @@ $export($export.S + $export.F * !__webpack_require__(15)(function () {
 
 
 /***/ }),
-/* 156 */
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.2 Reflect.construct(target, argumentsList [, newTarget])
@@ -2104,7 +2105,7 @@ var aFunction = __webpack_require__(34);
 var anObject = __webpack_require__(2);
 var isObject = __webpack_require__(5);
 var fails = __webpack_require__(15);
-var bind = __webpack_require__(161);
+var bind = __webpack_require__(162);
 var rConstruct = (__webpack_require__(10).Reflect || {}).construct;
 
 // MS Edge supports only 2 arguments and argumentsList argument is optional
@@ -2147,7 +2148,7 @@ $export($export.S + $export.F * (NEW_TARGET_BUG || ARGS_BUG), 'Reflect', {
 
 
 /***/ }),
-/* 157 */
+/* 158 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var dP = __webpack_require__(21);
@@ -2166,14 +2167,14 @@ module.exports = __webpack_require__(23) ? Object.defineProperties : function de
 
 
 /***/ }),
-/* 158 */
+/* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // false -> Array#indexOf
 // true  -> Array#includes
 var toIObject = __webpack_require__(55);
 var toLength = __webpack_require__(58);
-var toAbsoluteIndex = __webpack_require__(159);
+var toAbsoluteIndex = __webpack_require__(160);
 module.exports = function (IS_INCLUDES) {
   return function ($this, el, fromIndex) {
     var O = toIObject($this);
@@ -2195,7 +2196,7 @@ module.exports = function (IS_INCLUDES) {
 
 
 /***/ }),
-/* 159 */
+/* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var toInteger = __webpack_require__(91);
@@ -2208,7 +2209,7 @@ module.exports = function (index, length) {
 
 
 /***/ }),
-/* 160 */
+/* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var document = __webpack_require__(10).document;
@@ -2216,14 +2217,14 @@ module.exports = document && document.documentElement;
 
 
 /***/ }),
-/* 161 */
+/* 162 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var aFunction = __webpack_require__(34);
 var isObject = __webpack_require__(5);
-var invoke = __webpack_require__(162);
+var invoke = __webpack_require__(163);
 var arraySlice = [].slice;
 var factories = {};
 
@@ -2248,7 +2249,7 @@ module.exports = Function.bind || function bind(that /* , ...args */) {
 
 
 /***/ }),
-/* 162 */
+/* 163 */
 /***/ (function(module, exports) {
 
 // fast apply, http://jsperf.lnkit.com/fast-apply/5
@@ -2270,7 +2271,7 @@ module.exports = function (fn, args, that) {
 
 
 /***/ }),
-/* 163 */
+/* 164 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.3 Reflect.defineProperty(target, propertyKey, attributes)
@@ -2299,7 +2300,7 @@ $export($export.S + $export.F * __webpack_require__(15)(function () {
 
 
 /***/ }),
-/* 164 */
+/* 165 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.4 Reflect.deleteProperty(target, propertyKey)
@@ -2316,7 +2317,7 @@ $export($export.S, 'Reflect', {
 
 
 /***/ }),
-/* 165 */
+/* 166 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2349,7 +2350,7 @@ $export($export.S, 'Reflect', {
 
 
 /***/ }),
-/* 166 */
+/* 167 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.6 Reflect.get(target, propertyKey [, receiver])
@@ -2376,7 +2377,7 @@ $export($export.S, 'Reflect', { get: get });
 
 
 /***/ }),
-/* 167 */
+/* 168 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.7 Reflect.getOwnPropertyDescriptor(target, propertyKey)
@@ -2392,7 +2393,7 @@ $export($export.S, 'Reflect', {
 
 
 /***/ }),
-/* 168 */
+/* 169 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.8 Reflect.getPrototypeOf(target)
@@ -2408,7 +2409,7 @@ $export($export.S, 'Reflect', {
 
 
 /***/ }),
-/* 169 */
+/* 170 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.9 Reflect.has(target, propertyKey)
@@ -2422,7 +2423,7 @@ $export($export.S, 'Reflect', {
 
 
 /***/ }),
-/* 170 */
+/* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.10 Reflect.isExtensible(target)
@@ -2439,21 +2440,21 @@ $export($export.S, 'Reflect', {
 
 
 /***/ }),
-/* 171 */
+/* 172 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.11 Reflect.ownKeys(target)
 var $export = __webpack_require__(4);
 
-$export($export.S, 'Reflect', { ownKeys: __webpack_require__(172) });
+$export($export.S, 'Reflect', { ownKeys: __webpack_require__(173) });
 
 
 /***/ }),
-/* 172 */
+/* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // all object keys, includes non-enumerable and symbols
-var gOPN = __webpack_require__(173);
+var gOPN = __webpack_require__(174);
 var gOPS = __webpack_require__(94);
 var anObject = __webpack_require__(2);
 var Reflect = __webpack_require__(10).Reflect;
@@ -2465,7 +2466,7 @@ module.exports = Reflect && Reflect.ownKeys || function ownKeys(it) {
 
 
 /***/ }),
-/* 173 */
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
@@ -2478,7 +2479,7 @@ exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
 
 
 /***/ }),
-/* 174 */
+/* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.12 Reflect.preventExtensions(target)
@@ -2500,7 +2501,7 @@ $export($export.S, 'Reflect', {
 
 
 /***/ }),
-/* 175 */
+/* 176 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.13 Reflect.set(target, propertyKey, V [, receiver])
@@ -2537,7 +2538,7 @@ $export($export.S, 'Reflect', { set: set });
 
 
 /***/ }),
-/* 176 */
+/* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.14 Reflect.setPrototypeOf(target, proto)
@@ -2558,23 +2559,23 @@ if (setProto) $export($export.S, 'Reflect', {
 
 
 /***/ }),
-/* 177 */
+/* 178 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(178);
-__webpack_require__(196);
+__webpack_require__(179);
 __webpack_require__(197);
 __webpack_require__(198);
-__webpack_require__(201);
+__webpack_require__(199);
 __webpack_require__(202);
 __webpack_require__(203);
 __webpack_require__(204);
 __webpack_require__(205);
+__webpack_require__(206);
 module.exports = __webpack_require__(31).Reflect;
 
 
 /***/ }),
-/* 178 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata = __webpack_require__(17);
@@ -2588,7 +2589,7 @@ metadata.exp({ defineMetadata: function defineMetadata(metadataKey, metadataValu
 
 
 /***/ }),
-/* 179 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2614,7 +2615,7 @@ module.exports = __webpack_require__(67)(MAP, function (get) {
 
 
 /***/ }),
-/* 180 */
+/* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // call something on iterator step with safe closing on error
@@ -2632,7 +2633,7 @@ module.exports = function (iterator, fn, value, entries) {
 
 
 /***/ }),
-/* 181 */
+/* 182 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // check on default Array iterator
@@ -2646,10 +2647,10 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 182 */
+/* 183 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var classof = __webpack_require__(183);
+var classof = __webpack_require__(184);
 var ITERATOR = __webpack_require__(16)('iterator');
 var Iterators = __webpack_require__(66);
 module.exports = __webpack_require__(31).getIteratorMethod = function (it) {
@@ -2660,7 +2661,7 @@ module.exports = __webpack_require__(31).getIteratorMethod = function (it) {
 
 
 /***/ }),
-/* 183 */
+/* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // getting tag from 19.1.3.6 Object.prototype.toString()
@@ -2689,12 +2690,12 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 184 */
+/* 185 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var LIBRARY = __webpack_require__(185);
+var LIBRARY = __webpack_require__(186);
 var $export = __webpack_require__(4);
 var redefine = __webpack_require__(32);
 var hide = __webpack_require__(41);
@@ -2725,7 +2726,7 @@ module.exports = function (Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCE
   var VALUES_BUG = false;
   var proto = Base.prototype;
   var $native = proto[ITERATOR] || proto[FF_ITERATOR] || DEFAULT && proto[DEFAULT];
-  var $default = (!BUGGY && $native) || getMethod(DEFAULT);
+  var $default = $native || getMethod(DEFAULT);
   var $entries = DEFAULT ? !DEF_VALUES ? $default : getMethod('entries') : undefined;
   var $anyNative = NAME == 'Array' ? proto.entries || $native : $native;
   var methods, key, IteratorPrototype;
@@ -2766,14 +2767,14 @@ module.exports = function (Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCE
 
 
 /***/ }),
-/* 185 */
+/* 186 */
 /***/ (function(module, exports) {
 
 module.exports = false;
 
 
 /***/ }),
-/* 186 */
+/* 187 */
 /***/ (function(module, exports) {
 
 module.exports = function (done, value) {
@@ -2782,7 +2783,7 @@ module.exports = function (done, value) {
 
 
 /***/ }),
-/* 187 */
+/* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2802,7 +2803,7 @@ module.exports = function (KEY) {
 
 
 /***/ }),
-/* 188 */
+/* 189 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var ITERATOR = __webpack_require__(16)('iterator');
@@ -2830,7 +2831,7 @@ module.exports = function (exec, skipClosing) {
 
 
 /***/ }),
-/* 189 */
+/* 190 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(5);
@@ -2845,7 +2846,7 @@ module.exports = function (that, target, C) {
 
 
 /***/ }),
-/* 190 */
+/* 191 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2853,8 +2854,8 @@ module.exports = function (that, target, C) {
 var each = __webpack_require__(97)(0);
 var redefine = __webpack_require__(32);
 var meta = __webpack_require__(45);
-var assign = __webpack_require__(194);
-var weak = __webpack_require__(195);
+var assign = __webpack_require__(195);
+var weak = __webpack_require__(196);
 var isObject = __webpack_require__(5);
 var fails = __webpack_require__(15);
 var validate = __webpack_require__(36);
@@ -2911,11 +2912,11 @@ if (fails(function () { return new $WeakMap().set((Object.freeze || Object)(tmp)
 
 
 /***/ }),
-/* 191 */
+/* 192 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 9.4.2.3 ArraySpeciesCreate(originalArray, length)
-var speciesConstructor = __webpack_require__(192);
+var speciesConstructor = __webpack_require__(193);
 
 module.exports = function (original, length) {
   return new (speciesConstructor(original))(length);
@@ -2923,11 +2924,11 @@ module.exports = function (original, length) {
 
 
 /***/ }),
-/* 192 */
+/* 193 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(5);
-var isArray = __webpack_require__(193);
+var isArray = __webpack_require__(194);
 var SPECIES = __webpack_require__(16)('species');
 
 module.exports = function (original) {
@@ -2945,7 +2946,7 @@ module.exports = function (original) {
 
 
 /***/ }),
-/* 193 */
+/* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.2.2 IsArray(argument)
@@ -2956,7 +2957,7 @@ module.exports = Array.isArray || function isArray(arg) {
 
 
 /***/ }),
-/* 194 */
+/* 195 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2997,7 +2998,7 @@ module.exports = !$assign || __webpack_require__(15)(function () {
 
 
 /***/ }),
-/* 195 */
+/* 196 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3089,7 +3090,7 @@ module.exports = {
 
 
 /***/ }),
-/* 196 */
+/* 197 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata = __webpack_require__(17);
@@ -3110,7 +3111,7 @@ metadata.exp({ deleteMetadata: function deleteMetadata(metadataKey, target /* , 
 
 
 /***/ }),
-/* 197 */
+/* 198 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata = __webpack_require__(17);
@@ -3133,11 +3134,11 @@ metadata.exp({ getMetadata: function getMetadata(metadataKey, target /* , target
 
 
 /***/ }),
-/* 198 */
+/* 199 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Set = __webpack_require__(199);
-var from = __webpack_require__(200);
+var Set = __webpack_require__(200);
+var from = __webpack_require__(201);
 var metadata = __webpack_require__(17);
 var anObject = __webpack_require__(2);
 var getPrototypeOf = __webpack_require__(24);
@@ -3158,7 +3159,7 @@ metadata.exp({ getMetadataKeys: function getMetadataKeys(target /* , targetKey *
 
 
 /***/ }),
-/* 199 */
+/* 200 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3179,7 +3180,7 @@ module.exports = __webpack_require__(67)(SET, function (get) {
 
 
 /***/ }),
-/* 200 */
+/* 201 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var forOf = __webpack_require__(44);
@@ -3192,7 +3193,7 @@ module.exports = function (iter, ITERATOR) {
 
 
 /***/ }),
-/* 201 */
+/* 202 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata = __webpack_require__(17);
@@ -3207,7 +3208,7 @@ metadata.exp({ getOwnMetadata: function getOwnMetadata(metadataKey, target /* , 
 
 
 /***/ }),
-/* 202 */
+/* 203 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata = __webpack_require__(17);
@@ -3221,7 +3222,7 @@ metadata.exp({ getOwnMetadataKeys: function getOwnMetadataKeys(target /* , targe
 
 
 /***/ }),
-/* 203 */
+/* 204 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata = __webpack_require__(17);
@@ -3243,7 +3244,7 @@ metadata.exp({ hasMetadata: function hasMetadata(metadataKey, target /* , target
 
 
 /***/ }),
-/* 204 */
+/* 205 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata = __webpack_require__(17);
@@ -3258,7 +3259,7 @@ metadata.exp({ hasOwnMetadata: function hasOwnMetadata(metadataKey, target /* , 
 
 
 /***/ }),
-/* 205 */
+/* 206 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $metadata = __webpack_require__(17);
@@ -3279,7 +3280,7 @@ $metadata.exp({ metadata: function metadata(metadataKey, metadataValue) {
 
 
 /***/ }),
-/* 206 */
+/* 207 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/**
@@ -3351,6 +3352,7 @@ var Zone$1 = (function (global) {
             enumerable: true,
             configurable: true
         });
+        
         Object.defineProperty(Zone, "currentTask", {
             get: function () {
                 return _currentTask;
@@ -3358,6 +3360,7 @@ var Zone$1 = (function (global) {
             enumerable: true,
             configurable: true
         });
+        
         Zone.__load_patch = function (name, fn) {
             if (patches.hasOwnProperty(name)) {
                 throw Error('Already loaded patch: ' + name);
@@ -3376,6 +3379,7 @@ var Zone$1 = (function (global) {
             enumerable: true,
             configurable: true
         });
+        
         Object.defineProperty(Zone.prototype, "name", {
             get: function () {
                 return this._name;
@@ -3383,6 +3387,7 @@ var Zone$1 = (function (global) {
             enumerable: true,
             configurable: true
         });
+        
         Zone.prototype.get = function (key) {
             var zone = this.getZoneWith(key);
             if (zone)
@@ -3831,7 +3836,11 @@ var Zone$1 = (function (global) {
                 state: this.state,
                 source: this.source,
                 zone: this.zone.name,
-                runCount: this.runCount
+                invoke: this.invoke,
+                scheduleFn: this.scheduleFn,
+                cancelFn: this.cancelFn,
+                runCount: this.runCount,
+                callback: this.callback
             };
         };
         return ZoneTask;
@@ -3906,14 +3915,8 @@ var Zone$1 = (function (global) {
         patchEventTarget: function () { return []; },
         patchOnProperties: noop,
         patchMethod: function () { return noop; },
-        patchArguments: function () { return noop; },
         setNativePromise: function (NativePromise) {
-            // sometimes NativePromise.resolve static function
-            // is not ready yet, (such as core-js/es6.promise)
-            // so we need to check here.
-            if (NativePromise && typeof NativePromise.resolve === FUNCTION) {
-                nativeMicroTaskQueuePromise = NativePromise.resolve(0);
-            }
+            nativeMicroTaskQueuePromise = NativePromise.resolve(0);
         },
     };
     var _currentZoneFrame = { parent: null, zone: new Zone(null, null) };
@@ -3927,6 +3930,22 @@ var Zone$1 = (function (global) {
     return global['Zone'] = Zone;
 })(typeof window !== 'undefined' && window || typeof self !== 'undefined' && self || global);
 
+var __read = (undefined && undefined.__read) || function (o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+};
 var __values = (undefined && undefined.__values) || function (o) {
     var m = typeof Symbol === "function" && o[Symbol.iterator], i = 0;
     if (m) return m.call(o);
@@ -3945,18 +3964,10 @@ var __values = (undefined && undefined.__values) || function (o) {
  * found in the LICENSE file at https://angular.io/license
  */
 Zone.__load_patch('ZoneAwarePromise', function (global, Zone, api) {
-    function readableObjectToString(obj) {
-        if (obj && obj.toString === Object.prototype.toString) {
-            var className = obj.constructor && obj.constructor.name;
-            return (className ? className : '') + ': ' + JSON.stringify(obj);
-        }
-        return obj ? obj.toString() : Object.prototype.toString.call(obj);
-    }
     var __symbol__ = api.symbol;
     var _uncaughtPromiseErrors = [];
     var symbolPromise = __symbol__('Promise');
     var symbolThen = __symbol__('then');
-    var creationTrace = '__creationTrace__';
     api.onUnhandledError = function (e) {
         if (api.showUncaughtError()) {
             var rejection = e && e.rejection;
@@ -4040,7 +4051,7 @@ Zone.__load_patch('ZoneAwarePromise', function (global, Zone, api) {
     var TYPE_ERROR = 'Promise resolved with itself';
     var OBJECT = 'object';
     var FUNCTION = 'function';
-    var CURRENT_TASK_TRACE_SYMBOL = __symbol__('currentTaskTrace');
+    var CURRENT_TASK_SYMBOL = __symbol__('currentTask');
     // Promise Resolution
     function resolvePromise(promise, state, value) {
         var onceWrapper = once();
@@ -4087,13 +4098,7 @@ Zone.__load_patch('ZoneAwarePromise', function (global, Zone, api) {
                 // record task information in value when error occurs, so we can
                 // do some additional work such as render longStackTrace
                 if (state === REJECTED && value instanceof Error) {
-                    // check if longStackTraceZone is here
-                    var trace = Zone.currentTask && Zone.currentTask.data &&
-                        Zone.currentTask.data[creationTrace];
-                    if (trace) {
-                        // only keep the long stack trace into error when in longStackTraceZone
-                        Object.defineProperty(value, CURRENT_TASK_TRACE_SYMBOL, { configurable: true, enumerable: false, writable: true, value: trace });
-                    }
+                    value[CURRENT_TASK_SYMBOL] = Zone.currentTask;
                 }
                 for (var i = 0; i < queue.length;) {
                     scheduleResolveOrReject(promise, queue[i++], queue[i++], queue[i++], queue[i++]);
@@ -4101,8 +4106,7 @@ Zone.__load_patch('ZoneAwarePromise', function (global, Zone, api) {
                 if (queue.length == 0 && state == REJECTED) {
                     promise[symbolState] = REJECTED_NO_CATCH;
                     try {
-                        // try to print more readable error log
-                        throw new Error('Uncaught (in promise): ' + readableObjectToString(value) +
+                        throw new Error('Uncaught (in promise): ' + value +
                             (value && value.stack ? '\n' + value.stack : ''));
                     }
                     catch (err) {
@@ -4187,8 +4191,8 @@ Zone.__load_patch('ZoneAwarePromise', function (global, Zone, api) {
             var resolve;
             var reject;
             var promise = new this(function (res, rej) {
-                resolve = res;
-                reject = rej;
+                _a = __read([res, rej], 2), resolve = _a[0], reject = _a[1];
+                var _a;
             });
             function onResolve(value) {
                 promise && (promise = null || resolve(value));
@@ -4375,7 +4379,6 @@ var _global = typeof window === 'object' && window || typeof self === 'object' &
 var FUNCTION = 'function';
 var UNDEFINED = 'undefined';
 var REMOVE_ATTRIBUTE = 'removeAttribute';
-var NULL_ON_PROP_VALUE = [null];
 function bindArguments(args, source) {
     for (var i = args.length - 1; i >= 0; i--) {
         if (typeof args[i] === FUNCTION) {
@@ -4383,18 +4386,6 @@ function bindArguments(args, source) {
         }
     }
     return args;
-}
-function wrapFunctionArgs(func, source) {
-    return function () {
-        var args = Array.prototype.slice.call(arguments);
-        var wrappedArgs = bindArguments(args, source ? source : func.name);
-        return func.apply(this, wrappedArgs);
-    };
-}
-function patchArguments(target, name, source) {
-    return patchMethod(target, name, function (delegate, delegateName, name) { return function (self, args) {
-        return delegate && delegate.apply(self, bindArguments(args, source));
-    }; });
 }
 function patchPrototype(prototype, fnNames) {
     var source = prototype.constructor['name'];
@@ -4485,7 +4476,6 @@ function patchProperty(obj, prop, prototype) {
     delete desc.writable;
     delete desc.value;
     var originalDescGet = desc.get;
-    var originalDescSet = desc.set;
     // substr(2) cuz 'onclick' -> 'click', etc
     var eventName = prop.substr(2);
     var eventNameSymbol = zoneSymbolEventNames[eventName];
@@ -4505,11 +4495,6 @@ function patchProperty(obj, prop, prototype) {
         var previousValue = target[eventNameSymbol];
         if (previousValue) {
             target.removeEventListener(eventName, wrapFn);
-        }
-        // issue #978, when onload handler was added before loading zone.js
-        // we should remove it with originalDescSet
-        if (originalDescSet) {
-            originalDescSet.apply(target, NULL_ON_PROP_VALUE);
         }
         if (typeof newValue === 'function') {
             target[eventNameSymbol] = newValue;
@@ -4781,6 +4766,26 @@ Zone.__load_patch('toString', function (global, Zone, api) {
  * @fileoverview
  * @suppress {missingRequire}
  */
+var __read$1 = (undefined && undefined.__read) || function (o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+};
+var __spread = (undefined && undefined.__spread) || function () {
+    for (var ar = [], i = 0; i < arguments.length; i++) ar = ar.concat(__read$1(arguments[i]));
+    return ar;
+};
 var TRUE_STR = 'true';
 var FALSE_STR = 'false';
 // an identifier to tell ZoneTask do not create a new invoke closure
@@ -5012,7 +5017,6 @@ function patchEventTarget(_global, apis, patchOptions) {
         var compare = (patchOptions && patchOptions.compareTaskCallbackVsDelegate) ?
             patchOptions.compareTaskCallbackVsDelegate :
             compareTaskCallbackVsDelegate;
-        var blackListedEvents = Zone[Zone.__symbol__('BLACK_LISTED_EVENTS')];
         var makeAddListener = function (nativeListener, addSource, customScheduleFn, customCancelFn, returnTarget, prepend) {
             if (returnTarget === void 0) { returnTarget = false; }
             if (prepend === void 0) { prepend = false; }
@@ -5038,14 +5042,6 @@ function patchEventTarget(_global, apis, patchOptions) {
                 }
                 var eventName = arguments[0];
                 var options = arguments[2];
-                if (blackListedEvents) {
-                    // check black list
-                    for (var i = 0; i < blackListedEvents.length; i++) {
-                        if (eventName === blackListedEvents[i]) {
-                            return nativeListener.apply(this, arguments);
-                        }
-                    }
-                }
                 var capture;
                 var once = false;
                 if (options === undefined) {
@@ -5118,18 +5114,7 @@ function patchEventTarget(_global, apis, patchOptions) {
                 taskData.eventName = eventName;
                 taskData.isExisting = isExisting;
                 var data = useGlobalCallback ? OPTIMIZED_ZONE_EVENT_TASK_DATA : null;
-                // keep taskData into data to allow onScheduleEventTask to acess the task information
-                if (data) {
-                    data.taskData = taskData;
-                }
                 var task = zone.scheduleEventTask(source, delegate, data, customScheduleFn, customCancelFn);
-                // should clear taskData.target to avoid memory leak
-                // issue, https://github.com/angular/angular/issues/20442
-                taskData.target = null;
-                // need to clear up taskData because it is a global object
-                if (data) {
-                    data.taskData = null;
-                }
                 // have to save those information to task in case
                 // application may call task.zone.cancelTask() directly
                 if (once) {
@@ -5208,11 +5193,6 @@ function patchEventTarget(_global, apis, patchOptions) {
                     }
                 }
             }
-            // issue 930, didn't find the event name or callback
-            // from zone kept existingTasks, the callback maybe
-            // added outside of zone, we need to call native removeEventListener
-            // to try to remove it.
-            return nativeRemoveEventListener.apply(this, arguments);
         };
         proto[LISTENERS_EVENT_LISTENER] = function () {
             var target = this || _global;
@@ -5254,7 +5234,7 @@ function patchEventTarget(_global, apis, patchOptions) {
                     var tasks = target[symbolEventName];
                     var captureTasks = target[symbolCaptureEventName];
                     if (tasks) {
-                        var removeTasks = tasks.slice();
+                        var removeTasks = __spread(tasks);
                         for (var i = 0; i < removeTasks.length; i++) {
                             var task = removeTasks[i];
                             var delegate = task.originalDelegate ? task.originalDelegate : task.callback;
@@ -5262,7 +5242,7 @@ function patchEventTarget(_global, apis, patchOptions) {
                         }
                     }
                     if (captureTasks) {
-                        var removeTasks = captureTasks.slice();
+                        var removeTasks = __spread(captureTasks);
                         for (var i = 0; i < removeTasks.length; i++) {
                             var task = removeTasks[i];
                             var delegate = task.originalDelegate ? task.originalDelegate : task.callback;
@@ -5310,10 +5290,6 @@ function patchEventPrototype(global, api) {
     if (Event && Event.prototype) {
         api.patchMethod(Event.prototype, 'stopImmediatePropagation', function (delegate) { return function (self, args) {
             self[IMMEDIATE_PROPAGATION_SYMBOL] = true;
-            // we need to call the native stopImmediatePropagation
-            // in case in some hybrid application, some part of
-            // application will be controlled by zone, some are not
-            delegate && delegate.apply(self, args);
         }; });
     }
 }
@@ -5349,12 +5325,6 @@ function patchTimer(window, setName, cancelName, nameSuffix) {
                 task.invoke.apply(this, arguments);
             }
             finally {
-                if (task.data && task.data.isPeriodic) {
-                    // issue-934, task will be cancelled
-                    // even it is a periodic task such as
-                    // setInterval
-                    return;
-                }
                 if (typeof data.handleId === NUMBER) {
                     // in non-nodejs env, we remove timerId
                     // from local cache
@@ -5514,18 +5484,12 @@ function isUnconfigurable(obj, prop) {
     return obj && obj[unconfigurablesKey] && obj[unconfigurablesKey][prop];
 }
 function rewriteDescriptor(obj, prop, desc) {
-    // issue-927, if the desc is frozen, don't try to change the desc
-    if (!Object.isFrozen(desc)) {
-        desc.configurable = true;
-    }
+    desc.configurable = true;
     if (!desc.configurable) {
-        // issue-927, if the obj is frozen, don't try to set the desc to obj
-        if (!obj[unconfigurablesKey] && !Object.isFrozen(obj)) {
+        if (!obj[unconfigurablesKey]) {
             _defineProperty(obj, unconfigurablesKey, { writable: true, value: {} });
         }
-        if (obj[unconfigurablesKey]) {
-            obj[unconfigurablesKey][prop] = true;
-        }
+        obj[unconfigurablesKey][prop] = true;
     }
     return desc;
 }
@@ -5552,7 +5516,7 @@ function _tryDefineProperty(obj, prop, desc, originalConfigurableFlag) {
                     descJson = JSON.stringify(desc);
                 }
                 catch (error) {
-                    descJson = desc.toString();
+                    descJson = descJson.toString();
                 }
                 console.log("Attempting to configure '" + prop + "' with descriptor '" + descJson + "' on object '" + obj + "' and got error, giving up: " + error);
             }
@@ -5964,6 +5928,7 @@ function canPatchViaPropertyDescriptor() {
         return result;
     }
 }
+
 var unboundKey = zoneSymbol('unbound');
 // Whenever any eventListener fires, we check the eventListener target and all parents
 // for `onwhatever` properties and replace them with zone-bound functions
@@ -6146,7 +6111,6 @@ function registerElementPatch(_global) {
 Zone.__load_patch('util', function (global, Zone, api) {
     api.patchOnProperties = patchOnProperties;
     api.patchMethod = patchMethod;
-    api.patchArguments = patchArguments;
 });
 Zone.__load_patch('timers', function (global, Zone, api) {
     var set = 'set';
@@ -6172,11 +6136,6 @@ Zone.__load_patch('blocking', function (global, Zone, api) {
     }
 });
 Zone.__load_patch('EventTarget', function (global, Zone, api) {
-    // load blackListEvents from global
-    var SYMBOL_BLACK_LISTED_EVENTS = Zone.__symbol__('BLACK_LISTED_EVENTS');
-    if (global[SYMBOL_BLACK_LISTED_EVENTS]) {
-        Zone[SYMBOL_BLACK_LISTED_EVENTS] = global[SYMBOL_BLACK_LISTED_EVENTS];
-    }
     patchEvent(global, api);
     eventTargetPatch(global, api);
     // patch XMLHttpRequestEventTarget's addEventListener/removeEventListener
@@ -6317,12 +6276,6 @@ Zone.__load_patch('geolocation', function (global, Zone, api) {
         patchPrototype(global['navigator'].geolocation, ['getCurrentPosition', 'watchPosition']);
     }
 });
-Zone.__load_patch('getUserMedia', function (global, Zone, api) {
-    var navigator = global['navigator'];
-    if (navigator && navigator.getUserMedia) {
-        navigator.getUserMedia = wrapFunctionArgs(navigator.getUserMedia);
-    }
-});
 Zone.__load_patch('PromiseRejectionEvent', function (global, Zone, api) {
     // handle unhandled promise rejection
     function findPromiseRejectionHandler(evtName) {
@@ -6360,7 +6313,7 @@ Zone.__load_patch('PromiseRejectionEvent', function (global, Zone, api) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(37)))
 
 /***/ }),
-/* 207 */
+/* 208 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -6456,7 +6409,8 @@ Zone['longStackTraceZoneSpec'] = {
         if (!error) {
             return undefined;
         }
-        var trace = error[Zone.__symbol__('currentTaskTrace')];
+        var task = error[Zone.__symbol__('currentTask')];
+        var trace = task && task.data && task.data[creationTrace];
         if (!trace) {
             return error.stack;
         }
