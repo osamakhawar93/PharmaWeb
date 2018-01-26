@@ -191,7 +191,7 @@ var ServiceUrl = (function () {
     /*    public baseUrl:string = "http://localhost:5000/";*/
     /* public baseUrl: string = "http://104.199.49.55:3000/";*/
     function ServiceUrl() {
-        this.baseUrl = "https://pharmaappnew.azurewebsites.net/";
+        this.baseUrl = "https://pharmaappnew.azurewebsites.net/api/";
     }
     ServiceUrl.prototype.getUrl = function () {
         return this.baseUrl;
