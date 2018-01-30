@@ -76,12 +76,14 @@ var DeleteCategoryComponent = (function () {
         this._deleteCategoryService.DeleteCategoryIdService(CategoryId).subscribe(function (response) {
             console.log(response);
             if (response.message == "PRODUCT EXISTS WITH THIS CATEGORY") {
+                var index = _this.GetProductCategoryModelArray.findIndex(function (x) { return x.Id == CategoryId; });
+                _this.GetProductCategoryModelArray.splice(index, 1);
                 jQuery("#snackbar1").html(response.message);
                 _this.myFunction();
             }
             else {
-                var index = _this.GetProductCategoryModelArray.findIndex(function (x) { return x.Id == CategoryId; });
-                _this.GetProductCategoryModelArray.splice(index, 1);
+                jQuery("#snackbar1").html("Not Successfully Deleted");
+                _this.myFunction();
             }
         });
     };

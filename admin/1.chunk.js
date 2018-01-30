@@ -29,7 +29,7 @@ var Login = (function () {
                         console.log(localStorage.getItem("UserType"));
                         _this.AdminUserType = localStorage.getItem("UserType");
                         if (_this.AdminUserType == 1) {
-                            _this.router.navigate(["/app/dosage"]);
+                            _this.router.navigate(["/app/dashboard"]);
                         }
                         else {
                             _this.router.navigate(["/app/chemist"]);

@@ -62,6 +62,8 @@ var GetChemistByAreaComponent = (function () {
     };
     GetChemistByAreaComponent.prototype.getCityName = function (cityId) {
         var _this = this;
+        this.AllChemistDataModel = [];
+        this.GetAreaNameModelArray = [];
         this.CityId = cityId;
         console.log(this.CityId);
         this._AddAreaNameService.getAreaName(this.CityId).subscribe(function (response) {
