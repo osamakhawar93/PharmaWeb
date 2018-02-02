@@ -105,7 +105,7 @@ var forms_1 = __webpack_require__("./node_modules/@angular/forms/index.js");
 var core_1 = __webpack_require__("./node_modules/@angular/core/index.js");
 var router_1 = __webpack_require__("./node_modules/@angular/router/index.js");
 var DeleteProduct_component_1 = __webpack_require__("./src/app/DeleteProduct/DeleteProduct.component.ts");
-__webpack_require__("./node_modules/jquery-locationpicker/src/locationpicker.jquery.js");
+/* import "jquery-locationpicker/src/locationpicker.jquery"; */
 exports.routes = [
     { path: '', component: DeleteProduct_component_1.DeleteProductComponent, pathMatch: 'full' }
 ];

@@ -85,7 +85,7 @@ var forms_1 = __webpack_require__("./node_modules/@angular/forms/index.js");
 var core_1 = __webpack_require__("./node_modules/@angular/core/index.js");
 var router_1 = __webpack_require__("./node_modules/@angular/router/index.js");
 var AddArea_component_1 = __webpack_require__("./src/app/AddArea/AddArea.component.ts");
-__webpack_require__("./node_modules/jquery-locationpicker/src/locationpicker.jquery.js");
+/* import "jquery-locationpicker/src/locationpicker.jquery"; */
 exports.routes = [
     { path: '', component: AddArea_component_1.AddAreaComponent, pathMatch: 'full' }
 ];
