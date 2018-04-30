@@ -1,18 +1,18 @@
 webpackJsonpac__name_([0],{
 
-/***/ 751:
+/***/ 760:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__detail_module__ = __webpack_require__(757);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__detail_module__ = __webpack_require__(766);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "DetailModule", function() { return __WEBPACK_IMPORTED_MODULE_0__detail_module__["a"]; });
 
 
 
 /***/ }),
 
-/***/ 753:
+/***/ 762:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -46,18 +46,18 @@ DetailComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 /***/ }),
 
-/***/ 757:
+/***/ 766:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DetailModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(63);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__detail_routes__ = __webpack_require__(758);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__detail_component__ = __webpack_require__(753);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__detail_routes__ = __webpack_require__(767);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__detail_component__ = __webpack_require__(762);
 
 
 
@@ -92,17 +92,17 @@ DetailModule = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __decorate */]([
 
 /***/ }),
 
-/***/ 758:
+/***/ 767:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return routes; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__detail_component__ = __webpack_require__(753);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__detail_component__ = __webpack_require__(762);
 
 var routes = [
     { path: '', children: [
             { path: '', component: __WEBPACK_IMPORTED_MODULE_0__detail_component__["a" /* DetailComponent */] },
-            { path: 'child-detail', loadChildren: function() { return __webpack_require__.e/* import() */(3).then(__webpack_require__.bind(null, 759))  .then( function(module) { return module['ChildDetailModule']; } ); } }
+            { path: 'child-detail', loadChildren: function() { return __webpack_require__.e/* import() */(3).then(__webpack_require__.bind(null, 768))  .then( function(module) { return module['ChildDetailModule']; } ); } }
         ] },
 ];
 
