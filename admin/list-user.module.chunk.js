@@ -108,7 +108,7 @@ var UserListComponent = (function () {
         });
     };
     UserListComponent.prototype.editThisUser = function (value) {
-        var element = this.rowsFilter.find(function (Id) { return Id == value; });
+        var element = this.rowsFilter.find(function (x) { return x.Id == value; });
         console.log(element);
         localStorage.setItem('editUser', JSON.stringify(element));
         this.route.navigateByUrl('/admin/user/edit-user?id=' + value);
